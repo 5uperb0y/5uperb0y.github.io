@@ -93,11 +93,32 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a target="_blank" rel="noopener" href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
+<p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h3><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
+
+<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a target="_blank" rel="noopener" href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a target="_blank" rel="noopener" href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
+<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他想法"><a href="#其他想法" class="headerlink" title="其他想法"></a>其他想法</h3><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
+<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://5uperb0y.com/2022/12/01/nextflow-escape-characters/" data-id="clb598wxi00010ovqepfx70ly" data-title="nextflow-escape-characters" class="article-share-link">Share</a>
+      <a data-url="https://5uperb0y.com/2022/12/01/nextflow-escape-characters/" data-id="clb59b8890001x0vq3wi24z2i" data-title="nextflow-escape-characters" class="article-share-link">Share</a>
       
       
       
@@ -148,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://5uperb0y.com/2022/12/01/hello-world/" data-id="clb598wxe00000ovq2mom8i4p" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="https://5uperb0y.com/2022/12/01/hello-world/" data-id="clb59b8840000x0vq02hg7rw4" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
