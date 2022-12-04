@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/why-do-people-write-scientific-articles/</loc>
+    
+    <lastmod>2022-12-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/how-to-download-and-install-rdp-classifier/</loc>
+    
+    <lastmod>2022-12-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/bignami-we-are-the-martians/</loc>
+    
+    <lastmod>2022-12-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/planetary-protection-rules-and-the-end-of-cassini-probe/</loc>
+    
+    <lastmod>2022-12-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/mitalk-6-thu-2022/</loc>
+    
+    <lastmod>2022-12-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/schrodinger-what-is-life-chapter-1/</loc>
     
     <lastmod>2022-12-03</lastmod>
@@ -30,15 +75,6 @@
   
   <url>
     <loc>https://5uperb0y.com/how-i-learn-from-seminars/</loc>
-    
-    <lastmod>2022-12-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/bignami-we-are-the-martians/</loc>
     
     <lastmod>2022-12-03</lastmod>
     
@@ -94,7 +130,7 @@
 
   <url>
     <loc>https://5uperb0y.com/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -102,42 +138,56 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/reading/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/communitcation/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/database/</loc>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/astrobiology/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/popular-science/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/nextflow/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/career/</loc>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/communication/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -145,36 +195,64 @@
 
   
   <url>
+    <loc>https://5uperb0y.com/categories/life-in-the-universe/</loc>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/categories/tips-tricks/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/metagenomics/</loc>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/origins-of-life/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/bioinformatics/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/microbiota/</loc>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/what-is-life/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/tips-and-tricks/</loc>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/academic/</loc>
-    <lastmod>2022-12-03</lastmod>
+    <lastmod>2022-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
