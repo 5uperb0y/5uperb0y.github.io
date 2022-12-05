@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title>讀後感｜再創世紀</title>
-    <url>/church-regenesis/</url>
+    <url>/church-2014-regenesis/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
 <span id="more"></span>
 
@@ -50,7 +50,7 @@
   </entry>
   <entry>
     <title>讀後感｜樹之歌</title>
-    <url>/haskell-the-songs-of-trees/</url>
+    <url>/haskell-2017-the-songs-of-trees/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
 <p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
 <span id="more"></span>
@@ -127,6 +127,129 @@
       </tags>
   </entry>
   <entry>
+    <title>很久很久以前，自然用什麼盛裝生命？</title>
+    <url>/how-nature-contains-life-in-early-earth/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
+<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
+<span id="more"></span>
+
+<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
+<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
+<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
+<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>origins of life</category>
+      </categories>
+      <tags>
+        <tag>astrobiology</tag>
+        <tag>popular science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜太空生物學</title>
+    <url>/lee-2017-astrobiology/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
+<span id="more"></span>
+<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
+<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
+<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
+<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>life in the universe</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜戲說統計</title>
+    <url>/lee-2017-introduction-to-statistics-and-quantitative-analysis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>知乎上有段軼聞可以很好地形容我讀《戲說統計》的心境：</p>
+<blockquote>
+<p>以前上新東方時候聽老師講的，說以前老俞還講課的時候，特別陶醉，做完題對答案，就問“有沒有人哪道題不懂啊？”要是有人提問題的話，老俞總是深情地看一眼題目，然後放下手中的教案，說：“同學們啊，這道題讓我想起了當初創業時候的的一件事，balabalabala”短短幾分鐘的就能把全班人講的如痴如醉，然後來一句“好的，大家還有哪道題不懂嗎？（阿冰，知乎）</p>
+</blockquote>
+<span id="more"></span>
+
+<p>讀《戲說統計》是因為我很喜歡李連江老師的另一本書。教讀者怎麼走入和走好學術這條路的書有很多，例如讀《別鬧了，費曼先生》可以立志，讀《你和你的研究》讓人不忘摘星，讀《研究生完全求生手冊》則能學習踏實做事。</p>
+<p>然而李老師的《在學術界謀生存》卻教讀者在了解自己是個平凡人後，怎麼面對期望落差，怎麼處理生涯焦慮，怎麼不負自己的使命與期待。因此，得知他還有一本既講統計也談學術生涯的著作時，便到圖書館借來看。</p>
+<p>在經驗分享方面，《戲說統計》的立論與《在學術界謀生存》一致，皆勸勉讀者在看清事實後仍保持積極，追求自我的價值與肯定，例如：</p>
+<blockquote>
+<p>人生的智慧在於準確判斷自己，欣然接納自己。(144)</p>
+</blockquote>
+<blockquote>
+<p>設立現實的目標，才能建立自信。(287)</p>
+</blockquote>
+<blockquote>
+<p>看過，看不懂，很好！好在哪裡？好在創造了機會。看不懂，讓人不快，不憤不啟。(292)</p>
+</blockquote>
+<p>這些原則跟我讀了一些書、問了一些人而且親自碰一次壁後體會的想法一樣：多做事，少幹話；爭取機會，別找藉口；把握現在，不要懊悔過去；用指標衡量進展，但不要用指標定義自我價值。</p>
+<p>至於描述統計的內容，對學過統計學的讀者而言可能較淺。作者用了許多篇幅討論詞彙的含意，也試圖澄清專有名詞的命名邏輯。例如 variable 應譯為變量還是變項？而 variable 的三層意義，即事實與反事實之別（因果推論）、個體屬性的日新月異（縱向研究）、屬性的因人而異（橫斷研究），為什麼攸關研究設計？</p>
+<p>這些立論初學者讀來可能恍然大悟，但要應用於實務難題時恐怕無從發揮；而有經驗者讀來或許覺得有趣，但可能會發出「早點知道這種理解方法」的喟嘆，畢竟自己已度過瓶頸，如今不需要這樣的輔助才能理解抽象概念。</p>
+<p>此外，書中多以比喻取代公式推導來解釋統計觀念，但能否理解作者的比喻與推理則見仁見智。例如作者雖然很用心講解樣本分布、抽樣分布和誤差分布的關係，但對這些觀念已經有定見的人來說，比喻與借代反而有可能阻礙讀者理解作者想傳達的意義。</p>
+<p>總結對《戲說統計》的看法，我會說這本書是很私人的著作，是作者盡到傳承與坦率之義務的著作。</p>
+<p>李老師（即作者）曾寫道：「最有效的誤導方法就是培養學術明星，製造學術天才，甚至奇才」，也在這本書提到「學者要盡到承傳的天職，對學生坦誠自己求學的辛苦是本分 (012)」。《戲說統計》記錄了李老師學習統計時遭遇的難點和克服這些困難的方式，未經歷這些困難的讀者可能覺得行文囉嗦，但有共鳴的讀者或會感到助益匪淺。</p>
+<p>畢竟讀者很多元，一本著作有這樣兩極的評價也不是什麼問題。我覺得教育講究感同身受，即使是再簡單的問題，若有一位搞不懂的學生，便需要一位能讓學生搞懂的老師。假設不存在這樣的老師，那位學生自己搞懂以後能指導曾跟他一樣迷惘的學生，不也是一樁美事嗎？</p>
+<p>書中還有一些有意思的句子摘錄如下：</p>
+<blockquote>
+<p>我認為教師的功勞不是教知識，而是鼓舞學生。知識可以教，但要靠學生自己刻苦研究才能學到；能力不能教，只能靠學生自己鍛鍊提高。學生學知識，長本領，出成就，都靠學生自己。教師起什麼作用呢？教師的責任主要是影響學生。用什麼影響？就是以書本上的知識為手段，幫助學生樹立自己的學習目標，激發學生的創造精神，鼓勵學生艱苦努力，幫助學生認識自己的潛力，促使學生把自己的潛力發揮出來。（代序，車銘洲）</p>
+</blockquote>
+<blockquote>
+<p>教師的主要功勞就是給學生偉大的刺激，偉大的鼓舞。教師要在課堂上把學生的學習精神、奮鬥精神鼓舞起來，教師的作用就是刺激和鼓舞，用敲鑼打鼓的方法振奮學生，讓學生努力。（代序，車銘洲）</p>
+</blockquote>
+<blockquote>
+<p>… 學生造就老師。老師的成就有學生的貢獻，不是教師自己本來就那麼優秀。必須有優秀的學生，教師才能進步，這是我堅信不疑的。（代序，車銘洲）</p>
+</blockquote>
+<blockquote>
+<p>教師刺激學生，學生就會跟教師研討，有研討，就能出成就。老師的智慧是學生敲出來的，學生很優秀，總是敲打教師，教師就進步了。（代序，車銘洲）</p>
+</blockquote>
+<blockquote>
+<p>在方法論中，術語歸根結蒂是「約定」。約定俗成，遊戲能玩下去，溝通有效，誤會不深，就沒有必要更改術語。(008)</p>
+</blockquote>
+<blockquote>
+<p>不怕了，就是學會了；敢用了，就是學通了；用對了，就是學精了。(011)</p>
+</blockquote>
+<blockquote>
+<p>琢磨怎樣化繁為簡，化平淡為有趣，化有趣為智慧，也是教書的樂趣。(012)</p>
+</blockquote>
+<blockquote>
+<p>英國哲學家奧斯丁說，通常情況下，我們需要的不是被告知，而是被提醒。方法論的主要作用就是提醒我們注意思維的漏洞與陷阱，(027)</p>
+</blockquote>
+<blockquote>
+<p>常是相對的，變是絕對的。常是異常，無常是常。常往往是希望的目標，不是研究對象。希望常，是因為害怕變；提倡常，是因為現實中有不可阻擋的變。所以，「天不變，道亦不變」是個訴諸虛幻奢望的討好建議，不是基於事實研究的明智建言。話說回來，因為變是常態，也因為變很難把握，所以保守是明智，求變是進取。(027)</p>
+</blockquote>
+<blockquote>
+<p>對人生來說，日新月異之變是唯一能直接觀察的變。人生之所以難，之所以有趣，歸根結蒂是因為人能意識到這兩種變化，試圖打通這兩種變化。我們看到種種因人而異之變，自然會想到自己日新月異之變。問題在於，這兩者之間，只在很有限的程度上相通，而且我們很難準確知道到底在什麼程度上、在哪個方面相通。(037)</p>
+</blockquote>
+<blockquote>
+<p>人生的智慧與藝術，關鍵就是在正確的時候採納適當的價值觀。人生不能沒有希望，希望來自相信因人而異之變與日新月異之變相通；然而有希望必然有失望，失望來自二者經常並不相通。(037)</p>
+</blockquote>
+<blockquote>
+<p>人生的關鍵是發現和發揚正態分布對自己有利的屬性，躲避和弭補正態分布對自己不利的屬性。 (139)</p>
+</blockquote>
+<blockquote>
+<p>… 最難判斷的就是我們的相對位置，而平均值和標準差可以幫我們確定自己的相對位置。在這個意義上，我們關注平均值和標準差，就是希望知道自己在這個世界上的位置，也是希望改變我們的地位。人生的苦悶在於，無論我們做什麼，都既糾結於平均值，也糾結於標準差。(141)</p>
+</blockquote>
+<blockquote>
+<p>年輕時要努力奮鬥，因為自己的位置是不確定的，自己的潛力是未知的。但是一定要注意，人生的舞台有很多，人的能力有多面，千萬不要覺得人生只有一條路。你在這一條路上可能平平，在另一條路上卻可能優秀。一方面要堅韌不拔，另一方面要靈活機動，才能找到你最擅長做的事。(145)</p>
+</blockquote>
+<blockquote>
+<p>研究生是學者最畏懼的讀者，他們會跟老師說，你把數據庫給我，我重複做一遍，跟你學。(185)</p>
+</blockquote>
+<blockquote>
+<p>無論學什麼，都分兩個功夫：一個是投入時間學，另一個是用心琢磨怎麼學。又投入時間學，又用心想，就會慢慢找出一個適合自己的方法。哪一天你找到適合自己的方法了，你就學會了。(262)</p>
+</blockquote>
+<p>[^*] 李連江 (2017)《戲說統計：文科生的量化方法》，中國政法大學出版社。</p>
+]]></content>
+      <categories>
+        <category>career</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何下載和安裝 RDP classifier</title>
     <url>/how-to-download-and-install-rdp-classifier/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>RDP classifier 是基於 Naive Bayes 的物種分類器，常用於註解 16S rRNA 基因序列的分類資訊。除了使用內建的 RDP 資料庫以外，RDP classifier 也允許使用自訂資料庫來訓練分類器。除了內建的 RDP database，也支援以其他資料庫來訓練分類器。</p>
@@ -157,43 +280,6 @@
       </categories>
       <tags>
         <tag>database</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>很久很久以前，自然用什麼盛裝生命？</title>
-    <url>/how-nature-contains-life-in-early-earth/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
-<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
-<span id="more"></span>
-
-<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
-<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
-<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
-<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>origins of life</category>
-      </categories>
-      <tags>
-        <tag>astrobiology</tag>
-        <tag>popular science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>讀後感｜太空生物學</title>
-    <url>/lee-astrobiology/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
-<span id="more"></span>
-<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
-<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
-<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
-<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>life in the universe</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -415,35 +501,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
-    <url>/schrodinger-what-is-life-chapter-1/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》">1</span></a></sup></p>
-<span id="more"></span>
-
-<h2 id="「鴿子為什麼那麼大？」"><a href="#「鴿子為什麼那麼大？」" class="headerlink" title="「鴿子為什麼那麼大？」"></a>「鴿子為什麼那麼大？」</h2><p>這問題乍聽之下或許令人詫異，但其實許多洞見都是從這樣怪誕或荒唐的問題萌發。</p>
-<p>日常生活中，大或小的概念是建立在比較的基礎上。在這問題中，真正的目的或許不在了解鴿子的尺寸，而是想知道事物間為何存在懸殊的尺寸差異。事物尺度與其性質的關係是物理學重要的研究方向，而肉眼可見的巨觀層次和原子尺度的微觀層次則是其中的兩個極端。統計物理解釋了這兩大體系之間的關係，為巨觀現象提供微觀尺度的解釋。因此，若以此角度出發，我們可以把問題精確地重塑為：相較於原子，為什麼鴿子那麼大呢？<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」">2</span></a></sup></p>
-<p>確實，相較於原子，一隻鴿子的體積非常大。成鴿的平均體重為 0.5 公斤，其組織器官則由碳、氫、氧、氮、硫、磷和其它微量元素構成。假設鴿子僅由氫原子或硫原子組成，可推知一隻成鴿含有的原子數量約在 $10^26$ 到 $10^28$ 之間，這數量遠超過當今對恆星數量的估計值($3 \times 10^{23}$)<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Dokkum & Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.">3</span></a></sup>。</p>
-<p>由於鴿子與原子的懸殊比例，鴿子既無法察覺個別原子的動靜，也不受其碰撞、震盪或旋轉影響。這表示，作用於鴿子的原理和作用於原子的原理可能有很大的差異。但這樣的尺度差異對有機體究竟有什麼意義？又為什麼非得如此，才能維持鴿子的存在？</p>
-<h2 id="有機體的運作仰賴精確的物理和化學定律"><a href="#有機體的運作仰賴精確的物理和化學定律" class="headerlink" title="有機體的運作仰賴精確的物理和化學定律"></a>有機體的運作仰賴精確的物理和化學定律</h2><p>有機體的運作無處不仰賴事物間精確的配合。以感知和運動為例，有機體要能靈敏接收刺激，同時不失真地傳遞訊息。這些訊息得正確抵達中樞，在歷經複雜決策後，循另一條途徑輸出，以驅動目標肌肉收縮。這個過程的順利，不只需要事件層序分明，也仰賴組織構造的規律。無論是感覺&#x2F;中樞&#x2F;運動神經的緊密連結，粗肌絲與細肌絲的間隔排列，還是細胞內訊息傳遞分子的聚攏，都是完成一項行為的要件。</p>
-<p>即使是最簡單的膝跳反射，也需要器官、組織乃至細胞間的緊密配合，更遑論思考、決策與想像等複雜行為對秩序的需求。這意味著，無論生理還是結構層面，維繫有機體的各項事件皆需要相當的精確性；而外在系統對有機體的影響，也要有與之對應的精確性才會發生作用。<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」">4</span></a></sup></p>
-<h2 id="物理和化學定律的精確性奠基於大量原子參與"><a href="#物理和化學定律的精確性奠基於大量原子參與" class="headerlink" title="物理和化學定律的精確性奠基於大量原子參與"></a>物理和化學定律的精確性奠基於大量原子參與</h2><p>然而，少量原子無法支持有機體所需的精確性。在微觀尺度，個別原子持續進行隨機的熱運動，其移動、震盪和旋轉皆無法測量與追蹤。不過隨著系統內的原子數量增加，原子狀態（例如速度、方向、電荷等）的多樣性也隨之增加。一旦數量夠多，大量原子的平均狀態，便會呈現為巨觀層次可觀察到的方向性或規律性。</p>
-<p>以順磁性為例，石英管中的氧氣雖然會因置於磁場而磁化，可是並非所有氧分子的方向皆與磁場一致。在局部，個別分子的方向其實會隨熱運動不斷轉變，所以沒有固定一致的排列方式。儘管個別分子的方向無法預期，但隨著磁場增強，石英管內順磁性分子與逆磁性分子的數量差距會逐漸增加，使得多數的氧分子與磁場方向一致，共同產生可觀測的磁化現象。 <sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。">5</span></a></sup></p>
-<p>另一項案例是布朗運動與擴散現象。在微觀尺度，單一微粒會受水分子碰撞而隨機運動，其移往各方向的機率與溶液濃度無關。不過，因為溶液中高&#x2F;低濃度區域的微粒數量有別，由高往低濃度移動的微粒自然比由低往高濃度移動的微粒多，於是微粒在巨觀層次表現出隨重力沉降或隨濃度梯度擴散等現象。</p>
-<p>反之，若組成系統的原子數越小，隨機偏差的幅度就越大。這關係可以測量精確度的極限說明。扭秤是測量作用力強度重要的工具。為了偵測到更微弱的作用力，往往會替扭秤選用更輕盈的槓桿與絲線。不過，隨著扭秤尺寸縮小，原子熱運動對扭秤的影響也隨之增加，使得原子碰撞和待測作用力造成的擺幅難以區分。在這種尺度下，單次測量的意義有限，得靠多次測量來消除隨機偏差的影響。</p>
-<h2 id="有機體需要足夠的原子才能受益於定律的精確性"><a href="#有機體需要足夠的原子才能受益於定律的精確性" class="headerlink" title="有機體需要足夠的原子才能受益於定律的精確性"></a>有機體需要足夠的原子才能受益於定律的精確性</h2><p>綜上所述，系統在巨觀尺度的屬性是相異狀態之原子的數量分布不均所致。系統內的原子數越多，數量不均的狀況就越容易與隨機運動區別，呈現的集體現象也就越明確。原子數量與定律精確性的關係可用 $\sqrt{n}$ 法則描述。 $\sqrt{n}$ 法則是指，對一個含有 n 個原子的系統而言，物理或化學定律的誤差範圍約在 $\sqrt{n}$ 內。式子中的平方根意味著，隨著系統含有的原子增加，作用在此系統定律的相對誤差就愈低。</p>
-<p>讓我們回到文章開頭提到的問題，為何鴿子那麼大？或說，為什麼鴿子就不能像寡糖或Omega-3一樣小？這是因為，有機體的遺傳、發育和行為等生命特徵需要足夠數量的原子，才有辦法忽視個別原子的隨機運動，表現出統計物理上的宏觀秩序。</p>
-<p>讓我們想像一種僅由 100 個原子組成的迷你鴿子。根據 $\sqrt{n}$ 法則，發生在迷你鴿子體內的擴散、催化、接合等反應皆有 10 個原子的不確定性，即有 10% 的相對誤差。</p>
-<p>在這尺度，影響鴿子的不再是氣流、重力和光線等巨觀現象，而是電荷、碰撞、量子穿隧等微觀現象。僅僅一個離子，就可能破壞迷你鴿子的結構；即使是少量原子刺激，都會影響鴿子的感官，以致於不能辨明關鍵的環境訊號。既然無法維繫體內運作和對外互動，這樣的生命也就不會是我們定義的「鴿子」了。</p>
-<h2 id="古典物理無法解釋遺傳的分子機制"><a href="#古典物理無法解釋遺傳的分子機制" class="headerlink" title="古典物理無法解釋遺傳的分子機制"></a>古典物理無法解釋遺傳的分子機制</h2><p>儘管統計物理似乎為有機體的尺存給出了圓滿的解釋，但此處的議論實為楔子：依照前述討論，有機體的秩序仰賴大量原子參與。不過就當時所知，基因很可能僅由少量原子組成，那麼基因是怎麼表現出遺傳、突變與分裂等在巨觀層次可觀測到的高度秩序？薛丁格主張，這個矛盾或許可用量子力學的概念解釋。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dokkum &amp; Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。<a href="#fnref:5" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>卡西尼號與行星保護</title>
     <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -472,6 +529,35 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>career</tag>
         <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
+    <url>/schrodinger-1944-what-is-life-chapter-1/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》">1</span></a></sup></p>
+<span id="more"></span>
+
+<h2 id="「鴿子為什麼那麼大？」"><a href="#「鴿子為什麼那麼大？」" class="headerlink" title="「鴿子為什麼那麼大？」"></a>「鴿子為什麼那麼大？」</h2><p>這問題乍聽之下或許令人詫異，但其實許多洞見都是從這樣怪誕或荒唐的問題萌發。</p>
+<p>日常生活中，大或小的概念是建立在比較的基礎上。在這問題中，真正的目的或許不在了解鴿子的尺寸，而是想知道事物間為何存在懸殊的尺寸差異。事物尺度與其性質的關係是物理學重要的研究方向，而肉眼可見的巨觀層次和原子尺度的微觀層次則是其中的兩個極端。統計物理解釋了這兩大體系之間的關係，為巨觀現象提供微觀尺度的解釋。因此，若以此角度出發，我們可以把問題精確地重塑為：相較於原子，為什麼鴿子那麼大呢？<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」">2</span></a></sup></p>
+<p>確實，相較於原子，一隻鴿子的體積非常大。成鴿的平均體重為 0.5 公斤，其組織器官則由碳、氫、氧、氮、硫、磷和其它微量元素構成。假設鴿子僅由氫原子或硫原子組成，可推知一隻成鴿含有的原子數量約在 $10^26$ 到 $10^28$ 之間，這數量遠超過當今對恆星數量的估計值($3 \times 10^{23}$)<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Dokkum & Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.">3</span></a></sup>。</p>
+<p>由於鴿子與原子的懸殊比例，鴿子既無法察覺個別原子的動靜，也不受其碰撞、震盪或旋轉影響。這表示，作用於鴿子的原理和作用於原子的原理可能有很大的差異。但這樣的尺度差異對有機體究竟有什麼意義？又為什麼非得如此，才能維持鴿子的存在？</p>
+<h2 id="有機體的運作仰賴精確的物理和化學定律"><a href="#有機體的運作仰賴精確的物理和化學定律" class="headerlink" title="有機體的運作仰賴精確的物理和化學定律"></a>有機體的運作仰賴精確的物理和化學定律</h2><p>有機體的運作無處不仰賴事物間精確的配合。以感知和運動為例，有機體要能靈敏接收刺激，同時不失真地傳遞訊息。這些訊息得正確抵達中樞，在歷經複雜決策後，循另一條途徑輸出，以驅動目標肌肉收縮。這個過程的順利，不只需要事件層序分明，也仰賴組織構造的規律。無論是感覺&#x2F;中樞&#x2F;運動神經的緊密連結，粗肌絲與細肌絲的間隔排列，還是細胞內訊息傳遞分子的聚攏，都是完成一項行為的要件。</p>
+<p>即使是最簡單的膝跳反射，也需要器官、組織乃至細胞間的緊密配合，更遑論思考、決策與想像等複雜行為對秩序的需求。這意味著，無論生理還是結構層面，維繫有機體的各項事件皆需要相當的精確性；而外在系統對有機體的影響，也要有與之對應的精確性才會發生作用。<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」">4</span></a></sup></p>
+<h2 id="物理和化學定律的精確性奠基於大量原子參與"><a href="#物理和化學定律的精確性奠基於大量原子參與" class="headerlink" title="物理和化學定律的精確性奠基於大量原子參與"></a>物理和化學定律的精確性奠基於大量原子參與</h2><p>然而，少量原子無法支持有機體所需的精確性。在微觀尺度，個別原子持續進行隨機的熱運動，其移動、震盪和旋轉皆無法測量與追蹤。不過隨著系統內的原子數量增加，原子狀態（例如速度、方向、電荷等）的多樣性也隨之增加。一旦數量夠多，大量原子的平均狀態，便會呈現為巨觀層次可觀察到的方向性或規律性。</p>
+<p>以順磁性為例，石英管中的氧氣雖然會因置於磁場而磁化，可是並非所有氧分子的方向皆與磁場一致。在局部，個別分子的方向其實會隨熱運動不斷轉變，所以沒有固定一致的排列方式。儘管個別分子的方向無法預期，但隨著磁場增強，石英管內順磁性分子與逆磁性分子的數量差距會逐漸增加，使得多數的氧分子與磁場方向一致，共同產生可觀測的磁化現象。 <sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。">5</span></a></sup></p>
+<p>另一項案例是布朗運動與擴散現象。在微觀尺度，單一微粒會受水分子碰撞而隨機運動，其移往各方向的機率與溶液濃度無關。不過，因為溶液中高&#x2F;低濃度區域的微粒數量有別，由高往低濃度移動的微粒自然比由低往高濃度移動的微粒多，於是微粒在巨觀層次表現出隨重力沉降或隨濃度梯度擴散等現象。</p>
+<p>反之，若組成系統的原子數越小，隨機偏差的幅度就越大。這關係可以測量精確度的極限說明。扭秤是測量作用力強度重要的工具。為了偵測到更微弱的作用力，往往會替扭秤選用更輕盈的槓桿與絲線。不過，隨著扭秤尺寸縮小，原子熱運動對扭秤的影響也隨之增加，使得原子碰撞和待測作用力造成的擺幅難以區分。在這種尺度下，單次測量的意義有限，得靠多次測量來消除隨機偏差的影響。</p>
+<h2 id="有機體需要足夠的原子才能受益於定律的精確性"><a href="#有機體需要足夠的原子才能受益於定律的精確性" class="headerlink" title="有機體需要足夠的原子才能受益於定律的精確性"></a>有機體需要足夠的原子才能受益於定律的精確性</h2><p>綜上所述，系統在巨觀尺度的屬性是相異狀態之原子的數量分布不均所致。系統內的原子數越多，數量不均的狀況就越容易與隨機運動區別，呈現的集體現象也就越明確。原子數量與定律精確性的關係可用 $\sqrt{n}$ 法則描述。 $\sqrt{n}$ 法則是指，對一個含有 n 個原子的系統而言，物理或化學定律的誤差範圍約在 $\sqrt{n}$ 內。式子中的平方根意味著，隨著系統含有的原子增加，作用在此系統定律的相對誤差就愈低。</p>
+<p>讓我們回到文章開頭提到的問題，為何鴿子那麼大？或說，為什麼鴿子就不能像寡糖或Omega-3一樣小？這是因為，有機體的遺傳、發育和行為等生命特徵需要足夠數量的原子，才有辦法忽視個別原子的隨機運動，表現出統計物理上的宏觀秩序。</p>
+<p>讓我們想像一種僅由 100 個原子組成的迷你鴿子。根據 $\sqrt{n}$ 法則，發生在迷你鴿子體內的擴散、催化、接合等反應皆有 10 個原子的不確定性，即有 10% 的相對誤差。</p>
+<p>在這尺度，影響鴿子的不再是氣流、重力和光線等巨觀現象，而是電荷、碰撞、量子穿隧等微觀現象。僅僅一個離子，就可能破壞迷你鴿子的結構；即使是少量原子刺激，都會影響鴿子的感官，以致於不能辨明關鍵的環境訊號。既然無法維繫體內運作和對外互動，這樣的生命也就不會是我們定義的「鴿子」了。</p>
+<h2 id="古典物理無法解釋遺傳的分子機制"><a href="#古典物理無法解釋遺傳的分子機制" class="headerlink" title="古典物理無法解釋遺傳的分子機制"></a>古典物理無法解釋遺傳的分子機制</h2><p>儘管統計物理似乎為有機體的尺存給出了圓滿的解釋，但此處的議論實為楔子：依照前述討論，有機體的秩序仰賴大量原子參與。不過就當時所知，基因很可能僅由少量原子組成，那麼基因是怎麼表現出遺傳、突變與分裂等在巨觀層次可觀測到的高度秩序？薛丁格主張，這個矛盾或許可用量子力學的概念解釋。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dokkum &amp; Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。<a href="#fnref:5" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
       </tags>
   </entry>
   <entry>

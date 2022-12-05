@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="一般而言，若想要背景執行 linux 指令，可在指令末端添加 &amp;，或是透過 ctrl + z 配合 bg %n 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。 1234$ nextflow run workflow.nf &amp;[1] 533Launching &#96;workf">
+    <meta name="description" content="歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。 Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Nextflow｜背景執行 workflow 的方法">
-<meta property="og:url" content="https://5uperb0y.com/nextflow-run-in-background/index.html">
+<meta property="og:title" content="讀後感｜樹之歌">
+<meta property="og:url" content="https://5uperb0y.com/haskell-2017-the-songs-of-trees/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="一般而言，若想要背景執行 linux 指令，可在指令末端添加 &amp;，或是透過 ctrl + z 配合 bg %n 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。 1234$ nextflow run workflow.nf &amp;[1] 533Launching &#96;workf">
+<meta property="og:description" content="歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。 Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-11-29T16:47:46.000Z">
-<meta property="article:modified_time" content="2022-12-03T15:54:54.404Z">
+<meta property="article:published_time" content="2022-02-09T14:20:13.000Z">
+<meta property="article:modified_time" content="2022-12-03T15:40:41.435Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="nextflow">
+<meta property="article:tag" content="reading">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/nextflow-run-in-background/">
+<link rel="canonical" href="https://5uperb0y.com/haskell-2017-the-songs-of-trees/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/nextflow-run-in-background/","path":"nextflow-run-in-background/","title":"Nextflow｜背景執行 workflow 的方法"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/haskell-2017-the-songs-of-trees/","path":"haskell-2017-the-songs-of-trees/","title":"讀後感｜樹之歌"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Nextflow｜背景執行 workflow 的方法 | 5uperb0y's blog</title>
+<title>讀後感｜樹之歌 | 5uperb0y's blog</title>
   
 
 
@@ -131,7 +131,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -144,7 +144,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%85%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">情境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E8%BE%A6%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解決辦法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">3.</span> <span class="nav-text">結論</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -234,7 +233,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-run-in-background/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/haskell-2017-the-songs-of-trees/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -247,12 +246,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Nextflow｜背景執行 workflow 的方法 | 5uperb0y's blog">
+      <meta itemprop="name" content="讀後感｜樹之歌 | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Nextflow｜背景執行 workflow 的方法
+          讀後感｜樹之歌
         </h1>
 
         <div class="post-meta-container">
@@ -263,23 +262,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-11-30 00:47:46" itemprop="dateCreated datePublished" datetime="2022-11-30T00:47:46+08:00">2022-11-30</time>
+      <time title="創建時間：2022-02-09 22:20:13" itemprop="dateCreated datePublished" datetime="2022-02-09T22:20:13+08:00">2022-02-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-03 23:54:54" itemprop="dateModified" datetime="2022-12-03T23:54:54+08:00">2022-12-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
-        </span>
+      <time title="修改時間：2022-12-03 23:40:41" itemprop="dateModified" datetime="2022-12-03T23:40:41+08:00">2022-12-03</time>
     </span>
 
   
@@ -298,8 +288,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/nextflow-run-in-background/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nextflow-run-in-background/" itemprop="commentCount"></span>
+    <a title="disqus" href="/haskell-2017-the-songs-of-trees/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="haskell-2017-the-songs-of-trees/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -310,14 +300,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>460</span>
+      <span>848</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>3 分鐘</span>
     </span>
 </div>
 
@@ -328,29 +318,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a target="_blank" rel="noopener" href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
 <span id="more"></span>
-<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
-
-<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a target="_blank" rel="noopener" href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a target="_blank" rel="noopener" href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
-<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
-
-<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
-<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
-
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>
     </div>
 
     
@@ -367,7 +350,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/nextflow-run-in-background/" title="Nextflow｜背景執行 workflow 的方法">https://5uperb0y.com/nextflow-run-in-background/</a>
+      <a href="https://5uperb0y.com/haskell-2017-the-songs-of-trees/" title="讀後感｜樹之歌">https://5uperb0y.com/haskell-2017-the-songs-of-trees/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -376,18 +359,21 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/nextflow/" rel="tag"># nextflow</a>
+              <a href="/tags/reading/" rel="tag"># reading</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/how-nature-contains-life-in-early-earth/" rel="prev" title="很久很久以前，自然用什麼盛裝生命？">
-                  <i class="fa fa-chevron-left"></i> 很久很久以前，自然用什麼盛裝生命？
+                <a href="/schrodinger-1944-what-is-life-chapter-1/" rel="prev" title="讀後感｜生命是什麼 — 鴿子為什麼那麼大？">
+                  <i class="fa fa-chevron-left"></i> 讀後感｜生命是什麼 — 鴿子為什麼那麼大？
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/how-to-download-and-install-rdp-classifier/" rel="next" title="如何下載和安裝 RDP classifier">
+                  如何下載和安裝 RDP classifier <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
