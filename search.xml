@@ -25,53 +25,6 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜再創世紀</title>
-    <url>/church-2014-regenesis/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
-<span id="more"></span>
-
-<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
-<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
-<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
-<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
-<ul>
-<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
-<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
-<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
-</ul>
-<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>讀後感｜樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
-<span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
-<ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>從碩班第一次專題課說起......</title>
     <url>/how-i-learn-from-seminars/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>讀碩班前，我其實不知道 seminar 到底要幹嘛，也不知道和我有什麼關係。所以如同曖昧、戀愛等陌生概念，所有關於 seminar 的知識都是PTT教我的。</p>
@@ -124,6 +77,53 @@
       </categories>
       <tags>
         <tag>communitcation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜再創世紀</title>
+    <url>/church-2014-regenesis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
+<span id="more"></span>
+
+<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
+<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
+<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
+<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
+<ul>
+<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
+<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
+<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
+</ul>
+<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+<span id="more"></span>
+
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -194,6 +194,45 @@
       </categories>
       <tags>
         <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode｜217. Contains Duplicate</title>
+    <url>/leetcode-217-easy-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<ul>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
+</ul>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -283,6 +322,69 @@
       </tags>
   </entry>
   <entry>
+    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
+    <url>/nextflow-escape-characters/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
+<span id="more"></span>
+<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
+<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
+<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
+<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
+
+<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
+<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;\$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
+<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
+
+<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
+<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
+<ul>
+<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
+<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
+</ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nextflow｜怎麼從運行中的腳本取回參數？</title>
     <url>/nextflow-retrieve-configuration-when-workflow-runs/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在執行腳本前，Nextflow 會讀取設置檔 (configuration files) 中的參數，將之代入腳本的對應位置後再執行程式。這項特性有助於使用者管理複雜流程的輸入值與環境設定，也將具體數值從流程邏輯抽離，讓開發者專注於流程的梳理與串接。</p>
@@ -338,6 +440,39 @@
 <li><code>params</code>：記錄了不同管道導入的參數，可以在 <code>*.nf</code> 檔各處呼叫以取得書入的參數和設定。</li>
 <li><code>launchDir</code>：雖然本身與參數無關，但此變項記錄了腳本執行位置，其中的 <code>.nextflow.log</code> 記錄了 <code>*.config</code> 路徑。讀取該檔即可獲取輸入的參數和設定。</li>
 </ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜背景執行 workflow 的方法</title>
+    <url>/nextflow-run-in-background/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
+<span id="more"></span>
+<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
+
+<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
+<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
+<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
 ]]></content>
       <categories>
         <category>bioinformatics</category>
@@ -469,102 +604,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
-    <url>/nextflow-escape-characters/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
-<span id="more"></span>
-<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
-<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
-<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
-<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
-
-<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
-<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;\$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
-<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
-
-<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
-<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
-<ul>
-<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
-<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
-</ul>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜背景執行 workflow 的方法</title>
-    <url>/nextflow-run-in-background/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
-<span id="more"></span>
-<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
-
-<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
-<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
-
-<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
-<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>卡西尼號與行星保護</title>
     <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -596,6 +635,26 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>科學溝通能力的重要性</title>
+    <url>/the-importance-of-science-communication/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
+<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
+<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
+<span id="more"></span>
+
+<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
+<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
+<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
+<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
+]]></content>
+      <categories>
+        <category>academic</category>
+      </categories>
+      <tags>
+        <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
     <url>/schrodinger-1944-what-is-life-chapter-1/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》">1</span></a></sup></p>
@@ -622,26 +681,6 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
       <tags>
         <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科學溝通能力的重要性</title>
-    <url>/the-importance-of-science-communication/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
-<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
-<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
-<span id="more"></span>
-
-<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
-<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
-<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
-<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
-]]></content>
-      <categories>
-        <category>academic</category>
-      </categories>
-      <tags>
-        <tag>communication</tag>
       </tags>
   </entry>
   <entry>

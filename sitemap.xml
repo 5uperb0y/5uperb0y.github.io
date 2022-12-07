@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/leetcode-217-easy-contains-duplicate/</loc>
+    
+    <lastmod>2022-12-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/nextflow-retrieve-configuration-when-workflow-runs/</loc>
     
     <lastmod>2022-12-06</lastmod>
@@ -217,6 +226,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/tags/leetcode/</loc>
+    <lastmod>2022-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/tags/nextflow/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,14 +263,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/what-is-life/</loc>
+    <loc>https://5uperb0y.com/categories/tips-tricks/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/tips-tricks/</loc>
+    <loc>https://5uperb0y.com/categories/what-is-life/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -269,6 +285,13 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/metagenomics/</loc>
+    <lastmod>2022-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/programming/</loc>
     <lastmod>2022-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
