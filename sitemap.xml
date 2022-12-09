@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/</loc>
+    
+    <lastmod>2022-12-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/good-and-bad-experiences-in-journal-article-writing/</loc>
     
     <lastmod>2022-12-09</lastmod>
@@ -230,13 +239,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/communitcation/</loc>
-    <lastmod>2022-12-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/tags/astrobiology/</loc>
     <lastmod>2022-12-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -245,6 +247,27 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/popular-science/</loc>
+    <lastmod>2022-12-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/communitcation/</loc>
+    <lastmod>2022-12-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/bioinformatics/</loc>
+    <lastmod>2022-12-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/NGS/</loc>
     <lastmod>2022-12-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -302,6 +325,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/categories/origins-of-life/</loc>
+    <lastmod>2022-12-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/categories/tips-tricks/</loc>
     <lastmod>2022-12-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -309,7 +339,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/origins-of-life/</loc>
+    <loc>https://5uperb0y.com/categories/Metagenomics/</loc>
     <lastmod>2022-12-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -351,14 +381,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/tips-and-tricks/</loc>
+    <loc>https://5uperb0y.com/categories/academic/</loc>
     <lastmod>2022-12-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/</loc>
+    <loc>https://5uperb0y.com/categories/tips-and-tricks/</loc>
     <lastmod>2022-12-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

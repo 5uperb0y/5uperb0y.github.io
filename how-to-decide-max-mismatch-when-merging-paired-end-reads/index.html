@@ -20,25 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="How I waste my time.">
+    <meta name="description" content="illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。 不管使用的軟體為 FLASH 、PEAR 還是 Us">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/archives/2020/index.html">
+<meta property="og:title" content="怎麼決定合併雙端序列時允許的錯配數量？">
+<meta property="og:url" content="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="How I waste my time.">
+<meta property="og:description" content="illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。 不管使用的軟體為 FLASH 、PEAR 還是 Us">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-02-15T16:15:18.000Z">
+<meta property="article:modified_time" content="2022-12-09T16:18:37.841Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="bioinformatics">
+<meta property="article:tag" content="NGS">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/archives/2020/">
+<link rel="canonical" href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2020/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/","path":"how-to-decide-max-mismatch-when-merging-paired-end-reads/","title":"怎麼決定合併雙端序列時允許的錯配數量？"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 5uperb0y's blog</title>
+<title>怎麼決定合併雙端序列時允許的錯配數量？ | 5uperb0y's blog</title>
   
 
 
@@ -70,7 +74,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">5uperb0y's blog</h1>
+      <p class="site-title">5uperb0y's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -220,70 +224,183 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共有 21 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="How I waste my time.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="怎麼決定合併雙端序列時允許的錯配數量？ | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          怎麼決定合併雙端序列時允許的錯配數量？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-02-16 00:15:18" itemprop="dateCreated datePublished" datetime="2022-02-16T00:15:18+08:00">2022-02-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-12-10 00:18:37" itemprop="dateModified" datetime="2022-12-10T00:18:37+08:00">2022-12-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Metagenomics/" itemprop="url" rel="index"><span itemprop="name">Metagenomics</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/how-to-decide-max-mismatch-when-merging-paired-end-reads/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-decide-max-mismatch-when-merging-paired-end-reads/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。</p>
+<p>不管使用的軟體為 FLASH 、PEAR 還是 Usearch，合併雙端序列時都有許多參數可以設定。其中一個參數是合併時允許的錯配數量。這參數的必要性在於，即使順向和逆向序列都源於同一條 DNA，兩者的重疊區域仍會因為定序錯誤而略有差異。合併時允許少量的錯配數量能避免捨棄掉這些正確的序列。</p>
+<p>然而，我們要怎麼知道洽當的錯配數量上限？使用預設值、反覆試誤、調查文獻都是常見的方法，不過我更想要知道能依照資料選定適用參數的策略。畢竟，如果能先推算出理論值，那麼測試時便有參考的基準，除了能縮減試誤時間，在寫論文或向他人解釋方法時也比較有依據。</p>
+<p>因此，雖然在資料處理流程已成熟的今日，糾結參數設定可能被視為無關宏旨，我還是想以本文紀錄，自己思考這個問題的方向與看法。</p>
+<span id="more"></span>
+
+<p>首先，順逆向序列的重疊區只要有任一列發生定序錯誤便會發生錯配。由於 illumina 定序平台的逆向序列品質往往較順向序列品質低，假設不計兩序列同時出錯的狀況，重疊區的錯配數量可由逆向序列的預期鹼基錯誤數量估計。</p>
+<p>由於 illumina 定序平台的逆向序列品質往往較順向序列低，而且重疊區任何一條序列發生定序錯誤便會造成錯配。假設不計兩序列於相同位點同時出錯的狀況，那麼重疊區的錯配數量上限，可以由逆向序列的預期鹼基錯誤數量估計：錯配數量 &lt; 逆向序列重疊區的預期鹼基錯誤數 * 2</p>
+<p>舉例來說，若增幅和定序 16S rRNA 基因 V4 區域之後，獲得一對長度為 250 bp 的序列。由於 V4 區域大約只有 253 bp 長，所以這對序列的重疊區長達 247 bp，幾乎覆蓋了整個 V4 區域。</p>
+<p>假設考慮最極端的狀況，即要在順向和逆向序列的每個鹼基都完全對應時，我們才肯相信合併後的序列源於同一條 DNA。那麼，在逆向序列平均品質分數為 20 的狀況下，重疊區的預期錯誤數量為 $0.99 * 247 &#x3D; 2.47$。</p>
+<p>這意味著，即使是這對序列得自於同一條 DNA，平均而言也會出現 $2.47 * 2 &#x3D; 4.94$ 個錯配。因此至少要允許 5 個錯配，才能確保這些源於同一條 DNA 的正確序列能順利合併。</p>
+<p>推廣來說，錯配數量上限取決於重疊區的長度與品質。隨著對重疊區長度的要求放寬，預期的鹼基錯誤數會跟著下降，允許的錯配數量也得調低，才能確保合併雙端序列的特異性和靈敏度平衡。</p>
+<p>依照這個推論，在取得資料時，可以先思考「若這對序列沒有定序錯誤，要有多長的重疊序列，才肯相信它們得自於同一條DNA」。</p>
+<p>接著，找到平均品質最差的那個樣本的逆向序列，計算其 3’ 端重疊區域的預期鹼基錯誤數（該段區域的定序錯誤率之和），得出數值的兩倍，應該可以當作測試雙端序列合併的參數的起始值。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-11-28T13:17:18+08:00"
-              content="2020-11-28">
-          11-28
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/lee-2017-introduction-to-statistics-and-quantitative-analysis/" itemprop="url">
-            <span itemprop="name">讀後感｜戲說統計</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>5uperb0y (超級boy)
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/" title="怎麼決定合併雙端序列時允許的錯配數量？">https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/bioinformatics/" rel="tag"># bioinformatics</a>
+              <a href="/tags/NGS/" rel="tag"># NGS</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/haskell-2017-the-songs-of-trees/" rel="prev" title="讀後感｜樹之歌">
+                  <i class="fa fa-chevron-left"></i> 讀後感｜樹之歌
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/how-to-download-and-install-rdp-classifier/" rel="next" title="如何下載和安裝 RDP classifier">
+                  如何下載和安裝 RDP classifier <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-01-21T21:20:31+08:00"
-              content="2020-01-21">
-          01-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/why-do-people-write-scientific-articles/" itemprop="url">
-            <span itemprop="name">寫科普又不能當飯吃，為什麼還要寫？</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-
 </div>
   </main>
 
