@@ -49,29 +49,6 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
-<span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
-<ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>寫論文的糟糕和美好經驗</title>
     <url>/good-and-bad-experiences-in-journal-article-writing/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
@@ -120,26 +97,6 @@
       <tags>
         <tag>mindset</tag>
         <tag>career</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>很久很久以前，自然用什麼盛裝生命？</title>
-    <url>/how-nature-contains-life-in-early-earth/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
-<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
-<span id="more"></span>
-
-<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
-<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
-<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
-<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>origins of life</category>
-      </categories>
-      <tags>
-        <tag>astrobiology</tag>
-        <tag>popular science</tag>
       </tags>
   </entry>
   <entry>
@@ -198,6 +155,26 @@
       </tags>
   </entry>
   <entry>
+    <title>很久很久以前，自然用什麼盛裝生命？</title>
+    <url>/how-nature-contains-life-in-early-earth/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
+<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
+<span id="more"></span>
+
+<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
+<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
+<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
+<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>origins of life</category>
+      </categories>
+      <tags>
+        <tag>astrobiology</tag>
+        <tag>popular science</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>怎麼決定合併雙端序列時允許的錯配數量？</title>
     <url>/how-to-decide-max-mismatch-when-merging-paired-end-reads/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。</p>
@@ -221,39 +198,6 @@
       <tags>
         <tag>bioinformatics</tag>
         <tag>NGS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何下載和安裝 RDP classifier</title>
-    <url>/how-to-download-and-install-rdp-classifier/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>RDP classifier 是基於 Naive Bayes 的物種分類器，常用於註解 16S rRNA 基因序列的分類資訊。除了使用內建的 RDP 資料庫以外，RDP classifier 也允許使用自訂資料庫來訓練分類器。除了內建的 RDP database，也支援以其他資料庫來訓練分類器。</p>
-<p>目前，RDP classifier 的核心演算法已被整合到 Mothur 和 DADA2 等流程的副程式庫，所以只要有安裝這些流程軟體，即使沒有安裝 RDP classifier，也能以相同的演算法註解物種資訊。然而，若想要依據自訂或最新的資料庫註解序列，或是使用 copy number 校正等功能，仍有獨立使用 RDP classifier 的必要。</p>
-<p>本文將介紹三種下載和安裝 RDP classifier 的方式。</p>
-<span id="more"></span>
-
-<h2 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h2><p>透過 conda 安裝的方式可參考 <a href="https://anaconda.org/bioconda/rdp_classifier">Anaconda 的教學</a>。目前，conda 與 RDP 官網提供的 classifier 皆為最新的 2.13 版。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c bioconda rdp_classifier</span><br><span class="line">conda install -c bioconda/label/cf201901 rdp_classifier</span><br></pre></td></tr></table></figure>
-
-<h2 id="官方網站"><a href="#官方網站" class="headerlink" title="官方網站"></a>官方網站</h2><p>若不想要裝一堆附加的軟體或剛好 conda 沒有需要的版本，也可以直接到官網提供的<a href="https://sourceforge.net/projects/rdp-classifier/">連結</a>下載可執行檔。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://jaist.dl.sourceforge.net/project/rdp-classifier/rdp-class</span><br><span class="line">ifier/rdp_classifier_2.13.zip</span><br><span class="line">unzip rdp_classifier_2.13.zip</span><br><span class="line"><span class="built_in">chmod</span> u+x path/to/rdp_classifier_2.13/dist/classifier.jar</span><br></pre></td></tr></table></figure>
-
-<p>由於 RDP classifier 是依賴 JAVA 的軟體，所以執行時要輸入 .jar 的絕對路徑。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar /path/to/rdp_classifier_2.13/dist/classifier.jar &lt;<span class="built_in">command</span>&gt;  </span><br><span class="line">&lt;parameters&gt;</span><br></pre></td></tr></table></figure>
-<p>為了簡化指令，可以創造名為 rdp_classifier 的腳本，並將腳本所在的目錄加入環境變數。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch rdp_classifier</span><br><span class="line">chmod u+x rdp_classifier</span><br><span class="line">vim rdp_classifier</span><br></pre></td></tr></table></figure>
-<p>接著把落落長的指令放到腳本中。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">java -jar /path/to/rdp_classifier_2.13/dist/classifier.jar $*</span><br></pre></td></tr></table></figure>
-<p>如此一來，往後執行時就只需要輸入 rdp_classifier即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rdp_classifier &lt;<span class="built_in">command</span>&gt; &lt;parameters&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><p>若是 Ubuntu，則可以從套件庫安裝。只是相較於 conda，ubuntu 套件庫內的 RDP classifier 還<a href="https://packages.ubuntu.com/impish/rdp-classifier">停在 2.10 版</a>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get -y install rdp-classifier</span><br></pre></td></tr></table></figure>
-<p>除了前述方法，也能夠安裝集合了 RDP 團隊包含了 classifier 在內各種開發工具的 <a href="https://github.com/rdpstaff/RDPTools">RDPTools</a>。只是 RDPTools 是透過 make 和 makefile 來編譯與安裝。由於依賴的軟體和環境設定等問題，我到現在還沒成功過，暫時無法整理出相關的筆記。</p>
-]]></content>
-      <categories>
-        <category>metagenomics</category>
-      </categories>
-      <tags>
-        <tag>database</tag>
       </tags>
   </entry>
   <entry>
@@ -360,37 +304,39 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜217. Contains Duplicate</title>
-    <url>/leetcode-217-contains-duplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+    <title>LeetCode｜153. Find Minimum in Rotated Sorted Array</title>
+    <url>/leetcode-153-find-minimum-in-rotated-sorted-array/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given the sorted rotated<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]">1</span></a></sup> array <code>nums</code> of unique elements, return the <em>minimum element of this array</em>.</p>
 </blockquote>
-<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
-<p>Example:</p>
+<p>平移一嚴格遞增數列各項 n 單位後，求此數列的最小值</p>
+<p><strong>樣例</strong></p>
 <blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+<p>Input: nums &#x3D; [3,4,5,1,2]<br>Output: 1</p>
 </blockquote>
+<p><em>須留意幾個樣例：數列只含一項、數列只含兩項、平移後與原數列相同、最小值位於數列尾部</em></p>
 <span id="more"></span>
 
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<p><strong>限制</strong></p>
 <ul>
-<li>數字重複出現</li>
-<li>array 長度大於其中數字種類數</li>
-<li>若將 array 排序，則重複的數字比鄰出現</li>
+<li><code>n == nums.length</code>：數列長度為 n</li>
+<li><code>1 &lt;= n &lt;= 5000</code>：數列長度介於 1 至 5000 項</li>
+<li><code>-5000 &lt;= nums[i] &lt;= 5000</code>：數列各項介於 -5000 至 5000，因此兩項相加不至於超出整數大小的上下界</li>
+<li>All the integers of <code>nums</code> are <strong>unique</strong>：數列各項唯一</li>
+<li><code>nums</code> is sorted and rotated between <code>1</code> and <code>n</code> times：數列已排序，且至多平移 n 次，最少平移 1 次</li>
+<li>You must write an algorithm that runs in <code>O(log n)</code> time：此題有時間複雜度限制</li>
 </ul>
-<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>知識點</strong><br>binary search</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題的關鍵在於判斷最小值，並使用二分搜尋法簡化找尋最小值的步驟。</p>
+<p>由於數列已由小到大排序，所以如果某項數值在平移後小於前一項，該項即為數列的最小值。依照這項原則，可以先定義 <code>left</code>、<code>mid</code>、<code>right</code> 三個指標，其中 <code>mid</code> 是 <code>left</code> 與 <code>right</code> 的中間值。</p>
+<p>若 <code>nums[mid]</code> 小於其前一項，則 <code>nums[mid]</code> 為最小值，即可中斷迴圈並回傳題解。若尚未找到最小值，則可比較 <code>nums[mid]</code> 與 <code>nums[right]</code>，選定下一個搜索標的。</p>
+<p>假設 <code>nums[right]</code> &gt; <code>nums[mid]</code>，表示數列於 <code>mid</code> 至 <code>right</code> 之間嚴格遞增，表示原數列的首尾交接處不在此區間，所以可以縮小搜索範圍到 <code>left</code> 至 <code>mid - 1</code> 之間。反之，則表示數列於 <code>left</code> 至 <code>mid</code> 之間嚴格遞增，則可縮小搜索範圍至 <code>mid + 1</code> 至 <code>right</code> 之間。</p>
+<p>由於嚴格遞增數列一定有唯一的最小值，所以最遲在 <code>left</code> 與 <code>right</code> 指向同一座標時，會找到數列最小值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findMin</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            mid = right - (right - left)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] &lt; nums[mid - <span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> nums[mid] &gt; nums[right]:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span>(nums[mid])</span><br></pre></td></tr></table></figure>
 
-<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
-<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
-</li>
-<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
-</li>
-<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
-</li>
-</ul>
-]]></content>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="mid-的定義方式"><a href="#mid-的定義方式" class="headerlink" title="mid 的定義方式"></a><code>mid</code> 的定義方式</h3><p><code>mid</code> 亦可定義為 <code>(left + right)//2</code>，但聽同事討論，若兩數的數值極大，則有數值超出整數範圍的風險。以相減的方式撰寫則一定不會超出範圍。</p>
+<h3 id="判斷首尾交界處的方式"><a href="#判斷首尾交界處的方式" class="headerlink" title="判斷首尾交界處的方式"></a>判斷首尾交界處的方式</h3><p>有看過同事在比較時，不比對 <code>nums[right]</code>，而是比對 <code>nums[-1]</code>，有一樣的效果。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
         <category>programming</category>
       </categories>
@@ -446,6 +392,228 @@
       </categories>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜217. Contains Duplicate</title>
+    <url>/leetcode-217-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<ul>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
+</ul>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何下載和安裝 RDP classifier</title>
+    <url>/how-to-download-and-install-rdp-classifier/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>RDP classifier 是基於 Naive Bayes 的物種分類器，常用於註解 16S rRNA 基因序列的分類資訊。除了使用內建的 RDP 資料庫以外，RDP classifier 也允許使用自訂資料庫來訓練分類器。除了內建的 RDP database，也支援以其他資料庫來訓練分類器。</p>
+<p>目前，RDP classifier 的核心演算法已被整合到 Mothur 和 DADA2 等流程的副程式庫，所以只要有安裝這些流程軟體，即使沒有安裝 RDP classifier，也能以相同的演算法註解物種資訊。然而，若想要依據自訂或最新的資料庫註解序列，或是使用 copy number 校正等功能，仍有獨立使用 RDP classifier 的必要。</p>
+<p>本文將介紹三種下載和安裝 RDP classifier 的方式。</p>
+<span id="more"></span>
+
+<h2 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h2><p>透過 conda 安裝的方式可參考 <a href="https://anaconda.org/bioconda/rdp_classifier">Anaconda 的教學</a>。目前，conda 與 RDP 官網提供的 classifier 皆為最新的 2.13 版。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c bioconda rdp_classifier</span><br><span class="line">conda install -c bioconda/label/cf201901 rdp_classifier</span><br></pre></td></tr></table></figure>
+
+<h2 id="官方網站"><a href="#官方網站" class="headerlink" title="官方網站"></a>官方網站</h2><p>若不想要裝一堆附加的軟體或剛好 conda 沒有需要的版本，也可以直接到官網提供的<a href="https://sourceforge.net/projects/rdp-classifier/">連結</a>下載可執行檔。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://jaist.dl.sourceforge.net/project/rdp-classifier/rdp-class</span><br><span class="line">ifier/rdp_classifier_2.13.zip</span><br><span class="line">unzip rdp_classifier_2.13.zip</span><br><span class="line"><span class="built_in">chmod</span> u+x path/to/rdp_classifier_2.13/dist/classifier.jar</span><br></pre></td></tr></table></figure>
+
+<p>由於 RDP classifier 是依賴 JAVA 的軟體，所以執行時要輸入 .jar 的絕對路徑。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar /path/to/rdp_classifier_2.13/dist/classifier.jar &lt;<span class="built_in">command</span>&gt;  </span><br><span class="line">&lt;parameters&gt;</span><br></pre></td></tr></table></figure>
+<p>為了簡化指令，可以創造名為 rdp_classifier 的腳本，並將腳本所在的目錄加入環境變數。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch rdp_classifier</span><br><span class="line">chmod u+x rdp_classifier</span><br><span class="line">vim rdp_classifier</span><br></pre></td></tr></table></figure>
+<p>接著把落落長的指令放到腳本中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">java -jar /path/to/rdp_classifier_2.13/dist/classifier.jar $*</span><br></pre></td></tr></table></figure>
+<p>如此一來，往後執行時就只需要輸入 rdp_classifier即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rdp_classifier &lt;<span class="built_in">command</span>&gt; &lt;parameters&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><p>若是 Ubuntu，則可以從套件庫安裝。只是相較於 conda，ubuntu 套件庫內的 RDP classifier 還<a href="https://packages.ubuntu.com/impish/rdp-classifier">停在 2.10 版</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get -y install rdp-classifier</span><br></pre></td></tr></table></figure>
+<p>除了前述方法，也能夠安裝集合了 RDP 團隊包含了 classifier 在內各種開發工具的 <a href="https://github.com/rdpstaff/RDPTools">RDPTools</a>。只是 RDPTools 是透過 make 和 makefile 來編譯與安裝。由於依賴的軟體和環境設定等問題，我到現在還沒成功過，暫時無法整理出相關的筆記。</p>
+]]></content>
+      <categories>
+        <category>metagenomics</category>
+      </categories>
+      <tags>
+        <tag>database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
+    <url>/nextflow-escape-characters/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
+<span id="more"></span>
+<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
+<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
+<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
+<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
+
+<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
+<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;\$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
+<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
+
+<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
+<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
+<ul>
+<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
+<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
+</ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+<span id="more"></span>
+
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜怎麼從運行中的腳本取回參數？</title>
+    <url>/nextflow-retrieve-configuration-when-workflow-runs/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在執行腳本前，Nextflow 會讀取設置檔 (configuration files) 中的參數，將之代入腳本的對應位置後再執行程式。這項特性有助於使用者管理複雜流程的輸入值與環境設定，也將具體數值從流程邏輯抽離，讓開發者專注於流程的梳理與串接。</p>
+<p>然而，隨著流程腳本改版，設置檔的內容也可能跟著改變，是否有方法能記錄執行流程時使用的設置檔，以利往後重現分析或追蹤歷次設定？</p>
+<p>在這篇文中，我首先介紹了 nextflow 導入參數的方式，再陳述取回參數的可行策略，並附上這些策略的最簡範例供參考。</p>
+<span id="more"></span>
+
+<h2 id="Nextflow-導入參數的方式"><a href="#Nextflow-導入參數的方式" class="headerlink" title="Nextflow 導入參數的方式"></a>Nextflow 導入參數的方式</h2><p>以下是 nextflow 導入參數的常見方式，若一參數被多種方式定義，則會以順位較小者為準。</p>
+<table>
+<thead>
+<tr>
+<th>順位</th>
+<th>方式</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>於命令列輸入</td>
+<td><code>nextflow run workflow.nf --something value</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>以 <code>-params-file</code> 導入</td>
+<td><code>nextflow run workflow.nf -params-file params.json</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>以 <code>-c</code> 導入</td>
+<td><code>nextflow run workflow.nf -c params.config</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>於 nextflow 腳本內宣告</td>
+<td><code>params.something = value</code></td>
+</tr>
+</tbody></table>
+<h2 id="使用-params-取回參數"><a href="#使用-params-取回參數" class="headerlink" title="使用 params 取回參數"></a>使用 <code>params</code> 取回參數</h2><p>其中一個方法是讀取 <code>params</code> 的內容，<code>params</code>是 nextflow 的<a href="https://www.nextflow.io/docs/latest/script.html?highlight=implicit#implicit-variables">隱變項</a>，採用 <code>[key1:value1, key2:value2,...]</code>格式存儲以不同方式導入的參數。</p>
+<h3 id="params-json"><a href="#params-json" class="headerlink" title="params.json"></a>params.json</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;paramsDerivedConfig&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;provided using the -params-file option&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="params-config"><a href="#params-config" class="headerlink" title="params.config"></a>params.config</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">params &#123;</span><br><span class="line">    configDerivedConfig = <span class="string">&quot;specified using the -c option&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="getConfig-nf"><a href="#getConfig-nf" class="headerlink" title="getConfig.nf"></a>getConfig.nf</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">params.inScriptConfig = <span class="string">&quot;defined within the script itself&quot;</span></span><br><span class="line">process retrieveConfigFromParams &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;$params&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    getConfig().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run getConfig.nf --commandSpecifiedConfig <span class="string">&quot;specified on the command line&quot;</span> -params-file params.json -c params.config</span><br><span class="line">[configDerivedConfig:specified using the -c option, config-derived-config:specified using the -c option, paramsDerivedConfig:provided using the -params-file option, params-derived-config:provided using the -params-file option, commandSpecifiedConfig:specified on the <span class="built_in">command</span> line, command-specified-config:specified on the <span class="built_in">command</span> line, inScriptConfig:defined within the script itself, in-script-config:defined within the script itself]</span><br></pre></td></tr></table></figure>
+
+<h2 id="從輸入路徑取回參數"><a href="#從輸入路徑取回參數" class="headerlink" title="從輸入路徑取回參數"></a>從輸入路徑取回參數</h2><p>然而，前述方法只能取回以 <code>params</code> 存儲的參數，若想取得 <code>process</code>, <code>docker</code>, <code>report</code> 等<a href="https://www.nextflow.io/docs/latest/config.html?highlight=params#config-scopes">其它設置 (configuration scope)</a>，可以讀取位於 <code>$launchDir</code> 的 <code>.nextflow.log</code>，從中獲得當初執行腳本時輸入的 <code>*.config</code> 路徑，再將設置擋複製出來。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">process getConfig &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    shell:</span><br><span class="line">    <span class="string">&#x27;&#x27;</span><span class="string">&#x27;</span></span><br><span class="line"><span class="string">    str=$(grep &quot;User config file:&quot; &quot;!&#123;launchDir&#125;/.nextflow.log&quot;)</span></span><br><span class="line"><span class="string">    config=$&#123;str##*:&#125;</span></span><br><span class="line"><span class="string">    echo $&#123;config&#125;</span></span><br><span class="line"><span class="string">    &#x27;</span><span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    getConfig().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run getConfig.nf -c params.config</span><br><span class="line">/home/user/workflow/params.config</span><br></pre></td></tr></table></figure>
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>若能從運行中的 nextflow 腳本取回輸入參數，將有助於往後重現分析或追蹤設置。目前，nextflow 有兩個隱變項能協助我們達成這項任務，</p>
+<ul>
+<li><code>params</code>：記錄了不同管道導入的參數，可以在 <code>*.nf</code> 檔各處呼叫以取得書入的參數和設定。</li>
+<li><code>launchDir</code>：雖然本身與參數無關，但此變項記錄了腳本執行位置，其中的 <code>.nextflow.log</code> 記錄了 <code>*.config</code> 路徑。讀取該檔即可獲取輸入的參數和設定。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -571,133 +739,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
-    <url>/nextflow-escape-characters/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
-<span id="more"></span>
-<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
-<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
-<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
-<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
-
-<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
-<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;\$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
-<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
-
-<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
-<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
-<ul>
-<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
-<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
-</ul>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜怎麼從運行中的腳本取回參數？</title>
-    <url>/nextflow-retrieve-configuration-when-workflow-runs/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在執行腳本前，Nextflow 會讀取設置檔 (configuration files) 中的參數，將之代入腳本的對應位置後再執行程式。這項特性有助於使用者管理複雜流程的輸入值與環境設定，也將具體數值從流程邏輯抽離，讓開發者專注於流程的梳理與串接。</p>
-<p>然而，隨著流程腳本改版，設置檔的內容也可能跟著改變，是否有方法能記錄執行流程時使用的設置檔，以利往後重現分析或追蹤歷次設定？</p>
-<p>在這篇文中，我首先介紹了 nextflow 導入參數的方式，再陳述取回參數的可行策略，並附上這些策略的最簡範例供參考。</p>
-<span id="more"></span>
-
-<h2 id="Nextflow-導入參數的方式"><a href="#Nextflow-導入參數的方式" class="headerlink" title="Nextflow 導入參數的方式"></a>Nextflow 導入參數的方式</h2><p>以下是 nextflow 導入參數的常見方式，若一參數被多種方式定義，則會以順位較小者為準。</p>
-<table>
-<thead>
-<tr>
-<th>順位</th>
-<th>方式</th>
-<th>範例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>於命令列輸入</td>
-<td><code>nextflow run workflow.nf --something value</code></td>
-</tr>
-<tr>
-<td>2</td>
-<td>以 <code>-params-file</code> 導入</td>
-<td><code>nextflow run workflow.nf -params-file params.json</code></td>
-</tr>
-<tr>
-<td>3</td>
-<td>以 <code>-c</code> 導入</td>
-<td><code>nextflow run workflow.nf -c params.config</code></td>
-</tr>
-<tr>
-<td>4</td>
-<td>於 nextflow 腳本內宣告</td>
-<td><code>params.something = value</code></td>
-</tr>
-</tbody></table>
-<h2 id="使用-params-取回參數"><a href="#使用-params-取回參數" class="headerlink" title="使用 params 取回參數"></a>使用 <code>params</code> 取回參數</h2><p>其中一個方法是讀取 <code>params</code> 的內容，<code>params</code>是 nextflow 的<a href="https://www.nextflow.io/docs/latest/script.html?highlight=implicit#implicit-variables">隱變項</a>，採用 <code>[key1:value1, key2:value2,...]</code>格式存儲以不同方式導入的參數。</p>
-<h3 id="params-json"><a href="#params-json" class="headerlink" title="params.json"></a>params.json</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;paramsDerivedConfig&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;provided using the -params-file option&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="params-config"><a href="#params-config" class="headerlink" title="params.config"></a>params.config</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">params &#123;</span><br><span class="line">    configDerivedConfig = <span class="string">&quot;specified using the -c option&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="getConfig-nf"><a href="#getConfig-nf" class="headerlink" title="getConfig.nf"></a>getConfig.nf</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">params.inScriptConfig = <span class="string">&quot;defined within the script itself&quot;</span></span><br><span class="line">process retrieveConfigFromParams &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;$params&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    getConfig().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run getConfig.nf --commandSpecifiedConfig <span class="string">&quot;specified on the command line&quot;</span> -params-file params.json -c params.config</span><br><span class="line">[configDerivedConfig:specified using the -c option, config-derived-config:specified using the -c option, paramsDerivedConfig:provided using the -params-file option, params-derived-config:provided using the -params-file option, commandSpecifiedConfig:specified on the <span class="built_in">command</span> line, command-specified-config:specified on the <span class="built_in">command</span> line, inScriptConfig:defined within the script itself, in-script-config:defined within the script itself]</span><br></pre></td></tr></table></figure>
-
-<h2 id="從輸入路徑取回參數"><a href="#從輸入路徑取回參數" class="headerlink" title="從輸入路徑取回參數"></a>從輸入路徑取回參數</h2><p>然而，前述方法只能取回以 <code>params</code> 存儲的參數，若想取得 <code>process</code>, <code>docker</code>, <code>report</code> 等<a href="https://www.nextflow.io/docs/latest/config.html?highlight=params#config-scopes">其它設置 (configuration scope)</a>，可以讀取位於 <code>$launchDir</code> 的 <code>.nextflow.log</code>，從中獲得當初執行腳本時輸入的 <code>*.config</code> 路徑，再將設置擋複製出來。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">process getConfig &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    shell:</span><br><span class="line">    <span class="string">&#x27;&#x27;</span><span class="string">&#x27;</span></span><br><span class="line"><span class="string">    str=$(grep &quot;User config file:&quot; &quot;!&#123;launchDir&#125;/.nextflow.log&quot;)</span></span><br><span class="line"><span class="string">    config=$&#123;str##*:&#125;</span></span><br><span class="line"><span class="string">    echo $&#123;config&#125;</span></span><br><span class="line"><span class="string">    &#x27;</span><span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    getConfig().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run getConfig.nf -c params.config</span><br><span class="line">/home/user/workflow/params.config</span><br></pre></td></tr></table></figure>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>若能從運行中的 nextflow 腳本取回輸入參數，將有助於往後重現分析或追蹤設置。目前，nextflow 有兩個隱變項能協助我們達成這項任務，</p>
-<ul>
-<li><code>params</code>：記錄了不同管道導入的參數，可以在 <code>*.nf</code> 檔各處呼叫以取得書入的參數和設定。</li>
-<li><code>launchDir</code>：雖然本身與參數無關，但此變項記錄了腳本執行位置，其中的 <code>.nextflow.log</code> 記錄了 <code>*.config</code> 路徑。讀取該檔即可獲取輸入的參數和設定。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>卡西尼號與行星保護</title>
     <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -726,39 +767,6 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>career</tag>
         <tag>communication</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜背景執行 workflow 的方法</title>
-    <url>/nextflow-run-in-background/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
-<span id="more"></span>
-<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
-
-<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
-<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
-
-<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
-<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -805,6 +813,70 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <categories>
         <category>academic</category>
+      </categories>
+      <tags>
+        <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>寫科普又不能當飯吃，為什麼還要寫？</title>
+    <url>/why-do-people-write-scientific-articles/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文是 Mitalk 4 講座「科普如何當飯吃？」的聽講心得，陳俊堯老師在演講一開始先回答了這問題，再一一告訴我們，如果無法靠寫科普賺錢營生，那麼從事研究的學生、老師和學者們，到底有什麼理由勞心費神去寫科普文？</p>
+<blockquote>
+<p>科普如何當飯吃？做夢吧，科普怎麼可能當飯吃。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="科普不能當飯吃，為什麼還要寫科普？"><a href="#科普不能當飯吃，為什麼還要寫科普？" class="headerlink" title="科普不能當飯吃，為什麼還要寫科普？"></a>科普不能當飯吃，為什麼還要寫科普？</h2><h3 id="即使無法靠科普吃飯，也能藉由撰寫科普成長"><a href="#即使無法靠科普吃飯，也能藉由撰寫科普成長" class="headerlink" title="即使無法靠科普吃飯，也能藉由撰寫科普成長"></a>即使無法靠科普吃飯，也能藉由撰寫科普成長</h3><p>老師提到，他的著作《細菌好朋友》雖然囊括許多獎項，但半年的銷量折算為利潤後僅得兩萬餘元。既然連成功的出版品都無法為作者帶來財富，那研究生為什麼要勞費心力撰寫更冷門的科普文章？</p>
+<p>儘管老師提及科普能促進跨領域對話、增進國民素養或支援科學教育，但先不論寫科普的外部效益，書寫本身就是一種有效的學習方式。</p>
+<p>很多時候我們不是懂了才開始寫作，而是從蒐集資料、提煉知識和撰寫文章的過程中，逐漸了解想要傳達的事物。具體的文字能協助我們察覺思路不嚴謹之處，而寫作瓶頸則讓我們意識到知識的空缺。因此，即使我們無法憑藉科普營生，也能從撰寫中成長。</p>
+<h3 id="研究員也能為自己的愛好發聲"><a href="#研究員也能為自己的愛好發聲" class="headerlink" title="研究員也能為自己的愛好發聲"></a>研究員也能為自己的愛好發聲</h3><p>但是，當今有許多科普網站和知識型 Youtuber 向大眾導讀論文和破解迷思，那麼研究員還有必要跳進來寫科普嗎？若想要自我成長，為什麼不寫在筆記本上就好了？</p>
+<p>首先，學術需要政府與社會支持，研究員不能總是期待他人為研究議題發聲。以新視野號任務為例，由於美國政府的漠視，探索冥王星始終不是太空任務的優先目標，即使獲准執行，其預算也接連被削減。</p>
+<p>為此，志在研究冥王星的 Alan Stern 只得想盡辦法遊說國會，並發起請願以尋求大眾支持。最終，新視野號任務總算排進了正式的探索行程中。雖然不能把任務的成功完全歸功於科普，但這項案例告訴我們：若研究員能為了自己的好奇心而發聲，嘗試去說服他人，那麼確實有機會將個人的願望推廣為大眾的願望。</p>
+<p>在說服大眾方面，科普文章是性價比很高的工具。儘管影視寓教於樂，但研究員恐無暇製作。相較之下，寫作的成本低廉還能傳遞最多資訊。內容確實且題材多樣的文字材料，可作為其他科普媒介發展的基礎，擴張文章的影響力。</p>
+<h3 id="不輕易將話語權讓給不懷好意的人"><a href="#不輕易將話語權讓給不懷好意的人" class="headerlink" title="不輕易將話語權讓給不懷好意的人"></a>不輕易將話語權讓給不懷好意的人</h3><p>教育家不是唯一對科普感興趣的人，還有濾水器廠商、智慧設計學家、政客等不懷好意的人也等著扭曲科學事實以支持他們的主張。因此，即使認為教育普羅大眾沒什麼益處，研究員也是較有立場和專業去維護科學的理性客觀價值。</p>
+<p>相關案例在同婚公投期間層出不窮。護家盟為了表達反同立場，除了引用爭議性研究以外，還任意曲解其他學者經過長年研究和同儕審查得出的嚴謹結果。即使是研究人員本身，也會受到政治立場影響，做出有瑕疵的研究。</p>
+<p>鑒於這些情形，研究員就算不為積極的理由寫作，也有動機為消極的理由發聲，以免研究成果為人利用，最後損及大眾對科學的信任。</p>
+<h3 id="科普文章是經驗交流的管道"><a href="#科普文章是經驗交流的管道" class="headerlink" title="科普文章是經驗交流的管道"></a>科普文章是經驗交流的管道</h3><p>最後，撰寫科普也能協力國內的科學教育發展。儘管推動雙語教學的風氣日盛，中文始終是最便捷的語言。但除了有限的翻譯書籍和科普網站，國高中生欠缺可靠的中文資料，架構完整而且內容正確的中文科普文章可以填補這個空缺。</p>
+<p>我認為，即使是研究生也能受益於科普寫作。相較於國外林立的論壇，台灣的網路學術經驗交流很封閉，許多技術細節和科研心得埋藏在碩博士論文、實驗室內網或私密社群裡，以至於解決問題的經驗無法共享和傳承。</p>
+<p>可是，國外既有成熟的討論區，為何執意要促進我們自己的交流風氣？首先，多數人的中文優於英文，故以中文撰寫文章較能準確表達觀念。再則，即使面對同樣問題，解決辦法與說明方式也因人而異，多元的內容能惠及不同程度和背景的群眾。</p>
+<p>是以，撰寫科普文章不僅能彙整思路和鞏固知識，也能保留思考的成果，幫助他人解決困難。由於互助的效益會隨參與人數增加，所以即使費時耗力也值得投資。</p>
+<h2 id="那麼該如何撰寫科普文章呢？"><a href="#那麼該如何撰寫科普文章呢？" class="headerlink" title="那麼該如何撰寫科普文章呢？"></a>那麼該如何撰寫科普文章呢？</h2><h3 id="科普、課本和論文的差異在於受眾"><a href="#科普、課本和論文的差異在於受眾" class="headerlink" title="科普、課本和論文的差異在於受眾"></a>科普、課本和論文的差異在於受眾</h3><p>由於科普、課本和論文的目的皆為有效傳達訊息，優良的著作皆具有趣、簡潔和明瞭等特性。然而，三種文體的受眾不一，所以各自側重不同特性。論文的讀者是學者，所以旁徵博引、言簡意賅；課本的讀者是學生，因此體系完整、內容詳盡。</p>
+<p>至於科普的讀者，則是任何有興趣的大眾。是以，科普雖然像論文一樣報導新知，卻不能吝於用字；科普也跟課本一樣具有理解新知所需的背景知識，卻不應填塞無關的資訊。除了話不能省和料不能多，科普文章要能製造驚奇以取悅讀者。</p>
+<h3 id="撰寫科普的第一步是選定讀者"><a href="#撰寫科普的第一步是選定讀者" class="headerlink" title="撰寫科普的第一步是選定讀者"></a>撰寫科普的第一步是選定讀者</h3><p>讀者的年齡、背景和興趣攸關選材、用字和敘事風格。因此，撰寫科普文章的第一步是選定讀者，接著推測讀者想讀的內容，尋找具有衝擊性的主題。至於該怎麼寫，可以參考老師提出的「派大星貓一拳結構」。</p>
+<p>每一篇科普都是一場冒險，文章開頭要建立現實與科學之間的橋樑，吸引讀者踏入作者營造的奇妙世界。例如，想要介紹趨化性 (chemotaxis)，可以從「撲鼻而來的雞排味」寫起，利用與主題相關的生活經驗，讓讀者對內容有具體的概念，也讓他們了解自己與主題的關係。</p>
+<p>好的故事需要鋪陳，重要觀念也有其前提，所以破題之後先別切入重點，要交代問題和背景知識。例如經典的回馬槍結構：提問以後，先順應大眾的常識推論，接著點出先前敘述的矛盾，讓讀者在觀念衝突之下，迫不及待想要知道答案。</p>
+<p>鋪陳以後迎來故事的高潮，要把想傳達的科學概念清楚明瞭地寫出來。最後則要總結文章，再次連結主題和生活經驗，把讀者送回現實。而更多寫作結構的細節，老師推薦我們讀讀《怎樣談科學》。</p>
+<h3 id="撰寫科普的訣竅"><a href="#撰寫科普的訣竅" class="headerlink" title="撰寫科普的訣竅"></a>撰寫科普的訣竅</h3><p>寫作時請留意，科普讀者只是還沒學到相關知識，而不是欠缺理解能力。因此，要簡化內容，但不要藐視讀者（例如對著國小學生用）。</p>
+<p>其次，儘管寫作時要交代背景知識，並且陳述推理的過程，但用字仍要力求簡練，以免花俏或冗贅的字眼模糊焦點。老師強調「話不能省」是指邏輯不要跳躍，而不是用繁複的文字困擾讀者。</p>
+<p>最後，撰寫文章是學習的過程，所以開始動筆時對主題沒有完整的理解仍可以接受。然而在交付文章之前，要再三確認自己已經搞懂，以免寫出似是而非的奇怪內容。</p>
+<h2 id="該如何練習寫科普？"><a href="#該如何練習寫科普？" class="headerlink" title="該如何練習寫科普？"></a>該如何練習寫科普？</h2><h3 id="所謂寫作，就是空出時間寫作"><a href="#所謂寫作，就是空出時間寫作" class="headerlink" title="所謂寫作，就是空出時間寫作"></a>所謂寫作，就是空出時間寫作</h3><p>所謂寫作，就是空出時間寫作。他人整理的訣竅得在練習中實踐，障礙和困難也只有在實作中才能體會。而且，文章完成後才有被閱讀和被修改的機會，因此，老師在建議大家，聽完演講以後趕快找一則論文試試看。</p>
+<h3 id="以改寫培養寫作能力"><a href="#以改寫培養寫作能力" class="headerlink" title="以改寫培養寫作能力"></a>以改寫培養寫作能力</h3><p>如果真的不知道怎麼寫，可以從改寫起步。首先熟讀感興趣的論文，再擷取核心觀念以中文重述（若想要省事也可以直接從摘要開始改寫）。</p>
+<p>接著，思考想傳達給讀者的訊息，開始移除不必要的內容。例如在介紹飲食跟腸道微生物關係的文章裡，不需要用大半篇幅解釋 PCA ，重點是讓讀者明白吃肉的人吃素的人，腸道裡的微生物有什麼差異。</p>
+<p>由於術語、抽象詞和簡稱會造成困惑，所以可以用代稱、範例和比喻等技巧減輕讀者的負擔。例如以下這段截自維基百科的句子便含有許多難解的詞彙：</p>
+<blockquote>
+<p><strong>枯草桿菌（學名：Bacillus subtilis）</strong>，是<strong>芽孢桿菌屬</strong>的一種細菌，為<strong>革蘭氏陽性</strong>的好氣性菌，普遍存在於土壤及植物體表，在人體亦可發現在腸道內共生的枯草桿菌。型態上的主要特徵是菌體表面生有<strong>鞭毛</strong>，體內形成的<strong>內生孢子</strong>可抵抗惡劣的外在環境而存活。</p>
+</blockquote>
+<p>可以改寫為：</p>
+<blockquote>
+<p>人的肚子裡住著一群長條狀的細菌，叫做 Bacillus subtilis ——就叫它 B 細菌吧。 B 細菌身上有條尾巴，所以可以在肚子裡游來游去。</p>
+</blockquote>
+<p>在改寫版本裡，用「肚子裡住著」來解釋「共生」（比喻），用 B 細菌替代 Bacillus subtilis 減輕讀者對英文的恐懼（代稱）卻不損害本意。最後以游泳為例，說明鞭毛的功能（範例）。此處用尾巴比喻鞭毛可能造成誤解，所以可以補充鞭毛的照片給讀者正確的印象。</p>
+<p>改寫後，能用「因為」、「所以」、「但是」等連接詞完善文章的架構，讓讀者了解此段的用意和前後文關係。而且要顧及讀者的注意力和記憶力，適時總結內容或插入圖片以調整閱讀節奏。</p>
+<p>綜上所述，透過改寫培養寫作能力的流程就是：閱讀文獻、決定要旨、篩選內容、改寫文句、理清句子關係、安插小結與圖片。接下來就能分享成品給其他人看，再從回饋中改進自己不足之處了。</p>
+<h3 id="可以在哪裡寫科普？"><a href="#可以在哪裡寫科普？" class="headerlink" title="可以在哪裡寫科普？"></a>可以在哪裡寫科普？</h3><p>寫文章難，找到讀者更難，讀者願意給意見則難上加難。儘管讀者的回饋可以促使作者成長，但寫作初期不容易找到知音，此時可以投稿科學月刊、泛科學和科普寫作網路平台等媒體，在與編輯來往的過程中學習。（即使被退稿，也能了解自己與已出版著作的差異。）</p>
+<p>除此之外，社群網站也是分享文章的管道。許多組織都會利用社群網站傳遞消息，所以作者也能利用臉書或推特宣傳作品。然而社群媒體適合宣傳，卻不適合保存知識。簡言之，這些網站的內部檢索不友善，對搜尋引擎的支援也不佳，所以不易取用裡頭的資訊。</p>
+<p>所以，我認為在個人網頁寫作然後用社群網站推廣，是兼顧知識保存和即時交流的好方法（也可以利用 medium 這樣結合寫文和社交的平台）。而這種方式也非新鮮事，因為在軟體工程的圈子裡，透過撰寫技術文章來自我提升已是常態。</p>
+<p>當然，寫作除了養成能力以外，也是建立個人知識品牌的手段。想知道在熟練科普寫作以後，要怎麼拓展自己發言的份量，老師推薦我們讀《知識內容寫作課》。</p>
+<h3 id="科普不是終點"><a href="#科普不是終點" class="headerlink" title="科普不是終點"></a>科普不是終點</h3><p>演講後，有同學請教老師怎麼避免想要解釋的衝動。的確，為了達到普及的效果，科普不免要犧牲文章的精確性，所以身為作者，有時難以克制更正內容的渴望。然而，溝通的效率不在於作者說了什麼，而在於讀者接收了多少。如果詳實的說明阻礙交流，那麼科普便喪失其意義了。</p>
+<p>不過即使有意掌握文章的深度，初學者該怎麼判斷什麼應該寫進文章呢？老師指出，最好的方式就是在讀者的回饋中養成品味，所以再次強調，寫作的訣竅是練習。</p>
+<p>更重要的，科普不是終點，科普的目標在於承先啟後。讀者終究要放下科普，拿起課本或期刊論文，踏入嚴肅而且冷漠的科學世界。科普作者的職責是為自己的言論負責，在告訴讀者瑰麗想像的同時，也要說明當前研究的限制。因此，只要留下足夠的參考資訊，讀者就能在往後的學習中，逐漸了解當初作者想方設法要告訴他們的，是科學的哪一面。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>即使無法以科普謀生，也值得為了提升能力、宣揚理念與捍衛自己的研究寫作。科普的特性是寫實、有趣和淺顯，寫作前可鎖定讀者以安排內容深淺和用字風格。科普文章也像故事，需要破題和鋪陳，欲傳達的知識若在故事的高潮細述，有助於讓讀者在讀畢後回味無窮。</p>
+<p>行文時要留意，內容簡化不代表裝可愛，用字盡可能周詳而不冗贅，抱著分享而非炫耀的心態。吸引讀者之後，若能保持他們的注意力，移除無關或令人困惑的內容，可以大幅增加文章的可讀性。完成作品後可以投稿或刊登在自己的網站上，利己也利人。</p>
+<p>若擔心簡化的內容會誤導讀者，可以用註記或參考資訊補充說明。畢竟科普的目的是引領讀者踏入科學世界，只要留下足夠的延伸資訊，讀者終究能從比喻中習得事實。</p>
+]]></content>
+      <categories>
+        <category>tips and tricks</category>
       </categories>
       <tags>
         <tag>communication</tag>
@@ -896,67 +968,36 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>寫科普又不能當飯吃，為什麼還要寫？</title>
-    <url>/why-do-people-write-scientific-articles/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文是 Mitalk 4 講座「科普如何當飯吃？」的聽講心得，陳俊堯老師在演講一開始先回答了這問題，再一一告訴我們，如果無法靠寫科普賺錢營生，那麼從事研究的學生、老師和學者們，到底有什麼理由勞心費神去寫科普文？</p>
-<blockquote>
-<p>科普如何當飯吃？做夢吧，科普怎麼可能當飯吃。</p>
-</blockquote>
-<span id="more"></span>
+    <title>Nextflow｜背景執行 workflow 的方法</title>
+    <url>/nextflow-run-in-background/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
 
-<h2 id="科普不能當飯吃，為什麼還要寫科普？"><a href="#科普不能當飯吃，為什麼還要寫科普？" class="headerlink" title="科普不能當飯吃，為什麼還要寫科普？"></a>科普不能當飯吃，為什麼還要寫科普？</h2><h3 id="即使無法靠科普吃飯，也能藉由撰寫科普成長"><a href="#即使無法靠科普吃飯，也能藉由撰寫科普成長" class="headerlink" title="即使無法靠科普吃飯，也能藉由撰寫科普成長"></a>即使無法靠科普吃飯，也能藉由撰寫科普成長</h3><p>老師提到，他的著作《細菌好朋友》雖然囊括許多獎項，但半年的銷量折算為利潤後僅得兩萬餘元。既然連成功的出版品都無法為作者帶來財富，那研究生為什麼要勞費心力撰寫更冷門的科普文章？</p>
-<p>儘管老師提及科普能促進跨領域對話、增進國民素養或支援科學教育，但先不論寫科普的外部效益，書寫本身就是一種有效的學習方式。</p>
-<p>很多時候我們不是懂了才開始寫作，而是從蒐集資料、提煉知識和撰寫文章的過程中，逐漸了解想要傳達的事物。具體的文字能協助我們察覺思路不嚴謹之處，而寫作瓶頸則讓我們意識到知識的空缺。因此，即使我們無法憑藉科普營生，也能從撰寫中成長。</p>
-<h3 id="研究員也能為自己的愛好發聲"><a href="#研究員也能為自己的愛好發聲" class="headerlink" title="研究員也能為自己的愛好發聲"></a>研究員也能為自己的愛好發聲</h3><p>但是，當今有許多科普網站和知識型 Youtuber 向大眾導讀論文和破解迷思，那麼研究員還有必要跳進來寫科普嗎？若想要自我成長，為什麼不寫在筆記本上就好了？</p>
-<p>首先，學術需要政府與社會支持，研究員不能總是期待他人為研究議題發聲。以新視野號任務為例，由於美國政府的漠視，探索冥王星始終不是太空任務的優先目標，即使獲准執行，其預算也接連被削減。</p>
-<p>為此，志在研究冥王星的 Alan Stern 只得想盡辦法遊說國會，並發起請願以尋求大眾支持。最終，新視野號任務總算排進了正式的探索行程中。雖然不能把任務的成功完全歸功於科普，但這項案例告訴我們：若研究員能為了自己的好奇心而發聲，嘗試去說服他人，那麼確實有機會將個人的願望推廣為大眾的願望。</p>
-<p>在說服大眾方面，科普文章是性價比很高的工具。儘管影視寓教於樂，但研究員恐無暇製作。相較之下，寫作的成本低廉還能傳遞最多資訊。內容確實且題材多樣的文字材料，可作為其他科普媒介發展的基礎，擴張文章的影響力。</p>
-<h3 id="不輕易將話語權讓給不懷好意的人"><a href="#不輕易將話語權讓給不懷好意的人" class="headerlink" title="不輕易將話語權讓給不懷好意的人"></a>不輕易將話語權讓給不懷好意的人</h3><p>教育家不是唯一對科普感興趣的人，還有濾水器廠商、智慧設計學家、政客等不懷好意的人也等著扭曲科學事實以支持他們的主張。因此，即使認為教育普羅大眾沒什麼益處，研究員也是較有立場和專業去維護科學的理性客觀價值。</p>
-<p>相關案例在同婚公投期間層出不窮。護家盟為了表達反同立場，除了引用爭議性研究以外，還任意曲解其他學者經過長年研究和同儕審查得出的嚴謹結果。即使是研究人員本身，也會受到政治立場影響，做出有瑕疵的研究。</p>
-<p>鑒於這些情形，研究員就算不為積極的理由寫作，也有動機為消極的理由發聲，以免研究成果為人利用，最後損及大眾對科學的信任。</p>
-<h3 id="科普文章是經驗交流的管道"><a href="#科普文章是經驗交流的管道" class="headerlink" title="科普文章是經驗交流的管道"></a>科普文章是經驗交流的管道</h3><p>最後，撰寫科普也能協力國內的科學教育發展。儘管推動雙語教學的風氣日盛，中文始終是最便捷的語言。但除了有限的翻譯書籍和科普網站，國高中生欠缺可靠的中文資料，架構完整而且內容正確的中文科普文章可以填補這個空缺。</p>
-<p>我認為，即使是研究生也能受益於科普寫作。相較於國外林立的論壇，台灣的網路學術經驗交流很封閉，許多技術細節和科研心得埋藏在碩博士論文、實驗室內網或私密社群裡，以至於解決問題的經驗無法共享和傳承。</p>
-<p>可是，國外既有成熟的討論區，為何執意要促進我們自己的交流風氣？首先，多數人的中文優於英文，故以中文撰寫文章較能準確表達觀念。再則，即使面對同樣問題，解決辦法與說明方式也因人而異，多元的內容能惠及不同程度和背景的群眾。</p>
-<p>是以，撰寫科普文章不僅能彙整思路和鞏固知識，也能保留思考的成果，幫助他人解決困難。由於互助的效益會隨參與人數增加，所以即使費時耗力也值得投資。</p>
-<h2 id="那麼該如何撰寫科普文章呢？"><a href="#那麼該如何撰寫科普文章呢？" class="headerlink" title="那麼該如何撰寫科普文章呢？"></a>那麼該如何撰寫科普文章呢？</h2><h3 id="科普、課本和論文的差異在於受眾"><a href="#科普、課本和論文的差異在於受眾" class="headerlink" title="科普、課本和論文的差異在於受眾"></a>科普、課本和論文的差異在於受眾</h3><p>由於科普、課本和論文的目的皆為有效傳達訊息，優良的著作皆具有趣、簡潔和明瞭等特性。然而，三種文體的受眾不一，所以各自側重不同特性。論文的讀者是學者，所以旁徵博引、言簡意賅；課本的讀者是學生，因此體系完整、內容詳盡。</p>
-<p>至於科普的讀者，則是任何有興趣的大眾。是以，科普雖然像論文一樣報導新知，卻不能吝於用字；科普也跟課本一樣具有理解新知所需的背景知識，卻不應填塞無關的資訊。除了話不能省和料不能多，科普文章要能製造驚奇以取悅讀者。</p>
-<h3 id="撰寫科普的第一步是選定讀者"><a href="#撰寫科普的第一步是選定讀者" class="headerlink" title="撰寫科普的第一步是選定讀者"></a>撰寫科普的第一步是選定讀者</h3><p>讀者的年齡、背景和興趣攸關選材、用字和敘事風格。因此，撰寫科普文章的第一步是選定讀者，接著推測讀者想讀的內容，尋找具有衝擊性的主題。至於該怎麼寫，可以參考老師提出的「派大星貓一拳結構」。</p>
-<p>每一篇科普都是一場冒險，文章開頭要建立現實與科學之間的橋樑，吸引讀者踏入作者營造的奇妙世界。例如，想要介紹趨化性 (chemotaxis)，可以從「撲鼻而來的雞排味」寫起，利用與主題相關的生活經驗，讓讀者對內容有具體的概念，也讓他們了解自己與主題的關係。</p>
-<p>好的故事需要鋪陳，重要觀念也有其前提，所以破題之後先別切入重點，要交代問題和背景知識。例如經典的回馬槍結構：提問以後，先順應大眾的常識推論，接著點出先前敘述的矛盾，讓讀者在觀念衝突之下，迫不及待想要知道答案。</p>
-<p>鋪陳以後迎來故事的高潮，要把想傳達的科學概念清楚明瞭地寫出來。最後則要總結文章，再次連結主題和生活經驗，把讀者送回現實。而更多寫作結構的細節，老師推薦我們讀讀《怎樣談科學》。</p>
-<h3 id="撰寫科普的訣竅"><a href="#撰寫科普的訣竅" class="headerlink" title="撰寫科普的訣竅"></a>撰寫科普的訣竅</h3><p>寫作時請留意，科普讀者只是還沒學到相關知識，而不是欠缺理解能力。因此，要簡化內容，但不要藐視讀者（例如對著國小學生用）。</p>
-<p>其次，儘管寫作時要交代背景知識，並且陳述推理的過程，但用字仍要力求簡練，以免花俏或冗贅的字眼模糊焦點。老師強調「話不能省」是指邏輯不要跳躍，而不是用繁複的文字困擾讀者。</p>
-<p>最後，撰寫文章是學習的過程，所以開始動筆時對主題沒有完整的理解仍可以接受。然而在交付文章之前，要再三確認自己已經搞懂，以免寫出似是而非的奇怪內容。</p>
-<h2 id="該如何練習寫科普？"><a href="#該如何練習寫科普？" class="headerlink" title="該如何練習寫科普？"></a>該如何練習寫科普？</h2><h3 id="所謂寫作，就是空出時間寫作"><a href="#所謂寫作，就是空出時間寫作" class="headerlink" title="所謂寫作，就是空出時間寫作"></a>所謂寫作，就是空出時間寫作</h3><p>所謂寫作，就是空出時間寫作。他人整理的訣竅得在練習中實踐，障礙和困難也只有在實作中才能體會。而且，文章完成後才有被閱讀和被修改的機會，因此，老師在建議大家，聽完演講以後趕快找一則論文試試看。</p>
-<h3 id="以改寫培養寫作能力"><a href="#以改寫培養寫作能力" class="headerlink" title="以改寫培養寫作能力"></a>以改寫培養寫作能力</h3><p>如果真的不知道怎麼寫，可以從改寫起步。首先熟讀感興趣的論文，再擷取核心觀念以中文重述（若想要省事也可以直接從摘要開始改寫）。</p>
-<p>接著，思考想傳達給讀者的訊息，開始移除不必要的內容。例如在介紹飲食跟腸道微生物關係的文章裡，不需要用大半篇幅解釋 PCA ，重點是讓讀者明白吃肉的人吃素的人，腸道裡的微生物有什麼差異。</p>
-<p>由於術語、抽象詞和簡稱會造成困惑，所以可以用代稱、範例和比喻等技巧減輕讀者的負擔。例如以下這段截自維基百科的句子便含有許多難解的詞彙：</p>
-<blockquote>
-<p><strong>枯草桿菌（學名：Bacillus subtilis）</strong>，是<strong>芽孢桿菌屬</strong>的一種細菌，為<strong>革蘭氏陽性</strong>的好氣性菌，普遍存在於土壤及植物體表，在人體亦可發現在腸道內共生的枯草桿菌。型態上的主要特徵是菌體表面生有<strong>鞭毛</strong>，體內形成的<strong>內生孢子</strong>可抵抗惡劣的外在環境而存活。</p>
-</blockquote>
-<p>可以改寫為：</p>
-<blockquote>
-<p>人的肚子裡住著一群長條狀的細菌，叫做 Bacillus subtilis ——就叫它 B 細菌吧。 B 細菌身上有條尾巴，所以可以在肚子裡游來游去。</p>
-</blockquote>
-<p>在改寫版本裡，用「肚子裡住著」來解釋「共生」（比喻），用 B 細菌替代 Bacillus subtilis 減輕讀者對英文的恐懼（代稱）卻不損害本意。最後以游泳為例，說明鞭毛的功能（範例）。此處用尾巴比喻鞭毛可能造成誤解，所以可以補充鞭毛的照片給讀者正確的印象。</p>
-<p>改寫後，能用「因為」、「所以」、「但是」等連接詞完善文章的架構，讓讀者了解此段的用意和前後文關係。而且要顧及讀者的注意力和記憶力，適時總結內容或插入圖片以調整閱讀節奏。</p>
-<p>綜上所述，透過改寫培養寫作能力的流程就是：閱讀文獻、決定要旨、篩選內容、改寫文句、理清句子關係、安插小結與圖片。接下來就能分享成品給其他人看，再從回饋中改進自己不足之處了。</p>
-<h3 id="可以在哪裡寫科普？"><a href="#可以在哪裡寫科普？" class="headerlink" title="可以在哪裡寫科普？"></a>可以在哪裡寫科普？</h3><p>寫文章難，找到讀者更難，讀者願意給意見則難上加難。儘管讀者的回饋可以促使作者成長，但寫作初期不容易找到知音，此時可以投稿科學月刊、泛科學和科普寫作網路平台等媒體，在與編輯來往的過程中學習。（即使被退稿，也能了解自己與已出版著作的差異。）</p>
-<p>除此之外，社群網站也是分享文章的管道。許多組織都會利用社群網站傳遞消息，所以作者也能利用臉書或推特宣傳作品。然而社群媒體適合宣傳，卻不適合保存知識。簡言之，這些網站的內部檢索不友善，對搜尋引擎的支援也不佳，所以不易取用裡頭的資訊。</p>
-<p>所以，我認為在個人網頁寫作然後用社群網站推廣，是兼顧知識保存和即時交流的好方法（也可以利用 medium 這樣結合寫文和社交的平台）。而這種方式也非新鮮事，因為在軟體工程的圈子裡，透過撰寫技術文章來自我提升已是常態。</p>
-<p>當然，寫作除了養成能力以外，也是建立個人知識品牌的手段。想知道在熟練科普寫作以後，要怎麼拓展自己發言的份量，老師推薦我們讀《知識內容寫作課》。</p>
-<h3 id="科普不是終點"><a href="#科普不是終點" class="headerlink" title="科普不是終點"></a>科普不是終點</h3><p>演講後，有同學請教老師怎麼避免想要解釋的衝動。的確，為了達到普及的效果，科普不免要犧牲文章的精確性，所以身為作者，有時難以克制更正內容的渴望。然而，溝通的效率不在於作者說了什麼，而在於讀者接收了多少。如果詳實的說明阻礙交流，那麼科普便喪失其意義了。</p>
-<p>不過即使有意掌握文章的深度，初學者該怎麼判斷什麼應該寫進文章呢？老師指出，最好的方式就是在讀者的回饋中養成品味，所以再次強調，寫作的訣竅是練習。</p>
-<p>更重要的，科普不是終點，科普的目標在於承先啟後。讀者終究要放下科普，拿起課本或期刊論文，踏入嚴肅而且冷漠的科學世界。科普作者的職責是為自己的言論負責，在告訴讀者瑰麗想像的同時，也要說明當前研究的限制。因此，只要留下足夠的參考資訊，讀者就能在往後的學習中，逐漸了解當初作者想方設法要告訴他們的，是科學的哪一面。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>即使無法以科普謀生，也值得為了提升能力、宣揚理念與捍衛自己的研究寫作。科普的特性是寫實、有趣和淺顯，寫作前可鎖定讀者以安排內容深淺和用字風格。科普文章也像故事，需要破題和鋪陳，欲傳達的知識若在故事的高潮細述，有助於讓讀者在讀畢後回味無窮。</p>
-<p>行文時要留意，內容簡化不代表裝可愛，用字盡可能周詳而不冗贅，抱著分享而非炫耀的心態。吸引讀者之後，若能保持他們的注意力，移除無關或令人困惑的內容，可以大幅增加文章的可讀性。完成作品後可以投稿或刊登在自己的網站上，利己也利人。</p>
-<p>若擔心簡化的內容會誤導讀者，可以用註記或參考資訊補充說明。畢竟科普的目的是引領讀者踏入科學世界，只要留下足夠的延伸資訊，讀者終究能從比喻中習得事實。</p>
+<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
+<span id="more"></span>
+<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
+
+<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
+<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
+<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
 ]]></content>
       <categories>
-        <category>tips and tricks</category>
+        <category>bioinformatics</category>
       </categories>
       <tags>
-        <tag>communication</tag>
+        <tag>nextflow</tag>
       </tags>
   </entry>
 </search>
