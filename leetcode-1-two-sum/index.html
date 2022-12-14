@@ -20,25 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="How I waste my time.">
+    <meta name="description" content="問題描述 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.  求數列內，和為目標值的兩數之座標 樣例  Input: nums &#x3D; [3,2,4], target &#x3D; 6Output:">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/categories/metagenomics/index.html">
+<meta property="og:title" content="LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array">
+<meta property="og:url" content="https://5uperb0y.com/leetcode-1-two-sum/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="How I waste my time.">
+<meta property="og:description" content="問題描述 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.  求數列內，和為目標值的兩數之座標 樣例  Input: nums &#x3D; [3,2,4], target &#x3D; 6Output:">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-12-14T16:07:15.000Z">
+<meta property="article:modified_time" content="2022-12-14T16:07:35.581Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/categories/metagenomics/">
+<link rel="canonical" href="https://5uperb0y.com/leetcode-1-two-sum/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"categories/metagenomics/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/leetcode-1-two-sum/","path":"leetcode-1-two-sum/","title":"LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分類: metagenomics | 5uperb0y's blog</title>
+<title>LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array | 5uperb0y's blog</title>
   
 
 
@@ -129,7 +132,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -142,6 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">問題描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E8%88%87%E9%A1%8C%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">思路與題解</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,51 +224,185 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">metagenomics
-          <small>分類</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/leetcode-1-two-sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="How I waste my time.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="創建時間：2022-12-15 00:07:15 / 修改時間：00:07:35" itemprop="dateCreated datePublished" datetime="2022-12-15T00:07:15+08:00">2022-12-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/leetcode-1-two-sum/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="leetcode-1-two-sum/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>360</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
+</blockquote>
+<p>求數列內，和為目標值的兩數之座標</p>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [3,2,4], target &#x3D; 6<br>Output: [1,2]</p>
+</blockquote>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 104</code>：數列長度介於 2 至 104 之間</li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code>：數列各項可能有負值</li>
+<li><code>-109 &lt;= target &lt;= 109</code>：目標值可能為負值</li>
+<li>Only one valid answer exists.：僅有一組解</li>
+</ul>
+<span id="more"></span>
+
+<p><strong>知識點</strong><br>hash table</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題最直觀的解法是將數列各項兩兩相加，最遲到比對所有組合後才找到題解。然而，目標值在這算法裡僅作為判斷結果的依據，沒有充分利用其提供的資訊。</p>
+<p>為了充分利用目標值，可以各項與目標值之差為 keys，各項座標為 values，建立 hash table 存儲讀過的數字。</p>
+<p>若現在的數字為先前出現過的數字與目標值之差，則回傳這兩數字的座標即為題解；若否，則新增現在的數字與目標值之差到 hash table 內。由於題目設計保證有唯一解，所以最遲遍歷整個數列即可找到題解。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        record = &#123;&#125;  </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            diff = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> record.keys() :</span><br><span class="line">                <span class="keyword">return</span>([record[nums[i]], i])</span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                record[diff] = i</span><br></pre></td></tr></table></figure>
+<ul>
+<li>此以 python dict 實踐 hash table 的功能。</li>
+<li><code>record.keys()</code> 可寫成 <code>record</code>，但標出來比較清楚</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-03-07T22:50:09+08:00"
-              content="2022-03-07">
-          03-07
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/how-to-download-and-install-rdp-classifier/" itemprop="url">
-            <span itemprop="name">如何下載和安裝 RDP classifier</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>5uperb0y (超級boy)
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://5uperb0y.com/leetcode-1-two-sum/" title="LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array">https://5uperb0y.com/leetcode-1-two-sum/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcode-153-find-minimum-in-rotated-sorted-array/" rel="prev" title="LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array">
+                  <i class="fa fa-chevron-left"></i> LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-
 </div>
   </main>
 
