@@ -260,7 +260,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2022-12-20 20:34:20 / 修改時間：22:35:13" itemprop="dateCreated datePublished" datetime="2022-12-20T20:34:20+08:00">2022-12-20</time>
+      <time title="創建時間：2022-12-20 20:34:20 / 修改時間：22:48:09" itemprop="dateCreated datePublished" datetime="2022-12-20T20:34:20+08:00">2022-12-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -300,7 +300,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>785</span>
+      <span>792</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -318,39 +318,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
-<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
-</blockquote>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
-</blockquote>
-<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
-<p><strong>限制</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
-<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
-</ul>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
-<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
-<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
-<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
-<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
-<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
-
+          <p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/leetcode-724-find-pivot-index/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -412,7 +388,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-20 22:44:12" itemprop="dateModified" datetime="2022-12-20T22:44:12+08:00">2022-12-20</time>
+      <time title="修改時間：2022-12-20 22:48:15" itemprop="dateModified" datetime="2022-12-20T22:48:15+08:00">2022-12-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -452,7 +428,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>122</span>
+      <span>128</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
