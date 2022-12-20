@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。">
+    <meta name="description" content="若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 -1。 問題描述 Given an array of integers nums, calculate the pivot index of this array.The pivot index is the index where the sum of al">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="讀後感｜太空生物學">
-<meta property="og:url" content="https://5uperb0y.com/lee-2017-astrobiology/index.html">
+<meta property="og:title" content="LeetCode 筆記｜724. Find Pivot Index">
+<meta property="og:url" content="https://5uperb0y.com/leetcode-724-find-pivot-index/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。">
+<meta property="og:description" content="若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 -1。 問題描述 Given an array of integers nums, calculate the pivot index of this array.The pivot index is the index where the sum of al">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2019-02-10T11:06:25.000Z">
-<meta property="article:modified_time" content="2022-12-05T13:42:43.421Z">
+<meta property="article:published_time" content="2022-12-20T12:34:20.000Z">
+<meta property="article:modified_time" content="2022-12-20T14:35:13.816Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="reading">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/lee-2017-astrobiology/">
+<link rel="canonical" href="https://5uperb0y.com/leetcode-724-find-pivot-index/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/lee-2017-astrobiology/","path":"lee-2017-astrobiology/","title":"讀後感｜太空生物學"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/leetcode-724-find-pivot-index/","path":"leetcode-724-find-pivot-index/","title":"LeetCode 筆記｜724. Find Pivot Index"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>讀後感｜太空生物學 | 5uperb0y's blog</title>
+<title>LeetCode 筆記｜724. Find Pivot Index | 5uperb0y's blog</title>
   
 
 
@@ -132,7 +132,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -145,6 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">問題描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%E8%88%87%E9%A1%8C%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">思路與題解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E8%A8%8E%E8%AB%96"><span class="nav-number">3.</span> <span class="nav-text">延伸討論</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%BE%E5%98%97%E8%A9%A6%E4%BD%86%E5%A4%B1%E6%95%97%E7%9A%84%E8%A7%A3%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">曾嘗試但失敗的解法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B7%B4%E7%BF%92%E9%A1%8C%E7%9B%AE%E6%99%82%EF%BC%8C%E9%81%A9%E5%90%88%E4%BD%BF%E7%94%A8%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80%E5%AE%9A%E7%BE%A9%E5%A5%BD%E7%9A%84-function-%E5%97%8E%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">練習題目時，適合使用程式語言定義好的 function 嗎？</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -234,7 +235,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/lee-2017-astrobiology/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/leetcode-724-find-pivot-index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -247,12 +248,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="讀後感｜太空生物學 | 5uperb0y's blog">
+      <meta itemprop="name" content="LeetCode 筆記｜724. Find Pivot Index | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          讀後感｜太空生物學
+          LeetCode 筆記｜724. Find Pivot Index
         </h1>
 
         <div class="post-meta-container">
@@ -262,15 +263,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2019-02-10 19:06:25" itemprop="dateCreated datePublished" datetime="2019-02-10T19:06:25+08:00">2019-02-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-05 21:42:43" itemprop="dateModified" datetime="2022-12-05T21:42:43+08:00">2022-12-05</time>
+      <time title="創建時間：2022-12-20 20:34:20 / 修改時間：22:35:13" itemprop="dateCreated datePublished" datetime="2022-12-20T20:34:20+08:00">2022-12-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -278,7 +273,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/life-in-the-universe/" itemprop="url" rel="index"><span itemprop="name">life in the universe</span></a>
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
         </span>
     </span>
 
@@ -298,8 +293,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/lee-2017-astrobiology/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="lee-2017-astrobiology/" itemprop="commentCount"></span>
+    <a title="disqus" href="/leetcode-724-find-pivot-index/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="leetcode-724-find-pivot-index/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -310,14 +305,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>631</span>
+      <span>785</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>3 分鐘</span>
     </span>
 </div>
 
@@ -328,13 +323,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
-<span id="more"></span>
-<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
-<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
-<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
-<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
+<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
+</blockquote>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
+</blockquote>
+<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
+</ul>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a target="_blank" rel="noopener" href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
+<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
+<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
+<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
+<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
+<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
+
     </div>
 
     
@@ -351,7 +372,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/lee-2017-astrobiology/" title="讀後感｜太空生物學">https://5uperb0y.com/lee-2017-astrobiology/</a>
+      <a href="https://5uperb0y.com/leetcode-724-find-pivot-index/" title="LeetCode 筆記｜724. Find Pivot Index">https://5uperb0y.com/leetcode-724-find-pivot-index/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -360,21 +381,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/reading/" rel="tag"># reading</a>
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/church-2014-regenesis/" rel="prev" title="讀後感｜再創世紀">
-                  <i class="fa fa-chevron-left"></i> 讀後感｜再創世紀
+                <a href="/leetcode-1480-running-sum-of-1d-array/" rel="prev" title="LeetCode 筆記｜1480. Running Sum of 1d Array">
+                  <i class="fa fa-chevron-left"></i> LeetCode 筆記｜1480. Running Sum of 1d Array
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/what-to-do-when-you-are-stuck-in-writing/" rel="next" title="卡住、沒靈感、寫不出東西怎麼辦？">
-                  卡住、沒靈感、寫不出東西怎麼辦？ <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
