@@ -1,5 +1,5 @@
 ---
-title: LeetCode 筆記｜53. Contains Duplicate
+title: LeetCode 筆記｜53. Maximum Subarray
 date: 2022-12-09 21:04:29
 tags: leetcode
 categories: programming
