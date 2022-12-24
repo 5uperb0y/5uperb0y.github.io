@@ -25,26 +25,6 @@
       </tags>
   </entry>
   <entry>
-    <title>很久很久以前，自然用什麼盛裝生命？</title>
-    <url>/how-nature-contains-life-in-early-earth/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
-<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
-<span id="more"></span>
-
-<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
-<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
-<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
-<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>origins of life</category>
-      </categories>
-      <tags>
-        <tag>astrobiology</tag>
-        <tag>popular science</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>寫論文的糟糕和美好經驗</title>
     <url>/good-and-bad-experiences-in-journal-article-writing/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
@@ -93,6 +73,158 @@
       <tags>
         <tag>mindset</tag>
         <tag>career</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜再創世紀</title>
+    <url>/church-2014-regenesis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
+<span id="more"></span>
+
+<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
+<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
+<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
+<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
+<ul>
+<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
+<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
+<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
+</ul>
+<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>「天文」生物學：數量的緣故</title>
+    <url>/history-of-astrobiology-naked-eyes/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>國中時，剛看完《星艦迷航記VIII：戰鬥巡航》的我向學校裡最接近外星生物專家的生物老師詢問是否真有外星人，他告訴我地球外還有許多星球，如果沒有其他生命也太奇怪了。</p>
+<p>如同我的生物老師所述，對於地外生命的信心有很大一部分是建立在數量上，既然宇宙已經誕生百餘億年，當中又充滿無數星系，很難想像當中不會有其他生命存在。</p>
+<p>然而宇宙的尺度也是經學界漫長掙扎才逐漸變得清晰，早在人類只能以肉眼觀察世界的時候，滿天繁星已不計其數，甚至至今我們對於宇宙中有多少顆適居行星仍沒有精確的估計。</p>
+<p>天文生物學的發展不只是事實的累積，也是世代人觀念轉變的結果。</p>
+<span id="more"></span>
+
+<h2 id="肉眼"><a href="#肉眼" class="headerlink" title="肉眼"></a>肉眼</h2><p>最初人類只能以肉眼觀察這個世界，其他的天體在天空化為一個小亮點，這些亮點的意義在不同人眼裡衍伸出不同的樣貌，這些推論與想像便成為天文生物學興起前，人們對地外生命的想像基礎。</p>
+<p>對於無法觸及的天空，德膜克利特(Democritus, 410 - 380 BC) 等原子學派 (Atomists) 哲人認為，既然原子的隨機運動組成了世間萬物，天與地應遵循相同法則，形成地球的過程沒理由不能在天外形成其他世界，是以其後繼者伊比鳩魯在給希羅多德的信 (<a href="http://www.attalus.org/old/diogenes10b.html">Letter to Herodotus</a>) 中提到，</p>
+<blockquote>
+<p>We must not believe that all worlds necessarily have one identical form.  Let us also beware of thinking that animals are derived from the infinite; for there is no one who can prove that the seeds from which animals are born, and plants, and all the other objects which we contemplate, have been brought from the exterior in such a world, and that this same world would not have been able to produce them of itself. （我們絕對不能假設各個世界有一致的樣貌，……，因為沒有人能證明形成動物、植物和我們眼前一切的種子無法在這樣的世界萌生。）</p>
+</blockquote>
+<p>伊比鳩魯的門徒 Metrodorus（400 BC） 也對地外生命的可能留下更明確的評述。</p>
+<blockquote>
+<p>It is unnatural in a large field to have only one stalk of wheat, and in the infinite universe only one living world.（無垠宇宙僅有一個育有生命的世界和沃野千里卻只長出一束麥子一樣不尋常。）</p>
+</blockquote>
+<p>相較於原子學派，亞里斯多德學派哲人認為地球是唯一的世界，所以沒有為地外生命留下空間。</p>
+<p>亞里斯多德以朝向&#x2F;背離中心的本性解釋火、水、土和空氣四種基本元素的運動現象，所以如果世界不只一個，那麼物質便喪失了明確的運動目標，維繫世界運作的基本原理將不復存在。透過這個規謬過程，四元素說結合地心說共同否定了多重世界的觀點。</p>
+<p>此外，天與地也在亞里斯多德體系中割裂。有別於四元素，天空是由以太組成。太陽、月亮還有其他五顆行星就在層層嵌套的天球上緩緩繞著地球旋轉，而原子學派眼裡可能存在繽紛世界的星斗只是鑲在最外層恆星天上閃爍的光點。</p>
+<p>同片天空不同的想像與推論，形成了不同的結論。</p>
+<p>如今我們知道，原子學派哲人的想像比較接近當今學界對世界的認知，然而這不代表他們是天文生物學還是任何現代科學的根源。囿於當時的觀察手段，無論哪派哲人的思想都沒有嚴謹事實支持，即使有許多詞彙為後世研究者共用，其中的內涵也已發生很大的變化。</p>
+<p>但另一方面，儘管只能取得有限的線索，希臘人仍試圖靠著理性與智力解釋世界，而不是將問題簡化為鬼、神、UFO 或我不知道。</p>
+<p>亞里斯多德的學說在中世紀時期被阿奎納 (St. Thomas Aquinas, 1225-1274) 納入神學體系，此後單一世界的想法持續主宰著歐洲人的世界觀。然而關於「數量」的爭議並沒有就此定論，亞里斯多德體系在哥白尼掀起科學革命後逐漸衰落，現代科學興起後更多的科技與觀察手段逐漸揭示宇宙的樣貌。</p>
+]]></content>
+      <categories>
+        <category>life in the universe</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>從碩班第一次專題課說起......</title>
+    <url>/how-i-learn-from-seminars/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>讀碩班前，我其實不知道 seminar 到底要幹嘛，也不知道和我有什麼關係。所以如同曖昧、戀愛等陌生概念，所有關於 seminar 的知識都是PTT教我的。</p>
+<p>然而在完成人生中第一次正式報告後，我發現生資所碩一的專題課跟想像中有些差距：老師在有限的檢討時間內傾向於引導同學發現邏輯錯誤，或是補充報告中值得大家學習的觀念，不曾直接指正學習態度、格式錯誤或邏輯謬誤。這點和以往聽聞前輩提到的「 seminar 被老師痛電」很不一樣，上一周報告結束後沒有被批評到一文不值，所以心裡有些不踏實。</p>
+<p>不過我內心期望的只是被電的體驗嗎？不對。我渴望的是成長，批判不是成長的唯一途徑。我要從 seminar 中學習的不是接受批評或是習於挨罵，因為這種本領已在服役期間漸漸培養起來，我想從 seminar 獲得學者的素養。</p>
+<span id="more"></span>
+
+<h2 id="seminar-是什麼？"><a href="#seminar-是什麼？" class="headerlink" title="seminar 是什麼？"></a>seminar 是什麼？</h2><p>seminar 源於拉丁文的「seminar ium」（苗床），從字根可以看出教育者的期許是讓 seminar 成為新概念的苗床，希望學生在檢視新近研究成果之外，也能互相討論激盪出新的想法。另外，對學生而言，準備報告和參與討論的過程考驗彙整資料、傳達觀念及構思問題的能力，這樣的演練有助於奠立從事學術的基礎。</p>
+<p>但是了解  seminar  的起源和目的有什麼幫助呢？</p>
+<p>我認為如果可以辨識出課程用意，便能聚焦在學習的成效上，而非「有沒有被電？」、「什麼時候輪到我報告？」、「報告完了是否該吃一頓大餐？」、「同學幹嘛問機掰問題」等無關緊要的指標。</p>
+<p>因此，為了學習到更多有價值的事物，我彙整了網路上蒐集到的資料，列舉應當要從課程中培養的能力，並提出可行的練習方式，以在往後的專題課中實踐。</p>
+<ul>
+<li>學會閱讀研究論文及其內涵</li>
+<li>在有限時間內清晰地表達科學概念</li>
+<li>能即時答覆聽眾的提問</li>
+<li>學會「聽講」這種學習或交流方式</li>
+<li>能於聽講過程中組織問題，並清楚地向講者提問</li>
+</ul>
+<p>雖然要培養的能力還可以找到一大堆，但要專題課的目標可以歸納為「學習扮演研究者、策畫者、講者和聽眾」。儘管還沒有實際投入研究，但學生可以鑽研論文來學習研究者怎麼從觀察中形成問題意識，找出疑點提出假說，最後設計實驗驗證之。</p>
+<p>除了實驗結果，科學交流也是科研的一環，有效的溝通能讓他人接受你的主張，所以研讀論文後也要試著報告給其他人聽，學會結合腹稿、逐字稿、簡報呈現流暢的演說。</p>
+<p>而且聽講是接受新穎資訊的最快方式，如果想跟上研究前沿，勢必要從研討會中有效接收想法，並累積新觀念。因此一門課不會在報告完就結束了，課程的不同時間點，都有要投注心力的事項和可以學習的地方。</p>
+<h2 id="聽講筆記"><a href="#聽講筆記" class="headerlink" title="聽講筆記"></a>聽講筆記</h2><p>準備這次 seminar 的過程中，我累積了一些關於閱讀論文、製作簡報及練習演說的經驗和想法，學習怎麼當個好聽眾也是很重要的議題。</p>
+<p>聽講是快速入門研究領域的方式，但成功的報告不只是講者的工作，也需要聽眾的努力。從這幾周的專題報告中我學到一個教訓，就是儘管一開始很認真想理解內容，卻可能因為一時分神或不解而和講者的節奏脫節。</p>
+<p>由於時間有限，講者未必有機會頻繁停下腳步回顧內容。聽眾可以透過事先預習背景知識和研究骨幹來減少聽講當下的負擔。例如在報告前細讀書面報告或是瀏覽原始論文，再整理出簡單的筆記帶到會場。如此一來，對於報告內容就有比較明確的形象，即使自己一時分心或沒跟上講者的邏輯，也能靠著預先準備的筆記重新聚焦重點。</p>
+<p>此外，由於簡報不像課本那麼詳盡，所以如果沒在演講中把握要點，回家後要複習就只能面對生硬的論文了。因此，如果能在歷次聽講中改善自己的筆記方法，便有助於演講後整理出完整的筆記，這些筆記配合講者的投影片和書面報告，就是往後複習的利器。</p>
+<h2 id="練習發問"><a href="#練習發問" class="headerlink" title="練習發問"></a>練習發問</h2><p>如果只是單方面聽講，那麼聽眾與講者的念頭便沒有機會在互動中產生洞見。然而，我們的專題課討論風氣不盛，這可能源於「不敢問」及「不知道要問什麼」兩項障礙。</p>
+<p>針對「不敢問」這項障礙，我覺得可以多多思考發問的好處。發問是聽眾在演講中展現主動權的行為，能釐清聽不懂的內容、反駁被曲解的觀念、探討湧起的靈感等，</p>
+<p>但是問了蠢問題或有失水準的問題怎麼辦？會不會很丟臉？儘管指導老師總是說世上沒有蠢問題，有問題就要發問。然而，我一直覺得指導老師只是想是要鼓勵同學發言而非描述現況。因為，每次自己問出 google 能輕易解決、過於空泛而無明確或是邏輯不通的問題時，還是覺得自己挺低能的。這些問題對於旁人一點幫助也沒有，浪費其他人提問的寶貴時間，還展示了自己的無知與隨便，所以感到很丟臉。</p>
+<p>只是，難道因為會丟臉就不問了嗎？不對啊，變強都來不及了，哪還管什麼丟臉。將相本無種，沒有跌倒幾次怎麼會有往後的好表現？ seminar 是學習與嘗試的好機會。班上有形形色色的同學，每次發問都能和不同的人交流，嘗試不同的提問方法，如此能累積經驗，更有信心面對更大的場合。</p>
+<p>此外，每個人對聽講的期待或是議題的關注各不相同，他人對我們提問內容的評斷既無法控制也難以得知。若提出問題的初衷是「我」感到困惑，那麼只要發問可以解決自己的困惑，那麼我認為它就是有價值問題。</p>
+<p>畢竟，seminar 都規劃了提問的環節，充分利用這個機會來解決自己的需求，我覺得其實也沒有什麼好丟臉的。如果還是很擔心緊張，也可以課前多花時間預習，聽講時寫好筆記，提問前整理好問題，這樣就不至於給自己太大的心理壓力。</p>
+<p>至於「不知道要問什麼」的障礙，除了預習和寫筆記以理解內容外，可以參考平常老師或其他人發問的方式，整理出可以問的問題以及這些問題的特徵，然後依樣畫葫蘆問問題，多問、多想，遲早能問出可以獲得許多回饋的問題。</p>
+<h2 id="寫回饋單"><a href="#寫回饋單" class="headerlink" title="寫回饋單"></a>寫回饋單</h2><p>有些學校的專題課會抽同學評論報告內容的優劣，提供意見讓講者更進步。不過如果沒有要求，總覺得這個工作還是交給老師吧。</p>
+<p>儘管如此，還是能整理一份鑑賞筆記，用來提示自己或同學徵詢時給他當參考。獨立於報告內容的筆記，鑑賞筆記用於評斷報告的科學結構、內容品質、視覺設計和口語表達的優劣，解釋這場報告優秀或低劣的原因，找出可以學習的優點，紀錄要避免的錯誤。</p>
+<p>模仿別人怎麼評論是學習鑑賞的快速方法，可以細聽老師們的回饋，這麼做一方面提醒自己，另一方面也蒐集了評論標的，成為下次聽講時觀察的重點。整理不同的評論內容後，還可以設計出一份回饋單，不僅能節省撰寫評論的時間，這份回饋單也可以作為報告練習時蒐集意見的工具。</p>
+<p>在上台報告前通常需要內部演練，收集他人的意見以改進報告品質。事前提醒聽眾要留意的地方或發放回饋單有助於聽眾給出針對性的意見，也方便他們紀錄內容以免忘記，讓講者更有機會獲得明確且豐富的建議。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>這篇文章是我第一次參加專題課後的心得，裏頭提到的心理障礙有許多仍是我現今要面對的問題。至於，過了這麼久，我對於參加研討會或 seminar 有什麼新的想法或轉變嗎？有啊，我漸漸不再把問問題當秀場了。</p>
+<p>以往期待自己能像某些大神一樣，能提出讓講者與聽眾都陷入深思的犀利問題。回過頭來，我發現自己用問題的品質來衡量我的水準，才追逐著所謂「好問題」，試圖證明自己是有能力的人。</p>
+<p>然而，一旦陷入這樣的心態，就會不自覺給問題貼上有價值的、沒價值的、令人訝異的、稀鬆平常的等標籤。於是，每次心中有疑惑時，便開始思考這問題有沒有價值。聽講到最後，往往因為覺得問題很平凡，而一個也沒有提。面對這種狀況，我有時還挺懊惱的，例如之前參加微生物生態學年會便有不少精彩的演講，明明有許多共鳴與想法卻不敢發言，錯失了學習的機會。</p>
+<p>直到我參加了許多講座與會議，聽到了從基本、艱深到與講題毫無關聯的提問，才矯正了內心對偉大問題的期待。我意識到（或回想起）：「對啊，我就是因為不懂才問問題啊！」</p>
+<p>至於能否問個犀利的問題，我蠻喜歡在 <a href="https://www.zhihu.com/question/36980830">知乎</a> 上看到的說法</p>
+<blockquote>
+<p>我覺得吧，聽講座也罷，看文章也好，讀教科書也算，更重要的不是去挑刺，而是一個更有建設性的問題</p>
+</blockquote>
+<p>簡言之，研究或開發本身就不是件易事，要從方法學或應用條件等方向去挑毛病真的太容易了。然而，除了指出漏洞並提出可能解決方式以外，另一種延伸想法的途徑是去思考，如果對方的結論是真的，那麼要如何利用這項結論，來幫助我的研究與問題？</p>
+<p>透過這種方式思考問題，能延伸出許多跟自己相關的議題，也比較有動機向講者請教，還能拓展關於待解問題的深刻理解或有用猜想。</p>
+]]></content>
+      <categories>
+        <category>tips &amp; tricks</category>
+      </categories>
+      <tags>
+        <tag>communitcation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>很久很久以前，自然用什麼盛裝生命？</title>
+    <url>/how-nature-contains-life-in-early-earth/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
+<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
+<span id="more"></span>
+
+<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
+<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
+<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
+<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>origins of life</category>
+      </categories>
+      <tags>
+        <tag>astrobiology</tag>
+        <tag>popular science</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+<span id="more"></span>
+
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -155,108 +287,6 @@
       </tags>
   </entry>
   <entry>
-    <title>從碩班第一次專題課說起......</title>
-    <url>/how-i-learn-from-seminars/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>讀碩班前，我其實不知道 seminar 到底要幹嘛，也不知道和我有什麼關係。所以如同曖昧、戀愛等陌生概念，所有關於 seminar 的知識都是PTT教我的。</p>
-<p>然而在完成人生中第一次正式報告後，我發現生資所碩一的專題課跟想像中有些差距：老師在有限的檢討時間內傾向於引導同學發現邏輯錯誤，或是補充報告中值得大家學習的觀念，不曾直接指正學習態度、格式錯誤或邏輯謬誤。這點和以往聽聞前輩提到的「 seminar 被老師痛電」很不一樣，上一周報告結束後沒有被批評到一文不值，所以心裡有些不踏實。</p>
-<p>不過我內心期望的只是被電的體驗嗎？不對。我渴望的是成長，批判不是成長的唯一途徑。我要從 seminar 中學習的不是接受批評或是習於挨罵，因為這種本領已在服役期間漸漸培養起來，我想從 seminar 獲得學者的素養。</p>
-<span id="more"></span>
-
-<h2 id="seminar-是什麼？"><a href="#seminar-是什麼？" class="headerlink" title="seminar 是什麼？"></a>seminar 是什麼？</h2><p>seminar 源於拉丁文的「seminar ium」（苗床），從字根可以看出教育者的期許是讓 seminar 成為新概念的苗床，希望學生在檢視新近研究成果之外，也能互相討論激盪出新的想法。另外，對學生而言，準備報告和參與討論的過程考驗彙整資料、傳達觀念及構思問題的能力，這樣的演練有助於奠立從事學術的基礎。</p>
-<p>但是了解  seminar  的起源和目的有什麼幫助呢？</p>
-<p>我認為如果可以辨識出課程用意，便能聚焦在學習的成效上，而非「有沒有被電？」、「什麼時候輪到我報告？」、「報告完了是否該吃一頓大餐？」、「同學幹嘛問機掰問題」等無關緊要的指標。</p>
-<p>因此，為了學習到更多有價值的事物，我彙整了網路上蒐集到的資料，列舉應當要從課程中培養的能力，並提出可行的練習方式，以在往後的專題課中實踐。</p>
-<ul>
-<li>學會閱讀研究論文及其內涵</li>
-<li>在有限時間內清晰地表達科學概念</li>
-<li>能即時答覆聽眾的提問</li>
-<li>學會「聽講」這種學習或交流方式</li>
-<li>能於聽講過程中組織問題，並清楚地向講者提問</li>
-</ul>
-<p>雖然要培養的能力還可以找到一大堆，但要專題課的目標可以歸納為「學習扮演研究者、策畫者、講者和聽眾」。儘管還沒有實際投入研究，但學生可以鑽研論文來學習研究者怎麼從觀察中形成問題意識，找出疑點提出假說，最後設計實驗驗證之。</p>
-<p>除了實驗結果，科學交流也是科研的一環，有效的溝通能讓他人接受你的主張，所以研讀論文後也要試著報告給其他人聽，學會結合腹稿、逐字稿、簡報呈現流暢的演說。</p>
-<p>而且聽講是接受新穎資訊的最快方式，如果想跟上研究前沿，勢必要從研討會中有效接收想法，並累積新觀念。因此一門課不會在報告完就結束了，課程的不同時間點，都有要投注心力的事項和可以學習的地方。</p>
-<h2 id="聽講筆記"><a href="#聽講筆記" class="headerlink" title="聽講筆記"></a>聽講筆記</h2><p>準備這次 seminar 的過程中，我累積了一些關於閱讀論文、製作簡報及練習演說的經驗和想法，學習怎麼當個好聽眾也是很重要的議題。</p>
-<p>聽講是快速入門研究領域的方式，但成功的報告不只是講者的工作，也需要聽眾的努力。從這幾周的專題報告中我學到一個教訓，就是儘管一開始很認真想理解內容，卻可能因為一時分神或不解而和講者的節奏脫節。</p>
-<p>由於時間有限，講者未必有機會頻繁停下腳步回顧內容。聽眾可以透過事先預習背景知識和研究骨幹來減少聽講當下的負擔。例如在報告前細讀書面報告或是瀏覽原始論文，再整理出簡單的筆記帶到會場。如此一來，對於報告內容就有比較明確的形象，即使自己一時分心或沒跟上講者的邏輯，也能靠著預先準備的筆記重新聚焦重點。</p>
-<p>此外，由於簡報不像課本那麼詳盡，所以如果沒在演講中把握要點，回家後要複習就只能面對生硬的論文了。因此，如果能在歷次聽講中改善自己的筆記方法，便有助於演講後整理出完整的筆記，這些筆記配合講者的投影片和書面報告，就是往後複習的利器。</p>
-<h2 id="練習發問"><a href="#練習發問" class="headerlink" title="練習發問"></a>練習發問</h2><p>如果只是單方面聽講，那麼聽眾與講者的念頭便沒有機會在互動中產生洞見。然而，我們的專題課討論風氣不盛，這可能源於「不敢問」及「不知道要問什麼」兩項障礙。</p>
-<p>針對「不敢問」這項障礙，我覺得可以多多思考發問的好處。發問是聽眾在演講中展現主動權的行為，能釐清聽不懂的內容、反駁被曲解的觀念、探討湧起的靈感等，</p>
-<p>但是問了蠢問題或有失水準的問題怎麼辦？會不會很丟臉？儘管指導老師總是說世上沒有蠢問題，有問題就要發問。然而，我一直覺得指導老師只是想是要鼓勵同學發言而非描述現況。因為，每次自己問出 google 能輕易解決、過於空泛而無明確或是邏輯不通的問題時，還是覺得自己挺低能的。這些問題對於旁人一點幫助也沒有，浪費其他人提問的寶貴時間，還展示了自己的無知與隨便，所以感到很丟臉。</p>
-<p>只是，難道因為會丟臉就不問了嗎？不對啊，變強都來不及了，哪還管什麼丟臉。將相本無種，沒有跌倒幾次怎麼會有往後的好表現？ seminar 是學習與嘗試的好機會。班上有形形色色的同學，每次發問都能和不同的人交流，嘗試不同的提問方法，如此能累積經驗，更有信心面對更大的場合。</p>
-<p>此外，每個人對聽講的期待或是議題的關注各不相同，他人對我們提問內容的評斷既無法控制也難以得知。若提出問題的初衷是「我」感到困惑，那麼只要發問可以解決自己的困惑，那麼我認為它就是有價值問題。</p>
-<p>畢竟，seminar 都規劃了提問的環節，充分利用這個機會來解決自己的需求，我覺得其實也沒有什麼好丟臉的。如果還是很擔心緊張，也可以課前多花時間預習，聽講時寫好筆記，提問前整理好問題，這樣就不至於給自己太大的心理壓力。</p>
-<p>至於「不知道要問什麼」的障礙，除了預習和寫筆記以理解內容外，可以參考平常老師或其他人發問的方式，整理出可以問的問題以及這些問題的特徵，然後依樣畫葫蘆問問題，多問、多想，遲早能問出可以獲得許多回饋的問題。</p>
-<h2 id="寫回饋單"><a href="#寫回饋單" class="headerlink" title="寫回饋單"></a>寫回饋單</h2><p>有些學校的專題課會抽同學評論報告內容的優劣，提供意見讓講者更進步。不過如果沒有要求，總覺得這個工作還是交給老師吧。</p>
-<p>儘管如此，還是能整理一份鑑賞筆記，用來提示自己或同學徵詢時給他當參考。獨立於報告內容的筆記，鑑賞筆記用於評斷報告的科學結構、內容品質、視覺設計和口語表達的優劣，解釋這場報告優秀或低劣的原因，找出可以學習的優點，紀錄要避免的錯誤。</p>
-<p>模仿別人怎麼評論是學習鑑賞的快速方法，可以細聽老師們的回饋，這麼做一方面提醒自己，另一方面也蒐集了評論標的，成為下次聽講時觀察的重點。整理不同的評論內容後，還可以設計出一份回饋單，不僅能節省撰寫評論的時間，這份回饋單也可以作為報告練習時蒐集意見的工具。</p>
-<p>在上台報告前通常需要內部演練，收集他人的意見以改進報告品質。事前提醒聽眾要留意的地方或發放回饋單有助於聽眾給出針對性的意見，也方便他們紀錄內容以免忘記，讓講者更有機會獲得明確且豐富的建議。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>這篇文章是我第一次參加專題課後的心得，裏頭提到的心理障礙有許多仍是我現今要面對的問題。至於，過了這麼久，我對於參加研討會或 seminar 有什麼新的想法或轉變嗎？有啊，我漸漸不再把問問題當秀場了。</p>
-<p>以往期待自己能像某些大神一樣，能提出讓講者與聽眾都陷入深思的犀利問題。回過頭來，我發現自己用問題的品質來衡量我的水準，才追逐著所謂「好問題」，試圖證明自己是有能力的人。</p>
-<p>然而，一旦陷入這樣的心態，就會不自覺給問題貼上有價值的、沒價值的、令人訝異的、稀鬆平常的等標籤。於是，每次心中有疑惑時，便開始思考這問題有沒有價值。聽講到最後，往往因為覺得問題很平凡，而一個也沒有提。面對這種狀況，我有時還挺懊惱的，例如之前參加微生物生態學年會便有不少精彩的演講，明明有許多共鳴與想法卻不敢發言，錯失了學習的機會。</p>
-<p>直到我參加了許多講座與會議，聽到了從基本、艱深到與講題毫無關聯的提問，才矯正了內心對偉大問題的期待。我意識到（或回想起）：「對啊，我就是因為不懂才問問題啊！」</p>
-<p>至於能否問個犀利的問題，我蠻喜歡在 <a href="https://www.zhihu.com/question/36980830">知乎</a> 上看到的說法</p>
-<blockquote>
-<p>我覺得吧，聽講座也罷，看文章也好，讀教科書也算，更重要的不是去挑刺，而是一個更有建設性的問題</p>
-</blockquote>
-<p>簡言之，研究或開發本身就不是件易事，要從方法學或應用條件等方向去挑毛病真的太容易了。然而，除了指出漏洞並提出可能解決方式以外，另一種延伸想法的途徑是去思考，如果對方的結論是真的，那麼要如何利用這項結論，來幫助我的研究與問題？</p>
-<p>透過這種方式思考問題，能延伸出許多跟自己相關的議題，也比較有動機向講者請教，還能拓展關於待解問題的深刻理解或有用猜想。</p>
-]]></content>
-      <categories>
-        <category>tips &amp; tricks</category>
-      </categories>
-      <tags>
-        <tag>communitcation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>讀後感｜再創世紀</title>
-    <url>/church-2014-regenesis/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
-<span id="more"></span>
-
-<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
-<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
-<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
-<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
-<ul>
-<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
-<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
-<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
-</ul>
-<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>讀後感｜樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
-<span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
-<ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>讀後感｜太空生物學</title>
     <url>/lee-2017-astrobiology/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
@@ -271,77 +301,6 @@
       </categories>
       <tags>
         <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「天文」生物學：數量的緣故</title>
-    <url>/history-of-astrobiology-naked-eyes/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>國中時，剛看完《星艦迷航記VIII：戰鬥巡航》的我向學校裡最接近外星生物專家的生物老師詢問是否真有外星人，他告訴我地球外還有許多星球，如果沒有其他生命也太奇怪了。</p>
-<p>如同我的生物老師所述，對於地外生命的信心有很大一部分是建立在數量上，既然宇宙已經誕生百餘億年，當中又充滿無數星系，很難想像當中不會有其他生命存在。</p>
-<p>然而宇宙的尺度也是經學界漫長掙扎才逐漸變得清晰，早在人類只能以肉眼觀察世界的時候，滿天繁星已不計其數，甚至至今我們對於宇宙中有多少顆適居行星仍沒有精確的估計。</p>
-<p>天文生物學的發展不只是事實的累積，也是世代人觀念轉變的結果。</p>
-<span id="more"></span>
-
-<h2 id="肉眼"><a href="#肉眼" class="headerlink" title="肉眼"></a>肉眼</h2><p>最初人類只能以肉眼觀察這個世界，其他的天體在天空化為一個小亮點，這些亮點的意義在不同人眼裡衍伸出不同的樣貌，這些推論與想像便成為天文生物學興起前，人們對地外生命的想像基礎。</p>
-<p>對於無法觸及的天空，德膜克利特(Democritus, 410 - 380 BC) 等原子學派 (Atomists) 哲人認為，既然原子的隨機運動組成了世間萬物，天與地應遵循相同法則，形成地球的過程沒理由不能在天外形成其他世界，是以其後繼者伊比鳩魯在給希羅多德的信 (<a href="http://www.attalus.org/old/diogenes10b.html">Letter to Herodotus</a>) 中提到，</p>
-<blockquote>
-<p>We must not believe that all worlds necessarily have one identical form.  Let us also beware of thinking that animals are derived from the infinite; for there is no one who can prove that the seeds from which animals are born, and plants, and all the other objects which we contemplate, have been brought from the exterior in such a world, and that this same world would not have been able to produce them of itself. （我們絕對不能假設各個世界有一致的樣貌，……，因為沒有人能證明形成動物、植物和我們眼前一切的種子無法在這樣的世界萌生。）</p>
-</blockquote>
-<p>伊比鳩魯的門徒 Metrodorus（400 BC） 也對地外生命的可能留下更明確的評述。</p>
-<blockquote>
-<p>It is unnatural in a large field to have only one stalk of wheat, and in the infinite universe only one living world.（無垠宇宙僅有一個育有生命的世界和沃野千里卻只長出一束麥子一樣不尋常。）</p>
-</blockquote>
-<p>相較於原子學派，亞里斯多德學派哲人認為地球是唯一的世界，所以沒有為地外生命留下空間。</p>
-<p>亞里斯多德以朝向&#x2F;背離中心的本性解釋火、水、土和空氣四種基本元素的運動現象，所以如果世界不只一個，那麼物質便喪失了明確的運動目標，維繫世界運作的基本原理將不復存在。透過這個規謬過程，四元素說結合地心說共同否定了多重世界的觀點。</p>
-<p>此外，天與地也在亞里斯多德體系中割裂。有別於四元素，天空是由以太組成。太陽、月亮還有其他五顆行星就在層層嵌套的天球上緩緩繞著地球旋轉，而原子學派眼裡可能存在繽紛世界的星斗只是鑲在最外層恆星天上閃爍的光點。</p>
-<p>同片天空不同的想像與推論，形成了不同的結論。</p>
-<p>如今我們知道，原子學派哲人的想像比較接近當今學界對世界的認知，然而這不代表他們是天文生物學還是任何現代科學的根源。囿於當時的觀察手段，無論哪派哲人的思想都沒有嚴謹事實支持，即使有許多詞彙為後世研究者共用，其中的內涵也已發生很大的變化。</p>
-<p>但另一方面，儘管只能取得有限的線索，希臘人仍試圖靠著理性與智力解釋世界，而不是將問題簡化為鬼、神、UFO 或我不知道。</p>
-<p>亞里斯多德的學說在中世紀時期被阿奎納 (St. Thomas Aquinas, 1225-1274) 納入神學體系，此後單一世界的想法持續主宰著歐洲人的世界觀。然而關於「數量」的爭議並沒有就此定論，亞里斯多德體系在哥白尼掀起科學革命後逐漸衰落，現代科學興起後更多的科技與觀察手段逐漸揭示宇宙的樣貌。</p>
-]]></content>
-      <categories>
-        <category>life in the universe</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array</title>
-    <url>/leetcode-153-find-minimum-in-rotated-sorted-array/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given the sorted rotated<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]">1</span></a></sup> array <code>nums</code> of unique elements, return the <em>minimum element of this array</em>.</p>
-</blockquote>
-<p>平移一嚴格遞增數列各項 n 單位後，求此數列的最小值</p>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [3,4,5,1,2]<br>Output: 1</p>
-</blockquote>
-<p><em>須留意幾個樣例：數列只含一項、數列只含兩項、平移後與原數列相同、最小值位於數列尾部</em></p>
-<span id="more"></span>
-
-<p><strong>限制</strong></p>
-<ul>
-<li><code>n == nums.length</code>：數列長度為 n</li>
-<li><code>1 &lt;= n &lt;= 5000</code>：數列長度介於 1 至 5000 項</li>
-<li><code>-5000 &lt;= nums[i] &lt;= 5000</code>：數列各項介於 -5000 至 5000，因此兩項相加不至於超出整數大小的上下界</li>
-<li>All the integers of <code>nums</code> are <strong>unique</strong>：數列各項唯一</li>
-<li><code>nums</code> is sorted and rotated between <code>1</code> and <code>n</code> times：數列已排序，且至多平移 n 次，最少平移 1 次</li>
-<li>You must write an algorithm that runs in <code>O(log n)</code> time：此題有時間複雜度限制</li>
-</ul>
-<p><strong>知識點</strong><br>binary search</p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題的關鍵在於判斷最小值，並使用二分搜尋法簡化找尋最小值的步驟。</p>
-<p>由於數列已由小到大排序，所以如果某項數值在平移後小於前一項，該項即為數列的最小值。依照這項原則，可以先定義 <code>left</code>、<code>mid</code>、<code>right</code> 三個指標，其中 <code>mid</code> 是 <code>left</code> 與 <code>right</code> 的中間值。</p>
-<p>若 <code>nums[mid]</code> 小於其前一項，則 <code>nums[mid]</code> 為最小值，即可中斷迴圈並回傳題解。若尚未找到最小值，則可比較 <code>nums[mid]</code> 與 <code>nums[right]</code>，選定下一個搜索標的。</p>
-<p>假設 <code>nums[right]</code> &gt; <code>nums[mid]</code>，表示數列於 <code>mid</code> 至 <code>right</code> 之間嚴格遞增，表示原數列的首尾交接處不在此區間，所以可以縮小搜索範圍到 <code>left</code> 至 <code>mid - 1</code> 之間。反之，則表示數列於 <code>left</code> 至 <code>mid</code> 之間嚴格遞增，則可縮小搜索範圍至 <code>mid + 1</code> 至 <code>right</code> 之間。</p>
-<p>由於嚴格遞增數列一定有唯一的最小值，所以最遲在 <code>left</code> 與 <code>right</code> 指向同一座標時，會找到數列最小值。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findMin</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            mid = right - (right - left)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] &lt; nums[mid - <span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> nums[mid] &gt; nums[right]:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span>(nums[mid])</span><br></pre></td></tr></table></figure>
-
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="mid-的定義方式"><a href="#mid-的定義方式" class="headerlink" title="mid 的定義方式"></a><code>mid</code> 的定義方式</h3><p><code>mid</code> 亦可定義為 <code>(left + right)//2</code>，但聽同事討論，若兩數的數值極大，則有數值超出整數範圍的風險。以相減的方式撰寫則一定不會超出範圍。</p>
-<h3 id="判斷首尾交界處的方式"><a href="#判斷首尾交界處的方式" class="headerlink" title="判斷首尾交界處的方式"></a>判斷首尾交界處的方式</h3><p>有看過同事在比較時，不比對 <code>nums[right]</code>，而是比對 <code>nums[-1]</code>，有一樣的效果。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>programming</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -431,45 +390,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜217. Contains Duplicate</title>
-    <url>/leetcode-217-contains-duplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
-</blockquote>
-<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
-<p>Example:</p>
-<blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
-<ul>
-<li>數字重複出現</li>
-<li>array 長度大於其中數字種類數</li>
-<li>若將 array 排序，則重複的數字比鄰出現</li>
-</ul>
-<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
-<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
-</li>
-<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
-</li>
-<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 筆記｜1. Two Sum</title>
     <url>/leetcode-1-two-sum/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
@@ -535,6 +455,86 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array</title>
+    <url>/leetcode-153-find-minimum-in-rotated-sorted-array/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given the sorted rotated<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]">1</span></a></sup> array <code>nums</code> of unique elements, return the <em>minimum element of this array</em>.</p>
+</blockquote>
+<p>平移一嚴格遞增數列各項 n 單位後，求此數列的最小值</p>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [3,4,5,1,2]<br>Output: 1</p>
+</blockquote>
+<p><em>須留意幾個樣例：數列只含一項、數列只含兩項、平移後與原數列相同、最小值位於數列尾部</em></p>
+<span id="more"></span>
+
+<p><strong>限制</strong></p>
+<ul>
+<li><code>n == nums.length</code>：數列長度為 n</li>
+<li><code>1 &lt;= n &lt;= 5000</code>：數列長度介於 1 至 5000 項</li>
+<li><code>-5000 &lt;= nums[i] &lt;= 5000</code>：數列各項介於 -5000 至 5000，因此兩項相加不至於超出整數大小的上下界</li>
+<li>All the integers of <code>nums</code> are <strong>unique</strong>：數列各項唯一</li>
+<li><code>nums</code> is sorted and rotated between <code>1</code> and <code>n</code> times：數列已排序，且至多平移 n 次，最少平移 1 次</li>
+<li>You must write an algorithm that runs in <code>O(log n)</code> time：此題有時間複雜度限制</li>
+</ul>
+<p><strong>知識點</strong><br>binary search</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題的關鍵在於判斷最小值，並使用二分搜尋法簡化找尋最小值的步驟。</p>
+<p>由於數列已由小到大排序，所以如果某項數值在平移後小於前一項，該項即為數列的最小值。依照這項原則，可以先定義 <code>left</code>、<code>mid</code>、<code>right</code> 三個指標，其中 <code>mid</code> 是 <code>left</code> 與 <code>right</code> 的中間值。</p>
+<p>若 <code>nums[mid]</code> 小於其前一項，則 <code>nums[mid]</code> 為最小值，即可中斷迴圈並回傳題解。若尚未找到最小值，則可比較 <code>nums[mid]</code> 與 <code>nums[right]</code>，選定下一個搜索標的。</p>
+<p>假設 <code>nums[right]</code> &gt; <code>nums[mid]</code>，表示數列於 <code>mid</code> 至 <code>right</code> 之間嚴格遞增，表示原數列的首尾交接處不在此區間，所以可以縮小搜索範圍到 <code>left</code> 至 <code>mid - 1</code> 之間。反之，則表示數列於 <code>left</code> 至 <code>mid</code> 之間嚴格遞增，則可縮小搜索範圍至 <code>mid + 1</code> 至 <code>right</code> 之間。</p>
+<p>由於嚴格遞增數列一定有唯一的最小值，所以最遲在 <code>left</code> 與 <code>right</code> 指向同一座標時，會找到數列最小值。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">findMin</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">            mid = right - (right - left)//<span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> nums[mid] &lt; nums[mid - <span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> nums[mid] &gt; nums[right]:</span><br><span class="line">                    left = mid + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span>(nums[mid])</span><br></pre></td></tr></table></figure>
+
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="mid-的定義方式"><a href="#mid-的定義方式" class="headerlink" title="mid 的定義方式"></a><code>mid</code> 的定義方式</h3><p><code>mid</code> 亦可定義為 <code>(left + right)//2</code>，但聽同事討論，若兩數的數值極大，則有數值超出整數範圍的風險。以相減的方式撰寫則一定不會超出範圍。</p>
+<h3 id="判斷首尾交界處的方式"><a href="#判斷首尾交界處的方式" class="headerlink" title="判斷首尾交界處的方式"></a>判斷首尾交界處的方式</h3><p>有看過同事在比較時，不比對 <code>nums[right]</code>，而是比對 <code>nums[-1]</code>，有一樣的效果。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜217. Contains Duplicate</title>
+    <url>/leetcode-217-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<ul>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
+</ul>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 筆記｜724. Find Pivot Index</title>
     <url>/leetcode-724-find-pivot-index/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
@@ -577,120 +577,6 @@
       </categories>
       <tags>
         <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 筆記｜53. Maximum Subarray</title>
-    <url>/leetcode-53-maximum-subarray/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an integer array nums, find the subarray which has the largest sum and return its sum.</p>
-</blockquote>
-<p>給一整數數列，求其子數列級數的最大值。</p>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [-2,1,-3,4,-1,2,1,-5,4]<br>Output: 6</p>
-</blockquote>
-<span id="more"></span>
-
-<p><strong>限制</strong></p>
-<ul>
-<li>$1$$\leq$ nums.length $\leq$$10^5$：數列長度介於 $1$ 至 $10^5$ 間</li>
-<li>$-10^4$$\leq$ nums[i] $\leq$$10^4$：數值介於 $-10^4$ 至 $10^4$ 間</li>
-</ul>
-<p><strong>知識點</strong></p>
-<ul>
-<li>dynamic programming</li>
-<li>Kadane’s Algorithm</li>
-</ul>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>這題常見的作法是 Kadane’s algorithm，我在解題時並不知道這套演算法，所以一開始是用極端情形勾勒 function 的輪廓，再透過更多樣例「擬合」出可能的解法，最後才整合為提交的答案。</p>
-<ul>
-<li><strong>數列僅包含一個數字</strong>：解為該項數字，表示即使只有一個數字也能回傳</li>
-<li><strong>數列全為正值</strong>：解為數列各項之和，所以程式碼內含有累加操作</li>
-<li><strong>數列全為負值</strong>：解為數列最大的一項數字，所以程式碼內含有暫存最大值的變項與比較數值的判斷式</li>
-</ul>
-<p>由此分析可知問題癥結在於，累加的級數在碰到負數時要如何處置？</p>
-<ul>
-<li>若級數於累加後增加，則將這些數字納入計算。例如 [2, -1, -3, 5]，由於 5 &gt; -1 + -3，所以仍有涵蓋這兩個負數的價值。</li>
-<li>若級數於累加後減少，則跳過這些數字，從新的位置開始計算。例如 [2, -1, -4, 1]，累加新的數字無法抵銷兩個負數值，所以不如跳過。</li>
-</ul>
-<p>至此，我雖然對計算方式有個概念，但還是經過了一連串測試，才歸納出以下算法。依序累加數列各項，每次累加後 (1) 若累加後級數沒增加，則從當前項重新計算級數；(2) 更新當前級數的最大值。</p>
-<p>遍歷整條數列後，當前級數的最大值即為題解。只須走一趟循環，空間用量也固定，所以時間複雜度和空間複雜度分別為 $O(n)$ 與 $O(1)$。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxSubArray</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        sums = <span class="number">0</span></span><br><span class="line">        maxVal = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            sums += nums[i]</span><br><span class="line">            <span class="keyword">if</span> sums &lt; nums[i]:</span><br><span class="line">                sums = nums[i]</span><br><span class="line">            <span class="keyword">if</span> sums &gt; maxVal:</span><br><span class="line">                maxVal = sums</span><br><span class="line">        <span class="keyword">return</span>(maxVal)</span><br></pre></td></tr></table></figure>
-<p><em>當初以為要回傳子數列的位置，所以才使用 index 取值</em></p>
-<ul>
-<li><code>sums</code>：紀錄當前累加值</li>
-<li><code>maxVal</code>：紀錄當前累加的最大值</li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜怎麼從運行中的腳本取回參數？</title>
-    <url>/nextflow-retrieve-configuration-when-workflow-runs/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在執行腳本前，Nextflow 會讀取設置檔 (configuration files) 中的參數，將之代入腳本的對應位置後再執行程式。這項特性有助於使用者管理複雜流程的輸入值與環境設定，也將具體數值從流程邏輯抽離，讓開發者專注於流程的梳理與串接。</p>
-<p>然而，隨著流程腳本改版，設置檔的內容也可能跟著改變，是否有方法能記錄執行流程時使用的設置檔，以利往後重現分析或追蹤歷次設定？</p>
-<p>在這篇文中，我首先介紹了 nextflow 導入參數的方式，再陳述取回參數的可行策略，並附上這些策略的最簡範例供參考。</p>
-<span id="more"></span>
-
-<h2 id="Nextflow-導入參數的方式"><a href="#Nextflow-導入參數的方式" class="headerlink" title="Nextflow 導入參數的方式"></a>Nextflow 導入參數的方式</h2><p>以下是 nextflow 導入參數的常見方式，若一參數被多種方式定義，則會以順位較小者為準。</p>
-<table>
-<thead>
-<tr>
-<th>順位</th>
-<th>方式</th>
-<th>範例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>於命令列輸入</td>
-<td><code>nextflow run workflow.nf --something value</code></td>
-</tr>
-<tr>
-<td>2</td>
-<td>以 <code>-params-file</code> 導入</td>
-<td><code>nextflow run workflow.nf -params-file params.json</code></td>
-</tr>
-<tr>
-<td>3</td>
-<td>以 <code>-c</code> 導入</td>
-<td><code>nextflow run workflow.nf -c params.config</code></td>
-</tr>
-<tr>
-<td>4</td>
-<td>於 nextflow 腳本內宣告</td>
-<td><code>params.something = value</code></td>
-</tr>
-</tbody></table>
-<h2 id="使用-params-取回參數"><a href="#使用-params-取回參數" class="headerlink" title="使用 params 取回參數"></a>使用 <code>params</code> 取回參數</h2><p>其中一個方法是讀取 <code>params</code> 的內容，<code>params</code>是 nextflow 的<a href="https://www.nextflow.io/docs/latest/script.html?highlight=implicit#implicit-variables">隱變項</a>，採用 <code>[key1:value1, key2:value2,...]</code>格式存儲以不同方式導入的參數。</p>
-<h3 id="params-json"><a href="#params-json" class="headerlink" title="params.json"></a>params.json</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;paramsDerivedConfig&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;provided using the -params-file option&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="params-config"><a href="#params-config" class="headerlink" title="params.config"></a>params.config</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">params &#123;</span><br><span class="line">    configDerivedConfig = <span class="string">&quot;specified using the -c option&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="getConfig-nf"><a href="#getConfig-nf" class="headerlink" title="getConfig.nf"></a>getConfig.nf</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">params.inScriptConfig = <span class="string">&quot;defined within the script itself&quot;</span></span><br><span class="line">process retrieveConfigFromParams &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;$params&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    getConfig().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run getConfig.nf --commandSpecifiedConfig <span class="string">&quot;specified on the command line&quot;</span> -params-file params.json -c params.config</span><br><span class="line">[configDerivedConfig:specified using the -c option, config-derived-config:specified using the -c option, paramsDerivedConfig:provided using the -params-file option, params-derived-config:provided using the -params-file option, commandSpecifiedConfig:specified on the <span class="built_in">command</span> line, command-specified-config:specified on the <span class="built_in">command</span> line, inScriptConfig:defined within the script itself, in-script-config:defined within the script itself]</span><br></pre></td></tr></table></figure>
-
-<h2 id="從輸入路徑取回參數"><a href="#從輸入路徑取回參數" class="headerlink" title="從輸入路徑取回參數"></a>從輸入路徑取回參數</h2><p>然而，前述方法只能取回以 <code>params</code> 存儲的參數，若想取得 <code>process</code>, <code>docker</code>, <code>report</code> 等<a href="https://www.nextflow.io/docs/latest/config.html?highlight=params#config-scopes">其它設置 (configuration scope)</a>，可以讀取位於 <code>$launchDir</code> 的 <code>.nextflow.log</code>，從中獲得當初執行腳本時輸入的 <code>*.config</code> 路徑，再將設置擋複製出來。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">process getConfig &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    shell:</span><br><span class="line">    <span class="string">&#x27;&#x27;</span><span class="string">&#x27;</span></span><br><span class="line"><span class="string">    str=$(grep &quot;User config file:&quot; &quot;!&#123;launchDir&#125;/.nextflow.log&quot;)</span></span><br><span class="line"><span class="string">    config=$&#123;str##*:&#125;</span></span><br><span class="line"><span class="string">    echo $&#123;config&#125;</span></span><br><span class="line"><span class="string">    &#x27;</span><span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    getConfig().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run getConfig.nf -c params.config</span><br><span class="line">/home/user/workflow/params.config</span><br></pre></td></tr></table></figure>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>若能從運行中的 nextflow 腳本取回輸入參數，將有助於往後重現分析或追蹤設置。目前，nextflow 有兩個隱變項能協助我們達成這項任務，</p>
-<ul>
-<li><code>params</code>：記錄了不同管道導入的參數，可以在 <code>*.nf</code> 檔各處呼叫以取得書入的參數和設定。</li>
-<li><code>launchDir</code>：雖然本身與參數無關，但此變項記錄了腳本執行位置，其中的 <code>.nextflow.log</code> 記錄了 <code>*.config</code> 路徑。讀取該檔即可獲取輸入的參數和設定。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -816,6 +702,56 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 筆記｜53. Maximum Subarray</title>
+    <url>/leetcode-53-maximum-subarray/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an integer array nums, find the subarray which has the largest sum and return its sum.</p>
+</blockquote>
+<p>給一整數數列，求其子數列級數的最大值。</p>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [-2,1,-3,4,-1,2,1,-5,4]<br>Output: 6</p>
+</blockquote>
+<span id="more"></span>
+
+<p><strong>限制</strong></p>
+<ul>
+<li>$1$$\leq$ nums.length $\leq$$10^5$：數列長度介於 $1$ 至 $10^5$ 間</li>
+<li>$-10^4$$\leq$ nums[i] $\leq$$10^4$：數值介於 $-10^4$ 至 $10^4$ 間</li>
+</ul>
+<p><strong>知識點</strong></p>
+<ul>
+<li>dynamic programming</li>
+<li>Kadane’s Algorithm</li>
+</ul>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>這題常見的作法是 Kadane’s algorithm，我在解題時並不知道這套演算法，所以一開始是用極端情形勾勒 function 的輪廓，再透過更多樣例「擬合」出可能的解法，最後才整合為提交的答案。</p>
+<ul>
+<li><strong>數列僅包含一個數字</strong>：解為該項數字，表示即使只有一個數字也能回傳</li>
+<li><strong>數列全為正值</strong>：解為數列各項之和，所以程式碼內含有累加操作</li>
+<li><strong>數列全為負值</strong>：解為數列最大的一項數字，所以程式碼內含有暫存最大值的變項與比較數值的判斷式</li>
+</ul>
+<p>由此分析可知問題癥結在於，累加的級數在碰到負數時要如何處置？</p>
+<ul>
+<li>若級數於累加後增加，則將這些數字納入計算。例如 [2, -1, -3, 5]，由於 5 &gt; -1 + -3，所以仍有涵蓋這兩個負數的價值。</li>
+<li>若級數於累加後減少，則跳過這些數字，從新的位置開始計算。例如 [2, -1, -4, 1]，累加新的數字無法抵銷兩個負數值，所以不如跳過。</li>
+</ul>
+<p>至此，我雖然對計算方式有個概念，但還是經過了一連串測試，才歸納出以下算法。依序累加數列各項，每次累加後 (1) 若累加後級數沒增加，則從當前項重新計算級數；(2) 更新當前級數的最大值。</p>
+<p>遍歷整條數列後，當前級數的最大值即為題解。只須走一趟循環，空間用量也固定，所以時間複雜度和空間複雜度分別為 $O(n)$ 與 $O(1)$。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxSubArray</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        sums = <span class="number">0</span></span><br><span class="line">        maxVal = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            sums += nums[i]</span><br><span class="line">            <span class="keyword">if</span> sums &lt; nums[i]:</span><br><span class="line">                sums = nums[i]</span><br><span class="line">            <span class="keyword">if</span> sums &gt; maxVal:</span><br><span class="line">                maxVal = sums</span><br><span class="line">        <span class="keyword">return</span>(maxVal)</span><br></pre></td></tr></table></figure>
+<p><em>當初以為要回傳子數列的位置，所以才使用 index 取值</em></p>
+<ul>
+<li><code>sums</code>：紀錄當前累加值</li>
+<li><code>maxVal</code>：紀錄當前累加的最大值</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
     <url>/nextflow-escape-characters/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
@@ -870,6 +806,103 @@ echo &quot;\$title \n $PWD&quot;
 <li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
 <li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
 </ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜怎麼從運行中的腳本取回參數？</title>
+    <url>/nextflow-retrieve-configuration-when-workflow-runs/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在執行腳本前，Nextflow 會讀取設置檔 (configuration files) 中的參數，將之代入腳本的對應位置後再執行程式。這項特性有助於使用者管理複雜流程的輸入值與環境設定，也將具體數值從流程邏輯抽離，讓開發者專注於流程的梳理與串接。</p>
+<p>然而，隨著流程腳本改版，設置檔的內容也可能跟著改變，是否有方法能記錄執行流程時使用的設置檔，以利往後重現分析或追蹤歷次設定？</p>
+<p>在這篇文中，我首先介紹了 nextflow 導入參數的方式，再陳述取回參數的可行策略，並附上這些策略的最簡範例供參考。</p>
+<span id="more"></span>
+
+<h2 id="Nextflow-導入參數的方式"><a href="#Nextflow-導入參數的方式" class="headerlink" title="Nextflow 導入參數的方式"></a>Nextflow 導入參數的方式</h2><p>以下是 nextflow 導入參數的常見方式，若一參數被多種方式定義，則會以順位較小者為準。</p>
+<table>
+<thead>
+<tr>
+<th>順位</th>
+<th>方式</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>於命令列輸入</td>
+<td><code>nextflow run workflow.nf --something value</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>以 <code>-params-file</code> 導入</td>
+<td><code>nextflow run workflow.nf -params-file params.json</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>以 <code>-c</code> 導入</td>
+<td><code>nextflow run workflow.nf -c params.config</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>於 nextflow 腳本內宣告</td>
+<td><code>params.something = value</code></td>
+</tr>
+</tbody></table>
+<h2 id="使用-params-取回參數"><a href="#使用-params-取回參數" class="headerlink" title="使用 params 取回參數"></a>使用 <code>params</code> 取回參數</h2><p>其中一個方法是讀取 <code>params</code> 的內容，<code>params</code>是 nextflow 的<a href="https://www.nextflow.io/docs/latest/script.html?highlight=implicit#implicit-variables">隱變項</a>，採用 <code>[key1:value1, key2:value2,...]</code>格式存儲以不同方式導入的參數。</p>
+<h3 id="params-json"><a href="#params-json" class="headerlink" title="params.json"></a>params.json</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;paramsDerivedConfig&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;provided using the -params-file option&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="params-config"><a href="#params-config" class="headerlink" title="params.config"></a>params.config</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">params &#123;</span><br><span class="line">    configDerivedConfig = <span class="string">&quot;specified using the -c option&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="getConfig-nf"><a href="#getConfig-nf" class="headerlink" title="getConfig.nf"></a>getConfig.nf</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">params.inScriptConfig = <span class="string">&quot;defined within the script itself&quot;</span></span><br><span class="line">process retrieveConfigFromParams &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;$params&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    getConfig().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run getConfig.nf --commandSpecifiedConfig <span class="string">&quot;specified on the command line&quot;</span> -params-file params.json -c params.config</span><br><span class="line">[configDerivedConfig:specified using the -c option, config-derived-config:specified using the -c option, paramsDerivedConfig:provided using the -params-file option, params-derived-config:provided using the -params-file option, commandSpecifiedConfig:specified on the <span class="built_in">command</span> line, command-specified-config:specified on the <span class="built_in">command</span> line, inScriptConfig:defined within the script itself, in-script-config:defined within the script itself]</span><br></pre></td></tr></table></figure>
+
+<h2 id="從輸入路徑取回參數"><a href="#從輸入路徑取回參數" class="headerlink" title="從輸入路徑取回參數"></a>從輸入路徑取回參數</h2><p>然而，前述方法只能取回以 <code>params</code> 存儲的參數，若想取得 <code>process</code>, <code>docker</code>, <code>report</code> 等<a href="https://www.nextflow.io/docs/latest/config.html?highlight=params#config-scopes">其它設置 (configuration scope)</a>，可以讀取位於 <code>$launchDir</code> 的 <code>.nextflow.log</code>，從中獲得當初執行腳本時輸入的 <code>*.config</code> 路徑，再將設置擋複製出來。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">process getConfig &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    shell:</span><br><span class="line">    <span class="string">&#x27;&#x27;</span><span class="string">&#x27;</span></span><br><span class="line"><span class="string">    str=$(grep &quot;User config file:&quot; &quot;!&#123;launchDir&#125;/.nextflow.log&quot;)</span></span><br><span class="line"><span class="string">    config=$&#123;str##*:&#125;</span></span><br><span class="line"><span class="string">    echo $&#123;config&#125;</span></span><br><span class="line"><span class="string">    &#x27;</span><span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    getConfig().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run getConfig.nf -c params.config</span><br><span class="line">/home/user/workflow/params.config</span><br></pre></td></tr></table></figure>
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>若能從運行中的 nextflow 腳本取回輸入參數，將有助於往後重現分析或追蹤設置。目前，nextflow 有兩個隱變項能協助我們達成這項任務，</p>
+<ul>
+<li><code>params</code>：記錄了不同管道導入的參數，可以在 <code>*.nf</code> 檔各處呼叫以取得書入的參數和設定。</li>
+<li><code>launchDir</code>：雖然本身與參數無關，但此變項記錄了腳本執行位置，其中的 <code>.nextflow.log</code> 記錄了 <code>*.config</code> 路徑。讀取該檔即可獲取輸入的參數和設定。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜背景執行 workflow 的方法</title>
+    <url>/nextflow-run-in-background/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
+<span id="more"></span>
+<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
+
+<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
+<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
+<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
 ]]></content>
       <categories>
         <category>bioinformatics</category>
@@ -1042,39 +1075,6 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
       <tags>
         <tag>communication</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜背景執行 workflow 的方法</title>
-    <url>/nextflow-run-in-background/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
-<span id="more"></span>
-<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
-
-<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
-<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
-
-<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
-<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
