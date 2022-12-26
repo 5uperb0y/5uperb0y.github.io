@@ -25,9 +25,28 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/browse-websites-with-key-board/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+    <title>讀後感｜再創世紀</title>
+    <url>/church-2014-regenesis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
+<span id="more"></span>
+
+<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
+<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
+<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
+<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
+<ul>
+<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
+<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
+<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
+</ul>
+<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
   </entry>
   <entry>
     <title>寫論文的糟糕和美好經驗</title>
@@ -78,30 +97,6 @@
       <tags>
         <tag>mindset</tag>
         <tag>career</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>讀後感｜再創世紀</title>
-    <url>/church-2014-regenesis/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
-<span id="more"></span>
-
-<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
-<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
-<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
-<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
-<ul>
-<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
-<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
-<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
-</ul>
-<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -158,6 +153,26 @@
       </tags>
   </entry>
   <entry>
+    <title>很久很久以前，自然用什麼盛裝生命？</title>
+    <url>/how-nature-contains-life-in-early-earth/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
+<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
+<span id="more"></span>
+
+<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
+<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
+<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
+<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>origins of life</category>
+      </categories>
+      <tags>
+        <tag>astrobiology</tag>
+        <tag>popular science</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>從碩班第一次專題課說起......</title>
     <url>/how-i-learn-from-seminars/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>讀碩班前，我其實不知道 seminar 到底要幹嘛，也不知道和我有什麼關係。所以如同曖昧、戀愛等陌生概念，所有關於 seminar 的知識都是PTT教我的。</p>
@@ -210,26 +225,6 @@
       </categories>
       <tags>
         <tag>communitcation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>很久很久以前，自然用什麼盛裝生命？</title>
-    <url>/how-nature-contains-life-in-early-earth/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
-<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
-<span id="more"></span>
-
-<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
-<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
-<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
-<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>origins of life</category>
-      </categories>
-      <tags>
-        <tag>astrobiology</tag>
-        <tag>popular science</tag>
       </tags>
   </entry>
   <entry>
@@ -292,6 +287,22 @@
       </tags>
   </entry>
   <entry>
+    <title>網際牛仔與無障礙空間（下）：</title>
+    <url>/keyboard-accessibility-on-websites/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="網際網路的想像"><a href="#網際網路的想像" class="headerlink" title="網際網路的想像"></a>網際網路的想像</h1><p>在網際網路的黎明，威廉吉布森在往後 cyberpunk 先聲的著作裡寫下他對於網際網路的想像。在那個時代哩，人們可以直接將神經系統連上線，透過意識直接控制物件與檔案軟體，不再需要鍵盤、滑鼠、觸控板甚至視動捕捉儀等輸入設備。</p>
+<blockquote>
+</blockquote>
+<h1 id="當代人機交互與無法使用滑鼠的人"><a href="#當代人機交互與無法使用滑鼠的人" class="headerlink" title="當代人機交互與無法使用滑鼠的人"></a>當代人機交互與無法使用滑鼠的人</h1><p>然而，至今標準的輸入裝備，</p>
+<h1 id="為什麼鍵盤合適"><a href="#為什麼鍵盤合適" class="headerlink" title="為什麼鍵盤合適"></a>為什麼鍵盤合適</h1><h1 id="無障礙網際空間"><a href="#無障礙網際空間" class="headerlink" title="無障礙網際空間"></a>無障礙網際空間</h1><h1 id="換位思考與行動"><a href="#換位思考與行動" class="headerlink" title="換位思考與行動"></a>換位思考與行動</h1><h1 id="結語：網際牛仔與無障礙空間"><a href="#結語：網際牛仔與無障礙空間" class="headerlink" title="結語：網際牛仔與無障礙空間"></a>結語：網際牛仔與無障礙空間</h1><p><a href="https://medium.com/@ru-hsu916">https://medium.com/@ru-hsu916</a><br><a href="https://www.nespresso.com/tw/zh/vertuo-range-introduction">https://www.nespresso.com/tw/zh/vertuo-range-introduction</a><br><a href="https://www.railway.gov.tw/tra-tip-web/tip#C">https://www.railway.gov.tw/tra-tip-web/tip#C</a></p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>tips and tricks</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>讀後感｜太空生物學</title>
     <url>/lee-2017-astrobiology/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
@@ -306,6 +317,71 @@
       </categories>
       <tags>
         <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜1480. Running Sum of 1d Array</title>
+    <url>/leetcode-1480-running-sum-of-1d-array/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>計算數列逐項的累積和 (runningSum)</p>
+<span id="more"></span>
+
+<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array nums. We define a running sum of an array as runningSum[i] &#x3D; sum(nums[0]…nums[i]).<br>Return the running sum of nums.</p>
+</blockquote>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,4]<br>Output: [1,3,6,10]</p>
+</blockquote>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
+<li><code>-10^6 &lt;= nums[i] &lt;= 10^6</code></li>
+</ul>
+<p><strong>知識點</strong><br>prefix sum &amp; array  </p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題應該算是 for loop 練習，我覺得要留意 (1) indices out of range 以及 (2) len(nums) &#x3D;&#x3D; 1 的狀況。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">runningSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            nums[n] = nums[n - <span class="number">1</span>] + nums[n]</span><br><span class="line">        <span class="keyword">return</span>(nums)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜1. Two Sum</title>
+    <url>/leetcode-1-two-sum/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
+</blockquote>
+<p>求數列內，和為目標值的兩數之座標</p>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [3,2,4], target &#x3D; 6<br>Output: [1,2]</p>
+</blockquote>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 104</code>：數列長度介於 2 至 104 之間</li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code>：數列各項可能有負值</li>
+<li><code>-109 &lt;= target &lt;= 109</code>：目標值可能為負值</li>
+<li>Only one valid answer exists.：僅有一組解</li>
+</ul>
+<span id="more"></span>
+
+<p><strong>知識點</strong><br>hash table</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題最直觀的解法是將數列各項兩兩相加，最遲到比對所有組合後才找到題解。然而，目標值在這算法裡僅作為判斷結果的依據，沒有充分利用其提供的資訊。</p>
+<p>為了充分利用目標值，可以各項與目標值之差為 keys，各項座標為 values，建立 hash table 存儲讀過的數字。</p>
+<p>若現在的數字為先前出現過的數字與目標值之差，則回傳這兩數字的座標即為題解；若否，則新增現在的數字與目標值之差到 hash table 內。由於題目設計保證有唯一解，所以最遲遍歷整個數列即可找到題解。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        record = &#123;&#125;  </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            diff = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> record.keys() :</span><br><span class="line">                <span class="keyword">return</span>([record[nums[i]], i])</span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                record[diff] = i</span><br></pre></td></tr></table></figure>
+<ul>
+<li>此以 python dict 實踐 hash table 的功能。</li>
+<li><code>record.keys()</code> 可寫成 <code>record</code>，但標出來比較清楚</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -392,71 +468,6 @@
       </categories>
       <tags>
         <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 筆記｜1. Two Sum</title>
-    <url>/leetcode-1-two-sum/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
-</blockquote>
-<p>求數列內，和為目標值的兩數之座標</p>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [3,2,4], target &#x3D; 6<br>Output: [1,2]</p>
-</blockquote>
-<p><strong>限制</strong></p>
-<ul>
-<li><code>2 &lt;= nums.length &lt;= 104</code>：數列長度介於 2 至 104 之間</li>
-<li><code>-109 &lt;= nums[i] &lt;= 109</code>：數列各項可能有負值</li>
-<li><code>-109 &lt;= target &lt;= 109</code>：目標值可能為負值</li>
-<li>Only one valid answer exists.：僅有一組解</li>
-</ul>
-<span id="more"></span>
-
-<p><strong>知識點</strong><br>hash table</p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題最直觀的解法是將數列各項兩兩相加，最遲到比對所有組合後才找到題解。然而，目標值在這算法裡僅作為判斷結果的依據，沒有充分利用其提供的資訊。</p>
-<p>為了充分利用目標值，可以各項與目標值之差為 keys，各項座標為 values，建立 hash table 存儲讀過的數字。</p>
-<p>若現在的數字為先前出現過的數字與目標值之差，則回傳這兩數字的座標即為題解；若否，則新增現在的數字與目標值之差到 hash table 內。由於題目設計保證有唯一解，所以最遲遍歷整個數列即可找到題解。 </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        record = &#123;&#125;  </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            diff = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> record.keys() :</span><br><span class="line">                <span class="keyword">return</span>([record[nums[i]], i])</span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                record[diff] = i</span><br></pre></td></tr></table></figure>
-<ul>
-<li>此以 python dict 實踐 hash table 的功能。</li>
-<li><code>record.keys()</code> 可寫成 <code>record</code>，但標出來比較清楚</li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 筆記｜1480. Running Sum of 1d Array</title>
-    <url>/leetcode-1480-running-sum-of-1d-array/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>計算數列逐項的累積和 (runningSum)</p>
-<span id="more"></span>
-
-<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array nums. We define a running sum of an array as runningSum[i] &#x3D; sum(nums[0]…nums[i]).<br>Return the running sum of nums.</p>
-</blockquote>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [1,2,3,4]<br>Output: [1,3,6,10]</p>
-</blockquote>
-<p><strong>限制</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
-<li><code>-10^6 &lt;= nums[i] &lt;= 10^6</code></li>
-</ul>
-<p><strong>知識點</strong><br>prefix sum &amp; array  </p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題應該算是 for loop 練習，我覺得要留意 (1) indices out of range 以及 (2) len(nums) &#x3D;&#x3D; 1 的狀況。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">runningSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            nums[n] = nums[n - <span class="number">1</span>] + nums[n]</span><br><span class="line">        <span class="keyword">return</span>(nums)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>programming</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -590,51 +601,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜724. Find Pivot Index</title>
-    <url>/leetcode-724-find-pivot-index/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
-<span id="more"></span>
-<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
-</blockquote>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
-</blockquote>
-<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
-<p><strong>限制</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
-<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
-</ul>
-<p><strong>知識點</strong><br>prefix sum &amp; array</p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
-<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
-<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
-<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
-<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
-<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
-]]></content>
-      <categories>
-        <category>programming</category>
-      </categories>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MiTalk 2022：在講台上</title>
     <url>/mitalk-6-thu-2022/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>兩年前，我曾以聽眾的身分報名 MiTalk，如今總算有點結果可以參加口頭報告。趁著記憶猶新，我想紀錄此次工作坊的所見所得，並且借題敘述一些尚未獨立成篇的想法。</p>
@@ -754,6 +720,382 @@
       <tags>
         <tag>career</tag>
         <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜724. Find Pivot Index</title>
+    <url>/leetcode-724-find-pivot-index/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
+<span id="more"></span>
+<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
+</blockquote>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
+</blockquote>
+<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
+</ul>
+<p><strong>知識點</strong><br>prefix sum &amp; array</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
+<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
+<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
+<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
+<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
+<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？</title>
+    <url>/navigate-websites-with-keyboard/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>為什麼想以鍵盤瀏覽網頁？滑鼠是為簡化繁瑣的鍵入指令而生，也與圖形介面的發展相輔相成。因此，當代網頁本來就適合以滑鼠瀏覽，純靠瀏覽器有限的快捷鍵反倒綁手綁腳。</p>
+<p>然而，有時事情做得炫泡比做得有效率來得重要。</p>
+<blockquote>
+<p>Style over Substance. It doesn’t matter how well you do something, as long as you look good doing it. （格調重於成效，只要你作風有形，事情幹得怎麼樣並不要緊。） </p>
+<p style="text-align:right" > The core rulebook for Cyberpunk 2020 </p>
+</blockquote>
+<span id="more"></span>
+<h1 id="鍵盤操作的原則與設置"><a href="#鍵盤操作的原則與設置" class="headerlink" title="鍵盤操作的原則與設置"></a>鍵盤操作的原則與設置</h1><p>雖然使用鍵盤的初衷是「覺得酷」</p>
+<ol>
+<li>操作割裂感，不用打字打一打，手移動到滑鼠</li>
+<li>提升瀏覽速度</li>
+</ol>
+<p>分析瀏覽網頁的過程，大致上是查詢、瀏覽、點擊、切換頁面的循環。</p>
+<ul>
+<li><strong>格調重於成效</strong>：</li>
+<li><strong>搜索取代瀏覽</strong>：</li>
+<li><strong>自訂創造風格</strong>：</li>
+</ul>
+<p>本文簡介如何以 Windows 系統配合 Chrome 瀏覽器，純粹使用鍵盤瀏覽網頁。</p>
+<p>既然要用鍵盤瀏覽網頁，那首要的目標自然是透過鍵盤開啟瀏覽器。然而，Chrome 與 Windows 雖然有不少快捷鍵，卻似乎沒有能開啟瀏覽器的快捷鍵。幸好，Windows 支援用戶為檔案或程式建立捷徑 (Shortcut) 和設定快捷鍵 (Shortcut key)，所以能在需要時快速開啟檔案或程式，不必再移動到它們（或其捷徑）的所在目錄。</p>
+<p>瀏覽器的捷徑可從執行檔自行建立（<strong>chrome.exe - Shortcut</strong>），或是使用安裝時自動建立的捷徑（ <strong>Google Chrome</strong>）。建立瀏覽器的捷徑之後，便能為其設定快捷鍵。</p>
+<ol>
+<li>右鍵點擊「捷徑」</li>
+<li>點選「內容 (Properties)」</li>
+<li>點選「快捷鍵」</li>
+<li>按下自訂快捷鍵，例如 <code>Ctrl</code> + <code>Alt</code> + <code>C</code></li>
+<li>點選「確定」套用設定</li>
+</ol>
+<h1 id="暢遊-Google-search"><a href="#暢遊-Google-search" class="headerlink" title="暢遊 Google search"></a>暢遊 Google search</h1><p>Chrome 完整的快捷鍵列表可參考<a href="https://support.google.com/chrome/answer/157179?hl=zh-Hant&co=GENIE.Platform=Desktop">google 說明</a>。以下我嘗試從用戶角度，說明有哪些常用快捷鍵值得留意，而這些快捷鍵又有哪些使用的情境。</p>
+<h2 id="如何透過搜尋引擎查找關鍵字？"><a href="#如何透過搜尋引擎查找關鍵字？" class="headerlink" title="如何透過搜尋引擎查找關鍵字？"></a>如何透過搜尋引擎查找關鍵字？</h2><p>假設今天想查詢某項資訊，可考慮以下三種方式來輸入關鍵字，再點擊 <code>Enter</code> 執行搜索：</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>開啟新分頁並移至新分頁的網址列</td>
+<td><code>Ctrl</code> + <code>T</code></td>
+</tr>
+<tr>
+<td>移至網址列</td>
+<td><code>Alt</code> + <code>D</code> or <code>Ctrl</code> + <code>L</code> or <code>F6</code></td>
+</tr>
+<tr>
+<td>於網址列搜尋 Google</td>
+<td><code>Ctrl</code> + <code>E</code> or <code>Ctrl</code> + <code>K</code></td>
+</tr>
+</tbody></table>
+<p>由於以上方法皆透過網址列搜尋關鍵字，一旦網頁跳轉到搜索結果，該列便會轉變為網址。此時若想修正錯字或更改關鍵字，可以使用 <code>/</code> 切換到 Google search box，在該位置編輯關鍵字，就不用重新輸入一遍，或編輯藏在長串網址當中的關鍵字。</p>
+<p>跳轉到搜索結果後，便能使用以下快捷鍵滑動或跳動網頁，尋找自己需要的資訊。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>連續滑動網頁</td>
+<td><code>↑</code> and <code>↓</code></td>
+</tr>
+<tr>
+<td>向下跳數列</td>
+<td><code>Space</code> or <code>PageDown</code></td>
+</tr>
+<tr>
+<td>向上跳數列</td>
+<td><code>Shift</code> + <code>Space</code> or <code>PageUp</code></td>
+</tr>
+<tr>
+<td>移動至網頁最上端</td>
+<td><code>Home</code></td>
+</tr>
+<tr>
+<td>移動至網頁最底端</td>
+<td><code>End</code></td>
+</tr>
+</tbody></table>
+<h2 id="如何開啟特定連結？"><a href="#如何開啟特定連結？" class="headerlink" title="如何開啟特定連結？"></a>如何開啟特定連結？</h2><p>假如你已找到感興趣的結果，接下來得移動游標到連結位置才能開啟。Chrome 預設以 <code>Tab</code> 和　<code>Shift + Tab</code> 在連結間切換。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移動至下一個連結</td>
+<td><code>Tab</code></td>
+</tr>
+<tr>
+<td>移動至上一個連結</td>
+<td><code>Shift</code> + <code>Tab</code></td>
+</tr>
+</tbody></table>
+<p>另一種方式是啟用無障礙設定裡的「使用文字游標瀏覽頁面」。在這模式裡，用戶能以 <code>←</code>、<code>↑</code>、<code>↓</code>、<code>→</code> 操作文字游標，讓網頁能像文檔一樣瀏覽。</p>
+<ol>
+<li><code>Alt</code> + <code>E</code> ，開啟瀏覽器設定選單</li>
+<li><code>S</code>，選取「設定」</li>
+<li><code>/</code>，進入搜索框</li>
+<li>查詢「無障礙設定」</li>
+<li>使用 <code>Tab</code> 移動到游標瀏覽功能開關</li>
+<li><code>Enter</code>，開啟或關閉功能</li>
+</ol>
+<p><em>(或是以 <code>F7</code>快速切換文字游標瀏覽模式。記得關掉提醒通知，往後啟用模式才不用一再確認。）</em></p>
+<p>當游標移動到連結位置，即可使用以下快捷鍵，決定要於哪個分頁開啟連結。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>於當前分頁開啟連結</td>
+<td><code>Enter</code></td>
+</tr>
+<tr>
+<td>於新分頁開啟連結</td>
+<td><code>Ctrl</code> + <code>Enter</code></td>
+</tr>
+<tr>
+<td>於新分頁開啟連結並移至新分頁</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>Enter</code></td>
+</tr>
+<tr>
+<td>於新視窗開啟連結並移至新視窗</td>
+<td><code>Shift</code> + <code>Enter</code></td>
+</tr>
+</tbody></table>
+<h2 id="如果我還沒找到滿意的結果，要怎麼前往下一頁？"><a href="#如果我還沒找到滿意的結果，要怎麼前往下一頁？" class="headerlink" title="如果我還沒找到滿意的結果，要怎麼前往下一頁？"></a>如果我還沒找到滿意的結果，要怎麼前往下一頁？</h2><p>很遺憾的，目前 Chrome 或 Google Search <strong>沒有直達下一頁的快捷鍵</strong>，只能持續押著 <code>Tab</code> 直到頁面底部。那使用 <code>Shift</code> + <code>Tab</code> 從頁面底部開始找起呢？可行，但不見得比較快，因為頁面底部除了「下一頁」與「上一頁」按鈕外，還有隱私權、服務條款、活動紀錄與地理位置等連結要通過。</p>
+<p>開啟連結是使用鍵盤瀏覽網頁的最大障礙，因為用戶必須先滑動視窗找到對應的連結，再移動游標通過一樣內容到該連結的位置。換句話說，用戶至少要跑兩次迴圈才能找到並打開連結。</p>
+<p>既然如此，那為什麼不一開始就使用 <code>Tab</code> 來逛網頁呢？其實可以，但非常惱人。</p>
+<p>首先，游標移動不若視窗滑動迅速。其次，連結在網頁上的順序未必與游標移動的順序一致，使得用戶無法預期瀏覽的方向。以 Google search 為例，一則搜尋條目在視覺上的結構為頁庫存檔選項、翻譯選項與連結文字。然而，游標移動的順序卻是連結文字、頁庫存檔選項、翻譯選項，導致需要連續按三次 <code>Tab</code> 才能移動到下一個連結。</p>
+<blockquote>
+<p><a href="https://5uperb0y.com/">https://5uperb0y.com</a> ▼ 翻譯這個網頁<br>5uperb0y’s blog</p>
+</blockquote>
+<p>第三，不是每個網頁都會醒目標示游標的位置，以至於用戶不僅無法確認游標移動的順序，還可能找不到游標的位置。就拿我這個網站為例，可以試試使用 <code>Tab</code> 來找到任一文章的連結，我相信按了十幾下可能都還沒辦法確認游標位置，所以也很難開啟特定連結。</p>
+<p>在本文其他節，我會介紹能迴避這些問題的取巧手段和擴充套件。但在此處，我們先假設所有搜索都能在第一頁找到答案，並繼續了解如何透過快捷鍵管理分頁與視窗。</p>
+<h2 id="如何管理瀏覽器分頁？"><a href="#如何管理瀏覽器分頁？" class="headerlink" title="如何管理瀏覽器分頁？"></a>如何管理瀏覽器分頁？</h2><p>如今你已經學會使用快捷鍵搜尋和瀏覽網頁，然而隨著點擊而累積的分頁又該如何管理呢？雖然列出了許多選項，但我常用的僅有粗體標示者。</p>
+<h3 id="開啟與關閉分頁"><a href="#開啟與關閉分頁" class="headerlink" title="開啟與關閉分頁"></a>開啟與關閉分頁</h3><table>
+<thead>
+<tr>
+<th>行為</th>
+<th>shortcut</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>開啟新分頁並移至新分頁</td>
+<td><code>Ctrl</code> + <code>T</code></td>
+</tr>
+<tr>
+<td><strong>關閉當前分頁</strong></td>
+<td><code>Ctrl</code> + <code>W</code> or <code>Ctrl</code> + <code>F4</code></td>
+</tr>
+<tr>
+<td>依關閉順序，重新開啟已關閉之分頁</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>T</code></td>
+</tr>
+</tbody></table>
+<h3 id="切換與移動分頁"><a href="#切換與移動分頁" class="headerlink" title="切換與移動分頁"></a>切換與移動分頁</h3><table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移至指定分頁</td>
+<td><code>Ctrl</code> + <code>[1-8]</code></td>
+</tr>
+<tr>
+<td>移至最後分頁</td>
+<td><code>Ctrl</code> + <code>9</code></td>
+</tr>
+<tr>
+<td><strong>移至下一分頁</strong></td>
+<td><code>Ctrl</code> + <code>PageDown</code> or <code>Ctrl</code> + <code>Tab</code></td>
+</tr>
+<tr>
+<td><strong>移至上一分頁</strong></td>
+<td><code>Ctrl</code> + <code>PageUp</code> or <code>Ctrl</code> + <code>Shift</code> + <code>Tab</code></td>
+</tr>
+<tr>
+<td>後挪分頁順序</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>PageDown</code></td>
+</tr>
+<tr>
+<td>前挪分頁順序</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>PageUp</code></td>
+</tr>
+<tr>
+<td>挪動分頁為獨立視窗</td>
+<td><code>Shift</code> + <code>W</code></td>
+</tr>
+</tbody></table>
+<h3 id="搜索或開啟曾瀏覽的網頁"><a href="#搜索或開啟曾瀏覽的網頁" class="headerlink" title="搜索或開啟曾瀏覽的網頁"></a>搜索或開啟曾瀏覽的網頁</h3><table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>上一頁</strong></td>
+<td><code>Alt</code> + <code>←</code></td>
+</tr>
+<tr>
+<td>下一頁</td>
+<td><code>Alt</code> + <code>→</code></td>
+</tr>
+<tr>
+<td>開啟搜尋歷史</td>
+<td><code>Ctrl</code> + <code>H</code></td>
+</tr>
+</tbody></table>
+<h2 id="如何管理瀏覽器視窗？"><a href="#如何管理瀏覽器視窗？" class="headerlink" title="如何管理瀏覽器視窗？"></a>如何管理瀏覽器視窗？</h2><p>除了分頁，Chrome 亦支援以快捷鍵開啟視窗或調整視窗大小。不過這些快捷鍵我也不常用到，頂多會用無痕視窗查詢特殊關鍵字或測試 SEO 和網頁有沒有問題。值得留意的是，<code>ALT</code> + <code>Space</code> 是開啟視窗右鍵選單的快捷鍵，所以縮小或放大都有提示，不須記憶。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>開新視窗</td>
+<td><code>Ctrl</code> + <code>N</code></td>
+<td>寫作時參照文件</td>
+</tr>
+<tr>
+<td>開新無痕視窗</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>N</code></td>
+<td>查詢關鍵字、測試網頁</td>
+</tr>
+<tr>
+<td>將當前視窗縮至最小</td>
+<td><code>ALT</code> + <code>Space</code>, then <code>N</code></td>
+<td>操作桌面的檔案或軟體</td>
+</tr>
+<tr>
+<td>將當前視窗開至最大</td>
+<td><code>ALT</code> + <code>Space</code>, then <code>X</code></td>
+<td>很少用</td>
+</tr>
+</tbody></table>
+<p>相較於 Chrome，Windows 提供了更多調整視窗尺寸的途徑。因此有助於在寫程式或編輯文件時，雙開並分配視窗在螢幕上的位置，以便邊參閱資料邊修改文件。下圖是視窗間的關係，點擊 <code>Win</code> 與下圖的方向鍵，即可在不同形式的視窗間切換。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">           上半視窗（點選 ↓ 會回到原始視窗）</span><br><span class="line">              ↑</span><br><span class="line">左半視窗 ←  最大視窗 → 右半視窗</span><br><span class="line">              ⇅</span><br><span class="line">左半視窗 ⇆ 原始視窗 ⇆ 右半視窗</span><br><span class="line">              ⇅</span><br><span class="line">           最小視窗          </span><br></pre></td></tr></table></figure>
+
+<p>至於要在視窗間切換或取回縮小的視窗，可以使用 <code>Alt</code> + <code>Tab</code> 進入選單，再配合方向鍵選取。</p>
+<h1 id="快捷鍵組合技"><a href="#快捷鍵組合技" class="headerlink" title="快捷鍵組合技"></a>快捷鍵組合技</h1><p>前一節介紹了 Chrome 內建的快捷鍵，但諸如好手氣、右鍵搜索、於無痕視窗開啟等功能都沒有對應的快捷鍵。因此，這一節要介紹如何組合基本的快捷鍵，實踐這些方便功能。</p>
+<h2 id="「透過-Google-搜尋」"><a href="#「透過-Google-搜尋」" class="headerlink" title="「透過 Google 搜尋」"></a>「透過 Google 搜尋」</h2><p><strong>方法一：透過「開新分頁」</strong></p>
+<ol>
+<li>標示 (highlight) 欲搜索的字串</li>
+<li><code>Ctrl</code> + <code>C</code>，複製字串</li>
+<li><code>Ctrl</code> + <code>T</code>，開啟並移動游標至新分頁的網址列</li>
+<li><code>Ctrl</code> + <code>V</code>，貼上字串至網址列</li>
+<li><code>Enter</code>，執行搜尋</li>
+</ol>
+<p>若要在同一分頁搜尋，可以使用 <code>Ctrl</code> + <code>E</code>&#x2F;<code>K</code>&#x2F;<code>L</code> 取代 <code>Ctrl</code> + <code>T</code>。</p>
+<p><strong>方法二：透過「右鍵選單」</strong><br>若使用 windows 電腦，可使用選單鍵開啟右鍵選單，執行相關功能。</p>
+<ol>
+<li>標示欲搜索的字串</li>
+<li><code>☰</code>，透過選單鍵(menu key)開啟選單</li>
+<li><code>S</code>，執行「透過 Google 搜尋」</li>
+</ol>
+<h2 id="「好手氣」"><a href="#「好手氣」" class="headerlink" title="「好手氣」"></a>「好手氣」</h2><p>Google search 首頁有個好手氣的按鈕，能直接進入第一個搜尋的網頁。我們可以使用 Google search 的無障礙連結來達到類似目的。</p>
+<ol>
+<li>輸入搜尋內容</li>
+<li><code>Tab</code>，開啟無障礙輔助提示，此時應該會停在「跳至主內容」</li>
+<li><code>Enter</code>，確認跳至「主內容」，通常會直接將游標移動到第一個連結</li>
+<li><code>Enter</code>，進入第一個連結</li>
+</ol>
+<p>由於 Google 有時會在第一則搜尋條目前安插精選摘要、廣告或是錯字提醒的窗格，所以這招並非總是見效。儘管如此，仍比遍歷 Google search 的功能窗格更為便捷。</p>
+<h2 id="「在無痕視窗中開啟連結」"><a href="#「在無痕視窗中開啟連結」" class="headerlink" title="「在無痕視窗中開啟連結」"></a>「在無痕視窗中開啟連結」</h2><p>Chrome 介紹了各種開啟連結的方式，唯獨不支援在無痕視窗開啟連結的方式，所以此處同樣要利用選單鍵的來開啟右鍵選單。</p>
+<ol>
+<li>移動游標至連結</li>
+<li><code>☰</code>，透過選單鍵開啟選單</li>
+<li><code>G</code>，執行「在無痕視窗中開啟連結」</li>
+</ol>
+<h2 id="「另存為圖片」"><a href="#「另存為圖片」" class="headerlink" title="「另存為圖片」"></a>「另存為圖片」</h2><p><strong>方法一：透過「另存網頁」</strong></p>
+<ol>
+<li>移動游標至圖片</li>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>Enter</code>，開啟圖片於新分頁並切換至新分頁</li>
+<li><code>Ctrl</code> + <code>S</code>，另存新檔</li>
+<li>選取存儲目錄並存放圖片</li>
+</ol>
+<p><strong>方法二：透過「右鍵選單」</strong></p>
+<ol>
+<li>移動游標至圖片</li>
+<li><code>☰</code>，透過選單鍵開啟選單</li>
+<li><code>V</code>，執行「另存為圖片」</li>
+<li>選取存儲目錄並存放圖片</li>
+</ol>
+<h2 id="拖曳當前分頁為獨立視窗"><a href="#拖曳當前分頁為獨立視窗" class="headerlink" title="拖曳當前分頁為獨立視窗"></a>拖曳當前分頁為獨立視窗</h2><p>Chrome 沒有相關的快捷鍵，不過我們可以透過「於新視窗開啟分頁」的快捷鍵來模擬。然而與滑鼠拖曳最大的差別在於，重啟後不會保留已填入的資料，也不會刪除舊的分頁。</p>
+<ol>
+<li><code>Ctrl</code> + <code>L</code> (or <code>Alt</code> + <code>D</code>)，移至網址列</li>
+<li><code>Shift</code> + <code>Enter</code>，於新視窗開啟連結</li>
+</ol>
+<h1 id="以取巧的方式迴避點擊連結的障礙？"><a href="#以取巧的方式迴避點擊連結的障礙？" class="headerlink" title="以取巧的方式迴避點擊連結的障礙？"></a>以取巧的方式迴避點擊連結的障礙？</h1><p>本文前半部曾提到，點擊連結是用鍵盤瀏覽網頁最大的困難。在這一節，我嘗試</p>
+<h2 id="如何直達特定連結？"><a href="#如何直達特定連結？" class="headerlink" title="如何直達特定連結？"></a>如何直達特定連結？</h2><p>除了 <code>Tab</code>，也可以利用利用 <code>Ctrl</code> + <code>F</code></p>
+<ol>
+<li><code>Ctrl</code> + <code>F</code>，搜尋連結的關鍵字</li>
+<li>若選對關鍵字，游標會直接移動到連結。若否，則使用 <code>Enter</code> 和 <code>Shift</code> + <code>Enter</code>前後查詢連結</li>
+<li><code>Ctrl</code> + <code>Enter</code>，於當前分頁開啟連結（預設行為）</li>
+<li>若想要在新分頁開啟連結，可以先　<code>Esc</code> 退出，再執行開分頁搜索的行為</li>
+</ol>
+<h2 id="如何前往下一頁？"><a href="#如何前往下一頁？" class="headerlink" title="如何前往下一頁？"></a>如何前往下一頁？</h2><p>使用 SEARCH<br>設定快速鍵</p>
+<p>至於為什麼 Chrome 沒有下一頁的關鍵字，也許是因為不是每個網頁都有這按鈕吧。</p>
+<p>不過我猜這也跟搜尋引擎的理念有關。假設在關鍵字正確的情況下，Google Search 總是能推薦最佳的內容。那麼，只要用戶下對關鍵字，就能從第一個連結取得想要的結果。</p>
+<p>若第一頁沒出現想要的結果，表示下錯關鍵字或議題太冷門，原則上，更動關鍵字的效益會比點選下一頁更好。因此，基於對搜尋演算法的信任，下一頁的需求應該不高。</p>
+<h2 id="如何複製文字？"><a href="#如何複製文字？" class="headerlink" title="如何複製文字？"></a>如何複製文字？</h2><h1 id="使用-viminum-解放鍵盤的潛能"><a href="#使用-viminum-解放鍵盤的潛能" class="headerlink" title="使用 viminum 解放鍵盤的潛能"></a>使用 viminum 解放鍵盤的潛能</h1><h2 id="viminum-是什麼？"><a href="#viminum-是什麼？" class="headerlink" title="viminum 是什麼？"></a>viminum 是什麼？</h2><p>viminum 是 chrome 的擴充套件，借鑒了 vim 編輯器的精神與慣用語法，套用在網頁瀏覽的需求上。相關</p>
+<h2 id="為每個連結設置索引"><a href="#為每個連結設置索引" class="headerlink" title="為每個連結設置索引"></a>為每個連結設置索引</h2><p>雖然 viminum 還有許多功能，但我覺得在改善瀏覽網頁方面，連結快速鍵是最方便的功能。</p>
+<p>chrome 內建的快捷鍵必須遍歷每個連結或是透過搜尋直達連結，當網站的連結編排不友善時，遍歷的時間會延長。</p>
+<p>而 viminum 的解決方式是為每個連結編上至多兩個字元的符號，因此，一個網頁最多只要按三個鍵就能進入該連結。</p>
+<p>使用viminum之後，像是 ptt, dcard, 之類的網頁也幾乎都能使用鍵盤瀏覽</p>
+<p>chrome 內建的快捷鍵必須 快捷鍵</p>
+<h2 id="避免案件衝突"><a href="#避免案件衝突" class="headerlink" title="避免案件衝突"></a>避免案件衝突</h2><h1 id="結論：練習"><a href="#結論：練習" class="headerlink" title="結論：練習"></a>結論：練習</h1><p><sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="">2</span></a></sup>]</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>tips and tricks</tag>
       </tags>
   </entry>
   <entry>
