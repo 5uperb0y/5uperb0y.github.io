@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。 Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。">
+    <meta name="description" content="上週碰到一個離奇的 bug，有支 nextflow 腳本可以順利執行，但會無聲無息地略過其中一個 process。該腳本執行後於終端吐出的訊息類似以下形式： 12345$ nextflow run workflow.nf[3c&#x2F;9ab742] process &gt; a1 [100%] 1 of 1 ✔[8e&#x2F;4eg429] process &gt; a2 [100%] 1 of 1 ✔[-">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="讀後感｜樹之歌">
-<meta property="og:url" content="https://5uperb0y.com/haskell-2017-the-songs-of-trees/index.html">
+<meta property="og:title" content="Nextflow｜輸入 empty channel 會發生什麼事？">
+<meta property="og:url" content="https://5uperb0y.com/nextflow-input-with-an-empty-channel/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。 Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。">
+<meta property="og:description" content="上週碰到一個離奇的 bug，有支 nextflow 腳本可以順利執行，但會無聲無息地略過其中一個 process。該腳本執行後於終端吐出的訊息類似以下形式： 12345$ nextflow run workflow.nf[3c&#x2F;9ab742] process &gt; a1 [100%] 1 of 1 ✔[8e&#x2F;4eg429] process &gt; a2 [100%] 1 of 1 ✔[-">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-02-09T14:20:13.000Z">
-<meta property="article:modified_time" content="2022-12-03T15:40:41.435Z">
+<meta property="article:published_time" content="2022-12-27T10:10:49.000Z">
+<meta property="article:modified_time" content="2022-12-27T16:51:08.486Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="reading">
+<meta property="article:tag" content="nextflow">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/haskell-2017-the-songs-of-trees/">
+<link rel="canonical" href="https://5uperb0y.com/nextflow-input-with-an-empty-channel/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/haskell-2017-the-songs-of-trees/","path":"haskell-2017-the-songs-of-trees/","title":"讀後感｜樹之歌"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/nextflow-input-with-an-empty-channel/","path":"nextflow-input-with-an-empty-channel/","title":"Nextflow｜輸入 empty channel 會發生什麼事？"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>讀後感｜樹之歌 | 5uperb0y's blog</title>
+<title>Nextflow｜輸入 empty channel 會發生什麼事？ | 5uperb0y's blog</title>
   
 
 
@@ -130,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -143,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA%E7%AD%96%E7%95%A5"><span class="nav-number">1.</span> <span class="nav-text">解決策略</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Empty-channel"><span class="nav-number">2.</span> <span class="nav-text">Empty channel</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-ifEmpty-%E7%82%BA%E8%BC%B8%E5%85%A5-channel-%E8%A8%AD%E5%AE%9A%E9%A0%90%E8%A8%AD%E5%80%BC"><span class="nav-number">3.</span> <span class="nav-text">使用 ifEmpty 為輸入 channel 設定預設值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">4.</span> <span class="nav-text">結論</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E9%96%B1%E8%AE%80"><span class="nav-number">5.</span> <span class="nav-text">延伸閱讀</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -267,6 +268,37 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-run-in-background/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-30</time>
+        <br>
+      Nextflow｜背景執行 workflow 的方法
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-escape-characters/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-10</time>
+        <br>
+      Nextflow｜程式碼區塊的跳脫符號 (escape characters)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-retrieve-configuration-when-workflow-runs/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-06</time>
+        <br>
+      Nextflow｜怎麼從運行中的腳本取回參數？
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
@@ -284,7 +316,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/haskell-2017-the-songs-of-trees/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-input-with-an-empty-channel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -297,12 +329,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="讀後感｜樹之歌 | 5uperb0y's blog">
+      <meta itemprop="name" content="Nextflow｜輸入 empty channel 會發生什麼事？ | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          讀後感｜樹之歌
+          Nextflow｜輸入 empty channel 會發生什麼事？
         </h1>
 
         <div class="post-meta-container">
@@ -313,14 +345,23 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-02-09 22:20:13" itemprop="dateCreated datePublished" datetime="2022-02-09T22:20:13+08:00">2022-02-09</time>
+      <time title="創建時間：2022-12-27 18:10:49" itemprop="dateCreated datePublished" datetime="2022-12-27T18:10:49+08:00">2022-12-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-03 23:40:41" itemprop="dateModified" datetime="2022-12-03T23:40:41+08:00">2022-12-03</time>
+      <time title="修改時間：2022-12-28 00:51:08" itemprop="dateModified" datetime="2022-12-28T00:51:08+08:00">2022-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
+        </span>
     </span>
 
   
@@ -346,8 +387,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/haskell-2017-the-songs-of-trees/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="haskell-2017-the-songs-of-trees/" itemprop="commentCount"></span>
+    <a title="disqus" href="/nextflow-input-with-an-empty-channel/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nextflow-input-with-an-empty-channel/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -358,7 +399,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>848</span>
+      <span>710</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -376,22 +417,33 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>上週碰到一個離奇的 bug，有支 nextflow 腳本可以順利執行，但會無聲無息地略過其中一個 process。該腳本執行後於終端吐出的訊息類似以下形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run workflow.nf</span><br><span class="line">[3c/9ab742] process &gt; a1 [100%] 1 of 1 ✔</span><br><span class="line">[8e/4eg429] process &gt; a2 [100%] 1 of 1 ✔</span><br><span class="line">[-        ] process &gt; b1</span><br><span class="line">[2f/0c0b71] process &gt; c1 [100%] 1 of 1 ✔</span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
 <ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+<li><code>a1</code> 與 <code>a2</code> 輸出的 channel 經 <code>join</code> 之後輸入 <code>b1</code>，而 <code>c1</code> 則獨立於其他三個 process。</li>
+<li>nextflow 沒有任何錯誤訊息（即終端看不到紅色的字）</li>
+<li>nextflow 沒有為 <code>b1</code> 開啟工作目錄，所以也無從查看 <code>.command.log/err/out</code> 等與腳本執行相關的資訊</li>
+<li>查看 <code>.nextflow.log</code> 只能找到啟動 <code>b1</code> 的訊息：<code>[main] DEBUG nextflow.processor.TaskProcessor - Starting process &gt; b1</code>，但沒有其他執行細節。</li>
 </ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>
+<h1 id="解決策略"><a href="#解決策略" class="headerlink" title="解決策略"></a>解決策略</h1><p>由於 nextflow 幾乎沒有給出任何提示，所以只能自己想辦法在腳本內安排中斷點印出 channel 的內容。當時的策略是先不用 <code>join</code>，而是單獨輸入 <code>a1</code> 與 <code>a2</code> 的輸出，以便用 <code>stdout</code> 和 <code>view()</code>檢查各個 channel 是否與我們預期相同。</p>
+<p>結果問題還真的出在 channel 的合併，原來 <code>a1</code> 與 <code>a2</code> 的輸出結果沒有共同的 key，所以執行 <code>join</code> 操作後會生成一個 empty channel。</p>
+<h1 id="Empty-channel"><a href="#Empty-channel" class="headerlink" title="Empty channel"></a>Empty channel</h1><p>在 Nextflow 裏頭，可使用 <code>channel.empty()</code>建立 empty channel，其作用相當於對 process 傳遞終止訊號（參考 <a target="_blank" rel="noopener" href="https://javadoc.io/static/io.nextflow/nextflow/0.28.2/nextflow/Channel.html">Nextflow Channel Class 的說明</a>）。</p>
+<p>舉例來說，以下這支 nextflow 腳本會依序印出同一時間輸入的數對。雖然 <code>a_ch</code> 含有四項數字，但因為 <code>b_ch</code> 其中一項為 empty channel 的終止訊號，所以這個 process 只遞交並執行了三次<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="執行腳本時，nextflow 會先以 `nextflow.processor.TaskProcessor` 啟動 process，透過 `nextflow.executor.LocalHandler` 一一提交輸入 channel 的內容給 process 執行。詳細的流程可參閱 `.nextflow.log`。">1</span></a></sup>。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demoEmptyChannel.nf</span></span><br><span class="line">process p &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        val a</span><br><span class="line">        val b</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;($&#123;a&#125;, $&#123;b&#125;)&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">workflow &#123;</span><br><span class="line">    a_ch = channel.of(<span class="string">&quot;a1&quot;</span>, <span class="string">&quot;a2&quot;</span>, <span class="string">&quot;a3&quot;</span>, <span class="string">&quot;a4&quot;</span>)</span><br><span class="line">    b_ch = channel.of(<span class="string">&quot;b1&quot;</span>, <span class="string">&quot;b2&quot;</span>).concat(channel.empty()).concat(channel.of(<span class="string">&quot;b4&quot;</span>)) <span class="comment">// append items with concat() and channel.of()</span></span><br><span class="line">    p(a_ch, b_ch).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run demoEmptyChannel.nf</span><br><span class="line">[a8/4b2c55] process &gt; p (3) [100%] 3 of 3 ✔</span><br><span class="line">(a3, b4)</span><br><span class="line">(a2, b2)</span><br><span class="line">(a1, b1)</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用-ifEmpty-為輸入-channel-設定預設值"><a href="#使用-ifEmpty-為輸入-channel-設定預設值" class="headerlink" title="使用 ifEmpty 為輸入 channel 設定預設值"></a>使用 <code>ifEmpty</code> 為輸入 channel 設定預設值</h1><p>為了避免 process 被跳過或是沒有執行的狀況，<a target="_blank" rel="noopener" href="https://www.nextflow.io/docs/latest/operator.html#operator-ifempty">nextflow 官方文件</a>建議以 <code>ifEmpty</code> 為 channel 設定預設值。如以下案例，由於 <code>b_ch</code> 為 empty channel，經 <code>ifEmpty</code> operator 賦予預設值，使得 process 能順利運行。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//demoIfEmpty.nf</span></span><br><span class="line">process p &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        val a</span><br><span class="line">        val b</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;($a, $b)&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span>&#125;</span><br><span class="line">workflow &#123;   </span><br><span class="line">    a_ch = channel.of(<span class="string">&quot;a1&quot;</span>)</span><br><span class="line">    <span class="comment">// &lt;defalut value&gt; if ch.isempty() else ch</span></span><br><span class="line">    b_ch = channel.empty()</span><br><span class="line">    p(a_ch, b_ch.ifEmpty(<span class="string">&quot;b_default&quot;</span>)).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run demoIfEmpty.nf</span><br><span class="line">[47/459729] process &gt; p (1) [100%] 1 of 1 ✔</span><br><span class="line">(a1, b_default)</span><br></pre></td></tr></table></figure>
+
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Nextflow 的 process 會跳過含有 empty channel 的任務，若想避免這種狀況在非預期的情形發生（例如 <code>join</code> 失敗），可使用 <code>ifEmpty</code> 為 process 的輸入 channel 設定預設值。</p>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/70888844/nextflow-how-to-fail-if-channel-is-empty-ifempty">NextFlow: How to fail if channel is empty ( .ifEmpty() )</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/64042860/check-if-nextflow-channel-is-empty">check if nextflow channel is empty</a>)</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/nextflow-io/nf-hack18/blob/master/asciidocs/07_processes.adoc">Nextflow Workshop Hackaton 2018: 07_processes</a></li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">執行腳本時，nextflow 會先以 <code>nextflow.processor.TaskProcessor</code> 啟動 process，透過 <code>nextflow.executor.LocalHandler</code> 一一提交輸入 channel 的內容給 process 執行。詳細的流程可參閱 <code>.nextflow.log</code>。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>
     </div>
 
     
@@ -408,7 +460,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/haskell-2017-the-songs-of-trees/" title="讀後感｜樹之歌">https://5uperb0y.com/haskell-2017-the-songs-of-trees/</a>
+      <a href="https://5uperb0y.com/nextflow-input-with-an-empty-channel/" title="Nextflow｜輸入 empty channel 會發生什麼事？">https://5uperb0y.com/nextflow-input-with-an-empty-channel/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -417,21 +469,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/reading/" rel="tag"># reading</a>
+              <a href="/tags/nextflow/" rel="tag"># nextflow</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/schrodinger-1944-what-is-life-chapter-1/" rel="prev" title="讀後感｜生命是什麼 — 鴿子為什麼那麼大？">
-                  <i class="fa fa-chevron-left"></i> 讀後感｜生命是什麼 — 鴿子為什麼那麼大？
+                <a href="/keyboard-accessibility-on-websites/" rel="prev" title="網際牛仔與無障礙空間（下）：">
+                  <i class="fa fa-chevron-left"></i> 網際牛仔與無障礙空間（下）：
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/how-to-decide-max-mismatch-when-merging-paired-end-reads/" rel="next" title="怎麼決定合併雙端序列時允許的錯配數量？">
-                  怎麼決定合併雙端序列時允許的錯配數量？ <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
