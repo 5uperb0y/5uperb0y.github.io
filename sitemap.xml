@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/navigate-websites-with-keyboard/</loc>
+    
+    <lastmod>2022-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/keyboard-conflict-when-using-vscodevim/</loc>
     
     <lastmod>2022-12-28</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://5uperb0y.com/nextflow-input-with-an-empty-channel/</loc>
-    
-    <lastmod>2022-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/navigate-websites-with-keyboard/</loc>
     
     <lastmod>2022-12-27</lastmod>
     
@@ -338,6 +338,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/tags/communitcation/</loc>
+    <lastmod>2022-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/tags/astrobiology/</loc>
     <lastmod>2022-12-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -366,20 +373,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/communitcation/</loc>
-    <lastmod>2022-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/tags/database/</loc>
-    <lastmod>2022-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/tags/tips-and-tricks/</loc>
     <lastmod>2022-12-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -388,6 +381,13 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/tips-and-ticks/</loc>
+    <lastmod>2022-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/database/</loc>
     <lastmod>2022-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -438,6 +438,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/categories/tips-tricks/</loc>
+    <lastmod>2022-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/categories/origins-of-life/</loc>
     <lastmod>2022-12-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -452,20 +459,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/tips-tricks/</loc>
-    <lastmod>2022-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/metagenomics/</loc>
-    <lastmod>2022-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/programming/</loc>
     <lastmod>2022-12-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -474,6 +467,13 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/career/</loc>
+    <lastmod>2022-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/metagenomics/</loc>
     <lastmod>2022-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
