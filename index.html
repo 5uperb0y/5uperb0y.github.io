@@ -196,7 +196,7 @@
       <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-28T22:09:40+08:00">
         12/28
       </time>
-      <a href="/keyboard-conflict-when-using-vscodevim/" title="VscodeVim 常用設定">VscodeVim 常用設定</a>
+      <a href="/common-settings-for-vscodevim/" title="VscodeVim 常用設定">VscodeVim 常用設定</a>
       <br>
       <br>
     </li>
@@ -280,7 +280,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/keyboard-conflict-when-using-vscodevim/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/common-settings-for-vscodevim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -298,7 +298,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/keyboard-conflict-when-using-vscodevim/" class="post-title-link" itemprop="url">VscodeVim 常用設定</a>
+          <a href="/common-settings-for-vscodevim/" class="post-title-link" itemprop="url">VscodeVim 常用設定</a>
         </h2>
 
         <div class="post-meta-container">
@@ -316,7 +316,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-29 23:17:13" itemprop="dateModified" datetime="2022-12-29T23:17:13+08:00">2022-12-29</time>
+      <time title="修改時間：2022-12-29 23:27:11" itemprop="dateModified" datetime="2022-12-29T23:27:11+08:00">2022-12-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -344,8 +344,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/keyboard-conflict-when-using-vscodevim/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="keyboard-conflict-when-using-vscodevim/" itemprop="commentCount"></span>
+    <a title="disqus" href="/common-settings-for-vscodevim/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="common-settings-for-vscodevim/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -356,7 +356,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>501</span>
+      <span>554</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -374,29 +374,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="怎樣設定快捷鍵"><a href="#怎樣設定快捷鍵" class="headerlink" title="怎樣設定快捷鍵"></a>怎樣設定快捷鍵</h2><p>vscode 和 vim 有些彼此衝突的快捷鍵，例如常用的 <code>Ctrl</code> + <code>F</code> 或 <code>Ctrl</code> +<code>W</code> 等。依照個人習慣，可以選擇 vim 模式要啟用那些快捷鍵</p>
-<ol>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
-<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
-<li>新增以下設置來關掉 vim的快捷鍵 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="attr">&quot;vim.handleKeys&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-d&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-s&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-w&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-t&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-z&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-這些是我常用的指令。</li>
-</ol>
-<h2 id="怎樣才不會忘記在切換模式後切為英文輸入法"><a href="#怎樣才不會忘記在切換模式後切為英文輸入法" class="headerlink" title="怎樣才不會忘記在切換模式後切為英文輸入法"></a>怎樣才不會忘記在切換模式後切為英文輸入法</h2><p>由於 Normal mode 僅能以英文輸入法下指令，假如在 Insert mode 以中文輸入法編輯文件，使用預設的 <code>Esc</code> 切換模式後，仍維持中文輸入法，還要將輸入法切回英文，才能下達指令。為了解決這問題有兩個策略：</p>
-<h3 id="改變模式切換快捷鍵"><a href="#改變模式切換快捷鍵" class="headerlink" title="改變模式切換快捷鍵"></a>改變模式切換快捷鍵</h3><p>第一種策略是把切換模式的快捷鍵設定為 <code>jj</code>，雖然不見得比較快，但一定能避免中文輸入法讓指令無法執行的問題。由於改用英文字母作為切換快捷鍵，所以在切換模式前一定要更換輸入法，所以能確保切換後一定是英文輸入法</p>
-<ol>
-<li><code>Shift</code>, then <code>jj</code>，切為 Normal mode</li>
-<li><code>i</code>，切為 Insert mode</li>
-<li><code>Shift</code>，切為中文輸入法</li>
-</ol>
-<h3 id="自動切換輸入法"><a href="#自動切換輸入法" class="headerlink" title="自動切換輸入法"></a>自動切換輸入法</h3><p>另一種是呼叫自動切換輸入法的腳本，在切回 normal mode 時自動幫我們切換文字</p>
-<ol>
-<li>下載 (im.select.exe)[<a target="_blank" rel="noopener" href="https://github.com/daipeihust/im-select]">https://github.com/daipeihust/im-select]</a> 放到任何你喜歡的路徑</li>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
-<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
-<li>新增以下設置以啟用輸入法自動切換 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.enable&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.defaultIM&quot;</span><span class="punctuation">:</span> <span class="string">&quot;us&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe -s &#123;im&#125;&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>透過這樣設置，在切回 normal mode 瞬間，就會變成英文輸入法。而進入 insert mode 時，就會回到當初離開時的輸入法。</p>
-
+          <p>本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/common-settings-for-vscodevim/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -706,7 +692,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-28 22:38:03" itemprop="dateModified" datetime="2022-12-28T22:38:03+08:00">2022-12-28</time>
+      <time title="修改時間：2022-12-30 00:31:33" itemprop="dateModified" datetime="2022-12-30T00:31:33+08:00">2022-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
