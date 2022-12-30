@@ -20,25 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Style over Substance">
+    <meta name="description" content="於 vim 移動游標的方法   移動單位 範例    視窗    段落    單字 w W b B   字元     以視窗為單位： 以文字段落為單位：W&#x2F;w 以段落為單位 以字元為單位： h j k l  視線、操作、移動 啟用 easymotioneasymotion 是 VSCodeVim 內建擴充套件，所以只要在 settings.json 添加指令即可啟用 1&quot;vim.easy">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/categories/microbial-ecology/microbiota/index.html">
+<meta property="og:title" content="Vim｜使用 easymotion 快速移動與跳轉游標">
+<meta property="og:url" content="https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="Style over Substance">
+<meta property="og:description" content="於 vim 移動游標的方法   移動單位 範例    視窗    段落    單字 w W b B   字元     以視窗為單位： 以文字段落為單位：W&#x2F;w 以段落為單位 以字元為單位： h j k l  視線、操作、移動 啟用 easymotioneasymotion 是 VSCodeVim 內建擴充套件，所以只要在 settings.json 添加指令即可啟用 1&quot;vim.easy">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-12-30T13:10:32.000Z">
+<meta property="article:modified_time" content="2022-12-30T05:56:42.346Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="tips and ticks">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/categories/microbial-ecology/microbiota/">
+<link rel="canonical" href="https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"categories/microbial-ecology/microbiota/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/","path":"how-to-use-easymotion-in-vscodevim/","title":"Vim｜使用 easymotion 快速移動與跳轉游標"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分類: microbiota | 5uperb0y's blog</title>
+<title>Vim｜使用 easymotion 快速移動與跳轉游標 | 5uperb0y's blog</title>
   
 
 
@@ -127,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -140,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%BC-vim-%E7%A7%BB%E5%8B%95%E6%B8%B8%E6%A8%99%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">於 vim 移動游標的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%9F%E7%94%A8-easymotion"><span class="nav-number">3.</span> <span class="nav-text">啟用 easymotion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#-1"><span class="nav-number">4.</span> <span class="nav-text"></span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -264,57 +268,234 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/start-learning-vim-from-vimium/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-30</time>
+        <br>
+      
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/common-settings-for-vscodevim/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-28</time>
+        <br>
+      Vim｜VSCodeVime 常用設定
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">microbiota
-          <small>分類</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="Style over Substance">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Vim｜使用 easymotion 快速移動與跳轉游標 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vim｜使用 easymotion 快速移動與跳轉游標
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="創建時間：2022-12-30 21:10:32 / 修改時間：13:56:42" itemprop="dateCreated datePublished" datetime="2022-12-30T21:10:32+08:00">2022-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/programming/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/how-to-use-easymotion-in-vscodevim/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-use-easymotion-in-vscodevim/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>94</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="於-vim-移動游標的方法"><a href="#於-vim-移動游標的方法" class="headerlink" title="於 vim 移動游標的方法"></a>於 vim 移動游標的方法</h1><table>
+<thead>
+<tr>
+<th>移動單位</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>視窗</td>
+<td></td>
+</tr>
+<tr>
+<td>段落</td>
+<td></td>
+</tr>
+<tr>
+<td>單字</td>
+<td><code>w</code> <code>W</code> <code>b</code> <code>B</code></td>
+</tr>
+<tr>
+<td>字元</td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>以視窗為單位：</li>
+<li>以文字段落為單位：<code>W/w</code></li>
+<li>以段落為單位</li>
+<li>以字元為單位： <code>h</code> <code>j</code> <code>k</code> <code>l</code></li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>視線、操作、移動</p>
+<h1 id="啟用-easymotion"><a href="#啟用-easymotion" class="headerlink" title="啟用 easymotion"></a>啟用 easymotion</h1><p>easymotion 是 VSCodeVim 內建擴充套件，所以只要在 settings.json 添加指令即可啟用</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vim.easymotion&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-25T18:17:33+08:00"
-              content="2022-01-25">
-          01-25
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/mitalk-6-thu-2022/" itemprop="url">
-            <span itemprop="name">MiTalk 2022：在講台上</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          
 
-      
-    </header>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>5uperb0y (超級boy)
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/" title="Vim｜使用 easymotion 快速移動與跳轉游標">https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/tips-and-ticks/" rel="tag"># tips and ticks</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/start-learning-vim-from-vimium/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-
 </div>
   </main>
 
