@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://5uperb0y.com/r-console-upper-limit-on-the-string-length/</loc>
+    <loc>https://5uperb0y.com/start-learning-vim-from-vimium/</loc>
     
     <lastmod>2022-12-30</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/start-learning-vim-from-vimium/</loc>
+    <loc>https://5uperb0y.com/r-console-upper-limit-on-the-string-length/</loc>
     
     <lastmod>2022-12-30</lastmod>
     
@@ -386,14 +386,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/tips-and-tricks/</loc>
+    <loc>https://5uperb0y.com/tags/tips-and-ticks/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/tips-and-ticks/</loc>
+    <loc>https://5uperb0y.com/tags/tips-and-tricks/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -427,6 +427,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://5uperb0y.com/tags/vim/</loc>
+    <lastmod>2022-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -451,13 +458,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
-    <lastmod>2022-12-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -466,6 +466,13 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/life/</loc>
+    <lastmod>2022-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -507,7 +514,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/tips-tricks/</loc>
+    <loc>https://5uperb0y.com/categories/life/reading/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -521,7 +528,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/life/reading/</loc>
+    <loc>https://5uperb0y.com/categories/academic/tips-tricks/</loc>
     <lastmod>2022-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
