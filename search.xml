@@ -26,72 +26,6 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜再創世紀</title>
-    <url>/church-2014-regenesis/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
-<span id="more"></span>
-
-<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
-<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
-<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
-<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
-<ul>
-<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
-<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
-<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
-</ul>
-<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VscodeVim 常用設定</title>
-    <url>/common-settings-for-vscodevim/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。</p>
-<span id="more"></span>
-
-<h2 id="怎樣設定快捷鍵"><a href="#怎樣設定快捷鍵" class="headerlink" title="怎樣設定快捷鍵"></a>怎樣設定快捷鍵</h2><p>vscode 和 vim 有些彼此衝突的快捷鍵，例如常用的 <code>Ctrl</code> + <code>F</code> 或 <code>Ctrl</code> +<code>W</code> 等。依照個人習慣，可以選擇 vim 模式要啟用那些快捷鍵</p>
-<ol>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
-<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
-<li>新增以下設置來關掉 vim的快捷鍵 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">    <span class="attr">&quot;vim.handleKeys&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-d&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-s&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-w&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-t&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-z&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-這些是我常用的指令。</li>
-</ol>
-<h2 id="怎樣才不會忘記在切換模式後切為英文輸入法"><a href="#怎樣才不會忘記在切換模式後切為英文輸入法" class="headerlink" title="怎樣才不會忘記在切換模式後切為英文輸入法"></a>怎樣才不會忘記在切換模式後切為英文輸入法</h2><p>由於 Normal mode 僅能以英文輸入法下指令，假如在 Insert mode 以中文輸入法編輯文件，使用預設的 <code>Esc</code> 切換模式後，仍維持中文輸入法，還要將輸入法切回英文，才能下達指令。為了解決這問題有兩個策略：</p>
-<h3 id="改變模式切換快捷鍵"><a href="#改變模式切換快捷鍵" class="headerlink" title="改變模式切換快捷鍵"></a>改變模式切換快捷鍵</h3><p>第一種策略是把切換模式的快捷鍵設定為 <code>jj</code>，雖然不見得比較快，但一定能避免中文輸入法讓指令無法執行的問題。由於改用英文字母作為切換快捷鍵，所以在切換模式前一定要更換輸入法，所以能確保切換後一定是英文輸入法</p>
-<ol>
-<li><code>Shift</code>, then <code>jj</code>，切為 Normal mode</li>
-<li><code>i</code>，切為 Insert mode</li>
-<li><code>Shift</code>，切為中文輸入法</li>
-</ol>
-<h3 id="自動切換輸入法"><a href="#自動切換輸入法" class="headerlink" title="自動切換輸入法"></a>自動切換輸入法</h3><p>另一種是呼叫自動切換輸入法的腳本，在切回 normal mode 時自動幫我們切換文字</p>
-<ol>
-<li>下載 (im.select.exe)[<a href="https://github.com/daipeihust/im-select]">https://github.com/daipeihust/im-select]</a> 放到任何你喜歡的路徑</li>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
-<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
-<li>新增以下設置以啟用輸入法自動切換 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.enable&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.defaultIM&quot;</span><span class="punctuation">:</span> <span class="string">&quot;us&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe -s &#123;im&#125;&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>透過這樣設置，在切回 normal mode 瞬間，就會變成英文輸入法。而進入 insert mode 時，就會回到當初離開時的輸入法。</p>
-<h2 id="超棒的學習資源和網站"><a href="#超棒的學習資源和網站" class="headerlink" title="超棒的學習資源和網站"></a>超棒的學習資源和網站</h2><ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10291847">VsCodeVim 自動在normal mode切回英文輸入法的方法</a></li>
-<li><a href="https://www.blog.lasai.com.tw/2020/07/05/vscode-vim-mode/">vscode vim mode</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>vim, vscode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>寫論文的糟糕和美好經驗</title>
     <url>/good-and-bad-experiences-in-journal-article-writing/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
@@ -143,6 +77,72 @@
       </tags>
   </entry>
   <entry>
+    <title>VscodeVim 常用設定</title>
+    <url>/common-settings-for-vscodevim/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。</p>
+<span id="more"></span>
+
+<h2 id="怎樣設定快捷鍵"><a href="#怎樣設定快捷鍵" class="headerlink" title="怎樣設定快捷鍵"></a>怎樣設定快捷鍵</h2><p>vscode 和 vim 有些彼此衝突的快捷鍵，例如常用的 <code>Ctrl</code> + <code>F</code> 或 <code>Ctrl</code> +<code>W</code> 等。依照個人習慣，可以選擇 vim 模式要啟用那些快捷鍵</p>
+<ol>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
+<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
+<li>新增以下設置來關掉 vim的快捷鍵 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">    <span class="attr">&quot;vim.handleKeys&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-d&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-s&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-w&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-t&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-z&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+這些是我常用的指令。</li>
+</ol>
+<h2 id="怎樣才不會忘記在切換模式後切為英文輸入法"><a href="#怎樣才不會忘記在切換模式後切為英文輸入法" class="headerlink" title="怎樣才不會忘記在切換模式後切為英文輸入法"></a>怎樣才不會忘記在切換模式後切為英文輸入法</h2><p>由於 Normal mode 僅能以英文輸入法下指令，假如在 Insert mode 以中文輸入法編輯文件，使用預設的 <code>Esc</code> 切換模式後，仍維持中文輸入法，還要將輸入法切回英文，才能下達指令。為了解決這問題有兩個策略：</p>
+<h3 id="改變模式切換快捷鍵"><a href="#改變模式切換快捷鍵" class="headerlink" title="改變模式切換快捷鍵"></a>改變模式切換快捷鍵</h3><p>第一種策略是把切換模式的快捷鍵設定為 <code>jj</code>，雖然不見得比較快，但一定能避免中文輸入法讓指令無法執行的問題。由於改用英文字母作為切換快捷鍵，所以在切換模式前一定要更換輸入法，所以能確保切換後一定是英文輸入法</p>
+<ol>
+<li><code>Shift</code>, then <code>jj</code>，切為 Normal mode</li>
+<li><code>i</code>，切為 Insert mode</li>
+<li><code>Shift</code>，切為中文輸入法</li>
+</ol>
+<h3 id="自動切換輸入法"><a href="#自動切換輸入法" class="headerlink" title="自動切換輸入法"></a>自動切換輸入法</h3><p>另一種是呼叫自動切換輸入法的腳本，在切回 normal mode 時自動幫我們切換文字</p>
+<ol>
+<li>下載 (im.select.exe)[<a href="https://github.com/daipeihust/im-select]">https://github.com/daipeihust/im-select]</a> 放到任何你喜歡的路徑</li>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
+<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
+<li>新增以下設置以啟用輸入法自動切換 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.enable&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.defaultIM&quot;</span><span class="punctuation">:</span> <span class="string">&quot;us&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe -s &#123;im&#125;&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>透過這樣設置，在切回 normal mode 瞬間，就會變成英文輸入法。而進入 insert mode 時，就會回到當初離開時的輸入法。</p>
+<h2 id="超棒的學習資源和網站"><a href="#超棒的學習資源和網站" class="headerlink" title="超棒的學習資源和網站"></a>超棒的學習資源和網站</h2><ul>
+<li><a href="https://ithelp.ithome.com.tw/articles/10291847">VsCodeVim 自動在normal mode切回英文輸入法的方法</a></li>
+<li><a href="https://www.blog.lasai.com.tw/2020/07/05/vscode-vim-mode/">vscode vim mode</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>vim, vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜再創世紀</title>
+    <url>/church-2014-regenesis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
+<span id="more"></span>
+
+<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
+<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
+<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
+<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
+<ul>
+<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
+<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
+<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
+</ul>
+<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>讀後感｜樹之歌</title>
     <url>/haskell-2017-the-songs-of-trees/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
@@ -164,37 +164,6 @@
       <categories>
         <category>life</category>
         <category>reading</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>「天文」生物學：數量的緣故</title>
-    <url>/history-of-astrobiology-naked-eyes/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>國中時，剛看完《星艦迷航記VIII：戰鬥巡航》的我向學校裡最接近外星生物專家的生物老師詢問是否真有外星人，他告訴我地球外還有許多星球，如果沒有其他生命也太奇怪了。</p>
-<p>如同我的生物老師所述，對於地外生命的信心有很大一部分是建立在數量上，既然宇宙已經誕生百餘億年，當中又充滿無數星系，很難想像當中不會有其他生命存在。</p>
-<p>然而宇宙的尺度也是經學界漫長掙扎才逐漸變得清晰，早在人類只能以肉眼觀察世界的時候，滿天繁星已不計其數，甚至至今我們對於宇宙中有多少顆適居行星仍沒有精確的估計。</p>
-<p>天文生物學的發展不只是事實的累積，也是世代人觀念轉變的結果。</p>
-<span id="more"></span>
-
-<h2 id="肉眼"><a href="#肉眼" class="headerlink" title="肉眼"></a>肉眼</h2><p>最初人類只能以肉眼觀察這個世界，其他的天體在天空化為一個小亮點，這些亮點的意義在不同人眼裡衍伸出不同的樣貌，這些推論與想像便成為天文生物學興起前，人們對地外生命的想像基礎。</p>
-<p>對於無法觸及的天空，德膜克利特(Democritus, 410 - 380 BC) 等原子學派 (Atomists) 哲人認為，既然原子的隨機運動組成了世間萬物，天與地應遵循相同法則，形成地球的過程沒理由不能在天外形成其他世界，是以其後繼者伊比鳩魯在給希羅多德的信 (<a href="http://www.attalus.org/old/diogenes10b.html">Letter to Herodotus</a>) 中提到，</p>
-<blockquote>
-<p>We must not believe that all worlds necessarily have one identical form.  Let us also beware of thinking that animals are derived from the infinite; for there is no one who can prove that the seeds from which animals are born, and plants, and all the other objects which we contemplate, have been brought from the exterior in such a world, and that this same world would not have been able to produce them of itself. （我們絕對不能假設各個世界有一致的樣貌，……，因為沒有人能證明形成動物、植物和我們眼前一切的種子無法在這樣的世界萌生。）</p>
-</blockquote>
-<p>伊比鳩魯的門徒 Metrodorus（400 BC） 也對地外生命的可能留下更明確的評述。</p>
-<blockquote>
-<p>It is unnatural in a large field to have only one stalk of wheat, and in the infinite universe only one living world.（無垠宇宙僅有一個育有生命的世界和沃野千里卻只長出一束麥子一樣不尋常。）</p>
-</blockquote>
-<p>相較於原子學派，亞里斯多德學派哲人認為地球是唯一的世界，所以沒有為地外生命留下空間。</p>
-<p>亞里斯多德以朝向&#x2F;背離中心的本性解釋火、水、土和空氣四種基本元素的運動現象，所以如果世界不只一個，那麼物質便喪失了明確的運動目標，維繫世界運作的基本原理將不復存在。透過這個規謬過程，四元素說結合地心說共同否定了多重世界的觀點。</p>
-<p>此外，天與地也在亞里斯多德體系中割裂。有別於四元素，天空是由以太組成。太陽、月亮還有其他五顆行星就在層層嵌套的天球上緩緩繞著地球旋轉，而原子學派眼裡可能存在繽紛世界的星斗只是鑲在最外層恆星天上閃爍的光點。</p>
-<p>同片天空不同的想像與推論，形成了不同的結論。</p>
-<p>如今我們知道，原子學派哲人的想像比較接近當今學界對世界的認知，然而這不代表他們是天文生物學還是任何現代科學的根源。囿於當時的觀察手段，無論哪派哲人的思想都沒有嚴謹事實支持，即使有許多詞彙為後世研究者共用，其中的內涵也已發生很大的變化。</p>
-<p>但另一方面，儘管只能取得有限的線索，希臘人仍試圖靠著理性與智力解釋世界，而不是將問題簡化為鬼、神、UFO 或我不知道。</p>
-<p>亞里斯多德的學說在中世紀時期被阿奎納 (St. Thomas Aquinas, 1225-1274) 納入神學體系，此後單一世界的想法持續主宰著歐洲人的世界觀。然而關於「數量」的爭議並沒有就此定論，亞里斯多德體系在哥白尼掀起科學革命後逐漸衰落，現代科學興起後更多的科技與觀察手段逐漸揭示宇宙的樣貌。</p>
-]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>life in the universe</category>
       </categories>
   </entry>
   <entry>
@@ -252,6 +221,37 @@
       <tags>
         <tag>communitcation</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>「天文」生物學：數量的緣故</title>
+    <url>/history-of-astrobiology-naked-eyes/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>國中時，剛看完《星艦迷航記VIII：戰鬥巡航》的我向學校裡最接近外星生物專家的生物老師詢問是否真有外星人，他告訴我地球外還有許多星球，如果沒有其他生命也太奇怪了。</p>
+<p>如同我的生物老師所述，對於地外生命的信心有很大一部分是建立在數量上，既然宇宙已經誕生百餘億年，當中又充滿無數星系，很難想像當中不會有其他生命存在。</p>
+<p>然而宇宙的尺度也是經學界漫長掙扎才逐漸變得清晰，早在人類只能以肉眼觀察世界的時候，滿天繁星已不計其數，甚至至今我們對於宇宙中有多少顆適居行星仍沒有精確的估計。</p>
+<p>天文生物學的發展不只是事實的累積，也是世代人觀念轉變的結果。</p>
+<span id="more"></span>
+
+<h2 id="肉眼"><a href="#肉眼" class="headerlink" title="肉眼"></a>肉眼</h2><p>最初人類只能以肉眼觀察這個世界，其他的天體在天空化為一個小亮點，這些亮點的意義在不同人眼裡衍伸出不同的樣貌，這些推論與想像便成為天文生物學興起前，人們對地外生命的想像基礎。</p>
+<p>對於無法觸及的天空，德膜克利特(Democritus, 410 - 380 BC) 等原子學派 (Atomists) 哲人認為，既然原子的隨機運動組成了世間萬物，天與地應遵循相同法則，形成地球的過程沒理由不能在天外形成其他世界，是以其後繼者伊比鳩魯在給希羅多德的信 (<a href="http://www.attalus.org/old/diogenes10b.html">Letter to Herodotus</a>) 中提到，</p>
+<blockquote>
+<p>We must not believe that all worlds necessarily have one identical form.  Let us also beware of thinking that animals are derived from the infinite; for there is no one who can prove that the seeds from which animals are born, and plants, and all the other objects which we contemplate, have been brought from the exterior in such a world, and that this same world would not have been able to produce them of itself. （我們絕對不能假設各個世界有一致的樣貌，……，因為沒有人能證明形成動物、植物和我們眼前一切的種子無法在這樣的世界萌生。）</p>
+</blockquote>
+<p>伊比鳩魯的門徒 Metrodorus（400 BC） 也對地外生命的可能留下更明確的評述。</p>
+<blockquote>
+<p>It is unnatural in a large field to have only one stalk of wheat, and in the infinite universe only one living world.（無垠宇宙僅有一個育有生命的世界和沃野千里卻只長出一束麥子一樣不尋常。）</p>
+</blockquote>
+<p>相較於原子學派，亞里斯多德學派哲人認為地球是唯一的世界，所以沒有為地外生命留下空間。</p>
+<p>亞里斯多德以朝向&#x2F;背離中心的本性解釋火、水、土和空氣四種基本元素的運動現象，所以如果世界不只一個，那麼物質便喪失了明確的運動目標，維繫世界運作的基本原理將不復存在。透過這個規謬過程，四元素說結合地心說共同否定了多重世界的觀點。</p>
+<p>此外，天與地也在亞里斯多德體系中割裂。有別於四元素，天空是由以太組成。太陽、月亮還有其他五顆行星就在層層嵌套的天球上緩緩繞著地球旋轉，而原子學派眼裡可能存在繽紛世界的星斗只是鑲在最外層恆星天上閃爍的光點。</p>
+<p>同片天空不同的想像與推論，形成了不同的結論。</p>
+<p>如今我們知道，原子學派哲人的想像比較接近當今學界對世界的認知，然而這不代表他們是天文生物學還是任何現代科學的根源。囿於當時的觀察手段，無論哪派哲人的思想都沒有嚴謹事實支持，即使有許多詞彙為後世研究者共用，其中的內涵也已發生很大的變化。</p>
+<p>但另一方面，儘管只能取得有限的線索，希臘人仍試圖靠著理性與智力解釋世界，而不是將問題簡化為鬼、神、UFO 或我不知道。</p>
+<p>亞里斯多德的學說在中世紀時期被阿奎納 (St. Thomas Aquinas, 1225-1274) 納入神學體系，此後單一世界的想法持續主宰著歐洲人的世界觀。然而關於「數量」的爭議並沒有就此定論，亞里斯多德體系在哥白尼掀起科學革命後逐漸衰落，現代科學興起後更多的科技與觀察手段逐漸揭示宇宙的樣貌。</p>
+]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>life in the universe</category>
+      </categories>
   </entry>
   <entry>
     <title>很久很久以前，自然用什麼盛裝生命？</title>
@@ -331,18 +331,6 @@
       </tags>
   </entry>
   <entry>
-    <title>VSCodeVim｜使用 easymotion 快速移動與跳轉游標</title>
-    <url>/how-to-use-easymotion-in-vscodevim/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
-      <categories>
-        <category>programming</category>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>tips and ticks</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>網際牛仔與無障礙空間（下）：</title>
     <url>/keyboard-accessibility-on-websites/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="網際網路的想像"><a href="#網際網路的想像" class="headerlink" title="網際網路的想像"></a>網際網路的想像</h1><p>在網際網路的黎明，威廉吉布森在往後 cyberpunk 先聲的著作裡寫下他對於網際網路的想像。在那個時代哩，人們可以直接將神經系統連上線，透過意識直接控制物件與檔案軟體，不再需要鍵盤、滑鼠、觸控板甚至視動捕捉儀等輸入設備。</p>
@@ -356,24 +344,6 @@
       </categories>
       <tags>
         <tag>tips and tricks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>讀後感｜太空生物學</title>
-    <url>/lee-2017-astrobiology/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
-<span id="more"></span>
-<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
-<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
-<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
-<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>life in the universe</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -502,6 +472,24 @@
       </tags>
   </entry>
   <entry>
+    <title>讀後感｜太空生物學</title>
+    <url>/lee-2017-astrobiology/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
+<span id="more"></span>
+<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
+<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
+<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
+<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>life in the universe</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 筆記｜1480. Running Sum of 1d Array</title>
     <url>/leetcode-1480-running-sum-of-1d-array/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>計算數列逐項的累積和 (runningSum)</p>
@@ -573,46 +561,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜217. Contains Duplicate</title>
-    <url>/leetcode-217-contains-duplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
-</blockquote>
-<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
-<p>Example:</p>
-<blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
-<ul>
-<li>數字重複出現</li>
-<li>array 長度大於其中數字種類數</li>
-<li>若將 array 排序，則重複的數字比鄰出現</li>
-</ul>
-<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
-<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
-</li>
-<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
-</li>
-<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>array</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 筆記｜53. Maximum Subarray</title>
     <url>/leetcode-53-maximum-subarray/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
@@ -664,42 +612,36 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜724. Find Pivot Index</title>
-    <url>/leetcode-724-find-pivot-index/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
+    <title>LeetCode 筆記｜217. Contains Duplicate</title>
+    <url>/leetcode-217-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
 <span id="more"></span>
-<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
-</blockquote>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
-</blockquote>
-<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
-<p><strong>限制</strong></p>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
-<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
 </ul>
-<p><strong>知識點</strong><br>prefix sum &amp; array</p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
-<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
-<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
 
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
-<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
-<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
-<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>programming</category>
@@ -830,6 +772,52 @@
       <tags>
         <tag>career</tag>
         <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜724. Find Pivot Index</title>
+    <url>/leetcode-724-find-pivot-index/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
+<span id="more"></span>
+<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
+</blockquote>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
+</blockquote>
+<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
+</ul>
+<p><strong>知識點</strong><br>prefix sum &amp; array</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
+<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
+<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
+<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
+<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
+<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -1246,43 +1234,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>Nextflow｜輸入 empty channel 會發生什麼事？</title>
-    <url>/nextflow-input-with-an-empty-channel/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>上週碰到一個離奇的 bug，有支 nextflow 腳本可以順利執行，但會無聲無息地略過其中一個 process。該腳本執行後於終端吐出的訊息類似以下形式：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf</span><br><span class="line">[3c/9ab742] process &gt; a1 [100%] 1 of 1 ✔</span><br><span class="line">[8e/4eg429] process &gt; a2 [100%] 1 of 1 ✔</span><br><span class="line">[-        ] process &gt; b1</span><br><span class="line">[2f/0c0b71] process &gt; c1 [100%] 1 of 1 ✔</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<ul>
-<li><code>a1</code> 與 <code>a2</code> 輸出的 channel 經 <code>join</code> 之後輸入 <code>b1</code>，而 <code>c1</code> 則獨立於其他三個 process。</li>
-<li>nextflow 沒有任何錯誤訊息（即終端看不到紅色的字）</li>
-<li>nextflow 沒有為 <code>b1</code> 開啟工作目錄，所以也無從查看 <code>.command.log/err/out</code> 等與腳本執行相關的資訊</li>
-<li>查看 <code>.nextflow.log</code> 只能找到啟動 <code>b1</code> 的訊息：<code>[main] DEBUG nextflow.processor.TaskProcessor - Starting process &gt; b1</code>，但沒有其他執行細節。</li>
-</ul>
-<h1 id="解決策略"><a href="#解決策略" class="headerlink" title="解決策略"></a>解決策略</h1><p>由於 nextflow 幾乎沒有給出任何提示，所以只能自己想辦法在腳本內安排中斷點印出 channel 的內容。當時的策略是先不用 <code>join</code>，而是單獨輸入 <code>a1</code> 與 <code>a2</code> 的輸出，以便用 <code>stdout</code> 和 <code>view()</code>檢查各個 channel 是否與我們預期相同。</p>
-<p>結果問題還真的出在 channel 的合併，原來 <code>a1</code> 與 <code>a2</code> 的輸出結果沒有共同的 key，所以執行 <code>join</code> 操作後會生成一個 empty channel。</p>
-<h1 id="Empty-channel"><a href="#Empty-channel" class="headerlink" title="Empty channel"></a>Empty channel</h1><p>在 Nextflow 裏頭，可使用 <code>channel.empty()</code>建立 empty channel，其作用相當於對 process 傳遞終止訊號（參考 <a href="https://javadoc.io/static/io.nextflow/nextflow/0.28.2/nextflow/Channel.html">Nextflow Channel Class 的說明</a>）。</p>
-<p>舉例來說，以下這支 nextflow 腳本會依序印出同一時間輸入的數對。雖然 <code>a_ch</code> 含有四項數字，但因為 <code>b_ch</code> 其中一項為 empty channel 的終止訊號，所以這個 process 只遞交並執行了三次<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="執行腳本時，nextflow 會先以 `nextflow.processor.TaskProcessor` 啟動 process，透過 `nextflow.executor.LocalHandler` 一一提交輸入 channel 的內容給 process 執行。詳細的流程可參閱 `.nextflow.log`。">1</span></a></sup>。</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// demoEmptyChannel.nf</span></span><br><span class="line">process p &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        val a</span><br><span class="line">        val b</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;($&#123;a&#125;, $&#123;b&#125;)&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">workflow &#123;</span><br><span class="line">    a_ch = channel.of(<span class="string">&quot;a1&quot;</span>, <span class="string">&quot;a2&quot;</span>, <span class="string">&quot;a3&quot;</span>, <span class="string">&quot;a4&quot;</span>)</span><br><span class="line">    b_ch = channel.of(<span class="string">&quot;b1&quot;</span>, <span class="string">&quot;b2&quot;</span>).concat(channel.empty()).concat(channel.of(<span class="string">&quot;b4&quot;</span>)) <span class="comment">// append items with concat() and channel.of()</span></span><br><span class="line">    p(a_ch, b_ch).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run demoEmptyChannel.nf</span><br><span class="line">[a8/4b2c55] process &gt; p (3) [100%] 3 of 3 ✔</span><br><span class="line">(a3, b4)</span><br><span class="line">(a2, b2)</span><br><span class="line">(a1, b1)</span><br></pre></td></tr></table></figure>
-
-<h1 id="使用-ifEmpty-為輸入-channel-設定預設值"><a href="#使用-ifEmpty-為輸入-channel-設定預設值" class="headerlink" title="使用 ifEmpty 為輸入 channel 設定預設值"></a>使用 <code>ifEmpty</code> 為輸入 channel 設定預設值</h1><p>為了避免 process 被跳過或是沒有執行的狀況，<a href="https://www.nextflow.io/docs/latest/operator.html#operator-ifempty">nextflow 官方文件</a>建議以 <code>ifEmpty</code> 為 channel 設定預設值。如以下案例，由於 <code>b_ch</code> 為 empty channel，經 <code>ifEmpty</code> operator 賦予預設值，使得 process 能順利運行。</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">//demoIfEmpty.nf</span></span><br><span class="line">process p &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        val a</span><br><span class="line">        val b</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;($a, $b)&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span>&#125;</span><br><span class="line">workflow &#123;   </span><br><span class="line">    a_ch = channel.of(<span class="string">&quot;a1&quot;</span>)</span><br><span class="line">    <span class="comment">// &lt;defalut value&gt; if ch.isempty() else ch</span></span><br><span class="line">    b_ch = channel.empty()</span><br><span class="line">    p(a_ch, b_ch.ifEmpty(<span class="string">&quot;b_default&quot;</span>)).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run demoIfEmpty.nf</span><br><span class="line">[47/459729] process &gt; p (1) [100%] 1 of 1 ✔</span><br><span class="line">(a1, b_default)</span><br></pre></td></tr></table></figure>
-
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Nextflow 的 process 會跳過含有 empty channel 的任務，若想避免這種狀況在非預期的情形發生（例如 <code>join</code> 失敗），可使用 <code>ifEmpty</code> 為 process 的輸入 channel 設定預設值。</p>
-<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
-<li><a href="https://stackoverflow.com/questions/70888844/nextflow-how-to-fail-if-channel-is-empty-ifempty">NextFlow: How to fail if channel is empty ( .ifEmpty() )</a></li>
-<li><a href="https://stackoverflow.com/questions/64042860/check-if-nextflow-channel-is-empty">check if nextflow channel is empty</a>)</li>
-<li><a href="https://github.com/nextflow-io/nf-hack18/blob/master/asciidocs/07_processes.adoc">Nextflow Workshop Hackaton 2018: 07_processes</a></li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">執行腳本時，nextflow 會先以 <code>nextflow.processor.TaskProcessor</code> 啟動 process，透過 <code>nextflow.executor.LocalHandler</code> 一一提交輸入 channel 的內容給 process 執行。詳細的流程可參閱 <code>.nextflow.log</code>。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nextflow｜怎麼從運行中的腳本取回參數？</title>
     <url>/nextflow-retrieve-configuration-when-workflow-runs/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在執行腳本前，Nextflow 會讀取設置檔 (configuration files) 中的參數，將之代入腳本的對應位置後再執行程式。這項特性有助於使用者管理複雜流程的輸入值與環境設定，也將具體數值從流程邏輯抽離，讓開發者專注於流程的梳理與串接。</p>
@@ -1339,6 +1290,43 @@ echo &quot;\$title \n $PWD&quot;
 <li><code>launchDir</code>：雖然本身與參數無關，但此變項記錄了腳本執行位置，其中的 <code>.nextflow.log</code> 記錄了 <code>*.config</code> 路徑。讀取該檔即可獲取輸入的參數和設定。</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜輸入 empty channel 會發生什麼事？</title>
+    <url>/nextflow-input-with-an-empty-channel/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>上週碰到一個離奇的 bug，有支 nextflow 腳本可以順利執行，但會無聲無息地略過其中一個 process。該腳本執行後於終端吐出的訊息類似以下形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf</span><br><span class="line">[3c/9ab742] process &gt; a1 [100%] 1 of 1 ✔</span><br><span class="line">[8e/4eg429] process &gt; a2 [100%] 1 of 1 ✔</span><br><span class="line">[-        ] process &gt; b1</span><br><span class="line">[2f/0c0b71] process &gt; c1 [100%] 1 of 1 ✔</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<ul>
+<li><code>a1</code> 與 <code>a2</code> 輸出的 channel 經 <code>join</code> 之後輸入 <code>b1</code>，而 <code>c1</code> 則獨立於其他三個 process。</li>
+<li>nextflow 沒有任何錯誤訊息（即終端看不到紅色的字）</li>
+<li>nextflow 沒有為 <code>b1</code> 開啟工作目錄，所以也無從查看 <code>.command.log/err/out</code> 等與腳本執行相關的資訊</li>
+<li>查看 <code>.nextflow.log</code> 只能找到啟動 <code>b1</code> 的訊息：<code>[main] DEBUG nextflow.processor.TaskProcessor - Starting process &gt; b1</code>，但沒有其他執行細節。</li>
+</ul>
+<h1 id="解決策略"><a href="#解決策略" class="headerlink" title="解決策略"></a>解決策略</h1><p>由於 nextflow 幾乎沒有給出任何提示，所以只能自己想辦法在腳本內安排中斷點印出 channel 的內容。當時的策略是先不用 <code>join</code>，而是單獨輸入 <code>a1</code> 與 <code>a2</code> 的輸出，以便用 <code>stdout</code> 和 <code>view()</code>檢查各個 channel 是否與我們預期相同。</p>
+<p>結果問題還真的出在 channel 的合併，原來 <code>a1</code> 與 <code>a2</code> 的輸出結果沒有共同的 key，所以執行 <code>join</code> 操作後會生成一個 empty channel。</p>
+<h1 id="Empty-channel"><a href="#Empty-channel" class="headerlink" title="Empty channel"></a>Empty channel</h1><p>在 Nextflow 裏頭，可使用 <code>channel.empty()</code>建立 empty channel，其作用相當於對 process 傳遞終止訊號（參考 <a href="https://javadoc.io/static/io.nextflow/nextflow/0.28.2/nextflow/Channel.html">Nextflow Channel Class 的說明</a>）。</p>
+<p>舉例來說，以下這支 nextflow 腳本會依序印出同一時間輸入的數對。雖然 <code>a_ch</code> 含有四項數字，但因為 <code>b_ch</code> 其中一項為 empty channel 的終止訊號，所以這個 process 只遞交並執行了三次<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="執行腳本時，nextflow 會先以 `nextflow.processor.TaskProcessor` 啟動 process，透過 `nextflow.executor.LocalHandler` 一一提交輸入 channel 的內容給 process 執行。詳細的流程可參閱 `.nextflow.log`。">1</span></a></sup>。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// demoEmptyChannel.nf</span></span><br><span class="line">process p &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        val a</span><br><span class="line">        val b</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;($&#123;a&#125;, $&#123;b&#125;)&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">workflow &#123;</span><br><span class="line">    a_ch = channel.of(<span class="string">&quot;a1&quot;</span>, <span class="string">&quot;a2&quot;</span>, <span class="string">&quot;a3&quot;</span>, <span class="string">&quot;a4&quot;</span>)</span><br><span class="line">    b_ch = channel.of(<span class="string">&quot;b1&quot;</span>, <span class="string">&quot;b2&quot;</span>).concat(channel.empty()).concat(channel.of(<span class="string">&quot;b4&quot;</span>)) <span class="comment">// append items with concat() and channel.of()</span></span><br><span class="line">    p(a_ch, b_ch).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run demoEmptyChannel.nf</span><br><span class="line">[a8/4b2c55] process &gt; p (3) [100%] 3 of 3 ✔</span><br><span class="line">(a3, b4)</span><br><span class="line">(a2, b2)</span><br><span class="line">(a1, b1)</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用-ifEmpty-為輸入-channel-設定預設值"><a href="#使用-ifEmpty-為輸入-channel-設定預設值" class="headerlink" title="使用 ifEmpty 為輸入 channel 設定預設值"></a>使用 <code>ifEmpty</code> 為輸入 channel 設定預設值</h1><p>為了避免 process 被跳過或是沒有執行的狀況，<a href="https://www.nextflow.io/docs/latest/operator.html#operator-ifempty">nextflow 官方文件</a>建議以 <code>ifEmpty</code> 為 channel 設定預設值。如以下案例，由於 <code>b_ch</code> 為 empty channel，經 <code>ifEmpty</code> operator 賦予預設值，使得 process 能順利運行。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">//demoIfEmpty.nf</span></span><br><span class="line">process p &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        val a</span><br><span class="line">        val b</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;($a, $b)&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span>&#125;</span><br><span class="line">workflow &#123;   </span><br><span class="line">    a_ch = channel.of(<span class="string">&quot;a1&quot;</span>)</span><br><span class="line">    <span class="comment">// &lt;defalut value&gt; if ch.isempty() else ch</span></span><br><span class="line">    b_ch = channel.empty()</span><br><span class="line">    p(a_ch, b_ch.ifEmpty(<span class="string">&quot;b_default&quot;</span>)).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run demoIfEmpty.nf</span><br><span class="line">[47/459729] process &gt; p (1) [100%] 1 of 1 ✔</span><br><span class="line">(a1, b_default)</span><br></pre></td></tr></table></figure>
+
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Nextflow 的 process 會跳過含有 empty channel 的任務，若想避免這種狀況在非預期的情形發生（例如 <code>join</code> 失敗），可使用 <code>ifEmpty</code> 為 process 的輸入 channel 設定預設值。</p>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
+<li><a href="https://stackoverflow.com/questions/70888844/nextflow-how-to-fail-if-channel-is-empty-ifempty">NextFlow: How to fail if channel is empty ( .ifEmpty() )</a></li>
+<li><a href="https://stackoverflow.com/questions/64042860/check-if-nextflow-channel-is-empty">check if nextflow channel is empty</a>)</li>
+<li><a href="https://github.com/nextflow-io/nf-hack18/blob/master/asciidocs/07_processes.adoc">Nextflow Workshop Hackaton 2018: 07_processes</a></li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">執行腳本時，nextflow 會先以 <code>nextflow.processor.TaskProcessor</code> 啟動 process，透過 <code>nextflow.executor.LocalHandler</code> 一一提交輸入 channel 的內容給 process 執行。詳細的流程可參閱 <code>.nextflow.log</code>。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
         <category>bioinformatics</category>
       </categories>
@@ -1454,7 +1442,7 @@ echo &quot;\$title \n $PWD&quot;
 <h2 id="基因具有令人訝異的穩定性"><a href="#基因具有令人訝異的穩定性" class="headerlink" title="基因具有令人訝異的穩定性"></a>基因具有令人訝異的穩定性</h2><p>無論透過何種方式推論，原子的最大體積約為 300 Å,而單一原子的尺寸約為 1 Å，這意味著基因所含的原子數頂多在數百萬個之間。透過前一章所推論的，這樣的尺寸顯然過少了。那麼究竟有什麼使得基因能以保有如此問訂的特性</p>
 ]]></content>
       <categories>
-        <category>astrobilogy</category>
+        <category>astrobiology</category>
         <category>what is life</category>
       </categories>
       <tags>
