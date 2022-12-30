@@ -1,8 +1,8 @@
 ---
 title: 怎麼決定合併雙端序列時允許的錯配數量？
 date: 2022-02-16 00:15:18
-tags: [bioinformatics, NGS]
-categories: Metagenomics
+tags: [NGS]
+categories: [bioinformatics, metagenomics]
 ---
 
 illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。

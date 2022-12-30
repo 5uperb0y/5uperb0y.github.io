@@ -1,12 +1,12 @@
 ---
 title: LeetCode 筆記｜724. Find Pivot Index
 date: 2022-12-20 20:34:20
-tags: leetcode
-categories: programming
+tags: array
+categories: [programming, leetcode]
 ---
 
 若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 `-1`。
-
+<!--more-->
 ## 問題描述
 
 > Given an array of integers `nums`, calculate the pivot index of this array.
@@ -30,6 +30,9 @@ categories: programming
 
 - `1 <= nums.length <= 10^4`
 - `-1000 <= nums[i] <= 1000`：留意負數項
+
+**知識點**
+prefix sum & array
 
 ## 思路與題解
 此處借鑑[官方解法](https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/)。首先計算數列的級數 (`S`)，接著依序讀過數列，並計算讀過數字之和 (`leftSum`，即當前項左側的子數列總和)。

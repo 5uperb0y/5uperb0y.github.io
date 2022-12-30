@@ -1,8 +1,8 @@
 ---
 title: LeetCode 筆記｜1. Two Sum
 date: 2022-12-15 00:07:15
-tags: leetcode
-categories: programming
+tags: array
+categories: [programming, leetcode]
 ---
 
 ## 問題描述

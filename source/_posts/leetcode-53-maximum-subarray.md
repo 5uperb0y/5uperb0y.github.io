@@ -1,8 +1,8 @@
 ---
 title: LeetCode 筆記｜53. Maximum Subarray
 date: 2022-12-09 21:04:29
-tags: leetcode
-categories: programming
+tags: array
+categories: [programming, leetcode]
 ---
 
 ## 問題描述

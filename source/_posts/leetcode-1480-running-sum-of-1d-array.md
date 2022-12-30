@@ -1,8 +1,8 @@
 ---
 title: LeetCode 筆記｜1480. Running Sum of 1d Array
 date: 2022-12-19 21:08:37
-tags: leetcode
-categories: programming
+tags: array
+categories: [programming, leetcode]
 ---
 計算數列逐項的累積和 (runningSum)
 
@@ -19,6 +19,9 @@ categories: programming
 **限制**
 - `1 <= nums.length <= 1000`
 - `-10^6 <= nums[i] <= 10^6`
+
+**知識點**
+prefix sum & array  
 
 ## 思路與題解
 此題應該算是 for loop 練習，我覺得要留意 (1) indices out of range 以及 (2) len(nums) == 1 的狀況。

@@ -2,7 +2,7 @@
 title: 科學溝通能力的重要性
 date: 2018-11-30 16:36:25
 tags: communication
-categories: academic
+categories: [academic, mindset]
 ---
 
 科學溝通能力究竟有什麼重要性，為何值得投注心力練習？

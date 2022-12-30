@@ -1,8 +1,8 @@
 ---
 title: 寫論文的糟糕和美好經驗
 date: 2022-11-20 04:53:16
-tags: [mindset, career]
-categories: Academic
+tags: [writing]
+categories: [academic, mindset]
 ---
 
 我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。

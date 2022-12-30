@@ -2,7 +2,7 @@
 title: 讀後感｜我們就是火星人：尋找宇宙中的地外生命
 date: 2019-02-10 18:57:20
 tags: reading
-categories: life in the universe
+categories: [astrobiology, life in the universe]
 ---
 
 生命和宇宙的聯繫是《我們就是火星人》的主旋律。大霹靂後的原初核合成（Big Bang nucleosynthesis）雖然僅持續短暫時間，卻製造了宇宙含量最豐富的元素氫、氦。然而隨著空間持續膨脹，溫度下降到無法維持核融合反應，導致原初核合成中止。

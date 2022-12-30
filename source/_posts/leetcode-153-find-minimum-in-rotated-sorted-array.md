@@ -1,8 +1,8 @@
 ---
 title: LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array
 date: 2022-12-13 22:45:15
-tags: leetcode
-categories: programming
+tags: array
+categories: [programming, leetcode]
 ---
 
 ## 問題描述

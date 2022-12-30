@@ -1,8 +1,8 @@
 ---
 title: LeetCode 筆記｜217. Contains Duplicate
 date: 2022-11-28 23:23:51
-tags: leetcode
-categories: programming
+tags: array
+categories: [programming, leetcode]
 ---
 
 > Given an integer array `nums`, return `true` if any value appears at least twice in the array, and return `false` if every element is distinct.

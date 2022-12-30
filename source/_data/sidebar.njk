@@ -1,0 +1,25 @@
+{# Blogroll #}
+{% if theme.recent_posts %}
+<div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.recent_posts_layout  }}">
+<br>
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-{{ theme.recent_posts_icon | lower }}" aria-hidden="true"></i>
+    {{ theme.recent_posts_title }}
+</div>
+<ul class="links-of-blogroll-list">
+    <!--{% set posts = site.posts.sort('-date') %}-->
+    {% set posts = site.posts.sort('-date').toArray() %}
+    {% for post in posts.slice('0', '5') %}
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="{{ __('post.created') }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">
+        {{ date(post.date, 'MM/DD') }}
+      </time>
+      <a href="{{ url_for(post.path) }}" title="{{ post.title }}">{{ post.title }}</a>
+      <br>
+      <br>
+    </li>
+    {% endfor %}
+</ul>
+</div>
+{% endif %}

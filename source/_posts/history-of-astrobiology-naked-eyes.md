@@ -2,7 +2,7 @@
 title: 「天文」生物學：數量的緣故
 date: 2022-12-15 22:44:23
 tags: 
-categories: life in the universe
+categories: [astrobiology, life in the universe]
 ---
 
 國中時，剛看完《星艦迷航記VIII：戰鬥巡航》的我向學校裡最接近外星生物專家的生物老師詢問是否真有外星人，他告訴我地球外還有許多星球，如果沒有其他生命也太奇怪了。
