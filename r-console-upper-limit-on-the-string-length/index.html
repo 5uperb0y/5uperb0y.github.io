@@ -27,12 +27,12 @@
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
 <meta property="og:description" content="TL:DR：輸入 R&#x2F;Rstudio console 的指令之容量上限為 4095 bytes。若超出上限，console 會忽略超出的部分，顯示 + 提醒使用者補完剩餘指令。">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/main/r-console-upper-limit-on-the-string-length.pnghttps://github.com/5uperb0y/blog-media/blob/main/r-console-upper-limit-on-the-string-length.png">
+<meta property="og:image" content="https://github.com/5uperb0y/blog-media/blob/main/r-console-upper-limit-on-the-string-length.png?raw=true">
 <meta property="article:published_time" content="2022-03-03T14:38:31.000Z">
-<meta property="article:modified_time" content="2022-12-30T16:48:52.848Z">
+<meta property="article:modified_time" content="2022-12-30T17:00:30.703Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/main/r-console-upper-limit-on-the-string-length.pnghttps://github.com/5uperb0y/blog-media/blob/main/r-console-upper-limit-on-the-string-length.png">
+<meta name="twitter:image" content="https://github.com/5uperb0y/blog-media/blob/main/r-console-upper-limit-on-the-string-length.png?raw=true">
 
 
 <link rel="canonical" href="https://5uperb0y.com/r-console-upper-limit-on-the-string-length/">
@@ -321,7 +321,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-31 00:48:52" itemprop="dateModified" datetime="2022-12-31T00:48:52+08:00">2022-12-31</time>
+      <time title="修改時間：2022-12-31 01:00:30" itemprop="dateModified" datetime="2022-12-31T01:00:30+08:00">2022-12-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -411,7 +411,7 @@
 <p>有趣的是，數字再大一點時數字會以科學記號表示，不符合 rep 的輸入規範，也會顯示錯誤。</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> seq <span class="operator">&lt;-</span> paste0<span class="punctuation">(</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;ABCDEFG&quot;</span><span class="punctuation">,</span> <span class="number">1000000000000000000000</span><span class="punctuation">)</span><span class="punctuation">,</span> collapse <span class="operator">=</span> <span class="string">&quot;&quot;</span><span class="punctuation">)</span></span><br><span class="line">Error <span class="keyword">in</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;ABCDEFG&quot;</span><span class="punctuation">,</span> <span class="number">1e+21</span><span class="punctuation">)</span> <span class="operator">:</span> invalid <span class="string">&#x27;times&#x27;</span> argument</span><br></pre></td></tr></table></figure>
 <p>這些道理我都懂，可是，我的 pipeline 是以腳本執行啊，怎麼還會碰到這問題？經過一番苦思，發現 bug 出在我的程式邏輯上，跟本文提到的限制一點關係都沒有。</p>
-<p><img src="https://raw.githubusercontent.com/5uperb0y/blog-media/main/r-console-upper-limit-on-the-string-length.pnghttps://github.com/5uperb0y/blog-media/blob/main/r-console-upper-limit-on-the-string-length.png" alt="meme, it&#39;s my fault, not R&#39;s"></p>
+<p><img src="https://github.com/5uperb0y/blog-media/blob/main/r-console-upper-limit-on-the-string-length.png?raw=true" alt="meme, it&#39;s my fault, not R&#39;s"></p>
 
     </div>
 
