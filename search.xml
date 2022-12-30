@@ -18,6 +18,7 @@
 <p>因此，為了挑到合宜的文本，除瀏覽作者背景和內容概要外，還可以透過圖書館分類號確認，其中與天文生物學密切相關的有361.9（天文生物學）和361.12（生命起源）。</p>
 ]]></content>
       <categories>
+        <category>astrobiology</category>
         <category>life in the universe</category>
       </categories>
       <tags>
@@ -42,6 +43,7 @@
 <p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
+        <category>astrobiology</category>
         <category>what is life</category>
       </categories>
       <tags>
@@ -83,9 +85,61 @@
 ]]></content>
       <categories>
         <category>programming</category>
+        <category>tools</category>
       </categories>
       <tags>
-        <tag>tips and ticks</tag>
+        <tag>vim, vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>寫論文的糟糕和美好經驗</title>
+    <url>/good-and-bad-experiences-in-journal-article-writing/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
+<p>所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。</p>
+<p>這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。</p>
+<p>我意識到阻礙我進展的是對於完美論文的期待，我期待論文能夠達到讓我感到愉悅和成就感的標準。</p>
+<p>然而，人們總是無法在初稿時達到滿意的程度吧？而且論文需要於修改中逐漸精緻，沒辦法一蹴可幾，我的期待反過來成為我的壓力。</p>
+<p>為了舒緩這種壓力和焦慮，我轉而把精力投注在文獻回顧或改進研究內容。雖然多做準備能暫時減緩我的焦慮和踏實感，但這只是將自己的壓力和負擔延後，之後將面對更多的時間、資源和要求的壓力。</p>
+<span id="more"></span>
+
+<h2 id="「發表論文的初衷是感謝」"><a href="#「發表論文的初衷是感謝」" class="headerlink" title="「發表論文的初衷是感謝」"></a>「發表論文的初衷是感謝」</h2><p>而我對論文的美好經驗則來自研究所的老師。我的指導教授從前曾問我：「你認為我們為什麼要投稿論文？」</p>
+<p>從功利的角度講，Publish or Perish。發表論文是在學術界生存的根本，也是一個人能力的證據，舉凡畢業、獎學金、申請學校、公司求職、學校教職等皆可能需要論文作為能力的佐證。</p>
+<p>然而，我的指導教授認為這些都只是其次，發表論文的初衷是感謝。</p>
+<p>為什麼感謝？做研究總是關注著某些議題，為了解決問題，我們參考了這麼多文獻，我們正是對於前人的文獻表達感謝。</p>
+<p>表達感謝的途徑有二，首先是引用這些文獻，彰明他們的貢獻；其次是基於這些文獻發展出我們的想法，促進對議題的理解，讓這些想法得以演化和繁衍下去。</p>
+<p>科學是尋求解釋的活動，而我們對世界的認知並非一日造就而成的。無論是科學革命還是漸進式的科學史觀，當今的知識體系都是多人長年活動累積的結果，一項研究的鑄成往往有其思想根基和參考依據，無論是要贊同、反駁還是引發想法，都會踏過前人的足跡。</p>
+<p>經過長期演變，論文已是紀錄和傳播科學活動成果的最有效和公認的媒介，研究和發表其實就是：我們感到疑惑，我們開始研究，我們參考了誰的想法和觀念，我們想到了一些點子和把持一些觀點。</p>
+<p>我們想要提供一些新的解釋，我們感謝前人對於我們思想和研究的幫助，我們回饋學界這些觀念，用一種經過長期演變且公認最有效率的媒介，論文。</p>
+<p>以感謝的角度來看待論文發表很大程度地舒緩了寫論文的恐懼和壓力，即使論文有那些功利價值，但我的指導教授還是提醒了我研究和發表理想和溫暖的一面。</p>
+<h2 id="「一則文獻既不是最重要的也不是最不重要的」"><a href="#「一則文獻既不是最重要的也不是最不重要的」" class="headerlink" title="「一則文獻既不是最重要的也不是最不重要的」"></a>「一則文獻既不是最重要的也不是最不重要的」</h2><p>而對論文另一部份美好經驗則來自論文寫作課的老師。</p>
+<p>有別於我的指導教授，寫作課老師從實用角度分析論文的寫作與發表，將論文寫作描述得很像 youtube 上頭 8 分鐘的 DIY 影片，好像我們在某個閒暇無事的下午，點開影片照著做就可以完成，不是什麼無法做到的事。</p>
+<p>總結他的課程，他強調論文寫作縱使有那些功利價值，也不需要感到壓力，論文發表會被 reject 沒錯，但再換家推銷就好。</p>
+<p>換句話說，寫作課老師讓我感受到，即使沒有達到最完美的狀況，論文還是有價值；即使還沒有準備好，也能開始動筆；即使能力還不夠，進展中就會有所成長；即使被批判，那也是很自然，因為這都是科學過程的一部分。</p>
+<p>一則文獻既不是最重要的也不是最不重要的，科學重視的是合理而非真理，文獻呈現的是探索的過程，我們沒辦法在一則文獻中完全佐證我們的主張或對世界的看法。</p>
+<p>錯誤與正確都是研究累積後，後世對我們的評價而已，所以不用太擔心文獻被批判等等，這本來就是科學新陳代謝的一環。</p>
+<h2 id="正向寫作經驗的關鍵"><a href="#正向寫作經驗的關鍵" class="headerlink" title="正向寫作經驗的關鍵"></a>正向寫作經驗的關鍵</h2><ul>
+<li><strong>寫作是 routine</strong>：寫作跟運動很像，寫作的愉悅需要一點投資，最重要的投資就是起步的意願，隨後是堅持的決心。寫作是 routine，而非儀式行為。是以，治療寫作不快或抑鬱的方法跟控制慢性病一樣，每天吃藥（寫作）。</li>
+<li><strong>參與感</strong>：讓寫作交流可以提升寫作的回饋感，因為寫作終究是科學交流的一部份。透過研討會、一對一討論、編修等途徑，可以從中得到寫作靈感而疏通寫作瓶頸，也可以從交流中獲得參與感和社群歸屬，最終得到「意義」</li>
+<li><strong>正面看待評論</strong>：看待拒稿和批評的認知轉換有助於降低寫作的恐懼，投稿寫作就跟賣東西一樣，一定有人買，只是看誰會買和賣什麼價碼而已。論文跟基因不一樣，別人罵你先天特徵是沒機會改變，但別人批評論文內容有改善的機會。</li>
+<li><strong>分享的心</strong>：如果真心喜歡自己的研究，那寫作就是分享自己熱情和喜好的管道。若有類似的經驗便能體會為什麼用分享看待寫作可以增加正向寫作經驗。</li>
+</ul>
+<h2 id="當然還是有糟糕的經驗"><a href="#當然還是有糟糕的經驗" class="headerlink" title="當然還是有糟糕的經驗"></a>當然還是有糟糕的經驗</h2><p>儘管羅列了一堆美好經驗和建立正面想法的「要點」，寫論文還是有坐困愁城和自我質疑的時候，像是指示牴觸價值觀、結果不明又不想自欺欺人、截止日到但品質不滿意等等。</p>
+<p>舉我的例子來說，我不太習慣被 Paul Nurse 稱之為「修正主義 (revisionist)」的科學敘事 (Nurse. (2016). Cell, 165(6), 1301-1306.)。就我理解，這是指論文敘事隱藏了科研的意外與不可控，調整文章內容以說個毫無破綻的好故事，而不是說個貼近事實的發現歷程。</p>
+<p>最容易接觸這類修正主義的途徑可能是台灣的理科教科書。從歐幾里得、牛頓、孟德爾、波爾、拉瓦節，課本呈現的是生硬且不直觀，但和諧線性的科學史觀。理論的發展與邏輯的推演高度相符，彷彿有了前提、假設和足夠的測量，理論即順水推舟浮現，科學史跟課本都能一併翻向的新頁。</p>
+<p>我想，為了溝通的效率，精簡內容和梳理邏輯是撰寫論文的必要過程。然而，當論文呈現與事實迥異的發現軌跡，後人要追溯某項理論的沿革時，只能走在一條虛構的途徑上，而這條途徑很可能只在想像中行得通。</p>
+<p>等到開始寫論文，我也希望自己能夠避免這種狀況，想盡可能讓論文的敘事貼近發現的過程，保留激發研究點子的關鍵因素，討論理論與結果衝突的理由與和解方式，而不是為了結果而調整敘述過程的方向。</p>
+<p>雖然只是一點點，但我也想要為自己認同的理念和未來做點事。不過，我後來才體會到，論文寫作還是有協商的因素存在，與合作者的協調、與計畫主持人的溝通、與編輯和審閱者的答辯等等。</p>
+<p>我想這些合作與協商是必要的，只是折磨之處在於，若討論不是基於事實與道理，而是訴諸權威或群眾等無關論文內容的事情，那麼我有點難克服下筆時的抗拒感。</p>
+<h2 id="但我還是想記住好的"><a href="#但我還是想記住好的" class="headerlink" title="但我還是想記住好的"></a>但我還是想記住好的</h2><p>儘管如此，我其實是喜好寫作表達想法的，我覺得將自己的主張和論證陳述清楚，嘗試去說服別人的過程仍值得投入。</p>
+<p>畢竟寫論文也是一種發聲管道，若渴望能依照這途徑去實踐或改變什麼，那是否要做下去也非取決於經驗的好壞，而是渴望的程度。</p>
+<p>既然如此，傾聽內心裡較良善的聲音讓自己有動力做下去，我覺得會比被糟糕回憶困住半途而廢還來得有機會幫助自己達到目標。</p>
+]]></content>
+      <categories>
+        <category>academic</category>
+        <category>mindset</category>
+      </categories>
+      <tags>
+        <tag>writing</tag>
       </tags>
   </entry>
   <entry>
@@ -107,9 +161,10 @@
 <li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
 </ul>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>reading</tag>
-      </tags>
+      <categories>
+        <category>life</category>
+        <category>reading</category>
+      </categories>
   </entry>
   <entry>
     <title>「天文」生物學：數量的緣故</title>
@@ -138,6 +193,7 @@
 <p>亞里斯多德的學說在中世紀時期被阿奎納 (St. Thomas Aquinas, 1225-1274) 納入神學體系，此後單一世界的想法持續主宰著歐洲人的世界觀。然而關於「數量」的爭議並沒有就此定論，亞里斯多德體系在哥白尼掀起科學革命後逐漸衰落，現代科學興起後更多的科技與觀察手段逐漸揭示宇宙的樣貌。</p>
 ]]></content>
       <categories>
+        <category>astrobiology</category>
         <category>life in the universe</category>
       </categories>
   </entry>
@@ -190,61 +246,11 @@
 <p>透過這種方式思考問題，能延伸出許多跟自己相關的議題，也比較有動機向講者請教，還能拓展關於待解問題的深刻理解或有用猜想。</p>
 ]]></content>
       <categories>
+        <category>academic</category>
         <category>tips &amp; tricks</category>
       </categories>
       <tags>
         <tag>communitcation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>寫論文的糟糕和美好經驗</title>
-    <url>/good-and-bad-experiences-in-journal-article-writing/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
-<p>所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。</p>
-<p>這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。</p>
-<p>我意識到阻礙我進展的是對於完美論文的期待，我期待論文能夠達到讓我感到愉悅和成就感的標準。</p>
-<p>然而，人們總是無法在初稿時達到滿意的程度吧？而且論文需要於修改中逐漸精緻，沒辦法一蹴可幾，我的期待反過來成為我的壓力。</p>
-<p>為了舒緩這種壓力和焦慮，我轉而把精力投注在文獻回顧或改進研究內容。雖然多做準備能暫時減緩我的焦慮和踏實感，但這只是將自己的壓力和負擔延後，之後將面對更多的時間、資源和要求的壓力。</p>
-<span id="more"></span>
-
-<h2 id="「發表論文的初衷是感謝」"><a href="#「發表論文的初衷是感謝」" class="headerlink" title="「發表論文的初衷是感謝」"></a>「發表論文的初衷是感謝」</h2><p>而我對論文的美好經驗則來自研究所的老師。我的指導教授從前曾問我：「你認為我們為什麼要投稿論文？」</p>
-<p>從功利的角度講，Publish or Perish。發表論文是在學術界生存的根本，也是一個人能力的證據，舉凡畢業、獎學金、申請學校、公司求職、學校教職等皆可能需要論文作為能力的佐證。</p>
-<p>然而，我的指導教授認為這些都只是其次，發表論文的初衷是感謝。</p>
-<p>為什麼感謝？做研究總是關注著某些議題，為了解決問題，我們參考了這麼多文獻，我們正是對於前人的文獻表達感謝。</p>
-<p>表達感謝的途徑有二，首先是引用這些文獻，彰明他們的貢獻；其次是基於這些文獻發展出我們的想法，促進對議題的理解，讓這些想法得以演化和繁衍下去。</p>
-<p>科學是尋求解釋的活動，而我們對世界的認知並非一日造就而成的。無論是科學革命還是漸進式的科學史觀，當今的知識體系都是多人長年活動累積的結果，一項研究的鑄成往往有其思想根基和參考依據，無論是要贊同、反駁還是引發想法，都會踏過前人的足跡。</p>
-<p>經過長期演變，論文已是紀錄和傳播科學活動成果的最有效和公認的媒介，研究和發表其實就是：我們感到疑惑，我們開始研究，我們參考了誰的想法和觀念，我們想到了一些點子和把持一些觀點。</p>
-<p>我們想要提供一些新的解釋，我們感謝前人對於我們思想和研究的幫助，我們回饋學界這些觀念，用一種經過長期演變且公認最有效率的媒介，論文。</p>
-<p>以感謝的角度來看待論文發表很大程度地舒緩了寫論文的恐懼和壓力，即使論文有那些功利價值，但我的指導教授還是提醒了我研究和發表理想和溫暖的一面。</p>
-<h2 id="「一則文獻既不是最重要的也不是最不重要的」"><a href="#「一則文獻既不是最重要的也不是最不重要的」" class="headerlink" title="「一則文獻既不是最重要的也不是最不重要的」"></a>「一則文獻既不是最重要的也不是最不重要的」</h2><p>而對論文另一部份美好經驗則來自論文寫作課的老師。</p>
-<p>有別於我的指導教授，寫作課老師從實用角度分析論文的寫作與發表，將論文寫作描述得很像 youtube 上頭 8 分鐘的 DIY 影片，好像我們在某個閒暇無事的下午，點開影片照著做就可以完成，不是什麼無法做到的事。</p>
-<p>總結他的課程，他強調論文寫作縱使有那些功利價值，也不需要感到壓力，論文發表會被 reject 沒錯，但再換家推銷就好。</p>
-<p>換句話說，寫作課老師讓我感受到，即使沒有達到最完美的狀況，論文還是有價值；即使還沒有準備好，也能開始動筆；即使能力還不夠，進展中就會有所成長；即使被批判，那也是很自然，因為這都是科學過程的一部分。</p>
-<p>一則文獻既不是最重要的也不是最不重要的，科學重視的是合理而非真理，文獻呈現的是探索的過程，我們沒辦法在一則文獻中完全佐證我們的主張或對世界的看法。</p>
-<p>錯誤與正確都是研究累積後，後世對我們的評價而已，所以不用太擔心文獻被批判等等，這本來就是科學新陳代謝的一環。</p>
-<h2 id="正向寫作經驗的關鍵"><a href="#正向寫作經驗的關鍵" class="headerlink" title="正向寫作經驗的關鍵"></a>正向寫作經驗的關鍵</h2><ul>
-<li><strong>寫作是 routine</strong>：寫作跟運動很像，寫作的愉悅需要一點投資，最重要的投資就是起步的意願，隨後是堅持的決心。寫作是 routine，而非儀式行為。是以，治療寫作不快或抑鬱的方法跟控制慢性病一樣，每天吃藥（寫作）。</li>
-<li><strong>參與感</strong>：讓寫作交流可以提升寫作的回饋感，因為寫作終究是科學交流的一部份。透過研討會、一對一討論、編修等途徑，可以從中得到寫作靈感而疏通寫作瓶頸，也可以從交流中獲得參與感和社群歸屬，最終得到「意義」</li>
-<li><strong>正面看待評論</strong>：看待拒稿和批評的認知轉換有助於降低寫作的恐懼，投稿寫作就跟賣東西一樣，一定有人買，只是看誰會買和賣什麼價碼而已。論文跟基因不一樣，別人罵你先天特徵是沒機會改變，但別人批評論文內容有改善的機會。</li>
-<li><strong>分享的心</strong>：如果真心喜歡自己的研究，那寫作就是分享自己熱情和喜好的管道。若有類似的經驗便能體會為什麼用分享看待寫作可以增加正向寫作經驗。</li>
-</ul>
-<h2 id="當然還是有糟糕的經驗"><a href="#當然還是有糟糕的經驗" class="headerlink" title="當然還是有糟糕的經驗"></a>當然還是有糟糕的經驗</h2><p>儘管羅列了一堆美好經驗和建立正面想法的「要點」，寫論文還是有坐困愁城和自我質疑的時候，像是指示牴觸價值觀、結果不明又不想自欺欺人、截止日到但品質不滿意等等。</p>
-<p>舉我的例子來說，我不太習慣被 Paul Nurse 稱之為「修正主義 (revisionist)」的科學敘事 (Nurse. (2016). Cell, 165(6), 1301-1306.)。就我理解，這是指論文敘事隱藏了科研的意外與不可控，調整文章內容以說個毫無破綻的好故事，而不是說個貼近事實的發現歷程。</p>
-<p>最容易接觸這類修正主義的途徑可能是台灣的理科教科書。從歐幾里得、牛頓、孟德爾、波爾、拉瓦節，課本呈現的是生硬且不直觀，但和諧線性的科學史觀。理論的發展與邏輯的推演高度相符，彷彿有了前提、假設和足夠的測量，理論即順水推舟浮現，科學史跟課本都能一併翻向的新頁。</p>
-<p>我想，為了溝通的效率，精簡內容和梳理邏輯是撰寫論文的必要過程。然而，當論文呈現與事實迥異的發現軌跡，後人要追溯某項理論的沿革時，只能走在一條虛構的途徑上，而這條途徑很可能只在想像中行得通。</p>
-<p>等到開始寫論文，我也希望自己能夠避免這種狀況，想盡可能讓論文的敘事貼近發現的過程，保留激發研究點子的關鍵因素，討論理論與結果衝突的理由與和解方式，而不是為了結果而調整敘述過程的方向。</p>
-<p>雖然只是一點點，但我也想要為自己認同的理念和未來做點事。不過，我後來才體會到，論文寫作還是有協商的因素存在，與合作者的協調、與計畫主持人的溝通、與編輯和審閱者的答辯等等。</p>
-<p>我想這些合作與協商是必要的，只是折磨之處在於，若討論不是基於事實與道理，而是訴諸權威或群眾等無關論文內容的事情，那麼我有點難克服下筆時的抗拒感。</p>
-<h2 id="但我還是想記住好的"><a href="#但我還是想記住好的" class="headerlink" title="但我還是想記住好的"></a>但我還是想記住好的</h2><p>儘管如此，我其實是喜好寫作表達想法的，我覺得將自己的主張和論證陳述清楚，嘗試去說服別人的過程仍值得投入。</p>
-<p>畢竟寫論文也是一種發聲管道，若渴望能依照這途徑去實踐或改變什麼，那是否要做下去也非取決於經驗的好壞，而是渴望的程度。</p>
-<p>既然如此，傾聽內心裡較良善的聲音讓自己有動力做下去，我覺得會比被糟糕回憶困住半途而廢還來得有機會幫助自己達到目標。</p>
-]]></content>
-      <categories>
-        <category>Academic</category>
-      </categories>
-      <tags>
-        <tag>mindset</tag>
-        <tag>career</tag>
       </tags>
   </entry>
   <entry>
@@ -260,12 +266,9 @@
 <p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
+        <category>astrobiology</category>
         <category>origins of life</category>
       </categories>
-      <tags>
-        <tag>astrobiology</tag>
-        <tag>popular science</tag>
-      </tags>
   </entry>
   <entry>
     <title>怎麼決定合併雙端序列時允許的錯配數量？</title>
@@ -286,10 +289,10 @@
 <p>接著，找到平均品質最差的那個樣本的逆向序列，計算其 3’ 端重疊區域的預期鹼基錯誤數（該段區域的定序錯誤率之和），得出數值的兩倍，應該可以當作測試雙端序列合併的參數的起始值。</p>
 ]]></content>
       <categories>
-        <category>Metagenomics</category>
+        <category>bioinformatics</category>
+        <category>metagenomics</category>
       </categories>
       <tags>
-        <tag>bioinformatics</tag>
         <tag>NGS</tag>
       </tags>
   </entry>
@@ -320,10 +323,23 @@
 <p>除了前述方法，也能夠安裝集合了 RDP 團隊包含了 classifier 在內各種開發工具的 <a href="https://github.com/rdpstaff/RDPTools">RDPTools</a>。只是 RDPTools 是透過 make 和 makefile 來編譯與安裝。由於依賴的軟體和環境設定等問題，我到現在還沒成功過，暫時無法整理出相關的筆記。</p>
 ]]></content>
       <categories>
+        <category>bioinformatics</category>
         <category>metagenomics</category>
       </categories>
       <tags>
         <tag>database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VSCodeVim｜使用 easymotion 快速移動與跳轉游標</title>
+    <url>/how-to-use-easymotion-in-vscodevim/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">]]></content>
+      <categories>
+        <category>programming</category>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>tips and ticks</tag>
       </tags>
   </entry>
   <entry>
@@ -353,6 +369,7 @@
 <p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
+        <category>astrobiology</category>
         <category>life in the universe</category>
       </categories>
       <tags>
@@ -439,7 +456,8 @@
 <p>[^*] 李連江 (2017)《戲說統計：文科生的量化方法》，中國政法大學出版社。</p>
 ]]></content>
       <categories>
-        <category>career</category>
+        <category>academic</category>
+        <category>mindset</category>
       </categories>
       <tags>
         <tag>reading</tag>
@@ -477,9 +495,10 @@
 ]]></content>
       <categories>
         <category>programming</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -505,9 +524,10 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">runningSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            nums[n] = nums[n - <span class="number">1</span>] + nums[n]</span><br><span class="line">        <span class="keyword">return</span>(nums)</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>programming</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -546,9 +566,10 @@
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
         <category>programming</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -585,9 +606,10 @@
 ]]></content>
       <categories>
         <category>programming</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -635,9 +657,10 @@
 ]]></content>
       <categories>
         <category>programming</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -680,9 +703,10 @@
 ]]></content>
       <categories>
         <category>programming</category>
+        <category>leetcode</category>
       </categories>
       <tags>
-        <tag>leetcode</tag>
+        <tag>array</tag>
       </tags>
   </entry>
   <entry>
@@ -800,74 +824,12 @@
 <p>至於能在生物資訊、理論生態或是學者的路走去哪、走多遠或走出什麼道路，端看每次行動的抉擇。但我想在這個過程需要時間琢磨。因此，我現在對自己的期許是要有耐心，漸漸不再擔憂自己欠缺什麼條件，而是想辦法做到當下能做到的事情，剩下交給時間。</p>
 ]]></content>
       <categories>
+        <category>microbial ecology</category>
         <category>microbiota</category>
       </categories>
       <tags>
         <tag>career</tag>
         <tag>communication</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
-    <url>/nextflow-escape-characters/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
-<span id="more"></span>
-<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
-<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
-<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
-<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
-
-<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
-<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;\$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
-<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
-
-<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
-<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
-<ul>
-<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
-<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
-</ul>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -1214,9 +1176,73 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <categories>
         <category>programming</category>
+        <category>tools</category>
       </categories>
       <tags>
         <tag>tips and tricks</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
+    <url>/nextflow-escape-characters/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
+<span id="more"></span>
+<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
+<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
+<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
+<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
+
+<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
+<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;\$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
+<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
+
+<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
+<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
+<ul>
+<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
+<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
+</ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -1377,12 +1403,9 @@ echo &quot;\$title \n $PWD&quot;
 <p>由於當時台灣還沒退出聯合國所以也簽了這條約，想看詳細內容可以去網路上查中文的手寫文本。雖然台灣至今仍沒有進行任何登陸任務，不過得知我們也曾籌畫整個宇宙開發的小小部分，仍有莫名的參與感。</p>
 ]]></content>
       <categories>
+        <category>astrobiology</category>
         <category>life in the universe</category>
       </categories>
-      <tags>
-        <tag>career</tag>
-        <tag>communication</tag>
-      </tags>
   </entry>
   <entry>
     <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
@@ -1407,6 +1430,7 @@ echo &quot;\$title \n $PWD&quot;
 <h2 id="古典物理無法解釋遺傳的分子機制"><a href="#古典物理無法解釋遺傳的分子機制" class="headerlink" title="古典物理無法解釋遺傳的分子機制"></a>古典物理無法解釋遺傳的分子機制</h2><p>儘管統計物理似乎為有機體的尺存給出了圓滿的解釋，但此處的議論實為楔子：依照前述討論，有機體的秩序仰賴大量原子參與。不過就當時所知，基因很可能僅由少量原子組成，那麼基因是怎麼表現出遺傳、突變與分裂等在巨觀層次可觀測到的高度秩序？薛丁格主張，這個矛盾或許可用量子力學的概念解釋。</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dokkum &amp; Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。<a href="#fnref:5" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
+        <category>astrobiology</category>
         <category>what is life</category>
       </categories>
       <tags>
@@ -1430,6 +1454,7 @@ echo &quot;\$title \n $PWD&quot;
 <h2 id="基因具有令人訝異的穩定性"><a href="#基因具有令人訝異的穩定性" class="headerlink" title="基因具有令人訝異的穩定性"></a>基因具有令人訝異的穩定性</h2><p>無論透過何種方式推論，原子的最大體積約為 300 Å,而單一原子的尺寸約為 1 Å，這意味著基因所含的原子數頂多在數百萬個之間。透過前一章所推論的，這樣的尺寸顯然過少了。那麼究竟有什麼使得基因能以保有如此問訂的特性</p>
 ]]></content>
       <categories>
+        <category>astrobilogy</category>
         <category>what is life</category>
       </categories>
       <tags>
@@ -1451,6 +1476,7 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <categories>
         <category>academic</category>
+        <category>mindset</category>
       </categories>
       <tags>
         <tag>communication</tag>
@@ -1536,7 +1562,8 @@ echo &quot;\$title \n $PWD&quot;
 </ul>
 ]]></content>
       <categories>
-        <category>tips and tricks</category>
+        <category>academic</category>
+        <category>writing</category>
       </categories>
       <tags>
         <tag>communication</tag>
@@ -1600,7 +1627,8 @@ echo &quot;\$title \n $PWD&quot;
 <p>若擔心簡化的內容會誤導讀者，可以用註記或參考資訊補充說明。畢竟科普的目的是引領讀者踏入科學世界，只要留下足夠的延伸資訊，讀者終究能從比喻中習得事實。</p>
 ]]></content>
       <categories>
-        <category>tips and tricks</category>
+        <category>academic</category>
+        <category>writing</category>
       </categories>
       <tags>
         <tag>communication</tag>
