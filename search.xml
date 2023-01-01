@@ -26,31 +26,6 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜再創世紀</title>
-    <url>/church-2014-regenesis/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
-<span id="more"></span>
-
-<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
-<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
-<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
-<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
-<ul>
-<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
-<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
-<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
-</ul>
-<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vim｜VSCodeVime 常用設定</title>
     <url>/common-settings-for-vscodevim/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。</p>
@@ -88,7 +63,33 @@
         <category>tools</category>
       </categories>
       <tags>
-        <tag>vim, vscode</tag>
+        <tag>vim</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜再創世紀</title>
+    <url>/church-2014-regenesis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
+<span id="more"></span>
+
+<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
+<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
+<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
+<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
+<ul>
+<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
+<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
+<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
+</ul>
+<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -143,6 +144,30 @@
       </tags>
   </entry>
   <entry>
+    <title>讀後感｜樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+<span id="more"></span>
+
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>life</category>
+        <category>reading</category>
+      </categories>
+  </entry>
+  <entry>
     <title>「天文」生物學：數量的緣故</title>
     <url>/history-of-astrobiology-naked-eyes/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>國中時，剛看完《星艦迷航記VIII：戰鬥巡航》的我向學校裡最接近外星生物專家的生物老師詢問是否真有外星人，他告訴我地球外還有許多星球，如果沒有其他生命也太奇怪了。</p>
@@ -171,30 +196,6 @@
       <categories>
         <category>astrobiology</category>
         <category>life in the universe</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>讀後感｜樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
-<span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
-<ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>life</category>
-        <category>reading</category>
       </categories>
   </entry>
   <entry>
@@ -367,13 +368,30 @@
 <h1 id="啟用-easymotion"><a href="#啟用-easymotion" class="headerlink" title="啟用 easymotion"></a>啟用 easymotion</h1><p>easymotion 是 VSCodeVim 內建擴充套件，所以只要在 settings.json 添加指令即可啟用</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;vim.easymotion&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1>]]></content>
+<h1 id="調整-easymotion-快捷鍵"><a href="#調整-easymotion-快捷鍵" class="headerlink" title="調整 easymotion 快捷鍵"></a>調整 easymotion 快捷鍵</h1>]]></content>
       <categories>
         <category>programming</category>
         <category>tools</category>
       </categories>
       <tags>
-        <tag>tips and ticks</tag>
+        <tag>vim</tag>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>網際牛仔與無障礙空間（下）：</title>
+    <url>/keyboard-accessibility-on-websites/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="網際網路的想像"><a href="#網際網路的想像" class="headerlink" title="網際網路的想像"></a>網際網路的想像</h1><p>在網際網路的黎明，威廉吉布森在往後 cyberpunk 先聲的著作裡寫下他對於網際網路的想像。在那個時代哩，人們可以直接將神經系統連上線，透過意識直接控制物件與檔案軟體，不再需要鍵盤、滑鼠、觸控板甚至視動捕捉儀等輸入設備。</p>
+<blockquote>
+</blockquote>
+<h1 id="當代人機交互與無法使用滑鼠的人"><a href="#當代人機交互與無法使用滑鼠的人" class="headerlink" title="當代人機交互與無法使用滑鼠的人"></a>當代人機交互與無法使用滑鼠的人</h1><p>然而，至今標準的輸入裝備，</p>
+<h1 id="為什麼鍵盤合適"><a href="#為什麼鍵盤合適" class="headerlink" title="為什麼鍵盤合適"></a>為什麼鍵盤合適</h1><h1 id="無障礙網際空間"><a href="#無障礙網際空間" class="headerlink" title="無障礙網際空間"></a>無障礙網際空間</h1><h1 id="換位思考與行動"><a href="#換位思考與行動" class="headerlink" title="換位思考與行動"></a>換位思考與行動</h1><h1 id="結語：網際牛仔與無障礙空間"><a href="#結語：網際牛仔與無障礙空間" class="headerlink" title="結語：網際牛仔與無障礙空間"></a>結語：網際牛仔與無障礙空間</h1><p><a href="https://medium.com/@ru-hsu916">https://medium.com/@ru-hsu916</a><br><a href="https://www.nespresso.com/tw/zh/vertuo-range-introduction">https://www.nespresso.com/tw/zh/vertuo-range-introduction</a><br><a href="https://www.railway.gov.tw/tra-tip-web/tip#C">https://www.railway.gov.tw/tra-tip-web/tip#C</a></p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+      <tags>
+        <tag>tips and tricks</tag>
       </tags>
   </entry>
   <entry>
@@ -479,22 +497,6 @@
       </categories>
       <tags>
         <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>網際牛仔與無障礙空間（下）：</title>
-    <url>/keyboard-accessibility-on-websites/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="網際網路的想像"><a href="#網際網路的想像" class="headerlink" title="網際網路的想像"></a>網際網路的想像</h1><p>在網際網路的黎明，威廉吉布森在往後 cyberpunk 先聲的著作裡寫下他對於網際網路的想像。在那個時代哩，人們可以直接將神經系統連上線，透過意識直接控制物件與檔案軟體，不再需要鍵盤、滑鼠、觸控板甚至視動捕捉儀等輸入設備。</p>
-<blockquote>
-</blockquote>
-<h1 id="當代人機交互與無法使用滑鼠的人"><a href="#當代人機交互與無法使用滑鼠的人" class="headerlink" title="當代人機交互與無法使用滑鼠的人"></a>當代人機交互與無法使用滑鼠的人</h1><p>然而，至今標準的輸入裝備，</p>
-<h1 id="為什麼鍵盤合適"><a href="#為什麼鍵盤合適" class="headerlink" title="為什麼鍵盤合適"></a>為什麼鍵盤合適</h1><h1 id="無障礙網際空間"><a href="#無障礙網際空間" class="headerlink" title="無障礙網際空間"></a>無障礙網際空間</h1><h1 id="換位思考與行動"><a href="#換位思考與行動" class="headerlink" title="換位思考與行動"></a>換位思考與行動</h1><h1 id="結語：網際牛仔與無障礙空間"><a href="#結語：網際牛仔與無障礙空間" class="headerlink" title="結語：網際牛仔與無障礙空間"></a>結語：網際牛仔與無障礙空間</h1><p><a href="https://medium.com/@ru-hsu916">https://medium.com/@ru-hsu916</a><br><a href="https://www.nespresso.com/tw/zh/vertuo-range-introduction">https://www.nespresso.com/tw/zh/vertuo-range-introduction</a><br><a href="https://www.railway.gov.tw/tra-tip-web/tip#C">https://www.railway.gov.tw/tra-tip-web/tip#C</a></p>
-]]></content>
-      <categories>
-        <category>programming</category>
-      </categories>
-      <tags>
-        <tag>tips and tricks</tag>
       </tags>
   </entry>
   <entry>
@@ -607,46 +609,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜217. Contains Duplicate</title>
-    <url>/leetcode-217-contains-duplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
-</blockquote>
-<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
-<p>Example:</p>
-<blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
-<ul>
-<li>數字重複出現</li>
-<li>array 長度大於其中數字種類數</li>
-<li>若將 array 排序，則重複的數字比鄰出現</li>
-</ul>
-<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
-<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
-</li>
-<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
-</li>
-<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>array</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 筆記｜53. Maximum Subarray</title>
     <url>/leetcode-53-maximum-subarray/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
@@ -687,6 +649,46 @@
 <ul>
 <li><code>sums</code>：紀錄當前累加值</li>
 <li><code>maxVal</code>：紀錄當前累加的最大值</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜217. Contains Duplicate</title>
+    <url>/leetcode-217-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<ul>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
+</ul>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
 </ul>
 ]]></content>
       <categories>
@@ -867,66 +869,23 @@
       </tags>
   </entry>
   <entry>
-    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
-    <url>/nextflow-escape-characters/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
-<span id="more"></span>
-<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
-<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
-<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
-<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
-
-<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
-<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;\$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
-<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
-
-<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
-<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
-<ul>
-<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
-<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
-</ul>
+    <title>Vim｜Vimium</title>
+    <url>/modify-a-chrome-extension/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ol>
+<li>install chrome extension viewer</li>
+<li>go to the extension page</li>
+<li>click chrome extension viewer</li>
+<li>download the extension as zip</li>
+</ol>
+<p>vimium<br><a href="https://stackoverflow.com/questions/53918093/how-can-i-make-my-element-clickable-for-vimium">https://stackoverflow.com/questions/53918093/how-can-i-make-my-element-clickable-for-vimium</a><br><a href="https://stackoverflow.com/questions/16680682/how-to-modify-an-extension-from-the-chrome-web-store">https://stackoverflow.com/questions/16680682/how-to-modify-an-extension-from-the-chrome-web-store</a><br>default: a and bottom</p>
+<p><a href="https://ithelp.ithome.com.tw/articles/10091999">https://ithelp.ithome.com.tw/articles/10091999</a></p>
 ]]></content>
       <categories>
-        <category>bioinformatics</category>
+        <category>programming</category>
+        <category>tools</category>
       </categories>
       <tags>
-        <tag>nextflow</tag>
+        <tag>vim</tag>
       </tags>
   </entry>
   <entry>
@@ -1280,6 +1239,69 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
+    <url>/nextflow-escape-characters/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
+<span id="more"></span>
+<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
+<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
+<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
+<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
+
+<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
+<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;\$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
+<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
+
+<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
+<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
+<ul>
+<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
+<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
+</ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nextflow｜輸入 empty channel 會發生什麼事？</title>
     <url>/nextflow-input-with-an-empty-channel/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>上週碰到一個離奇的 bug，有支 nextflow 腳本可以順利執行，但會無聲無息地略過其中一個 process。該腳本執行後於終端吐出的訊息類似以下形式：</p>
@@ -1442,36 +1464,6 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
   </entry>
   <entry>
-    <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
-    <url>/schrodinger-1944-what-is-life-chapter-1/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》">1</span></a></sup></p>
-<span id="more"></span>
-
-<h2 id="「鴿子為什麼那麼大？」"><a href="#「鴿子為什麼那麼大？」" class="headerlink" title="「鴿子為什麼那麼大？」"></a>「鴿子為什麼那麼大？」</h2><p>這問題乍聽之下或許令人詫異，但其實許多洞見都是從這樣怪誕或荒唐的問題萌發。</p>
-<p>日常生活中，大或小的概念是建立在比較的基礎上。在這問題中，真正的目的或許不在了解鴿子的尺寸，而是想知道事物間為何存在懸殊的尺寸差異。事物尺度與其性質的關係是物理學重要的研究方向，而肉眼可見的巨觀層次和原子尺度的微觀層次則是其中的兩個極端。統計物理解釋了這兩大體系之間的關係，為巨觀現象提供微觀尺度的解釋。因此，若以此角度出發，我們可以把問題精確地重塑為：相較於原子，為什麼鴿子那麼大呢？<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」">2</span></a></sup></p>
-<p>確實，相較於原子，一隻鴿子的體積非常大。成鴿的平均體重為 0.5 公斤，其組織器官則由碳、氫、氧、氮、硫、磷和其它微量元素構成。假設鴿子僅由氫原子或硫原子組成，可推知一隻成鴿含有的原子數量約在 $10^26$ 到 $10^28$ 之間，這數量遠超過當今對恆星數量的估計值($3 \times 10^{23}$)<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Dokkum & Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.">3</span></a></sup>。</p>
-<p>由於鴿子與原子的懸殊比例，鴿子既無法察覺個別原子的動靜，也不受其碰撞、震盪或旋轉影響。這表示，作用於鴿子的原理和作用於原子的原理可能有很大的差異。但這樣的尺度差異對有機體究竟有什麼意義？又為什麼非得如此，才能維持鴿子的存在？</p>
-<h2 id="有機體的運作仰賴精確的物理和化學定律"><a href="#有機體的運作仰賴精確的物理和化學定律" class="headerlink" title="有機體的運作仰賴精確的物理和化學定律"></a>有機體的運作仰賴精確的物理和化學定律</h2><p>有機體的運作無處不仰賴事物間精確的配合。以感知和運動為例，有機體要能靈敏接收刺激，同時不失真地傳遞訊息。這些訊息得正確抵達中樞，在歷經複雜決策後，循另一條途徑輸出，以驅動目標肌肉收縮。這個過程的順利，不只需要事件層序分明，也仰賴組織構造的規律。無論是感覺&#x2F;中樞&#x2F;運動神經的緊密連結，粗肌絲與細肌絲的間隔排列，還是細胞內訊息傳遞分子的聚攏，都是完成一項行為的要件。</p>
-<p>即使是最簡單的膝跳反射，也需要器官、組織乃至細胞間的緊密配合，更遑論思考、決策與想像等複雜行為對秩序的需求。這意味著，無論生理還是結構層面，維繫有機體的各項事件皆需要相當的精確性；而外在系統對有機體的影響，也要有與之對應的精確性才會發生作用。<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」">4</span></a></sup></p>
-<h2 id="物理和化學定律的精確性奠基於大量原子參與"><a href="#物理和化學定律的精確性奠基於大量原子參與" class="headerlink" title="物理和化學定律的精確性奠基於大量原子參與"></a>物理和化學定律的精確性奠基於大量原子參與</h2><p>然而，少量原子無法支持有機體所需的精確性。在微觀尺度，個別原子持續進行隨機的熱運動，其移動、震盪和旋轉皆無法測量與追蹤。不過隨著系統內的原子數量增加，原子狀態（例如速度、方向、電荷等）的多樣性也隨之增加。一旦數量夠多，大量原子的平均狀態，便會呈現為巨觀層次可觀察到的方向性或規律性。</p>
-<p>以順磁性為例，石英管中的氧氣雖然會因置於磁場而磁化，可是並非所有氧分子的方向皆與磁場一致。在局部，個別分子的方向其實會隨熱運動不斷轉變，所以沒有固定一致的排列方式。儘管個別分子的方向無法預期，但隨著磁場增強，石英管內順磁性分子與逆磁性分子的數量差距會逐漸增加，使得多數的氧分子與磁場方向一致，共同產生可觀測的磁化現象。 <sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。">5</span></a></sup></p>
-<p>另一項案例是布朗運動與擴散現象。在微觀尺度，單一微粒會受水分子碰撞而隨機運動，其移往各方向的機率與溶液濃度無關。不過，因為溶液中高&#x2F;低濃度區域的微粒數量有別，由高往低濃度移動的微粒自然比由低往高濃度移動的微粒多，於是微粒在巨觀層次表現出隨重力沉降或隨濃度梯度擴散等現象。</p>
-<p>反之，若組成系統的原子數越小，隨機偏差的幅度就越大。這關係可以測量精確度的極限說明。扭秤是測量作用力強度重要的工具。為了偵測到更微弱的作用力，往往會替扭秤選用更輕盈的槓桿與絲線。不過，隨著扭秤尺寸縮小，原子熱運動對扭秤的影響也隨之增加，使得原子碰撞和待測作用力造成的擺幅難以區分。在這種尺度下，單次測量的意義有限，得靠多次測量來消除隨機偏差的影響。</p>
-<h2 id="有機體需要足夠的原子才能受益於定律的精確性"><a href="#有機體需要足夠的原子才能受益於定律的精確性" class="headerlink" title="有機體需要足夠的原子才能受益於定律的精確性"></a>有機體需要足夠的原子才能受益於定律的精確性</h2><p>綜上所述，系統在巨觀尺度的屬性是相異狀態之原子的數量分布不均所致。系統內的原子數越多，數量不均的狀況就越容易與隨機運動區別，呈現的集體現象也就越明確。原子數量與定律精確性的關係可用 $\sqrt{n}$ 法則描述。 $\sqrt{n}$ 法則是指，對一個含有 n 個原子的系統而言，物理或化學定律的誤差範圍約在 $\sqrt{n}$ 內。式子中的平方根意味著，隨著系統含有的原子增加，作用在此系統定律的相對誤差就愈低。</p>
-<p>讓我們回到文章開頭提到的問題，為何鴿子那麼大？或說，為什麼鴿子就不能像寡糖或Omega-3一樣小？這是因為，有機體的遺傳、發育和行為等生命特徵需要足夠數量的原子，才有辦法忽視個別原子的隨機運動，表現出統計物理上的宏觀秩序。</p>
-<p>讓我們想像一種僅由 100 個原子組成的迷你鴿子。根據 $\sqrt{n}$ 法則，發生在迷你鴿子體內的擴散、催化、接合等反應皆有 10 個原子的不確定性，即有 10% 的相對誤差。</p>
-<p>在這尺度，影響鴿子的不再是氣流、重力和光線等巨觀現象，而是電荷、碰撞、量子穿隧等微觀現象。僅僅一個離子，就可能破壞迷你鴿子的結構；即使是少量原子刺激，都會影響鴿子的感官，以致於不能辨明關鍵的環境訊號。既然無法維繫體內運作和對外互動，這樣的生命也就不會是我們定義的「鴿子」了。</p>
-<h2 id="古典物理無法解釋遺傳的分子機制"><a href="#古典物理無法解釋遺傳的分子機制" class="headerlink" title="古典物理無法解釋遺傳的分子機制"></a>古典物理無法解釋遺傳的分子機制</h2><p>儘管統計物理似乎為有機體的尺存給出了圓滿的解釋，但此處的議論實為楔子：依照前述討論，有機體的秩序仰賴大量原子參與。不過就當時所知，基因很可能僅由少量原子組成，那麼基因是怎麼表現出遺傳、突變與分裂等在巨觀層次可觀測到的高度秩序？薛丁格主張，這個矛盾或許可用量子力學的概念解釋。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dokkum &amp; Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。<a href="#fnref:5" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>R/Rstudio console 的指令長度限制</title>
     <url>/r-console-upper-limit-on-the-string-length/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>TL:DR：輸入 R&#x2F;Rstudio console 的指令之容量上限為 4095 bytes。若超出上限，console 會忽略超出的部分，顯示 + 提醒使用者補完剩餘指令。</p>
@@ -1506,6 +1498,36 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
   </entry>
   <entry>
+    <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
+    <url>/schrodinger-1944-what-is-life-chapter-1/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》">1</span></a></sup></p>
+<span id="more"></span>
+
+<h2 id="「鴿子為什麼那麼大？」"><a href="#「鴿子為什麼那麼大？」" class="headerlink" title="「鴿子為什麼那麼大？」"></a>「鴿子為什麼那麼大？」</h2><p>這問題乍聽之下或許令人詫異，但其實許多洞見都是從這樣怪誕或荒唐的問題萌發。</p>
+<p>日常生活中，大或小的概念是建立在比較的基礎上。在這問題中，真正的目的或許不在了解鴿子的尺寸，而是想知道事物間為何存在懸殊的尺寸差異。事物尺度與其性質的關係是物理學重要的研究方向，而肉眼可見的巨觀層次和原子尺度的微觀層次則是其中的兩個極端。統計物理解釋了這兩大體系之間的關係，為巨觀現象提供微觀尺度的解釋。因此，若以此角度出發，我們可以把問題精確地重塑為：相較於原子，為什麼鴿子那麼大呢？<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」">2</span></a></sup></p>
+<p>確實，相較於原子，一隻鴿子的體積非常大。成鴿的平均體重為 0.5 公斤，其組織器官則由碳、氫、氧、氮、硫、磷和其它微量元素構成。假設鴿子僅由氫原子或硫原子組成，可推知一隻成鴿含有的原子數量約在 $10^26$ 到 $10^28$ 之間，這數量遠超過當今對恆星數量的估計值($3 \times 10^{23}$)<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Dokkum & Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.">3</span></a></sup>。</p>
+<p>由於鴿子與原子的懸殊比例，鴿子既無法察覺個別原子的動靜，也不受其碰撞、震盪或旋轉影響。這表示，作用於鴿子的原理和作用於原子的原理可能有很大的差異。但這樣的尺度差異對有機體究竟有什麼意義？又為什麼非得如此，才能維持鴿子的存在？</p>
+<h2 id="有機體的運作仰賴精確的物理和化學定律"><a href="#有機體的運作仰賴精確的物理和化學定律" class="headerlink" title="有機體的運作仰賴精確的物理和化學定律"></a>有機體的運作仰賴精確的物理和化學定律</h2><p>有機體的運作無處不仰賴事物間精確的配合。以感知和運動為例，有機體要能靈敏接收刺激，同時不失真地傳遞訊息。這些訊息得正確抵達中樞，在歷經複雜決策後，循另一條途徑輸出，以驅動目標肌肉收縮。這個過程的順利，不只需要事件層序分明，也仰賴組織構造的規律。無論是感覺&#x2F;中樞&#x2F;運動神經的緊密連結，粗肌絲與細肌絲的間隔排列，還是細胞內訊息傳遞分子的聚攏，都是完成一項行為的要件。</p>
+<p>即使是最簡單的膝跳反射，也需要器官、組織乃至細胞間的緊密配合，更遑論思考、決策與想像等複雜行為對秩序的需求。這意味著，無論生理還是結構層面，維繫有機體的各項事件皆需要相當的精確性；而外在系統對有機體的影響，也要有與之對應的精確性才會發生作用。<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」">4</span></a></sup></p>
+<h2 id="物理和化學定律的精確性奠基於大量原子參與"><a href="#物理和化學定律的精確性奠基於大量原子參與" class="headerlink" title="物理和化學定律的精確性奠基於大量原子參與"></a>物理和化學定律的精確性奠基於大量原子參與</h2><p>然而，少量原子無法支持有機體所需的精確性。在微觀尺度，個別原子持續進行隨機的熱運動，其移動、震盪和旋轉皆無法測量與追蹤。不過隨著系統內的原子數量增加，原子狀態（例如速度、方向、電荷等）的多樣性也隨之增加。一旦數量夠多，大量原子的平均狀態，便會呈現為巨觀層次可觀察到的方向性或規律性。</p>
+<p>以順磁性為例，石英管中的氧氣雖然會因置於磁場而磁化，可是並非所有氧分子的方向皆與磁場一致。在局部，個別分子的方向其實會隨熱運動不斷轉變，所以沒有固定一致的排列方式。儘管個別分子的方向無法預期，但隨著磁場增強，石英管內順磁性分子與逆磁性分子的數量差距會逐漸增加，使得多數的氧分子與磁場方向一致，共同產生可觀測的磁化現象。 <sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。">5</span></a></sup></p>
+<p>另一項案例是布朗運動與擴散現象。在微觀尺度，單一微粒會受水分子碰撞而隨機運動，其移往各方向的機率與溶液濃度無關。不過，因為溶液中高&#x2F;低濃度區域的微粒數量有別，由高往低濃度移動的微粒自然比由低往高濃度移動的微粒多，於是微粒在巨觀層次表現出隨重力沉降或隨濃度梯度擴散等現象。</p>
+<p>反之，若組成系統的原子數越小，隨機偏差的幅度就越大。這關係可以測量精確度的極限說明。扭秤是測量作用力強度重要的工具。為了偵測到更微弱的作用力，往往會替扭秤選用更輕盈的槓桿與絲線。不過，隨著扭秤尺寸縮小，原子熱運動對扭秤的影響也隨之增加，使得原子碰撞和待測作用力造成的擺幅難以區分。在這種尺度下，單次測量的意義有限，得靠多次測量來消除隨機偏差的影響。</p>
+<h2 id="有機體需要足夠的原子才能受益於定律的精確性"><a href="#有機體需要足夠的原子才能受益於定律的精確性" class="headerlink" title="有機體需要足夠的原子才能受益於定律的精確性"></a>有機體需要足夠的原子才能受益於定律的精確性</h2><p>綜上所述，系統在巨觀尺度的屬性是相異狀態之原子的數量分布不均所致。系統內的原子數越多，數量不均的狀況就越容易與隨機運動區別，呈現的集體現象也就越明確。原子數量與定律精確性的關係可用 $\sqrt{n}$ 法則描述。 $\sqrt{n}$ 法則是指，對一個含有 n 個原子的系統而言，物理或化學定律的誤差範圍約在 $\sqrt{n}$ 內。式子中的平方根意味著，隨著系統含有的原子增加，作用在此系統定律的相對誤差就愈低。</p>
+<p>讓我們回到文章開頭提到的問題，為何鴿子那麼大？或說，為什麼鴿子就不能像寡糖或Omega-3一樣小？這是因為，有機體的遺傳、發育和行為等生命特徵需要足夠數量的原子，才有辦法忽視個別原子的隨機運動，表現出統計物理上的宏觀秩序。</p>
+<p>讓我們想像一種僅由 100 個原子組成的迷你鴿子。根據 $\sqrt{n}$ 法則，發生在迷你鴿子體內的擴散、催化、接合等反應皆有 10 個原子的不確定性，即有 10% 的相對誤差。</p>
+<p>在這尺度，影響鴿子的不再是氣流、重力和光線等巨觀現象，而是電荷、碰撞、量子穿隧等微觀現象。僅僅一個離子，就可能破壞迷你鴿子的結構；即使是少量原子刺激，都會影響鴿子的感官，以致於不能辨明關鍵的環境訊號。既然無法維繫體內運作和對外互動，這樣的生命也就不會是我們定義的「鴿子」了。</p>
+<h2 id="古典物理無法解釋遺傳的分子機制"><a href="#古典物理無法解釋遺傳的分子機制" class="headerlink" title="古典物理無法解釋遺傳的分子機制"></a>古典物理無法解釋遺傳的分子機制</h2><p>儘管統計物理似乎為有機體的尺存給出了圓滿的解釋，但此處的議論實為楔子：依照前述討論，有機體的秩序仰賴大量原子參與。不過就當時所知，基因很可能僅由少量原子組成，那麼基因是怎麼表現出遺傳、突變與分裂等在巨觀層次可觀測到的高度秩序？薛丁格主張，這個矛盾或許可用量子力學的概念解釋。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dokkum &amp; Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。<a href="#fnref:5" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>讀後感｜生命是什麼 — 如何推論基因的尺寸？</title>
     <url>/schrodinger-1944-what-is-life-chapter-2/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>依照<a href="./schrodinger-1944-what-is-life-chapter-1.md">第一章</a>的推理，生物及其生理過程有賴大量原子參與，來抵銷個別原子的隨機行為，以維持生存所需的宏觀秩序。</p>
@@ -1527,23 +1549,6 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
       <tags>
         <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim|從 Vimimum 接觸 Vim</title>
-    <url>/start-learning-vim-from-vimium/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
-<li>了解 vim 與基於 ctrl 控制的差異</li>
-<li>習慣垂直移動游標的指令： <code>j</code> <code>k</code> 移動</li>
-<li>感受 easymotion 的邏輯與效果</li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
       </tags>
   </entry>
   <entry>
@@ -1652,6 +1657,163 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
       <tags>
         <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vim｜Vimium，學習 Vim 的新途徑</title>
+    <url>/start-learning-vim-from-vimium/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb">Vimium</a> 是 Chrome 的一款擴充套件，它借鑒了 Vim 的鍵位設計與操作邏輯，讓用戶只需要鍵盤便能執行分頁管理、連結點擊與頁面瀏覽等操作。</p>
+<p>由於瀏覽器終究不等同編輯器，所以 Vimium 並沒有移植 Vim 所有的功能與指令。然而，即使只納入 Vim 的部分性質，Vimium 仍顯著改善了 Chrome 的鍵盤瀏覽體驗。以點擊連結為例，Chrome 的預設作法是<a href="https://5uperb0y.com/navigate-websites-with-keyboard/">慢慢用 <code>Tab</code> 切到連結位置</a>；Vimium 則會自動標記視窗內的連結，用戶只要鍵入標記字符即可開啟連結。因為最多輸入三個字即可開啟連結，所以有時甚至比滑鼠點擊還迅速。</p>
+<p>對於習慣鍵鼠操作卻有心學習 Vim 的用戶而言，一時要以 Vim 取代既有的工作流程，可能是繁瑣且費時的過程。若先從 Vimium 著手，在體驗鍵盤瀏覽網頁的流暢感之餘，也能讓 Vim 操作的抽象性質融入日常生活（例如：查資料與逛論壇）。待初探了 Vim 的設計緣由，再逐步精進其他操作模式，也不失為一種學習 Vim 的可行策略。</p>
+<span id="more"></span>
+
+<h1 id="能從-Vimium"><a href="#能從-Vimium" class="headerlink" title="能從 Vimium"></a>能從 Vimium</h1><p>借鑒了 Vim 鍵位設計與操作邏輯，無論是管理分頁、點擊連結或瀏覽頁面都能夠只憑鍵盤操作。</p>
+<ul>
+<li><strong>習慣在 normal mode 瀏覽文件的方式</strong>：</li>
+<li><strong>理解以 home row 為核心的指令鍵位安排</strong>：不用為了點選控制健而不自然地伸展手指，所有操作都能集中在，相較於使用特殊控制鍵作為切換功能的方式，採用模式差異</li>
+<li><strong>學習 vim 實用功能的邏輯與效果</strong>：</li>
+<li><strong>了解自訂快捷鍵的重要性</strong>：</li>
+<li></li>
+<li>能夠更為習慣 normal mode 的瀏覽方式j，</li>
+<li>體會以 home row 為中心的指令鍵位安排</li>
+<li>習慣使用垂直移動游標，例如 <code>j</code> &amp; <code>k</code></li>
+<li>了解 Vim easymotion 跳轉的邏輯與效果</li>
+<li>學會使用 <code>/</code> 搜尋文字</li>
+<li>體驗指令組合的效果</li>
+<li>依據需求自訂快捷鍵</li>
+<li>使用書籤功能</li>
+</ul>
+<h1 id="學會-Vimium-只要三分鐘"><a href="#學會-Vimium-只要三分鐘" class="headerlink" title="學會 Vimium 只要三分鐘"></a>學會 Vimium 只要三分鐘</h1><blockquote>
+<p>Press <code>f</code> to master Vimium (and navigate internet without a mouse.)</p>
+</blockquote>
+<p>由於 Chrome 內建的快捷鍵已經可以應付網頁瀏覽的多數需求，所以只要學會使用 Vimium 開啟連結，便能</p>
+<p>即 Vimium 會為視窗內的可互動物件標註快捷鍵按鈕，用戶只要</p>
+<p>首先按下 <code>f</code>，接著按下連結 ID，即可跳轉至該連結。<br>Vimium 解決了 Chrome 開啟連結的困難，配合 chrome 內建的快捷鍵即可完成多數操作。</p>
+<p>一旦選 <code>f</code> ，網頁上會顯示每個連結的標籤，接著按下標籤即可打開連結</p>
+<ol>
+<li>點選 <code>f</code> 啟用搜索，Vimium 會自動為視窗內可互動的項目標註標籤</li>
+<li>輸入標籤，跳轉連結</li>
+</ol>
+<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="鍵入 `f`/`F` 後， Vimium 會為視窗內可互動的物件標記快捷鍵"></p>
+<ul>
+<li><code>L</code>：開啟「Vimium」</li>
+<li><code>SK</code>：開啟「工具」，可以設定搜尋語言與時間範圍</li>
+<li><code>SA</code>：切換至「搜尋列」，可以編輯搜尋內容</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>於當前分頁開啟</td>
+<td><code>f</code>, then ID</td>
+</tr>
+<tr>
+<td>於新分頁開啟</td>
+<td><code>f</code>, then <code>Shift</code> + ID</td>
+</tr>
+<tr>
+<td>於新分頁開啟並切換至新分頁</td>
+<td><code>f</code>, then <code>Ctrl</code> + ID</td>
+</tr>
+</tbody></table>
+<p>雖然提及了 vimium 與 vim 相似的操作，但實際上 chrome 即內建了不少快捷鍵，所以其實只要學習點擊連結的快捷鍵，即可上手</p>
+<p>最多只要輸入三個按鈕就可以點擊連結</p>
+<h1 id="以-Vim-style-瀏覽網頁"><a href="#以-Vim-style-瀏覽網頁" class="headerlink" title="以 Vim style 瀏覽網頁"></a>以 Vim style 瀏覽網頁</h1><p>不過如果想讓，歡迎繼續看下去</p>
+<h2 id="移動游標的方式"><a href="#移動游標的方式" class="headerlink" title="移動游標的方式"></a>移動游標的方式</h2><table>
+<thead>
+<tr>
+<th>行為</th>
+<th>Vimium 快捷鍵</th>
+<th>Vim 快捷鍵</th>
+<th>Chrome 快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移至頂部</td>
+<td><code>gg</code></td>
+<td><code>gg</code></td>
+<td><code>Home</code></td>
+</tr>
+<tr>
+<td>向上移動半個視窗</td>
+<td><code>u</code></td>
+<td><code>Ctrl</code> + <code>u</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>向上移動一列</td>
+<td><code>k</code></td>
+<td><code>k</code></td>
+<td><code>↑</code></td>
+</tr>
+<tr>
+<td>向下移動一列</td>
+<td><code>j</code></td>
+<td><code>j</code></td>
+<td><code>↓</code></td>
+</tr>
+<tr>
+<td>向下移動半個視窗</td>
+<td><code>d</code></td>
+<td><code>Ctrl</code> + <code>d</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>移至底部</td>
+<td><code>G</code></td>
+<td><code>G</code></td>
+<td><code>End</code></td>
+</tr>
+</tbody></table>
+<h2 id="分頁管理"><a href="#分頁管理" class="headerlink" title="分頁管理"></a>分頁管理</h2><p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_tab-operation.png?raw=true" alt="Vimium 分頁管理與頁面瀏覽的快捷鍵"></p>
+<h2 id="數值參數"><a href="#數值參數" class="headerlink" title="數值參數"></a>數值參數</h2><p>Vimium 保留了 Vim 重複計數 (repeat count or replication factor) 的機制，用戶只要在命令前加上數字，便能指定命令的重複執行次數。</p>
+<ul>
+<li><code>4t</code>：開啟四個分頁</li>
+<li><code>3x</code>：關閉前三個分頁</li>
+<li><code>2d</code>：下移一個視窗(半個視窗 * 2)</li>
+<li><code>3g0</code>：直達第三個分頁</li>
+</ul>
+<h2 id="頁面書籤"><a href="#頁面書籤" class="headerlink" title="頁面書籤"></a>頁面書籤</h2><ol>
+<li><code>mc</code>，建立分頁內標記，<code>c</code> 可替換為其他小寫字母</li>
+<li><code>mC</code>，建立跨分頁標記，<code>C</code> 可替換為其他大寫字母</li>
+<li>&#96;&#96;c&#96;，跳轉至標記的位置</li>
+</ol>
+<h1 id="設計自己專屬的快捷鍵組合"><a href="#設計自己專屬的快捷鍵組合" class="headerlink" title="設計自己專屬的快捷鍵組合"></a>設計自己專屬的快捷鍵組合</h1><p>鼓勵用戶，Vimium 支援了自訂以下項目的功能，</p>
+<p>首先鍵入 <code>?</code> 開啟 “Vimium Help”，再點選 “Options” 進入設定面板，即能看到以下設定</p>
+<h2 id="“Excluded-URLs-and-keys”"><a href="#“Excluded-URLs-and-keys”" class="headerlink" title="“Excluded URLs and keys”"></a>“Excluded URLs and keys”</h2><p>這設定能限定特定網域適用的 Vimium 快捷鍵，以避免其覆蓋網頁或瀏覽器預設的快捷鍵。舉例來說，Vimium 的 <code>/</code>（搜尋頁內文字）會覆蓋 Google search 的 <code>/</code>（重返搜尋列）。</p>
+<p>如果我已經很習慣使用 <code>Ctrl</code> + <code>F</code> 來查找頁內文字或是使用 <code>/</code> 來編輯搜索關鍵字，可以透過編輯 “Patterns” 和 “Keys”，讓 Vimium 的 <code>/</code> 設定不套用在 Google search 上。</p>
+<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_excluded-urls.png?raw=true" alt="編輯 &quot;Excluded URLs and keys&quot; 來設定 Vimium 快捷鍵的適用範圍（Keys 預設是禁用全數快捷鍵，而 Patterns 可用正則表達式編寫規則）"></p>
+<h2 id="“Custom-key-mapping”"><a href="#“Custom-key-mapping”" class="headerlink" title="“Custom key mapping”"></a>“Custom key mapping”</h2><p>這設定能調整預設的快捷鍵以符合用戶的使用習慣。好比說，如果不習慣 <code>h</code> <code>j</code> <code>k</code> <code>l</code> 的操作，可以透過以下方式改成動作遊戲常用的 <code>a</code> <code>s</code> <code>w</code> <code>d</code> (<code>map &lt;key&gt; &lt;command&gt;</code>)。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 改以 wasd 配置移動視窗</span></span><br><span class="line">map a scrollLeft </span><br><span class="line">map s scrollDown</span><br><span class="line">map w scrollUp</span><br><span class="line">map d scrollRight</span><br></pre></td></tr></table></figure>
+<p>進階一點也能為常用網址設置快捷鍵 (<code>map &lt;key&gt; createTab &lt;url&gt;</code>)</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 鍵入 @tl 以開啟 Google 翻譯</span></span><br><span class="line">map @tl createTab https://translate.google.com.tw/?hl=zh-TW</span><br></pre></td></tr></table></figure>
+
+<h2 id="“Previous-patterns-and-Next-patterns”"><a href="#“Previous-patterns-and-Next-patterns”" class="headerlink" title="“Previous patterns and Next patterns”"></a>“Previous patterns and Next patterns”</h2><p>輸入 <code>[[</code>（上一頁）或 <code>]]</code>（下一頁）之後，Vimium 會搜尋並開啟頁面內含「上一頁」或「下一頁」的連結。這功能完全解決了 Google search 無法迅速跳轉到下一頁搜索結果的問題。然而 Vimium 預設是辨識英文和箭頭符號，所以要應用於中文網站時得自行添加搜索標的。</p>
+<ol>
+<li>點選 “Show Advanced Options”</li>
+<li>編輯 “Previous patterns” 與 “Next patterns” </li>
+<li>依照自己常用的網頁添加搜索標的（例如：Google search，上一頁&#x2F;下一頁；ptt.cc，&lt;&#x2F;&gt;；巴哈姆特，◄&#x2F;►）</li>
+</ol>
+<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_page-navigation.png?raw=true" alt="可以檢查常用網站的上一頁/下一頁來調整快捷鍵偵測的字串"></p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>《原子習慣》，這些訣竅也適用於學習新事物。</p>
+<ol>
+<li>善用 <code>f</code> 點擊連結</li>
+<li>維持原本的瀏覽網頁</li>
+<li>透過 <code>?</code> 查詢指令</li>
+<li>學習使用 vim-like 指令瀏覽與管理分頁</li>
+<li>配合習慣，自訂適合自己的快捷鍵組合</li>
+</ol>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
       </tags>
   </entry>
   <entry>
