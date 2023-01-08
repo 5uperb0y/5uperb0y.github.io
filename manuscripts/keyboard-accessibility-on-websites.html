@@ -20,29 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="於 vim 移動游標的方法   移動單位 範例    視窗    段落    單字 w W b B   字元     以視窗為單位： 以文字段落為單位：W&#x2F;w 以段落為單位 以字元為單位： h j k l  視線、操作、移動 啟用 easymotioneasymotion 是 VSCodeVim 內建擴充套件，所以只要在 settings.json 添加指令即可啟用 1&quot;vim.easy">
+    <meta name="description" content="在前一篇文章哩，我提到使用鍵盤瀏覽網頁的動機無非是要覺得有形，其次才是節省雙手位移的空間，讓操作能跟上思維。 在這篇文章，我想紀錄一下，自己在調查怎麼使用鍵盤操瀏覽網頁的發現。 Cyberspace cowboy and netrunner一開始我以為只是查資料或看影片似乎沒必要，畢竟網際空間從發展以來，一直都跟「暢行無阻」或「無遠弗屆」等字眼連結在一起。 在 cyberpunk 故事裡，有些駭客">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Vim｜使用 easymotion 快速移動與跳轉游標">
-<meta property="og:url" content="https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/index.html">
+<meta property="og:title" content="網際牛仔與無障礙空間（下）：">
+<meta property="og:url" content="https://5uperb0y.com/manuscripts/keyboard-accessibility-on-websites.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="於 vim 移動游標的方法   移動單位 範例    視窗    段落    單字 w W b B   字元     以視窗為單位： 以文字段落為單位：W&#x2F;w 以段落為單位 以字元為單位： h j k l  視線、操作、移動 啟用 easymotioneasymotion 是 VSCodeVim 內建擴充套件，所以只要在 settings.json 添加指令即可啟用 1&quot;vim.easy">
+<meta property="og:description" content="在前一篇文章哩，我提到使用鍵盤瀏覽網頁的動機無非是要覺得有形，其次才是節省雙手位移的空間，讓操作能跟上思維。 在這篇文章，我想紀錄一下，自己在調查怎麼使用鍵盤操瀏覽網頁的發現。 Cyberspace cowboy and netrunner一開始我以為只是查資料或看影片似乎沒必要，畢竟網際空間從發展以來，一直都跟「暢行無阻」或「無遠弗屆」等字眼連結在一起。 在 cyberpunk 故事裡，有些駭客">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-12-30T13:10:32.000Z">
-<meta property="article:modified_time" content="2022-12-31T14:28:47.842Z">
+<meta property="article:published_time" content="2022-12-26T16:20:53.000Z">
+<meta property="article:modified_time" content="2023-01-04T14:46:43.053Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="vim">
-<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="tips and tricks">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/">
+<link rel="canonical" href="https://5uperb0y.com/manuscripts/keyboard-accessibility-on-websites">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/","path":"how-to-use-easymotion-in-vscodevim/","title":"Vim｜使用 easymotion 快速移動與跳轉游標"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/manuscripts/keyboard-accessibility-on-websites.html","path":"manuscripts/keyboard-accessibility-on-websites.html","title":"網際牛仔與無障礙空間（下）："}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Vim｜使用 easymotion 快速移動與跳轉游標 | 5uperb0y's blog</title>
+<title>網際牛仔與無障礙空間（下）： | 5uperb0y's blog
+</title>
   
 
 
@@ -144,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%BC-vim-%E7%A7%BB%E5%8B%95%E6%B8%B8%E6%A8%99%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">於 vim 移動游標的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%9F%E7%94%A8-easymotion"><span class="nav-number">3.</span> <span class="nav-text">啟用 easymotion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AA%BF%E6%95%B4-easymotion-%E5%BF%AB%E6%8D%B7%E9%8D%B5"><span class="nav-number">4.</span> <span class="nav-text">調整 easymotion 快捷鍵</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Cyberspace-cowboy-and-netrunner"><span class="nav-number">1.</span> <span class="nav-text">Cyberspace cowboy and netrunner</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%8D%B5%E7%9B%A4%E8%88%87%E7%84%A1%E6%B3%95%E4%BD%BF%E7%94%A8%E6%BB%91%E9%BC%A0%E7%9A%84%E4%BA%BA"><span class="nav-number">2.</span> <span class="nav-text">鍵盤與無法使用滑鼠的人</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E6%98%AF%E6%89%80%E6%9C%89%E4%BA%BA%E9%83%BD%E6%9C%89%E8%83%BD%E5%8A%9B%E6%93%8D%E4%BD%9C%E6%BB%91%E9%BC%A0"><span class="nav-number">2.1.</span> <span class="nav-text">不是所有人都有能力操作滑鼠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%8D%B5%E7%9B%A4%E8%88%87%E7%84%A1%E9%9A%9C%E7%A4%99%E7%B6%B2%E9%A0%81"><span class="nav-number">2.2.</span> <span class="nav-text">鍵盤與無障礙網頁</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B6%B2%E9%A0%81%E5%8F%AF%E5%8F%8A%E6%80%A7%E8%88%87%E7%84%A1%E9%9A%9C%E7%A4%99%E8%A8%AD%E8%A8%88"><span class="nav-number">3.</span> <span class="nav-text">網頁可及性與無障礙設計</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%A1%E9%9A%9C%E7%A4%99%E8%A8%AD%E8%A8%88"><span class="nav-number">3.1.</span> <span class="nav-text">無障礙設計</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B0%E7%81%A3%E7%84%A1%E9%9A%9C%E7%A4%99%E7%B6%B2%E9%A0%81%E8%A6%8F%E7%AF%84%E7%8F%BE%E6%B3%81"><span class="nav-number">3.2.</span> <span class="nav-text">台灣無障礙網頁規範現況</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%A1%E9%9A%9C%E7%A4%99%E4%B8%8D%E5%8F%AA%E6%98%AF%E9%87%9D%E5%B0%8D%E9%9A%9C%E7%A4%99%E8%80%85"><span class="nav-number">3.3.</span> <span class="nav-text">無障礙不只是針對障礙者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%A1%E9%9A%9C%E7%A4%99%E4%B8%8D%E5%8F%AA%E6%98%AF%E8%BA%AB%E5%BF%83%E7%9A%84%E7%8B%80%E6%B3%81"><span class="nav-number">3.4.</span> <span class="nav-text">無障礙不只是身心的狀況</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%84%A1%E9%9A%9C%E7%A4%99%E7%B6%B2%E9%9A%9B%E7%A9%BA%E9%96%93"><span class="nav-number">4.</span> <span class="nav-text">無障礙網際空間</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%8D%B5%E7%9B%A4%E8%BC%AA%E6%A4%85%E9%81%8A%E8%A1%8C"><span class="nav-number">4.1.</span> <span class="nav-text">鍵盤輪椅遊行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E%EF%BC%9A%E7%B6%B2%E9%9A%9B%E7%89%9B%E4%BB%94%E8%88%87%E7%84%A1%E9%9A%9C%E7%A4%99%E7%A9%BA%E9%96%93"><span class="nav-number">5.</span> <span class="nav-text">結語：網際牛仔與無障礙空間</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -198,10 +198,28 @@
     
     
     <li class='pull-left' style="white-space:normal; text-align:left" >
-      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-31T20:54:05+08:00">
-        12/31
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-01-08T02:20:58+08:00">
+        01/08
       </time>
-      <a href="/modify-a-chrome-extension/" title="Vim｜Vimium">Vim｜Vimium</a>
+      <a href="/vscode-useful-shortcuts-and-their-settings/" title="VSCode｜常用快捷鍵與個人設置">VSCode｜常用快捷鍵與個人設置</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-01-07T14:20:08+08:00">
+        01/07
+      </time>
+      <a href="/vscode-remote-ssh-connection-not-working-after-update/" title="VSCode｜ Failed to parse remote port from server output">VSCode｜ Failed to parse remote port from server output</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-01-05T20:58:15+08:00">
+        01/05
+      </time>
+      <a href="/nextflow-how-data-is-passed-between-processes-through-channels/" title="Nextflow｜資料是怎麼透過 Channels 在 Processes 之間傳輸？">Nextflow｜資料是怎麼透過 Channels 在 Processes 之間傳輸？</a>
       <br>
       <br>
     </li>
@@ -216,28 +234,10 @@
     </li>
     
     <li class='pull-left' style="white-space:normal; text-align:left" >
-      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-30T21:10:32+08:00">
-        12/30
-      </time>
-      <a href="/how-to-use-easymotion-in-vscodevim/" title="Vim｜使用 easymotion 快速移動與跳轉游標">Vim｜使用 easymotion 快速移動與跳轉游標</a>
-      <br>
-      <br>
-    </li>
-    
-    <li class='pull-left' style="white-space:normal; text-align:left" >
       <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-28T22:09:40+08:00">
         12/28
       </time>
-      <a href="/common-settings-for-vscodevim/" title="Vim｜VSCodeVime 常用設定">Vim｜VSCodeVime 常用設定</a>
-      <br>
-      <br>
-    </li>
-    
-    <li class='pull-left' style="white-space:normal; text-align:left" >
-      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2022-12-27T18:10:49+08:00">
-        12/27
-      </time>
-      <a href="/nextflow-input-with-an-empty-channel/" title="Nextflow｜輸入 empty channel 會發生什麼事？">Nextflow｜輸入 empty channel 會發生什麼事？</a>
+      <a href="/vscode-common-settings-for-vscodevim/" title="Vim｜VSCodeVime 常用設定">Vim｜VSCodeVime 常用設定</a>
       <br>
       <br>
     </li>
@@ -269,230 +269,50 @@
       </div>
     </div>
         <div class="pjax">
-        <div class="sidebar-inner sidebar-post-related">
-          <div class="animated">
-              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
-    相關文章
-  </div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/common-settings-for-vscodevim/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-28</time>
-        <br>
-      Vim｜VSCodeVime 常用設定
-      </a>
-    </li>
-  </ul>
-
-          </div>
-        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner page posts-expand">
 
 
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="Style over Substance">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Vim｜使用 easymotion 快速移動與跳轉游標 | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Vim｜使用 easymotion 快速移動與跳轉游標
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2022-12-30 21:10:32" itemprop="dateCreated datePublished" datetime="2022-12-30T21:10:32+08:00">2022-12-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-31 22:28:47" itemprop="dateModified" datetime="2022-12-31T22:28:47+08:00">2022-12-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分類於</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/programming/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="閱讀次數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">閱讀次數：</span>
-      <span class="firestore-visitors-count"></span>
-    </span>
-    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">閱讀次數：</span>
-      <span id="busuanzi_value_page_pv"></span>
-    </span>
-  
-  <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/how-to-use-easymotion-in-vscodevim/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-use-easymotion-in-vscodevim/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="文章字數">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">文章字數：</span>
-      <span>100</span>
-    </span>
-    <span class="post-meta-item" title="所需閱讀時間">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>1 分鐘</span>
-    </span>
+    
+    <div class="post-block" lang="zh-TW"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">網際牛仔與無障礙空間（下）：
+</h1>
+
+<div class="post-meta-container">
 </div>
 
-        </div>
-      </header>
+</header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="於-vim-移動游標的方法"><a href="#於-vim-移動游標的方法" class="headerlink" title="於 vim 移動游標的方法"></a>於 vim 移動游標的方法</h1><table>
-<thead>
-<tr>
-<th>移動單位</th>
-<th>範例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>視窗</td>
-<td></td>
-</tr>
-<tr>
-<td>段落</td>
-<td></td>
-</tr>
-<tr>
-<td>單字</td>
-<td><code>w</code> <code>W</code> <code>b</code> <code>B</code></td>
-</tr>
-<tr>
-<td>字元</td>
-<td></td>
-</tr>
-</tbody></table>
-<ul>
-<li>以視窗為單位：</li>
-<li>以文字段落為單位：<code>W/w</code></li>
-<li>以段落為單位</li>
-<li>以字元為單位： <code>h</code> <code>j</code> <code>k</code> <code>l</code></li>
-</ul>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>視線、操作、移動</p>
-<h1 id="啟用-easymotion"><a href="#啟用-easymotion" class="headerlink" title="啟用 easymotion"></a>啟用 easymotion</h1><p>easymotion 是 VSCodeVim 內建擴充套件，所以只要在 settings.json 添加指令即可啟用</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vim.easymotion&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+      
+      
+      <div class="post-body">
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在前一篇文章哩，我提到使用鍵盤瀏覽網頁的動機無非是要覺得有形，其次才是節省雙手位移的空間，讓操作能跟上思維。</p>
+<p>在這篇文章，我想紀錄一下，自己在調查怎麼使用鍵盤操瀏覽網頁的發現。</p>
+<h1 id="Cyberspace-cowboy-and-netrunner"><a href="#Cyberspace-cowboy-and-netrunner" class="headerlink" title="Cyberspace cowboy and netrunner"></a>Cyberspace cowboy and netrunner</h1><p>一開始我以為只是查資料或看影片似乎沒必要，畢竟網際空間從發展以來，一直都跟「暢行無阻」或「無遠弗屆」等字眼連結在一起。</p>
+<p>在 cyberpunk 故事裡，有些駭客甚至覺得物質世界太過於緩慢，嫌惡肉身的累贅，嚮往自由的網際空間。</p>
+<p>在網際網路的黎明，威廉吉布森在往後 cyberpunk 先聲的著作裡寫下他對於網際網路的想像。在那個時代哩，人們可以直接將神經系統連上線，透過意識直接控制物件與檔案軟體，不再需要鍵盤、滑鼠、觸控板甚至視動捕捉儀等輸入設備。</p>
+<blockquote>
+<p>…連上特製的網際空間控制板，讓他的意識多離軀體，投射進母體的交感幻覺中。</p>
+</blockquote>
+<h1 id="鍵盤與無法使用滑鼠的人"><a href="#鍵盤與無法使用滑鼠的人" class="headerlink" title="鍵盤與無法使用滑鼠的人"></a>鍵盤與無法使用滑鼠的人</h1><h2 id="不是所有人都有能力操作滑鼠"><a href="#不是所有人都有能力操作滑鼠" class="headerlink" title="不是所有人都有能力操作滑鼠"></a>不是所有人都有能力操作滑鼠</h2><p>然而，至今標準的輸入裝備，</p>
+<h2 id="鍵盤與無障礙網頁"><a href="#鍵盤與無障礙網頁" class="headerlink" title="鍵盤與無障礙網頁"></a>鍵盤與無障礙網頁</h2><h1 id="網頁可及性與無障礙設計"><a href="#網頁可及性與無障礙設計" class="headerlink" title="網頁可及性與無障礙設計"></a>網頁可及性與無障礙設計</h1><h2 id="無障礙設計"><a href="#無障礙設計" class="headerlink" title="無障礙設計"></a>無障礙設計</h2><h2 id="台灣無障礙網頁規範現況"><a href="#台灣無障礙網頁規範現況" class="headerlink" title="台灣無障礙網頁規範現況"></a>台灣無障礙網頁規範現況</h2><h2 id="無障礙不只是針對障礙者"><a href="#無障礙不只是針對障礙者" class="headerlink" title="無障礙不只是針對障礙者"></a>無障礙不只是針對障礙者</h2><h2 id="無障礙不只是身心的狀況"><a href="#無障礙不只是身心的狀況" class="headerlink" title="無障礙不只是身心的狀況"></a>無障礙不只是身心的狀況</h2><h1 id="無障礙網際空間"><a href="#無障礙網際空間" class="headerlink" title="無障礙網際空間"></a>無障礙網際空間</h1><h2 id="鍵盤輪椅遊行"><a href="#鍵盤輪椅遊行" class="headerlink" title="鍵盤輪椅遊行"></a>鍵盤輪椅遊行</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="結語：網際牛仔與無障礙空間"><a href="#結語：網際牛仔與無障礙空間" class="headerlink" title="結語：網際牛仔與無障礙空間"></a>結語：網際牛仔與無障礙空間</h1><p><a target="_blank" rel="noopener" href="https://blog.rfox.eu/en/Hardware/Cyberdecks.html">https://blog.rfox.eu/en/Hardware/Cyberdecks.html</a><br><a target="_blank" rel="noopener" href="https://medium.com/@ru-hsu916">https://medium.com/@ru-hsu916</a><br><a target="_blank" rel="noopener" href="https://www.nespresso.com/tw/zh/vertuo-range-introduction">https://www.nespresso.com/tw/zh/vertuo-range-introduction</a><br><a target="_blank" rel="noopener" href="https://www.railway.gov.tw/tra-tip-web/tip#C">https://www.railway.gov.tw/tra-tip-web/tip#C</a></p>
 
-<h1 id="調整-easymotion-快捷鍵"><a href="#調整-easymotion-快捷鍵" class="headerlink" title="調整 easymotion 快捷鍵"></a>調整 easymotion 快捷鍵</h1>
+      </div>
+      
+      
+      
     </div>
 
     
     
-    
-
-    <footer class="post-footer">
-          
-
-<div class="post-copyright">
-<ul>
-  <li class="post-copyright-author">
-      <strong>作者： </strong>5uperb0y (超級boy)
-  </li>
-  <li class="post-copyright-link">
-      <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/" title="Vim｜使用 easymotion 快速移動與跳轉游標">https://5uperb0y.com/how-to-use-easymotion-in-vscodevim/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
-  </li>
-</ul>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/vim/" rel="tag"># vim</a>
-              <a href="/tags/vscode/" rel="tag"># vscode</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/common-settings-for-vscodevim/" rel="prev" title="Vim｜VSCodeVime 常用設定">
-                  <i class="fa fa-chevron-left"></i> Vim｜VSCodeVime 常用設定
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/start-learning-vim-from-vimium/" rel="next" title="Vim｜Vimium，學習 Vim 的新途徑">
-                  Vim｜Vimium，學習 Vim 的新途徑 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
 
 
     
@@ -520,13 +340,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">50k</span>
+    <span title="總字數">52k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">3:01</span>
+    <span title="所需總閱讀時間">3:08</span>
   </span>
 </div>
 <div class="busuanzi-count">
