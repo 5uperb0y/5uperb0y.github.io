@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/vscode-common-settings-for-vscodevim/</loc>
+    
+    <lastmod>2023-01-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/nextflow-the-mode-of-publishdir/</loc>
+    
+    <lastmod>2023-01-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/vscode-useful-shortcuts-and-their-settings/</loc>
+    
+    <lastmod>2023-01-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/</loc>
     
     <lastmod>2023-01-14</lastmod>
@@ -29,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/vscode-useful-shortcuts-and-their-settings/</loc>
-    
-    <lastmod>2023-01-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/vscode-remote-ssh-connection-not-working-after-update/</loc>
     
     <lastmod>2023-01-08</lastmod>
@@ -48,15 +66,6 @@
   
   <url>
     <loc>https://5uperb0y.com/navigate-websites-with-keyboard/</loc>
-    
-    <lastmod>2023-01-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/vscode-common-settings-for-vscodevim/</loc>
     
     <lastmod>2023-01-04</lastmod>
     
@@ -490,7 +499,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
+    <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
     <lastmod>2023-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -504,21 +513,14 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
+    <lastmod>2023-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
-    <lastmod>2023-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
-    <lastmod>2023-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
     <lastmod>2023-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -532,7 +534,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/life/reading/</loc>
+    <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
     <lastmod>2023-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -540,6 +542,13 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/academic/tips-tricks/</loc>
+    <lastmod>2023-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/life/reading/</loc>
     <lastmod>2023-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
