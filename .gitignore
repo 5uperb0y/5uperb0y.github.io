@@ -7,3 +7,5 @@ public/
 .deploy*/
 _multiconfig.yml
 _config*
+source/_drafts
+source/_notes
