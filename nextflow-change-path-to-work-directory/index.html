@@ -20,25 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Style over Substance">
+    <meta name="description" content="Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 work&#x2F;，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/archives/2022/03/index.html">
+<meta property="og:title" content="Nextflow｜調整工作目錄的路徑">
+<meta property="og:url" content="https://5uperb0y.com/nextflow-change-path-to-work-directory/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="Style over Substance">
+<meta property="og:description" content="Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 work&#x2F;，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2023-01-30T14:36:46.000Z">
+<meta property="article:modified_time" content="2023-02-01T08:28:07.293Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="nextflow">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/archives/2022/03/">
+<link rel="canonical" href="https://5uperb0y.com/nextflow-change-path-to-work-directory/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2022/03/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/nextflow-change-path-to-work-directory/","path":"nextflow-change-path-to-work-directory/","title":"Nextflow｜調整工作目錄的路徑"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 5uperb0y's blog</title>
+<title>Nextflow｜調整工作目錄的路徑 | 5uperb0y's blog</title>
   
 
 
@@ -74,7 +77,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">5uperb0y's blog</h1>
+      <p class="site-title">5uperb0y's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -127,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -140,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%9F%B7%E8%A1%8C%E9%81%B8%E9%A0%85"><span class="nav-number">1.</span> <span class="nav-text">添加執行選項</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AA%BF%E6%95%B4%E5%8F%83%E6%95%B8%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">調整參數設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E7%BD%AE%E7%92%B0%E5%A2%83%E8%AE%8A%E9%A0%85"><span class="nav-number">3.</span> <span class="nav-text">設置環境變項</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">4.</span> <span class="nav-text">結論</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -264,77 +268,244 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-retrieve-configuration-when-workflow-runs/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-06</time>
+        <br>
+      Nextflow｜怎麼從運行中的腳本取回參數？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-run-in-background/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-30</time>
+        <br>
+      Nextflow｜背景執行 workflow 的方法
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-input-with-an-empty-channel/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-27</time>
+        <br>
+      Nextflow｜輸入 empty channel 會發生什麼事？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-escape-characters/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-10</time>
+        <br>
+      Nextflow｜程式碼區塊的跳脫符號 (escape characters)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-combine-data-into-a-tuple-with-key/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-09</time>
+        <br>
+      Nextflow｜如何為輸入的資料建立辨識碼
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-change-path-to-work-directory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="Style over Substance">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Nextflow｜調整工作目錄的路徑 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Nextflow｜調整工作目錄的路徑
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-01-30 22:36:46" itemprop="dateCreated datePublished" datetime="2023-01-30T22:36:46+08:00">2023-01-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2023-02-01 16:28:07" itemprop="dateModified" datetime="2023-02-01T16:28:07+08:00">2023-02-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/nextflow-change-path-to-work-directory/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nextflow-change-path-to-work-directory/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>442</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
+<span id="more"></span>
+
+<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a target="_blank" rel="noopener" href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
+
+<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a target="_blank" rel="noopener" href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
+<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a target="_blank" rel="noopener" href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
+<blockquote>
+<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>5uperb0y (超級boy)
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://5uperb0y.com/nextflow-change-path-to-work-directory/" title="Nextflow｜調整工作目錄的路徑">https://5uperb0y.com/nextflow-change-path-to-work-directory/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/nextflow/" rel="tag"># nextflow</a>
+          </div>
+
         
-        <span class="collection-header">還行! 目前共有 40 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-03-07T22:50:09+08:00"
-              content="2022-03-07">
-          03-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/how-to-download-and-install-rdp-classifier/" itemprop="url">
-            <span itemprop="name">如何下載和安裝 RDP classifier</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/vscode-extensions-that-are-do-nothing-but-are-cool/" rel="prev" title="VScode｜無助於開發，但有助於身心的套件">
+                  <i class="fa fa-chevron-left"></i> VScode｜無助於開發，但有助於身心的套件
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-03-03T22:38:31+08:00"
-              content="2022-03-03">
-          03-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/r-console-upper-limit-on-the-string-length/" itemprop="url">
-            <span itemprop="name">R/Rstudio console 的指令長度限制</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-
 </div>
   </main>
 

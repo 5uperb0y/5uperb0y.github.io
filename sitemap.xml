@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/nextflow-change-path-to-work-directory/</loc>
+    
+    <lastmod>2023-02-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/vscode-extensions-that-are-do-nothing-but-are-cool/</loc>
     
     <lastmod>2023-01-21</lastmod>
@@ -524,13 +533,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
-    <lastmod>2023-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
     <lastmod>2023-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -545,6 +547,20 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
+    <lastmod>2023-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/microbial-ecology/</loc>
+    <lastmod>2023-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
     <lastmod>2023-02-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -553,13 +569,6 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/life/reading/</loc>
-    <lastmod>2023-02-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/microbial-ecology/</loc>
     <lastmod>2023-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
