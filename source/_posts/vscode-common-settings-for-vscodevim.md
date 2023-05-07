@@ -91,7 +91,14 @@ vscode 和 vim 有些彼此衝突的快捷鍵，例如常用的 `Ctrl` + `F` 或
     ```
 
 透過這樣設置，在切回 normal mode 瞬間，就會變成英文輸入法。而進入 insert mode 時，就會回到當初離開時的輸入法。
+# 關閉括號自動補全
 
+VSCode 內建括號與引號自動補全，然而有時這還挺雞肋的，因為在括號內打完字還要使用方向鍵移到括號外才能繼續打字，若使用 Vim 還得切模式再移動，不管哪種方式都沒省太多功夫。因此，對於一般文本編輯或編輯程式碼的需求而言，似乎可以在 setting.json 添加以下設置來關閉自動補全。
+```json
+// automatical closing
+    "editor.autoClosingQuotes": "never",
+    "editor.autoClosingBrackets": "never",
+```
 # 超棒的學習資源和網站
 - [VsCodeVim 自動在normal mode切回英文輸入法的方法](https://ithelp.ithome.com.tw/articles/10291847)
 - [vscode vim mode](https://www.blog.lasai.com.tw/2020/07/05/vscode-vim-mode/)
