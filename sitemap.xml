@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://5uperb0y.com/123/</loc>
+    <loc>https://5uperb0y.com/5uperb0y-2016-utopian-education/</loc>
     
     <lastmod>2023-06-19</lastmod>
     
@@ -544,14 +544,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/</loc>
+    <loc>https://5uperb0y.com/categories/life/</loc>
     <lastmod>2023-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/life/</loc>
+    <loc>https://5uperb0y.com/categories/academic/</loc>
     <lastmod>2023-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -572,13 +572,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
-    <lastmod>2023-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
     <lastmod>2023-06-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -586,7 +579,21 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
+    <lastmod>2023-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
+    <lastmod>2023-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/life/reading/</loc>
     <lastmod>2023-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -601,13 +608,6 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/microbial-ecology/</loc>
-    <lastmod>2023-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/life/reading/</loc>
     <lastmod>2023-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
