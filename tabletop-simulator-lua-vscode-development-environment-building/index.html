@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="科學溝通能力究竟有什麼重要性，為何值得投注心力練習？ 溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。 越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。">
+    <meta name="description" content="tabletop simulator VSCode 開發環境設定Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。 然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="科學溝通能力的重要性">
-<meta property="og:url" content="https://5uperb0y.com/the-importance-of-science-communication/index.html">
+<meta property="og:title" content="在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境">
+<meta property="og:url" content="https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="科學溝通能力究竟有什麼重要性，為何值得投注心力練習？ 溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。 越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。">
+<meta property="og:description" content="tabletop simulator VSCode 開發環境設定Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。 然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2018-11-30T08:36:25.000Z">
-<meta property="article:modified_time" content="2022-12-30T01:24:54.000Z">
+<meta property="article:published_time" content="2023-07-22T15:35:58.000Z">
+<meta property="article:modified_time" content="2023-07-22T15:35:21.135Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="communication">
+<meta property="article:tag" content="lua">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/the-importance-of-science-communication/">
+<link rel="canonical" href="https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/the-importance-of-science-communication/","path":"the-importance-of-science-communication/","title":"科學溝通能力的重要性"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/","path":"tabletop-simulator-lua-vscode-development-environment-building/","title":"在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>科學溝通能力的重要性 | 5uperb0y's blog</title>
+<title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境 | 5uperb0y's blog</title>
   
 
 
@@ -130,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -143,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tabletop-simulator-VSCode-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A"><span class="nav-number">1.</span> <span class="nav-text">tabletop simulator VSCode 開發環境設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%85%E8%A6%81%E8%BB%9F%E9%AB%94%E5%AE%89%E8%A3%9D%E8%88%87%E8%A8%AD%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">必要軟體安裝與設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%A3%E7%B5%90%E9%81%8A%E6%88%B2%E8%88%87%E7%B7%A8%E8%BC%AF%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">連結遊戲與編輯器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B7%A8%E8%BC%AF%E9%81%8A%E6%88%B2%E8%85%B3%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">編輯遊戲腳本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%B0%88%E6%A1%88%E8%B3%87%E6%96%99%E5%A4%BE"><span class="nav-number">5.</span> <span class="nav-text">建立專案資料夾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -274,6 +275,44 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-remote-ssh-connection-not-working-after-update/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-07</time>
+        <br>
+      VSCode｜ Failed to parse remote port from server output
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-useful-shortcuts-and-their-settings/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-08</time>
+        <br>
+      VSCode｜常用快捷鍵與個人設置
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-extensions-that-are-do-nothing-but-are-cool/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-20</time>
+        <br>
+      VScode｜無助於開發，但有助於身心的套件
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-common-settings-for-vscodevim/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-28</time>
+        <br>
+      Vim｜VSCodeVim 常用設定
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
@@ -291,7 +330,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/the-importance-of-science-communication/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -304,12 +343,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="科學溝通能力的重要性 | 5uperb0y's blog">
+      <meta itemprop="name" content="在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境 | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          科學溝通能力的重要性
+          在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境
         </h1>
 
         <div class="post-meta-container">
@@ -319,15 +358,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2018-11-30 16:36:25" itemprop="dateCreated datePublished" datetime="2018-11-30T16:36:25+08:00">2018-11-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-12-30 09:24:54" itemprop="dateModified" datetime="2022-12-30T09:24:54+08:00">2022-12-30</time>
+      <time title="創建時間：2023-07-22 23:35:58 / 修改時間：23:35:21" itemprop="dateCreated datePublished" datetime="2023-07-22T23:35:58+08:00">2023-07-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -335,11 +368,11 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/academic/" itemprop="url" rel="index"><span itemprop="name">academic</span></a>
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/academic/mindset/" itemprop="url" rel="index"><span itemprop="name">mindset</span></a>
+          <a href="/categories/programming/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a>
         </span>
     </span>
 
@@ -366,8 +399,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/the-importance-of-science-communication/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="the-importance-of-science-communication/" itemprop="commentCount"></span>
+    <a title="disqus" href="/tabletop-simulator-lua-vscode-development-environment-building/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="tabletop-simulator-lua-vscode-development-environment-building/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -378,14 +411,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>478</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>5 分鐘</span>
     </span>
 </div>
 
@@ -396,15 +429,49 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
-<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
-<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
+<p>然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。</p>
 <span id="more"></span>
 
-<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
-<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
-<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
-<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
+<h1 id="必要軟體安裝與設定"><a href="#必要軟體安裝與設定" class="headerlink" title="必要軟體安裝與設定"></a>必要軟體安裝與設定</h1><p>首先，我們要完成必要軟體的安裝與設定。</p>
+<ol>
+<li>安裝 Steam 並購買 <a target="_blank" rel="noopener" href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop simulator</a>。</li>
+<li>安裝 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VSCode</a>。雖然官方推薦的 Lua 開發環境是 Atom，但 VSCode 的功能更加強大，近幾年也比較廣泛被使用（參考 <a target="_blank" rel="noopener" href="https://github.blog/2022-06-08-sunsetting-atom/">Github 停止支援 ATOM IDE 的新聞</a>）。</li>
+<li>在 VSCode 當中安裝 <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua">Tabletop Simulator Lua</a> 套件。這款套件能從遊戲儲存檔擷取 Tabletop Simulator 的 Lua 腳本，讓我們直接能在 VSCode 中開發，並享有自動補全、檔案瀏覽以及其他擴充套件的功能。</li>
+</ol>
+<h1 id="連結遊戲與編輯器"><a href="#連結遊戲與編輯器" class="headerlink" title="連結遊戲與編輯器"></a>連結遊戲與編輯器</h1><p>接著要設定遊戲與編輯器的連結</p>
+<ol>
+<li>在 Steam 中啟動 Tabletop Simulator，並開啟任意一款遊戲（步驟為：<code>Create</code>、<code>Singleplayer</code>、<code>Classic/DLC/Workshop</code>、挑選遊戲）。</li>
+<li>打開 VSCode 時，Tabletop Simulator Lua 套件會自動辨識遊戲所在的資料夾（在 Windows 預設為 <code>%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</code>），將遊戲腳本 (<code>*.lua</code>)和設置檔 (<code>.xml</code>) 從遊戲儲存檔 (<code>*.json</code>) 獨立出來，並且放置到暫存資料夾中（預設為 <code>%UserProfile%\AppData\Local\Temp\TabletopSimulator\Tabletop Simulator Lua</code>。</li>
+<li>如果套件沒有自動更新或是想要更換其他遊戲時，可以鍵入 <code>Ctrl</code>+<code>Alt</code>+<code>L</code> 更新連結。</li>
+</ol>
+<h1 id="編輯遊戲腳本"><a href="#編輯遊戲腳本" class="headerlink" title="編輯遊戲腳本"></a>編輯遊戲腳本</h1><p>現在，我們已經可以在 VSCode 當中編輯遊戲腳本了。Lua 腳本是遊戲儲存檔的一部份，而遊戲儲存檔則是一個 <code>JSON</code> 檔，記錄了啟動遊戲所需的所有元素。Tabletop Simulator Lua 的功能即是從儲存檔中擷取 Lua 腳本，並且轉換為適合閱讀與編輯的格式。</p>
+<p>編輯完成後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 儲存並重啟腳本。此時，Tabletop Simulator 會將腳本變動更新到遊戲儲存檔，讓遊戲呈現腳本所做的變動。</p>
+<p>如果希望在編輯腳本的同時能觀察遊戲畫面，有兩種方式可以達成：</p>
+<p>首先，將 Tabletop Simulator 設定為視窗模式（<code>Menu</code>、<code>Configuration</code>、<code>Graphics</code>、取消勾選 <code>Fullscreen</code>）。</p>
+<ul>
+<li>使用 Windows 視窗分割功能 （<code>Win</code> + <code>←</code>&#x2F;<code>→</code>&#x2F;<code>↑</code>），同時陳列編輯器與遊戲視窗。</li>
+<li>下載 Windows PowerToys，這是一個功能強大的 Windows 工具集，其中包含了能將遊戲視窗固定在螢幕上的功能。(<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top">always on top feature</a>)</li>
+</ul>
+<h1 id="建立專案資料夾"><a href="#建立專案資料夾" class="headerlink" title="建立專案資料夾"></a>建立專案資料夾</h1><p>由於無法指定 Tabletop Simulator 遊戲儲存檔的存放位置，所以想要進行版本控管或專案管理時需要一些權變措施。</p>
+<ol>
+<li>首先，建立一個新的專案資料夾，例如命名為 <code>project/</code>。專案資料夾的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br></pre></td></tr></table></figure></li>
+<li>再次開啟 Tabletop Simulator，選擇任意遊戲並儲存。遊戲會自動建立包含遊戲所有設定與資訊的 JSON 儲存檔 (<code>TS_Save_*.json</code>)，並附上一張遊戲截圖 (<code>TS_Save_*.jpg</code>)。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>由於 Tabletop Simulator 並未提供選擇遊戲儲存檔位置的選項，我們可以先將儲存檔和截圖檔案移至專案資料夾，以便之後進行版本控管。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>接下來，在 Tabletop Simulator 的資料夾內建立一個指向專案資料夾的軟連結，以確保儲存檔可以在遊戲的載入遊戲清單中被找到。由於軟連結會連結到原始檔案，因此我們可以透過軟連結對原始檔案進行修改，並將變動同步到遊戲中。（Windows 系統在 cmd 當中使用 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-tw/windows-server/administration/windows-commands/mklink">mklink 建立軟連結</a>） <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- project/ -&gt; /path/to/project/</span><br></pre></td></tr></table></figure></li>
+<li>再次開啟 VSCode 並啟動 Tabletop Simulator Lua 套件。此時 VSCode 的探索欄應該會出現 Tabletop Simulator Lua 資料夾以及由套件從遊戲儲存檔中提取出來的 Lua 腳本。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br></pre></td></tr></table></figure></li>
+<li>將專案資料夾加入 VSCode 的工作空間：選擇 <code>File</code> → <code>Add Folder to Workspace</code>，然後選擇專案資料夾。此時，探索欄的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>在專案資料夾中建立需要的檔案或資料夾，例如 <code>src/</code>（用來儲存遊戲腳本）。 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br><span class="line">|- src\</span><br><span class="line">    |- script1.lua</span><br><span class="line">    |- script2.lua</span><br></pre></td></tr></table></figure></li>
+<li>接著開啟 <code>Global.-*.lua</code>，加入以下命令以指定要導入的腳本。由於套件會自動在工作空間的資料夾尋找副檔名為 <code>.ttslua</code>和<code>.lua</code> 的檔案，所以呼叫時就不需要加入副檔名了。 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script1&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script2&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>現在，已經成功設定 Tabletop Simulator 的 Lua 開發環境，也將遊戲依照專案資料夾的規劃納入版本控管，可以按照自己的習慣開發遊戲腳本了。</p>
+<p>只是要記得在修改腳本或遊戲設定後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 以同步變動到遊戲儲存檔中，也不要忘記在新增腳本時更新導入的指令。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://tts-vscode.rolandostar.com/">TTS VSCode Docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/27">Require and Path</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/21">Best way to commit the main json file?</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/20">Get&#x2F;Send LUA scripts to&#x2F;from workspace folder</a></li>
+</ul>
 
     </div>
 
@@ -422,7 +489,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/the-importance-of-science-communication/" title="科學溝通能力的重要性">https://5uperb0y.com/the-importance-of-science-communication/</a>
+      <a href="https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/" title="在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境">https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -431,21 +498,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/communication/" rel="tag"># communication</a>
+              <a href="/tags/lua/" rel="tag"># lua</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/planetary-protection-rules-and-the-end-of-cassini-probe/" rel="prev" title="卡西尼號與行星保護">
-                  <i class="fa fa-chevron-left"></i> 卡西尼號與行星保護
+                <a href="/exploring-character-depictions-in-the-time-travelers-wife/" rel="prev" title="《時空旅人之妻》的人物描繪分析">
+                  <i class="fa fa-chevron-left"></i> 《時空旅人之妻》的人物描繪分析
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/bignami-we-are-the-martians/" rel="next" title="讀後感｜我們就是火星人：尋找宇宙中的地外生命">
-                  讀後感｜我們就是火星人：尋找宇宙中的地外生命 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
