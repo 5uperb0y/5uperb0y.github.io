@@ -131,6 +131,31 @@
       </tags>
   </entry>
   <entry>
+    <title>讀後感｜再創世紀</title>
+    <url>/church-2014-regenesis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
+<span id="more"></span>
+
+<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
+<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
+<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
+<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
+<ul>
+<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
+<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
+<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
+</ul>
+<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>讀後感｜我們就是火星人：尋找宇宙中的地外生命</title>
     <url>/bignami-we-are-the-martians/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>生命和宇宙的聯繫是《我們就是火星人》的主旋律。大霹靂後的原初核合成（Big Bang nucleosynthesis）雖然僅持續短暫時間，卻製造了宇宙含量最豐富的元素氫、氦。然而隨著空間持續膨脹，溫度下降到無法維持核融合反應，導致原初核合成中止。</p>
@@ -156,28 +181,54 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜再創世紀</title>
-    <url>/church-2014-regenesis/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
+    <title>寫論文的糟糕和美好經驗</title>
+    <url>/good-and-bad-experiences-in-journal-article-writing/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
+<p>所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。</p>
+<p>這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。</p>
+<p>我意識到阻礙我進展的是對於完美論文的期待，我期待論文能夠達到讓我感到愉悅和成就感的標準。</p>
+<p>然而，人們總是無法在初稿時達到滿意的程度吧？而且論文需要於修改中逐漸精緻，沒辦法一蹴可幾，我的期待反過來成為我的壓力。</p>
+<p>為了舒緩這種壓力和焦慮，我轉而把精力投注在文獻回顧或改進研究內容。雖然多做準備能暫時減緩我的焦慮和踏實感，但這只是將自己的壓力和負擔延後，之後將面對更多的時間、資源和要求的壓力。</p>
 <span id="more"></span>
 
-<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
-<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
-<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
-<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
-<ul>
-<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
-<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
-<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
+<h2 id="「發表論文的初衷是感謝」"><a href="#「發表論文的初衷是感謝」" class="headerlink" title="「發表論文的初衷是感謝」"></a>「發表論文的初衷是感謝」</h2><p>而我對論文的美好經驗則來自研究所的老師。我的指導教授從前曾問我：「你認為我們為什麼要投稿論文？」</p>
+<p>從功利的角度講，Publish or Perish。發表論文是在學術界生存的根本，也是一個人能力的證據，舉凡畢業、獎學金、申請學校、公司求職、學校教職等皆可能需要論文作為能力的佐證。</p>
+<p>然而，我的指導教授認為這些都只是其次，發表論文的初衷是感謝。</p>
+<p>為什麼感謝？做研究總是關注著某些議題，為了解決問題，我們參考了這麼多文獻，我們正是對於前人的文獻表達感謝。</p>
+<p>表達感謝的途徑有二，首先是引用這些文獻，彰明他們的貢獻；其次是基於這些文獻發展出我們的想法，促進對議題的理解，讓這些想法得以演化和繁衍下去。</p>
+<p>科學是尋求解釋的活動，而我們對世界的認知並非一日造就而成的。無論是科學革命還是漸進式的科學史觀，當今的知識體系都是多人長年活動累積的結果，一項研究的鑄成往往有其思想根基和參考依據，無論是要贊同、反駁還是引發想法，都會踏過前人的足跡。</p>
+<p>經過長期演變，論文已是紀錄和傳播科學活動成果的最有效和公認的媒介，研究和發表其實就是：我們感到疑惑，我們開始研究，我們參考了誰的想法和觀念，我們想到了一些點子和把持一些觀點。</p>
+<p>我們想要提供一些新的解釋，我們感謝前人對於我們思想和研究的幫助，我們回饋學界這些觀念，用一種經過長期演變且公認最有效率的媒介，論文。</p>
+<p>以感謝的角度來看待論文發表很大程度地舒緩了寫論文的恐懼和壓力，即使論文有那些功利價值，但我的指導教授還是提醒了我研究和發表理想和溫暖的一面。</p>
+<h2 id="「一則文獻既不是最重要的也不是最不重要的」"><a href="#「一則文獻既不是最重要的也不是最不重要的」" class="headerlink" title="「一則文獻既不是最重要的也不是最不重要的」"></a>「一則文獻既不是最重要的也不是最不重要的」</h2><p>而對論文另一部份美好經驗則來自論文寫作課的老師。</p>
+<p>有別於我的指導教授，寫作課老師從實用角度分析論文的寫作與發表，將論文寫作描述得很像 youtube 上頭 8 分鐘的 DIY 影片，好像我們在某個閒暇無事的下午，點開影片照著做就可以完成，不是什麼無法做到的事。</p>
+<p>總結他的課程，他強調論文寫作縱使有那些功利價值，也不需要感到壓力，論文發表會被 reject 沒錯，但再換家推銷就好。</p>
+<p>換句話說，寫作課老師讓我感受到，即使沒有達到最完美的狀況，論文還是有價值；即使還沒有準備好，也能開始動筆；即使能力還不夠，進展中就會有所成長；即使被批判，那也是很自然，因為這都是科學過程的一部分。</p>
+<p>一則文獻既不是最重要的也不是最不重要的，科學重視的是合理而非真理，文獻呈現的是探索的過程，我們沒辦法在一則文獻中完全佐證我們的主張或對世界的看法。</p>
+<p>錯誤與正確都是研究累積後，後世對我們的評價而已，所以不用太擔心文獻被批判等等，這本來就是科學新陳代謝的一環。</p>
+<h2 id="正向寫作經驗的關鍵"><a href="#正向寫作經驗的關鍵" class="headerlink" title="正向寫作經驗的關鍵"></a>正向寫作經驗的關鍵</h2><ul>
+<li><strong>寫作是 routine</strong>：寫作跟運動很像，寫作的愉悅需要一點投資，最重要的投資就是起步的意願，隨後是堅持的決心。寫作是 routine，而非儀式行為。是以，治療寫作不快或抑鬱的方法跟控制慢性病一樣，每天吃藥（寫作）。</li>
+<li><strong>參與感</strong>：讓寫作交流可以提升寫作的回饋感，因為寫作終究是科學交流的一部份。透過研討會、一對一討論、編修等途徑，可以從中得到寫作靈感而疏通寫作瓶頸，也可以從交流中獲得參與感和社群歸屬，最終得到「意義」</li>
+<li><strong>正面看待評論</strong>：看待拒稿和批評的認知轉換有助於降低寫作的恐懼，投稿寫作就跟賣東西一樣，一定有人買，只是看誰會買和賣什麼價碼而已。論文跟基因不一樣，別人罵你先天特徵是沒機會改變，但別人批評論文內容有改善的機會。</li>
+<li><strong>分享的心</strong>：如果真心喜歡自己的研究，那寫作就是分享自己熱情和喜好的管道。若有類似的經驗便能體會為什麼用分享看待寫作可以增加正向寫作經驗。</li>
 </ul>
-<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+<h2 id="當然還是有糟糕的經驗"><a href="#當然還是有糟糕的經驗" class="headerlink" title="當然還是有糟糕的經驗"></a>當然還是有糟糕的經驗</h2><p>儘管羅列了一堆美好經驗和建立正面想法的「要點」，寫論文還是有坐困愁城和自我質疑的時候，像是指示牴觸價值觀、結果不明又不想自欺欺人、截止日到但品質不滿意等等。</p>
+<p>舉我的例子來說，我不太習慣被 Paul Nurse 稱之為「修正主義 (revisionist)」的科學敘事 (Nurse. (2016). Cell, 165(6), 1301-1306.)。就我理解，這是指論文敘事隱藏了科研的意外與不可控，調整文章內容以說個毫無破綻的好故事，而不是說個貼近事實的發現歷程。</p>
+<p>最容易接觸這類修正主義的途徑可能是台灣的理科教科書。從歐幾里得、牛頓、孟德爾、波爾、拉瓦節，課本呈現的是生硬且不直觀，但和諧線性的科學史觀。理論的發展與邏輯的推演高度相符，彷彿有了前提、假設和足夠的測量，理論即順水推舟浮現，科學史跟課本都能一併翻向的新頁。</p>
+<p>我想，為了溝通的效率，精簡內容和梳理邏輯是撰寫論文的必要過程。然而，當論文呈現與事實迥異的發現軌跡，後人要追溯某項理論的沿革時，只能走在一條虛構的途徑上，而這條途徑很可能只在想像中行得通。</p>
+<p>等到開始寫論文，我也希望自己能夠避免這種狀況，想盡可能讓論文的敘事貼近發現的過程，保留激發研究點子的關鍵因素，討論理論與結果衝突的理由與和解方式，而不是為了結果而調整敘述過程的方向。</p>
+<p>雖然只是一點點，但我也想要為自己認同的理念和未來做點事。不過，我後來才體會到，論文寫作還是有協商的因素存在，與合作者的協調、與計畫主持人的溝通、與編輯和審閱者的答辯等等。</p>
+<p>我想這些合作與協商是必要的，只是折磨之處在於，若討論不是基於事實與道理，而是訴諸權威或群眾等無關論文內容的事情，那麼我有點難克服下筆時的抗拒感。</p>
+<h2 id="但我還是想記住好的"><a href="#但我還是想記住好的" class="headerlink" title="但我還是想記住好的"></a>但我還是想記住好的</h2><p>儘管如此，我其實是喜好寫作表達想法的，我覺得將自己的主張和論證陳述清楚，嘗試去說服別人的過程仍值得投入。</p>
+<p>畢竟寫論文也是一種發聲管道，若渴望能依照這途徑去實踐或改變什麼，那是否要做下去也非取決於經驗的好壞，而是渴望的程度。</p>
+<p>既然如此，傾聽內心裡較良善的聲音讓自己有動力做下去，我覺得會比被糟糕回憶困住半途而廢還來得有機會幫助自己達到目標。</p>
+]]></content>
       <categories>
-        <category>astrobiology</category>
-        <category>what is life</category>
+        <category>academic</category>
+        <category>mindset</category>
       </categories>
       <tags>
-        <tag>reading</tag>
+        <tag>writing</tag>
       </tags>
   </entry>
   <entry>
@@ -257,57 +308,6 @@
       </categories>
       <tags>
         <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>寫論文的糟糕和美好經驗</title>
-    <url>/good-and-bad-experiences-in-journal-article-writing/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
-<p>所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。</p>
-<p>這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。</p>
-<p>我意識到阻礙我進展的是對於完美論文的期待，我期待論文能夠達到讓我感到愉悅和成就感的標準。</p>
-<p>然而，人們總是無法在初稿時達到滿意的程度吧？而且論文需要於修改中逐漸精緻，沒辦法一蹴可幾，我的期待反過來成為我的壓力。</p>
-<p>為了舒緩這種壓力和焦慮，我轉而把精力投注在文獻回顧或改進研究內容。雖然多做準備能暫時減緩我的焦慮和踏實感，但這只是將自己的壓力和負擔延後，之後將面對更多的時間、資源和要求的壓力。</p>
-<span id="more"></span>
-
-<h2 id="「發表論文的初衷是感謝」"><a href="#「發表論文的初衷是感謝」" class="headerlink" title="「發表論文的初衷是感謝」"></a>「發表論文的初衷是感謝」</h2><p>而我對論文的美好經驗則來自研究所的老師。我的指導教授從前曾問我：「你認為我們為什麼要投稿論文？」</p>
-<p>從功利的角度講，Publish or Perish。發表論文是在學術界生存的根本，也是一個人能力的證據，舉凡畢業、獎學金、申請學校、公司求職、學校教職等皆可能需要論文作為能力的佐證。</p>
-<p>然而，我的指導教授認為這些都只是其次，發表論文的初衷是感謝。</p>
-<p>為什麼感謝？做研究總是關注著某些議題，為了解決問題，我們參考了這麼多文獻，我們正是對於前人的文獻表達感謝。</p>
-<p>表達感謝的途徑有二，首先是引用這些文獻，彰明他們的貢獻；其次是基於這些文獻發展出我們的想法，促進對議題的理解，讓這些想法得以演化和繁衍下去。</p>
-<p>科學是尋求解釋的活動，而我們對世界的認知並非一日造就而成的。無論是科學革命還是漸進式的科學史觀，當今的知識體系都是多人長年活動累積的結果，一項研究的鑄成往往有其思想根基和參考依據，無論是要贊同、反駁還是引發想法，都會踏過前人的足跡。</p>
-<p>經過長期演變，論文已是紀錄和傳播科學活動成果的最有效和公認的媒介，研究和發表其實就是：我們感到疑惑，我們開始研究，我們參考了誰的想法和觀念，我們想到了一些點子和把持一些觀點。</p>
-<p>我們想要提供一些新的解釋，我們感謝前人對於我們思想和研究的幫助，我們回饋學界這些觀念，用一種經過長期演變且公認最有效率的媒介，論文。</p>
-<p>以感謝的角度來看待論文發表很大程度地舒緩了寫論文的恐懼和壓力，即使論文有那些功利價值，但我的指導教授還是提醒了我研究和發表理想和溫暖的一面。</p>
-<h2 id="「一則文獻既不是最重要的也不是最不重要的」"><a href="#「一則文獻既不是最重要的也不是最不重要的」" class="headerlink" title="「一則文獻既不是最重要的也不是最不重要的」"></a>「一則文獻既不是最重要的也不是最不重要的」</h2><p>而對論文另一部份美好經驗則來自論文寫作課的老師。</p>
-<p>有別於我的指導教授，寫作課老師從實用角度分析論文的寫作與發表，將論文寫作描述得很像 youtube 上頭 8 分鐘的 DIY 影片，好像我們在某個閒暇無事的下午，點開影片照著做就可以完成，不是什麼無法做到的事。</p>
-<p>總結他的課程，他強調論文寫作縱使有那些功利價值，也不需要感到壓力，論文發表會被 reject 沒錯，但再換家推銷就好。</p>
-<p>換句話說，寫作課老師讓我感受到，即使沒有達到最完美的狀況，論文還是有價值；即使還沒有準備好，也能開始動筆；即使能力還不夠，進展中就會有所成長；即使被批判，那也是很自然，因為這都是科學過程的一部分。</p>
-<p>一則文獻既不是最重要的也不是最不重要的，科學重視的是合理而非真理，文獻呈現的是探索的過程，我們沒辦法在一則文獻中完全佐證我們的主張或對世界的看法。</p>
-<p>錯誤與正確都是研究累積後，後世對我們的評價而已，所以不用太擔心文獻被批判等等，這本來就是科學新陳代謝的一環。</p>
-<h2 id="正向寫作經驗的關鍵"><a href="#正向寫作經驗的關鍵" class="headerlink" title="正向寫作經驗的關鍵"></a>正向寫作經驗的關鍵</h2><ul>
-<li><strong>寫作是 routine</strong>：寫作跟運動很像，寫作的愉悅需要一點投資，最重要的投資就是起步的意願，隨後是堅持的決心。寫作是 routine，而非儀式行為。是以，治療寫作不快或抑鬱的方法跟控制慢性病一樣，每天吃藥（寫作）。</li>
-<li><strong>參與感</strong>：讓寫作交流可以提升寫作的回饋感，因為寫作終究是科學交流的一部份。透過研討會、一對一討論、編修等途徑，可以從中得到寫作靈感而疏通寫作瓶頸，也可以從交流中獲得參與感和社群歸屬，最終得到「意義」</li>
-<li><strong>正面看待評論</strong>：看待拒稿和批評的認知轉換有助於降低寫作的恐懼，投稿寫作就跟賣東西一樣，一定有人買，只是看誰會買和賣什麼價碼而已。論文跟基因不一樣，別人罵你先天特徵是沒機會改變，但別人批評論文內容有改善的機會。</li>
-<li><strong>分享的心</strong>：如果真心喜歡自己的研究，那寫作就是分享自己熱情和喜好的管道。若有類似的經驗便能體會為什麼用分享看待寫作可以增加正向寫作經驗。</li>
-</ul>
-<h2 id="當然還是有糟糕的經驗"><a href="#當然還是有糟糕的經驗" class="headerlink" title="當然還是有糟糕的經驗"></a>當然還是有糟糕的經驗</h2><p>儘管羅列了一堆美好經驗和建立正面想法的「要點」，寫論文還是有坐困愁城和自我質疑的時候，像是指示牴觸價值觀、結果不明又不想自欺欺人、截止日到但品質不滿意等等。</p>
-<p>舉我的例子來說，我不太習慣被 Paul Nurse 稱之為「修正主義 (revisionist)」的科學敘事 (Nurse. (2016). Cell, 165(6), 1301-1306.)。就我理解，這是指論文敘事隱藏了科研的意外與不可控，調整文章內容以說個毫無破綻的好故事，而不是說個貼近事實的發現歷程。</p>
-<p>最容易接觸這類修正主義的途徑可能是台灣的理科教科書。從歐幾里得、牛頓、孟德爾、波爾、拉瓦節，課本呈現的是生硬且不直觀，但和諧線性的科學史觀。理論的發展與邏輯的推演高度相符，彷彿有了前提、假設和足夠的測量，理論即順水推舟浮現，科學史跟課本都能一併翻向的新頁。</p>
-<p>我想，為了溝通的效率，精簡內容和梳理邏輯是撰寫論文的必要過程。然而，當論文呈現與事實迥異的發現軌跡，後人要追溯某項理論的沿革時，只能走在一條虛構的途徑上，而這條途徑很可能只在想像中行得通。</p>
-<p>等到開始寫論文，我也希望自己能夠避免這種狀況，想盡可能讓論文的敘事貼近發現的過程，保留激發研究點子的關鍵因素，討論理論與結果衝突的理由與和解方式，而不是為了結果而調整敘述過程的方向。</p>
-<p>雖然只是一點點，但我也想要為自己認同的理念和未來做點事。不過，我後來才體會到，論文寫作還是有協商的因素存在，與合作者的協調、與計畫主持人的溝通、與編輯和審閱者的答辯等等。</p>
-<p>我想這些合作與協商是必要的，只是折磨之處在於，若討論不是基於事實與道理，而是訴諸權威或群眾等無關論文內容的事情，那麼我有點難克服下筆時的抗拒感。</p>
-<h2 id="但我還是想記住好的"><a href="#但我還是想記住好的" class="headerlink" title="但我還是想記住好的"></a>但我還是想記住好的</h2><p>儘管如此，我其實是喜好寫作表達想法的，我覺得將自己的主張和論證陳述清楚，嘗試去說服別人的過程仍值得投入。</p>
-<p>畢竟寫論文也是一種發聲管道，若渴望能依照這途徑去實踐或改變什麼，那是否要做下去也非取決於經驗的好壞，而是渴望的程度。</p>
-<p>既然如此，傾聽內心裡較良善的聲音讓自己有動力做下去，我覺得會比被糟糕回憶困住半途而廢還來得有機會幫助自己達到目標。</p>
-]]></content>
-      <categories>
-        <category>academic</category>
-        <category>mindset</category>
-      </categories>
-      <tags>
-        <tag>writing</tag>
       </tags>
   </entry>
   <entry>
@@ -465,24 +465,6 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜太空生物學</title>
-    <url>/lee-2017-astrobiology/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
-<span id="more"></span>
-<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
-<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
-<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
-<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>life in the universe</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何下載和安裝 RDP classifier</title>
     <url>/how-to-download-and-install-rdp-classifier/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>RDP classifier 是基於 Naive Bayes 的物種分類器，常用於註解 16S rRNA 基因序列的分類資訊。除了使用內建的 RDP 資料庫以外，RDP classifier 也允許使用自訂資料庫來訓練分類器。除了內建的 RDP database，也支援以其他資料庫來訓練分類器。</p>
@@ -514,6 +496,24 @@
       </categories>
       <tags>
         <tag>database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜太空生物學</title>
+    <url>/lee-2017-astrobiology/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
+<span id="more"></span>
+<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
+<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
+<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
+<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>life in the universe</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -671,6 +671,46 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 筆記｜217. Contains Duplicate</title>
+    <url>/leetcode-217-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<ul>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
+</ul>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array</title>
     <url>/leetcode-153-find-minimum-in-rotated-sorted-array/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
@@ -704,46 +744,6 @@
 <h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="mid-的定義方式"><a href="#mid-的定義方式" class="headerlink" title="mid 的定義方式"></a><code>mid</code> 的定義方式</h3><p><code>mid</code> 亦可定義為 <code>(left + right)//2</code>，但聽同事討論，若兩數的數值極大，則有數值超出整數範圍的風險。以相減的方式撰寫則一定不會超出範圍。</p>
 <h3 id="判斷首尾交界處的方式"><a href="#判斷首尾交界處的方式" class="headerlink" title="判斷首尾交界處的方式"></a>判斷首尾交界處的方式</h3><p>有看過同事在比較時，不比對 <code>nums[right]</code>，而是比對 <code>nums[-1]</code>，有一樣的效果。</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>programming</category>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>array</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 筆記｜217. Contains Duplicate</title>
-    <url>/leetcode-217-contains-duplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
-</blockquote>
-<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
-<p>Example:</p>
-<blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
-<ul>
-<li>數字重複出現</li>
-<li>array 長度大於其中數字種類數</li>
-<li>若將 array 排序，則重複的數字比鄰出現</li>
-</ul>
-<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
-<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
-</li>
-<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
-</li>
-<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
-</li>
-</ul>
-]]></content>
       <categories>
         <category>programming</category>
         <category>leetcode</category>
@@ -933,6 +933,161 @@
       </categories>
       <tags>
         <tag>database</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MiTalk 2022：在講台上</title>
+    <url>/mitalk-6-thu-2022/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>兩年前，我曾以聽眾的身分報名 MiTalk，如今總算有點結果可以參加口頭報告。趁著記憶猶新，我想紀錄此次工作坊的所見所得，並且借題敘述一些尚未獨立成篇的想法。</p>
+<p>其中一個感悟是，以報告者的身分參加會議能增加聽講的敏感度和觀察面向。當聽眾時，關注的項目往往是相關研究或新奇題材。而經歷了準備報告的過程後，即使對講題不感興趣，也會留意講者的投影片設計、敘事結構、肢體語言和危機處理。</p>
+<p>這些是準備報告的共同課題，所以每次聽講也能從多樣的示範中學習適合自己的解決辦法。</p>
+<span id="more"></span>
+
+<h2 id="談談口頭報告的緊張感"><a href="#談談口頭報告的緊張感" class="headerlink" title="談談口頭報告的緊張感"></a>談談口頭報告的緊張感</h2><p>坦白講，因為緊張和焦慮，我幾乎無法專心在其他人的報告內容。不過，雖然這次聽講人數較多，可是我覺得報告的緊張感比以前輕微，所以想花點篇幅來整理自己做了什麼來緩解緊張情緒。</p>
+<h3 id="剖析緊張的根源"><a href="#剖析緊張的根源" class="headerlink" title="剖析緊張的根源"></a>剖析緊張的根源</h3><p>「講得不好怎麼辦？」、「被發現不是個咖怎麼辦？」、「講錯怎麼辦？」，我覺得，這些焦慮和維護個人價值的渴望有關。當我們把行為、評價與個人價值掛勾，便會擔憂行為失當是否影響個人價值，開始想像一些可怕的圖景，讓自己在事情發生前變得緊張不安。這種擔憂會因注意到自己無法控制他人想法而加劇，導致自己的決策受他人的想法擺布，也為了滿足全數人的期待而疲憊不堪。</p>
+<h3 id="嘗試認知轉換"><a href="#嘗試認知轉換" class="headerlink" title="嘗試認知轉換"></a>嘗試認知轉換</h3><p>既然很多心理掙扎源於認知與行動的不協調，所以改變認知的模式是有機會緩解報告的不安感。首先，可以嘗試讓口頭報告與他人評價脫鉤。我的老師常提醒我，口頭報告（或是發表期刊論文）固然有宣傳和證明自己等作用，但除了功利價值，「發表」既是對前人的感謝也是對來者的祝福。</p>
+<p>畢竟，無論我們基於什麼目的從事科學，都需要閱讀大量文獻。當我們從前人的心血獲得發現與見解，從而滿足研究的動機以後，將結果發表出來就是最好的回饋，表達我們從過去得到什麼靈感，並發展出可以給未來的東西。因此，再微不足道的發現與努力，再笨拙的傳達方式，都無損一個人表達感謝的誠意與熱情。</p>
+<p>其次，也可以學著讓他人評價與個人價值脫鉤。由於評價是建立在對價值的判斷，兩者的關係也因人而異。每次報告，聽眾的背景和期待都不一樣，即使是同樣的內容也可能激起不同迴響。若透過他人評價來穩固個人價值，等於把定義自我的自由讓給這些無法控制的變項。</p>
+<p>那要如何爭取定義自我的自由呢？可行的策略是在準備報告時，先為自己設立幾個目標，避免被他人評價牽著走。這些目標反映了個人最在乎的事情，所以達成目標的過程也是自我實踐與定義的過程。例如這次我給自己設定的目標有，</p>
+<ul>
+<li><strong>健康</strong>：不管準備得怎麼樣都不熬夜</li>
+<li><strong>情緒</strong>：即使當下緊張或焦慮，也要專注於當下，不要為了未來而恐慌或為過去懊悔</li>
+<li><strong>科學</strong>：用「如果往後有更完整的資料，我也能把握機會」的心態去分析資料</li>
+<li><strong>報告</strong>：嘗試用新的簡報版型、敘事結構和陳述方式</li>
+</ul>
+<p>列了目標以後，我會提醒自己，不管別人怎麼想，只要達成預先設定的目標就是我的勝利。另外，在報告前，我也透過和朋友聊天、在附近走走、穿上不同風格的衣服或與民宿老闆閒聊等策略，提醒自己具有多元面貌，不只是一個在台上報告的人。</p>
+<p>至於犯錯、出糗或聽到批評等，我則將之聯想為 bug 和 warning。寫程式的時候，警告訊息往往用紅色字體呈現，但要注意的是字裡行間的訊息，而不是色彩給我們的原始感受。對於生活中碰到的 bug 和 warning，我試著用這樣的聯想，讓自己能跟寫程式的時候一樣勇敢按下 Run，從錯誤訊息提供的線索，找到克服困難的途徑。</p>
+<h3 id="緩解即刻的感受"><a href="#緩解即刻的感受" class="headerlink" title="緩解即刻的感受"></a>緩解即刻的感受</h3><p>認知轉換需要時間練習，上台前即時湧起的感受仍需要一些精神勝利法或不理性的敘事結構來克服。以下列幾個我用過的手段，這些方法通常能穩定心情一段時間，讓我能更專注在準備報告。</p>
+<ul>
+<li><strong>「呼~」</strong>：呼吸，然後什麼都不要想，專注體會當下所有情緒感受，不做任何評價。這方式的假設是，儘管每個人擁有的時間有限，但我們能提升對生活的意識來增加經驗的厚度。由於每次情緒波動都是別於平常的經驗。因此，不管接下來發生什麼事，透過調整呼吸來品味當下的感受，都能為我們賺來生活的體驗。</li>
+<li><strong>「反正我們都會死」</strong>：反正我們都會死，現場所有人的掙扎與聲嘶力竭都會風化在歷史，隨太陽燃盡，最後在宇宙熱寂裡靜默。所以目光放遠一點，我們在台上不是對著觀眾還是南瓜什麼的呢喃，而是面對一座座顫抖的墓碑自白。現在發生什麼事也無所謂，反正再過$10^{150}$年，我們都會分解成孤單的光子，平均散佈在宇宙中，再沒機會碰到彼此。</li>
+<li><strong>「就這十分鐘而已」</strong>：這招從國小用到大，伴我對抗打手心、罰站、訓斥等麻煩。簡言之，就是不斷提醒自己任何感受都會消退，也提醒自己要發生的事情根本很快就過了。像報告只有十分鐘，就算支支吾吾了十分鐘也會過去，而十分鐘有多短？短到課堂間睡個覺都不夠呢。（不過應用此方法時，盡量別想像棒式之類的經驗。）</li>
+<li><strong>「宇宙某處正在發生生死存亡的戰爭」</strong>：這是一種珍惜的心態。想像宇宙某處正在發生星系間的戰爭，下一秒銀河系可能要被當作質量兵器砸毀在其他星系群了，這或許是最後一次報告，不管怎樣都要好好地享受。即使幸免於難，對於自己能在地球上安穩穩地站著，活在重力常數為 $6.67 \times 10^{-11}m^{3}kg^{-1}s^{-2}$ 的宇宙中也是感激不盡。</li>
+<li><strong>「輪我了」</strong>：求學過程有碰過多堂枯燥的課程，每次聽課都覺得折磨，又不能不出席。被荼毒多年，如今終於輪到我上台報仇，難得有老師待在台下機會，應該要大方講，以洩先前當學生之恨。</li>
+<li>最後再補充一個比較積極的方法，這也是我覺得最有效的方式：想像想傾訴的對象坐在台下，然後把這場演講獻給他們。當自己總算做出點什麼時，往往忍不住想對著某些人說「你看！」吧？</li>
+</ul>
+<p>如果曾支持自己的人坐在台下，我會想讓他們知道，多虧了他們的關懷與支持，我才有辦法做出東西來。我覺得，這種想像讓我更能以分享與交流的心態去演講，而不會總擔憂自己做得不好而裹足不前。</p>
+<h2 id="如何回答自己不熟悉的問題？"><a href="#如何回答自己不熟悉的問題？" class="headerlink" title="如何回答自己不熟悉的問題？"></a>如何回答自己不熟悉的問題？</h2><p>回答問題時，除了能簡要答覆自己熟悉的部分，若對問題不熟悉，也要盡可能回饋對方自己的見解，才能彼此互惠。這次 MiTalk ，我對自己回答問題的方式不太滿意，所以留意了各講者答覆不熟悉議題的策略（就是講者會停頓一下、發出「摁～」聲音或眼睛朝右上方看的那種問題），期待自己往後能預先準備，不會因為緊張而妨礙與聽眾交流的機會。</p>
+<h3 id="Case-1：聽眾詢問某現象在-A-方面的解釋，但你對-A-不熟悉"><a href="#Case-1：聽眾詢問某現象在-A-方面的解釋，但你對-A-不熟悉" class="headerlink" title="Case 1：聽眾詢問某現象在 A 方面的解釋，但你對 A 不熟悉"></a>Case 1：聽眾詢問某現象在 A 方面的解釋，但你對 A 不熟悉</h3><ol>
+<li>承認對 A 不熟悉</li>
+<li>承諾可從 B 方面解釋</li>
+<li>提出 B 方面的見解</li>
+</ol>
+<h3 id="Case-2：聽眾詢問異常數據的解讀，例如離群值、反例、差異不顯著等，但你還沒有想法"><a href="#Case-2：聽眾詢問異常數據的解讀，例如離群值、反例、差異不顯著等，但你還沒有想法" class="headerlink" title="Case 2：聽眾詢問異常數據的解讀，例如離群值、反例、差異不顯著等，但你還沒有想法"></a>Case 2：聽眾詢問異常數據的解讀，例如離群值、反例、差異不顯著等，但你還沒有想法</h3><ol>
+<li>解釋數據的統計與數理意義</li>
+<li>坦白目前仍在思考生物解釋</li>
+<li>表示此問題值得探討，說明可能的探討方向</li>
+</ol>
+<h3 id="Case-3：聽眾詢問研究材料的背景知識，但你沒關注該特性"><a href="#Case-3：聽眾詢問研究材料的背景知識，但你沒關注該特性" class="headerlink" title="Case 3：聽眾詢問研究材料的背景知識，但你沒關注該特性"></a>Case 3：聽眾詢問研究材料的背景知識，但你沒關注該特性</h3><ol>
+<li>坦白該部分並非專長</li>
+<li>說明已知的資訊</li>
+<li>承認目前專注的部分</li>
+<li>承諾往後可能怎麼做</li>
+</ol>
+<h3 id="Case-4：聽眾詢問研究限制是否使結果無法推廣，但你暫時無法解決該限制"><a href="#Case-4：聽眾詢問研究限制是否使結果無法推廣，但你暫時無法解決該限制" class="headerlink" title="Case 4：聽眾詢問研究限制是否使結果無法推廣，但你暫時無法解決該限制"></a>Case 4：聽眾詢問研究限制是否使結果無法推廣，但你暫時無法解決該限制</h3><ol>
+<li>承認該限制暫時無法克服</li>
+<li>提出即使存在限制，在部分資料或條件下仍表現關注的現象</li>
+<li>承諾未來可能怎麼解決之</li>
+</ol>
+<h3 id="Case-5：聽眾詢問研究材料的細節，但你沒記住那麼多細節"><a href="#Case-5：聽眾詢問研究材料的細節，但你沒記住那麼多細節" class="headerlink" title="Case 5：聽眾詢問研究材料的細節，但你沒記住那麼多細節"></a>Case 5：聽眾詢問研究材料的細節，但你沒記住那麼多細節</h3><ol>
+<li>概略回答問題</li>
+<li>承認沒有詳記所有資訊</li>
+<li>提供參考資料給聽眾</li>
+</ol>
+<h3 id="Case-6：聽眾詢問研究發現的細節，但你沒有注意到這個發現"><a href="#Case-6：聽眾詢問研究發現的細節，但你沒有注意到這個發現" class="headerlink" title="Case 6：聽眾詢問研究發現的細節，但你沒有注意到這個發現"></a>Case 6：聽眾詢問研究發現的細節，但你沒有注意到這個發現</h3><ol>
+<li>承認自己僅探討了感興趣的項目</li>
+<li>依照自己理解推論該細節可能跟研究現象有何關係</li>
+<li>感謝對方提出這方面的見解</li>
+<li>承諾會回到實驗室思考對方的問題</li>
+</ol>
+<h3 id="Case-7：聽眾詢問新奇概念或延伸想法，但你沒有做過相關測試或研究"><a href="#Case-7：聽眾詢問新奇概念或延伸想法，但你沒有做過相關測試或研究" class="headerlink" title="Case 7：聽眾詢問新奇概念或延伸想法，但你沒有做過相關測試或研究"></a>Case 7：聽眾詢問新奇概念或延伸想法，但你沒有做過相關測試或研究</h3><p>若只回答：「自己沒有細究」會很可惜。畢竟，如果聽眾對研究題材沒興趣的話，也不會浪費時間提問了。既然講者是在場對主題最熟悉的人，即使沒做過相關研究，聽眾也會期待講者的閱歷和經驗能對延伸問題給出什麼新奇想法。因此，可以大膽依照自己的知識做有理據的猜測。</p>
+<h2 id="After-phD-PI-or-Boss"><a href="#After-phD-PI-or-Boss" class="headerlink" title="After phD: PI or Boss?"></a>After phD: PI or Boss?</h2><p>這節主辦單位邀情王永福博士、張瑞仁博士、曾景鴻博士介紹他們的公司以及分享在博士後踏入創業之路的動機。</p>
+<p>如果重來，會選擇創業還是當PI？<br>別人不會端著錢要你做沒意義的事情。</p>
+<p>我覺得這個問題相當於比較產業與學術的職業特質。 先前讀過 Vincent Vanhoucke 的分析，他指出，當工程師和當研究員需要不一樣的心態。相較於工程師，研究員要面對未知是否有解的難題。很多時候，研究結果無法指向解答，只生出更多疑問。這意味著，科研的進展不代表應用的進展，投注整個生涯若能促成概念轉換已相當傑出，更多的研究只在概念上延伸微小的範圍，甚至沒有一絲漣漪地沉澱在歷史長河。</p>
+<p>面對意義的喪失，有些人離開學界。例如，王博士即認為他仍會選擇創業，因為學術研究的回饋感較低，很常在實驗室沒日沒夜，卻對自己究竟解決了什麼重要問題感到困惑。相較之下，業界處理的是具體而且迫切的問題，每次都有明確的目標和衡量標準。此外，王博士也認為創業能獲得資金自由，從而保障研究自由，可以自己決定研究方向，不必靠計畫維繫實驗室運作。而張博士則認為只有產業才能與實務問題接軌，因為學術發現局限於文獻，規模、可行性與市場潛能都未經檢驗，若要實踐理想，仍得踏入產業界。</p>
+<p>然而，也有些人選擇留在學界，嘗試增加與產業的連結來賦予職涯意義。例如陸永祥老師在擔任助理教授時意識到，自己雖然有許多期刊發表，但這些研究僅圍繞在自己創造出來的問題，並沒有解決這世界面臨的任何難題。因此，陸老師決定踏入產業界，在各大商業發表會中擷取靈感，了解當前社會的需求，藉此引導研究計畫開展，從而結合了研究志業與實務意義。</p>
+<p>這幾個例子也呼應曾博士所述，創業與學術的抉擇跟個性有關，你的個性會決定你怎麼選擇職業，怎麼在職涯中追尋意義、成就與滿足。</p>
+<h3 id="phD-的訓練對創業有幫助嗎？"><a href="#phD-的訓練對創業有幫助嗎？" class="headerlink" title="phD 的訓練對創業有幫助嗎？"></a>phD 的訓練對創業有幫助嗎？</h3><p>三位講者的共識是，phD 對專業技術與抽象思考有幫助，但對經營面的幫助有限。創業要管理的財務和人事問題比經營實驗室更為複雜，這些都不是就讀博士班容易接觸的事情。因此，張博士認為，創業與否的關鍵在商機，商機比起主題、決心和學位更重要。如果時機對了，對商機感興趣便能主動出擊。畢竟，培育 phD 和培育老闆要注重的素養有別，花費大量時間攻讀學位後，仍需要從頭累積經營經驗，此時無論商機或是能力都可能過時了。</p>
+<p>所以三位講者建議，若有良好的機會（例如家庭背景、產業需求、新穎技術、貴人等），要抓住時機創業；若境況太差（資金不足、對產業陌生、能力不足等），需要累積點什麼，這時就讀 phD 或進入欲創業的領域，才對往後創業有幫助。換句話說，為了創業而就讀博士班不是好理由。因此，王博士也希望大家思考繼續進修的動機是什麼，並期許大家不要為了趕上別人而莽撞地決定讀博士班。</p>
+<h3 id="為什麼選擇創業這條辛苦的路？"><a href="#為什麼選擇創業這條辛苦的路？" class="headerlink" title="為什麼選擇創業這條辛苦的路？"></a>為什麼選擇創業這條辛苦的路？</h3><p>我覺得張博士的答覆很有趣：「找不到方向或沒機會創業的人更辛苦吧？」</p>
+<h3 id="業界研究人力和業務人力的比例為何"><a href="#業界研究人力和業務人力的比例為何" class="headerlink" title="業界研究人力和業務人力的比例為何"></a>業界研究人力和業務人力的比例為何</h3><p>曾博士提供了一個經驗法則，公司最高齡員工的年紀與業務人員的比例正相關。</p>
+<h2 id="小型工作坊"><a href="#小型工作坊" class="headerlink" title="小型工作坊"></a>小型工作坊</h2><h3 id="Networking-and-Ecosystem"><a href="#Networking-and-Ecosystem" class="headerlink" title="Networking and Ecosystem"></a>Networking and Ecosystem</h3><p>講者：謝志豪老師 &amp; 吳育瑋老師</p>
+<p>共現網路不等於交互作用網路，而交互關係也會隨著規律事件或突發事件而變動。謝老師的工作是利用時間序列資料，推論交互作用隨時間變化的網路。</p>
+<p>然而，時間序列分析對採樣頻率有一定要求，一項研究至少數十到數百個樣本才夠。然而受限於經費，往往沒有辦法獲得那麼龐大的資料，所以主持人便詢問是否有克服採樣量不足的方法，而謝老師的答覆則是：「沒有，你還是得去採樣。」</p>
+<p>這答覆挺實際的，理論強如克卜勒和牛頓也需要第谷和佛蘭斯蒂德。雖然現在分析工具很多，但沒資料仍是寸步難行。若想解決科學問題卻受經費限制，那只能拉長時間，例如謝老師創建浮游生物資料庫的期許是在「30年後」能為人所用，而不是現在就生出大量樣本，或用少數樣本配合數據模型獲得驚人結果。</p>
+<p>因為先前摸過時間序列資料，所以我想了解不同的時間尺度怎麼影響網路推論，也想了解採樣時間不一的問題要怎麼克服。謝老師回覆，時間尺度跟關切的問題有關，不同尺度得出的交互作用網路也有別，無法彼此推論。</p>
+<p>至於採樣時間不一的問題是目前時間序列分析的限制，常見的手段是利用內插法來推論特定時間的測量值，但不是每個狀況都適合使用內插法。因此，如果時間差異很大，採用較大的時間尺度還有可能應用此演算法。</p>
+<p>而吳老師則簡介他在應用網路分析的心得，例如網路指標的用途不止是簡化數據，也是為了不讓分析者被資料視覺化的形式欺瞞。另外，他也推薦我們讀 Faust. (2021). Open challenges for microbial network construction and analysis. The ISME Journal, 1-8. 了解目前生物網路分析面臨的挑戰（不過謝老師補充，其實有數則問題已經被他解決了）。</p>
+<h3 id="Probiotics"><a href="#Probiotics" class="headerlink" title="Probiotics"></a>Probiotics</h3><p>講者：徐瑋萱老師、李保宏老師、陳彥伯老師 </p>
+<p>人體益生菌的進展分為消化、免疫、代謝與神經益生菌等世代。目前，台灣業界著重消化與免疫益生菌，但國外正積極發展第三、四代益生菌的市場。不過，益生菌的應用場合也不只人體，還可應用於寵物皮膚炎治療、牲畜疾病防治、土壤改良與環境工程（carbon sink，改善二氧化碳濃度飆升的問題）。此外，益生菌的形式亦未必要為活菌，死菌不僅較容易保存，也能避免他人竊取菌株私自培養。</p>
+<p>在益生菌發展中，徐老師有個有趣發現：益生菌可能透過胞泌體影響其他微生物的生理過程，從而降低病原菌的毒性或生長能力。這現象的潛力在於，針對發炎性腸炎的疾病，也許不需透過菌群移植或單菌接種來改善群落結構，只要改變群落的功能就可以達到治療疾病的效果。</p>
+<p>此外，益生菌的胞泌體還可能透過神經或其他組織運輸到其他部位，影響遠端部位的生理機能，例如遷移到腦部可能改善精神狀況或記憶相關疾病等。不過關於這些胞泌體的專一性和作用機制都仍不明朗，還需要許多研究確認之。</p>
+<p>不過，目前益生菌的研究手段和方向受限於法規，例如基因改造技術便不得用於食品級的益生菌。而透過誘導突變再篩選菌株等菌種改良方式雖可用於食品，但無法獲取有機認證。</p>
+<h2 id="邀請演講"><a href="#邀請演講" class="headerlink" title="邀請演講"></a>邀請演講</h2><h3 id="陳可萱老師與林宛柔老師：植物共棲真菌"><a href="#陳可萱老師與林宛柔老師：植物共棲真菌" class="headerlink" title="陳可萱老師與林宛柔老師：植物共棲真菌"></a>陳可萱老師與林宛柔老師：植物共棲真菌</h3><p>陳老師的研究主題是苔類真菌相。苔類受注目的理由除了能於極端環境生存以外，也跟苔類欠缺其他植物常見的菌根菌有關。儘管欠缺近似菌根菌的結構，苔類仍有許多共棲真菌。這些共棲真菌與苔類的關係是陳老師的研究焦點，例如判斷共棲真菌是長在死掉的植物（腐生）還是長在活的植物（共生、內生、寄生），或是了解真菌與苔類共棲於組織內或組織周圍等。</p>
+<p>由於苔類從新生到死亡等不同生長階段的組織會出現在同一株當中（Senescence gradient，衰老梯度），所以可以做為探討真菌不同食性的研究題材。其中一種研究食性的方式是，透過C&#x2F;N穩定同位素技術，判斷真菌和植物間是否有營養交換。假如兩者有互換碳與氮，那可能兩者為共生關係；若真菌單方面擷取碳，但植物沒有獲得氮，則可能真菌寄生在植物上。</p>
+<p>除了演化與生態應用，由於苔類與共棲生物密切相關，既然苔類能耐受極端環境，其上的生物應該也有相當的耐受性，所以苔類可能作為搜索極端環境生物的標的。其次，苔類可容納各種生物生存，所以或許可以利用這種特性，將苔類作為媒介，把生物接種到不同環境中。</p>
+<p>相較於自營性植物共棲真菌，林老師的研究題材是水晶蘭和阿里山水晶蘭等異營性植物的共棲真菌。完全異營性植物只仰賴共棲真菌提供的營養，所以植物與真菌的關係更為密切。這種營養的依賴性可能反映在異營植物與其共棲真菌的演化歷史上。</p>
+<p>由於水晶蘭和阿里山水晶蘭型態相近，生存環境也類似，所以林老師想探討兩植物的親緣關係，並了解共棲真菌是否跟兩種植物的分野有關。而研究結果發現，相較於水晶蘭，阿里山水晶蘭與錫杖花的親緣關係較密切。即使生存於相同環境，水晶蘭和阿里山水晶蘭的共棲真菌組成在屬的分類階層仍大不相同，暗示著水晶蘭與阿里山水晶蘭的分野可能跟共棲真菌有關。</p>
+<h3 id="張峰勳博士：分化棲位的決定性群落構建過程增加-β-diversity-和生物量的正相關性"><a href="#張峰勳博士：分化棲位的決定性群落構建過程增加-β-diversity-和生物量的正相關性" class="headerlink" title="張峰勳博士：分化棲位的決定性群落構建過程增加 β diversity 和生物量的正相關性"></a>張峰勳博士：分化棲位的決定性群落構建過程增加 β diversity 和生物量的正相關性</h3><p>張博士的研究探討多樣性與群落功能性的關聯。群落的功能性是指各族群的代謝與生理功能之集合，可用生物量、呼吸率和物質消耗率等方式估計。目前已知，α diversity 和 γ diversity 與功能性正相關，但 β diversity 與功能性的關係則尚未明朗。</p>
+<p>此研究的假說是分化生態棲位的決定性篩選會增加 β diversity，使得群落的功能多樣性隨分類組成分化而增加。相較於低功能多樣性的群落，高功能多樣性的群落更能應用環境中的不同資源，代謝共通產物也會越多。根據此假說，分化棲位的決定性群落構建過程會加強 β diversity 與功能性的正相關性。 （推理方式：deterministic heterogenize selection→niche diversification→β diversity↑→functional diversity↑→exploit resources→function effects ↑→function indices ↑）</p>
+<p>為了探討此假說，張博士使用 Bray-Curtis dissimilarity 度量 β diversity，用 β mean pairwise taxa index (bea-MPTI) 評估決定性分化過程，以 biomass 評估功能性，來檢驗 β diversity、deterministic processes 和 functioning 三者的關聯。</p>
+<p>我對此研究很感興趣，也有一些猜想。首先，我會想了解正相關性是否只出現在某種尺度內，例如：(1) 資源有限的情況下，群落多樣性增加應該也不會增加functioning，(2) 功能多樣性隨群落多樣性增加的幅度飽和，應該也會讓functioning 增長的趨勢停滯。其次，如果假設 niche diversification 導致功能性上升，也許使用採計親緣關係的 UniFrac 也能獲得類似的結果。</p>
+<p>最後，在 α 和 γ diversity 和 functioning 正相關的情況下，β diversity 還能跟 functioning 呈負相關嗎？依照我的理解，α diversity 、β diversity 和 γ diversity 三者有關，當metacommunities 間 β diversity 為零，那 γ diversity 就等於 α diversity；若 metacommunities 間的 β diversity 為一，那 γ diveristy 應該是 α diversity 之和。按照這層關係，在 α diversity 固定的情況下，γ diversity 上升會伴隨 β diversity 上升，所以當 γ diversity 跟功能性正相關時，β diversity 也會跟功能性正相關。</p>
+<p>我在想 β diversity 和 functioning 呈負相關的一個可能是，α diversity 和 β diversity 呈負相關。換句話說，若某種生態過程會使得群落間組成逐漸相似，但最大化單一棲地的多樣性，那麼就可能觀察到 β diversity 和 functioning 呈負相關。例如說在 local dispersal limitation 微弱的初級演替環境，頻繁的遷移雖然會讓各族群的組成逐漸相似 (β diversity↓)，也會增加各群落的族群數 (α diversity↑)，提升 metacommunity 的 functioning。</p>
+<p>按照這想法推測，隨著各群落的規模觸及環境負荷極限，可能出現heterogeneous selection，例如發生 lottery competition，各群落的優勢族群取決於隨機事件，增加了 β diversity。又或發生 homogeneous selection，例如先前遷入的族群造成 priority effects，限制了後續能於各區域生存的族群多樣性，使得 β diversity 下降。在沒有更多遷入族群的情況下，這兩種情況都使得 α diversity 下降，但後者降低 γ diversity，降低 metacommunity 的 functioning，於是 β diversity 又和 functioning 正相關了。</p>
+<h3 id="其他印象深刻的內容"><a href="#其他印象深刻的內容" class="headerlink" title="其他印象深刻的內容"></a>其他印象深刻的內容</h3><ul>
+<li><strong>何攖寧老師</strong>：雖然獨立於培養的方法可以普查環境微生物，但為了驗證假說、生產應用和探索功能等需求，仍有培養細菌的需求。而冰河溶解、大地震、工業汙染等突發事件造成的菌群變化，更強調現地即時指引樣本微生物培養的重要性，畢竟突發事件相當罕見，時間過了就沒辦法研究了。</li>
+<li><strong>邱名鍾博士</strong>：邱博士提到隨寄生蟲感染而上&#x2F;下調的宿主基因非常多，這些基因不僅反映了宿主受影響的生理功能和途徑，也反映了寄生蟲和宿主軍備競賽的過程。</li>
+<li><strong>林玉儒老師</strong>：林老師講了「鬼花飄香」的故事，研究人員從已滅絕的魏氏岳槿之植物標本取得核酸，再找出產生香味的關鍵基因，將這段基因插入酵母菌生產香味分子以重現魏氏岳槿的氣味（完整故事可見科學人報導）。</li>
+<li><strong>陳彥伯老師</strong>：「這項研究很感謝在行政院農委會任職的學妹協助，本來跟學妹約好要在台上 cue 她的，但今天學妹卻沒來。」</li>
+<li><strong>陳立賢老師</strong>：「我們以蔥根製作的面膜並不會有蔥油餅敷在臉上的油膩感。」</li>
+<li><strong>汪碧涵老師</strong>：「我們每次 reject，都往點數更高的期刊投。」</li>
+<li><strong>謝志豪老師</strong>：「這裡不解釋，若對network感興趣，可以去讀書。」</li>
+</ul>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>兩年前參加 MiTalk 時，碩班研究正好碰到瓶頸。當時聽了許多老師討論他們的求學經歷，卻仍然困惑自己是否適合做研究。於是，我期許自己能透過研討會增廣見聞，在跟人討論的過程中激勵自己。如今帶著一點結果再次參加 MiTalk，算是朝當時立下的目標稍稍前進一步了。</p>
+<p>我現在覺得不具備做好某件事的特質，不是放棄的理由。我很喜歡《原子習慣》提倡的概念，要成為怎樣的人取決於動機和行動，這實在是很 existentialism。確實，研究了未必有明確結果，報告後的回饋也不一定如預期，考到什麼學校也不保證能讀到畢業，當到計畫主持人或工廠老闆還是可能有多種麻煩要應對。</p>
+<p>然而，這些行動無論成敗都是定義自己的過程。當你為了瞭解 metagenomics，在 compiler 輸入 print(“Hello world”) 那刻，就成了生物資訊學家；當你為了解釋群落演替，在紙上畫了數個方格模擬動物遷徙的時候，就成了理論生態學家；當你開始反思自己的研究，為了某個癥結輾轉難眠，你也已經是個學者了。</p>
+<p>至於能在生物資訊、理論生態或是學者的路走去哪、走多遠或走出什麼道路，端看每次行動的抉擇。但我想在這個過程需要時間琢磨。因此，我現在對自己的期許是要有耐心，漸漸不再擔憂自己欠缺什麼條件，而是想辦法做到當下能做到的事情，剩下交給時間。</p>
+]]></content>
+      <categories>
+        <category>microbial ecology</category>
+        <category>microbiota</category>
+      </categories>
+      <tags>
+        <tag>career</tag>
+        <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜調整工作目錄的路徑</title>
+    <url>/nextflow-change-path-to-work-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
+<span id="more"></span>
+
+<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
+
+<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
+<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
+<blockquote>
+<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -1292,161 +1447,6 @@
       </categories>
       <tags>
         <tag>tips and tricks</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MiTalk 2022：在講台上</title>
-    <url>/mitalk-6-thu-2022/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>兩年前，我曾以聽眾的身分報名 MiTalk，如今總算有點結果可以參加口頭報告。趁著記憶猶新，我想紀錄此次工作坊的所見所得，並且借題敘述一些尚未獨立成篇的想法。</p>
-<p>其中一個感悟是，以報告者的身分參加會議能增加聽講的敏感度和觀察面向。當聽眾時，關注的項目往往是相關研究或新奇題材。而經歷了準備報告的過程後，即使對講題不感興趣，也會留意講者的投影片設計、敘事結構、肢體語言和危機處理。</p>
-<p>這些是準備報告的共同課題，所以每次聽講也能從多樣的示範中學習適合自己的解決辦法。</p>
-<span id="more"></span>
-
-<h2 id="談談口頭報告的緊張感"><a href="#談談口頭報告的緊張感" class="headerlink" title="談談口頭報告的緊張感"></a>談談口頭報告的緊張感</h2><p>坦白講，因為緊張和焦慮，我幾乎無法專心在其他人的報告內容。不過，雖然這次聽講人數較多，可是我覺得報告的緊張感比以前輕微，所以想花點篇幅來整理自己做了什麼來緩解緊張情緒。</p>
-<h3 id="剖析緊張的根源"><a href="#剖析緊張的根源" class="headerlink" title="剖析緊張的根源"></a>剖析緊張的根源</h3><p>「講得不好怎麼辦？」、「被發現不是個咖怎麼辦？」、「講錯怎麼辦？」，我覺得，這些焦慮和維護個人價值的渴望有關。當我們把行為、評價與個人價值掛勾，便會擔憂行為失當是否影響個人價值，開始想像一些可怕的圖景，讓自己在事情發生前變得緊張不安。這種擔憂會因注意到自己無法控制他人想法而加劇，導致自己的決策受他人的想法擺布，也為了滿足全數人的期待而疲憊不堪。</p>
-<h3 id="嘗試認知轉換"><a href="#嘗試認知轉換" class="headerlink" title="嘗試認知轉換"></a>嘗試認知轉換</h3><p>既然很多心理掙扎源於認知與行動的不協調，所以改變認知的模式是有機會緩解報告的不安感。首先，可以嘗試讓口頭報告與他人評價脫鉤。我的老師常提醒我，口頭報告（或是發表期刊論文）固然有宣傳和證明自己等作用，但除了功利價值，「發表」既是對前人的感謝也是對來者的祝福。</p>
-<p>畢竟，無論我們基於什麼目的從事科學，都需要閱讀大量文獻。當我們從前人的心血獲得發現與見解，從而滿足研究的動機以後，將結果發表出來就是最好的回饋，表達我們從過去得到什麼靈感，並發展出可以給未來的東西。因此，再微不足道的發現與努力，再笨拙的傳達方式，都無損一個人表達感謝的誠意與熱情。</p>
-<p>其次，也可以學著讓他人評價與個人價值脫鉤。由於評價是建立在對價值的判斷，兩者的關係也因人而異。每次報告，聽眾的背景和期待都不一樣，即使是同樣的內容也可能激起不同迴響。若透過他人評價來穩固個人價值，等於把定義自我的自由讓給這些無法控制的變項。</p>
-<p>那要如何爭取定義自我的自由呢？可行的策略是在準備報告時，先為自己設立幾個目標，避免被他人評價牽著走。這些目標反映了個人最在乎的事情，所以達成目標的過程也是自我實踐與定義的過程。例如這次我給自己設定的目標有，</p>
-<ul>
-<li><strong>健康</strong>：不管準備得怎麼樣都不熬夜</li>
-<li><strong>情緒</strong>：即使當下緊張或焦慮，也要專注於當下，不要為了未來而恐慌或為過去懊悔</li>
-<li><strong>科學</strong>：用「如果往後有更完整的資料，我也能把握機會」的心態去分析資料</li>
-<li><strong>報告</strong>：嘗試用新的簡報版型、敘事結構和陳述方式</li>
-</ul>
-<p>列了目標以後，我會提醒自己，不管別人怎麼想，只要達成預先設定的目標就是我的勝利。另外，在報告前，我也透過和朋友聊天、在附近走走、穿上不同風格的衣服或與民宿老闆閒聊等策略，提醒自己具有多元面貌，不只是一個在台上報告的人。</p>
-<p>至於犯錯、出糗或聽到批評等，我則將之聯想為 bug 和 warning。寫程式的時候，警告訊息往往用紅色字體呈現，但要注意的是字裡行間的訊息，而不是色彩給我們的原始感受。對於生活中碰到的 bug 和 warning，我試著用這樣的聯想，讓自己能跟寫程式的時候一樣勇敢按下 Run，從錯誤訊息提供的線索，找到克服困難的途徑。</p>
-<h3 id="緩解即刻的感受"><a href="#緩解即刻的感受" class="headerlink" title="緩解即刻的感受"></a>緩解即刻的感受</h3><p>認知轉換需要時間練習，上台前即時湧起的感受仍需要一些精神勝利法或不理性的敘事結構來克服。以下列幾個我用過的手段，這些方法通常能穩定心情一段時間，讓我能更專注在準備報告。</p>
-<ul>
-<li><strong>「呼~」</strong>：呼吸，然後什麼都不要想，專注體會當下所有情緒感受，不做任何評價。這方式的假設是，儘管每個人擁有的時間有限，但我們能提升對生活的意識來增加經驗的厚度。由於每次情緒波動都是別於平常的經驗。因此，不管接下來發生什麼事，透過調整呼吸來品味當下的感受，都能為我們賺來生活的體驗。</li>
-<li><strong>「反正我們都會死」</strong>：反正我們都會死，現場所有人的掙扎與聲嘶力竭都會風化在歷史，隨太陽燃盡，最後在宇宙熱寂裡靜默。所以目光放遠一點，我們在台上不是對著觀眾還是南瓜什麼的呢喃，而是面對一座座顫抖的墓碑自白。現在發生什麼事也無所謂，反正再過$10^{150}$年，我們都會分解成孤單的光子，平均散佈在宇宙中，再沒機會碰到彼此。</li>
-<li><strong>「就這十分鐘而已」</strong>：這招從國小用到大，伴我對抗打手心、罰站、訓斥等麻煩。簡言之，就是不斷提醒自己任何感受都會消退，也提醒自己要發生的事情根本很快就過了。像報告只有十分鐘，就算支支吾吾了十分鐘也會過去，而十分鐘有多短？短到課堂間睡個覺都不夠呢。（不過應用此方法時，盡量別想像棒式之類的經驗。）</li>
-<li><strong>「宇宙某處正在發生生死存亡的戰爭」</strong>：這是一種珍惜的心態。想像宇宙某處正在發生星系間的戰爭，下一秒銀河系可能要被當作質量兵器砸毀在其他星系群了，這或許是最後一次報告，不管怎樣都要好好地享受。即使幸免於難，對於自己能在地球上安穩穩地站著，活在重力常數為 $6.67 \times 10^{-11}m^{3}kg^{-1}s^{-2}$ 的宇宙中也是感激不盡。</li>
-<li><strong>「輪我了」</strong>：求學過程有碰過多堂枯燥的課程，每次聽課都覺得折磨，又不能不出席。被荼毒多年，如今終於輪到我上台報仇，難得有老師待在台下機會，應該要大方講，以洩先前當學生之恨。</li>
-<li>最後再補充一個比較積極的方法，這也是我覺得最有效的方式：想像想傾訴的對象坐在台下，然後把這場演講獻給他們。當自己總算做出點什麼時，往往忍不住想對著某些人說「你看！」吧？</li>
-</ul>
-<p>如果曾支持自己的人坐在台下，我會想讓他們知道，多虧了他們的關懷與支持，我才有辦法做出東西來。我覺得，這種想像讓我更能以分享與交流的心態去演講，而不會總擔憂自己做得不好而裹足不前。</p>
-<h2 id="如何回答自己不熟悉的問題？"><a href="#如何回答自己不熟悉的問題？" class="headerlink" title="如何回答自己不熟悉的問題？"></a>如何回答自己不熟悉的問題？</h2><p>回答問題時，除了能簡要答覆自己熟悉的部分，若對問題不熟悉，也要盡可能回饋對方自己的見解，才能彼此互惠。這次 MiTalk ，我對自己回答問題的方式不太滿意，所以留意了各講者答覆不熟悉議題的策略（就是講者會停頓一下、發出「摁～」聲音或眼睛朝右上方看的那種問題），期待自己往後能預先準備，不會因為緊張而妨礙與聽眾交流的機會。</p>
-<h3 id="Case-1：聽眾詢問某現象在-A-方面的解釋，但你對-A-不熟悉"><a href="#Case-1：聽眾詢問某現象在-A-方面的解釋，但你對-A-不熟悉" class="headerlink" title="Case 1：聽眾詢問某現象在 A 方面的解釋，但你對 A 不熟悉"></a>Case 1：聽眾詢問某現象在 A 方面的解釋，但你對 A 不熟悉</h3><ol>
-<li>承認對 A 不熟悉</li>
-<li>承諾可從 B 方面解釋</li>
-<li>提出 B 方面的見解</li>
-</ol>
-<h3 id="Case-2：聽眾詢問異常數據的解讀，例如離群值、反例、差異不顯著等，但你還沒有想法"><a href="#Case-2：聽眾詢問異常數據的解讀，例如離群值、反例、差異不顯著等，但你還沒有想法" class="headerlink" title="Case 2：聽眾詢問異常數據的解讀，例如離群值、反例、差異不顯著等，但你還沒有想法"></a>Case 2：聽眾詢問異常數據的解讀，例如離群值、反例、差異不顯著等，但你還沒有想法</h3><ol>
-<li>解釋數據的統計與數理意義</li>
-<li>坦白目前仍在思考生物解釋</li>
-<li>表示此問題值得探討，說明可能的探討方向</li>
-</ol>
-<h3 id="Case-3：聽眾詢問研究材料的背景知識，但你沒關注該特性"><a href="#Case-3：聽眾詢問研究材料的背景知識，但你沒關注該特性" class="headerlink" title="Case 3：聽眾詢問研究材料的背景知識，但你沒關注該特性"></a>Case 3：聽眾詢問研究材料的背景知識，但你沒關注該特性</h3><ol>
-<li>坦白該部分並非專長</li>
-<li>說明已知的資訊</li>
-<li>承認目前專注的部分</li>
-<li>承諾往後可能怎麼做</li>
-</ol>
-<h3 id="Case-4：聽眾詢問研究限制是否使結果無法推廣，但你暫時無法解決該限制"><a href="#Case-4：聽眾詢問研究限制是否使結果無法推廣，但你暫時無法解決該限制" class="headerlink" title="Case 4：聽眾詢問研究限制是否使結果無法推廣，但你暫時無法解決該限制"></a>Case 4：聽眾詢問研究限制是否使結果無法推廣，但你暫時無法解決該限制</h3><ol>
-<li>承認該限制暫時無法克服</li>
-<li>提出即使存在限制，在部分資料或條件下仍表現關注的現象</li>
-<li>承諾未來可能怎麼解決之</li>
-</ol>
-<h3 id="Case-5：聽眾詢問研究材料的細節，但你沒記住那麼多細節"><a href="#Case-5：聽眾詢問研究材料的細節，但你沒記住那麼多細節" class="headerlink" title="Case 5：聽眾詢問研究材料的細節，但你沒記住那麼多細節"></a>Case 5：聽眾詢問研究材料的細節，但你沒記住那麼多細節</h3><ol>
-<li>概略回答問題</li>
-<li>承認沒有詳記所有資訊</li>
-<li>提供參考資料給聽眾</li>
-</ol>
-<h3 id="Case-6：聽眾詢問研究發現的細節，但你沒有注意到這個發現"><a href="#Case-6：聽眾詢問研究發現的細節，但你沒有注意到這個發現" class="headerlink" title="Case 6：聽眾詢問研究發現的細節，但你沒有注意到這個發現"></a>Case 6：聽眾詢問研究發現的細節，但你沒有注意到這個發現</h3><ol>
-<li>承認自己僅探討了感興趣的項目</li>
-<li>依照自己理解推論該細節可能跟研究現象有何關係</li>
-<li>感謝對方提出這方面的見解</li>
-<li>承諾會回到實驗室思考對方的問題</li>
-</ol>
-<h3 id="Case-7：聽眾詢問新奇概念或延伸想法，但你沒有做過相關測試或研究"><a href="#Case-7：聽眾詢問新奇概念或延伸想法，但你沒有做過相關測試或研究" class="headerlink" title="Case 7：聽眾詢問新奇概念或延伸想法，但你沒有做過相關測試或研究"></a>Case 7：聽眾詢問新奇概念或延伸想法，但你沒有做過相關測試或研究</h3><p>若只回答：「自己沒有細究」會很可惜。畢竟，如果聽眾對研究題材沒興趣的話，也不會浪費時間提問了。既然講者是在場對主題最熟悉的人，即使沒做過相關研究，聽眾也會期待講者的閱歷和經驗能對延伸問題給出什麼新奇想法。因此，可以大膽依照自己的知識做有理據的猜測。</p>
-<h2 id="After-phD-PI-or-Boss"><a href="#After-phD-PI-or-Boss" class="headerlink" title="After phD: PI or Boss?"></a>After phD: PI or Boss?</h2><p>這節主辦單位邀情王永福博士、張瑞仁博士、曾景鴻博士介紹他們的公司以及分享在博士後踏入創業之路的動機。</p>
-<p>如果重來，會選擇創業還是當PI？<br>別人不會端著錢要你做沒意義的事情。</p>
-<p>我覺得這個問題相當於比較產業與學術的職業特質。 先前讀過 Vincent Vanhoucke 的分析，他指出，當工程師和當研究員需要不一樣的心態。相較於工程師，研究員要面對未知是否有解的難題。很多時候，研究結果無法指向解答，只生出更多疑問。這意味著，科研的進展不代表應用的進展，投注整個生涯若能促成概念轉換已相當傑出，更多的研究只在概念上延伸微小的範圍，甚至沒有一絲漣漪地沉澱在歷史長河。</p>
-<p>面對意義的喪失，有些人離開學界。例如，王博士即認為他仍會選擇創業，因為學術研究的回饋感較低，很常在實驗室沒日沒夜，卻對自己究竟解決了什麼重要問題感到困惑。相較之下，業界處理的是具體而且迫切的問題，每次都有明確的目標和衡量標準。此外，王博士也認為創業能獲得資金自由，從而保障研究自由，可以自己決定研究方向，不必靠計畫維繫實驗室運作。而張博士則認為只有產業才能與實務問題接軌，因為學術發現局限於文獻，規模、可行性與市場潛能都未經檢驗，若要實踐理想，仍得踏入產業界。</p>
-<p>然而，也有些人選擇留在學界，嘗試增加與產業的連結來賦予職涯意義。例如陸永祥老師在擔任助理教授時意識到，自己雖然有許多期刊發表，但這些研究僅圍繞在自己創造出來的問題，並沒有解決這世界面臨的任何難題。因此，陸老師決定踏入產業界，在各大商業發表會中擷取靈感，了解當前社會的需求，藉此引導研究計畫開展，從而結合了研究志業與實務意義。</p>
-<p>這幾個例子也呼應曾博士所述，創業與學術的抉擇跟個性有關，你的個性會決定你怎麼選擇職業，怎麼在職涯中追尋意義、成就與滿足。</p>
-<h3 id="phD-的訓練對創業有幫助嗎？"><a href="#phD-的訓練對創業有幫助嗎？" class="headerlink" title="phD 的訓練對創業有幫助嗎？"></a>phD 的訓練對創業有幫助嗎？</h3><p>三位講者的共識是，phD 對專業技術與抽象思考有幫助，但對經營面的幫助有限。創業要管理的財務和人事問題比經營實驗室更為複雜，這些都不是就讀博士班容易接觸的事情。因此，張博士認為，創業與否的關鍵在商機，商機比起主題、決心和學位更重要。如果時機對了，對商機感興趣便能主動出擊。畢竟，培育 phD 和培育老闆要注重的素養有別，花費大量時間攻讀學位後，仍需要從頭累積經營經驗，此時無論商機或是能力都可能過時了。</p>
-<p>所以三位講者建議，若有良好的機會（例如家庭背景、產業需求、新穎技術、貴人等），要抓住時機創業；若境況太差（資金不足、對產業陌生、能力不足等），需要累積點什麼，這時就讀 phD 或進入欲創業的領域，才對往後創業有幫助。換句話說，為了創業而就讀博士班不是好理由。因此，王博士也希望大家思考繼續進修的動機是什麼，並期許大家不要為了趕上別人而莽撞地決定讀博士班。</p>
-<h3 id="為什麼選擇創業這條辛苦的路？"><a href="#為什麼選擇創業這條辛苦的路？" class="headerlink" title="為什麼選擇創業這條辛苦的路？"></a>為什麼選擇創業這條辛苦的路？</h3><p>我覺得張博士的答覆很有趣：「找不到方向或沒機會創業的人更辛苦吧？」</p>
-<h3 id="業界研究人力和業務人力的比例為何"><a href="#業界研究人力和業務人力的比例為何" class="headerlink" title="業界研究人力和業務人力的比例為何"></a>業界研究人力和業務人力的比例為何</h3><p>曾博士提供了一個經驗法則，公司最高齡員工的年紀與業務人員的比例正相關。</p>
-<h2 id="小型工作坊"><a href="#小型工作坊" class="headerlink" title="小型工作坊"></a>小型工作坊</h2><h3 id="Networking-and-Ecosystem"><a href="#Networking-and-Ecosystem" class="headerlink" title="Networking and Ecosystem"></a>Networking and Ecosystem</h3><p>講者：謝志豪老師 &amp; 吳育瑋老師</p>
-<p>共現網路不等於交互作用網路，而交互關係也會隨著規律事件或突發事件而變動。謝老師的工作是利用時間序列資料，推論交互作用隨時間變化的網路。</p>
-<p>然而，時間序列分析對採樣頻率有一定要求，一項研究至少數十到數百個樣本才夠。然而受限於經費，往往沒有辦法獲得那麼龐大的資料，所以主持人便詢問是否有克服採樣量不足的方法，而謝老師的答覆則是：「沒有，你還是得去採樣。」</p>
-<p>這答覆挺實際的，理論強如克卜勒和牛頓也需要第谷和佛蘭斯蒂德。雖然現在分析工具很多，但沒資料仍是寸步難行。若想解決科學問題卻受經費限制，那只能拉長時間，例如謝老師創建浮游生物資料庫的期許是在「30年後」能為人所用，而不是現在就生出大量樣本，或用少數樣本配合數據模型獲得驚人結果。</p>
-<p>因為先前摸過時間序列資料，所以我想了解不同的時間尺度怎麼影響網路推論，也想了解採樣時間不一的問題要怎麼克服。謝老師回覆，時間尺度跟關切的問題有關，不同尺度得出的交互作用網路也有別，無法彼此推論。</p>
-<p>至於採樣時間不一的問題是目前時間序列分析的限制，常見的手段是利用內插法來推論特定時間的測量值，但不是每個狀況都適合使用內插法。因此，如果時間差異很大，採用較大的時間尺度還有可能應用此演算法。</p>
-<p>而吳老師則簡介他在應用網路分析的心得，例如網路指標的用途不止是簡化數據，也是為了不讓分析者被資料視覺化的形式欺瞞。另外，他也推薦我們讀 Faust. (2021). Open challenges for microbial network construction and analysis. The ISME Journal, 1-8. 了解目前生物網路分析面臨的挑戰（不過謝老師補充，其實有數則問題已經被他解決了）。</p>
-<h3 id="Probiotics"><a href="#Probiotics" class="headerlink" title="Probiotics"></a>Probiotics</h3><p>講者：徐瑋萱老師、李保宏老師、陳彥伯老師 </p>
-<p>人體益生菌的進展分為消化、免疫、代謝與神經益生菌等世代。目前，台灣業界著重消化與免疫益生菌，但國外正積極發展第三、四代益生菌的市場。不過，益生菌的應用場合也不只人體，還可應用於寵物皮膚炎治療、牲畜疾病防治、土壤改良與環境工程（carbon sink，改善二氧化碳濃度飆升的問題）。此外，益生菌的形式亦未必要為活菌，死菌不僅較容易保存，也能避免他人竊取菌株私自培養。</p>
-<p>在益生菌發展中，徐老師有個有趣發現：益生菌可能透過胞泌體影響其他微生物的生理過程，從而降低病原菌的毒性或生長能力。這現象的潛力在於，針對發炎性腸炎的疾病，也許不需透過菌群移植或單菌接種來改善群落結構，只要改變群落的功能就可以達到治療疾病的效果。</p>
-<p>此外，益生菌的胞泌體還可能透過神經或其他組織運輸到其他部位，影響遠端部位的生理機能，例如遷移到腦部可能改善精神狀況或記憶相關疾病等。不過關於這些胞泌體的專一性和作用機制都仍不明朗，還需要許多研究確認之。</p>
-<p>不過，目前益生菌的研究手段和方向受限於法規，例如基因改造技術便不得用於食品級的益生菌。而透過誘導突變再篩選菌株等菌種改良方式雖可用於食品，但無法獲取有機認證。</p>
-<h2 id="邀請演講"><a href="#邀請演講" class="headerlink" title="邀請演講"></a>邀請演講</h2><h3 id="陳可萱老師與林宛柔老師：植物共棲真菌"><a href="#陳可萱老師與林宛柔老師：植物共棲真菌" class="headerlink" title="陳可萱老師與林宛柔老師：植物共棲真菌"></a>陳可萱老師與林宛柔老師：植物共棲真菌</h3><p>陳老師的研究主題是苔類真菌相。苔類受注目的理由除了能於極端環境生存以外，也跟苔類欠缺其他植物常見的菌根菌有關。儘管欠缺近似菌根菌的結構，苔類仍有許多共棲真菌。這些共棲真菌與苔類的關係是陳老師的研究焦點，例如判斷共棲真菌是長在死掉的植物（腐生）還是長在活的植物（共生、內生、寄生），或是了解真菌與苔類共棲於組織內或組織周圍等。</p>
-<p>由於苔類從新生到死亡等不同生長階段的組織會出現在同一株當中（Senescence gradient，衰老梯度），所以可以做為探討真菌不同食性的研究題材。其中一種研究食性的方式是，透過C&#x2F;N穩定同位素技術，判斷真菌和植物間是否有營養交換。假如兩者有互換碳與氮，那可能兩者為共生關係；若真菌單方面擷取碳，但植物沒有獲得氮，則可能真菌寄生在植物上。</p>
-<p>除了演化與生態應用，由於苔類與共棲生物密切相關，既然苔類能耐受極端環境，其上的生物應該也有相當的耐受性，所以苔類可能作為搜索極端環境生物的標的。其次，苔類可容納各種生物生存，所以或許可以利用這種特性，將苔類作為媒介，把生物接種到不同環境中。</p>
-<p>相較於自營性植物共棲真菌，林老師的研究題材是水晶蘭和阿里山水晶蘭等異營性植物的共棲真菌。完全異營性植物只仰賴共棲真菌提供的營養，所以植物與真菌的關係更為密切。這種營養的依賴性可能反映在異營植物與其共棲真菌的演化歷史上。</p>
-<p>由於水晶蘭和阿里山水晶蘭型態相近，生存環境也類似，所以林老師想探討兩植物的親緣關係，並了解共棲真菌是否跟兩種植物的分野有關。而研究結果發現，相較於水晶蘭，阿里山水晶蘭與錫杖花的親緣關係較密切。即使生存於相同環境，水晶蘭和阿里山水晶蘭的共棲真菌組成在屬的分類階層仍大不相同，暗示著水晶蘭與阿里山水晶蘭的分野可能跟共棲真菌有關。</p>
-<h3 id="張峰勳博士：分化棲位的決定性群落構建過程增加-β-diversity-和生物量的正相關性"><a href="#張峰勳博士：分化棲位的決定性群落構建過程增加-β-diversity-和生物量的正相關性" class="headerlink" title="張峰勳博士：分化棲位的決定性群落構建過程增加 β diversity 和生物量的正相關性"></a>張峰勳博士：分化棲位的決定性群落構建過程增加 β diversity 和生物量的正相關性</h3><p>張博士的研究探討多樣性與群落功能性的關聯。群落的功能性是指各族群的代謝與生理功能之集合，可用生物量、呼吸率和物質消耗率等方式估計。目前已知，α diversity 和 γ diversity 與功能性正相關，但 β diversity 與功能性的關係則尚未明朗。</p>
-<p>此研究的假說是分化生態棲位的決定性篩選會增加 β diversity，使得群落的功能多樣性隨分類組成分化而增加。相較於低功能多樣性的群落，高功能多樣性的群落更能應用環境中的不同資源，代謝共通產物也會越多。根據此假說，分化棲位的決定性群落構建過程會加強 β diversity 與功能性的正相關性。 （推理方式：deterministic heterogenize selection→niche diversification→β diversity↑→functional diversity↑→exploit resources→function effects ↑→function indices ↑）</p>
-<p>為了探討此假說，張博士使用 Bray-Curtis dissimilarity 度量 β diversity，用 β mean pairwise taxa index (bea-MPTI) 評估決定性分化過程，以 biomass 評估功能性，來檢驗 β diversity、deterministic processes 和 functioning 三者的關聯。</p>
-<p>我對此研究很感興趣，也有一些猜想。首先，我會想了解正相關性是否只出現在某種尺度內，例如：(1) 資源有限的情況下，群落多樣性增加應該也不會增加functioning，(2) 功能多樣性隨群落多樣性增加的幅度飽和，應該也會讓functioning 增長的趨勢停滯。其次，如果假設 niche diversification 導致功能性上升，也許使用採計親緣關係的 UniFrac 也能獲得類似的結果。</p>
-<p>最後，在 α 和 γ diversity 和 functioning 正相關的情況下，β diversity 還能跟 functioning 呈負相關嗎？依照我的理解，α diversity 、β diversity 和 γ diversity 三者有關，當metacommunities 間 β diversity 為零，那 γ diversity 就等於 α diversity；若 metacommunities 間的 β diversity 為一，那 γ diveristy 應該是 α diversity 之和。按照這層關係，在 α diversity 固定的情況下，γ diversity 上升會伴隨 β diversity 上升，所以當 γ diversity 跟功能性正相關時，β diversity 也會跟功能性正相關。</p>
-<p>我在想 β diversity 和 functioning 呈負相關的一個可能是，α diversity 和 β diversity 呈負相關。換句話說，若某種生態過程會使得群落間組成逐漸相似，但最大化單一棲地的多樣性，那麼就可能觀察到 β diversity 和 functioning 呈負相關。例如說在 local dispersal limitation 微弱的初級演替環境，頻繁的遷移雖然會讓各族群的組成逐漸相似 (β diversity↓)，也會增加各群落的族群數 (α diversity↑)，提升 metacommunity 的 functioning。</p>
-<p>按照這想法推測，隨著各群落的規模觸及環境負荷極限，可能出現heterogeneous selection，例如發生 lottery competition，各群落的優勢族群取決於隨機事件，增加了 β diversity。又或發生 homogeneous selection，例如先前遷入的族群造成 priority effects，限制了後續能於各區域生存的族群多樣性，使得 β diversity 下降。在沒有更多遷入族群的情況下，這兩種情況都使得 α diversity 下降，但後者降低 γ diversity，降低 metacommunity 的 functioning，於是 β diversity 又和 functioning 正相關了。</p>
-<h3 id="其他印象深刻的內容"><a href="#其他印象深刻的內容" class="headerlink" title="其他印象深刻的內容"></a>其他印象深刻的內容</h3><ul>
-<li><strong>何攖寧老師</strong>：雖然獨立於培養的方法可以普查環境微生物，但為了驗證假說、生產應用和探索功能等需求，仍有培養細菌的需求。而冰河溶解、大地震、工業汙染等突發事件造成的菌群變化，更強調現地即時指引樣本微生物培養的重要性，畢竟突發事件相當罕見，時間過了就沒辦法研究了。</li>
-<li><strong>邱名鍾博士</strong>：邱博士提到隨寄生蟲感染而上&#x2F;下調的宿主基因非常多，這些基因不僅反映了宿主受影響的生理功能和途徑，也反映了寄生蟲和宿主軍備競賽的過程。</li>
-<li><strong>林玉儒老師</strong>：林老師講了「鬼花飄香」的故事，研究人員從已滅絕的魏氏岳槿之植物標本取得核酸，再找出產生香味的關鍵基因，將這段基因插入酵母菌生產香味分子以重現魏氏岳槿的氣味（完整故事可見科學人報導）。</li>
-<li><strong>陳彥伯老師</strong>：「這項研究很感謝在行政院農委會任職的學妹協助，本來跟學妹約好要在台上 cue 她的，但今天學妹卻沒來。」</li>
-<li><strong>陳立賢老師</strong>：「我們以蔥根製作的面膜並不會有蔥油餅敷在臉上的油膩感。」</li>
-<li><strong>汪碧涵老師</strong>：「我們每次 reject，都往點數更高的期刊投。」</li>
-<li><strong>謝志豪老師</strong>：「這裡不解釋，若對network感興趣，可以去讀書。」</li>
-</ul>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>兩年前參加 MiTalk 時，碩班研究正好碰到瓶頸。當時聽了許多老師討論他們的求學經歷，卻仍然困惑自己是否適合做研究。於是，我期許自己能透過研討會增廣見聞，在跟人討論的過程中激勵自己。如今帶著一點結果再次參加 MiTalk，算是朝當時立下的目標稍稍前進一步了。</p>
-<p>我現在覺得不具備做好某件事的特質，不是放棄的理由。我很喜歡《原子習慣》提倡的概念，要成為怎樣的人取決於動機和行動，這實在是很 existentialism。確實，研究了未必有明確結果，報告後的回饋也不一定如預期，考到什麼學校也不保證能讀到畢業，當到計畫主持人或工廠老闆還是可能有多種麻煩要應對。</p>
-<p>然而，這些行動無論成敗都是定義自己的過程。當你為了瞭解 metagenomics，在 compiler 輸入 print(“Hello world”) 那刻，就成了生物資訊學家；當你為了解釋群落演替，在紙上畫了數個方格模擬動物遷徙的時候，就成了理論生態學家；當你開始反思自己的研究，為了某個癥結輾轉難眠，你也已經是個學者了。</p>
-<p>至於能在生物資訊、理論生態或是學者的路走去哪、走多遠或走出什麼道路，端看每次行動的抉擇。但我想在這個過程需要時間琢磨。因此，我現在對自己的期許是要有耐心，漸漸不再擔憂自己欠缺什麼條件，而是想辦法做到當下能做到的事情，剩下交給時間。</p>
-]]></content>
-      <categories>
-        <category>microbial ecology</category>
-        <category>microbiota</category>
-      </categories>
-      <tags>
-        <tag>career</tag>
-        <tag>communication</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜調整工作目錄的路徑</title>
-    <url>/nextflow-change-path-to-work-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
-<span id="more"></span>
-
-<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
-
-<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
-<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
-<blockquote>
-<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -1843,6 +1843,34 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>卡西尼號與行星保護</title>
+    <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>歷經20年的太空旅行，美國航太總署（NASA）的卡西尼號（Cassini）太空船今天將最後的訊號傳回地球後，高速衝撞土星，以分解蒸發的壯烈方式，結束13年的土星任務。</p>
+</blockquote>
+<p>卡西尼號是艘軌道探測船，任務結束後沒有能量脫離行星軌道，所以不能像飛掠探測器一樣（航海家 II）飛向深空。它會留在土星系統中，最終因為故障或其他緣故減速而失控墜入土星或其他衛星。</p>
+<p>然而土星的衛星中有幾個可能有生命存在（尤其是土衛六泰坦），所以主動讓卡西尼號墜入較無生命可能的土星中，以免滅菌不徹底的機體造成汙染。不過，這種壯烈的自殺已經不是第一次了，2003 年伽利略探測船也為保護木衛二歐羅巴而撞入木星濃厚的大氣層中。</p>
+<p>雖然這邊只提到墜毀階段，其實所有的太空任務都有防止生物汙染其他天體的措施，不過依照天體性質和任務類別可以分為五類。此處，我把重點聚焦在分類的依據和理由，而不是防範措施（詳細作法可以在厚厚的行星保護指導手冊中找到。）</p>
+<h2 id="第一類任務"><a href="#第一類任務" class="headerlink" title="第一類任務"></a>第一類任務</h2><p>第一類任務是飛掠、繞行或登陸月球、水星和多數小行星，這些天體沒有足夠的液態水維持生命，所以除了例行消毒外，探測船並不需特別處理。</p>
+<h2 id="第二類任務"><a href="#第二類任務" class="headerlink" title="第二類任務"></a>第二類任務</h2><p>第二類任務則涉及那些可能沒有生物，但是對於生命起源研究有重要參考價值的天體。例如：土衛六、金星、類木行星和彗星。</p>
+<p>2014年羅賽塔號登陸彗星就是第二類任務。那次任務檢測到了胺基酸、醇類等有機物，它們很可能透過彗星撞擊為早期地球帶來形成生命的必要分子。（這些有機物質可能是彗星經過星際塵埃時沾上，或是經過恆星附近起反應形成的。順道一提，首次在星際中發現胺基酸的是師大的管一政教授喔！）</p>
+<p>雖然金星現在因為失控的溫室效應已經成為高溫煉獄，但是在太陽還沒今天熾熱、溫室效應也沒失控前可能存在一段宜居的時候。另外金星大氣層中有個溫度合宜，且有硫化物補給的區間，若當初有生命誕生，也許能在此續命。相關任務有 2015 年 ESA 的金星快車（繞行任務）和先前蘇聯因大氣壓扁而早夭的登陸任務。</p>
+<p>土衛六和土星因為可能有液態水、有機物存在所以同屬二類，但是土衛六多了可棲息的表面以及大氣層中的有機反應，所以研究價值還好過土星。本次墜毀的卡西尼號曾在 2005 年釋放惠更斯探測器登陸土衛六，可惜登陸不久便失聯了，所幸有留下空降時和登陸當下的照片，大家可以找看看，我覺得看起像是乾涸的水庫……</p>
+<h2 id="第三類任務和第四類任務"><a href="#第三類任務和第四類任務" class="headerlink" title="第三類任務和第四類任務"></a>第三類任務和第四類任務</h2><p>第三類是火星和歐羅巴（木衛二）的「繞行」、「飛掠」任務，這兩天體是太陽系內最有可能找到地外生命證據（無論死活）的地方，執行第三類任務的太空船都要經過嚴密滅菌才行。</p>
+<p>火星過去可能有水流、磁場和大氣層，這些都是利於生命誕生維持的要素；即便是今日，生物也可能在岩石與冰層間的夾縫中生存。另一個誘人的證據是1984年找到的火星隕石 ALH84001，上頭有疑似細菌化石、生物代謝排遺。</p>
+<p>歐羅巴冰層下可能有液態水層，這些水層不僅和岩層接觸促進物質互動（而土衛六可能是隔絕水層），也能隔絕致命輻射保護生命體。</p>
+<p>由於這兩顆天體可居，即便沒有原生種，也擔心地球生物在上頭大肆繁殖影響後續監控，所以火星與歐羅巴的「登陸」升級為第四類任務。</p>
+<p>雖然我們猜測火星很可能有生物，可是1976年的海盜I&#x2F;II登陸任務卻沒有發現關鍵證據。因為第四類任務的預備很麻煩，所以為了往後探測任務方便，又把它分為三個子類，滅菌等級漸增：非適居區登陸（防止地球細菌汙染火星）、生命探測任務（防止地球細菌干擾實驗）、適居區登陸（防止雙向汙染）。</p>
+<h2 id="第五類任務"><a href="#第五類任務" class="headerlink" title="第五類任務"></a>第五類任務</h2><p>至於第五類則是所有回收太空船到地月系統的任務，涵蓋月球是因為它是將來重點開發區域，若受到地外生物汙染，登陸月球會升級到二三類任務，太空船多了一堆滅菌要求會讓開發變得十分不方便。前陣子 NASA 招募的行星保護官就是要專職這種任務的調查工作。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>最後提一提行星保護的規範。最早是寫在聯合國於 1967 年制定的《關於各國探索和利用包括月球和其他天體在內外層空間活動的原則條約》當中的第九條：<br>各締約國從事研究、探索外層空間（包括月球和其他天體）時，應避免使其遭受有害的污染，以及地球以外的物質，使地球環境發生不利的變化。<br>詳細指導方針則由國際科學理事會下轄的太空研究委員會負責負責。</p>
+<p>由於當時台灣還沒退出聯合國所以也簽了這條約，想看詳細內容可以去網路上查中文的手寫文本。雖然台灣至今仍沒有進行任何登陸任務，不過得知我們也曾籌畫整個宇宙開發的小小部分，仍有莫名的參與感。</p>
+]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>life in the universe</category>
+      </categories>
+  </entry>
+  <entry>
     <title>R/Rstudio console 的指令長度限制</title>
     <url>/r-console-upper-limit-on-the-string-length/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>TL:DR：輸入 R&#x2F;Rstudio console 的指令之容量上限為 4095 bytes。若超出上限，console 會忽略超出的部分，顯示 + 提醒使用者補完剩餘指令。</p>
@@ -1874,34 +1902,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <categories>
         <category>programming</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>卡西尼號與行星保護</title>
-    <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>歷經20年的太空旅行，美國航太總署（NASA）的卡西尼號（Cassini）太空船今天將最後的訊號傳回地球後，高速衝撞土星，以分解蒸發的壯烈方式，結束13年的土星任務。</p>
-</blockquote>
-<p>卡西尼號是艘軌道探測船，任務結束後沒有能量脫離行星軌道，所以不能像飛掠探測器一樣（航海家 II）飛向深空。它會留在土星系統中，最終因為故障或其他緣故減速而失控墜入土星或其他衛星。</p>
-<p>然而土星的衛星中有幾個可能有生命存在（尤其是土衛六泰坦），所以主動讓卡西尼號墜入較無生命可能的土星中，以免滅菌不徹底的機體造成汙染。不過，這種壯烈的自殺已經不是第一次了，2003 年伽利略探測船也為保護木衛二歐羅巴而撞入木星濃厚的大氣層中。</p>
-<p>雖然這邊只提到墜毀階段，其實所有的太空任務都有防止生物汙染其他天體的措施，不過依照天體性質和任務類別可以分為五類。此處，我把重點聚焦在分類的依據和理由，而不是防範措施（詳細作法可以在厚厚的行星保護指導手冊中找到。）</p>
-<h2 id="第一類任務"><a href="#第一類任務" class="headerlink" title="第一類任務"></a>第一類任務</h2><p>第一類任務是飛掠、繞行或登陸月球、水星和多數小行星，這些天體沒有足夠的液態水維持生命，所以除了例行消毒外，探測船並不需特別處理。</p>
-<h2 id="第二類任務"><a href="#第二類任務" class="headerlink" title="第二類任務"></a>第二類任務</h2><p>第二類任務則涉及那些可能沒有生物，但是對於生命起源研究有重要參考價值的天體。例如：土衛六、金星、類木行星和彗星。</p>
-<p>2014年羅賽塔號登陸彗星就是第二類任務。那次任務檢測到了胺基酸、醇類等有機物，它們很可能透過彗星撞擊為早期地球帶來形成生命的必要分子。（這些有機物質可能是彗星經過星際塵埃時沾上，或是經過恆星附近起反應形成的。順道一提，首次在星際中發現胺基酸的是師大的管一政教授喔！）</p>
-<p>雖然金星現在因為失控的溫室效應已經成為高溫煉獄，但是在太陽還沒今天熾熱、溫室效應也沒失控前可能存在一段宜居的時候。另外金星大氣層中有個溫度合宜，且有硫化物補給的區間，若當初有生命誕生，也許能在此續命。相關任務有 2015 年 ESA 的金星快車（繞行任務）和先前蘇聯因大氣壓扁而早夭的登陸任務。</p>
-<p>土衛六和土星因為可能有液態水、有機物存在所以同屬二類，但是土衛六多了可棲息的表面以及大氣層中的有機反應，所以研究價值還好過土星。本次墜毀的卡西尼號曾在 2005 年釋放惠更斯探測器登陸土衛六，可惜登陸不久便失聯了，所幸有留下空降時和登陸當下的照片，大家可以找看看，我覺得看起像是乾涸的水庫……</p>
-<h2 id="第三類任務和第四類任務"><a href="#第三類任務和第四類任務" class="headerlink" title="第三類任務和第四類任務"></a>第三類任務和第四類任務</h2><p>第三類是火星和歐羅巴（木衛二）的「繞行」、「飛掠」任務，這兩天體是太陽系內最有可能找到地外生命證據（無論死活）的地方，執行第三類任務的太空船都要經過嚴密滅菌才行。</p>
-<p>火星過去可能有水流、磁場和大氣層，這些都是利於生命誕生維持的要素；即便是今日，生物也可能在岩石與冰層間的夾縫中生存。另一個誘人的證據是1984年找到的火星隕石 ALH84001，上頭有疑似細菌化石、生物代謝排遺。</p>
-<p>歐羅巴冰層下可能有液態水層，這些水層不僅和岩層接觸促進物質互動（而土衛六可能是隔絕水層），也能隔絕致命輻射保護生命體。</p>
-<p>由於這兩顆天體可居，即便沒有原生種，也擔心地球生物在上頭大肆繁殖影響後續監控，所以火星與歐羅巴的「登陸」升級為第四類任務。</p>
-<p>雖然我們猜測火星很可能有生物，可是1976年的海盜I&#x2F;II登陸任務卻沒有發現關鍵證據。因為第四類任務的預備很麻煩，所以為了往後探測任務方便，又把它分為三個子類，滅菌等級漸增：非適居區登陸（防止地球細菌汙染火星）、生命探測任務（防止地球細菌干擾實驗）、適居區登陸（防止雙向汙染）。</p>
-<h2 id="第五類任務"><a href="#第五類任務" class="headerlink" title="第五類任務"></a>第五類任務</h2><p>至於第五類則是所有回收太空船到地月系統的任務，涵蓋月球是因為它是將來重點開發區域，若受到地外生物汙染，登陸月球會升級到二三類任務，太空船多了一堆滅菌要求會讓開發變得十分不方便。前陣子 NASA 招募的行星保護官就是要專職這種任務的調查工作。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>最後提一提行星保護的規範。最早是寫在聯合國於 1967 年制定的《關於各國探索和利用包括月球和其他天體在內外層空間活動的原則條約》當中的第九條：<br>各締約國從事研究、探索外層空間（包括月球和其他天體）時，應避免使其遭受有害的污染，以及地球以外的物質，使地球環境發生不利的變化。<br>詳細指導方針則由國際科學理事會下轄的太空研究委員會負責負責。</p>
-<p>由於當時台灣還沒退出聯合國所以也簽了這條約，想看詳細內容可以去網路上查中文的手寫文本。雖然台灣至今仍沒有進行任何登陸任務，不過得知我們也曾籌畫整個宇宙開發的小小部分，仍有莫名的參與感。</p>
-]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>life in the universe</category>
       </categories>
   </entry>
   <entry>
@@ -2160,6 +2160,27 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>科學溝通能力的重要性</title>
+    <url>/the-importance-of-science-communication/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
+<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
+<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
+<span id="more"></span>
+
+<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
+<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
+<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
+<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
+]]></content>
+      <categories>
+        <category>academic</category>
+        <category>mindset</category>
+      </categories>
+      <tags>
+        <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
     <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
@@ -2212,27 +2233,6 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
       <tags>
         <tag>lua</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科學溝通能力的重要性</title>
-    <url>/the-importance-of-science-communication/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
-<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
-<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
-<span id="more"></span>
-
-<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
-<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
-<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
-<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
-]]></content>
-      <categories>
-        <category>academic</category>
-        <category>mindset</category>
-      </categories>
-      <tags>
-        <tag>communication</tag>
       </tags>
   </entry>
   <entry>
