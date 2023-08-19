@@ -131,31 +131,6 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜再創世紀</title>
-    <url>/church-2014-regenesis/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
-<span id="more"></span>
-
-<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
-<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
-<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
-<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
-<ul>
-<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
-<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
-<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
-</ul>
-<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>讀後感｜我們就是火星人：尋找宇宙中的地外生命</title>
     <url>/bignami-we-are-the-martians/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>生命和宇宙的聯繫是《我們就是火星人》的主旋律。大霹靂後的原初核合成（Big Bang nucleosynthesis）雖然僅持續短暫時間，卻製造了宇宙含量最豐富的元素氫、氦。然而隨著空間持續膨脹，溫度下降到無法維持核融合反應，導致原初核合成中止。</p>
@@ -181,54 +156,28 @@
       </tags>
   </entry>
   <entry>
-    <title>寫論文的糟糕和美好經驗</title>
-    <url>/good-and-bad-experiences-in-journal-article-writing/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
-<p>所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。</p>
-<p>這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。</p>
-<p>我意識到阻礙我進展的是對於完美論文的期待，我期待論文能夠達到讓我感到愉悅和成就感的標準。</p>
-<p>然而，人們總是無法在初稿時達到滿意的程度吧？而且論文需要於修改中逐漸精緻，沒辦法一蹴可幾，我的期待反過來成為我的壓力。</p>
-<p>為了舒緩這種壓力和焦慮，我轉而把精力投注在文獻回顧或改進研究內容。雖然多做準備能暫時減緩我的焦慮和踏實感，但這只是將自己的壓力和負擔延後，之後將面對更多的時間、資源和要求的壓力。</p>
+    <title>讀後感｜再創世紀</title>
+    <url>/church-2014-regenesis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
 <span id="more"></span>
 
-<h2 id="「發表論文的初衷是感謝」"><a href="#「發表論文的初衷是感謝」" class="headerlink" title="「發表論文的初衷是感謝」"></a>「發表論文的初衷是感謝」</h2><p>而我對論文的美好經驗則來自研究所的老師。我的指導教授從前曾問我：「你認為我們為什麼要投稿論文？」</p>
-<p>從功利的角度講，Publish or Perish。發表論文是在學術界生存的根本，也是一個人能力的證據，舉凡畢業、獎學金、申請學校、公司求職、學校教職等皆可能需要論文作為能力的佐證。</p>
-<p>然而，我的指導教授認為這些都只是其次，發表論文的初衷是感謝。</p>
-<p>為什麼感謝？做研究總是關注著某些議題，為了解決問題，我們參考了這麼多文獻，我們正是對於前人的文獻表達感謝。</p>
-<p>表達感謝的途徑有二，首先是引用這些文獻，彰明他們的貢獻；其次是基於這些文獻發展出我們的想法，促進對議題的理解，讓這些想法得以演化和繁衍下去。</p>
-<p>科學是尋求解釋的活動，而我們對世界的認知並非一日造就而成的。無論是科學革命還是漸進式的科學史觀，當今的知識體系都是多人長年活動累積的結果，一項研究的鑄成往往有其思想根基和參考依據，無論是要贊同、反駁還是引發想法，都會踏過前人的足跡。</p>
-<p>經過長期演變，論文已是紀錄和傳播科學活動成果的最有效和公認的媒介，研究和發表其實就是：我們感到疑惑，我們開始研究，我們參考了誰的想法和觀念，我們想到了一些點子和把持一些觀點。</p>
-<p>我們想要提供一些新的解釋，我們感謝前人對於我們思想和研究的幫助，我們回饋學界這些觀念，用一種經過長期演變且公認最有效率的媒介，論文。</p>
-<p>以感謝的角度來看待論文發表很大程度地舒緩了寫論文的恐懼和壓力，即使論文有那些功利價值，但我的指導教授還是提醒了我研究和發表理想和溫暖的一面。</p>
-<h2 id="「一則文獻既不是最重要的也不是最不重要的」"><a href="#「一則文獻既不是最重要的也不是最不重要的」" class="headerlink" title="「一則文獻既不是最重要的也不是最不重要的」"></a>「一則文獻既不是最重要的也不是最不重要的」</h2><p>而對論文另一部份美好經驗則來自論文寫作課的老師。</p>
-<p>有別於我的指導教授，寫作課老師從實用角度分析論文的寫作與發表，將論文寫作描述得很像 youtube 上頭 8 分鐘的 DIY 影片，好像我們在某個閒暇無事的下午，點開影片照著做就可以完成，不是什麼無法做到的事。</p>
-<p>總結他的課程，他強調論文寫作縱使有那些功利價值，也不需要感到壓力，論文發表會被 reject 沒錯，但再換家推銷就好。</p>
-<p>換句話說，寫作課老師讓我感受到，即使沒有達到最完美的狀況，論文還是有價值；即使還沒有準備好，也能開始動筆；即使能力還不夠，進展中就會有所成長；即使被批判，那也是很自然，因為這都是科學過程的一部分。</p>
-<p>一則文獻既不是最重要的也不是最不重要的，科學重視的是合理而非真理，文獻呈現的是探索的過程，我們沒辦法在一則文獻中完全佐證我們的主張或對世界的看法。</p>
-<p>錯誤與正確都是研究累積後，後世對我們的評價而已，所以不用太擔心文獻被批判等等，這本來就是科學新陳代謝的一環。</p>
-<h2 id="正向寫作經驗的關鍵"><a href="#正向寫作經驗的關鍵" class="headerlink" title="正向寫作經驗的關鍵"></a>正向寫作經驗的關鍵</h2><ul>
-<li><strong>寫作是 routine</strong>：寫作跟運動很像，寫作的愉悅需要一點投資，最重要的投資就是起步的意願，隨後是堅持的決心。寫作是 routine，而非儀式行為。是以，治療寫作不快或抑鬱的方法跟控制慢性病一樣，每天吃藥（寫作）。</li>
-<li><strong>參與感</strong>：讓寫作交流可以提升寫作的回饋感，因為寫作終究是科學交流的一部份。透過研討會、一對一討論、編修等途徑，可以從中得到寫作靈感而疏通寫作瓶頸，也可以從交流中獲得參與感和社群歸屬，最終得到「意義」</li>
-<li><strong>正面看待評論</strong>：看待拒稿和批評的認知轉換有助於降低寫作的恐懼，投稿寫作就跟賣東西一樣，一定有人買，只是看誰會買和賣什麼價碼而已。論文跟基因不一樣，別人罵你先天特徵是沒機會改變，但別人批評論文內容有改善的機會。</li>
-<li><strong>分享的心</strong>：如果真心喜歡自己的研究，那寫作就是分享自己熱情和喜好的管道。若有類似的經驗便能體會為什麼用分享看待寫作可以增加正向寫作經驗。</li>
+<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
+<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
+<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
+<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
+<ul>
+<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
+<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
+<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
 </ul>
-<h2 id="當然還是有糟糕的經驗"><a href="#當然還是有糟糕的經驗" class="headerlink" title="當然還是有糟糕的經驗"></a>當然還是有糟糕的經驗</h2><p>儘管羅列了一堆美好經驗和建立正面想法的「要點」，寫論文還是有坐困愁城和自我質疑的時候，像是指示牴觸價值觀、結果不明又不想自欺欺人、截止日到但品質不滿意等等。</p>
-<p>舉我的例子來說，我不太習慣被 Paul Nurse 稱之為「修正主義 (revisionist)」的科學敘事 (Nurse. (2016). Cell, 165(6), 1301-1306.)。就我理解，這是指論文敘事隱藏了科研的意外與不可控，調整文章內容以說個毫無破綻的好故事，而不是說個貼近事實的發現歷程。</p>
-<p>最容易接觸這類修正主義的途徑可能是台灣的理科教科書。從歐幾里得、牛頓、孟德爾、波爾、拉瓦節，課本呈現的是生硬且不直觀，但和諧線性的科學史觀。理論的發展與邏輯的推演高度相符，彷彿有了前提、假設和足夠的測量，理論即順水推舟浮現，科學史跟課本都能一併翻向的新頁。</p>
-<p>我想，為了溝通的效率，精簡內容和梳理邏輯是撰寫論文的必要過程。然而，當論文呈現與事實迥異的發現軌跡，後人要追溯某項理論的沿革時，只能走在一條虛構的途徑上，而這條途徑很可能只在想像中行得通。</p>
-<p>等到開始寫論文，我也希望自己能夠避免這種狀況，想盡可能讓論文的敘事貼近發現的過程，保留激發研究點子的關鍵因素，討論理論與結果衝突的理由與和解方式，而不是為了結果而調整敘述過程的方向。</p>
-<p>雖然只是一點點，但我也想要為自己認同的理念和未來做點事。不過，我後來才體會到，論文寫作還是有協商的因素存在，與合作者的協調、與計畫主持人的溝通、與編輯和審閱者的答辯等等。</p>
-<p>我想這些合作與協商是必要的，只是折磨之處在於，若討論不是基於事實與道理，而是訴諸權威或群眾等無關論文內容的事情，那麼我有點難克服下筆時的抗拒感。</p>
-<h2 id="但我還是想記住好的"><a href="#但我還是想記住好的" class="headerlink" title="但我還是想記住好的"></a>但我還是想記住好的</h2><p>儘管如此，我其實是喜好寫作表達想法的，我覺得將自己的主張和論證陳述清楚，嘗試去說服別人的過程仍值得投入。</p>
-<p>畢竟寫論文也是一種發聲管道，若渴望能依照這途徑去實踐或改變什麼，那是否要做下去也非取決於經驗的好壞，而是渴望的程度。</p>
-<p>既然如此，傾聽內心裡較良善的聲音讓自己有動力做下去，我覺得會比被糟糕回憶困住半途而廢還來得有機會幫助自己達到目標。</p>
-]]></content>
+<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
-        <category>academic</category>
-        <category>mindset</category>
+        <category>astrobiology</category>
+        <category>what is life</category>
       </categories>
       <tags>
-        <tag>writing</tag>
+        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -333,6 +282,57 @@
         <category>life</category>
         <category>reading</category>
       </categories>
+  </entry>
+  <entry>
+    <title>寫論文的糟糕和美好經驗</title>
+    <url>/good-and-bad-experiences-in-journal-article-writing/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
+<p>所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。</p>
+<p>這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。</p>
+<p>我意識到阻礙我進展的是對於完美論文的期待，我期待論文能夠達到讓我感到愉悅和成就感的標準。</p>
+<p>然而，人們總是無法在初稿時達到滿意的程度吧？而且論文需要於修改中逐漸精緻，沒辦法一蹴可幾，我的期待反過來成為我的壓力。</p>
+<p>為了舒緩這種壓力和焦慮，我轉而把精力投注在文獻回顧或改進研究內容。雖然多做準備能暫時減緩我的焦慮和踏實感，但這只是將自己的壓力和負擔延後，之後將面對更多的時間、資源和要求的壓力。</p>
+<span id="more"></span>
+
+<h2 id="「發表論文的初衷是感謝」"><a href="#「發表論文的初衷是感謝」" class="headerlink" title="「發表論文的初衷是感謝」"></a>「發表論文的初衷是感謝」</h2><p>而我對論文的美好經驗則來自研究所的老師。我的指導教授從前曾問我：「你認為我們為什麼要投稿論文？」</p>
+<p>從功利的角度講，Publish or Perish。發表論文是在學術界生存的根本，也是一個人能力的證據，舉凡畢業、獎學金、申請學校、公司求職、學校教職等皆可能需要論文作為能力的佐證。</p>
+<p>然而，我的指導教授認為這些都只是其次，發表論文的初衷是感謝。</p>
+<p>為什麼感謝？做研究總是關注著某些議題，為了解決問題，我們參考了這麼多文獻，我們正是對於前人的文獻表達感謝。</p>
+<p>表達感謝的途徑有二，首先是引用這些文獻，彰明他們的貢獻；其次是基於這些文獻發展出我們的想法，促進對議題的理解，讓這些想法得以演化和繁衍下去。</p>
+<p>科學是尋求解釋的活動，而我們對世界的認知並非一日造就而成的。無論是科學革命還是漸進式的科學史觀，當今的知識體系都是多人長年活動累積的結果，一項研究的鑄成往往有其思想根基和參考依據，無論是要贊同、反駁還是引發想法，都會踏過前人的足跡。</p>
+<p>經過長期演變，論文已是紀錄和傳播科學活動成果的最有效和公認的媒介，研究和發表其實就是：我們感到疑惑，我們開始研究，我們參考了誰的想法和觀念，我們想到了一些點子和把持一些觀點。</p>
+<p>我們想要提供一些新的解釋，我們感謝前人對於我們思想和研究的幫助，我們回饋學界這些觀念，用一種經過長期演變且公認最有效率的媒介，論文。</p>
+<p>以感謝的角度來看待論文發表很大程度地舒緩了寫論文的恐懼和壓力，即使論文有那些功利價值，但我的指導教授還是提醒了我研究和發表理想和溫暖的一面。</p>
+<h2 id="「一則文獻既不是最重要的也不是最不重要的」"><a href="#「一則文獻既不是最重要的也不是最不重要的」" class="headerlink" title="「一則文獻既不是最重要的也不是最不重要的」"></a>「一則文獻既不是最重要的也不是最不重要的」</h2><p>而對論文另一部份美好經驗則來自論文寫作課的老師。</p>
+<p>有別於我的指導教授，寫作課老師從實用角度分析論文的寫作與發表，將論文寫作描述得很像 youtube 上頭 8 分鐘的 DIY 影片，好像我們在某個閒暇無事的下午，點開影片照著做就可以完成，不是什麼無法做到的事。</p>
+<p>總結他的課程，他強調論文寫作縱使有那些功利價值，也不需要感到壓力，論文發表會被 reject 沒錯，但再換家推銷就好。</p>
+<p>換句話說，寫作課老師讓我感受到，即使沒有達到最完美的狀況，論文還是有價值；即使還沒有準備好，也能開始動筆；即使能力還不夠，進展中就會有所成長；即使被批判，那也是很自然，因為這都是科學過程的一部分。</p>
+<p>一則文獻既不是最重要的也不是最不重要的，科學重視的是合理而非真理，文獻呈現的是探索的過程，我們沒辦法在一則文獻中完全佐證我們的主張或對世界的看法。</p>
+<p>錯誤與正確都是研究累積後，後世對我們的評價而已，所以不用太擔心文獻被批判等等，這本來就是科學新陳代謝的一環。</p>
+<h2 id="正向寫作經驗的關鍵"><a href="#正向寫作經驗的關鍵" class="headerlink" title="正向寫作經驗的關鍵"></a>正向寫作經驗的關鍵</h2><ul>
+<li><strong>寫作是 routine</strong>：寫作跟運動很像，寫作的愉悅需要一點投資，最重要的投資就是起步的意願，隨後是堅持的決心。寫作是 routine，而非儀式行為。是以，治療寫作不快或抑鬱的方法跟控制慢性病一樣，每天吃藥（寫作）。</li>
+<li><strong>參與感</strong>：讓寫作交流可以提升寫作的回饋感，因為寫作終究是科學交流的一部份。透過研討會、一對一討論、編修等途徑，可以從中得到寫作靈感而疏通寫作瓶頸，也可以從交流中獲得參與感和社群歸屬，最終得到「意義」</li>
+<li><strong>正面看待評論</strong>：看待拒稿和批評的認知轉換有助於降低寫作的恐懼，投稿寫作就跟賣東西一樣，一定有人買，只是看誰會買和賣什麼價碼而已。論文跟基因不一樣，別人罵你先天特徵是沒機會改變，但別人批評論文內容有改善的機會。</li>
+<li><strong>分享的心</strong>：如果真心喜歡自己的研究，那寫作就是分享自己熱情和喜好的管道。若有類似的經驗便能體會為什麼用分享看待寫作可以增加正向寫作經驗。</li>
+</ul>
+<h2 id="當然還是有糟糕的經驗"><a href="#當然還是有糟糕的經驗" class="headerlink" title="當然還是有糟糕的經驗"></a>當然還是有糟糕的經驗</h2><p>儘管羅列了一堆美好經驗和建立正面想法的「要點」，寫論文還是有坐困愁城和自我質疑的時候，像是指示牴觸價值觀、結果不明又不想自欺欺人、截止日到但品質不滿意等等。</p>
+<p>舉我的例子來說，我不太習慣被 Paul Nurse 稱之為「修正主義 (revisionist)」的科學敘事 (Nurse. (2016). Cell, 165(6), 1301-1306.)。就我理解，這是指論文敘事隱藏了科研的意外與不可控，調整文章內容以說個毫無破綻的好故事，而不是說個貼近事實的發現歷程。</p>
+<p>最容易接觸這類修正主義的途徑可能是台灣的理科教科書。從歐幾里得、牛頓、孟德爾、波爾、拉瓦節，課本呈現的是生硬且不直觀，但和諧線性的科學史觀。理論的發展與邏輯的推演高度相符，彷彿有了前提、假設和足夠的測量，理論即順水推舟浮現，科學史跟課本都能一併翻向的新頁。</p>
+<p>我想，為了溝通的效率，精簡內容和梳理邏輯是撰寫論文的必要過程。然而，當論文呈現與事實迥異的發現軌跡，後人要追溯某項理論的沿革時，只能走在一條虛構的途徑上，而這條途徑很可能只在想像中行得通。</p>
+<p>等到開始寫論文，我也希望自己能夠避免這種狀況，想盡可能讓論文的敘事貼近發現的過程，保留激發研究點子的關鍵因素，討論理論與結果衝突的理由與和解方式，而不是為了結果而調整敘述過程的方向。</p>
+<p>雖然只是一點點，但我也想要為自己認同的理念和未來做點事。不過，我後來才體會到，論文寫作還是有協商的因素存在，與合作者的協調、與計畫主持人的溝通、與編輯和審閱者的答辯等等。</p>
+<p>我想這些合作與協商是必要的，只是折磨之處在於，若討論不是基於事實與道理，而是訴諸權威或群眾等無關論文內容的事情，那麼我有點難克服下筆時的抗拒感。</p>
+<h2 id="但我還是想記住好的"><a href="#但我還是想記住好的" class="headerlink" title="但我還是想記住好的"></a>但我還是想記住好的</h2><p>儘管如此，我其實是喜好寫作表達想法的，我覺得將自己的主張和論證陳述清楚，嘗試去說服別人的過程仍值得投入。</p>
+<p>畢竟寫論文也是一種發聲管道，若渴望能依照這途徑去實踐或改變什麼，那是否要做下去也非取決於經驗的好壞，而是渴望的程度。</p>
+<p>既然如此，傾聽內心裡較良善的聲音讓自己有動力做下去，我覺得會比被糟糕回憶困住半途而廢還來得有機會幫助自己達到目標。</p>
+]]></content>
+      <categories>
+        <category>academic</category>
+        <category>mindset</category>
+      </categories>
+      <tags>
+        <tag>writing</tag>
+      </tags>
   </entry>
   <entry>
     <title>「天文」生物學：數量的緣故</title>
@@ -517,6 +517,44 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 筆記｜1. Two Sum</title>
+    <url>/leetcode-1-two-sum/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
+</blockquote>
+<p>求數列內，和為目標值的兩數之座標</p>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [3,2,4], target &#x3D; 6<br>Output: [1,2]</p>
+</blockquote>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 104</code>：數列長度介於 2 至 104 之間</li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code>：數列各項可能有負值</li>
+<li><code>-109 &lt;= target &lt;= 109</code>：目標值可能為負值</li>
+<li>Only one valid answer exists.：僅有一組解</li>
+</ul>
+<span id="more"></span>
+
+<p><strong>知識點</strong><br>hash table</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題最直觀的解法是將數列各項兩兩相加，最遲到比對所有組合後才找到題解。然而，目標值在這算法裡僅作為判斷結果的依據，沒有充分利用其提供的資訊。</p>
+<p>為了充分利用目標值，可以各項與目標值之差為 keys，各項座標為 values，建立 hash table 存儲讀過的數字。</p>
+<p>若現在的數字為先前出現過的數字與目標值之差，則回傳這兩數字的座標即為題解；若否，則新增現在的數字與目標值之差到 hash table 內。由於題目設計保證有唯一解，所以最遲遍歷整個數列即可找到題解。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        record = &#123;&#125;  </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            diff = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> record.keys() :</span><br><span class="line">                <span class="keyword">return</span>([record[nums[i]], i])</span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                record[diff] = i</span><br></pre></td></tr></table></figure>
+<ul>
+<li>此以 python dict 實踐 hash table 的功能。</li>
+<li><code>record.keys()</code> 可寫成 <code>record</code>，但標出來比較清楚</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>讀後感｜戲說統計</title>
     <url>/lee-2017-introduction-to-statistics-and-quantitative-analysis/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>知乎上有段軼聞可以很好地形容我讀《戲說統計》的心境：</p>
@@ -604,44 +642,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜1. Two Sum</title>
-    <url>/leetcode-1-two-sum/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
-</blockquote>
-<p>求數列內，和為目標值的兩數之座標</p>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [3,2,4], target &#x3D; 6<br>Output: [1,2]</p>
-</blockquote>
-<p><strong>限制</strong></p>
-<ul>
-<li><code>2 &lt;= nums.length &lt;= 104</code>：數列長度介於 2 至 104 之間</li>
-<li><code>-109 &lt;= nums[i] &lt;= 109</code>：數列各項可能有負值</li>
-<li><code>-109 &lt;= target &lt;= 109</code>：目標值可能為負值</li>
-<li>Only one valid answer exists.：僅有一組解</li>
-</ul>
-<span id="more"></span>
-
-<p><strong>知識點</strong><br>hash table</p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題最直觀的解法是將數列各項兩兩相加，最遲到比對所有組合後才找到題解。然而，目標值在這算法裡僅作為判斷結果的依據，沒有充分利用其提供的資訊。</p>
-<p>為了充分利用目標值，可以各項與目標值之差為 keys，各項座標為 values，建立 hash table 存儲讀過的數字。</p>
-<p>若現在的數字為先前出現過的數字與目標值之差，則回傳這兩數字的座標即為題解；若否，則新增現在的數字與目標值之差到 hash table 內。由於題目設計保證有唯一解，所以最遲遍歷整個數列即可找到題解。 </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        record = &#123;&#125;  </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            diff = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> record.keys() :</span><br><span class="line">                <span class="keyword">return</span>([record[nums[i]], i])</span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                record[diff] = i</span><br></pre></td></tr></table></figure>
-<ul>
-<li>此以 python dict 實踐 hash table 的功能。</li>
-<li><code>record.keys()</code> 可寫成 <code>record</code>，但標出來比較清楚</li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>array</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 筆記｜1480. Running Sum of 1d Array</title>
     <url>/leetcode-1480-running-sum-of-1d-array/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>計算數列逐項的累積和 (runningSum)</p>
@@ -662,46 +662,6 @@
 <p><strong>知識點</strong><br>prefix sum &amp; array  </p>
 <h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題應該算是 for loop 練習，我覺得要留意 (1) indices out of range 以及 (2) len(nums) &#x3D;&#x3D; 1 的狀況。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">runningSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            nums[n] = nums[n - <span class="number">1</span>] + nums[n]</span><br><span class="line">        <span class="keyword">return</span>(nums)</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>programming</category>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>array</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 筆記｜217. Contains Duplicate</title>
-    <url>/leetcode-217-contains-duplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
-</blockquote>
-<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
-<p>Example:</p>
-<blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
-<ul>
-<li>數字重複出現</li>
-<li>array 長度大於其中數字種類數</li>
-<li>若將 array 排序，則重複的數字比鄰出現</li>
-</ul>
-<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
-<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
-</li>
-<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
-</li>
-<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
-</li>
-</ul>
-]]></content>
       <categories>
         <category>programming</category>
         <category>leetcode</category>
@@ -744,6 +704,46 @@
 <h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="mid-的定義方式"><a href="#mid-的定義方式" class="headerlink" title="mid 的定義方式"></a><code>mid</code> 的定義方式</h3><p><code>mid</code> 亦可定義為 <code>(left + right)//2</code>，但聽同事討論，若兩數的數值極大，則有數值超出整數範圍的風險。以相減的方式撰寫則一定不會超出範圍。</p>
 <h3 id="判斷首尾交界處的方式"><a href="#判斷首尾交界處的方式" class="headerlink" title="判斷首尾交界處的方式"></a>判斷首尾交界處的方式</h3><p>有看過同事在比較時，不比對 <code>nums[right]</code>，而是比對 <code>nums[-1]</code>，有一樣的效果。</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>programming</category>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜217. Contains Duplicate</title>
+    <url>/leetcode-217-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<ul>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
+</ul>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>programming</category>
         <category>leetcode</category>
@@ -1543,35 +1543,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Nextflow｜資料是怎麼在 Process 間傳遞？</title>
-    <url>/nextflow-how-data-is-passed-between-processes-through-channels/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda environment）。</p>
-<p>Channel 則媒介了 process 間的資料交流，若不透過 channels 串接，process 間的檔案或變項無法共享。舉凡字串、數值、檔案路徑乃至標準輸出等，皆有對應的 qualifier 讓 nextflow 知道怎麼處理得自於 channel 的各式資料。</p>
-<span id="more"></span>
-<p>在以下案例，我在 process A 定義了兩條字串，並透過不同途徑傳遞給 process B。</p>
-<p>首先，string 1 被寫入檔案 (<code>str.txt</code>)，再以 path qualifier 告訴 Nextflow，把檔案路徑用軟連結 (symbolic link) 掛到 process B 的工作目錄。至於 string 2 則被定義為變項 (strAsEnv, a bash variable)，再以 env qualifier 告訴 nextflow 把變項寫到 process A 工作目錄內的 <code>.command.env</code>。</p>
-<p>接著，分別以 strInFile 及 strAsEnv 命名由 process A 輸出 channel，傳遞給 process B 印出。</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 提供 process B 所需的字串</span></span><br><span class="line">process A &#123;</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        path <span class="string">&quot;str.txt&quot;</span>, <span class="attr">emit:</span> strInFile</span><br><span class="line">        env strAsEnv, <span class="attr">emit:</span> strAsEnv</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        echo &quot;string 1&quot; &gt; &quot;str.txt&quot;</span></span><br><span class="line"><span class="string">        strAsEnv=&quot;string 2&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 印出 process A 提供的字串</span></span><br><span class="line">process B &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        path strInFile</span><br><span class="line">        val strAsEnv </span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        echo &quot;\$(cat $&#123;strInFile&#125;) is retrieved from a file passed by a queue channel&quot;</span></span><br><span class="line"><span class="string">        echo &quot;$&#123;strAsEnv&#125; is retrieved from a environment variable passed by a value channel&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 執行 process A &amp; B</span></span><br><span class="line">workflow &#123;</span><br><span class="line">    A()</span><br><span class="line">    B(A.out.strInFile, A.out.strAsEnv).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run demoChannel.nf </span><br><span class="line">Launching `demoChannel.nf` [compassionate_shannon] - revision: 319cfe997a</span><br><span class="line">executor &gt;  <span class="built_in">local</span> (2)</span><br><span class="line">[f3/e5a365] process &gt; A [100%] 1 of 1 ✔</span><br><span class="line">[b0/f79f8e] process &gt; B [100%] 1 of 1 ✔</span><br><span class="line">string 1 is retrieved from a file passed by a queue channel</span><br><span class="line">string 2 is retrieved from a environment variable passed by a value channel</span><br></pre></td></tr></table></figure>
-<p>各 process 的工作目錄預設建立在執行路徑下的<code>work</code>，直接觀察工作目錄內的暫存檔有助於了解 path 與 env 兩種資料傳遞方式的差異<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="此處只列舉 process A 和 B 工作目錄內檔名或型別有別的檔案">1</span></a></sup>。</p>
-<p>在 process A 的工作目錄 ([f3&#x2F;e5a365]) 裡，除了輸出的 str.txt，還有 <code>.command.env</code>。Nextflow 在執行時會將所有用 env qualifier 標記的變項定義式（即　<code>var=value</code> 這種格式）寫入 <code>.command.env</code>，以利隨後可輸出到其它 process。（可查看 <code>.command.sh</code> 查看寫入變項定義式的程式碼）</p>
-<p>目前，只有 bash 變項才能透過 env qualifier 輸出，其它語言的變項只能透過某些方式存成檔案輸出（例如 R 的 RDS 檔）。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /work/f3/e5a365e3bb7b645cf4e13cf15eb235</span><br><span class="line">$ <span class="built_in">ls</span> -al</span><br><span class="line">-rw-r--r-- 1 user group   18 Jan  5 22:26 .command.env      <span class="comment"># environment variables of process A</span></span><br><span class="line">-rw-r--r-- 1 user group  146 Jan  5 22:26 .command.sh       <span class="comment"># commands to execute process A</span></span><br><span class="line">-rw-r--r-- 1 user group    9 Jan  5 22:26 str.txt           <span class="comment"># output of process A</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> .command.env</span><br><span class="line">strAsEnv=string 2</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> .command.sh　 <span class="comment"># nextflow 執行 process 的腳本，只擷取跟 `.command.env` 相關的部分</span></span><br><span class="line"><span class="comment"># capture process environment</span></span><br><span class="line"><span class="built_in">set</span> +u</span><br><span class="line"><span class="built_in">echo</span> strAsEnv=<span class="variable">$&#123;strAsEnv[@]&#125;</span> &gt; .command.env</span><br></pre></td></tr></table></figure>
-
-<p>而在 process B 的工作目錄可留意到 str.txt 的資料型別為 <code>l</code> (link)，檔案名稱也標示了來源。值得留意的是，如果使用 <code>cat</code> 或 <code>cp</code> 等指令通常不會有什麼問題，但如果用 <code>ls</code> 顯示檔案大小時，要注意預設顯示的是軟連結的大小，而非原檔的大小。相似的狀況也可能發生在使用 <code>find</code> 搜尋時，因為限制了搜索標的為檔案而意外地排除軟連結的情形。 </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/work/b0/f79f8e550a4e1af11e2b03af8b4aa4$ <span class="built_in">ls</span> -al</span><br><span class="line">lrw-r--r-- 1 user group   62 Jan  5 22:26 str.txt -&gt; /work/f3/e5a365e3bb7b645cf4e13cf15eb235/str.txt</span><br></pre></td></tr></table></figure>
-
-<p>綜上所述，要怎麼利用 channel 傳遞資料端視資料型別而異。無論想傳遞表格、文檔還是變項，都可以將其寫入檔案，再以 path qualifier 讓 nextflow 依據檔案路徑在下游 process 的工作目錄建立軟連結。若想傳遞的是 bash 變項，那還可以使用 env qualifier 將變項定義式記錄在當前 process 的工作目錄供後續取用。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">此處只列舉 process A 和 B 工作目錄內檔名或型別有別的檔案<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div></p>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
     <url>/nextflow-escape-characters/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
@@ -1626,6 +1597,35 @@ echo &quot;\$title \n $PWD&quot;
 <li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
 <li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
 </ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜資料是怎麼在 Process 間傳遞？</title>
+    <url>/nextflow-how-data-is-passed-between-processes-through-channels/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda environment）。</p>
+<p>Channel 則媒介了 process 間的資料交流，若不透過 channels 串接，process 間的檔案或變項無法共享。舉凡字串、數值、檔案路徑乃至標準輸出等，皆有對應的 qualifier 讓 nextflow 知道怎麼處理得自於 channel 的各式資料。</p>
+<span id="more"></span>
+<p>在以下案例，我在 process A 定義了兩條字串，並透過不同途徑傳遞給 process B。</p>
+<p>首先，string 1 被寫入檔案 (<code>str.txt</code>)，再以 path qualifier 告訴 Nextflow，把檔案路徑用軟連結 (symbolic link) 掛到 process B 的工作目錄。至於 string 2 則被定義為變項 (strAsEnv, a bash variable)，再以 env qualifier 告訴 nextflow 把變項寫到 process A 工作目錄內的 <code>.command.env</code>。</p>
+<p>接著，分別以 strInFile 及 strAsEnv 命名由 process A 輸出 channel，傳遞給 process B 印出。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 提供 process B 所需的字串</span></span><br><span class="line">process A &#123;</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        path <span class="string">&quot;str.txt&quot;</span>, <span class="attr">emit:</span> strInFile</span><br><span class="line">        env strAsEnv, <span class="attr">emit:</span> strAsEnv</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        echo &quot;string 1&quot; &gt; &quot;str.txt&quot;</span></span><br><span class="line"><span class="string">        strAsEnv=&quot;string 2&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 印出 process A 提供的字串</span></span><br><span class="line">process B &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        path strInFile</span><br><span class="line">        val strAsEnv </span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        echo &quot;\$(cat $&#123;strInFile&#125;) is retrieved from a file passed by a queue channel&quot;</span></span><br><span class="line"><span class="string">        echo &quot;$&#123;strAsEnv&#125; is retrieved from a environment variable passed by a value channel&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 執行 process A &amp; B</span></span><br><span class="line">workflow &#123;</span><br><span class="line">    A()</span><br><span class="line">    B(A.out.strInFile, A.out.strAsEnv).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run demoChannel.nf </span><br><span class="line">Launching `demoChannel.nf` [compassionate_shannon] - revision: 319cfe997a</span><br><span class="line">executor &gt;  <span class="built_in">local</span> (2)</span><br><span class="line">[f3/e5a365] process &gt; A [100%] 1 of 1 ✔</span><br><span class="line">[b0/f79f8e] process &gt; B [100%] 1 of 1 ✔</span><br><span class="line">string 1 is retrieved from a file passed by a queue channel</span><br><span class="line">string 2 is retrieved from a environment variable passed by a value channel</span><br></pre></td></tr></table></figure>
+<p>各 process 的工作目錄預設建立在執行路徑下的<code>work</code>，直接觀察工作目錄內的暫存檔有助於了解 path 與 env 兩種資料傳遞方式的差異<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="此處只列舉 process A 和 B 工作目錄內檔名或型別有別的檔案">1</span></a></sup>。</p>
+<p>在 process A 的工作目錄 ([f3&#x2F;e5a365]) 裡，除了輸出的 str.txt，還有 <code>.command.env</code>。Nextflow 在執行時會將所有用 env qualifier 標記的變項定義式（即　<code>var=value</code> 這種格式）寫入 <code>.command.env</code>，以利隨後可輸出到其它 process。（可查看 <code>.command.sh</code> 查看寫入變項定義式的程式碼）</p>
+<p>目前，只有 bash 變項才能透過 env qualifier 輸出，其它語言的變項只能透過某些方式存成檔案輸出（例如 R 的 RDS 檔）。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /work/f3/e5a365e3bb7b645cf4e13cf15eb235</span><br><span class="line">$ <span class="built_in">ls</span> -al</span><br><span class="line">-rw-r--r-- 1 user group   18 Jan  5 22:26 .command.env      <span class="comment"># environment variables of process A</span></span><br><span class="line">-rw-r--r-- 1 user group  146 Jan  5 22:26 .command.sh       <span class="comment"># commands to execute process A</span></span><br><span class="line">-rw-r--r-- 1 user group    9 Jan  5 22:26 str.txt           <span class="comment"># output of process A</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> .command.env</span><br><span class="line">strAsEnv=string 2</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> .command.sh　 <span class="comment"># nextflow 執行 process 的腳本，只擷取跟 `.command.env` 相關的部分</span></span><br><span class="line"><span class="comment"># capture process environment</span></span><br><span class="line"><span class="built_in">set</span> +u</span><br><span class="line"><span class="built_in">echo</span> strAsEnv=<span class="variable">$&#123;strAsEnv[@]&#125;</span> &gt; .command.env</span><br></pre></td></tr></table></figure>
+
+<p>而在 process B 的工作目錄可留意到 str.txt 的資料型別為 <code>l</code> (link)，檔案名稱也標示了來源。值得留意的是，如果使用 <code>cat</code> 或 <code>cp</code> 等指令通常不會有什麼問題，但如果用 <code>ls</code> 顯示檔案大小時，要注意預設顯示的是軟連結的大小，而非原檔的大小。相似的狀況也可能發生在使用 <code>find</code> 搜尋時，因為限制了搜索標的為檔案而意外地排除軟連結的情形。 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/work/b0/f79f8e550a4e1af11e2b03af8b4aa4$ <span class="built_in">ls</span> -al</span><br><span class="line">lrw-r--r-- 1 user group   62 Jan  5 22:26 str.txt -&gt; /work/f3/e5a365e3bb7b645cf4e13cf15eb235/str.txt</span><br></pre></td></tr></table></figure>
+
+<p>綜上所述，要怎麼利用 channel 傳遞資料端視資料型別而異。無論想傳遞表格、文檔還是變項，都可以將其寫入檔案，再以 path qualifier 讓 nextflow 依據檔案路徑在下游 process 的工作目錄建立軟連結。若想傳遞的是 bash 變項，那還可以使用 env qualifier 將變項定義式記錄在當前 process 的工作目錄供後續取用。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">此處只列舉 process A 和 B 工作目錄內檔名或型別有別的檔案<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div></p>
 ]]></content>
       <categories>
         <category>bioinformatics</category>
@@ -2160,27 +2160,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>科學溝通能力的重要性</title>
-    <url>/the-importance-of-science-communication/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
-<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
-<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
-<span id="more"></span>
-
-<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
-<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
-<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
-<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
-]]></content>
-      <categories>
-        <category>academic</category>
-        <category>mindset</category>
-      </categories>
-      <tags>
-        <tag>communication</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
     <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
@@ -2233,6 +2212,27 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
       <tags>
         <tag>lua</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科學溝通能力的重要性</title>
+    <url>/the-importance-of-science-communication/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
+<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
+<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
+<span id="more"></span>
+
+<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
+<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
+<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
+<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
+]]></content>
+      <categories>
+        <category>academic</category>
+        <category>mindset</category>
+      </categories>
+      <tags>
+        <tag>communication</tag>
       </tags>
   </entry>
   <entry>
@@ -2626,5 +2626,19 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>communication</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
+    <url>/why-should-we-watch-bangdream-its-my-go/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
+<span id="more"></span>
+<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
+<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
+<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
+<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
+<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
+<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
+<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
+]]></content>
   </entry>
 </search>
