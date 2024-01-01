@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.css" integrity="sha256-6cQIC71/iBIYXFK+0RHAvwmjwWzkWd+r7v/BX3/vZDc=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda e">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Nextflow｜資料是怎麼在 Process 間傳遞？">
+<meta property="og:url" content="https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda e">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2023-01-05T12:58:15.000Z">
+<meta property="article:modified_time" content="2024-01-01T13:25:08.399Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="nextflow">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/","path":"nextflow-how-data-is-passed-between-processes-through-channels/","title":"Nextflow｜資料是怎麼在 Process 間傳遞？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Nextflow｜資料是怎麼在 Process 間傳遞？ | 5uperb0y's blog</title>
+  
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">14</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">19</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">45</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">Style over Substance</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/5uperb0y.fq@gmail.com" title="E-Mail → 5uperb0y.fq@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<a href="https://data.typeracer.com/pit/profile?user=5uperb0y&ref=badge" target="_top"><img src="https://data.typeracer.com/misc/badge?user=5uperb0y" border="0" alt="TypeRacer.com scorecard for user 5uperb0y"/></a>
+<br>
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-08-19T13:57:48+08:00">
+        08/19
+      </time>
+      <a href="/why-should-we-watch-bangdream-its-my-go/" title="「It's MyGo!!!!!」太好看了八😭">「It's MyGo!!!!!」太好看了八😭</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-07-22T23:35:58+08:00">
+        07/22
+      </time>
+      <a href="/tabletop-simulator-lua-vscode-development-environment-building/" title="在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境">在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-06-07T22:01:27+08:00">
+        06/07
+      </time>
+      <a href="/exploring-character-depictions-in-the-time-travelers-wife/" title="《時空旅人之妻》的人物描繪分析">《時空旅人之妻》的人物描繪分析</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-01-30T22:36:46+08:00">
+        01/30
+      </time>
+      <a href="/nextflow-change-path-to-work-directory/" title="Nextflow｜調整工作目錄的路徑">Nextflow｜調整工作目錄的路徑</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2023-01-22T20:54:05+08:00">
+        01/22
+      </time>
+      <a href="/modify-vimium-to-label-and-close-pop-up/" title="Vim｜嘗試修改 Vimium 來關閉網頁 pop-up">Vim｜嘗試修改 Vimium 來關閉網頁 pop-up</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-input-with-an-empty-channel/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-27</time>
+        <br>
+      Nextflow｜輸入 empty channel 會發生什麼事？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-the-mode-of-publishdir/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-14</time>
+        <br>
+      Nextflow｜利用 `publishDir` 匯出分析檔案
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-combine-data-into-a-tuple-with-key/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-09</time>
+        <br>
+      Nextflow｜如何為輸入的資料建立辨識碼
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-escape-characters/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-10</time>
+        <br>
+      Nextflow｜程式碼區塊的跳脫符號 (escape characters)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-run-in-background/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-30</time>
+        <br>
+      Nextflow｜背景執行 workflow 的方法
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="Style over Substance">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Nextflow｜資料是怎麼在 Process 間傳遞？ | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Nextflow｜資料是怎麼在 Process 間傳遞？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-01-05 20:58:15" itemprop="dateCreated datePublished" datetime="2023-01-05T20:58:15+08:00">2023-01-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-01-01 21:25:08" itemprop="dateModified" datetime="2024-01-01T21:25:08+08:00">2024-01-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/nextflow-how-data-is-passed-between-processes-through-channels/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nextflow-how-data-is-passed-between-processes-through-channels/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>966</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda environment）。</p>
+<p>Channel 則媒介了 process 間的資料交流，若不透過 channels 串接，process 間的檔案或變項無法共享。舉凡字串、數值、檔案路徑乃至標準輸出等，皆有對應的 qualifier 讓 nextflow 知道怎麼處理得自於 channel 的各式資料。</p>
+<span id="more"></span>
+<p>在以下案例，我在 process A 定義了兩條字串，並透過不同途徑傳遞給 process B。</p>
+<p>首先，string 1 被寫入檔案 (<code>str.txt</code>)，再以 path qualifier 告訴 Nextflow，把檔案路徑用軟連結 (symbolic link) 掛到 process B 的工作目錄。至於 string 2 則被定義為變項 (strAsEnv, a bash variable)，再以 env qualifier 告訴 nextflow 把變項寫到 process A 工作目錄內的 <code>.command.env</code>。</p>
+<p>接著，分別以 strInFile 及 strAsEnv 命名由 process A 輸出 channel，傳遞給 process B 印出。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提供 process B 所需的字串</span></span><br><span class="line">process A &#123;</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        path <span class="string">&quot;str.txt&quot;</span>, <span class="attr">emit:</span> strInFile</span><br><span class="line">        env strAsEnv, <span class="attr">emit:</span> strAsEnv</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        echo &quot;string 1&quot; &gt; &quot;str.txt&quot;</span></span><br><span class="line"><span class="string">        strAsEnv=&quot;string 2&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 印出 process A 提供的字串</span></span><br><span class="line">process B &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        path strInFile</span><br><span class="line">        val strAsEnv </span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        echo &quot;\$(cat $&#123;strInFile&#125;) is retrieved from a file passed by a queue channel&quot;</span></span><br><span class="line"><span class="string">        echo &quot;$&#123;strAsEnv&#125; is retrieved from a environment variable passed by a value channel&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 執行 process A &amp; B</span></span><br><span class="line">workflow &#123;</span><br><span class="line">    A()</span><br><span class="line">    B(A.out.strInFile, A.out.strAsEnv).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run demoChannel.nf </span><br><span class="line">Launching `demoChannel.nf` [compassionate_shannon] - revision: 319cfe997a</span><br><span class="line">executor &gt;  <span class="built_in">local</span> (2)</span><br><span class="line">[f3/e5a365] process &gt; A [100%] 1 of 1 ✔</span><br><span class="line">[b0/f79f8e] process &gt; B [100%] 1 of 1 ✔</span><br><span class="line">string 1 is retrieved from a file passed by a queue channel</span><br><span class="line">string 2 is retrieved from a environment variable passed by a value channel</span><br></pre></td></tr></table></figure>
+<p>各 process 的工作目錄預設建立在執行路徑下的<code>work</code>，直接觀察工作目錄內的暫存檔有助於了解 path 與 env 兩種資料傳遞方式的差異<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="此處只列舉 process A 和 B 工作目錄內檔名或型別有別的檔案">1</span></a></sup>。</p>
+<p>在 process A 的工作目錄 ([f3&#x2F;e5a365]) 裡，除了輸出的 str.txt，還有 <code>.command.env</code>。Nextflow 在執行時會將所有用 env qualifier 標記的變項定義式（即　<code>var=value</code> 這種格式）寫入 <code>.command.env</code>，以利隨後可輸出到其它 process。（可查看 <code>.command.sh</code> 查看寫入變項定義式的程式碼）</p>
+<p>目前，只有 bash 變項才能透過 env qualifier 輸出，其它語言的變項只能透過某些方式存成檔案輸出（例如 R 的 RDS 檔）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /work/f3/e5a365e3bb7b645cf4e13cf15eb235</span><br><span class="line">$ <span class="built_in">ls</span> -al</span><br><span class="line">-rw-r--r-- 1 user group   18 Jan  5 22:26 .command.env      <span class="comment"># environment variables of process A</span></span><br><span class="line">-rw-r--r-- 1 user group  146 Jan  5 22:26 .command.sh       <span class="comment"># commands to execute process A</span></span><br><span class="line">-rw-r--r-- 1 user group    9 Jan  5 22:26 str.txt           <span class="comment"># output of process A</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> .command.env</span><br><span class="line">strAsEnv=string 2</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> .command.sh　 <span class="comment"># nextflow 執行 process 的腳本，只擷取跟 `.command.env` 相關的部分</span></span><br><span class="line"><span class="comment"># capture process environment</span></span><br><span class="line"><span class="built_in">set</span> +u</span><br><span class="line"><span class="built_in">echo</span> strAsEnv=<span class="variable">$&#123;strAsEnv[@]&#125;</span> &gt; .command.env</span><br></pre></td></tr></table></figure>
+
+<p>而在 process B 的工作目錄可留意到 str.txt 的資料型別為 <code>l</code> (link)，檔案名稱也標示了來源。值得留意的是，如果使用 <code>cat</code> 或 <code>cp</code> 等指令通常不會有什麼問題，但如果用 <code>ls</code> 顯示檔案大小時，要注意預設顯示的是軟連結的大小，而非原檔的大小。相似的狀況也可能發生在使用 <code>find</code> 搜尋時，因為限制了搜索標的為檔案而意外地排除軟連結的情形。 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/work/b0/f79f8e550a4e1af11e2b03af8b4aa4$ <span class="built_in">ls</span> -al</span><br><span class="line">lrw-r--r-- 1 user group   62 Jan  5 22:26 str.txt -&gt; /work/f3/e5a365e3bb7b645cf4e13cf15eb235/str.txt</span><br></pre></td></tr></table></figure>
+
+<p>綜上所述，要怎麼利用 channel 傳遞資料端視資料型別而異。無論想傳遞表格、文檔還是變項，都可以將其寫入檔案，再以 path qualifier 讓 nextflow 依據檔案路徑在下游 process 的工作目錄建立軟連結。若想傳遞的是 bash 變項，那還可以使用 env qualifier 將變項定義式記錄在當前 process 的工作目錄供後續取用。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">此處只列舉 process A 和 B 工作目錄內檔名或型別有別的檔案<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>5uperb0y (超級boy)
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/" title="Nextflow｜資料是怎麼在 Process 間傳遞？">https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/nextflow/" rel="tag"># nextflow</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/start-learning-vim-from-vimium/" rel="prev" title="Vim｜Vimium，學習 Vim 的新途徑">
+                  <i class="fa fa-angle-left"></i> Vim｜Vimium，學習 Vim 的新途徑
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/vscode-remote-ssh-connection-not-working-after-update/" rel="next" title="VSCode｜ Failed to parse remote port from server output">
+                  VSCode｜ Failed to parse remote port from server output <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">70k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">4:13</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="訪客總數">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="總瀏覽次數">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.umd.js" integrity="sha256-ytMJGN3toR+a84u7g7NuHm91VIR06Q41kMWDr2pq7Zo=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.0/firebase-app-compat.js" integrity="sha256-388UwEUWqCZ5RBBAQoR8vK1Ty8qzxqP/ia3cr4RCkeg=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/10.7.0/firebase-firestore-compat.js" integrity="sha256-7TKLwCozPrhvsOS7FuSEpQel4auRWA5oQiqAA2QyMXo=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="firestore" type="application/json">{"enable":true,"collection":"articles","apiKey":"AIzaSyCL5Y712Lh3An_4_D9e2vSWz2YrRS039Es","projectId":"uperb0y"}</script>
+  <script src="/js/third-party/statistics/firestore.js"></script>
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"5uperb0y","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
