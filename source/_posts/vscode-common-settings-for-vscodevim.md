@@ -99,6 +99,31 @@ VSCode 內建括號與引號自動補全，然而有時這還挺雞肋的，因�
     "editor.autoClosingQuotes": "never",
     "editor.autoClosingBrackets": "never",
 ```
+
+# 調整視窗大小的快捷鍵
+設定快捷鍵，就不用為了調整欄位大小，辛苦地讓游標對齊邊框了。
+```json
+	// put those into keybinding.json
+    {
+        "key": "ctrl+shift+d",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "workbench.action.increaseViewSize"
+    }
+```
+
+# 更新檔案瀏覽側欄
+使用終端或指令新增或刪除檔案不會同步更新在檔案探索側欄，因為重新整理的按鈕太小了，所以我也設定快捷鍵輔助。
+```json
+	// put those into keybinding.json
+	{
+		"key": "ctrl+f5",
+		"command":"workbench.files.action.refreshFilesExplorer",
+		"when":"filesExplorerFocus"
+	}
+```
 # 超棒的學習資源和網站
 - [VsCodeVim 自動在normal mode切回英文輸入法的方法](https://ithelp.ithome.com.tw/articles/10291847)
 - [vscode vim mode](https://www.blog.lasai.com.tw/2020/07/05/vscode-vim-mode/)
