@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/mayer-2023-the-art-of-clean-code-80-20-principle/</loc>
+    
+    <lastmod>2024-01-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/hexo-cannot-get-slash-error/</loc>
     
     <lastmod>2024-01-02</lastmod>
@@ -47,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/why-should-we-watch-bangdream-its-my-go/</loc>
+    <loc>https://5uperb0y.com/why-do-people-write-scientific-articles/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/why-do-people-write-scientific-articles/</loc>
+    <loc>https://5uperb0y.com/why-should-we-watch-bangdream-its-my-go/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -92,6 +101,15 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/</loc>
+    
+    <lastmod>2024-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/the-importance-of-science-communication/</loc>
     
     <lastmod>2024-01-01</lastmod>
@@ -102,15 +120,6 @@
   
   <url>
     <loc>https://5uperb0y.com/vscode-common-settings-for-vscodevim/</loc>
-    
-    <lastmod>2024-01-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -146,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/schrodinger-1944-what-is-life-chapter-1/</loc>
+    <loc>https://5uperb0y.com/r-console-upper-limit-on-the-string-length/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -155,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/r-console-upper-limit-on-the-string-length/</loc>
+    <loc>https://5uperb0y.com/schrodinger-1944-what-is-life-chapter-1/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -445,7 +454,7 @@
 
   <url>
     <loc>https://5uperb0y.com/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -453,98 +462,98 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/sf/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/reading/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/writing/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/communitcation/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/NGS/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/database/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/array/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/career/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/communication/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/vim/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/tips-and-tricks/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/nextflow/</loc>
-    <lastmod>2024-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/tags/vscode/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/tags/lua/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/vscode/</loc>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -553,133 +562,133 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/sf/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/astrobiology/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/sf/story/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/academic/</loc>
-    <lastmod>2024-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/life/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/astrobiology/origins-of-life/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/bioinformatics/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/programming/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/life/reading/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/microbial-ecology/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/academic/tips-tricks/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/bioinformatics/metagenomics/</loc>
-    <lastmod>2024-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
-    <lastmod>2024-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/microbial-ecology/microbiota/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/programming/tools/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://5uperb0y.com/categories/academic/writing/</loc>
-    <lastmod>2024-01-02</lastmod>
+    <lastmod>2024-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/microbial-ecology/microbiota/</loc>
+    <lastmod>2024-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

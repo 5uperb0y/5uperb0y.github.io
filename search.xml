@@ -963,6 +963,50 @@
       </tags>
   </entry>
   <entry>
+    <title>假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？</title>
+    <url>/mayer-2023-the-art-of-clean-code-80-20-principle/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>The principle says that the majority of effects come from the minority of causes.</p>
+</blockquote>
+<p>本文是<a href="https://www.books.com.tw/products/0010959955">《精通無瑕程式碼：工程師也能斷捨離》</a> 其中一章的心得。</p>
+<p>80&#x2F;20 法則是指少數變項左右了多數結果，它既不是能預測結果的物理定律，也不是行事時得遵循的規範。精確來說，80&#x2F;20 法則是一項觀察，它可以讓我們思考，假設自己在乎的事情遵循這種分布，對我們的決策和努力方向有什麼影響。</p>
+<p>雖然這原則對近代的讀者而言應該是耳熟能詳，但我覺得作者 Mayer 的解讀引人入勝。文中除了實際案例也有簡單計算來佐證為什麼基於 80&#x2F;20 法則，我們要投資成本在抉擇、必須保持專注、要關心核心的指標等等。因此，我覺得蠻值得寫一則心得來記錄。</p>
+<span id="more"></span>
+
+<h1 id="關鍵事物的影響超乎想像"><a href="#關鍵事物的影響超乎想像" class="headerlink" title="關鍵事物的影響超乎想像"></a>關鍵事物的影響超乎想像</h1><p>多數結果是建立在少數因素上，假設這項觀察或原則適用在多數情境，那麼有兩方面的暗示。 首先，在一個領域中，少數人員能佔有多數資源或成果，例如少數人發表了多數的論文，少數人賺進了多數的錢。</p>
+<p>其次，在成就這現象的行為中，也只有關鍵的行為與成就有關。 換句話說，若目標是在某領與取得一定的成績，那麼若能夠辨識並投注心力在事物的關鍵環節，便不需要搞得筋疲力盡，也能維持一定成績。</p>
+<p>從效益的角度來看，關鍵環節與其他環節的差異更加明顯。假設兩成的努力造就八成的結果，那麼每一成努力造就四成結果，相較之下，在非關鍵事物的投注僅造就四分之一的成果。單位投入下，關鍵事物造就的效益是非關鍵事物的十六倍。那這種比例的差異在實際情形中可能更加懸殊，例如在生物體方面，少數基因轉變主宰了大多數的變化，這些基因的影響力是其他基因的數千倍以上。</p>
+<h1 id="選擇能反映結果並指引方向的指標"><a href="#選擇能反映結果並指引方向的指標" class="headerlink" title="選擇能反映結果並指引方向的指標"></a>選擇能反映結果並指引方向的指標</h1><p>當然，除了原則背後的機制以外，作者也解釋了要怎麼透過這些原則指引行動，讓自己在有限的資源，更有效率達成目標，從而有餘裕去完成或享受其他事情。</p>
+<p>這涉及了 80&#x2F;20 法則的另一項暗示，除了大部分資源為少數人所佔據，多數的進展也取決於少數的行為。而辨識關鍵行為的重點則是選擇適當的指標來衡量行為效益。</p>
+<p>舉例來說，如果目標是擁有健美體態，那麼各式各樣的飲食法與健身菜單都是潛在的選項，而體重、體脂肪、身體測量值都是衡量判斷行為對目標影響的指標。</p>
+<p>然而，不是所有指標都能忠實反映行為的影響或指引往後的行為。好比說，他人對身材的稱讚的確能反映此人的體態，不過這些讚美反映的是過往投入成本的效益，而非當下行為的影響。此外，他人評價又受長相、穿搭或其他難以捉摸的因素，未必能從中檢討出能讓自己體態變好的方向。</p>
+<p>另一方面，體脂與肌肉尺寸則是反映行為結果忠實的指標，但很難在每次訓練中即時回饋自己到底做了多好。相較之下，訓練量（負重乘以次數）即是其中一個能及時反應行為的指標，肌肉量與耐力提昇就能提升更多訓練量，也能從當下行為反應到成效。</p>
+<p>以作者用語總結，假如體態是衡量成功的依據，讚美並不是衡量進展的指標，體脂和肌肉量是呈現過往投資的 lagging indicator。而我們要關注的則是能反映當下行為影響的 leading indicator，後者能指引我們做有效的努力以達成目標，也能幫助我們在出錯時檢討問題所在。</p>
+<h1 id="透過學習減少摸索與排序指標的成本"><a href="#透過學習減少摸索與排序指標的成本" class="headerlink" title="透過學習減少摸索與排序指標的成本"></a>透過學習減少摸索與排序指標的成本</h1><p>然而，排序任務、選定指標、標記價值、學習技術也需要成本（想想看演算法課裏頭那些時間複雜度不一的排序方法），這些成本有可能攤平投資在關鍵行為與項目的效益。</p>
+<p>因此，需要借重他人的經驗來減少摸索與排序的成本。在此書中，作者舉了寫作和寫程式兩個案例供讀者參考。對於作家而言，最重要的行為是寫作，而衡量寫作的指標則是「寫了多少句子&#x2F;幾本書&#x2F;幾個故事」；而對程式設計師而言，最重要的行為是寫程式，衡量寫程式的指標則是「寫了多少行程式碼&#x2F;提出多少修訂&#x2F;完成多少專案」</p>
+<p>雖然這些指標看起來有點簡化，但簡化不代表單調或沒意義。相反地，越少原則表示越容易追蹤與遵循，即使是盲目地寫程式和寫作，也起碼有以下好處：</p>
+<ul>
+<li>你能把自己的觀點、意見、想法、風格與巧思等所有你存在過、活過、學習過的證據儲存在可交流的媒介</li>
+<li>有了資訊，便能做為籌碼與他人交流，用以兌換經驗</li>
+<li>即使不算精通，持續寫起碼能造就熟練，讓你能更快完成同樣或類似的任務</li>
+<li>經驗節省的時間能反過來投資寫作和寫程式，或是物色更好的方法</li>
+</ul>
+<h1 id="保持專注"><a href="#保持專注" class="headerlink" title="保持專注"></a>保持專注</h1><blockquote>
+<p>a critical strategy for moving up the Pareto curve is to stay in the game longer while participating in fewer games</p>
+</blockquote>
+<p>值得注意的是，前述好處的前提是專注。假設各項領域皆呈 80&#x2F;20 法則的分布，那麼投注與報酬呈指數關係。若將投注分散在不同領域，則綜合成長幅度會少於全數投資在單一領域的成長幅度。</p>
+<p>畢竟 80&#x2F;20 法則是指多數取決於少數，若這項原則適用各領域，那麼因為分布不均，要懂得取捨；由於輕重不一，得學會排序。取捨與排序又需要經驗累積，這有賴持之以恆的專注。</p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>作者在這章最後有提幾項老生常的建議，我覺得最值得提醒自己的是這個：</p>
+<blockquote>
+<p>Don’t do things that reduce value.  These are things like smoking, eating unhealthily, sleeping little, drinking alcohol, and watching too much Netflix. Avoiding things that drag you down is one of your biggest leverage points. If you skip doing things that harm you, you’ll become healthier, happier, and more successful.  And you’ll have more time and money to enjoy the good things in life: relationships, nature, and positive experiences.</p>
+</blockquote>
+<p>他提到的行為是否有害見仁見智，可是不惹自己麻煩卻是很好的主意。畢竟我們不會每次能做出有效的投資，避開風險能保留更多選擇或資源以把握下次機會。</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+      </categories>
+  </entry>
+  <entry>
     <title>MiTalk 2022：在講台上</title>
     <url>/mitalk-6-thu-2022/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>兩年前，我曾以聽眾的身分報名 MiTalk，如今總算有點結果可以參加口頭報告。趁著記憶猶新，我想紀錄此次工作坊的所見所得，並且借題敘述一些尚未獨立成篇的想法。</p>
@@ -1942,36 +1986,6 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
   </entry>
   <entry>
-    <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
-    <url>/schrodinger-1944-what-is-life-chapter-1/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》">1</span></a></sup></p>
-<span id="more"></span>
-
-<h2 id="「鴿子為什麼那麼大？」"><a href="#「鴿子為什麼那麼大？」" class="headerlink" title="「鴿子為什麼那麼大？」"></a>「鴿子為什麼那麼大？」</h2><p>這問題乍聽之下或許令人詫異，但其實許多洞見都是從這樣怪誕或荒唐的問題萌發。</p>
-<p>日常生活中，大或小的概念是建立在比較的基礎上。在這問題中，真正的目的或許不在了解鴿子的尺寸，而是想知道事物間為何存在懸殊的尺寸差異。事物尺度與其性質的關係是物理學重要的研究方向，而肉眼可見的巨觀層次和原子尺度的微觀層次則是其中的兩個極端。統計物理解釋了這兩大體系之間的關係，為巨觀現象提供微觀尺度的解釋。因此，若以此角度出發，我們可以把問題精確地重塑為：相較於原子，為什麼鴿子那麼大呢？<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」">2</span></a></sup></p>
-<p>確實，相較於原子，一隻鴿子的體積非常大。成鴿的平均體重為 0.5 公斤，其組織器官則由碳、氫、氧、氮、硫、磷和其它微量元素構成。假設鴿子僅由氫原子或硫原子組成，可推知一隻成鴿含有的原子數量約在 $10^26$ 到 $10^28$ 之間，這數量遠超過當今對恆星數量的估計值($3 \times 10^{23}$)<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Dokkum & Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.">3</span></a></sup>。</p>
-<p>由於鴿子與原子的懸殊比例，鴿子既無法察覺個別原子的動靜，也不受其碰撞、震盪或旋轉影響。這表示，作用於鴿子的原理和作用於原子的原理可能有很大的差異。但這樣的尺度差異對有機體究竟有什麼意義？又為什麼非得如此，才能維持鴿子的存在？</p>
-<h2 id="有機體的運作仰賴精確的物理和化學定律"><a href="#有機體的運作仰賴精確的物理和化學定律" class="headerlink" title="有機體的運作仰賴精確的物理和化學定律"></a>有機體的運作仰賴精確的物理和化學定律</h2><p>有機體的運作無處不仰賴事物間精確的配合。以感知和運動為例，有機體要能靈敏接收刺激，同時不失真地傳遞訊息。這些訊息得正確抵達中樞，在歷經複雜決策後，循另一條途徑輸出，以驅動目標肌肉收縮。這個過程的順利，不只需要事件層序分明，也仰賴組織構造的規律。無論是感覺&#x2F;中樞&#x2F;運動神經的緊密連結，粗肌絲與細肌絲的間隔排列，還是細胞內訊息傳遞分子的聚攏，都是完成一項行為的要件。</p>
-<p>即使是最簡單的膝跳反射，也需要器官、組織乃至細胞間的緊密配合，更遑論思考、決策與想像等複雜行為對秩序的需求。這意味著，無論生理還是結構層面，維繫有機體的各項事件皆需要相當的精確性；而外在系統對有機體的影響，也要有與之對應的精確性才會發生作用。<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」">4</span></a></sup></p>
-<h2 id="物理和化學定律的精確性奠基於大量原子參與"><a href="#物理和化學定律的精確性奠基於大量原子參與" class="headerlink" title="物理和化學定律的精確性奠基於大量原子參與"></a>物理和化學定律的精確性奠基於大量原子參與</h2><p>然而，少量原子無法支持有機體所需的精確性。在微觀尺度，個別原子持續進行隨機的熱運動，其移動、震盪和旋轉皆無法測量與追蹤。不過隨著系統內的原子數量增加，原子狀態（例如速度、方向、電荷等）的多樣性也隨之增加。一旦數量夠多，大量原子的平均狀態，便會呈現為巨觀層次可觀察到的方向性或規律性。</p>
-<p>以順磁性為例，石英管中的氧氣雖然會因置於磁場而磁化，可是並非所有氧分子的方向皆與磁場一致。在局部，個別分子的方向其實會隨熱運動不斷轉變，所以沒有固定一致的排列方式。儘管個別分子的方向無法預期，但隨著磁場增強，石英管內順磁性分子與逆磁性分子的數量差距會逐漸增加，使得多數的氧分子與磁場方向一致，共同產生可觀測的磁化現象。 <sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。">5</span></a></sup></p>
-<p>另一項案例是布朗運動與擴散現象。在微觀尺度，單一微粒會受水分子碰撞而隨機運動，其移往各方向的機率與溶液濃度無關。不過，因為溶液中高&#x2F;低濃度區域的微粒數量有別，由高往低濃度移動的微粒自然比由低往高濃度移動的微粒多，於是微粒在巨觀層次表現出隨重力沉降或隨濃度梯度擴散等現象。</p>
-<p>反之，若組成系統的原子數越小，隨機偏差的幅度就越大。這關係可以測量精確度的極限說明。扭秤是測量作用力強度重要的工具。為了偵測到更微弱的作用力，往往會替扭秤選用更輕盈的槓桿與絲線。不過，隨著扭秤尺寸縮小，原子熱運動對扭秤的影響也隨之增加，使得原子碰撞和待測作用力造成的擺幅難以區分。在這種尺度下，單次測量的意義有限，得靠多次測量來消除隨機偏差的影響。</p>
-<h2 id="有機體需要足夠的原子才能受益於定律的精確性"><a href="#有機體需要足夠的原子才能受益於定律的精確性" class="headerlink" title="有機體需要足夠的原子才能受益於定律的精確性"></a>有機體需要足夠的原子才能受益於定律的精確性</h2><p>綜上所述，系統在巨觀尺度的屬性是相異狀態之原子的數量分布不均所致。系統內的原子數越多，數量不均的狀況就越容易與隨機運動區別，呈現的集體現象也就越明確。原子數量與定律精確性的關係可用 $\sqrt{n}$ 法則描述。 $\sqrt{n}$ 法則是指，對一個含有 n 個原子的系統而言，物理或化學定律的誤差範圍約在 $\sqrt{n}$ 內。式子中的平方根意味著，隨著系統含有的原子增加，作用在此系統定律的相對誤差就愈低。</p>
-<p>讓我們回到文章開頭提到的問題，為何鴿子那麼大？或說，為什麼鴿子就不能像寡糖或Omega-3一樣小？這是因為，有機體的遺傳、發育和行為等生命特徵需要足夠數量的原子，才有辦法忽視個別原子的隨機運動，表現出統計物理上的宏觀秩序。</p>
-<p>讓我們想像一種僅由 100 個原子組成的迷你鴿子。根據 $\sqrt{n}$ 法則，發生在迷你鴿子體內的擴散、催化、接合等反應皆有 10 個原子的不確定性，即有 10% 的相對誤差。</p>
-<p>在這尺度，影響鴿子的不再是氣流、重力和光線等巨觀現象，而是電荷、碰撞、量子穿隧等微觀現象。僅僅一個離子，就可能破壞迷你鴿子的結構；即使是少量原子刺激，都會影響鴿子的感官，以致於不能辨明關鍵的環境訊號。既然無法維繫體內運作和對外互動，這樣的生命也就不會是我們定義的「鴿子」了。</p>
-<h2 id="古典物理無法解釋遺傳的分子機制"><a href="#古典物理無法解釋遺傳的分子機制" class="headerlink" title="古典物理無法解釋遺傳的分子機制"></a>古典物理無法解釋遺傳的分子機制</h2><p>儘管統計物理似乎為有機體的尺存給出了圓滿的解釋，但此處的議論實為楔子：依照前述討論，有機體的秩序仰賴大量原子參與。不過就當時所知，基因很可能僅由少量原子組成，那麼基因是怎麼表現出遺傳、突變與分裂等在巨觀層次可觀測到的高度秩序？薛丁格主張，這個矛盾或許可用量子力學的概念解釋。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dokkum &amp; Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。<a href="#fnref:5" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>what is life</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>R/Rstudio console 的指令長度限制</title>
     <url>/r-console-upper-limit-on-the-string-length/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>TL:DR：輸入 R&#x2F;Rstudio console 的指令之容量上限為 4095 bytes。若超出上限，console 會忽略超出的部分，顯示 + 提醒使用者補完剩餘指令。</p>
@@ -2004,6 +2018,36 @@ echo &quot;\$title \n $PWD&quot;
       <categories>
         <category>programming</category>
       </categories>
+  </entry>
+  <entry>
+    <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
+    <url>/schrodinger-1944-what-is-life-chapter-1/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》">1</span></a></sup></p>
+<span id="more"></span>
+
+<h2 id="「鴿子為什麼那麼大？」"><a href="#「鴿子為什麼那麼大？」" class="headerlink" title="「鴿子為什麼那麼大？」"></a>「鴿子為什麼那麼大？」</h2><p>這問題乍聽之下或許令人詫異，但其實許多洞見都是從這樣怪誕或荒唐的問題萌發。</p>
+<p>日常生活中，大或小的概念是建立在比較的基礎上。在這問題中，真正的目的或許不在了解鴿子的尺寸，而是想知道事物間為何存在懸殊的尺寸差異。事物尺度與其性質的關係是物理學重要的研究方向，而肉眼可見的巨觀層次和原子尺度的微觀層次則是其中的兩個極端。統計物理解釋了這兩大體系之間的關係，為巨觀現象提供微觀尺度的解釋。因此，若以此角度出發，我們可以把問題精確地重塑為：相較於原子，為什麼鴿子那麼大呢？<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」">2</span></a></sup></p>
+<p>確實，相較於原子，一隻鴿子的體積非常大。成鴿的平均體重為 0.5 公斤，其組織器官則由碳、氫、氧、氮、硫、磷和其它微量元素構成。假設鴿子僅由氫原子或硫原子組成，可推知一隻成鴿含有的原子數量約在 $10^26$ 到 $10^28$ 之間，這數量遠超過當今對恆星數量的估計值($3 \times 10^{23}$)<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Dokkum & Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.">3</span></a></sup>。</p>
+<p>由於鴿子與原子的懸殊比例，鴿子既無法察覺個別原子的動靜，也不受其碰撞、震盪或旋轉影響。這表示，作用於鴿子的原理和作用於原子的原理可能有很大的差異。但這樣的尺度差異對有機體究竟有什麼意義？又為什麼非得如此，才能維持鴿子的存在？</p>
+<h2 id="有機體的運作仰賴精確的物理和化學定律"><a href="#有機體的運作仰賴精確的物理和化學定律" class="headerlink" title="有機體的運作仰賴精確的物理和化學定律"></a>有機體的運作仰賴精確的物理和化學定律</h2><p>有機體的運作無處不仰賴事物間精確的配合。以感知和運動為例，有機體要能靈敏接收刺激，同時不失真地傳遞訊息。這些訊息得正確抵達中樞，在歷經複雜決策後，循另一條途徑輸出，以驅動目標肌肉收縮。這個過程的順利，不只需要事件層序分明，也仰賴組織構造的規律。無論是感覺&#x2F;中樞&#x2F;運動神經的緊密連結，粗肌絲與細肌絲的間隔排列，還是細胞內訊息傳遞分子的聚攏，都是完成一項行為的要件。</p>
+<p>即使是最簡單的膝跳反射，也需要器官、組織乃至細胞間的緊密配合，更遑論思考、決策與想像等複雜行為對秩序的需求。這意味著，無論生理還是結構層面，維繫有機體的各項事件皆需要相當的精確性；而外在系統對有機體的影響，也要有與之對應的精確性才會發生作用。<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」">4</span></a></sup></p>
+<h2 id="物理和化學定律的精確性奠基於大量原子參與"><a href="#物理和化學定律的精確性奠基於大量原子參與" class="headerlink" title="物理和化學定律的精確性奠基於大量原子參與"></a>物理和化學定律的精確性奠基於大量原子參與</h2><p>然而，少量原子無法支持有機體所需的精確性。在微觀尺度，個別原子持續進行隨機的熱運動，其移動、震盪和旋轉皆無法測量與追蹤。不過隨著系統內的原子數量增加，原子狀態（例如速度、方向、電荷等）的多樣性也隨之增加。一旦數量夠多，大量原子的平均狀態，便會呈現為巨觀層次可觀察到的方向性或規律性。</p>
+<p>以順磁性為例，石英管中的氧氣雖然會因置於磁場而磁化，可是並非所有氧分子的方向皆與磁場一致。在局部，個別分子的方向其實會隨熱運動不斷轉變，所以沒有固定一致的排列方式。儘管個別分子的方向無法預期，但隨著磁場增強，石英管內順磁性分子與逆磁性分子的數量差距會逐漸增加，使得多數的氧分子與磁場方向一致，共同產生可觀測的磁化現象。 <sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。">5</span></a></sup></p>
+<p>另一項案例是布朗運動與擴散現象。在微觀尺度，單一微粒會受水分子碰撞而隨機運動，其移往各方向的機率與溶液濃度無關。不過，因為溶液中高&#x2F;低濃度區域的微粒數量有別，由高往低濃度移動的微粒自然比由低往高濃度移動的微粒多，於是微粒在巨觀層次表現出隨重力沉降或隨濃度梯度擴散等現象。</p>
+<p>反之，若組成系統的原子數越小，隨機偏差的幅度就越大。這關係可以測量精確度的極限說明。扭秤是測量作用力強度重要的工具。為了偵測到更微弱的作用力，往往會替扭秤選用更輕盈的槓桿與絲線。不過，隨著扭秤尺寸縮小，原子熱運動對扭秤的影響也隨之增加，使得原子碰撞和待測作用力造成的擺幅難以區分。在這種尺度下，單次測量的意義有限，得靠多次測量來消除隨機偏差的影響。</p>
+<h2 id="有機體需要足夠的原子才能受益於定律的精確性"><a href="#有機體需要足夠的原子才能受益於定律的精確性" class="headerlink" title="有機體需要足夠的原子才能受益於定律的精確性"></a>有機體需要足夠的原子才能受益於定律的精確性</h2><p>綜上所述，系統在巨觀尺度的屬性是相異狀態之原子的數量分布不均所致。系統內的原子數越多，數量不均的狀況就越容易與隨機運動區別，呈現的集體現象也就越明確。原子數量與定律精確性的關係可用 $\sqrt{n}$ 法則描述。 $\sqrt{n}$ 法則是指，對一個含有 n 個原子的系統而言，物理或化學定律的誤差範圍約在 $\sqrt{n}$ 內。式子中的平方根意味著，隨著系統含有的原子增加，作用在此系統定律的相對誤差就愈低。</p>
+<p>讓我們回到文章開頭提到的問題，為何鴿子那麼大？或說，為什麼鴿子就不能像寡糖或Omega-3一樣小？這是因為，有機體的遺傳、發育和行為等生命特徵需要足夠數量的原子，才有辦法忽視個別原子的隨機運動，表現出統計物理上的宏觀秩序。</p>
+<p>讓我們想像一種僅由 100 個原子組成的迷你鴿子。根據 $\sqrt{n}$ 法則，發生在迷你鴿子體內的擴散、催化、接合等反應皆有 10 個原子的不確定性，即有 10% 的相對誤差。</p>
+<p>在這尺度，影響鴿子的不再是氣流、重力和光線等巨觀現象，而是電荷、碰撞、量子穿隧等微觀現象。僅僅一個離子，就可能破壞迷你鴿子的結構；即使是少量原子刺激，都會影響鴿子的感官，以致於不能辨明關鍵的環境訊號。既然無法維繫體內運作和對外互動，這樣的生命也就不會是我們定義的「鴿子」了。</p>
+<h2 id="古典物理無法解釋遺傳的分子機制"><a href="#古典物理無法解釋遺傳的分子機制" class="headerlink" title="古典物理無法解釋遺傳的分子機制"></a>古典物理無法解釋遺傳的分子機制</h2><p>儘管統計物理似乎為有機體的尺存給出了圓滿的解釋，但此處的議論實為楔子：依照前述討論，有機體的秩序仰賴大量原子參與。不過就當時所知，基因很可能僅由少量原子組成，那麼基因是怎麼表現出遺傳、突變與分裂等在巨觀層次可觀測到的高度秩序？薛丁格主張，這個矛盾或許可用量子力學的概念解釋。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dokkum &amp; Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。<a href="#fnref:5" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>what is life</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
   </entry>
   <entry>
     <title>讀後感｜生命是什麼 — 如何推論基因的尺寸？</title>
@@ -2228,6 +2272,61 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
       <tags>
         <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
+    <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
+<p>然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。</p>
+<span id="more"></span>
+
+<h1 id="必要軟體安裝與設定"><a href="#必要軟體安裝與設定" class="headerlink" title="必要軟體安裝與設定"></a>必要軟體安裝與設定</h1><p>首先，我們要完成必要軟體的安裝與設定。</p>
+<ol>
+<li>安裝 Steam 並購買 <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop simulator</a>。</li>
+<li>安裝 <a href="https://code.visualstudio.com/">VSCode</a>。雖然官方推薦的 Lua 開發環境是 Atom，但 VSCode 的功能更加強大，近幾年也比較廣泛被使用（參考 <a href="https://github.blog/2022-06-08-sunsetting-atom/">Github 停止支援 ATOM IDE 的新聞</a>）。</li>
+<li>在 VSCode 當中安裝 <a href="https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua">Tabletop Simulator Lua</a> 套件。這款套件能從遊戲儲存檔擷取 Tabletop Simulator 的 Lua 腳本，讓我們直接能在 VSCode 中開發，並享有自動補全、檔案瀏覽以及其他擴充套件的功能。</li>
+</ol>
+<h1 id="連結遊戲與編輯器"><a href="#連結遊戲與編輯器" class="headerlink" title="連結遊戲與編輯器"></a>連結遊戲與編輯器</h1><p>接著要設定遊戲與編輯器的連結</p>
+<ol>
+<li>在 Steam 中啟動 Tabletop Simulator，並開啟任意一款遊戲（步驟為：<code>Create</code>、<code>Singleplayer</code>、<code>Classic/DLC/Workshop</code>、挑選遊戲）。</li>
+<li>打開 VSCode 時，Tabletop Simulator Lua 套件會自動辨識遊戲所在的資料夾（在 Windows 預設為 <code>%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</code>），將遊戲腳本 (<code>*.lua</code>)和設置檔 (<code>.xml</code>) 從遊戲儲存檔 (<code>*.json</code>) 獨立出來，並且放置到暫存資料夾中（預設為 <code>%UserProfile%\AppData\Local\Temp\TabletopSimulator\Tabletop Simulator Lua</code>。</li>
+<li>如果套件沒有自動更新或是想要更換其他遊戲時，可以鍵入 <code>Ctrl</code>+<code>Alt</code>+<code>L</code> 更新連結。</li>
+</ol>
+<h1 id="編輯遊戲腳本"><a href="#編輯遊戲腳本" class="headerlink" title="編輯遊戲腳本"></a>編輯遊戲腳本</h1><p>現在，我們已經可以在 VSCode 當中編輯遊戲腳本了。Lua 腳本是遊戲儲存檔的一部份，而遊戲儲存檔則是一個 <code>JSON</code> 檔，記錄了啟動遊戲所需的所有元素。Tabletop Simulator Lua 的功能即是從儲存檔中擷取 Lua 腳本，並且轉換為適合閱讀與編輯的格式。</p>
+<p>編輯完成後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 儲存並重啟腳本。此時，Tabletop Simulator 會將腳本變動更新到遊戲儲存檔，讓遊戲呈現腳本所做的變動。</p>
+<p>如果希望在編輯腳本的同時能觀察遊戲畫面，有兩種方式可以達成：</p>
+<p>首先，將 Tabletop Simulator 設定為視窗模式（<code>Menu</code>、<code>Configuration</code>、<code>Graphics</code>、取消勾選 <code>Fullscreen</code>）。</p>
+<ul>
+<li>使用 Windows 視窗分割功能 （<code>Win</code> + <code>←</code>&#x2F;<code>→</code>&#x2F;<code>↑</code>），同時陳列編輯器與遊戲視窗。</li>
+<li>下載 Windows PowerToys，這是一個功能強大的 Windows 工具集，其中包含了能將遊戲視窗固定在螢幕上的功能。(<a href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top">always on top feature</a>)</li>
+</ul>
+<h1 id="建立專案資料夾"><a href="#建立專案資料夾" class="headerlink" title="建立專案資料夾"></a>建立專案資料夾</h1><p>由於無法指定 Tabletop Simulator 遊戲儲存檔的存放位置，所以想要進行版本控管或專案管理時需要一些權變措施。</p>
+<ol>
+<li>首先，建立一個新的專案資料夾，例如命名為 <code>project/</code>。專案資料夾的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br></pre></td></tr></table></figure></li>
+<li>再次開啟 Tabletop Simulator，選擇任意遊戲並儲存。遊戲會自動建立包含遊戲所有設定與資訊的 JSON 儲存檔 (<code>TS_Save_*.json</code>)，並附上一張遊戲截圖 (<code>TS_Save_*.jpg</code>)。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>由於 Tabletop Simulator 並未提供選擇遊戲儲存檔位置的選項，我們可以先將儲存檔和截圖檔案移至專案資料夾，以便之後進行版本控管。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>接下來，在 Tabletop Simulator 的資料夾內建立一個指向專案資料夾的軟連結，以確保儲存檔可以在遊戲的載入遊戲清單中被找到。由於軟連結會連結到原始檔案，因此我們可以透過軟連結對原始檔案進行修改，並將變動同步到遊戲中。（Windows 系統在 cmd 當中使用 <a href="https://learn.microsoft.com/zh-tw/windows-server/administration/windows-commands/mklink">mklink 建立軟連結</a>） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- project/ -&gt; /path/to/project/</span><br></pre></td></tr></table></figure></li>
+<li>再次開啟 VSCode 並啟動 Tabletop Simulator Lua 套件。此時 VSCode 的探索欄應該會出現 Tabletop Simulator Lua 資料夾以及由套件從遊戲儲存檔中提取出來的 Lua 腳本。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br></pre></td></tr></table></figure></li>
+<li>將專案資料夾加入 VSCode 的工作空間：選擇 <code>File</code> → <code>Add Folder to Workspace</code>，然後選擇專案資料夾。此時，探索欄的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>在專案資料夾中建立需要的檔案或資料夾，例如 <code>src/</code>（用來儲存遊戲腳本）。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br><span class="line">|- src\</span><br><span class="line">    |- script1.lua</span><br><span class="line">    |- script2.lua</span><br></pre></td></tr></table></figure></li>
+<li>接著開啟 <code>Global.-*.lua</code>，加入以下命令以指定要導入的腳本。由於套件會自動在工作空間的資料夾尋找副檔名為 <code>.ttslua</code>和<code>.lua</code> 的檔案，所以呼叫時就不需要加入副檔名了。 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script1&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script2&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>現在，已經成功設定 Tabletop Simulator 的 Lua 開發環境，也將遊戲依照專案資料夾的規劃納入版本控管，可以按照自己的習慣開發遊戲腳本了。</p>
+<p>只是要記得在修改腳本或遊戲設定後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 以同步變動到遊戲儲存檔中，也不要忘記在新增腳本時更新導入的指令。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://tts-vscode.rolandostar.com/">TTS VSCode Docs</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/27">Require and Path</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/21">Best way to commit the main json file?</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/20">Get&#x2F;Send LUA scripts to&#x2F;from workspace folder</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>lua</tag>
       </tags>
   </entry>
   <entry>
@@ -2585,20 +2684,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
-    <url>/why-should-we-watch-bangdream-its-my-go/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
-<span id="more"></span>
-<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
-<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
-<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
-<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
-<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
-<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
-<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>寫科普又不能當飯吃，為什麼還要寫？</title>
     <url>/why-do-people-write-scientific-articles/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文是 Mitalk 4 講座「科普如何當飯吃？」的聽講心得，陳俊堯老師在演講一開始先回答了這問題，再一一告訴我們，如果無法靠寫科普賺錢營生，那麼從事研究的學生、老師和學者們，到底有什麼理由勞心費神去寫科普文？</p>
@@ -2664,58 +2749,17 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
-    <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
-<p>然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。</p>
+    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
+    <url>/why-should-we-watch-bangdream-its-my-go/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
 <span id="more"></span>
-
-<h1 id="必要軟體安裝與設定"><a href="#必要軟體安裝與設定" class="headerlink" title="必要軟體安裝與設定"></a>必要軟體安裝與設定</h1><p>首先，我們要完成必要軟體的安裝與設定。</p>
-<ol>
-<li>安裝 Steam 並購買 <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop simulator</a>。</li>
-<li>安裝 <a href="https://code.visualstudio.com/">VSCode</a>。雖然官方推薦的 Lua 開發環境是 Atom，但 VSCode 的功能更加強大，近幾年也比較廣泛被使用（參考 <a href="https://github.blog/2022-06-08-sunsetting-atom/">Github 停止支援 ATOM IDE 的新聞</a>）。</li>
-<li>在 VSCode 當中安裝 <a href="https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua">Tabletop Simulator Lua</a> 套件。這款套件能從遊戲儲存檔擷取 Tabletop Simulator 的 Lua 腳本，讓我們直接能在 VSCode 中開發，並享有自動補全、檔案瀏覽以及其他擴充套件的功能。</li>
-</ol>
-<h1 id="連結遊戲與編輯器"><a href="#連結遊戲與編輯器" class="headerlink" title="連結遊戲與編輯器"></a>連結遊戲與編輯器</h1><p>接著要設定遊戲與編輯器的連結</p>
-<ol>
-<li>在 Steam 中啟動 Tabletop Simulator，並開啟任意一款遊戲（步驟為：<code>Create</code>、<code>Singleplayer</code>、<code>Classic/DLC/Workshop</code>、挑選遊戲）。</li>
-<li>打開 VSCode 時，Tabletop Simulator Lua 套件會自動辨識遊戲所在的資料夾（在 Windows 預設為 <code>%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</code>），將遊戲腳本 (<code>*.lua</code>)和設置檔 (<code>.xml</code>) 從遊戲儲存檔 (<code>*.json</code>) 獨立出來，並且放置到暫存資料夾中（預設為 <code>%UserProfile%\AppData\Local\Temp\TabletopSimulator\Tabletop Simulator Lua</code>。</li>
-<li>如果套件沒有自動更新或是想要更換其他遊戲時，可以鍵入 <code>Ctrl</code>+<code>Alt</code>+<code>L</code> 更新連結。</li>
-</ol>
-<h1 id="編輯遊戲腳本"><a href="#編輯遊戲腳本" class="headerlink" title="編輯遊戲腳本"></a>編輯遊戲腳本</h1><p>現在，我們已經可以在 VSCode 當中編輯遊戲腳本了。Lua 腳本是遊戲儲存檔的一部份，而遊戲儲存檔則是一個 <code>JSON</code> 檔，記錄了啟動遊戲所需的所有元素。Tabletop Simulator Lua 的功能即是從儲存檔中擷取 Lua 腳本，並且轉換為適合閱讀與編輯的格式。</p>
-<p>編輯完成後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 儲存並重啟腳本。此時，Tabletop Simulator 會將腳本變動更新到遊戲儲存檔，讓遊戲呈現腳本所做的變動。</p>
-<p>如果希望在編輯腳本的同時能觀察遊戲畫面，有兩種方式可以達成：</p>
-<p>首先，將 Tabletop Simulator 設定為視窗模式（<code>Menu</code>、<code>Configuration</code>、<code>Graphics</code>、取消勾選 <code>Fullscreen</code>）。</p>
-<ul>
-<li>使用 Windows 視窗分割功能 （<code>Win</code> + <code>←</code>&#x2F;<code>→</code>&#x2F;<code>↑</code>），同時陳列編輯器與遊戲視窗。</li>
-<li>下載 Windows PowerToys，這是一個功能強大的 Windows 工具集，其中包含了能將遊戲視窗固定在螢幕上的功能。(<a href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top">always on top feature</a>)</li>
-</ul>
-<h1 id="建立專案資料夾"><a href="#建立專案資料夾" class="headerlink" title="建立專案資料夾"></a>建立專案資料夾</h1><p>由於無法指定 Tabletop Simulator 遊戲儲存檔的存放位置，所以想要進行版本控管或專案管理時需要一些權變措施。</p>
-<ol>
-<li>首先，建立一個新的專案資料夾，例如命名為 <code>project/</code>。專案資料夾的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br></pre></td></tr></table></figure></li>
-<li>再次開啟 Tabletop Simulator，選擇任意遊戲並儲存。遊戲會自動建立包含遊戲所有設定與資訊的 JSON 儲存檔 (<code>TS_Save_*.json</code>)，並附上一張遊戲截圖 (<code>TS_Save_*.jpg</code>)。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>由於 Tabletop Simulator 並未提供選擇遊戲儲存檔位置的選項，我們可以先將儲存檔和截圖檔案移至專案資料夾，以便之後進行版本控管。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>接下來，在 Tabletop Simulator 的資料夾內建立一個指向專案資料夾的軟連結，以確保儲存檔可以在遊戲的載入遊戲清單中被找到。由於軟連結會連結到原始檔案，因此我們可以透過軟連結對原始檔案進行修改，並將變動同步到遊戲中。（Windows 系統在 cmd 當中使用 <a href="https://learn.microsoft.com/zh-tw/windows-server/administration/windows-commands/mklink">mklink 建立軟連結</a>） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- project/ -&gt; /path/to/project/</span><br></pre></td></tr></table></figure></li>
-<li>再次開啟 VSCode 並啟動 Tabletop Simulator Lua 套件。此時 VSCode 的探索欄應該會出現 Tabletop Simulator Lua 資料夾以及由套件從遊戲儲存檔中提取出來的 Lua 腳本。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br></pre></td></tr></table></figure></li>
-<li>將專案資料夾加入 VSCode 的工作空間：選擇 <code>File</code> → <code>Add Folder to Workspace</code>，然後選擇專案資料夾。此時，探索欄的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>在專案資料夾中建立需要的檔案或資料夾，例如 <code>src/</code>（用來儲存遊戲腳本）。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br><span class="line">|- src\</span><br><span class="line">    |- script1.lua</span><br><span class="line">    |- script2.lua</span><br></pre></td></tr></table></figure></li>
-<li>接著開啟 <code>Global.-*.lua</code>，加入以下命令以指定要導入的腳本。由於套件會自動在工作空間的資料夾尋找副檔名為 <code>.ttslua</code>和<code>.lua</code> 的檔案，所以呼叫時就不需要加入副檔名了。 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script1&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script2&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>現在，已經成功設定 Tabletop Simulator 的 Lua 開發環境，也將遊戲依照專案資料夾的規劃納入版本控管，可以按照自己的習慣開發遊戲腳本了。</p>
-<p>只是要記得在修改腳本或遊戲設定後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 以同步變動到遊戲儲存檔中，也不要忘記在新增腳本時更新導入的指令。</p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
-<li><a href="https://tts-vscode.rolandostar.com/">TTS VSCode Docs</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/27">Require and Path</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/21">Best way to commit the main json file?</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/20">Get&#x2F;Send LUA scripts to&#x2F;from workspace folder</a></li>
-</ul>
+<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
+<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
+<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
+<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
+<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
+<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
+<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
 ]]></content>
-      <categories>
-        <category>programming</category>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>lua</tag>
-      </tags>
   </entry>
 </search>
