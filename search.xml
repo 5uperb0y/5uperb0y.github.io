@@ -311,6 +311,30 @@
       </tags>
   </entry>
   <entry>
+    <title>讀後感｜樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+<span id="more"></span>
+
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>life</category>
+        <category>reading</category>
+      </categories>
+  </entry>
+  <entry>
     <title>hexo 部屬後網頁報錯 &quot;cannot get /&quot;</title>
     <url>/hexo-cannot-get-slash-error/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>新的一年好不容易提振精神來寫文章，想說先把文章的調整更新到網站上。不料，輸入完 <code>hexo clean &amp;&amp; hexo delopy</code> 之後，雖然 Github action 顯示部屬正常，但網頁卻無法瀏覽，分別顯示 “This is not the web page you are looking for” 以及 “There isn’t a GitHub Pages site here”</p>
@@ -336,30 +360,6 @@
 <p>到了最後才懷疑套件可能安裝不全或有問題？找了這篇 <a href="https://feifacunzai.github.io/2020/06/29/Hexo-%E7%B4%80%E9%8C%84%E6%9B%B4%E6%96%B0%E9%81%8E%E7%A8%8B/">Hexo 紀錄更新過程</a>，照裡面講的步驟更新套件後再部屬後，網頁和文章都回來啦。</p>
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>人生難免碰到困難與障礙，有時並非個人不努力，而是大環境的問題。既然錯不在己，過度糾結也無濟於事，不如更新環境或給自己重新開機的機會，也許問題會迎刃而解呢。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>讀後感｜樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
-<span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
-<ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>life</category>
-        <category>reading</category>
-      </categories>
   </entry>
   <entry>
     <title>「天文」生物學：數量的緣故</title>
@@ -1866,6 +1866,30 @@ echo &quot;\$title \n $PWD&quot;
 <li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
 <li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
 </ul>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜模仿 docstring 來註解 process and workflow</title>
+    <url>/nextflow-extract-docstring-from-a-module/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。</p>
+<span id="more"></span>
+
+<p>python 的 docstring 是 function 的強大特性，能讓開發者在參數類別之外，補充關於 function 的用途、假設條件以及運作原理等額外資訊。透過 <code>__doc__</code> 屬性，docstring 能夠被其他程式讀取，實現開發文檔自動化等功能。</p>
+<p>更重要的是，docstring 位於 function 內部，這讓開發者更動程式碼後，能夠輕易地同步更新文檔，減少文檔與程式碼不一致的情形。</p>
+<p>然而，Nextflow 目前並不支援 docstring 功能。不過，我們可使用多行註解（即介於 <code>/*</code> 與 <code>*/</code> 之間的文字）來模仿 docstring 的效果。這對於協助開發者了解當前的 module（無論是 process 或 workflow）都很有幫助。</p>
+<p>鑒於 Nextflow 的註解無法像 python docstring 那樣透過物件方法呼叫，我寫了一支小腳本來<a href="https://github.com/5uperb0y/nf-tools/tree/main/src/get_docstring">節錄這些資訊</a>。</p>
+<p>簡言之，我將位於 module 名稱與 directive 之間的多行註解定義為 Nextflow 的 docstring，例如：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">process &lt;name&gt; &#123;</span><br><span class="line">	<span class="comment">/* your comments */</span></span><br><span class="line">	directives</span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	your code</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這支腳本運用正則表達式（感謝 chatgpt 幫忙想出裏頭可怕的正則表達式）來抓取 docstring，將其與 module 類型（即 workflow 或 process）和名稱一併輸出。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python get_docstring.py workflow.nf</span><br><span class="line">process FASTQC</span><br><span class="line">this text is from FASTQC</span><br><span class="line">workflow VARIANT_CALLING</span><br><span class="line">this text is from VARIANT_CALLING</span><br></pre></td></tr></table></figure>
+<p>如此一來，我們就能取得 docstring 的內容，不僅方便瀏覽 module 功能，也便於自動生成文檔。</p>
+<p>雖然目前功能還蠻陽春的，但之後也許可以新增其他實用功能，例如支援以名稱篩遠 docstring，或是使用 groovy 開發，使之能在 Nextflow 內部調用。</p>
 ]]></content>
       <categories>
         <category>bioinformatics</category>

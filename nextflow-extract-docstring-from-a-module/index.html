@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Nextflow 透過 channel 媒介 process 間的檔案傳遞，讓輸出入檔案以軟連結集中到 process 的工作目錄。不過若想從工作目錄取出分析的最終結果，有賴 publishDir directive 的協助。">
+    <meta name="description" content="本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Nextflow｜利用 &#96;publishDir&#96; 匯出分析檔案">
-<meta property="og:url" content="https://5uperb0y.com/nextflow-the-mode-of-publishdir/index.html">
+<meta property="og:title" content="Nextflow｜模仿 docstring 來註解 process and workflow">
+<meta property="og:url" content="https://5uperb0y.com/nextflow-extract-docstring-from-a-module/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="Nextflow 透過 channel 媒介 process 間的檔案傳遞，讓輸出入檔案以軟連結集中到 process 的工作目錄。不過若想從工作目錄取出分析的最終結果，有賴 publishDir directive 的協助。">
+<meta property="og:description" content="本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-01-14T00:50:46.000Z">
-<meta property="article:modified_time" content="2024-01-01T13:25:08.401Z">
+<meta property="article:published_time" content="2024-01-11T13:04:22.000Z">
+<meta property="article:modified_time" content="2024-01-11T14:05:19.634Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta property="article:tag" content="nextflow">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/nextflow-the-mode-of-publishdir/">
+<link rel="canonical" href="https://5uperb0y.com/nextflow-extract-docstring-from-a-module/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/nextflow-the-mode-of-publishdir/","path":"nextflow-the-mode-of-publishdir/","title":"Nextflow｜利用 `publishDir` 匯出分析檔案"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/nextflow-extract-docstring-from-a-module/","path":"nextflow-extract-docstring-from-a-module/","title":"Nextflow｜模仿 docstring 來註解 process and workflow"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Nextflow｜利用 `publishDir` 匯出分析檔案 | 5uperb0y's blog</title>
+<title>Nextflow｜模仿 docstring 來註解 process and workflow | 5uperb0y's blog</title>
   
 
 
@@ -128,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -141,7 +141,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-publishDir-%E5%8C%AF%E5%87%BA%E6%AA%94%E6%A1%88%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">修改 publishDir 匯出檔案的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AF%A9%E9%81%B8%E8%BC%B8%E5%87%BA%E7%9A%84%E6%AA%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">篩選輸出的檔案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E5%8B%95%E8%BC%B8%E5%87%BA%E5%90%8D%E7%A8%B1"><span class="nav-number">3.</span> <span class="nav-text">更動輸出名稱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">4.</span> <span class="nav-text">結論</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -287,17 +286,10 @@
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-how-data-is-passed-between-processes-through-channels/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-05</time>
+      <a class="popular-posts-link" href="/nextflow-retrieve-configuration-when-workflow-runs/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-06</time>
         <br>
-      Nextflow｜資料是怎麼在 Process 間傳遞？
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-combine-data-into-a-tuple-with-key/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-09</time>
-        <br>
-      Nextflow｜如何為輸入的資料建立辨識碼
+      Nextflow｜怎麼從運行中的腳本取回參數？
       </a>
     </li>
     <li class="popular-posts-item">
@@ -312,6 +304,13 @@
         <time class="popular-posts-time">2022-11-10</time>
         <br>
       Nextflow｜程式碼區塊的跳脫符號 (escape characters)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-change-path-to-work-directory/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-30</time>
+        <br>
+      Nextflow｜調整工作目錄的路徑
       </a>
     </li>
   </ul>
@@ -335,7 +334,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-the-mode-of-publishdir/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-extract-docstring-from-a-module/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -348,12 +347,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Nextflow｜利用 `publishDir` 匯出分析檔案 | 5uperb0y's blog">
+      <meta itemprop="name" content="Nextflow｜模仿 docstring 來註解 process and workflow | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Nextflow｜利用 `publishDir` 匯出分析檔案
+          Nextflow｜模仿 docstring 來註解 process and workflow
         </h1>
 
         <div class="post-meta-container">
@@ -363,15 +362,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2023-01-14 08:50:46" itemprop="dateCreated datePublished" datetime="2023-01-14T08:50:46+08:00">2023-01-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-01-01 21:25:08" itemprop="dateModified" datetime="2024-01-01T21:25:08+08:00">2024-01-01</time>
+      <time title="創建時間：2024-01-11 21:04:22 / 修改時間：22:05:19" itemprop="dateCreated datePublished" datetime="2024-01-11T21:04:22+08:00">2024-01-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -406,8 +399,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/nextflow-the-mode-of-publishdir/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nextflow-the-mode-of-publishdir/" itemprop="commentCount"></span>
+    <a title="disqus" href="/nextflow-extract-docstring-from-a-module/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="nextflow-extract-docstring-from-a-module/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -418,7 +411,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>540</span>
+      <span>452</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -435,69 +428,19 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 透過 channel 媒介 process 間的檔案傳遞，讓輸出入檔案以軟連結集中到 process 的工作目錄。不過若想從工作目錄取出分析的最終結果，有賴 <code>publishDir</code> directive 的協助。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。</p>
 <span id="more"></span>
 
-<p><code>publishDir</code> 能匯出 process 輸出檔案到指定目錄，其語法與注意事項如下：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">process demoPub &#123;</span><br><span class="line">    publishDir <span class="string">&quot;/path/to/output&quot;</span></span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        path <span class="string">&quot;example.txt&quot;</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    touch &quot;example.txt&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">workflow &#123;</span><br><span class="line">    demoPub()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>所有且僅有定義在 output channel 的檔案會匯出到指定目錄</li>
-<li><code>publishDir</code> 應使用絕對路徑 </li>
-<li>預設會在指定目錄建立輸出檔案的軟連結</li>
-<li></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">project</span><br><span class="line">├── work</span><br><span class="line">|   └── workdir</span><br><span class="line">|       └── example.txt</span><br><span class="line">└── publishDir</span><br><span class="line">    └── example.txt -&gt; /project/work/workdir    </span><br></pre></td></tr></table></figure>
-
-<h1 id="修改-publishDir-匯出檔案的方式"><a href="#修改-publishDir-匯出檔案的方式" class="headerlink" title="修改 publishDir 匯出檔案的方式"></a>修改 <code>publishDir</code> 匯出檔案的方式</h1><p>若想修改預設模式可以寫成</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">publishDir <span class="string">&quot;path/to/output&quot;</span>, <span class="attr">mode:</span> <span class="string">&quot;copy&quot;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">project</span><br><span class="line">├── work</span><br><span class="line">|   └── workdir</span><br><span class="line">|       └── example.txt</span><br><span class="line">└── publishDir</span><br><span class="line">    └── example.txt</span><br></pre></td></tr></table></figure>
-<p>除了 “copy”，nextflow 亦有其它匯出檔案的方式，它們分別對應了 linux 的 symbolic link, copy, 與 hard link。詳情可參考軟連結、硬連結與複製的差異，此處僅列出與使用檔案較為相關的特性。</p>
-<table>
-<thead>
-<tr>
-<th>mode</th>
-<th>symlink</th>
-<th>copy</th>
-<th>link</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>linux指令</td>
-<td>symbolic link</td>
-<td>copy</td>
-<td>hard link</td>
-</tr>
-<tr>
-<td>適用對象</td>
-<td>檔案與目錄</td>
-<td>檔案與目錄</td>
-<td>檔案</td>
-</tr>
-<tr>
-<td>原檔更新</td>
-<td>隨之更新</td>
-<td>不隨之更新</td>
-<td>隨之更新</td>
-</tr>
-<tr>
-<td>容量大小</td>
-<td>連結大小</td>
-<td>與原檔一致</td>
-<td>與原檔一致</td>
-</tr>
-<tr>
-<td>刪除原檔</td>
-<td>連結遺失</td>
-<td>不受影響</td>
-<td>不受影響</td>
-</tr>
-</tbody></table>
-<h1 id="篩選輸出的檔案"><a href="#篩選輸出的檔案" class="headerlink" title="篩選輸出的檔案"></a>篩選輸出的檔案</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">publishDir <span class="string">&quot;path/to/output&quot;</span>, <span class="attr">pattern:</span> <span class="string">&quot;*.txt&quot;</span></span><br><span class="line">publishDir <span class="string">&quot;path/to/backup&quot;</span>, <span class="attr">pattern:</span> <span class="string">&quot;*.md&quot;</span></span><br></pre></td></tr></table></figure>
-<p>使用 <code>pattern</code> 篩選，可以達到分流輸出檔案的目的。</p>
-<h1 id="更動輸出名稱"><a href="#更動輸出名稱" class="headerlink" title="更動輸出名稱"></a>更動輸出名稱</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">publishDir <span class="string">&quot;path/to/output&quot;</span>, <span class="attr">saveAs:</span> <span class="string">&quot;new_name&quot;</span></span><br></pre></td></tr></table></figure>
-<p>使用 <code>saveAs</code> 重新命名，可用於重新命名、依照檔名調整輸出目錄等。</p>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Nextflow 最大的特色是以 channel 傳遞資料，process 是從前一步驟的工作目錄獲得資料，而非讀取輸出目錄的資料夾。換句話說，無論建立 output channel 還是匯出檔案到 publishDir，nextflow 都是以 process 的工作目錄為中心。由於每批次處理都會新建工作目錄，所以也確保了 process 輸出的檔案不會彼此覆寫，減少命名中間檔和管理暫存目錄的勞力（這些都由 nextflow 代勞了）。</p>
+<p>python 的 docstring 是 function 的強大特性，能讓開發者在參數類別之外，補充關於 function 的用途、假設條件以及運作原理等額外資訊。透過 <code>__doc__</code> 屬性，docstring 能夠被其他程式讀取，實現開發文檔自動化等功能。</p>
+<p>更重要的是，docstring 位於 function 內部，這讓開發者更動程式碼後，能夠輕易地同步更新文檔，減少文檔與程式碼不一致的情形。</p>
+<p>然而，Nextflow 目前並不支援 docstring 功能。不過，我們可使用多行註解（即介於 <code>/*</code> 與 <code>*/</code> 之間的文字）來模仿 docstring 的效果。這對於協助開發者了解當前的 module（無論是 process 或 workflow）都很有幫助。</p>
+<p>鑒於 Nextflow 的註解無法像 python docstring 那樣透過物件方法呼叫，我寫了一支小腳本來<a target="_blank" rel="noopener" href="https://github.com/5uperb0y/nf-tools/tree/main/src/get_docstring">節錄這些資訊</a>。</p>
+<p>簡言之，我將位於 module 名稱與 directive 之間的多行註解定義為 Nextflow 的 docstring，例如：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">process &lt;name&gt; &#123;</span><br><span class="line">	<span class="comment">/* your comments */</span></span><br><span class="line">	directives</span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	your code</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這支腳本運用正則表達式（感謝 chatgpt 幫忙想出裏頭可怕的正則表達式）來抓取 docstring，將其與 module 類型（即 workflow 或 process）和名稱一併輸出。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ python get_docstring.py workflow.nf</span><br><span class="line">process FASTQC</span><br><span class="line">this text is from FASTQC</span><br><span class="line">workflow VARIANT_CALLING</span><br><span class="line">this text is from VARIANT_CALLING</span><br></pre></td></tr></table></figure>
+<p>如此一來，我們就能取得 docstring 的內容，不僅方便瀏覽 module 功能，也便於自動生成文檔。</p>
+<p>雖然目前功能還蠻陽春的，但之後也許可以新增其他實用功能，例如支援以名稱篩遠 docstring，或是使用 groovy 開發，使之能在 Nextflow 內部調用。</p>
 
     </div>
 
@@ -515,7 +458,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/nextflow-the-mode-of-publishdir/" title="Nextflow｜利用 &#96;publishDir&#96; 匯出分析檔案">https://5uperb0y.com/nextflow-the-mode-of-publishdir/</a>
+      <a href="https://5uperb0y.com/nextflow-extract-docstring-from-a-module/" title="Nextflow｜模仿 docstring 來註解 process and workflow">https://5uperb0y.com/nextflow-extract-docstring-from-a-module/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -531,14 +474,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/nextflow-combine-data-into-a-tuple-with-key/" rel="prev" title="Nextflow｜如何為輸入的資料建立辨識碼">
-                  <i class="fa fa-angle-left"></i> Nextflow｜如何為輸入的資料建立辨識碼
+                <a href="/nextflow-improve-user-experience-on-cli/" rel="prev" title="Nextflow｜如何改善用戶的命令列使用體驗">
+                  <i class="fa fa-angle-left"></i> Nextflow｜如何改善用戶的命令列使用體驗
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/vscode-extensions-that-are-do-nothing-but-are-cool/" rel="next" title="VScode｜無助於開發，但有助於身心的套件">
-                  VScode｜無助於開發，但有助於身心的套件 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
