@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/astrobiology-and-the-search-for-extraterrestrial-life/</loc>
+    
+    <lastmod>2024-01-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/nextflow-extract-docstring-from-a-module/</loc>
     
     <lastmod>2024-01-11</lastmod>
@@ -128,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/</loc>
+    <loc>https://5uperb0y.com/the-importance-of-science-communication/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -137,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/the-importance-of-science-communication/</loc>
+    <loc>https://5uperb0y.com/tabletop-simulator-lua-vscode-development-environment-building/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -236,15 +245,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/</loc>
-    
-    <lastmod>2024-01-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/nextflow-escape-characters/</loc>
     
     <lastmod>2024-01-01</lastmod>
@@ -255,6 +255,15 @@
   
   <url>
     <loc>https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/</loc>
+    
+    <lastmod>2024-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -502,6 +511,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/tags/communication/</loc>
+    <lastmod>2024-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/tags/writing/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -538,13 +554,6 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/career/</loc>
-    <lastmod>2024-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/tags/communication/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -602,13 +611,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/sf/story/</loc>
-    <lastmod>2024-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/academic/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -616,7 +618,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/life/</loc>
+    <loc>https://5uperb0y.com/categories/sf/story/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -630,7 +632,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
+    <loc>https://5uperb0y.com/categories/life/</loc>
+    <lastmod>2024-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/academic/writing/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -638,6 +647,20 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/astrobiology/origins-of-life/</loc>
+    <lastmod>2024-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
+    <lastmod>2024-01-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/academic/tips-tricks/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -658,13 +681,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/life/reading/</loc>
-    <lastmod>2024-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/programming/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -672,14 +688,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/microbial-ecology/</loc>
+    <loc>https://5uperb0y.com/categories/life/reading/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/tips-tricks/</loc>
+    <loc>https://5uperb0y.com/categories/microbial-ecology/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -708,13 +724,6 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/microbial-ecology/microbiota/</loc>
-    <lastmod>2024-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/academic/writing/</loc>
     <lastmod>2024-01-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
