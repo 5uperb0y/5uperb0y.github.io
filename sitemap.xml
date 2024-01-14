@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/the-door-into-astrobiology/</loc>
+    
+    <lastmod>2024-01-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/astrobiology-and-the-search-for-extraterrestrial-life/</loc>
     
     <lastmod>2024-01-11</lastmod>
@@ -398,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/how-to-download-and-install-rdp-classifier/</loc>
+    <loc>https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -407,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/</loc>
+    <loc>https://5uperb0y.com/how-to-download-and-install-rdp-classifier/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -504,14 +513,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/communication/</loc>
+    <loc>https://5uperb0y.com/tags/reading/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/reading/</loc>
+    <loc>https://5uperb0y.com/tags/communication/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -532,14 +541,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/database/</loc>
+    <loc>https://5uperb0y.com/tags/NGS/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/NGS/</loc>
+    <loc>https://5uperb0y.com/tags/database/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -604,14 +613,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/</loc>
+    <loc>https://5uperb0y.com/categories/astrobiology/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/</loc>
+    <loc>https://5uperb0y.com/categories/academic/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -625,14 +634,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
-    <lastmod>2024-01-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/academic/writing/</loc>
+    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -646,7 +648,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
+    <loc>https://5uperb0y.com/categories/academic/writing/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -681,6 +683,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
+    <lastmod>2024-01-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/categories/programming/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -709,14 +718,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
+    <loc>https://5uperb0y.com/categories/programming/tools/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/programming/tools/</loc>
+    <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
     <lastmod>2024-01-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
