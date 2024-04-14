@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。 不管使用的軟體為 FLASH 、PEAR 還是 Us">
+    <meta name="description" content="莎拉．西格教授任職於麻省理工學院，她因在系外行星探測的理論與實踐上的傑出貢獻，於 2014 年獲頒麥克阿瑟獎。我第一次看到她的名字是在《五十億年的孤寂》一書中，此書訪談了第一線天文學家，介紹學界在尋找地外生命的嘗試、成功與挫敗，描繪出天文生物學的發展軌跡。書中不僅多次提到尋找地外生命的挑戰，還討論了社會支持對科研突破的影響。 全書以莎拉的訪談作結（由於書不在手，我只能大略描述），描繪了喪偶莎拉在黎">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="怎麼決定合併雙端序列時允許的錯配數量？">
-<meta property="og:url" content="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/index.html">
+<meta property="og:title" content="尋找太陽系外的行星：天文學家莎拉．西格的愛與探索">
+<meta property="og:url" content="https://5uperb0y.com/seager-2021-the-smallest-lights-in-the-universe-a-memoir/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。 不管使用的軟體為 FLASH 、PEAR 還是 Us">
+<meta property="og:description" content="莎拉．西格教授任職於麻省理工學院，她因在系外行星探測的理論與實踐上的傑出貢獻，於 2014 年獲頒麥克阿瑟獎。我第一次看到她的名字是在《五十億年的孤寂》一書中，此書訪談了第一線天文學家，介紹學界在尋找地外生命的嘗試、成功與挫敗，描繪出天文生物學的發展軌跡。書中不僅多次提到尋找地外生命的挑戰，還討論了社會支持對科研突破的影響。 全書以莎拉的訪談作結（由於書不在手，我只能大略描述），描繪了喪偶莎拉在黎">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-02-15T16:15:18.000Z">
-<meta property="article:modified_time" content="2024-01-01T13:25:08.394Z">
+<meta property="article:published_time" content="2024-04-14T14:22:16.000Z">
+<meta property="article:modified_time" content="2024-04-14T14:24:55.895Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="NGS">
+<meta property="article:tag" content="reading">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/">
+<link rel="canonical" href="https://5uperb0y.com/seager-2021-the-smallest-lights-in-the-universe-a-memoir/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/","path":"how-to-decide-max-mismatch-when-merging-paired-end-reads/","title":"怎麼決定合併雙端序列時允許的錯配數量？"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/seager-2021-the-smallest-lights-in-the-universe-a-memoir/","path":"seager-2021-the-smallest-lights-in-the-universe-a-memoir/","title":"尋找太陽系外的行星：天文學家莎拉．西格的愛與探索"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>怎麼決定合併雙端序列時允許的錯配數量？ | 5uperb0y's blog</title>
+<title>尋找太陽系外的行星：天文學家莎拉．西格的愛與探索 | 5uperb0y's blog</title>
   
 
 
@@ -289,7 +289,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/seager-2021-the-smallest-lights-in-the-universe-a-memoir/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -302,12 +302,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="怎麼決定合併雙端序列時允許的錯配數量？ | 5uperb0y's blog">
+      <meta itemprop="name" content="尋找太陽系外的行星：天文學家莎拉．西格的愛與探索 | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          怎麼決定合併雙端序列時允許的錯配數量？
+          尋找太陽系外的行星：天文學家莎拉．西格的愛與探索
         </h1>
 
         <div class="post-meta-container">
@@ -317,15 +317,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2022-02-16 00:15:18" itemprop="dateCreated datePublished" datetime="2022-02-16T00:15:18+08:00">2022-02-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-01-01 21:25:08" itemprop="dateModified" datetime="2024-01-01T21:25:08+08:00">2024-01-01</time>
+      <time title="創建時間：2024-04-14 22:22:16 / 修改時間：22:24:55" itemprop="dateCreated datePublished" datetime="2024-04-14T22:22:16+08:00">2024-04-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -333,11 +327,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/bioinformatics/metagenomics/" itemprop="url" rel="index"><span itemprop="name">metagenomics</span></a>
+          <a href="/categories/astrobiology/" itemprop="url" rel="index"><span itemprop="name">astrobiology</span></a>
         </span>
     </span>
 
@@ -364,8 +354,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/how-to-decide-max-mismatch-when-merging-paired-end-reads/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-decide-max-mismatch-when-merging-paired-end-reads/" itemprop="commentCount"></span>
+    <a title="disqus" href="/seager-2021-the-smallest-lights-in-the-universe-a-memoir/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="seager-2021-the-smallest-lights-in-the-universe-a-memoir/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -376,14 +366,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1k</span>
+      <span>2.5k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>4 分鐘</span>
+      <span>9 分鐘</span>
     </span>
 </div>
 
@@ -393,20 +383,32 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。</p>
-<p>不管使用的軟體為 FLASH 、PEAR 還是 Usearch，合併雙端序列時都有許多參數可以設定。其中一個參數是合併時允許的錯配數量。這參數的必要性在於，即使順向和逆向序列都源於同一條 DNA，兩者的重疊區域仍會因為定序錯誤而略有差異。合併時允許少量的錯配數量能避免捨棄掉這些正確的序列。</p>
-<p>然而，我們要怎麼知道洽當的錯配數量上限？使用預設值、反覆試誤、調查文獻都是常見的方法，不過我更想要知道能依照資料選定適用參數的策略。畢竟，如果能先推算出理論值，那麼測試時便有參考的基準，除了能縮減試誤時間，在寫論文或向他人解釋方法時也比較有依據。</p>
-<p>因此，雖然在資料處理流程已成熟的今日，糾結參數設定可能被視為無關宏旨，我還是想以本文紀錄，自己思考這個問題的方向與看法。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>莎拉．西格教授任職於麻省理工學院，她因在系外行星探測的理論與實踐上的傑出貢獻，於 2014 年獲頒麥克阿瑟獎。我第一次看到她的名字是在《五十億年的孤寂》一書中，此書訪談了第一線天文學家，介紹學界在尋找地外生命的嘗試、成功與挫敗，描繪出天文生物學的發展軌跡。書中不僅多次提到尋找地外生命的挑戰，還討論了社會支持對科研突破的影響。</p>
+<p>全書以莎拉的訪談作結（由於書不在手，我只能大略描述），描繪了喪偶莎拉在黎明前拖著獨木舟航向一個對於她自己，或是地外生命探索而言都同樣晦暗不明的未來。</p>
+<p>相較於《五十億年的孤寂》，這本書則是莎拉的人生回顧，讓我們得以從她的視角，看到一位科研人員如何因憧憬而投身科研，為什麼堅持下去，以及科研之外的事件如何影響個人的信念和觀點？</p>
 <span id="more"></span>
 
-<p>首先，順逆向序列的重疊區只要有任一列發生定序錯誤便會發生錯配。由於 illumina 定序平台的逆向序列品質往往較順向序列品質低，假設不計兩序列同時出錯的狀況，重疊區的錯配數量可由逆向序列的預期鹼基錯誤數量估計。</p>
-<p>由於 illumina 定序平台的逆向序列品質往往較順向序列低，而且重疊區任何一條序列發生定序錯誤便會造成錯配。假設不計兩序列於相同位點同時出錯的狀況，那麼重疊區的錯配數量上限，可以由逆向序列的預期鹼基錯誤數量估計：錯配數量 &lt; 逆向序列重疊區的預期鹼基錯誤數 * 2</p>
-<p>舉例來說，若增幅和定序 16S rRNA 基因 V4 區域之後，獲得一對長度為 250 bp 的序列。由於 V4 區域大約只有 253 bp 長，所以這對序列的重疊區長達 247 bp，幾乎覆蓋了整個 V4 區域。</p>
-<p>假設考慮最極端的狀況，即要在順向和逆向序列的每個鹼基都完全對應時，我們才肯相信合併後的序列源於同一條 DNA。那麼，在逆向序列平均品質分數為 20 的狀況下，重疊區的預期錯誤數量為 $0.99 * 247 &#x3D; 2.47$。</p>
-<p>這意味著，即使是這對序列得自於同一條 DNA，平均而言也會出現 $2.47 * 2 &#x3D; 4.94$ 個錯配。因此至少要允許 5 個錯配，才能確保這些源於同一條 DNA 的正確序列能順利合併。</p>
-<p>推廣來說，錯配數量上限取決於重疊區的長度與品質。隨著對重疊區長度的要求放寬，預期的鹼基錯誤數會跟著下降，允許的錯配數量也得調低，才能確保合併雙端序列的特異性和靈敏度平衡。</p>
-<p>依照這個推論，在取得資料時，可以先思考「若這對序列沒有定序錯誤，要有多長的重疊序列，才肯相信它們得自於同一條DNA」。</p>
-<p>接著，找到平均品質最差的那個樣本的逆向序列，計算其 3’ 端重疊區域的預期鹼基錯誤數（該段區域的定序錯誤率之和），得出數值的兩倍，應該可以當作測試雙端序列合併的參數的起始值。</p>
+<p>德雷克曾提出一條公式 (Drake Equation) 來估計銀河系內可能存在的外星文明數量，這公式將左右生命起源與演化的各種宏觀因素相乘。因此，對於每個因素的估計，都大大地影響了我們對於地外生命是否存在的信心。</p>
+<p>系外行星的數量是公式其中一個變項。在 1960 年代，美國與瑞士的科學團隊分別宣稱透過徑向速度法發現系外行星，飛馬座 51。他們並未直接拍攝到行星公轉的影像，而是透過潛在天體對恆星運動軌跡的影響，來推測行星的存在。簡言之，行星繞行恆星時，恆星其實也繞著彼此的質心運動，導致其與地球的距離週期變化。這種距離變化引發的都普勒效應能在光譜上觀測到，成為支持行星存在的證據。</p>
+<p>然而，學界對於這項發現的看法分歧，一方面有人質疑結果的解釋，另一方面則有人認為影響光譜的是其他天體而非行星。換句話說，在二十世紀中葉系外行星是否存在仍有許多爭議，這意味著即使生命可以輕易在一攤有機物濃湯裡萌發，除了地球外可能沒有合適的地方安放這些原料。觀測系外行星的限制在於沒有辦法直接看見它們，即使是當時最好的望遠鏡也只能捕捉到遙遠恆星甚至整個星系散發的微弱光亮。</p>
+<p>如今，已有數千顆系外行星被發現，觀測方法也不限逕向運動法，還擴展到凌日法或重力透鏡法等手段。不過，在莎拉決定研究系外行星及其可能性的時候，這領域還處在手段闕如，連研究標的是否存在都還不明朗的階段。究竟是什麼樣的啟發和經歷，讓莎拉被系外行星的研究吸引，從而決定探索宇宙這個人類最大的未知領域？</p>
+<p>理由得追溯到她十六歲的時候，擺脫了在派對、嗑藥、溜冰、還有嘉年華的夏季裡格格不入的日子，用打工買下的天文望遠鏡，顫抖地透過鏡片，在寒冷的天空看見木星的那一刻。此後，即使父親強力建議她就讀醫學系，莎拉始終不以為然，打算好好讀書進大學，看一輩子的星星。</p>
+<p>隨後，莎拉於多倫多大學取得數學與物理學士學位，打算在進入哈佛大學進修前的長假走一趟獨木舟之旅。在籌備過程中，她結識了生命最重要的伴侶麥克，他們一同規劃行程、練習泛舟並且想像旅途中的景象。莎拉發現他們彼此能自在相處共享某種孤單，於是邀請麥克偕行。他們一路通過陌生的湖泊、湍流還在森林大火中死裡逃生。旅途之後，麥可隨莎拉在波士頓定居，並在莎拉離開哈佛前結婚。她是這麼描述他們的生活與關係：</p>
+<blockquote>
+<p>我把麥可和我想成宇宙裡的兩個天體，彼此相距遙遠，卻有一種無形的力量將我們綁在一起。我們就像是火星的兩個衛星：佛勃斯和戴摩斯，這兩顆衛星按照不同的軌道運行，彼此的關係卻異常和諧，就像希臘神祉阿瑞斯和阿芙柔黛蒂的雙胞胎兒子一樣，所以才這麼命名。</p>
+</blockquote>
+<p>她與麥可成婚不久後育有兩子，並獲麻省理工學院的教職。儘管職涯和生活皆有相當的進展，但她的光芒背後仍然伴隨著一些陰影，包含了對研究意義的質疑、與研究夥伴的決裂、意外告終的類地行星搜索計劃、寵物與父親的逝世。</p>
+<p>而其中最大陰影，幾乎籠罩生命一切光明的，是她的丈夫麥可在壯年之際罹患癌症。莎拉不得不看著伴侶逐漸衰弱最終病故。麥可的離去不只是情感上的打擊，也破壞了她的生活平衡。以往麥可負責打理家務，讓莎拉能全神貫注在研究項目。如今，她不得不一肩扛起家庭重擔，還要照顧兩位年幼的孩子，又不能落後科研進展。</p>
+<p>在這樣的壓力下，莎拉只好聘僱保母與家管協助，雖然這些幫助大幅減輕家務的負擔，卻無法撫平麥可逝世帶來的哀傷。這些困境和學術行政對身兼家務的學者的不友善態度，使得她一度想要放棄。所幸，寡婦俱樂部的朋友陪伴她度過失去丈夫後的春夏秋冬，研究單位的同仁也在她經濟最險峻的情況下大方支持她，讓她沒有放棄學術研究，熬到因研究成果卓越獲獎，獲得一筆足以支持她研究與生活的獎金。</p>
+<p>幾年後，莎拉再度結識一位能交心的對象，查爾斯。他意外地走進了她的生活，陪伴莎拉走過生涯最低谷的日子。在書末，年過半百的查爾斯放棄繼承家族事業，與莎拉結為連理並搬入她的家。</p>
+<p>莎拉的一生，恰好與她最著名的科研成果──蔽星板計劃──的意象契合。蔽星板是一種輔助觀測系外行星的裝置，它能遮蔽恆星光芒，讓儀器有辦法偵測到周圍行星反射出的微弱光訊號。在莎拉這輩子的追求中，喪夫無疑是巨大的黑暗，但在這片陰影邊緣，微弱的光芒仍引導她看見另一種可能性，如同她對自己踏上天文學的動機的回顧：</p>
+<blockquote>
+<p>當我想到星星，我幾乎可以感受到一股實質的拉力。我想只是看星星，我想要認識它們，每一顆星星，多如海沙的星星。銀河裡的數億顆恆星照亮了不可勝數的天空，而我想要沐浴在它們的光亮裡。對我來說，星星代表的不只是虛無飄渺的可能性，而是可能實現的機率。在地球上的機率對我可能不利，但你的所在之處可以改變一切。自古至今，每顆星星都代表了另一個機會，能讓我置身於另一個人類從未造訪過的地方。</p>
+</blockquote>
+<p>讀過幾本研究人員的回憶錄之後，我覺得莎拉．西格這本書的特色在於真實。雖然書腰文案強調了她獲得麥克阿瑟「天才獎」的不凡成就，好像在她經歷了一系列凌亂無章的現實生活和機會渺茫的大膽追求之後，終於得到應有的認可。不過實際上莎拉在接獲得獎消息時，第一個反應是她終於獲得一筆救命財，可以支應單親職業婦女的許多開銷，甚至有時間慢慢喜歡上自己不擅長的家庭瑣事上。</p>
+<p>另外，也許是好萊塢影視、又或不明來歷的勵志著作、還是義務教育輔導課營造的印象，凡提起研究人員，總帶有獻身的意味在，好似這些人在某種神啟之後，便下定決心穿著白袍透過望遠鏡或顯微鏡窺探宏觀到至微的宇宙。然而，實際上人們從事什麼職業，又在哪個領域卓越是諸多因素綜合的結果。</p>
+<p>相較於其他人，莎拉既有才能也早早立定志向，但她求學也曾經驗了只能透過程式碼觀測星空，與憧憬的生活有巨幅落差的時候；任教過程中遭遇的家庭與事業打擊更是讓她幾度萌生退意。科學家不是像媒體或大眾想像得那樣總是理性自若，同樣會經歷情緒崩潰與歇斯底里。</p>
+<p>這本書沒有像其他傳記那樣仔細描述科學發現的過程，而是忠實地呈現了科學家作為人的一面，畢竟，愛恨情仇以及無數說不出的煩惱，無一例外地困擾著追尋星辰的科學家以及其他行業的人們。</p>
 
     </div>
 
@@ -424,7 +426,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/" title="怎麼決定合併雙端序列時允許的錯配數量？">https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/</a>
+      <a href="https://5uperb0y.com/seager-2021-the-smallest-lights-in-the-universe-a-memoir/" title="尋找太陽系外的行星：天文學家莎拉．西格的愛與探索">https://5uperb0y.com/seager-2021-the-smallest-lights-in-the-universe-a-memoir/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -433,21 +435,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/NGS/" rel="tag"># NGS</a>
+              <a href="/tags/reading/" rel="tag"># reading</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/haskell-2017-the-songs-of-trees/" rel="prev" title="讀後感｜樹之歌">
-                  <i class="fa fa-angle-left"></i> 讀後感｜樹之歌
+                <a href="/mishima-1968-yukio-mishima-letter-classroom/" rel="prev" title="三島由紀夫書信教室">
+                  <i class="fa fa-angle-left"></i> 三島由紀夫書信教室
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/r-console-upper-limit-on-the-string-length/" rel="next" title="R/Rstudio console 的指令長度限制">
-                  R/Rstudio console 的指令長度限制 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
