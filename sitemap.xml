@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://5uperb0y.com/manage-commands-with-fzf/</loc>
+    <loc>https://5uperb0y.com/how-to-manage-commands/</loc>
     
     <lastmod>2024-04-16</lastmod>
     
@@ -335,15 +335,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/modify-vimium-to-label-and-close-pop-up/</loc>
-    
-    <lastmod>2024-01-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/navigate-websites-with-keyboard/</loc>
     
     <lastmod>2024-01-01</lastmod>
@@ -354,6 +345,15 @@
   
   <url>
     <loc>https://5uperb0y.com/nextflow-change-path-to-work-directory/</loc>
+    
+    <lastmod>2024-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/modify-vimium-to-label-and-close-pop-up/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -398,15 +398,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/leetcode-53-maximum-subarray/</loc>
-    
-    <lastmod>2024-01-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/leetcode-217-contains-duplicate/</loc>
     
     <lastmod>2024-01-01</lastmod>
@@ -416,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/lee-2017-astrobiology/</loc>
+    <loc>https://5uperb0y.com/leetcode-53-maximum-subarray/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -426,6 +417,15 @@
   
   <url>
     <loc>https://5uperb0y.com/lee-2017-introduction-to-statistics-and-quantitative-analysis/</loc>
+    
+    <lastmod>2024-01-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/lee-2017-astrobiology/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -488,7 +488,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/how-i-learn-from-seminars/</loc>
+    <loc>https://5uperb0y.com/history-of-astrobiology-naked-eyes/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -497,7 +497,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/history-of-astrobiology-naked-eyes/</loc>
+    <loc>https://5uperb0y.com/how-i-learn-from-seminars/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -623,13 +623,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/vim/</loc>
-    <lastmod>2024-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/tags/tips-and-tricks/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -638,6 +631,13 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/nextflow/</loc>
+    <lastmod>2024-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/vim/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -688,14 +688,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
+    <loc>https://5uperb0y.com/categories/academic/writing/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/writing/</loc>
+    <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -723,13 +723,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
-    <lastmod>2024-04-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/astrobiology/origins-of-life/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -738,6 +731,13 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/bioinformatics/</loc>
+    <lastmod>2024-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
