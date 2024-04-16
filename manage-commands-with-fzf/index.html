@@ -20,28 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="科學溝通能力究竟有什麼重要性，為何值得投注心力練習？ 溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。 越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。">
+    <meta name="description" content="有些指令很常用，但使用頻率不見得高到能讓人既起來。那麼，除了使用記事本以外，還有什麼方法能有效管理這些指令呢？ 本文總結一些管理指令的經驗和訣竅，並且介紹好用的開源工具供參考。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="科學溝通能力的重要性">
-<meta property="og:url" content="https://5uperb0y.com/the-importance-of-science-communication/index.html">
+<meta property="og:title" content="如何管理常用的 Command Line 指令？">
+<meta property="og:url" content="https://5uperb0y.com/manage-commands-with-fzf/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="科學溝通能力究竟有什麼重要性，為何值得投注心力練習？ 溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。 越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。">
+<meta property="og:description" content="有些指令很常用，但使用頻率不見得高到能讓人既起來。那麼，除了使用記事本以外，還有什麼方法能有效管理這些指令呢？ 本文總結一些管理指令的經驗和訣竅，並且介紹好用的開源工具供參考。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2018-11-30T08:36:25.000Z">
-<meta property="article:modified_time" content="2024-01-01T13:25:08.404Z">
+<meta property="og:image" content="https://imgs.xkcd.com/comics/tar_2x.png">
+<meta property="article:published_time" content="2024-04-16T14:52:58.000Z">
+<meta property="article:modified_time" content="2024-04-16T14:58:19.546Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="communication">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgs.xkcd.com/comics/tar_2x.png">
 
 
-<link rel="canonical" href="https://5uperb0y.com/the-importance-of-science-communication/">
+<link rel="canonical" href="https://5uperb0y.com/manage-commands-with-fzf/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/the-importance-of-science-communication/","path":"the-importance-of-science-communication/","title":"科學溝通能力的重要性"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/manage-commands-with-fzf/","path":"manage-commands-with-fzf/","title":"如何管理常用的 Command Line 指令？"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>科學溝通能力的重要性 | 5uperb0y's blog</title>
+<title>如何管理常用的 Command Line 指令？ | 5uperb0y's blog</title>
   
 
 
@@ -128,7 +129,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -141,6 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E9%BA%BC%E7%AE%A1%E7%90%86%E5%B8%B8%E7%94%A8%E4%BD%86%E4%B8%8D%E8%A6%8B%E5%BE%97%E8%83%BD%E8%A8%98%E8%B5%B7%E4%BE%86%E7%9A%84%E6%8C%87%E4%BB%A4%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">怎麼管理常用但不見得能記起來的指令？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">有哪些好用的工具？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%AF%AB%E4%B8%80%E5%A5%97%E6%8C%87%E4%BB%A4%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">如何自己寫一套指令管理工具？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AB%96%EF%BC%9A%E5%8D%B3%E4%BD%BF%E6%9C%89-AI%EF%BC%8C"><span class="nav-number">4.</span> <span class="nav-text">結論：即使有 AI，</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -289,7 +291,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/the-importance-of-science-communication/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/manage-commands-with-fzf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -302,12 +304,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="科學溝通能力的重要性 | 5uperb0y's blog">
+      <meta itemprop="name" content="如何管理常用的 Command Line 指令？ | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          科學溝通能力的重要性
+          如何管理常用的 Command Line 指令？
         </h1>
 
         <div class="post-meta-container">
@@ -317,15 +319,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2018-11-30 16:36:25" itemprop="dateCreated datePublished" datetime="2018-11-30T16:36:25+08:00">2018-11-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-01-01 21:25:08" itemprop="dateModified" datetime="2024-01-01T21:25:08+08:00">2024-01-01</time>
+      <time title="創建時間：2024-04-16 22:52:58 / 修改時間：22:58:19" itemprop="dateCreated datePublished" datetime="2024-04-16T22:52:58+08:00">2024-04-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -333,11 +329,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/academic/" itemprop="url" rel="index"><span itemprop="name">academic</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/academic/mindset/" itemprop="url" rel="index"><span itemprop="name">mindset</span></a>
+          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
         </span>
     </span>
 
@@ -364,8 +356,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/the-importance-of-science-communication/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="the-importance-of-science-communication/" itemprop="commentCount"></span>
+    <a title="disqus" href="/manage-commands-with-fzf/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="manage-commands-with-fzf/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -376,14 +368,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>478</span>
+      <span>2.3k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>9 分鐘</span>
     </span>
 </div>
 
@@ -393,15 +385,53 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
-<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
-<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://imgs.xkcd.com/comics/tar_2x.png" alt="xkcd:tar (https://imgs.xkcd.com/comics/tar.png)"></p>
+<p>有些指令很常用，但使用頻率不見得高到能讓人既起來。那麼，除了使用記事本以外，還有什麼方法能有效管理這些指令呢？</p>
+<p>本文總結一些管理指令的經驗和訣竅，並且介紹好用的開源工具供參考。</p>
 <span id="more"></span>
 
-<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
-<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
-<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
-<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
+<h2 id="怎麼管理常用但不見得能記起來的指令？"><a href="#怎麼管理常用但不見得能記起來的指令？" class="headerlink" title="怎麼管理常用但不見得能記起來的指令？"></a>怎麼管理常用但不見得能記起來的指令？</h2><p>在初學程式的時候，我除了用 word，還會用紙本筆記紀錄程式碼和常用指令。這些紀錄就擺在我的電腦桌面和電腦桌面上，以便不時參閱。雖然有時會忘記指令放在電腦還是筆記本上，可是當時的內容不多，所以也沒特別感到困擾。大學畢業後，因為微軟的校園授權過期，我索性把所有筆記都搬遷到 Goolge Doc。由於 Google Doc 能是雲端應用程式，所以可以讓文件跨裝置讀取與保管，讓我能統一管理寫作、報告還是程式碼指令等多媒體文件。</p>
+<p>除了文書編輯軟體，我也曾跟上筆記軟體的風潮，試著用 Evernote 和 Notion 等工具。這些軟體把筆記篇幅劃分為更小的單位，加入標籤、資料夾或是資料庫系統，提升了管理筆記的彈性；而它們通常也支持多媒體輸入，也內建全域搜尋系統，改善了許多維護與使用筆記的體驗。</p>
+<p>筆記軟體、文書編輯軟體或紙本筆記本在紀錄筆記上各有千秋，不過據我的使用經驗，它們在管理指令上有共通的問題：查閱指令離使用指令的距離太遠了。讓我們以按鍵數量來衡量查閱與使用的距離，假設要解壓縮一份 <code>tar.gz</code> 檔，前述幾種方法要按上幾次鍵？打開瀏覽器&#x2F;軟體&#x2F;文件、啟動搜尋、鍵入關鍵字、複製指令、打開終端機、貼上指令，扣除搜索的成本，最少也要六次以上。</p>
+<p>這聽起來很像個人 kimochi 的問題，不過如果你的職業正好是個厭世的軟體工程師，那麼想點辦法稍稍拯救一下上班的心情也是個好主意吧？屏除開發或維護的流暢性，若能確保筆記與應用場合貼近，也有助於即時更新筆記的內容。</p>
+<p>綜合以上提及的因素，指令的良好管理方式至少具有統一管理、跨平臺存儲、貼近使用場合等特性，才能提升用戶維護與使用的流暢性。以 Command Line 指令為例，筆記最直觀的存放位置是伺服器或電腦本身，讓他們能透過 Github 備份與版本控管。由於幾乎沒有多媒體需求，使用 markdown 語法紀錄的純文本能兼具可讀性與標籤的功能性，還可在各平台讀取。此外，command line 的搜尋系統普遍比文書與筆記軟體強大，也降低了分類、標籤和重新排序的成本。</p>
+<p>最後，還需要一些程式來銜接筆記與應用的落差，例如將搜尋到的指令直接貼到 command line，就不需要重複複製貼上。</p>
+<h2 id="有哪些好用的工具？"><a href="#有哪些好用的工具？" class="headerlink" title="有哪些好用的工具？"></a>有哪些好用的工具？</h2><p>只要在 Github 主題搜尋 <code>snippet</code> 或 <code>oneliner</code> 便能找到許多指令管理工具可以參考。以下幾款都支援指令速查與調用，而 <code>navi</code> 和 <code>pet</code> 甚至能引導用戶交互式輸入指令所需的參數。以刪除特定的 Docker image 為例，<code>navi</code> 可以做到用快捷鍵搜尋刪除 image 的指令，再用快捷鍵搜尋 image 的名稱，自動回填到刪除指令的參數位置。</p>
+<p>這些工具都允許用戶依照其規範的格式增補指令，有些還內建的指令庫，彙整了像是 <a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr">tldr</a> 這樣被開源社群維護的簡明指令手冊。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/yuki-yano/zsh-fzf-snippet">zsh-fzf-snippet</a>：基於 fzf 且適用於 zsh 的輕量級指令管理工具，支援指令速查與執行。核心功能只含一支腳本以及紀錄指令的設置檔。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/babarot/easy-oneliner">easy-oneliner</a>：同樣基於 fzf 且適用於 zsh 的輕量級指令管理工具，只是指令的記錄格式與 <code>zsh-fzf-snippet</code> 不同。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/denisidoro/navi">navi</a>：基於 Python 語言的指令管理工具，彙整了 Github 著名的指令庫，除了指令速查與執行的功能外，也會交互式引導用戶輸入指令的參數。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/knqyf263/pet">pet</a>：基於 Go 語言的指令管理工具，定位與 <code>navi</code> 類似，同樣具有指令速查與交互式參數輸入功能。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/chubin/cheat.sh">cheat.sh</a>：彙整了 Github 著名的指令庫，只支援指令速查。有線上版本，所以不需要安裝也能使用。</li>
+</ul>
+<h2 id="如何自己寫一套指令管理工具？"><a href="#如何自己寫一套指令管理工具？" class="headerlink" title="如何自己寫一套指令管理工具？"></a>如何自己寫一套指令管理工具？</h2><p>由於這些工具的原理單純，所以如果對它們的使用方式與格式規範不滿意，DIY 一套適合自己業務需求的輕量級工具也是可行。觀察前述幾項工具之後，我們可歸納出實踐指令速查功能需要的部件，</p>
+<ul>
+<li>儲存格式：儲存指令的格式和語法，理想上要能滿足用戶瀏覽與程式編譯的需求。</li>
+<li>搜尋介面：搜尋指令與自動補全的介面，包含搜尋、瀏覽與預覽功能。</li>
+<li>指令輸出：選中指令後的反應，例如執行、印出或是啟動其他程式等。</li>
+</ul>
+<p>以我模仿 <code>zsh-fzf-snippet</code> 的 <a target="_blank" rel="noopener" href="https://github.com/5uperb0y/fzf-oneliner-manager">fzf-oneliner-manager</a> 為例。我採用習慣的 markdown 來記錄指令，標題 (<code>#</code>)紀錄摘要，程式碼區塊(<code>``</code>)紀錄指令，無標記段落則作為補充說明。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Print line number X of a file</span><br><span class="line">`head -n &lt;num&gt; &lt;file&gt; | tail -n 1`</span><br><span class="line">https://www.linuxquestions.org/questions/programming-9/print-line-number-x-of-a-file-in-shell-273849/</span><br><span class="line"></span><br><span class="line"># Remove duplicate lines from a file </span><br><span class="line">`awk &#x27;!seen[$0]++&#x27; &lt;file&gt;`</span><br><span class="line">https://linux.cn/article-6881-1.html</span><br></pre></td></tr></table></figure>
+
+<p>我採用模糊搜索工具 <a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf">fzf</a> 來製作搜尋指令的介面。fzf 能依照部分匹配來搜索文字，所以能免除用正則表達式搜尋字串的負擔。除此之外，也提供了一套方便的介面供用戶搜尋和瀏覽文字檔。</p>
+<p>當使用快捷鍵觸發指令速查時，<code>fzf-oneliner-manager</code> 會將指令文件整理成 TSV 檔，其中每一列都包含一條指令的標題、指令內容與補充說明，然後分別陳列標題與補充說明給用戶，讓他們能透過關鍵字或是方向鍵瀏覽要調用的指令。</p>
+<p>一旦指令被選中，指令內容會被截取出來，黏貼到用戶的 command Line 上，只要再按下確認，即可觸發這條指令。這項功能有賴 bash 的 <code>bind -x</code> 指令與 <code>READLINE_LINE</code>&#x2F;<code>READLINE_POINT</code> 變項。</p>
+<p><code>bind -x</code> 能重新映射按鍵以觸發指定的腳本或副程式，此處我把 <code>Ctrl + A</code> 設定成啟動指令速查的快捷鍵。<code>READLINE_LINE</code> 是啟動 <code>bind -x</code> 時，command Line 的內容；而 <code>READLINE_POINT</code> 則是游標所處的位置。換句話說，只要將選中的指令取代既有的 <code>READLINE_LINE</code>，並且把游標挪到指令字串的末端，便能在完成速查後將指令貼到 Command line 上。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">READLINE_LINE=<span class="string">&quot;<span class="variable">$&#123;selected&#125;</span>&quot;</span>			<span class="comment"># 用選中的指令替換 command line 既有的內容</span></span><br><span class="line">READLINE_POINT=<span class="string">&quot;<span class="variable">$&#123;#READLINE_LINE&#125;</span>&quot;</span>	<span class="comment"># 移動游標到指令字串的末端</span></span><br></pre></td></tr></table></figure>
+
+<p>因此，有了這樣的工具，管理指令的日子看起來就像這樣：</p>
+<ol>
+<li>「那個解壓縮的指令好像叫 tar 蝦米碗糕的？」，啟動速查。</li>
+<li>找到指令，按下確認執行並解決問題。</li>
+<li>沒找到指令，上網 Google 或是求救 chatgpt。</li>
+<li>把查到的指令補充到指令文件內以便往後搜索。</li>
+<li>無聊時可以打開指令文件緬懷自己的青春，「啊啦啊啦，我小時候可是用 word 紀錄管理 server 的程式碼呢」。</li>
+</ol>
+<h2 id="結論：即使有-AI，"><a href="#結論：即使有-AI，" class="headerlink" title="結論：即使有 AI，"></a>結論：即使有 AI，</h2><p>不過現在 chatgpt 或 bing AI 那麼方便，指令速查工具還有用嗎？</p>
+<p>我覺得兩者的定位不大一樣。雖然當今生成式 AI 的功能已相當全面，卻仍無法免除溝通的成本。對於陌生議題，獨自構思方法可能比實際解決問題費時，所以上網搜尋、求助他人或是詢問 AI 等借重既有經驗的方法都能縮短整體工時。</p>
+<p>然而，隨著用戶熟悉方法，溝通成本便成為額外的負擔。呼應文首那幅四格漫畫，為了解壓縮一份 <code>tar.gz</code> 檔，你要先打關鍵字、按下搜索、點選網頁、複製&#x2F;貼上、執行，若你用 chatgpt，還得等他做些寒暄和反應的時間。在這種情況下，速查工具能做為很好的捷徑，方便用戶迅速取得常用指令，保持工作的流暢性。</p>
+<p>這也是為什麼我覺得用戶要自己維護指令集，因為這樣內容才會符合每個人各自的頻率、需求和合適的搜索關鍵字。當然，等到哪天勞工不用為系統管理或是NGS分析，AI 能自動自發把事情做完的未來時，那又另當別論。</p>
 
     </div>
 
@@ -419,7 +449,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/the-importance-of-science-communication/" title="科學溝通能力的重要性">https://5uperb0y.com/the-importance-of-science-communication/</a>
+      <a href="https://5uperb0y.com/manage-commands-with-fzf/" title="如何管理常用的 Command Line 指令？">https://5uperb0y.com/manage-commands-with-fzf/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -427,22 +457,16 @@
 </ul>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/communication/" rel="tag"># communication</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/planetary-protection-rules-and-the-end-of-cassini-probe/" rel="prev" title="卡西尼號與行星保護">
-                  <i class="fa fa-angle-left"></i> 卡西尼號與行星保護
+                <a href="/seager-2021-the-smallest-lights-in-the-universe-a-memoir/" rel="prev" title="尋找太陽系外的行星：天文學家莎拉．西格的愛與探索">
+                  <i class="fa fa-angle-left"></i> 尋找太陽系外的行星：天文學家莎拉．西格的愛與探索
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/bignami-we-are-the-martians/" rel="next" title="讀後感｜我們就是火星人：尋找宇宙中的地外生命">
-                  讀後感｜我們就是火星人：尋找宇宙中的地外生命 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
