@@ -20,28 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。 不管使用的軟體為 FLASH 、PEAR 還是 Us">
+    <meta name="description" content="這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="怎麼決定合併雙端序列時允許的錯配數量？">
-<meta property="og:url" content="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/index.html">
+<meta property="og:title" content="微國家：獨立建國的簡易操作手冊">
+<meta property="og:url" content="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。 不管使用的軟體為 FLASH 、PEAR 還是 Us">
+<meta property="og:description" content="這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-02-15T16:15:18.000Z">
-<meta property="article:modified_time" content="2024-01-01T13:25:08.394Z">
+<meta property="article:published_time" content="2018-04-19T16:12:37.000Z">
+<meta property="article:modified_time" content="2024-04-26T13:35:22.580Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="NGS">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/">
+<link rel="canonical" href="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/","path":"how-to-decide-max-mismatch-when-merging-paired-end-reads/","title":"怎麼決定合併雙端序列時允許的錯配數量？"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/","path":"strauss-2008-how-to-start-your-own-country/","title":"微國家：獨立建國的簡易操作手冊"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>怎麼決定合併雙端序列時允許的錯配數量？ | 5uperb0y's blog</title>
+<title>微國家：獨立建國的簡易操作手冊 | 5uperb0y's blog</title>
   
 
 
@@ -289,7 +288,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -302,12 +301,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="怎麼決定合併雙端序列時允許的錯配數量？ | 5uperb0y's blog">
+      <meta itemprop="name" content="微國家：獨立建國的簡易操作手冊 | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          怎麼決定合併雙端序列時允許的錯配數量？
+          微國家：獨立建國的簡易操作手冊
         </h1>
 
         <div class="post-meta-container">
@@ -318,14 +317,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-02-16 00:15:18" itemprop="dateCreated datePublished" datetime="2022-02-16T00:15:18+08:00">2022-02-16</time>
+      <time title="創建時間：2018-04-20 00:12:37" itemprop="dateCreated datePublished" datetime="2018-04-20T00:12:37+08:00">2018-04-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-01-01 21:25:08" itemprop="dateModified" datetime="2024-01-01T21:25:08+08:00">2024-01-01</time>
+      <time title="修改時間：2024-04-26 21:35:22" itemprop="dateModified" datetime="2024-04-26T21:35:22+08:00">2024-04-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -333,11 +332,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/bioinformatics/metagenomics/" itemprop="url" rel="index"><span itemprop="name">metagenomics</span></a>
+          <a href="/categories/reading/" itemprop="url" rel="index"><span itemprop="name">reading</span></a>
         </span>
     </span>
 
@@ -364,8 +359,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/how-to-decide-max-mismatch-when-merging-paired-end-reads/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="how-to-decide-max-mismatch-when-merging-paired-end-reads/" itemprop="commentCount"></span>
+    <a title="disqus" href="/strauss-2008-how-to-start-your-own-country/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="strauss-2008-how-to-start-your-own-country/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -376,14 +371,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1k</span>
+      <span>1.4k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>4 分鐘</span>
+      <span>5 分鐘</span>
     </span>
 </div>
 
@@ -393,20 +388,18 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>illumina 的 Miseq 和 Hiseq 平台常用於定序 16S rRNA 基因特定變異區的增幅產物。因為這兩平台皆屬雙端定序 (paired-end sequencing)，所以每一條 DNA 都會獲得順向和逆向的序列（即定序結果）。在資料處理時，須比對這對序列的重疊區域，再基於重疊區域合併雙方，才能重建出代表該 DNA 的完整序列。</p>
-<p>不管使用的軟體為 FLASH 、PEAR 還是 Usearch，合併雙端序列時都有許多參數可以設定。其中一個參數是合併時允許的錯配數量。這參數的必要性在於，即使順向和逆向序列都源於同一條 DNA，兩者的重疊區域仍會因為定序錯誤而略有差異。合併時允許少量的錯配數量能避免捨棄掉這些正確的序列。</p>
-<p>然而，我們要怎麼知道洽當的錯配數量上限？使用預設值、反覆試誤、調查文獻都是常見的方法，不過我更想要知道能依照資料選定適用參數的策略。畢竟，如果能先推算出理論值，那麼測試時便有參考的基準，除了能縮減試誤時間，在寫論文或向他人解釋方法時也比較有依據。</p>
-<p>因此，雖然在資料處理流程已成熟的今日，糾結參數設定可能被視為無關宏旨，我還是想以本文紀錄，自己思考這個問題的方向與看法。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
 <span id="more"></span>
 
-<p>首先，順逆向序列的重疊區只要有任一列發生定序錯誤便會發生錯配。由於 illumina 定序平台的逆向序列品質往往較順向序列品質低，假設不計兩序列同時出錯的狀況，重疊區的錯配數量可由逆向序列的預期鹼基錯誤數量估計。</p>
-<p>由於 illumina 定序平台的逆向序列品質往往較順向序列低，而且重疊區任何一條序列發生定序錯誤便會造成錯配。假設不計兩序列於相同位點同時出錯的狀況，那麼重疊區的錯配數量上限，可以由逆向序列的預期鹼基錯誤數量估計：錯配數量 &lt; 逆向序列重疊區的預期鹼基錯誤數 * 2</p>
-<p>舉例來說，若增幅和定序 16S rRNA 基因 V4 區域之後，獲得一對長度為 250 bp 的序列。由於 V4 區域大約只有 253 bp 長，所以這對序列的重疊區長達 247 bp，幾乎覆蓋了整個 V4 區域。</p>
-<p>假設考慮最極端的狀況，即要在順向和逆向序列的每個鹼基都完全對應時，我們才肯相信合併後的序列源於同一條 DNA。那麼，在逆向序列平均品質分數為 20 的狀況下，重疊區的預期錯誤數量為 $0.99 * 247 &#x3D; 2.47$。</p>
-<p>這意味著，即使是這對序列得自於同一條 DNA，平均而言也會出現 $2.47 * 2 &#x3D; 4.94$ 個錯配。因此至少要允許 5 個錯配，才能確保這些源於同一條 DNA 的正確序列能順利合併。</p>
-<p>推廣來說，錯配數量上限取決於重疊區的長度與品質。隨著對重疊區長度的要求放寬，預期的鹼基錯誤數會跟著下降，允許的錯配數量也得調低，才能確保合併雙端序列的特異性和靈敏度平衡。</p>
-<p>依照這個推論，在取得資料時，可以先思考「若這對序列沒有定序錯誤，要有多長的重疊序列，才肯相信它們得自於同一條DNA」。</p>
-<p>接著，找到平均品質最差的那個樣本的逆向序列，計算其 3’ 端重疊區域的預期鹼基錯誤數（該段區域的定序錯誤率之和），得出數值的兩倍，應該可以當作測試雙端序列合併的參數的起始值。</p>
+<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
+<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
+<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
+<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
+<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
+<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
+<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
+<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
+<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
 
     </div>
 
@@ -424,7 +417,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/" title="怎麼決定合併雙端序列時允許的錯配數量？">https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/</a>
+      <a href="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/" title="微國家：獨立建國的簡易操作手冊">https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -432,21 +425,18 @@
 </ul>
 </div>
 
-          <div class="post-tags">
-              <a href="/tags/NGS/" rel="tag"># NGS</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/haskell-2017-the-songs-of-trees/" rel="prev" title="讀後感｜樹之歌">
-                  <i class="fa fa-angle-left"></i> 讀後感｜樹之歌
+                <a href="/psycho-pass-anime-and-novel/" rel="prev" title="PSYCHO-PASS 心靈判官">
+                  <i class="fa fa-angle-left"></i> PSYCHO-PASS 心靈判官
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/r-console-upper-limit-on-the-string-length/" rel="next" title="R/Rstudio console 的指令長度限制">
-                  R/Rstudio console 的指令長度限制 <i class="fa fa-angle-right"></i>
+                <a href="/the-importance-of-science-communication/" rel="next" title="科學溝通能力的重要性">
+                  科學溝通能力的重要性 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
