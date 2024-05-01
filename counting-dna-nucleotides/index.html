@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="狀況描述原本在 Windows 都能正常用 VSCode Remote SSH 連線伺服器，但一早卻發現連線失敗。當時，VSCode 不斷要求輸入密碼卻無法登入，”OUTPUT” 頁面提示的訊息節錄如下：  Failed to parse remote port from server output   Acquiring lock on &#x2F;home&#x2F;username&amp;#x2F">
+    <meta name="description" content="Given: A DNA string s of length at most 1000 nt.   Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.（給定 DNA 字串，回傳">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="VSCode｜ Failed to parse remote port from server output">
-<meta property="og:url" content="https://5uperb0y.com/vscode-remote-ssh-connection-not-working-after-update/index.html">
+<meta property="og:title" content="ROSALIND｜Counting DNA Nucleotides (DNA)">
+<meta property="og:url" content="https://5uperb0y.com/counting-dna-nucleotides/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="狀況描述原本在 Windows 都能正常用 VSCode Remote SSH 連線伺服器，但一早卻發現連線失敗。當時，VSCode 不斷要求輸入密碼卻無法登入，”OUTPUT” 頁面提示的訊息節錄如下：  Failed to parse remote port from server output   Acquiring lock on &#x2F;home&#x2F;username&amp;#x2F">
+<meta property="og:description" content="Given: A DNA string s of length at most 1000 nt.   Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.（給定 DNA 字串，回傳">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-01-07T06:20:08.000Z">
-<meta property="article:modified_time" content="2024-01-01T13:25:08.405Z">
+<meta property="article:published_time" content="2024-05-01T15:00:05.000Z">
+<meta property="article:modified_time" content="2024-05-01T15:03:07.104Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="vscode">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/vscode-remote-ssh-connection-not-working-after-update/">
+<link rel="canonical" href="https://5uperb0y.com/counting-dna-nucleotides/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/vscode-remote-ssh-connection-not-working-after-update/","path":"vscode-remote-ssh-connection-not-working-after-update/","title":"VSCode｜ Failed to parse remote port from server output"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/counting-dna-nucleotides/","path":"counting-dna-nucleotides/","title":"ROSALIND｜Counting DNA Nucleotides (DNA)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>VSCode｜ Failed to parse remote port from server output | 5uperb0y's blog</title>
+<title>ROSALIND｜Counting DNA Nucleotides (DNA) | 5uperb0y's blog</title>
   
 
 
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8B%80%E6%B3%81%E6%8F%8F%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">狀況描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0%E8%88%87%E8%A7%A3%E6%B1%BA%E8%BE%A6%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">原因與解決辦法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AA%A2%E6%9F%A5%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">檢查方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%8F%AF%E8%83%BD%E8%A7%A3%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">其他可能解法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">5.</span> <span class="nav-text">結語</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python"><span class="nav-number">1.1.</span> <span class="nav-text">python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R"><span class="nav-number">1.2.</span> <span class="nav-text">R</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-script"><span class="nav-number">1.3.</span> <span class="nav-text">bash script</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -280,31 +280,38 @@
   </div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/vscode-useful-shortcuts-and-their-settings/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-08</time>
+      <a class="popular-posts-link" href="/leetcode-1-two-sum/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-15</time>
         <br>
-      VSCode｜常用快捷鍵與個人設置
+      LeetCode 筆記｜1. Two Sum
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/tabletop-simulator-lua-vscode-development-environment-building/" rel="bookmark">
-        <time class="popular-posts-time">2023-07-22</time>
+      <a class="popular-posts-link" href="/leetcode-217-contains-duplicate/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-28</time>
         <br>
-      在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境
+      LeetCode 筆記｜217. Contains Duplicate
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/vscode-extensions-that-are-do-nothing-but-are-cool/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-20</time>
+      <a class="popular-posts-link" href="/nextflow-escape-characters/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-10</time>
         <br>
-      VScode｜無助於開發，但有助於身心的套件
+      Nextflow｜程式碼區塊的跳脫符號 (escape characters)
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/vscode-common-settings-for-vscodevim/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-28</time>
+      <a class="popular-posts-link" href="/leetcode-1480-running-sum-of-1d-array/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-19</time>
         <br>
-      Vim｜VSCodeVim 常用設定
+      LeetCode 筆記｜1480. Running Sum of 1d Array
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-extract-docstring-from-a-module/" rel="bookmark">
+        <time class="popular-posts-time">2024-01-11</time>
+        <br>
+      Nextflow｜模仿 docstring 來註解 process and workflow
       </a>
     </li>
   </ul>
@@ -328,7 +335,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/vscode-remote-ssh-connection-not-working-after-update/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/counting-dna-nucleotides/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -341,12 +348,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="VSCode｜ Failed to parse remote port from server output | 5uperb0y's blog">
+      <meta itemprop="name" content="ROSALIND｜Counting DNA Nucleotides (DNA) | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          VSCode｜ Failed to parse remote port from server output
+          ROSALIND｜Counting DNA Nucleotides (DNA)
         </h1>
 
         <div class="post-meta-container">
@@ -356,15 +363,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2023-01-07 14:20:08" itemprop="dateCreated datePublished" datetime="2023-01-07T14:20:08+08:00">2023-01-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-01-01 21:25:08" itemprop="dateModified" datetime="2024-01-01T21:25:08+08:00">2024-01-01</time>
+      <time title="創建時間：2024-05-01 23:00:05 / 修改時間：23:03:07" itemprop="dateCreated datePublished" datetime="2024-05-01T23:00:05+08:00">2024-05-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -372,11 +373,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/programming/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a>
+          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
         </span>
     </span>
 
@@ -403,8 +400,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/vscode-remote-ssh-connection-not-working-after-update/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="vscode-remote-ssh-connection-not-working-after-update/" itemprop="commentCount"></span>
+    <a title="disqus" href="/counting-dna-nucleotides/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="counting-dna-nucleotides/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -415,7 +412,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>638</span>
+      <span>628</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -432,43 +429,23 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="狀況描述"><a href="#狀況描述" class="headerlink" title="狀況描述"></a>狀況描述</h2><p>原本在 Windows 都能正常用 VSCode Remote SSH 連線伺服器，但一早卻發現連線失敗。當時，VSCode 不斷要求輸入密碼卻無法登入，”OUTPUT” 頁面提示的訊息節錄如下：</p>
-<blockquote>
-<p>Failed to parse remote port from server output</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given: A DNA string s of length at most 1000 nt.</p>
 </blockquote>
 <blockquote>
-<p>Acquiring lock on &#x2F;home&#x2F;username&#x2F;.vscode-server&#x2F;bin&#x2F;some-hash-code-here&#x2F;vscode-remote-lock.username.some-hash-code-here</p>
+<p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.<br>（給定 DNA 字串，回傳四鹼基符號於字串內的數量）</p>
 </blockquote>
-<p><em>版本資訊：windows 21H2, VSCode 1.74.2</em></p>
-<span id="more"></span>
-<h2 id="原因與解決辦法"><a href="#原因與解決辦法" class="headerlink" title="原因與解決辦法"></a>原因與解決辦法</h2><p>參考 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/64034813/vs-code-remote-ssh-connection-not-working">VSCode remote ssh connection not working</a>，簡言之，VSCode 遠端連線前，需要在伺服器端的 <code>.vscode-server/bin</code> 安裝連線相關的工具並進行一些連線設置。假設伺服器已有這些套件，”OUTPUT” 會提示 <code>Found existing installation at (.vscode-server/bin 的路徑)</code>；若沒有這些套件，則會從官方網站下載與安裝。</p>
-<p>若伺服器的套件和配置沒有隨本地 Vscode 更新，便可能因為連線兩端的資訊不相符而無法順利連線，此時可刪除並重新安裝這些工具與配置檔來解決問題。</p>
-<ol>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟指令視窗</li>
-<li>搜尋並執行 “Remote-SSH: Kill VS Code Server on Host”，刪除 <code>vscode-server</code> 檔案與目錄</li>
-<li>選取欲清除既有工具的伺服器</li>
-<li>重新連線，VSCode 便會重新安裝相關軟體了</li>
-</ol>
-<h2 id="檢查方式"><a href="#檢查方式" class="headerlink" title="檢查方式"></a>檢查方式</h2><ol>
-<li>開啟 command line 工具，以 <code>ping</code> 確認連線正常</li>
-<li>使用 putty 或 mobaXtern 等工具連線伺服器，確認問題出在 VSCode </li>
-<li>重新開機、重新安裝 Remote SSH、移除 <code>C:/Users/username/.ssh/Known_host</code> 的內容，確認問題不在本地端</li>
-<li>按照前述步驟刪除伺服器內 <code>vscode-server</code> 的內容，重新連線</li>
-</ol>
-<h2 id="其他可能解法"><a href="#其他可能解法" class="headerlink" title="其他可能解法"></a>其他可能解法</h2><p>若此處提及的方式無法解決問題，可參考以下連結試試看其他人的解法。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://mushding.space/2021/12/22/vscode%20remote-ssh%20%E5%95%8F%E9%A1%8C%E8%B8%A9%E5%9D%91%E5%BF%83%E5%BE%97/">首次遠端連線且因為網路問題下載工具受阻</a> </li>
-<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/netsa/p/14857577.html">本地與伺服器的 SSH key 因為更新等緣故沒有同步</a></li>
-<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/64034813/vs-code-remote-ssh-connection-not-working">任何可能與遠端連線配置或安裝的問題</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/myWorld001/article/details/119443079">伺服器上的 <code>vscode-server</code> 文件過時</a></li>
-</ul>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>IDE 及其擴充套件相當方面，可以免去不少開發環境設置的功夫。畢竟我們不會等到摸熟了 IDE 所有功能及其實踐方式才開始開發，所以功能故障算是讓了解 IDE 機制或潛在設定的好機會。在本文的案例哩，可以關閉自動更新來避免這種狀況發生。</p>
-<ol>
-<li><code>Ctrl</code> + <code>,</code>，開啟 Settings</li>
-<li>搜尋 “update: Mode”</li>
-<li>設定為 “manual” 或 “none”</li>
-<li>重新啟動 VScode</li>
-</ol>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
+<p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 dictionary 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，可以手動調整輸出順序，或是透過 OrderedDict 物件取代原生的 dictionary 儲存統計量。</p>
+<p>OrderedDict 為 dictionary 的子類，OrderedDict 的 key 依插入順序排序，但可配合 sorted() 依 key 或 value 排序。具體的做法是使用 items() 取出 key 和 values，再利用 lambda x; x[0] 傳入 key 作為 sorted 排序的依據。</p>
+<p>lambda 是不需要事先宣告的副程式，有點像 R 裡面寫 lapply (list, function (x) x^2)，將 function 嵌入程式碼當中。在排序的例子，items() 回傳 [key, value]，lambda x; x[0] 的意思是取出回傳項目索引值為 0 的東西。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># adjust output order</span><br><span class="line">s = &quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">d = &#123;&quot;A&quot;: 0, &quot;C&quot;: 0, &quot;G&quot;:0, &quot;T&quot;: 0&#125;</span><br><span class="line">for i in s:</span><br><span class="line">    d[i] = d[i] + 1</span><br><span class="line">print d[&quot;A&quot;], d[&quot;C&quot;], d[&quot;G&quot;], d[&quot;T&quot;]</span><br><span class="line"></span><br><span class="line"># store stat with OrderedDict</span><br><span class="line">import collections</span><br><span class="line">od = collections.OrderedDict(sorted(d.items(), key = lambda x: x[0]))</span><br><span class="line">print od.values()</span><br></pre></td></tr></table></figure>
+
+<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><p>雖然可以效法 python 的寫法，以 data.frame, list 或 vector 儲存計數，再使用迴圈計算各鹼基的數量。然而，R 內建許多方便的副程式可以統計向量內各項目的出現頻率。</p>
+<p>簡言之，可利用 strsplit() 依照指定的分隔符（此例為 “”，即依照字符切割）將字串切割成子字串組成的向量，接著以 table() 統計向量內各項目的出現頻率。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &lt;- &quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">table(strsplit(s, &quot;&quot;))</span><br></pre></td></tr></table></figure>
+<h3 id="bash-script"><a href="#bash-script" class="headerlink" title="bash script"></a>bash script</h3><p>bash script 要尋找字串也有許多寫法，其中一種做法是透過 grep -o 取得匹配的鹼基，再傳給 wc -l 計算列數（即字串中，指定鹼基符號的數量）。四種鹼基符號的統計值儲存於 bash array 並以空格間隔，以便輸出時辨識 array 各項目的數值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s=&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">d=()</span><br><span class="line">for ch in A C G T;</span><br><span class="line">do</span><br><span class="line">    d+=$(echo $(echo $s | grep -o $ch | wc -l) &quot;&quot;)</span><br><span class="line">done</span><br><span class="line">printf  &quot;$&#123;d[@]&#125;&quot;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -486,7 +463,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/vscode-remote-ssh-connection-not-working-after-update/" title="VSCode｜ Failed to parse remote port from server output">https://5uperb0y.com/vscode-remote-ssh-connection-not-working-after-update/</a>
+      <a href="https://5uperb0y.com/counting-dna-nucleotides/" title="ROSALIND｜Counting DNA Nucleotides (DNA)">https://5uperb0y.com/counting-dna-nucleotides/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -495,21 +472,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/vscode/" rel="tag"># vscode</a>
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/nextflow-how-data-is-passed-between-processes-through-channels/" rel="prev" title="Nextflow｜資料是怎麼在 Process 間傳遞？">
-                  <i class="fa fa-angle-left"></i> Nextflow｜資料是怎麼在 Process 間傳遞？
+                <a href="/mishima-1958-lectures-on-immoral-education/" rel="prev" title="不道德教育講座">
+                  <i class="fa fa-angle-left"></i> 不道德教育講座
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/vscode-useful-shortcuts-and-their-settings/" rel="next" title="VSCode｜常用快捷鍵與個人設置">
-                  VSCode｜常用快捷鍵與個人設置 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
