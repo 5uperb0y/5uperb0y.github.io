@@ -315,7 +315,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-05-01 23:00:05 / 修改時間：23:03:07" itemprop="dateCreated datePublished" datetime="2024-05-01T23:00:05+08:00">2024-05-01</time>
+      <time title="創建時間：2024-05-01 23:00:05 / 修改時間：23:13:55" itemprop="dateCreated datePublished" datetime="2024-05-01T23:00:05+08:00">2024-05-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -355,7 +355,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>628</span>
+      <span>629</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -373,24 +373,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+          <blockquote>
 <p>Given: A DNA string s of length at most 1000 nt.</p>
 </blockquote>
 <blockquote>
 <p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.<br>（給定 DNA 字串，回傳四鹼基符號於字串內的數量）</p>
 </blockquote>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
-<p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 dictionary 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，可以手動調整輸出順序，或是透過 OrderedDict 物件取代原生的 dictionary 儲存統計量。</p>
-<p>OrderedDict 為 dictionary 的子類，OrderedDict 的 key 依插入順序排序，但可配合 sorted() 依 key 或 value 排序。具體的做法是使用 items() 取出 key 和 values，再利用 lambda x; x[0] 傳入 key 作為 sorted 排序的依據。</p>
-<p>lambda 是不需要事先宣告的副程式，有點像 R 裡面寫 lapply (list, function (x) x^2)，將 function 嵌入程式碼當中。在排序的例子，items() 回傳 [key, value]，lambda x; x[0] 的意思是取出回傳項目索引值為 0 的東西。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># adjust output order</span><br><span class="line">s = &quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">d = &#123;&quot;A&quot;: 0, &quot;C&quot;: 0, &quot;G&quot;:0, &quot;T&quot;: 0&#125;</span><br><span class="line">for i in s:</span><br><span class="line">    d[i] = d[i] + 1</span><br><span class="line">print d[&quot;A&quot;], d[&quot;C&quot;], d[&quot;G&quot;], d[&quot;T&quot;]</span><br><span class="line"></span><br><span class="line"># store stat with OrderedDict</span><br><span class="line">import collections</span><br><span class="line">od = collections.OrderedDict(sorted(d.items(), key = lambda x: x[0]))</span><br><span class="line">print od.values()</span><br></pre></td></tr></table></figure>
-
-<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><p>雖然可以效法 python 的寫法，以 data.frame, list 或 vector 儲存計數，再使用迴圈計算各鹼基的數量。然而，R 內建許多方便的副程式可以統計向量內各項目的出現頻率。</p>
-<p>簡言之，可利用 strsplit() 依照指定的分隔符（此例為 “”，即依照字符切割）將字串切割成子字串組成的向量，接著以 table() 統計向量內各項目的出現頻率。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &lt;- &quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">table(strsplit(s, &quot;&quot;))</span><br></pre></td></tr></table></figure>
-<h3 id="bash-script"><a href="#bash-script" class="headerlink" title="bash script"></a>bash script</h3><p>bash script 要尋找字串也有許多寫法，其中一種做法是透過 grep -o 取得匹配的鹼基，再傳給 wc -l 計算列數（即字串中，指定鹼基符號的數量）。四種鹼基符號的統計值儲存於 bash array 並以空格間隔，以便輸出時辨識 array 各項目的數值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s=&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">d=()</span><br><span class="line">for ch in A C G T;</span><br><span class="line">do</span><br><span class="line">    d+=$(echo $(echo $s | grep -o $ch | wc -l) &quot;&quot;)</span><br><span class="line">done</span><br><span class="line">printf  &quot;$&#123;d[@]&#125;&quot;</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/counting-dna-nucleotides/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

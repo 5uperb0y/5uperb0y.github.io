@@ -28,7 +28,7 @@
 <meta property="og:description" content="Given: A DNA string s of length at most 1000 nt.   Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.（給定 DNA 字串，回傳">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-05-01T15:00:05.000Z">
-<meta property="article:modified_time" content="2024-05-01T15:03:07.104Z">
+<meta property="article:modified_time" content="2024-05-01T15:13:55.563Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
@@ -365,7 +365,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-05-01 23:00:05 / 修改時間：23:03:07" itemprop="dateCreated datePublished" datetime="2024-05-01T23:00:05+08:00">2024-05-01</time>
+      <time title="創建時間：2024-05-01 23:00:05 / 修改時間：23:13:55" itemprop="dateCreated datePublished" datetime="2024-05-01T23:00:05+08:00">2024-05-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -412,7 +412,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>628</span>
+      <span>629</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -435,6 +435,8 @@
 <blockquote>
 <p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.<br>（給定 DNA 字串，回傳四鹼基符號於字串內的數量）</p>
 </blockquote>
+<span id="more"></span>
+
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
 <p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 dictionary 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，可以手動調整輸出順序，或是透過 OrderedDict 物件取代原生的 dictionary 儲存統計量。</p>
 <p>OrderedDict 為 dictionary 的子類，OrderedDict 的 key 依插入順序排序，但可配合 sorted() 依 key 或 value 排序。具體的做法是使用 items() 取出 key 和 values，再利用 lambda x; x[0] 傳入 key 作為 sorted 排序的依據。</p>
