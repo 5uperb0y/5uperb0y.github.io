@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Given: A DNA string s of length at most 1000 nt.   Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.（給定 DNA 字串，回傳">
+    <meta name="description" content="給定 DNA 字串，依照 “A”、”C”、”G”、”T” 的順序，印出四種鹼基符號的數量。  Given: A DNA string s of length at most 1000 nt. Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="ROSALIND｜Counting DNA Nucleotides (DNA)">
 <meta property="og:url" content="https://5uperb0y.com/counting-dna-nucleotides/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="Given: A DNA string s of length at most 1000 nt.   Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.（給定 DNA 字串，回傳">
+<meta property="og:description" content="給定 DNA 字串，依照 “A”、”C”、”G”、”T” 的順序，印出四種鹼基符號的數量。  Given: A DNA string s of length at most 1000 nt. Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-05-01T15:00:05.000Z">
-<meta property="article:modified_time" content="2024-05-01T15:13:55.563Z">
+<meta property="article:modified_time" content="2024-05-02T01:21:42.288Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
@@ -90,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">15</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">21</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">64</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">15</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">21</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">65</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -128,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -141,7 +141,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python"><span class="nav-number">1.1.</span> <span class="nav-text">python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#R"><span class="nav-number">1.2.</span> <span class="nav-text">R</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bash-script"><span class="nav-number">1.3.</span> <span class="nav-text">bash script</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -154,7 +153,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-count">65</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -202,6 +201,15 @@
     
     
     <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-05-02T21:52:59+08:00">
+        05/02
+      </time>
+      <a href="/transcribing-dna-into-rna/" title="ROSALIND｜Transcribing DNA into RNA (RNA)">ROSALIND｜Transcribing DNA into RNA (RNA)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
       <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-05-01T23:00:05+08:00">
         05/01
       </time>
@@ -233,15 +241,6 @@
         04/16
       </time>
       <a href="/how-to-manage-commands/" title="如何管理常用的 Command Line 指令？">如何管理常用的 Command Line 指令？</a>
-      <br>
-      <br>
-    </li>
-    
-    <li class='pull-left' style="white-space:normal; text-align:left" >
-      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-04-14T22:22:16+08:00">
-        04/14
-      </time>
-      <a href="/seager-2021-the-smallest-lights-in-the-universe-a-memoir/" title="尋找太陽系外的行星：天文學家莎拉．西格的愛與探索">尋找太陽系外的行星：天文學家莎拉．西格的愛與探索</a>
       <br>
       <br>
     </li>
@@ -280,10 +279,17 @@
   </div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/leetcode-1-two-sum/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-15</time>
+      <a class="popular-posts-link" href="/leetcode-1480-running-sum-of-1d-array/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-19</time>
         <br>
-      LeetCode 筆記｜1. Two Sum
+      LeetCode 筆記｜1480. Running Sum of 1d Array
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-02</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
       </a>
     </li>
     <li class="popular-posts-item">
@@ -294,24 +300,17 @@
       </a>
     </li>
     <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/leetcode-1-two-sum/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-15</time>
+        <br>
+      LeetCode 筆記｜1. Two Sum
+      </a>
+    </li>
+    <li class="popular-posts-item">
       <a class="popular-posts-link" href="/nextflow-escape-characters/" rel="bookmark">
         <time class="popular-posts-time">2022-11-10</time>
         <br>
       Nextflow｜程式碼區塊的跳脫符號 (escape characters)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/leetcode-1480-running-sum-of-1d-array/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-19</time>
-        <br>
-      LeetCode 筆記｜1480. Running Sum of 1d Array
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-extract-docstring-from-a-module/" rel="bookmark">
-        <time class="popular-posts-time">2024-01-11</time>
-        <br>
-      Nextflow｜模仿 docstring 來註解 process and workflow
       </a>
     </li>
   </ul>
@@ -363,9 +362,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2024-05-01 23:00:05 / 修改時間：23:13:55" itemprop="dateCreated datePublished" datetime="2024-05-01T23:00:05+08:00">2024-05-01</time>
+      <time title="創建時間：2024-05-01 23:00:05" itemprop="dateCreated datePublished" datetime="2024-05-01T23:00:05+08:00">2024-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-05-02 09:21:42" itemprop="dateModified" datetime="2024-05-02T09:21:42+08:00">2024-05-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -412,14 +417,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>629</span>
+      <span>398</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>1 分鐘</span>
     </span>
 </div>
 
@@ -429,25 +434,23 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given: A DNA string s of length at most 1000 nt.</p>
-</blockquote>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 DNA 字串，依照 “A”、”C”、”G”、”T” 的順序，印出四種鹼基符號的數量。</p>
 <blockquote>
-<p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.<br>（給定 DNA 字串，回傳四鹼基符號於字串內的數量）</p>
+<p>Given: A DNA string s of length at most 1000 nt.</p>
+<p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.</p>
 </blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/dna/">https://rosalind.info/problems/dna/</a>)</p>
 <span id="more"></span>
 
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
-<p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 dictionary 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，可以手動調整輸出順序，或是透過 OrderedDict 物件取代原生的 dictionary 儲存統計量。</p>
-<p>OrderedDict 為 dictionary 的子類，OrderedDict 的 key 依插入順序排序，但可配合 sorted() 依 key 或 value 排序。具體的做法是使用 items() 取出 key 和 values，再利用 lambda x; x[0] 傳入 key 作為 sorted 排序的依據。</p>
-<p>lambda 是不需要事先宣告的副程式，有點像 R 裡面寫 lapply (list, function (x) x^2)，將 function 嵌入程式碼當中。在排序的例子，items() 回傳 [key, value]，lambda x; x[0] 的意思是取出回傳項目索引值為 0 的東西。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># adjust output order</span><br><span class="line">s = &quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">d = &#123;&quot;A&quot;: 0, &quot;C&quot;: 0, &quot;G&quot;:0, &quot;T&quot;: 0&#125;</span><br><span class="line">for i in s:</span><br><span class="line">    d[i] = d[i] + 1</span><br><span class="line">print d[&quot;A&quot;], d[&quot;C&quot;], d[&quot;G&quot;], d[&quot;T&quot;]</span><br><span class="line"></span><br><span class="line"># store stat with OrderedDict</span><br><span class="line">import collections</span><br><span class="line">od = collections.OrderedDict(sorted(d.items(), key = lambda x: x[0]))</span><br><span class="line">print od.values()</span><br></pre></td></tr></table></figure>
+<p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
+<p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 <em>dictionary</em> 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，要在輸出前調整順序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    freq = &#123;<span class="string">&quot;A&quot;</span>: <span class="number">0</span>, <span class="string">&quot;T&quot;</span>: <span class="number">0</span>, <span class="string">&quot;C&quot;</span>: <span class="number">0</span>, <span class="string">&quot;G&quot;</span>: <span class="number">0</span>&#125;</span><br><span class="line">    <span class="keyword">for</span> nt <span class="keyword">in</span> dna:</span><br><span class="line">        freq[nt] = freq[nt] + <span class="number">1</span></span><br><span class="line">    output = <span class="string">&quot; &quot;</span>.join( <span class="built_in">str</span>(freq[nt]) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span> )</span><br><span class="line">    <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
 
-<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><p>雖然可以效法 python 的寫法，以 data.frame, list 或 vector 儲存計數，再使用迴圈計算各鹼基的數量。然而，R 內建許多方便的副程式可以統計向量內各項目的出現頻率。</p>
-<p>簡言之，可利用 strsplit() 依照指定的分隔符（此例為 “”，即依照字符切割）將字串切割成子字串組成的向量，接著以 table() 統計向量內各項目的出現頻率。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &lt;- &quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">table(strsplit(s, &quot;&quot;))</span><br></pre></td></tr></table></figure>
-<h3 id="bash-script"><a href="#bash-script" class="headerlink" title="bash script"></a>bash script</h3><p>bash script 要尋找字串也有許多寫法，其中一種做法是透過 grep -o 取得匹配的鹼基，再傳給 wc -l 計算列數（即字串中，指定鹼基符號的數量）。四種鹼基符號的統計值儲存於 bash array 並以空格間隔，以便輸出時辨識 array 各項目的數值。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s=&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><br><span class="line">d=()</span><br><span class="line">for ch in A C G T;</span><br><span class="line">do</span><br><span class="line">    d+=$(echo $(echo $s | grep -o $ch | wc -l) &quot;&quot;)</span><br><span class="line">done</span><br><span class="line">printf  &quot;$&#123;d[@]&#125;&quot;</span><br></pre></td></tr></table></figure>
+<p>也可以不自己寫迴圈，套用 python 的字串方法 <em>count()</em> 來統計特定鹼基的數量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(<span class="built_in">str</span>(dna.count(nt)) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>shell script 要尋找字串也有許多寫法，其中一種做法是透過 grep -o 取得匹配的鹼基，再傳給 wc -l 計算列數（即字串中，指定鹼基符號的數量）。四種鹼基符號的統計值儲存於 array 並以空格間隔，以便輸出時辨識 array 各項目的數值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span></span><br><span class="line">d=()</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> A C G T;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    d+=$(<span class="built_in">echo</span> $(<span class="built_in">echo</span> <span class="variable">$s</span> | grep -o <span class="variable">$ch</span> | <span class="built_in">wc</span> -l) <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">printf</span>  <span class="string">&quot;<span class="variable">$&#123;d[@]&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -486,6 +489,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/transcribing-dna-into-rna/" rel="next" title="ROSALIND｜Transcribing DNA into RNA (RNA)">
+                  ROSALIND｜Transcribing DNA into RNA (RNA) <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -527,7 +533,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">6:49</span>
+    <span title="所需總閱讀時間">6:50</span>
   </span>
 </div>
 <div class="busuanzi-count">

@@ -20,25 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Style over Substance">
+    <meta name="description" content="模擬 DNA 轉錄 RNA 的過程，將給定 DNA 字串中的 T 替換為 U。  Given: A DNA string t having length at most 1000 nt. Return: The transcribed RNA string of t.  (https:&#x2F;&#x2F;rosalind.info&#x2F;problems&#x2F;rna&#x2F;)">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/archives/2023/08/index.html">
+<meta property="og:title" content="ROSALIND｜Transcribing DNA into RNA (RNA)">
+<meta property="og:url" content="https://5uperb0y.com/transcribing-dna-into-rna/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="Style over Substance">
+<meta property="og:description" content="模擬 DNA 轉錄 RNA 的過程，將給定 DNA 字串中的 T 替換為 U。  Given: A DNA string t having length at most 1000 nt. Return: The transcribed RNA string of t.  (https:&#x2F;&#x2F;rosalind.info&#x2F;problems&#x2F;rna&#x2F;)">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-05-02T13:52:59.000Z">
+<meta property="article:modified_time" content="2024-05-03T02:58:45.076Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/archives/2023/08/">
+<link rel="canonical" href="https://5uperb0y.com/transcribing-dna-into-rna/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2023/08/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/transcribing-dna-into-rna/","path":"transcribing-dna-into-rna/","title":"ROSALIND｜Transcribing DNA into RNA (RNA)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 5uperb0y's blog</title>
+<title>ROSALIND｜Transcribing DNA into RNA (RNA) | 5uperb0y's blog</title>
   
 
 
@@ -72,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">5uperb0y's blog</h1>
+      <p class="site-title">5uperb0y's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -269,57 +272,237 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-dna-nucleotides/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-01</time>
+        <br>
+      ROSALIND｜Counting DNA Nucleotides (DNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/r-console-upper-limit-on-the-string-length/" rel="bookmark">
+        <time class="popular-posts-time">2022-03-03</time>
+        <br>
+      R/Rstudio console 的指令長度限制
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/leetcode-1480-running-sum-of-1d-array/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-19</time>
+        <br>
+      LeetCode 筆記｜1480. Running Sum of 1d Array
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-how-data-is-passed-between-processes-through-channels/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-05</time>
+        <br>
+      Nextflow｜資料是怎麼在 Process 間傳遞？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-extract-docstring-from-a-module/" rel="bookmark">
+        <time class="popular-posts-time">2024-01-11</time>
+        <br>
+      Nextflow｜模仿 docstring 來註解 process and workflow
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/transcribing-dna-into-rna/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="Style over Substance">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Transcribing DNA into RNA (RNA) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Transcribing DNA into RNA (RNA)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-05-02 21:52:59" itemprop="dateCreated datePublished" datetime="2024-05-02T21:52:59+08:00">2024-05-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-05-03 10:58:45" itemprop="dateModified" datetime="2024-05-03T10:58:45+08:00">2024-05-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span class="firestore-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/transcribing-dna-into-rna/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="transcribing-dna-into-rna/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>302</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>1 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>模擬 DNA 轉錄 RNA 的過程，將給定 DNA 字串中的 T 替換為 U。</p>
+<blockquote>
+<p>Given: A DNA string t having length at most 1000 nt.</p>
+<p>Return: The transcribed RNA string of t.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/rna/">https://rosalind.info/problems/rna/</a>)</p>
+<span id="more"></span>
+
+<p>此題為字符替換問題，可使用 *str.replace(old, new, max)*，將字串中的 old（舊字符串） 替換為 new（新字符串）。若指定第三個參數 max，還可設定最大替換次數。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transcribe</span>(<span class="params">dna</span>):</span><br><span class="line">	<span class="string">&quot;&quot;&quot;Transcribe DNA into RNA</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	<span class="keyword">return</span> dna.replace(<span class="string">&quot;T&quot;</span>, <span class="string">&quot;U&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>R 語言與 replace 相應的 function 為 gsub，然而 gsub 可以接受向量，批次替換字符串。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dna <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;GATGGAACTTGACTACGTAAATT&quot;</span><span class="punctuation">,</span> <span class="string">&quot;AAATTTT&quot;</span><span class="punctuation">)</span></span><br><span class="line">rna <span class="operator">&lt;-</span> gsub<span class="punctuation">(</span>pattern <span class="operator">=</span> <span class="string">&quot;T&quot;</span><span class="punctuation">,</span> replacement <span class="operator">=</span> <span class="string">&quot;U&quot;</span><span class="punctuation">,</span> x <span class="operator">=</span>  dna<span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span>rna<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>bash 的 tr (transform) 可用於替換、刪除、修改等多種字符操作。此例使用的是其替換功能，參數設定為：$string | tr old new，意指將字串中的 old（舊字符） 替換為 new（新字符）。相較於 R 的 gsub() 和 python 的 replace()，tr 只針對字符的操作（即只能 A→T，不能 AT→CG），若要替換字符串則要使用 sed，其參數設定為：sed “s&#x2F;old&#x2F;new&#x2F;g”。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Transcribing DNA into RNA using tr</span></span><br><span class="line">dna=<span class="string">&quot;GATGGAACTTGACTACGTAAATT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Translating RNA into protein using sed</span></span><br><span class="line">dna=<span class="string">&quot;GGTGGTGGTGGT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line">protein=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span> |  sed <span class="string">&quot;s/GGU/G/g&quot;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$protein</span>&quot;</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>作者： </strong>5uperb0y (超級boy)
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://5uperb0y.com/transcribing-dna-into-rna/" title="ROSALIND｜Transcribing DNA into RNA (RNA)">https://5uperb0y.com/transcribing-dna-into-rna/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
         
-        <span class="collection-header">好! 目前共有 65 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-08-19T13:57:48+08:00"
-              content="2023-08-19">
-          08-19
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/why-should-we-watch-bangdream-its-my-go/" itemprop="url">
-          <span itemprop="name">「It's MyGo!!!!!」太好看了八😭</span>
-        </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/counting-dna-nucleotides/" rel="prev" title="ROSALIND｜Counting DNA Nucleotides (DNA)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Counting DNA Nucleotides (DNA)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
 
-    </div>
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-
 </div>
   </main>
 
