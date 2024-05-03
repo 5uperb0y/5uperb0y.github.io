@@ -20,27 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。">
+    <meta name="description" content="給定 DNA 序列，回傳其反向互補序列。  Given: A DNA string s of length at most 1000 bp. Return: The reverse complement sc of s.  (https:&#x2F;&#x2F;rosalind.info&#x2F;problems&#x2F;revc&#x2F;)">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="微國家：獨立建國的簡易操作手冊">
-<meta property="og:url" content="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/index.html">
+<meta property="og:title" content="ROSALIND｜Complementing a strand of DNA (REVC)">
+<meta property="og:url" content="https://5uperb0y.com/complementing-a-strand-of-dna/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。">
+<meta property="og:description" content="給定 DNA 序列，回傳其反向互補序列。  Given: A DNA string s of length at most 1000 bp. Return: The reverse complement sc of s.  (https:&#x2F;&#x2F;rosalind.info&#x2F;problems&#x2F;revc&#x2F;)">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2018-04-19T16:12:37.000Z">
-<meta property="article:modified_time" content="2024-04-26T13:35:22.580Z">
+<meta property="article:published_time" content="2024-05-03T11:11:32.000Z">
+<meta property="article:modified_time" content="2024-05-03T05:20:42.195Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/">
+<link rel="canonical" href="https://5uperb0y.com/complementing-a-strand-of-dna/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/","path":"strauss-2008-how-to-start-your-own-country/","title":"微國家：獨立建國的簡易操作手冊"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/complementing-a-strand-of-dna/","path":"complementing-a-strand-of-dna/","title":"ROSALIND｜Complementing a strand of DNA (REVC)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>微國家：獨立建國的簡易操作手冊 | 5uperb0y's blog</title>
+<title>ROSALIND｜Complementing a strand of DNA (REVC) | 5uperb0y's blog</title>
   
 
 
@@ -127,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -140,6 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AD%98%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">知識點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">題解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python"><span class="nav-number">2.1.</span> <span class="nav-text">python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R"><span class="nav-number">2.2.</span> <span class="nav-text">R</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash"><span class="nav-number">2.3.</span> <span class="nav-text">bash</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -271,6 +273,30 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-02</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-dna-nucleotides/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-01</time>
+        <br>
+      ROSALIND｜Counting DNA Nucleotides (DNA)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
@@ -288,7 +314,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/complementing-a-strand-of-dna/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -301,12 +327,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="微國家：獨立建國的簡易操作手冊 | 5uperb0y's blog">
+      <meta itemprop="name" content="ROSALIND｜Complementing a strand of DNA (REVC) | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          微國家：獨立建國的簡易操作手冊
+          ROSALIND｜Complementing a strand of DNA (REVC)
         </h1>
 
         <div class="post-meta-container">
@@ -316,15 +342,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2018-04-20 00:12:37" itemprop="dateCreated datePublished" datetime="2018-04-20T00:12:37+08:00">2018-04-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-04-26 21:35:22" itemprop="dateModified" datetime="2024-04-26T21:35:22+08:00">2024-04-26</time>
+      <time title="創建時間：2024-05-03 19:11:32 / 修改時間：13:20:42" itemprop="dateCreated datePublished" datetime="2024-05-03T19:11:32+08:00">2024-05-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -332,7 +352,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/reading/" itemprop="url" rel="index"><span itemprop="name">reading</span></a>
+          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
         </span>
     </span>
 
@@ -359,8 +379,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/strauss-2008-how-to-start-your-own-country/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="strauss-2008-how-to-start-your-own-country/" itemprop="commentCount"></span>
+    <a title="disqus" href="/complementing-a-strand-of-dna/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="complementing-a-strand-of-dna/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -371,14 +391,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.4k</span>
+      <span>984</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>5 分鐘</span>
+      <span>4 分鐘</span>
     </span>
 </div>
 
@@ -388,18 +408,51 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 DNA 序列，回傳其反向互補序列。</p>
+<blockquote>
+<p>Given: A DNA string s of length at most 1000 bp.</p>
+<p>Return: The reverse complement sc of s.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/revc/">https://rosalind.info/problems/revc/</a>)</p>
 <span id="more"></span>
 
-<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
-<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
-<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
-<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
-<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
-<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
-<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
-<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
-<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>2017 年交大某生物相關研究所入學考試其中一題為：「若 DNA 其中一股序列為 ATCGATCG，求其 complementary DNA 序列為何？ (A) AUCGAUCG (B) ATCGATCG (C) TAGCTACG (D) GCTAGCTA。」<br>解題的關鍵在了解分子生物的專有名詞定義，以下是各種 DNA 序列的簡介</p>
+<ul>
+<li>DNA: 去氧核醣核酸</li>
+<li>RNA: 轉錄 DNA 之產物</li>
+<li>complementary DNA (cDNA)：反轉錄 RNA 之產物</li>
+<li>complementary strand of DNA：DNA 兩股互為彼此的 complementary strand of DNA</li>
+<li>reverse complement of DNA：順序反轉的 complementary strand of DNA</li>
+</ul>
+<p>若 DNA 在轉錄後未經加工，原則上對於 DNA 的其中一股而言有以下關係：</p>
+<ul>
+<li>DNA 序列 &#x3D; complementary DNA 序列</li>
+<li>RNA 序列 &#x3D; 把 T 換成 U 的 complementary strand of DNA 序列</li>
+<li>complementary DNA 的序列和 complementary strand of DNA 互補</li>
+</ul>
+<p>因此，答案為 (B) ATCGATCG，若混淆 complementary DNA 和 complementary strand of DNA 會選到完全相反的答案。</p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>取得反向互補序列的任務可分解為替換鹼基和反轉序列順序。</p>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p>python 的字串可以像 list 一樣以索引值提取數值，因此得以 <code>str[::-1]</code> 取得反向序列，此表達式的涵義為「由字串的最後一個字符，一次一個取出所有字符」。而替換互補鹼基則要先建立密碼表（即 A to T, T to A, C to G, G to C），再參考密碼表替換字串中的字符。我使用的第一個策略是以 dictionary 儲存互補鹼基的密碼表，接著建立逐一替換輸入的序列。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">reverse_complement</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;complementing a strand of dna</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    comp = &#123;<span class="string">&quot;A&quot;</span>: <span class="string">&quot;T&quot;</span>, <span class="string">&quot;T&quot;</span>: <span class="string">&quot;A&quot;</span>, <span class="string">&quot;C&quot;</span>: <span class="string">&quot;G&quot;</span>, <span class="string">&quot;G&quot;</span>: <span class="string">&quot;C&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(comp[nt] <span class="keyword">for</span> nt <span class="keyword">in</span> dna[::-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<p>第二個方法則是使用 maketrans(old, new) 建立字符替換的密碼表，再以 translate() 依據密碼表同時替換字串中相應的字符。由於maketrans 是字串這個物件的靜態方法，所以需要在前面加字串來調用之。既然這字串跟副程式其它功能無關，就用空字串表示以免混淆，不然理論上用什麼字串都行，可參考 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/64513034/purpose-of-string-in-front-of-maketrans">Purpose of string in front of maketrans</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">reverse_complement</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;complementing a strand of dna</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> dna[::-<span class="number">1</span>].translate(<span class="string">&quot;&quot;</span>.maketrans(<span class="string">&quot;ATCG&quot;</span>, <span class="string">&quot;TAGC&quot;</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>以下則是我最初的錯誤嘗試，原先打算連續使用 replace() 替換鹼基，但後來發現第一次迴圈的結果會被第二次會圈抵銷掉（第一次：A to T, 第二次 T to A），所以才會採用前述的方法迴避問題。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># WRONG METHOD!</span><br><span class="line">code = &#123;&quot;A&quot;: &quot;T&quot;, &quot;T&quot;: &quot;A&quot;, &quot;C&quot;: &quot;G&quot;, &quot;G&quot;: &quot;C&quot;&#125;</span><br><span class="line">rcdna = dna</span><br><span class="line">for i, j in code.items():</span><br><span class="line">    rcdna = rcdna.replace(i, j)</span><br><span class="line">print rcdna</span><br></pre></td></tr></table></figure>
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><p>相較於 python，R 無法以索引值擷取字符，所以需要將字串轉變為其他格式再處理，以下方法參考 Four ways to reverse a string in R[<a target="_blank" rel="noopener" href="https://www.r-bloggers.com/2019/05/four-ways-to-reverse-a-string-in-r/]">https://www.r-bloggers.com/2019/05/four-ways-to-reverse-a-string-in-r/]</a></p>
+<ol>
+<li>利用 strsplit() 將字串分割為 list，再以 rev() 反轉 list 順序，最後使用 paste0() 將 list 合併為字串。</li>
+<li>利用 utf8ToInt() 將字串中 utf-8 編碼的字符轉變為 UTF-32 編碼的整數向量，再以 rev() 反轉向量順序，最後用 intToUtf8() 恢復 utf-8 編碼的字符組成之字串</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dna &lt;- &quot;AAAACCCGGT&quot;</span><br><span class="line"># strsplit() method</span><br><span class="line">reversed &lt;- paste0(rev(strsplit(dna, &quot;&quot;)[[1]]), collapse = &quot;&quot;)</span><br><span class="line"># utf8ToInt() method</span><br><span class="line">reversed &lt;- intToUtf8(rev(utf8ToInt(dna)))</span><br></pre></td></tr></table></figure>
+
+<p>由於 gsub() 只能把多種匹配到的字符串替換為一種字符串，<br>，所以得倚重可同時替換多種指定字符的 chartr()。  chartr() 的用法接近 bash 的 tr，會將字串中的 old (舊字符) 替換為 new (新字符)，例如 chartr(“AC”, “TG”, str) 表示 A to T, C to G。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rcdna &lt;- chartr(old = &quot;ATCG&quot;, new = &quot;TAGC&quot;, reversed)</span><br><span class="line">print(rcdna)</span><br></pre></td></tr></table></figure>
+
+<h2 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h2><p>bash 的作法較 python 和 R 簡潔，讀取字串，以 rev 反轉字串順序，再以 tr 替換互補鹼基等步驟可寫成一行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dna=&quot;AAAACCCGGT&quot;</span><br><span class="line">echo &quot;$dna&quot;| rev | tr ATCG TAGC</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -417,7 +470,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/" title="微國家：獨立建國的簡易操作手冊">https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/</a>
+      <a href="https://5uperb0y.com/complementing-a-strand-of-dna/" title="ROSALIND｜Complementing a strand of DNA (REVC)">https://5uperb0y.com/complementing-a-strand-of-dna/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -425,18 +478,21 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/psycho-pass-anime-and-novel/" rel="prev" title="PSYCHO-PASS 心靈判官">
-                  <i class="fa fa-angle-left"></i> PSYCHO-PASS 心靈判官
+                <a href="/transcribing-dna-into-rna/" rel="prev" title="ROSALIND｜Transcribing DNA into RNA (RNA)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Transcribing DNA into RNA (RNA)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/the-importance-of-science-communication/" rel="next" title="科學溝通能力的重要性">
-                  科學溝通能力的重要性 <i class="fa fa-angle-right"></i>
+                <a href="/counting-point-mutations/" rel="next" title="ROSALIND｜Counting Point Mutations (HAMM)">
+                  ROSALIND｜Counting Point Mutations (HAMM) <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

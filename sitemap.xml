@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/complementing-a-strand-of-dna/</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/counting-point-mutations/</loc>
+    
+    <lastmod>2024-05-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/transcribing-dna-into-rna/</loc>
     
     <lastmod>2024-05-03</lastmod>
@@ -425,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/living-tree-project-database-curation/</loc>
+    <loc>https://5uperb0y.com/leetcode-724-find-pivot-index/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -434,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/leetcode-724-find-pivot-index/</loc>
+    <loc>https://5uperb0y.com/living-tree-project-database-curation/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -596,7 +614,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/church-2014-regenesis/</loc>
+    <loc>https://5uperb0y.com/bignami-we-are-the-martians/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -605,7 +623,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/bignami-we-are-the-martians/</loc>
+    <loc>https://5uperb0y.com/church-2014-regenesis/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -630,14 +648,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/communication/</loc>
+    <loc>https://5uperb0y.com/tags/reading/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/reading/</loc>
+    <loc>https://5uperb0y.com/tags/communication/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -737,14 +755,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/</loc>
+    <loc>https://5uperb0y.com/categories/astrobiology/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/</loc>
+    <loc>https://5uperb0y.com/categories/academic/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -759,6 +777,13 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/bioinformatics/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -793,13 +818,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/life-in-the-universe/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/academic/tips-tricks/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -814,14 +832,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/programming/</loc>
+    <loc>https://5uperb0y.com/categories/bioinformatics/metagenomics/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/life/reading/</loc>
+    <loc>https://5uperb0y.com/categories/programming/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -835,6 +853,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/categories/life/reading/</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/categories/reading/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -842,7 +867,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/bioinformatics/metagenomics/</loc>
+    <loc>https://5uperb0y.com/categories/sf/reading/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -850,13 +875,6 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
-    <lastmod>2024-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/categories/sf/reading/</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
