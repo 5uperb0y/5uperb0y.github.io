@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。 所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。 這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。 我意">
+    <meta name="description" content="給定一正整數 n，求包含數字 1 到 n 的所有可能數列與其總數。  A permutation of length n is an ordering of the positive integers {1,2,…,n} . For example, π&#x3D;(5,3,2,1,4) is a permutation of length 5. Given: A positive integer">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="寫論文的糟糕和美好經驗">
-<meta property="og:url" content="https://5uperb0y.com/good-and-bad-experiences-in-journal-article-writing/index.html">
+<meta property="og:title" content="ROSALIND｜Enumerating Gene Orders (PERM)">
+<meta property="og:url" content="https://5uperb0y.com/enumerating-gene-orders/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。 所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。 這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。 我意">
+<meta property="og:description" content="給定一正整數 n，求包含數字 1 到 n 的所有可能數列與其總數。  A permutation of length n is an ordering of the positive integers {1,2,…,n} . For example, π&#x3D;(5,3,2,1,4) is a permutation of length 5. Given: A positive integer">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2022-11-19T20:53:16.000Z">
-<meta property="article:modified_time" content="2024-01-01T13:25:08.392Z">
+<meta property="article:published_time" content="2024-05-05T15:12:35.000Z">
+<meta property="article:modified_time" content="2024-05-04T07:44:05.538Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="writing">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/good-and-bad-experiences-in-journal-article-writing/">
+<link rel="canonical" href="https://5uperb0y.com/enumerating-gene-orders/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/good-and-bad-experiences-in-journal-article-writing/","path":"good-and-bad-experiences-in-journal-article-writing/","title":"寫論文的糟糕和美好經驗"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/enumerating-gene-orders/","path":"enumerating-gene-orders/","title":"ROSALIND｜Enumerating Gene Orders (PERM)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>寫論文的糟糕和美好經驗 | 5uperb0y's blog</title>
+<title>ROSALIND｜Enumerating Gene Orders (PERM) | 5uperb0y's blog</title>
   
 
 
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E7%99%BC%E8%A1%A8%E8%AB%96%E6%96%87%E7%9A%84%E5%88%9D%E8%A1%B7%E6%98%AF%E6%84%9F%E8%AC%9D%E3%80%8D"><span class="nav-number">1.</span> <span class="nav-text">「發表論文的初衷是感謝」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E4%B8%80%E5%89%87%E6%96%87%E7%8D%BB%E6%97%A2%E4%B8%8D%E6%98%AF%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%B9%9F%E4%B8%8D%E6%98%AF%E6%9C%80%E4%B8%8D%E9%87%8D%E8%A6%81%E7%9A%84%E3%80%8D"><span class="nav-number">2.</span> <span class="nav-text">「一則文獻既不是最重要的也不是最不重要的」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%90%91%E5%AF%AB%E4%BD%9C%E7%B6%93%E9%A9%97%E7%9A%84%E9%97%9C%E9%8D%B5"><span class="nav-number">3.</span> <span class="nav-text">正向寫作經驗的關鍵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%B6%E7%84%B6%E9%82%84%E6%98%AF%E6%9C%89%E7%B3%9F%E7%B3%95%E7%9A%84%E7%B6%93%E9%A9%97"><span class="nav-number">4.</span> <span class="nav-text">當然還是有糟糕的經驗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%86%E6%88%91%E9%82%84%E6%98%AF%E6%83%B3%E8%A8%98%E4%BD%8F%E5%A5%BD%E7%9A%84"><span class="nav-number">5.</span> <span class="nav-text">但我還是想記住好的</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AD%98%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">知識點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">解題</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%8E%E8%AB%96"><span class="nav-number">3.</span> <span class="nav-text">討論</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -273,6 +273,30 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-02</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-dna-nucleotides/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-01</time>
+        <br>
+      ROSALIND｜Counting DNA Nucleotides (DNA)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
@@ -290,7 +314,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/good-and-bad-experiences-in-journal-article-writing/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/enumerating-gene-orders/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -303,12 +327,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="寫論文的糟糕和美好經驗 | 5uperb0y's blog">
+      <meta itemprop="name" content="ROSALIND｜Enumerating Gene Orders (PERM) | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          寫論文的糟糕和美好經驗
+          ROSALIND｜Enumerating Gene Orders (PERM)
         </h1>
 
         <div class="post-meta-container">
@@ -319,14 +343,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2022-11-20 04:53:16" itemprop="dateCreated datePublished" datetime="2022-11-20T04:53:16+08:00">2022-11-20</time>
+      <time title="創建時間：2024-05-05 23:12:35" itemprop="dateCreated datePublished" datetime="2024-05-05T23:12:35+08:00">2024-05-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-01-01 21:25:08" itemprop="dateModified" datetime="2024-01-01T21:25:08+08:00">2024-01-01</time>
+      <time title="修改時間：2024-05-04 15:44:05" itemprop="dateModified" datetime="2024-05-04T15:44:05+08:00">2024-05-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -334,11 +358,7 @@
       </span>
       <span class="post-meta-item-text">分類於</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/academic/" itemprop="url" rel="index"><span itemprop="name">academic</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/academic/mindset/" itemprop="url" rel="index"><span itemprop="name">mindset</span></a>
+          <a href="/categories/bioinformatics/" itemprop="url" rel="index"><span itemprop="name">bioinformatics</span></a>
         </span>
     </span>
 
@@ -365,8 +385,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/good-and-bad-experiences-in-journal-article-writing/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="good-and-bad-experiences-in-journal-article-writing/" itemprop="commentCount"></span>
+    <a title="disqus" href="/enumerating-gene-orders/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="enumerating-gene-orders/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -377,14 +397,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.4k</span>
+      <span>1.3k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>9 分鐘</span>
+      <span>5 分鐘</span>
     </span>
 </div>
 
@@ -394,45 +414,55 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
-<p>所以每當開啟 word 檔開始打字的時候，都有起步的焦慮感：覺得自己還沒準備好，想要把文獻回顧完全，研究結果做到滴水不漏才有辦法動筆。</p>
-<p>這種印象部分奠基於碩士論文寫作經驗，當時往往盯著螢幕許久沒有任何想法，最後歸因於自己文獻回顧不夠完整或是研究做得不夠完善。</p>
-<p>我意識到阻礙我進展的是對於完美論文的期待，我期待論文能夠達到讓我感到愉悅和成就感的標準。</p>
-<p>然而，人們總是無法在初稿時達到滿意的程度吧？而且論文需要於修改中逐漸精緻，沒辦法一蹴可幾，我的期待反過來成為我的壓力。</p>
-<p>為了舒緩這種壓力和焦慮，我轉而把精力投注在文獻回顧或改進研究內容。雖然多做準備能暫時減緩我的焦慮和踏實感，但這只是將自己的壓力和負擔延後，之後將面對更多的時間、資源和要求的壓力。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 的所有可能數列與其總數。</p>
+<blockquote>
+<p>A permutation of length n is an ordering of the positive integers {1,2,…,n} . For example, π&#x3D;(5,3,2,1,4) is a permutation of length 5.</p>
+<p>Given: A positive integer n≤7 .</p>
+<p>Return: The total number of permutations of length n , followed by a list of all such permutations (in any order).</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/perm/">https://rosalind.info/problems/perm/</a>)</p>
 <span id="more"></span>
 
-<h2 id="「發表論文的初衷是感謝」"><a href="#「發表論文的初衷是感謝」" class="headerlink" title="「發表論文的初衷是感謝」"></a>「發表論文的初衷是感謝」</h2><p>而我對論文的美好經驗則來自研究所的老師。我的指導教授從前曾問我：「你認為我們為什麼要投稿論文？」</p>
-<p>從功利的角度講，Publish or Perish。發表論文是在學術界生存的根本，也是一個人能力的證據，舉凡畢業、獎學金、申請學校、公司求職、學校教職等皆可能需要論文作為能力的佐證。</p>
-<p>然而，我的指導教授認為這些都只是其次，發表論文的初衷是感謝。</p>
-<p>為什麼感謝？做研究總是關注著某些議題，為了解決問題，我們參考了這麼多文獻，我們正是對於前人的文獻表達感謝。</p>
-<p>表達感謝的途徑有二，首先是引用這些文獻，彰明他們的貢獻；其次是基於這些文獻發展出我們的想法，促進對議題的理解，讓這些想法得以演化和繁衍下去。</p>
-<p>科學是尋求解釋的活動，而我們對世界的認知並非一日造就而成的。無論是科學革命還是漸進式的科學史觀，當今的知識體系都是多人長年活動累積的結果，一項研究的鑄成往往有其思想根基和參考依據，無論是要贊同、反駁還是引發想法，都會踏過前人的足跡。</p>
-<p>經過長期演變，論文已是紀錄和傳播科學活動成果的最有效和公認的媒介，研究和發表其實就是：我們感到疑惑，我們開始研究，我們參考了誰的想法和觀念，我們想到了一些點子和把持一些觀點。</p>
-<p>我們想要提供一些新的解釋，我們感謝前人對於我們思想和研究的幫助，我們回饋學界這些觀念，用一種經過長期演變且公認最有效率的媒介，論文。</p>
-<p>以感謝的角度來看待論文發表很大程度地舒緩了寫論文的恐懼和壓力，即使論文有那些功利價值，但我的指導教授還是提醒了我研究和發表理想和溫暖的一面。</p>
-<h2 id="「一則文獻既不是最重要的也不是最不重要的」"><a href="#「一則文獻既不是最重要的也不是最不重要的」" class="headerlink" title="「一則文獻既不是最重要的也不是最不重要的」"></a>「一則文獻既不是最重要的也不是最不重要的」</h2><p>而對論文另一部份美好經驗則來自論文寫作課的老師。</p>
-<p>有別於我的指導教授，寫作課老師從實用角度分析論文的寫作與發表，將論文寫作描述得很像 youtube 上頭 8 分鐘的 DIY 影片，好像我們在某個閒暇無事的下午，點開影片照著做就可以完成，不是什麼無法做到的事。</p>
-<p>總結他的課程，他強調論文寫作縱使有那些功利價值，也不需要感到壓力，論文發表會被 reject 沒錯，但再換家推銷就好。</p>
-<p>換句話說，寫作課老師讓我感受到，即使沒有達到最完美的狀況，論文還是有價值；即使還沒有準備好，也能開始動筆；即使能力還不夠，進展中就會有所成長；即使被批判，那也是很自然，因為這都是科學過程的一部分。</p>
-<p>一則文獻既不是最重要的也不是最不重要的，科學重視的是合理而非真理，文獻呈現的是探索的過程，我們沒辦法在一則文獻中完全佐證我們的主張或對世界的看法。</p>
-<p>錯誤與正確都是研究累積後，後世對我們的評價而已，所以不用太擔心文獻被批判等等，這本來就是科學新陳代謝的一環。</p>
-<h2 id="正向寫作經驗的關鍵"><a href="#正向寫作經驗的關鍵" class="headerlink" title="正向寫作經驗的關鍵"></a>正向寫作經驗的關鍵</h2><ul>
-<li><strong>寫作是 routine</strong>：寫作跟運動很像，寫作的愉悅需要一點投資，最重要的投資就是起步的意願，隨後是堅持的決心。寫作是 routine，而非儀式行為。是以，治療寫作不快或抑鬱的方法跟控制慢性病一樣，每天吃藥（寫作）。</li>
-<li><strong>參與感</strong>：讓寫作交流可以提升寫作的回饋感，因為寫作終究是科學交流的一部份。透過研討會、一對一討論、編修等途徑，可以從中得到寫作靈感而疏通寫作瓶頸，也可以從交流中獲得參與感和社群歸屬，最終得到「意義」</li>
-<li><strong>正面看待評論</strong>：看待拒稿和批評的認知轉換有助於降低寫作的恐懼，投稿寫作就跟賣東西一樣，一定有人買，只是看誰會買和賣什麼價碼而已。論文跟基因不一樣，別人罵你先天特徵是沒機會改變，但別人批評論文內容有改善的機會。</li>
-<li><strong>分享的心</strong>：如果真心喜歡自己的研究，那寫作就是分享自己熱情和喜好的管道。若有類似的經驗便能體會為什麼用分享看待寫作可以增加正向寫作經驗。</li>
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>基因體重排（genome rearrangement）泛指基因體上發生的刪除（deletion）、插入（insertion）、重複（duplication）、反轉（inversion）或易位（translocation）等現象。這些變動通常涉及數百至數百萬對鹼基，相較於點突變，它們的影響更為廣泛。</p>
+<p>基因體重排的發生機制主要有<sup id="fnref:gu2008"><a href="#fn:gu2008" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Gu et al. (2008). Mechanisms for human genomic rearrangements. Pathogenetics, 1, 1-17.
+">gu2008</span></a></sup>：</p>
+<ul>
+<li>non-allelic homologous recombination (NAHR)：細胞分裂中，染色體對齊時發生錯位，導致片段重組。</li>
+<li>non-homologous end-joining (NHEJ)：DNA 斷鍊修復時，連結了非同源的染色體。</li>
+<li>Fork Stalling and Template Switching (FoSTeS)：DNA 複製時因故停滯時，新合成的 DNA 意外移動到其他模板進行複製。</li>
 </ul>
-<h2 id="當然還是有糟糕的經驗"><a href="#當然還是有糟糕的經驗" class="headerlink" title="當然還是有糟糕的經驗"></a>當然還是有糟糕的經驗</h2><p>儘管羅列了一堆美好經驗和建立正面想法的「要點」，寫論文還是有坐困愁城和自我質疑的時候，像是指示牴觸價值觀、結果不明又不想自欺欺人、截止日到但品質不滿意等等。</p>
-<p>舉我的例子來說，我不太習慣被 Paul Nurse 稱之為「修正主義 (revisionist)」的科學敘事 (Nurse. (2016). Cell, 165(6), 1301-1306.)。就我理解，這是指論文敘事隱藏了科研的意外與不可控，調整文章內容以說個毫無破綻的好故事，而不是說個貼近事實的發現歷程。</p>
-<p>最容易接觸這類修正主義的途徑可能是台灣的理科教科書。從歐幾里得、牛頓、孟德爾、波爾、拉瓦節，課本呈現的是生硬且不直觀，但和諧線性的科學史觀。理論的發展與邏輯的推演高度相符，彷彿有了前提、假設和足夠的測量，理論即順水推舟浮現，科學史跟課本都能一併翻向的新頁。</p>
-<p>我想，為了溝通的效率，精簡內容和梳理邏輯是撰寫論文的必要過程。然而，當論文呈現與事實迥異的發現軌跡，後人要追溯某項理論的沿革時，只能走在一條虛構的途徑上，而這條途徑很可能只在想像中行得通。</p>
-<p>等到開始寫論文，我也希望自己能夠避免這種狀況，想盡可能讓論文的敘事貼近發現的過程，保留激發研究點子的關鍵因素，討論理論與結果衝突的理由與和解方式，而不是為了結果而調整敘述過程的方向。</p>
-<p>雖然只是一點點，但我也想要為自己認同的理念和未來做點事。不過，我後來才體會到，論文寫作還是有協商的因素存在，與合作者的協調、與計畫主持人的溝通、與編輯和審閱者的答辯等等。</p>
-<p>我想這些合作與協商是必要的，只是折磨之處在於，若討論不是基於事實與道理，而是訴諸權威或群眾等無關論文內容的事情，那麼我有點難克服下筆時的抗拒感。</p>
-<h2 id="但我還是想記住好的"><a href="#但我還是想記住好的" class="headerlink" title="但我還是想記住好的"></a>但我還是想記住好的</h2><p>儘管如此，我其實是喜好寫作表達想法的，我覺得將自己的主張和論證陳述清楚，嘗試去說服別人的過程仍值得投入。</p>
-<p>畢竟寫論文也是一種發聲管道，若渴望能依照這途徑去實踐或改變什麼，那是否要做下去也非取決於經驗的好壞，而是渴望的程度。</p>
-<p>既然如此，傾聽內心裡較良善的聲音讓自己有動力做下去，我覺得會比被糟糕回憶困住半途而廢還來得有機會幫助自己達到目標。</p>
+<p>這些變化可能導致基因無效而喪失功能、彼此融合而改變功能，或是副本數變動而加強&#x2F;減弱功能，從而影響細胞結構與生理。許多疾病和癌症與基因體重排有關，例如 BRCA1 和 BRCA2 的副本數變化與乳癌發作密切相關。<sup id="fnref:ewald2009"><a href="#fn:ewald2009" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Ewald et al. (2009). Genomic rearrangements in BRCA1 and BRCA2: A literature review. Genetics and Molecular Biology, 32, 437-446.
+">ewald2009</span></a></sup></p>
+<p>基因體重排不僅是疾病基因體學的重要研究對象，也因為被視為種化的分子機制之一，而在演化生物學中占一席之地。相較於點突變，基因體重排的發生頻率較低，使得親緣關係相近的物種在染色體層級上保持一致，即使它們在局部基因序列上略有不同。</p>
+<p>然而，親緣關係較遠的物種則可能因為基因體重排而有顯著差異。在演化過程中，這些沒有被分離到道不同區域或染色體的基因彼此聚集成 synteny block。在比較基因體學中，synteny block 提供了一種比染色體數量和大小更細緻的描述單位，有助於在不過度瑣碎的層級上討論基因體的變化。透過比較 synteny block 的繼承與變化，可以推輪物種分化的歷史。<sup id="fnref:touchman2010"><a href="#fn:touchman2010" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/">touchman2010</span></a></sup></p>
+<p>這題的設計反映了基因體重排的概念，將每個數列視為一條染色體，其中每個數字代表一個 synteny block，數字的順序則代表這些 block 在餐考基因體上出現的順序或染色體編號。透過模擬單一染色體 synteny block 的不同排列，探索可能的重排情境。</p>
+<h1 id="解題"><a href="#解題" class="headerlink" title="解題"></a>解題</h1><p>讓我們從最簡案例來推論怎麼用遞迴解這題。假設數列只有一個數字，也就只有一種可能的排列；而兩個數字的排列也很直觀。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n = 1</span></span><br><span class="line">[[<span class="number">1</span>]]</span><br><span class="line"><span class="comment"># n = 2</span></span><br><span class="line">[[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>現在考慮數列有三個數字的情形。由於沒辦法一眼得到解答，於是我們需要更系統的解決辦法，其中一個策略是：</p>
+<ol>
+<li>先取出其中一個數字</li>
+<li>排列剩下的數字</li>
+<li>把取出的數字加回排列結果</li>
+<li>重複取出所有數字後，便得到數列的所有可能</li>
+</ol>
+<p>如同以下各數列所示，我首先依序取出 1、2、3 （數列的首項），然後再排列剩餘兩個數字，再把取出的數字與排列後的數列結合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n = 3</span></span><br><span class="line">[</span><br><span class="line">    [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>歸納前述方法，便能用 python 實作以下關係：</p>
+<ul>
+<li>若數列只有一個數字，回傳此數列</li>
+<li>若數列不只一個數字，則依序取出各數字，排列剩餘數字，再把取出的數字加到排列的結果中。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Permutations of a list</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [l]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> lperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+
+<p>隨後便可整理排列的結果為題目要求的格式。由於我們已經列出所有可能數列，所以直接計算數列總數即可，不用多做一次階乘計算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_permutations</span>(<span class="params">n</span>):</span><br><span class="line">    num_perms = lperm(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>)))</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(num_perms))</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> num_perms:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, p)))</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><p>我解這題的靈感來自 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/23116911/all-permutations-of-a-string-in-python-recursive">All Permutations of a String in Python (Recursive)</a> 這串問答，我只需要把原方法改寫為適合 list 的方式即可。不過一開始我寫成以下形式，能看出會報什麼錯誤嗎？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># !!!! WRONG SOLUTION !!!!</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> = [</span><br><span class="line">            p + [e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l):</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> lperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">        ]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>關鍵在於遞迴關係的初始狀態設定，這個 function 預期要回傳一個存儲所有可能數列的巢狀 list，但我在初始狀態的時候寫成 <code>return l</code>，導致遞迴調用 function 回傳了一個攤平的 list。於是 <code>p</code> 就成了整數，自然無法和 <code>[e]</code> 相連，讓程式無法運作。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:ewald2009"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">ewald2009.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ewald et al. (2009). Genomic rearrangements in BRCA1 and BRCA2: A literature review. Genetics and Molecular Biology, 32, 437-446.<a href="#fnref:ewald2009" rev="footnote">↩</a></span></li><li id="fn:gu2008"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">gu2008.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Gu et al. (2008). Mechanisms for human genomic rearrangements. Pathogenetics, 1, 1-17.<a href="#fnref:gu2008" rev="footnote">↩</a></span></li><li id="fn:touchman2010"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">touchman2010.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/">https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/</a><a href="#fnref:touchman2010" rev="footnote">↩</a></span></li></ol></div></div></p>
 
     </div>
 
@@ -450,7 +480,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/good-and-bad-experiences-in-journal-article-writing/" title="寫論文的糟糕和美好經驗">https://5uperb0y.com/good-and-bad-experiences-in-journal-article-writing/</a>
+      <a href="https://5uperb0y.com/enumerating-gene-orders/" title="ROSALIND｜Enumerating Gene Orders (PERM)">https://5uperb0y.com/enumerating-gene-orders/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -459,21 +489,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/writing/" rel="tag"># writing</a>
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/nextflow-escape-characters/" rel="prev" title="Nextflow｜程式碼區塊的跳脫符號 (escape characters)">
-                  <i class="fa fa-angle-left"></i> Nextflow｜程式碼區塊的跳脫符號 (escape characters)
+                <a href="/counting-point-mutations/" rel="prev" title="ROSALIND｜Counting Point Mutations (HAMM)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Counting Point Mutations (HAMM)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/living-tree-project-database-curation/" rel="next" title="All-Species Living Tree Project (LTP) 物種資訊的訂正和維護">
-                  All-Species Living Tree Project (LTP) 物種資訊的訂正和維護 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
