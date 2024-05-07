@@ -515,6 +515,34 @@
       </tags>
   </entry>
   <entry>
+    <title>ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)</title>
+    <url>/enumerating-oriented-gene-orderings/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。</p>
+<blockquote>
+<p>A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negative sign (for the sake of simplicity, we omit the positive sign). For example, π&#x3D;(5,−3,−2,1,4) is a signed permutation of length 5</p>
+<p>Given: A positive integer n≤6</p>
+<p>Return: The total number of signed permutations of length n, followed by a list of all such permutations (you may list the signed permutations in any order).</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Synteny blocks 是相異物種因為基因體重排而分離的同源片段。在 <a href="https://5uperb0y.com/enumerating-gene-orders/">Enumerating Gene Orders</a> 當中介紹了以數列排列模擬 synteny blocks 重排的想法，我們可以額外考慮 blocks 的方向性來改善模型的精細度。DNA 雖然由兩股去氧核酸構成，但轉錄僅發生在其中一股。</p>
+<p>由於 synteny blocks 在演化過程中除了易位，也可能發生轉置，顛倒基因的排列和方向性，改變轉錄與基因調控等行為，從而影響個體的表徵。例如，Factor VIII Intron 22 的轉置便是血友病A的成因之一。</p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題的解法近似<a href="https://5uperb0y.com/enumerating-gene-orders/">數列的排列</a>，只是透過正負號來表示 synteny blocks 的方向。因為要考慮正負符號，所以需要兩個調整。</p>
+<ol>
+<li>遞迴的 base case 要回傳數字與其相反數。例如輸入數列 <code>[1]</code>，要回傳 <code>[[1], [-1]]</code>。</li>
+<li>在把數字放回排列後的數列時，也要分別加入數字和其相反數。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">slperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;permutations of a numberic list, including -/+ of each number.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [[l[<span class="number">0</span>]], [-l[<span class="number">0</span>]]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [sign_e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> slperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> sign_e <span class="keyword">in</span> [e, -e]</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:lakich1993"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">lakich1993.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lakich et al. (1993). Inversions disrupting the factor VIII gene are a common cause of severe haemophilia A. Nature genetics, 5(3), 236-241.<a href="#fnref:lakich1993" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROSALIND | Enumerating k-mers Lexicographically (LEXF)</title>
     <url>/enumerating-k-mers-lexicographically/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度為 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
@@ -542,34 +570,6 @@
 <p>最後再把結果依題目要求的格式印出來。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_results</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k):</span><br><span class="line">        <span class="built_in">print</span>(k_str)</span><br></pre></td></tr></table></figure>
 ]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)</title>
-    <url>/enumerating-oriented-gene-orderings/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。</p>
-<blockquote>
-<p>A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negative sign (for the sake of simplicity, we omit the positive sign). For example, π&#x3D;(5,−3,−2,1,4) is a signed permutation of length 5</p>
-<p>Given: A positive integer n≤6</p>
-<p>Return: The total number of signed permutations of length n, followed by a list of all such permutations (you may list the signed permutations in any order).</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Synteny blocks 是相異物種因為基因體重排而分離的同源片段。在 <a href="https://5uperb0y.com/enumerating-gene-orders/">Enumerating Gene Orders</a> 當中介紹了以數列排列模擬 synteny blocks 重排的想法，我們可以額外考慮 blocks 的方向性來改善模型的精細度。DNA 雖然由兩股去氧核酸構成，但轉錄僅發生在其中一股。</p>
-<p>由於 synteny blocks 在演化過程中除了易位，也可能發生轉置，顛倒基因的排列和方向性，改變轉錄與基因調控等行為，從而影響個體的表徵。例如，Factor VIII Intron 22 的轉置便是血友病A的成因之一。</p>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題的解法近似<a href="https://5uperb0y.com/enumerating-gene-orders/">數列的排列</a>，只是透過正負號來表示 synteny blocks 的方向。因為要考慮正負符號，所以需要兩個調整。</p>
-<ol>
-<li>遞迴的 base case 要回傳數字與其相反數。例如輸入數列 <code>[1]</code>，要回傳 <code>[[1], [-1]]</code>。</li>
-<li>在把數字放回排列後的數列時，也要分別加入數字和其相反數。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">slperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;permutations of a numberic list, including -/+ of each number.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [[l[<span class="number">0</span>]], [-l[<span class="number">0</span>]]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [sign_e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> slperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> sign_e <span class="keyword">in</span> [e, -e]</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
-
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:lakich1993"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">lakich1993.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lakich et al. (1993). Inversions disrupting the factor VIII gene are a common cause of severe haemophilia A. Nature genetics, 5(3), 236-241.<a href="#fnref:lakich1993" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
         <category>bioinformatics</category>
       </categories>
@@ -657,6 +657,73 @@
       </tags>
   </entry>
   <entry>
+    <title>ROSALIND | Finding a Motif in DNA (SUBS)</title>
+    <url>/finding-a-motif-in-dna/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給定字串 s 與 t，其中 t 的長度小於等於 s，求 s 與 t 一致之子序列的起始位置。</p>
+<blockquote>
+<p>Given: Two DNA strings s and t (each of length at most 1 kbp).</p>
+<p>Return: All locations of t as a substring of s.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/subs/">https://rosalind.info/problems/subs/</a>)</p>
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Motif 是指在一範圍內反覆出現且具鮮明特質的物體或概念，其指涉的對象因脈絡而異 。在分子生物中，motif 被用以形容一段為生物體共享的核酸或蛋白質序列，這些序列可能有相似的功能，且對各生物都至關重要。在網路生物學中，motif 則可用以形容一出現頻率高於隨機分布的子圖，這些子圖的出現頻率很高且有獨特的網路結構，因此能在欠缺相關生物學知識的情況被辨識出來。而在結構生物學中，motif 則代表核酸或蛋白質上呈規律結構的區段，這些區段可能由多個二級結構所構成。</p>
+<p>雖然 motif 定義多元，但皆不脫「重複」與「特別」兩項屬性。是以，透過在核酸或蛋白質序列尋找重複序列來辨識 motif，也算在找尋某種特別的屬性。在結構生物學中，domain 是與 motif 相關的概念。Domain 也具有規律的結構和鮮明的特質，但與 motif 不同，domain 能獨立發揮某項功能。換句話說，motif 強調結構的實體，而 domain 則強調功能的實體。</p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>此題意在尋找與 motif 相符的子字串之位置。在 Python 中，我首先建立 list 儲存子字串位置，接著以 for 迴圈依序取出長度與 motif 一致的子字串，再比對兩者的序列。若序列一致，則將子字串的起始位置儲存至 list。由於 python 計數由 0 開始，所以輸出結果還要 +1 才符合題目要求。因為最後要回傳 list，所以也能用 list comprehension 呈現。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">subs</span>(<span class="params">s, t</span>):</span><br><span class="line">	<span class="keyword">return</span> [</span><br><span class="line">		i + <span class="number">1</span></span><br><span class="line">		<span class="keyword">for</span> i, _ <span class="keyword">in</span> <span class="built_in">enumerate</span>(s[:-<span class="built_in">len</span>(t)])</span><br><span class="line">		<span class="keyword">if</span> s[i:i+<span class="built_in">len</span>(t)] == t</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
+
+<p>最後再把結果依照題目要求印出，</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="built_in">map</span>(subs(s,t))))</span><br></pre></td></tr></table></figure>
+
+<p>在 R 中，我採取了另一種策略：先列出所有與 motif 長度一致的子字串，再回傳序列與 motif 相同的子字串位置。因此，我先定義了能從一字串取出所有特定長度子字串的 function。接著再以 grep 搜索子字串中，與 motif 相符者的位置。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># exemplified data</span><br><span class="line">dna &lt;- &quot;GATATATGCATATACTT&quot;</span><br><span class="line">motif &lt;- &quot;ATAT&quot;</span><br><span class="line"># Generate kmer from a string</span><br><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br><span class="line"># identify motif from kmer with grep </span><br><span class="line">find_motif &lt;- function (dna, motif) &#123;</span><br><span class="line">  mer &lt;- kmer(dna, nchar(motif))</span><br><span class="line">  return(grep(motif, mer))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="1-motif-相關知識來源"><a href="#1-motif-相關知識來源" class="headerlink" title="1. motif 相關知識來源"></a>1. motif 相關知識來源</h2><p>本文關於 motif 的定義參考以下文獻與網站</p>
+<ul>
+<li><a href="https://www.merriam-webster.com/dictionary/motif">https://www.merriam-webster.com/dictionary/motif</a></li>
+<li>[莊榮輝，生物化學基礎 Biochemistry Basics 2008] (<a href="http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm">http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm</a>)</li>
+<li>Pizzuti, &amp; Rombo. (2018). Algorithms for Graph and Network Analysis: Clustering and Search of Motifs in Graphs. Encyclopedia of Bioinformatics and Computational Biology: ABC of Bioinformatics, 95.</li>
+</ul>
+<h2 id="2-R-kmer-function"><a href="#2-R-kmer-function" class="headerlink" title="2. R: kmer function"></a>2. R: kmer function</h2><p>K-mers 是指一字串所有長度為 k 的子字串，長度為 l 之字串會有 l - k + 1 個 k-mers，此概念常用於基因體學的序列比對和品質篩選的演算法。</p>
+<p>我的 kmer function 的運作方式是先將字串分割為獨立字符，再用 lapply 依序取出 k 個字符以 paste0 合併為長度為 k 的子字串。由於僅有 l - k + 1 個 k-mers，所以 lapply 迴圈僅執行  l - k + 1 次。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-R-grep-和-grepl"><a href="#3-R-grep-和-grepl" class="headerlink" title="3. R: grep 和 grepl"></a>3. R: grep 和 grepl</h2><p>grep 用以尋找文字向量中符合特定模式的元素之索引值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grep(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1] 1 5</span><br></pre></td></tr></table></figure>
+<p>grepl 用以判斷文字向量的各元素是否符合特定模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grepl(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1]  TRUE FALSE FALSE FALSE  TRUE</span><br></pre></td></tr></table></figure>
+<p>由於此題要求回報子字串的位置，因此使用 grep 實踐之。</p>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+<span id="more"></span>
+
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>life</category>
+        <category>reading</category>
+      </categories>
+  </entry>
+  <entry>
     <title>寫論文的糟糕和美好經驗</title>
     <url>/good-and-bad-experiences-in-journal-article-writing/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
@@ -706,30 +773,6 @@
       <tags>
         <tag>writing</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>讀後感｜樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
-<span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
-<ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>life</category>
-        <category>reading</category>
-      </categories>
   </entry>
   <entry>
     <title>hexo 部屬後網頁報錯 &quot;cannot get /&quot;</title>
@@ -1210,6 +1253,44 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 筆記｜1. Two Sum</title>
+    <url>/leetcode-1-two-sum/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
+</blockquote>
+<p>求數列內，和為目標值的兩數之座標</p>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [3,2,4], target &#x3D; 6<br>Output: [1,2]</p>
+</blockquote>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 104</code>：數列長度介於 2 至 104 之間</li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code>：數列各項可能有負值</li>
+<li><code>-109 &lt;= target &lt;= 109</code>：目標值可能為負值</li>
+<li>Only one valid answer exists.：僅有一組解</li>
+</ul>
+<span id="more"></span>
+
+<p><strong>知識點</strong><br>hash table</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題最直觀的解法是將數列各項兩兩相加，最遲到比對所有組合後才找到題解。然而，目標值在這算法裡僅作為判斷結果的依據，沒有充分利用其提供的資訊。</p>
+<p>為了充分利用目標值，可以各項與目標值之差為 keys，各項座標為 values，建立 hash table 存儲讀過的數字。</p>
+<p>若現在的數字為先前出現過的數字與目標值之差，則回傳這兩數字的座標即為題解；若否，則新增現在的數字與目標值之差到 hash table 內。由於題目設計保證有唯一解，所以最遲遍歷整個數列即可找到題解。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        record = &#123;&#125;  </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            diff = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> record.keys() :</span><br><span class="line">                <span class="keyword">return</span>([record[nums[i]], i])</span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                record[diff] = i</span><br></pre></td></tr></table></figure>
+<ul>
+<li>此以 python dict 實踐 hash table 的功能。</li>
+<li><code>record.keys()</code> 可寫成 <code>record</code>，但標出來比較清楚</li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>讀後感｜戲說統計</title>
     <url>/lee-2017-introduction-to-statistics-and-quantitative-analysis/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>知乎上有段軼聞可以很好地形容我讀《戲說統計》的心境：</p>
@@ -1297,44 +1378,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜1. Two Sum</title>
-    <url>/leetcode-1-two-sum/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
-</blockquote>
-<p>求數列內，和為目標值的兩數之座標</p>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [3,2,4], target &#x3D; 6<br>Output: [1,2]</p>
-</blockquote>
-<p><strong>限制</strong></p>
-<ul>
-<li><code>2 &lt;= nums.length &lt;= 104</code>：數列長度介於 2 至 104 之間</li>
-<li><code>-109 &lt;= nums[i] &lt;= 109</code>：數列各項可能有負值</li>
-<li><code>-109 &lt;= target &lt;= 109</code>：目標值可能為負值</li>
-<li>Only one valid answer exists.：僅有一組解</li>
-</ul>
-<span id="more"></span>
-
-<p><strong>知識點</strong><br>hash table</p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題最直觀的解法是將數列各項兩兩相加，最遲到比對所有組合後才找到題解。然而，目標值在這算法裡僅作為判斷結果的依據，沒有充分利用其提供的資訊。</p>
-<p>為了充分利用目標值，可以各項與目標值之差為 keys，各項座標為 values，建立 hash table 存儲讀過的數字。</p>
-<p>若現在的數字為先前出現過的數字與目標值之差，則回傳這兩數字的座標即為題解；若否，則新增現在的數字與目標值之差到 hash table 內。由於題目設計保證有唯一解，所以最遲遍歷整個數列即可找到題解。 </p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        record = &#123;&#125;  </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            diff = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> record.keys() :</span><br><span class="line">                <span class="keyword">return</span>([record[nums[i]], i])</span><br><span class="line">            <span class="keyword">else</span>: </span><br><span class="line">                record[diff] = i</span><br></pre></td></tr></table></figure>
-<ul>
-<li>此以 python dict 實踐 hash table 的功能。</li>
-<li><code>record.keys()</code> 可寫成 <code>record</code>，但標出來比較清楚</li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>array</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 筆記｜1480. Running Sum of 1d Array</title>
     <url>/leetcode-1480-running-sum-of-1d-array/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>計算數列逐項的累積和 (runningSum)</p>
@@ -1355,6 +1398,46 @@
 <p><strong>知識點</strong><br>prefix sum &amp; array  </p>
 <h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此題應該算是 for loop 練習，我覺得要留意 (1) indices out of range 以及 (2) len(nums) &#x3D;&#x3D; 1 的狀況。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">runningSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            nums[n] = nums[n - <span class="number">1</span>] + nums[n]</span><br><span class="line">        <span class="keyword">return</span>(nums)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>programming</category>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>array</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜217. Contains Duplicate</title>
+    <url>/leetcode-217-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<ul>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
+</ul>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>programming</category>
         <category>leetcode</category>
@@ -1397,46 +1480,6 @@
 <h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="mid-的定義方式"><a href="#mid-的定義方式" class="headerlink" title="mid 的定義方式"></a><code>mid</code> 的定義方式</h3><p><code>mid</code> 亦可定義為 <code>(left + right)//2</code>，但聽同事討論，若兩數的數值極大，則有數值超出整數範圍的風險。以相減的方式撰寫則一定不會超出範圍。</p>
 <h3 id="判斷首尾交界處的方式"><a href="#判斷首尾交界處的方式" class="headerlink" title="判斷首尾交界處的方式"></a>判斷首尾交界處的方式</h3><p>有看過同事在比較時，不比對 <code>nums[right]</code>，而是比對 <code>nums[-1]</code>，有一樣的效果。</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">rotation 是指數列各項座標平移相同單位，例如 [1, 2, 3, 4] 平移 1 單位即為 [4, 1, 2, 3]，平移 2 單位則為 [3, 4, 1, 2]<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>programming</category>
-        <category>leetcode</category>
-      </categories>
-      <tags>
-        <tag>array</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 筆記｜217. Contains Duplicate</title>
-    <url>/leetcode-217-contains-duplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
-</blockquote>
-<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
-<p>Example:</p>
-<blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
-<ul>
-<li>數字重複出現</li>
-<li>array 長度大於其中數字種類數</li>
-<li>若將 array 排序，則重複的數字比鄰出現</li>
-</ul>
-<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
-<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
-</li>
-<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
-</li>
-<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
-</li>
-</ul>
-]]></content>
       <categories>
         <category>programming</category>
         <category>leetcode</category>
@@ -1744,6 +1787,50 @@
       </categories>
   </entry>
   <entry>
+    <title>Vim｜嘗試修改 Vimium 來關閉網頁 pop-up</title>
+    <url>/modify-vimium-to-label-and-close-pop-up/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>彈出視窗是以鍵盤瀏覽網頁的最大阻礙。這些視窗的內容不外乎會員邀請、推薦連結、蓋板廣告與網站公告等，是網站而定，通常沒辦法以 tab 來點擊，之前介紹的 Vimium 功能也沒辦法為這些視窗上的連結打標籤。由於彈出視窗並非廣告，所以下載 adblock 也無法阻擋之。所以往往只能乖乖移動滑鼠關閉之。</p>
+<p>因為這些彈出視窗設計有別於html 內建的元素，所以有些更糟糕的案例是連關閉按鈕都沒有顯示在頁面上，強迫使用這點開網頁才能關閉之。</p>
+<p>在得知 Vimium 點擊連結的方便之後，我嘗試修改 Vimium 的程式碼，讓他可以為原先沒辦法點擊的連結標註標籤</p>
+<span id="more"></span>
+
+<h1 id="想法與策略"><a href="#想法與策略" class="headerlink" title="想法與策略"></a>想法與策略</h1><p>Vimium 能為網頁中可點擊的元素標註標籤，讓用戶得以用這些標籤的快捷鍵點開連結，不用經手滑鼠或用tab 遍歷。其原理是透過html元素，辨識可能可點擊的元素，例如連結、按鈕等。</p>
+<p>然而，網頁中仍能有自訂元素，這些元素的名稱和行為未必與 html 原生元素一致，所以 Vimium 只能嘗試搜索可能可點擊的元素名稱，例如 buttom 或是 link，間接推論這些元素可點擊。不過實際的網頁往往不會使用這麼直白的名稱，可能使用縮寫或是帶好來命名這些元素，導致 vimium 無法標註這些元素。</p>
+<p>讀了<a href="https://ithelp.ithome.com.tw/articles/10091999">Vimium 介紹與支持 Plurk (噗浪)</a>之後，覺得最直觀的想法是 修改 Vimium 程式碼的判斷式，看能不能找到彈出視窗共同的特徵，例如名稱、類別或是辨識碼等，拓展 Vimium 能辨識的元素，讓程式也能夠為彈出視窗標記快捷鍵。</p>
+<p>不過這篇文章距今已十年，Vimium 也經歷多次改版，所以可能要找一下 github page 找到辨識網頁元素的區域在何處。所幸在<a href="https://stackoverflow.com/questions/53918093/how-can-i-make-my-element-clickable-for-vimium">這篇文章</a>找到了一些參考。</p>
+<p>我嘗試各大新聞網都失敗，只有知乎成功，因此以下會用知乎為例，說明要怎麼修改程式碼讓 Vimium 可以關閉彈出連結。<br><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_before.png?raw=true" alt="Vimium 無法辨識知乎登入視窗的關閉符號"></p>
+<h1 id="調查彈出視窗是否有共同的特徵"><a href="#調查彈出視窗是否有共同的特徵" class="headerlink" title="調查彈出視窗是否有共同的特徵"></a>調查彈出視窗是否有共同的特徵</h1><p>下一步是觀察彈出視窗的網頁元素的構建方式，歸納出彈出視窗的共通特徵，以便讓 Vimium 辨識。首先，在瀏覽器按 <code>F12</code> 開啟開發人員視窗來檢視網頁原始碼，接著於彈出視窗依序點擊右鍵和檢查，即可鎖定對應位置的網頁原始碼。</p>
+<p>我檢查了幾個網站後發現，每個網頁的彈出視窗設計都不一樣，例如元素的組成、對應的滑鼠行為(e.g. hover or click)，乃至於元素的 class 與 id 也因網頁而異。這意味著，也許沒有共通的值可以辨識這些自訂元素，只能針對常用的網頁來做修改。<br><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_check.png?raw=true"></p>
+<h1 id="下載擴充套件程式碼"><a href="#下載擴充套件程式碼" class="headerlink" title="下載擴充套件程式碼"></a>下載擴充套件程式碼</h1><p>下載擴充套件的方式可參考<a href="https://stackoverflow.com/questions/16680682/how-to-modify-an-extension-from-the-chrome-web-store">此文</a></p>
+<ol>
+<li>安裝 <a href="https://chrome.google.com/webstore/detail/chrome-extension-source-v/jifpbeccnghkjeaalbbjmodiffmgedin">Chrome extension source viewer</a></li>
+<li>點開 Vimium 頁面</li>
+<li>點擊 “Chrome extension source viewer”</li>
+<li>點擊 “Download as zip”<br><img src="https://lh3.googleusercontent.com/dCvSGp9T3LZP6PLfzgxNpxlX5qxizpjKN8g9R3eNKTg98e4MfAEDc5IRVFGr5O4VtC4nq62HNKpGxkNaDLscK1VXLw=w640-h400-e365-rj-sc0x00ffffff" alt="於擴充套件頁面點擊 &quot;CRX&quot; 即可下載套件原始碼（圖：Chrome extension source viewer 頁面）"></li>
+</ol>
+<h1 id="修改程式碼並套用於瀏覽器"><a href="#修改程式碼並套用於瀏覽器" class="headerlink" title="修改程式碼並套用於瀏覽器"></a>修改程式碼並套用於瀏覽器</h1><p>解壓縮後，接著點開，在這段加入<br><a href="https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992">https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!isClickable &amp;&amp; className &amp;&amp; className.<span class="title function_">toLowerCase</span>().<span class="title function_">includes</span>(<span class="string">&quot;zdi&quot;</span>))</span><br><span class="line">  possibleFalsePositive = isClickable = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>開啟 Chrome，點選工具列的擴充功能圖示</li>
+<li>點選「管理擴充管理」</li>
+<li>點選「載入未封裝項目」</li>
+<li>重新整理頁面，查看是否順利修改</li>
+</ol>
+<p><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_after.png?raw=true" alt="修改 Vimium 的程式碼後，關閉視窗的符號被標上標籤了。"></p>
+<h1 id="困難與限制"><a href="#困難與限制" class="headerlink" title="困難與限制"></a>困難與限制</h1><p>實作之後才發現，許多網站不是用 Html 既有物件來構建彈出視窗，而是自訂許多 class 與 id，再透過 Javascript 控制。這些自定義物件的行為由 Javascript 控制，每個網頁的命名、行為與能見度都不一樣，所以 Vimium 也無法一次搞定所有可能性。</p>
+<p>換句話說，本文陳述的嘗試只適用於常用的網站，好比說常看的新聞網或社群論壇等，不能一勞永逸地克服所有彈出視窗。</p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>目前，彈出視窗仍是鍵盤瀏覽網頁的最大阻礙，原因是彈出是往往是自訂元素。，諸如 Vimium 等擴充套件也不易辨識多樣的自訂元素。鍵盤的可及性受限於網頁元素的設計共識，所以政府對於無障礙網頁設計才有相關的規範與建議吧。</p>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MiTalk 2022：在講台上</title>
     <url>/mitalk-6-thu-2022/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>兩年前，我曾以聽眾的身分報名 MiTalk，如今總算有點結果可以參加口頭報告。趁著記憶猶新，我想紀錄此次工作坊的所見所得，並且借題敘述一些尚未獨立成篇的想法。</p>
@@ -1864,50 +1951,6 @@
       <tags>
         <tag>communication</tag>
         <tag>career</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vim｜嘗試修改 Vimium 來關閉網頁 pop-up</title>
-    <url>/modify-vimium-to-label-and-close-pop-up/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>彈出視窗是以鍵盤瀏覽網頁的最大阻礙。這些視窗的內容不外乎會員邀請、推薦連結、蓋板廣告與網站公告等，是網站而定，通常沒辦法以 tab 來點擊，之前介紹的 Vimium 功能也沒辦法為這些視窗上的連結打標籤。由於彈出視窗並非廣告，所以下載 adblock 也無法阻擋之。所以往往只能乖乖移動滑鼠關閉之。</p>
-<p>因為這些彈出視窗設計有別於html 內建的元素，所以有些更糟糕的案例是連關閉按鈕都沒有顯示在頁面上，強迫使用這點開網頁才能關閉之。</p>
-<p>在得知 Vimium 點擊連結的方便之後，我嘗試修改 Vimium 的程式碼，讓他可以為原先沒辦法點擊的連結標註標籤</p>
-<span id="more"></span>
-
-<h1 id="想法與策略"><a href="#想法與策略" class="headerlink" title="想法與策略"></a>想法與策略</h1><p>Vimium 能為網頁中可點擊的元素標註標籤，讓用戶得以用這些標籤的快捷鍵點開連結，不用經手滑鼠或用tab 遍歷。其原理是透過html元素，辨識可能可點擊的元素，例如連結、按鈕等。</p>
-<p>然而，網頁中仍能有自訂元素，這些元素的名稱和行為未必與 html 原生元素一致，所以 Vimium 只能嘗試搜索可能可點擊的元素名稱，例如 buttom 或是 link，間接推論這些元素可點擊。不過實際的網頁往往不會使用這麼直白的名稱，可能使用縮寫或是帶好來命名這些元素，導致 vimium 無法標註這些元素。</p>
-<p>讀了<a href="https://ithelp.ithome.com.tw/articles/10091999">Vimium 介紹與支持 Plurk (噗浪)</a>之後，覺得最直觀的想法是 修改 Vimium 程式碼的判斷式，看能不能找到彈出視窗共同的特徵，例如名稱、類別或是辨識碼等，拓展 Vimium 能辨識的元素，讓程式也能夠為彈出視窗標記快捷鍵。</p>
-<p>不過這篇文章距今已十年，Vimium 也經歷多次改版，所以可能要找一下 github page 找到辨識網頁元素的區域在何處。所幸在<a href="https://stackoverflow.com/questions/53918093/how-can-i-make-my-element-clickable-for-vimium">這篇文章</a>找到了一些參考。</p>
-<p>我嘗試各大新聞網都失敗，只有知乎成功，因此以下會用知乎為例，說明要怎麼修改程式碼讓 Vimium 可以關閉彈出連結。<br><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_before.png?raw=true" alt="Vimium 無法辨識知乎登入視窗的關閉符號"></p>
-<h1 id="調查彈出視窗是否有共同的特徵"><a href="#調查彈出視窗是否有共同的特徵" class="headerlink" title="調查彈出視窗是否有共同的特徵"></a>調查彈出視窗是否有共同的特徵</h1><p>下一步是觀察彈出視窗的網頁元素的構建方式，歸納出彈出視窗的共通特徵，以便讓 Vimium 辨識。首先，在瀏覽器按 <code>F12</code> 開啟開發人員視窗來檢視網頁原始碼，接著於彈出視窗依序點擊右鍵和檢查，即可鎖定對應位置的網頁原始碼。</p>
-<p>我檢查了幾個網站後發現，每個網頁的彈出視窗設計都不一樣，例如元素的組成、對應的滑鼠行為(e.g. hover or click)，乃至於元素的 class 與 id 也因網頁而異。這意味著，也許沒有共通的值可以辨識這些自訂元素，只能針對常用的網頁來做修改。<br><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_check.png?raw=true"></p>
-<h1 id="下載擴充套件程式碼"><a href="#下載擴充套件程式碼" class="headerlink" title="下載擴充套件程式碼"></a>下載擴充套件程式碼</h1><p>下載擴充套件的方式可參考<a href="https://stackoverflow.com/questions/16680682/how-to-modify-an-extension-from-the-chrome-web-store">此文</a></p>
-<ol>
-<li>安裝 <a href="https://chrome.google.com/webstore/detail/chrome-extension-source-v/jifpbeccnghkjeaalbbjmodiffmgedin">Chrome extension source viewer</a></li>
-<li>點開 Vimium 頁面</li>
-<li>點擊 “Chrome extension source viewer”</li>
-<li>點擊 “Download as zip”<br><img src="https://lh3.googleusercontent.com/dCvSGp9T3LZP6PLfzgxNpxlX5qxizpjKN8g9R3eNKTg98e4MfAEDc5IRVFGr5O4VtC4nq62HNKpGxkNaDLscK1VXLw=w640-h400-e365-rj-sc0x00ffffff" alt="於擴充套件頁面點擊 &quot;CRX&quot; 即可下載套件原始碼（圖：Chrome extension source viewer 頁面）"></li>
-</ol>
-<h1 id="修改程式碼並套用於瀏覽器"><a href="#修改程式碼並套用於瀏覽器" class="headerlink" title="修改程式碼並套用於瀏覽器"></a>修改程式碼並套用於瀏覽器</h1><p>解壓縮後，接著點開，在這段加入<br><a href="https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992">https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!isClickable &amp;&amp; className &amp;&amp; className.<span class="title function_">toLowerCase</span>().<span class="title function_">includes</span>(<span class="string">&quot;zdi&quot;</span>))</span><br><span class="line">  possibleFalsePositive = isClickable = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>開啟 Chrome，點選工具列的擴充功能圖示</li>
-<li>點選「管理擴充管理」</li>
-<li>點選「載入未封裝項目」</li>
-<li>重新整理頁面，查看是否順利修改</li>
-</ol>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_after.png?raw=true" alt="修改 Vimium 的程式碼後，關閉視窗的符號被標上標籤了。"></p>
-<h1 id="困難與限制"><a href="#困難與限制" class="headerlink" title="困難與限制"></a>困難與限制</h1><p>實作之後才發現，許多網站不是用 Html 既有物件來構建彈出視窗，而是自訂許多 class 與 id，再透過 Javascript 控制。這些自定義物件的行為由 Javascript 控制，每個網頁的命名、行為與能見度都不一樣，所以 Vimium 也無法一次搞定所有可能性。</p>
-<p>換句話說，本文陳述的嘗試只適用於常用的網站，好比說常看的新聞網或社群論壇等，不能一勞永逸地克服所有彈出視窗。</p>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>目前，彈出視窗仍是鍵盤瀏覽網頁的最大阻礙，原因是彈出是往往是自訂元素。，諸如 Vimium 等擴充套件也不易辨識多樣的自訂元素。鍵盤的可及性受限於網頁元素的設計共識，所以政府對於無障礙網頁設計才有相關的規範與建議吧。</p>
-]]></content>
-      <categories>
-        <category>programming</category>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>vim</tag>
       </tags>
   </entry>
   <entry>
@@ -3696,10 +3739,10 @@ echo &quot;\$title \n $PWD&quot;
 <p>bash 的 tr (transform) 可用於替換、刪除、修改等多種字符操作。此例使用的是其替換功能，參數設定為：$string | tr old new，意指將字串中的 old（舊字符） 替換為 new（新字符）。相較於 R 的 gsub() 和 python 的 replace()，tr 只針對字符的操作（即只能 A→T，不能 AT→CG），若要替換字符串則要使用 sed，其參數設定為：sed “s&#x2F;old&#x2F;new&#x2F;g”。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Transcribing DNA into RNA using tr</span></span><br><span class="line">dna=<span class="string">&quot;GATGGAACTTGACTACGTAAATT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Translating RNA into protein using sed</span></span><br><span class="line">dna=<span class="string">&quot;GGTGGTGGTGGT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line">protein=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span> |  sed <span class="string">&quot;s/GGU/G/g&quot;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$protein</span>&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>bioinformatics</category>
+        <category>sf</category>
       </categories>
       <tags>
-        <tag>rosalind</tag>
+        <tag>reading</tag>
       </tags>
   </entry>
   <entry>
@@ -3949,6 +3992,37 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>時間機器</title>
+    <url>/wells-1895-the-time-machine/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>小說<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Herbert Wells. (1895) The Time Machine，台灣由棉花田文化翻譯出版為《時間機器》　">1</span></a></sup>是以主角朋友的紀錄呈現。開頭場景類似電影《來自地球的人》，是一場舉行在主角家裡的沙龍。當一夥人正熱烈討論著時空本質時，主角現身向他們展示了正在打造的時光機器。不過要到主角衣衫襤褸，渾身是傷地出現在再次造訪的友人面前，讀者才得以讀到由敘事者轉述，主角經歷的未來冒險。</p>
+<span id="more"></span>
+
+<p>因為急煞事故，主角被拋出時間機器，來到八十萬年後的世界。雖然與目標的時間區段不符，但本著開拓者的雄心，他決定好好地了解這個世代。主角首先接觸的是身形矮小且細皮嫩肉的埃落依人。埃落依人的外觀不因性別而異，主要以蔬果為食。他們的語言單調而且智慧有限，也未見其有任何生產活動。</p>
+<p>望著四處的大樓廢墟和文明遺址，主角推論埃落依人應該是進步到了盡頭的社會產物。隨著社會進步，人類逐漸克服生存威脅與競爭壓力。一旦沒有威脅與競爭，能力與奮鬥便無關個體生存。於是，以往視為重要特質的野心、智慧和力量等在存活下來的族群逐漸廢弛，最終演變為只懂得享樂的埃落依人。</p>
+<p>在與埃落依人相處一段時日後，主角對他們的習性益發困惑。首先，既然埃落依人幾乎沒有生存能力，他們究竟從何獲得營生的資源？另外，生性樂觀且無害的埃落依人為何異常地害怕黑暗，也不敢接近各處的井口？</p>
+<p>隨著奇異事件接二連三，例如沉重的時光機不翼而飛、在台座上聽到詭異笑聲、夜半瞥見似白狼的生物還有不知通往何處的古井等，主角漸漸意識到，這世界還存在另一批人。這猜想在主角於廢墟直擊一種蒼白枯槁的醜陋生物獲得驗證。</p>
+<p>這些族群被稱為摩洛克人。主角推論，埃落依人與摩洛克人源於工業時代資方與勞方的極端分化。在上位的資本家追求雅致，在下位的勞動者掙扎求生；資本家日漸退化，勞動者益發強韌。資方與勞方因階級固化而互不通婚，逐漸形成生殖隔離，最演化為象徵高雅但不事生產的埃落依人，以及醜陋懼光卻身強力壯的摩洛克人。</p>
+<p>起初，主角認為埃落依人與摩洛克人仍延續著工業時代資方與勞方的主從關係。然而，當主角進入地底搜索時光機，發現被啃食到一半的人肉，他才瞬間明白埃落依人恐懼的根源。</p>
+<p>原來，埃落依人是摩洛克人的牲畜。雖然上位者最初能以資本壓迫勞方，可是隨著勞動者逐漸掌握生產工具和技術，僅存世襲財富而無實業能力的資本家便無法對抗勞動者的反撲。於是勞資的關係反轉，勞動者仍舊像工業時代一樣供應著資本家生活所需的一切，但這種關係無異於飼主對牲畜的餵養。</p>
+<p>經歷過這番震驚後，主角還遊歷了三千萬年後太陽能耗盡而衰亡的世界才回到現代。</p>
+<p>不過，主角的朋友對於他的冒險多持懷疑態度，再加上主角自己的印象都有些錯亂，口說無憑的奇聞軼事更難以置信了。為證明自己所述，主角再次踏上時光旅行。不過，小說卻在敘事者無期的等待中畫下句點。</p>
+<p>我覺得小說中最令人驚嘆的景色是三千萬年後，死寂、淒涼和鬱悶的末日描寫。這段情節或許來自克耳文勳爵的推理。</p>
+<p>克耳文勳爵假設地球曾是個熾熱而無法維持生命存在的星球，於是以鐵球冷凝的實驗推論地球約有四千多萬年歷史。隨著地球冷卻，太陽熱能也會因引力塌縮的極限而消退。最終日光燒盡，全球冷凍。</p>
+<p>然而，依照我們現在的理解，地球面臨的未來將是相反的景況，太陽將持續膨脹，吞沒太陽系的每顆行星。</p>
+<p>另外，威爾斯設定的光機無法回到時光機完工之前的日子。因為時光機會在時間軸上連續移動，若持續回到過去，最終勢必撞上當初打造的時光機，造成時光機毀壞。</p>
+<p>雖然推理方式不同，不過這說法和《時間旅人》的 Ronald Mallett 博士的理論巧合地相似。這種說法解釋了為什麼至今我們還沒有看到來自未來的人，畢竟第一部時光機還沒問世。</p>
+<p>這設定不禁令人思考，每次時間旅行，穿越時間的幅度會和距離同步嗎？畢竟地球自轉速度越來越慢，若用天來評估時間旅行的長度，很有可能穿越過去後發現自己身在太空吧？</p>
+<p>不過，時光機或時光旅行的種種悖論或許不是《時間機器》的主軸。時光機對威爾斯而言，應該比較像當今異世界小說用以交代主角在不同世界穿梭的媒介。</p>
+<p>相關的媒介有旅行（例如格列佛遊記）、太空探險、輪迴等，只是威爾斯使用時光機為媒介，將之作為開啟冒險的按鈕，藉此呈現出他所營造的世界。這個世界不一定要能預測未來的矛盾，也可能源於今日荒謬的局面。所謂奇異，只不過是變了樣的現在。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Herbert Wells. (1895) The Time Machine，台灣由棉花田文化翻譯出版為《時間機器》<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>卡住、沒靈感、寫不出東西怎麼辦？</title>
     <url>/what-to-do-when-you-are-stuck-in-writing/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>原本我開啟部落格編輯器是打算寫一篇文章，總結我兩周以來學習降噪演算法的經驗，但回過神來，已經盯著標題與目錄一個鐘頭了。我意識到再這樣下去不是辦法，於是把原先的標題刪除，開始思考「如果寫文章碰到瓶頸，除了躲在桌下哭訴沒有人愛我以外，還能做些什麼？」，在閱讀了網路和實體書籍資源後，我寫了這文章。因此，本文不只是各項建議的彙整，也是這些方法的實踐。  </p>
@@ -4036,6 +4110,20 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
+    <url>/why-should-we-watch-bangdream-its-my-go/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
+<span id="more"></span>
+<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
+<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
+<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
+<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
+<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
+<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
+<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>寫科普又不能當飯吃，為什麼還要寫？</title>
     <url>/why-do-people-write-scientific-articles/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文是 Mitalk 4 講座「科普如何當飯吃？」的聽講心得，陳俊堯老師在演講一開始先回答了這問題，再一一告訴我們，如果無法靠寫科普賺錢營生，那麼從事研究的學生、老師和學者們，到底有什麼理由勞心費神去寫科普文？</p>
@@ -4099,20 +4187,6 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>communication</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
-    <url>/why-should-we-watch-bangdream-its-my-go/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
-<span id="more"></span>
-<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
-<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
-<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
-<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
-<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
-<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
-<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
-]]></content>
   </entry>
   <entry>
     <title>凝視太陽 — 學習面對死亡也是學習自由</title>
