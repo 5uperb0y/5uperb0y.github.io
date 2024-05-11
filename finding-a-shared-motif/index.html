@@ -20,28 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。  A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negat">
+    <meta name="description" content="給定一 FASTA 檔案，內含數條由 A、C、G、T 組成的字串，求這些字串共享的最長子字串。  A common substring of a collection of strings is a substring of every member of the collection. We say that a common substring is a longest common subs">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)">
-<meta property="og:url" content="https://5uperb0y.com/enumerating-oriented-gene-orderings/index.html">
+<meta property="og:title" content="ROSALIND | Finding a Shared Motif (LCSM)">
+<meta property="og:url" content="https://5uperb0y.com/finding-a-shared-motif/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。  A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negat">
+<meta property="og:description" content="給定一 FASTA 檔案，內含數條由 A、C、G、T 組成的字串，求這些字串共享的最長子字串。  A common substring of a collection of strings is a substring of every member of the collection. We say that a common substring is a longest common subs">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-05-06T06:45:59.000Z">
-<meta property="article:modified_time" content="2024-05-05T07:32:44.409Z">
+<meta property="article:published_time" content="2024-05-11T10:44:14.000Z">
+<meta property="article:modified_time" content="2024-05-11T12:14:27.812Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/enumerating-oriented-gene-orderings/">
+<link rel="canonical" href="https://5uperb0y.com/finding-a-shared-motif/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/enumerating-oriented-gene-orderings/","path":"enumerating-oriented-gene-orderings/","title":"ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/finding-a-shared-motif/","path":"finding-a-shared-motif/","title":"ROSALIND | Finding a Shared Motif (LCSM)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>ROSALIND｜Enumerating Oriented Gene Orderings (SIGN) | 5uperb0y's blog</title>
+<title>ROSALIND | Finding a Shared Motif (LCSM) | 5uperb0y's blog</title>
   
 
 
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AD%98%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">知識點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">題解</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AD%98%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">知識點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">題解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%8E%E8%AB%96"><span class="nav-number">3.</span> <span class="nav-text">討論</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#longest-common-substring-longest-common-subsequence"><span class="nav-number">3.1.</span> <span class="nav-text">longest common substring &amp; longest common subsequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E5%AD%97%E4%B8%B2%E7%9A%84-LCS-%E4%B8%8D%E8%A6%8B%E5%BE%97%E8%88%87%E4%B8%80%E5%B0%8D%E5%AD%97%E4%B8%B2%E7%9A%84-LCS-%E4%B8%80%E8%87%B4"><span class="nav-number">3.2.</span> <span class="nav-text">所有字串的 LCS 不見得與一對字串的 LCS 一致</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -280,31 +280,17 @@
   </div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/enumerating-gene-orders/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-05</time>
+      <a class="popular-posts-link" href="/finding-a-motif-in-dna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-09</time>
         <br>
-      ROSALIND｜Enumerating Gene Orders (PERM)
+      ROSALIND | Finding a Motif in DNA (SUBS)
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/ordering-strings-of-varying-length-lexicographically/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-08</time>
+      <a class="popular-posts-link" href="/enumerating-oriented-gene-orderings/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-06</time>
         <br>
-      ROSALIND | Ordering Strings of Varying Length Lexicographically (LEXV)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/enumerating-k-mers-lexicographically/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-07</time>
-        <br>
-      ROSALIND | Enumerating k-mers Lexicographically (LEXF)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/finding-a-shared-motif/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-11</time>
-        <br>
-      ROSALIND | Finding a Shared Motif (LCSM)
+      ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)
       </a>
     </li>
     <li class="popular-posts-item">
@@ -312,6 +298,20 @@
         <time class="popular-posts-time">2024-05-01</time>
         <br>
       ROSALIND｜Counting DNA Nucleotides (DNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-03</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/complementing-a-strand-of-dna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-03</time>
+        <br>
+      ROSALIND｜Complementing a strand of DNA (REVC)
       </a>
     </li>
   </ul>
@@ -335,7 +335,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/enumerating-oriented-gene-orderings/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/finding-a-shared-motif/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -348,12 +348,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="ROSALIND｜Enumerating Oriented Gene Orderings (SIGN) | 5uperb0y's blog">
+      <meta itemprop="name" content="ROSALIND | Finding a Shared Motif (LCSM) | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)
+          ROSALIND | Finding a Shared Motif (LCSM)
         </h1>
 
         <div class="post-meta-container">
@@ -363,15 +363,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2024-05-06 14:45:59" itemprop="dateCreated datePublished" datetime="2024-05-06T14:45:59+08:00">2024-05-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-05-05 15:32:44" itemprop="dateModified" datetime="2024-05-05T15:32:44+08:00">2024-05-05</time>
+      <time title="創建時間：2024-05-11 18:44:14 / 修改時間：20:14:27" itemprop="dateCreated datePublished" datetime="2024-05-11T18:44:14+08:00">2024-05-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -406,8 +400,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/enumerating-oriented-gene-orderings/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="enumerating-oriented-gene-orderings/" itemprop="commentCount"></span>
+    <a title="disqus" href="/finding-a-shared-motif/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="finding-a-shared-motif/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -418,14 +412,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>454</span>
+      <span>1.5k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>2 分鐘</span>
+      <span>5 分鐘</span>
     </span>
 </div>
 
@@ -435,24 +429,45 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一 FASTA 檔案，內含數條由 A、C、G、T 組成的字串，求這些字串共享的最長子字串。</p>
 <blockquote>
-<p>A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negative sign (for the sake of simplicity, we omit the positive sign). For example, π&#x3D;(5,−3,−2,1,4) is a signed permutation of length 5</p>
-<p>Given: A positive integer n≤6</p>
-<p>Return: The total number of signed permutations of length n, followed by a list of all such permutations (you may list the signed permutations in any order).</p>
+<p>A common substring of a collection of strings is a substring of every member of the collection. We say that a common substring is a longest common substring if there does not exist a longer common substring. For example, “CG” is a common substring of “ACGTACGT” and “AACCGTATA”, but it is not as long as possible; in this case, “CGTA” is a longest common substring of “ACGTACGT” and “AACCGTATA”.<br>Note that the longest common substring is not necessarily unique; for a simple example, “AA” and “CC” are both longest common substrings of “AACC” and “CCAA”.</p>
+<p>Given: A collection of k (k≤100) DNA strings of length at most 1 kbp each in FASTA format.</p>
+<p>Return: A longest common substring of the collection. (If multiple solutions exist, you may return any single solution.)</p>
 </blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/lcsm/">https://rosalind.info/problems/lcsm/</a>)</p>
 <span id="more"></span>
 
-<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Synteny blocks 是相異物種因為基因體重排而分離的同源片段。在 <a href="https://5uperb0y.com/enumerating-gene-orders/">Enumerating Gene Orders</a> 當中介紹了以數列排列模擬 synteny blocks 重排的想法，我們可以額外考慮 blocks 的方向性來改善模型的精細度。DNA 雖然由兩股去氧核酸構成，但轉錄僅發生在其中一股。</p>
-<p>由於 synteny blocks 在演化過程中除了易位，也可能發生轉置，顛倒基因的排列和方向性，改變轉錄與基因調控等行為，從而影響個體的表徵。例如，Factor VIII Intron 22 的轉置便是血友病A的成因之一。</p>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題的解法近似<a href="https://5uperb0y.com/enumerating-gene-orders/">數列的排列</a>，只是透過正負號來表示 synteny blocks 的方向。因為要考慮正負符號，所以需要兩個調整。</p>
-<ol>
-<li>遞迴的 base case 要回傳數字與其相反數。例如輸入數列 <code>[1]</code>，要回傳 <code>[[1], [-1]]</code>。</li>
-<li>在把數字放回排列後的數列時，也要分別加入數字和其相反數。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">slperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;permutations of a numberic list, including -/+ of each number.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [[l[<span class="number">0</span>]], [-l[<span class="number">0</span>]]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [sign_e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> slperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> sign_e <span class="keyword">in</span> [e, -e]</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>如果我們能夠透過理論計算或是資料庫數據得知某種 motif 的組成，便能按照 <a href="https://5uperb0y.com/finding-a-motif-in-dna/">Finding a motif in dna</a> 這題的要求，在一條 DNA 中尋找已知 motif 的位置。然而，並非所有研究對象都能事前得知 motif 的資訊，所以更常見的方法是透過比較多組基因體，歸納出反覆出現且序列相似的 motif。</p>
+<p>為了簡化問題，這題只要求找出最長的 motif，因為長度愈長，motif 涉及的功能往往越多。此外，題目還假設同一種 motif 的序列完全一致，這意味著這些 motif 在演化中沒發生任何突變，暗示其功能相當重要，具有相當的穩定性。換句話說，這些 motif 可能反映了各基因體共享的核心功能。</p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題相當於尋找各字串的最長共同子字串（longest common substring, LCS）。最直觀的解法在於了解「 LCS 的長度不大於最短字串的長度」，因此可以列出最短字串的所有子字串，再拿這些子字串由長至短一一與其它字串比較。第一個出現在所有字串的子字串就是題目要求的 LCS。</p>
+<p>以下使用 python 實作這個算法，首先找到最短的子字串 <code>min_s</code>，求出它所有的子字串 <code>kmer</code>，最後由長至短檢查子字串是否出現在所有字串中，一旦符合條件，便直接回傳結果。（由於這裡是由短至長生成 <code>kmer</code>，所以後面把它倒置 <code>kmer[::-1]</code> 來改變比對的順序。）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcs</span>(<span class="params">strs</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common substring from multiple strings</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    min_s = <span class="built_in">min</span>(strs, key = <span class="built_in">len</span>)</span><br><span class="line">    kmer = [</span><br><span class="line">        min_s[i:i+k+<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(min_s) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(min_s) - k)</span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">for</span> mer <span class="keyword">in</span> kmer[::-<span class="number">1</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">all</span>(mer <span class="keyword">in</span> s <span class="keyword">for</span> s <span class="keyword">in</span> strs):</span><br><span class="line">            <span class="keyword">return</span> mer</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
 
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:lakich1993"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">lakich1993.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lakich et al. (1993). Inversions disrupting the factor VIII gene are a common cause of severe haemophilia A. Nature genetics, 5(3), 236-241.<a href="#fnref:lakich1993" rev="footnote">↩</a></span></li></ol></div></div>
+<p>由於題目要求輸入 FASTA 檔案，所以需要一個讀檔的副程式。FASTA 檔案是紀錄序列的通用文字格式，<code>&gt;</code> 開頭的列紀錄 DNA、RNA或蛋白質序列的名稱，直到碰到下一個 <code>&gt;</code> 符號之前的列則記錄了序列本身。為了方便在終端機用肉眼判讀，有些 FASTA 檔案中的序列會分成數列表示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;Read_id</span><br><span class="line">ACTGACTGATCGGATAGTAGTGATAGCGATCGATCAGCATATCGACTATCAGCTAGCTACAGCTGAGCATCGATCG</span><br><span class="line">ACGATTACGACGATCAG</span><br></pre></td></tr></table></figure>
+
+<p>以下程式將 FASTA 讀進 python dictionary。凡是 <code>&gt;</code> 開頭的列，就把它當作 dictionary 的 key，而其餘的列則串接起來成為 dictionary 的 value。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">read_fasta</span>(<span class="params">path</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Read a fasta file into a dictionary</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        reads = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">            <span class="keyword">if</span> line.startswith(<span class="string">&quot;&gt;&quot;</span>):</span><br><span class="line">                key = line[<span class="number">1</span>:].strip()</span><br><span class="line">                reads[key] = <span class="string">&quot;&quot;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                reads[key] = reads[key] + line.strip()</span><br><span class="line">        <span class="keyword">return</span> reads</span><br></pre></td></tr></table></figure>
+
+<p>結合讀檔與 LCS 主程式，便能滿足題目的要求了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcsm</span>(<span class="params">fasta</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common nucleotide sequence from multiple sequences in a fasta file</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    seqs = <span class="built_in">list</span>(read_fasta(fasta).values())</span><br><span class="line">    <span class="keyword">return</span>(lcs(seqs))</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="longest-common-substring-longest-common-subsequence"><a href="#longest-common-substring-longest-common-subsequence" class="headerlink" title="longest common substring &amp; longest common subsequence"></a>longest common substring &amp; longest common subsequence</h2><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Longest_common_substring">Longest common substring</a> 和 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Longest_common_subsequence">longest common subsequence</a> 是不同的問題：”AB” 是 “ABXC” 和 “ABOC” 的 longest common substring，”ABC” 則否；<code>[A, B, C]</code> 是 <code>[A, B, X, C]</code> 和 <code>[A, B, O, C]</code> 的 longest common subsequence，<code>[A, B]</code> 則否。</p>
+<p>因為在生物資訊的語境裡，序列（sequence）也用於描述 DNA&#x2F;RNA&#x2F;蛋白質，而這些序列資訊往往也用字串（string）紀錄。因此，當初想這題有什麼巧妙解法時，誤入歧途去查了 longest common “subsequence” 的解法。</p>
+<p>寫出的程式沒有返回預期結果時，問問 chatgpt 怎麼解 longest common subsequence 還覺得是不是 AI 變笨了，怎麼給你 Rosalind 題目的完整輸出入結果還嘴硬。分清楚這兩個問題後，我才明白小丑是我自己🤡。</p>
+<p>（如果想要找到更快的算法，可以點進 Longest common substring 連結看看維基百科的解釋）</p>
+<h2 id="所有字串的-LCS-不見得與一對字串的-LCS-一致"><a href="#所有字串的-LCS-不見得與一對字串的-LCS-一致" class="headerlink" title="所有字串的 LCS 不見得與一對字串的 LCS 一致"></a>所有字串的 LCS 不見得與一對字串的 LCS 一致</h2><p>明白小丑是我自己之後，我謄錄了一份利用動態規劃尋找兩字串 longest common substring 的方法。簡言之，這方法會一一比對兩字串每個字符，並且將最長子字串的長度紀錄在一個矩陣中。再比對過所有字符後，便能得出 LCS。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcs</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common substring from two strings</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    dp = [[<span class="number">0</span>] * (<span class="built_in">len</span>(s2) + <span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s1) + <span class="number">1</span>)]</span><br><span class="line">    max_len, end_pos = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(s1) + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(s2) + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> s1[i-<span class="number">1</span>] == s2[j-<span class="number">1</span>]:</span><br><span class="line">                dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> max_len &lt; dp[i][j]:</span><br><span class="line">                    max_len = dp[i][j]</span><br><span class="line">                    end_pos = i</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i][j] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> s1[end_pos - max_len:end_pos]</span><br></pre></td></tr></table></figure>
+
+<p>我原先的以為，一對字串的 LCS 會與所有字串的 LCS 相同，所以我可以像是「找出最大的數字」一樣，找出「最長的共同子字串」，</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 這是錯的!!!!!</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lcsm</span>(<span class="params">fasta</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common nucleotide sequence from multiple sequences in a fasta file</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    seqs = <span class="built_in">list</span>(read_fasta(fasta).values())</span><br><span class="line">    m = seqs[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> seqs[<span class="number">1</span>:]:</span><br><span class="line">        m = lcs(s, m)</span><br><span class="line">    <span class="keyword">return</span> m</span><br></pre></td></tr></table></figure>
+
+<p>雖然這支程式可順利通過 ROSALIND 的測資，但我在討論區立刻看到一則反例，才乖乖寫成題解那個形式。</p>
+<blockquote>
+<p>I’m not sure the LCS of all the strings would necessarily be a substring of the pairwise LCS’s. For example, in this set of strings:<br>AAAAATATATAACGT AAAAACCCCCACGT ACACACCCCCACGT<br>The LCS of the first and second string will be AAAAA, the LCS of the second and third string will be CCCCC, but the LCS of all three strings will be ACGT.</p>
+</blockquote>
+
     </div>
 
     
@@ -469,7 +484,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://5uperb0y.com/enumerating-oriented-gene-orderings/" title="ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)">https://5uperb0y.com/enumerating-oriented-gene-orderings/</a>
+      <a href="https://5uperb0y.com/finding-a-shared-motif/" title="ROSALIND | Finding a Shared Motif (LCSM)">https://5uperb0y.com/finding-a-shared-motif/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -485,14 +500,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/enumerating-gene-orders/" rel="prev" title="ROSALIND｜Enumerating Gene Orders (PERM)">
-                  <i class="fa fa-angle-left"></i> ROSALIND｜Enumerating Gene Orders (PERM)
+                <a href="/finding-a-motif-in-dna/" rel="prev" title="ROSALIND | Finding a Motif in DNA (SUBS)">
+                  <i class="fa fa-angle-left"></i> ROSALIND | Finding a Motif in DNA (SUBS)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/enumerating-k-mers-lexicographically/" rel="next" title="ROSALIND | Enumerating k-mers Lexicographically (LEXF)">
-                  ROSALIND | Enumerating k-mers Lexicographically (LEXF) <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
