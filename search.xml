@@ -413,66 +413,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ROSALIND｜Enumerating Gene Orders (PERM)</title>
-    <url>/enumerating-gene-orders/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 的所有可能數列與其總數。</p>
-<blockquote>
-<p>A permutation of length n is an ordering of the positive integers {1,2,…,n} . For example, π&#x3D;(5,3,2,1,4) is a permutation of length 5.</p>
-<p>Given: A positive integer n≤7 .</p>
-<p>Return: The total number of permutations of length n , followed by a list of all such permutations (in any order).</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/perm/">https://rosalind.info/problems/perm/</a>)</p>
-<span id="more"></span>
-
-<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>基因體重排（genome rearrangement）泛指基因體上發生的刪除（deletion）、插入（insertion）、重複（duplication）、反轉（inversion）或易位（translocation）等現象。這些變動通常涉及數百至數百萬對鹼基，相較於點突變，它們的影響更為廣泛。</p>
-<p>基因體重排的發生機制主要有<sup id="fnref:gu2008"><a href="#fn:gu2008" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Gu et al. (2008). Mechanisms for human genomic rearrangements. Pathogenetics, 1, 1-17.
-">gu2008</span></a></sup>：</p>
-<ul>
-<li>non-allelic homologous recombination (NAHR)：細胞分裂中，染色體對齊時發生錯位，導致片段重組。</li>
-<li>non-homologous end-joining (NHEJ)：DNA 斷鍊修復時，連結了非同源的染色體。</li>
-<li>Fork Stalling and Template Switching (FoSTeS)：DNA 複製時因故停滯時，新合成的 DNA 意外移動到其他模板進行複製。</li>
-</ul>
-<p>這些變化可能導致基因無效而喪失功能、彼此融合而改變功能，或是副本數變動而加強&#x2F;減弱功能，從而影響細胞結構與生理。許多疾病和癌症與基因體重排有關，例如 BRCA1 和 BRCA2 的副本數變化與乳癌發作密切相關。<sup id="fnref:ewald2009"><a href="#fn:ewald2009" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Ewald et al. (2009). Genomic rearrangements in BRCA1 and BRCA2: A literature review. Genetics and Molecular Biology, 32, 437-446.
-">ewald2009</span></a></sup></p>
-<p>基因體重排不僅是疾病基因體學的重要研究對象，也因為被視為種化的分子機制之一，而在演化生物學中占一席之地。相較於點突變，基因體重排的發生頻率較低，使得親緣關係相近的物種在染色體層級上保持一致，即使它們在局部基因序列上略有不同。</p>
-<p>然而，親緣關係較遠的物種則可能因為基因體重排而有顯著差異。在演化過程中，這些沒有被分離到道不同區域或染色體的基因彼此聚集成 synteny block。在比較基因體學中，synteny block 提供了一種比染色體數量和大小更細緻的描述單位，有助於在不過度瑣碎的層級上討論基因體的變化。透過比較 synteny block 的繼承與變化，可以推輪物種分化的歷史。<sup id="fnref:touchman2010"><a href="#fn:touchman2010" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/">touchman2010</span></a></sup></p>
-<p>這題的設計反映了基因體重排的概念，將每個數列視為一條染色體，其中每個數字代表一個 synteny block，數字的順序則代表這些 block 在餐考基因體上出現的順序或染色體編號。透過模擬單一染色體 synteny block 的不同排列，探索可能的重排情境。</p>
-<h1 id="解題"><a href="#解題" class="headerlink" title="解題"></a>解題</h1><p>讓我們從最簡案例來推論怎麼用遞迴解這題。假設數列只有一個數字，也就只有一種可能的排列；而兩個數字的排列也很直觀。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># n = 1</span></span><br><span class="line">[[<span class="number">1</span>]]</span><br><span class="line"><span class="comment"># n = 2</span></span><br><span class="line">[[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
-
-<p>現在考慮數列有三個數字的情形。由於沒辦法一眼得到解答，於是我們需要更系統的解決辦法，其中一個策略是：</p>
-<ol>
-<li>先取出其中一個數字</li>
-<li>排列剩下的數字</li>
-<li>把取出的數字加回排列結果</li>
-<li>重複取出所有數字後，便得到數列的所有可能</li>
-</ol>
-<p>如同以下各數列所示，我首先依序取出 1、2、3 （數列的首項），然後再排列剩餘兩個數字，再把取出的數字與排列後的數列結合。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># n = 3</span></span><br><span class="line">[</span><br><span class="line">    [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<p>歸納前述方法，便能用 python 實作以下關係：</p>
-<ul>
-<li>若數列只有一個數字，回傳此數列</li>
-<li>若數列不只一個數字，則依序取出各數字，排列剩餘數字，再把取出的數字加到排列的結果中。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Permutations of a list</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [l]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> lperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
-
-<p>隨後便可整理排列的結果為題目要求的格式。由於我們已經列出所有可能數列，所以直接計算數列總數即可，不用多做一次階乘計算。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_permutations</span>(<span class="params">n</span>):</span><br><span class="line">    num_perms = lperm(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>)))</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(num_perms))</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> num_perms:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, p)))</span><br></pre></td></tr></table></figure>
-
-<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><p>我解這題的靈感來自 <a href="https://stackoverflow.com/questions/23116911/all-permutations-of-a-string-in-python-recursive">All Permutations of a String in Python (Recursive)</a> 這串問答，我只需要把原方法改寫為適合 list 的方式即可。不過一開始我寫成以下形式，能看出會報什麼錯誤嗎？</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># !!!! WRONG SOLUTION !!!!</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> = [</span><br><span class="line">            p + [e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l):</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> lperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">        ]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-
-<p>關鍵在於遞迴關係的初始狀態設定，這個 function 預期要回傳一個存儲所有可能數列的巢狀 list，但我在初始狀態的時候寫成 <code>return l</code>，導致遞迴調用 function 回傳了一個攤平的 list。於是 <code>p</code> 就成了整數，自然無法和 <code>[e]</code> 相連，讓程式無法運作。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:ewald2009"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">ewald2009.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ewald et al. (2009). Genomic rearrangements in BRCA1 and BRCA2: A literature review. Genetics and Molecular Biology, 32, 437-446.<a href="#fnref:ewald2009" rev="footnote">↩</a></span></li><li id="fn:gu2008"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">gu2008.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Gu et al. (2008). Mechanisms for human genomic rearrangements. Pathogenetics, 1, 1-17.<a href="#fnref:gu2008" rev="footnote">↩</a></span></li><li id="fn:touchman2010"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">touchman2010.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/">https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/</a><a href="#fnref:touchman2010" rev="footnote">↩</a></span></li></ol></div></div></p>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ROSALIND｜Counting Point Mutations (HAMM)</title>
     <url>/counting-point-mutations/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定兩等長字串 s 和 t，計算兩者的 Hamming distance dH(s,t)</p>
@@ -570,6 +510,66 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">slperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;permutations of a numberic list, including -/+ of each number.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [[l[<span class="number">0</span>]], [-l[<span class="number">0</span>]]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [sign_e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> slperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> sign_e <span class="keyword">in</span> [e, -e]</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
 
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:lakich1993"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">lakich1993.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lakich et al. (1993). Inversions disrupting the factor VIII gene are a common cause of severe haemophilia A. Nature genetics, 5(3), 236-241.<a href="#fnref:lakich1993" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROSALIND｜Enumerating Gene Orders (PERM)</title>
+    <url>/enumerating-gene-orders/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 的所有可能數列與其總數。</p>
+<blockquote>
+<p>A permutation of length n is an ordering of the positive integers {1,2,…,n} . For example, π&#x3D;(5,3,2,1,4) is a permutation of length 5.</p>
+<p>Given: A positive integer n≤7 .</p>
+<p>Return: The total number of permutations of length n , followed by a list of all such permutations (in any order).</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/perm/">https://rosalind.info/problems/perm/</a>)</p>
+<span id="more"></span>
+
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>基因體重排（genome rearrangement）泛指基因體上發生的刪除（deletion）、插入（insertion）、重複（duplication）、反轉（inversion）或易位（translocation）等現象。這些變動通常涉及數百至數百萬對鹼基，相較於點突變，它們的影響更為廣泛。</p>
+<p>基因體重排的發生機制主要有<sup id="fnref:gu2008"><a href="#fn:gu2008" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Gu et al. (2008). Mechanisms for human genomic rearrangements. Pathogenetics, 1, 1-17.
+">gu2008</span></a></sup>：</p>
+<ul>
+<li>non-allelic homologous recombination (NAHR)：細胞分裂中，染色體對齊時發生錯位，導致片段重組。</li>
+<li>non-homologous end-joining (NHEJ)：DNA 斷鍊修復時，連結了非同源的染色體。</li>
+<li>Fork Stalling and Template Switching (FoSTeS)：DNA 複製時因故停滯時，新合成的 DNA 意外移動到其他模板進行複製。</li>
+</ul>
+<p>這些變化可能導致基因無效而喪失功能、彼此融合而改變功能，或是副本數變動而加強&#x2F;減弱功能，從而影響細胞結構與生理。許多疾病和癌症與基因體重排有關，例如 BRCA1 和 BRCA2 的副本數變化與乳癌發作密切相關。<sup id="fnref:ewald2009"><a href="#fn:ewald2009" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Ewald et al. (2009). Genomic rearrangements in BRCA1 and BRCA2: A literature review. Genetics and Molecular Biology, 32, 437-446.
+">ewald2009</span></a></sup></p>
+<p>基因體重排不僅是疾病基因體學的重要研究對象，也因為被視為種化的分子機制之一，而在演化生物學中占一席之地。相較於點突變，基因體重排的發生頻率較低，使得親緣關係相近的物種在染色體層級上保持一致，即使它們在局部基因序列上略有不同。</p>
+<p>然而，親緣關係較遠的物種則可能因為基因體重排而有顯著差異。在演化過程中，這些沒有被分離到道不同區域或染色體的基因彼此聚集成 synteny block。在比較基因體學中，synteny block 提供了一種比染色體數量和大小更細緻的描述單位，有助於在不過度瑣碎的層級上討論基因體的變化。透過比較 synteny block 的繼承與變化，可以推輪物種分化的歷史。<sup id="fnref:touchman2010"><a href="#fn:touchman2010" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/">touchman2010</span></a></sup></p>
+<p>這題的設計反映了基因體重排的概念，將每個數列視為一條染色體，其中每個數字代表一個 synteny block，數字的順序則代表這些 block 在餐考基因體上出現的順序或染色體編號。透過模擬單一染色體 synteny block 的不同排列，探索可能的重排情境。</p>
+<h1 id="解題"><a href="#解題" class="headerlink" title="解題"></a>解題</h1><p>讓我們從最簡案例來推論怎麼用遞迴解這題。假設數列只有一個數字，也就只有一種可能的排列；而兩個數字的排列也很直觀。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># n = 1</span></span><br><span class="line">[[<span class="number">1</span>]]</span><br><span class="line"><span class="comment"># n = 2</span></span><br><span class="line">[[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>現在考慮數列有三個數字的情形。由於沒辦法一眼得到解答，於是我們需要更系統的解決辦法，其中一個策略是：</p>
+<ol>
+<li>先取出其中一個數字</li>
+<li>排列剩下的數字</li>
+<li>把取出的數字加回排列結果</li>
+<li>重複取出所有數字後，便得到數列的所有可能</li>
+</ol>
+<p>如同以下各數列所示，我首先依序取出 1、2、3 （數列的首項），然後再排列剩餘兩個數字，再把取出的數字與排列後的數列結合。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># n = 3</span></span><br><span class="line">[</span><br><span class="line">    [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>歸納前述方法，便能用 python 實作以下關係：</p>
+<ul>
+<li>若數列只有一個數字，回傳此數列</li>
+<li>若數列不只一個數字，則依序取出各數字，排列剩餘數字，再把取出的數字加到排列的結果中。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Permutations of a list</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [l]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> lperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+
+<p>隨後便可整理排列的結果為題目要求的格式。由於我們已經列出所有可能數列，所以直接計算數列總數即可，不用多做一次階乘計算。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_permutations</span>(<span class="params">n</span>):</span><br><span class="line">    num_perms = lperm(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>, n+<span class="number">1</span>)))</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(num_perms))</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> num_perms:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, p)))</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><p>我解這題的靈感來自 <a href="https://stackoverflow.com/questions/23116911/all-permutations-of-a-string-in-python-recursive">All Permutations of a String in Python (Recursive)</a> 這串問答，我只需要把原方法改寫為適合 list 的方式即可。不過一開始我寫成以下形式，能看出會報什麼錯誤嗎？</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># !!!! WRONG SOLUTION !!!!</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> = [</span><br><span class="line">            p + [e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l):</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> lperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">        ]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>關鍵在於遞迴關係的初始狀態設定，這個 function 預期要回傳一個存儲所有可能數列的巢狀 list，但我在初始狀態的時候寫成 <code>return l</code>，導致遞迴調用 function 回傳了一個攤平的 list。於是 <code>p</code> 就成了整數，自然無法和 <code>[e]</code> 相連，讓程式無法運作。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:ewald2009"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">ewald2009.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ewald et al. (2009). Genomic rearrangements in BRCA1 and BRCA2: A literature review. Genetics and Molecular Biology, 32, 437-446.<a href="#fnref:ewald2009" rev="footnote">↩</a></span></li><li id="fn:gu2008"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">gu2008.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Gu et al. (2008). Mechanisms for human genomic rearrangements. Pathogenetics, 1, 1-17.<a href="#fnref:gu2008" rev="footnote">↩</a></span></li><li id="fn:touchman2010"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">touchman2010.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/">https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/</a><a href="#fnref:touchman2010" rev="footnote">↩</a></span></li></ol></div></div></p>
+]]></content>
       <categories>
         <category>bioinformatics</category>
       </categories>
@@ -821,6 +821,25 @@
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <categories>
         <category>life</category>
+        <category>reading</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>All You Need Is Kill</title>
+    <url>/hiroshi-2004-all-you-need-is-kill/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>距地球四十光年外的智慧生命為了開拓生存空間，向地球投射 Terra forming Bomb，一種行星改造奈米機器。不料，它們和地球生物共生後不斷演化，形成威脅地球人類生存的「擬態」</p>
+<span id="more"></span>
+
+<p>主角銅谷啟二在聯合防衛軍服役，在初陣中意外擊破「主機擬態」而獲得生死輪迴的能力。然而，這種穿越時空的能力實為幻覺。主機擬態在被破壞後，會以速子將訊息回傳過去，以免其他擬態重蹈覆轍；而接觸主機擬態的人類則會連帶接收這些訊息，得到猶如親歷的印象。</p>
+<p>對於自己的遭遇，銅谷起初想要脫逃，卻徒勞無功，每每遭到擬態給殺害。為了找出脫離輪迴並存活下去的方法，他利用每次重生機會鍛鍊戰技，成為優秀的士兵。直到他在第 158 次戰鬥，碰到同樣受困於輪迴的戰鬥天才麗塔，事情才真相大白。原來，銅谷先前得以重置，是因為麗塔擊敗主機擬態的緣故。</p>
+<p>兩人為了生存下去共同擬定了作戰計畫，成功毀掉了備份擬態和負責傳訊的天線擬態。然而，麗塔的大腦因為多次輪迴，已逐漸異變為傳訊天線。麗塔明白，遲早銅谷也會有相同的遭遇，唯有一的方法是摧毀擬態傳輸訊號的途徑，讓輪迴不再繼續，但這勢必得犧牲兩人之一。</p>
+<p>因此，麗塔打算透過對決來決定誰能生存下去，背負著為人類繼續戰鬥的宿命。最終銅谷擊敗麗塔，也摧毀了主機擬態。由於擬態喪失了傳輸途徑，此次戰鬥之前發生的事件再沒有重來的機會。</p>
+<p>自此，銅谷接替了麗塔戰爭英雄的地位，也承擔起麗塔曾體會的孤單、無法挽救所有人的無奈、殺死唯一知己的痛苦與折磨。</p>
+<p>雖然這本小說的主軸包含很多心理描述，還很特別地在全書前後分別用銅谷和麗塔的視角敘事。例如麗塔重複了多次戰鬥，從最初試著救人到後來把一切交給命運；孤獨地戰鬥到後來碰到知己卻得互相殘殺的哀痛等。</p>
+<p>最初我是為了了解輕小說筆法才讀這本書，然而我太關注主線戰鬥和行文模式，又受到一些齣戲的角色和對話內容影響（例如日本化的美國角色形象等），所以讀的時候有點難起共鳴，於是筆記中少了很多心理層面的紀錄。</p>
+<p>然而，劇情讀起來還是挺流暢的。至於，改編版電影雖然與小說有很大的差異，但看得也很過癮。原則上，在家裡如果轉到了就會看下去（例如今天又看了一遍）。</p>
+]]></content>
+      <categories>
         <category>reading</category>
       </categories>
   </entry>
@@ -1130,24 +1149,6 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜太空生物學</title>
-    <url>/lee-2017-astrobiology/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
-<span id="more"></span>
-<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
-<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
-<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
-<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <categories>
-        <category>astrobiology</category>
-        <category>life in the universe</category>
-      </categories>
-      <tags>
-        <tag>reading</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF)</title>
     <url>/introduction-to-multiverse-variant-call-format/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>假設在很久很久以後的未來，人類有能力偵測到發生在多重宇宙各時間線的事件，也有演算法來比較事件間的異同，從而彙整出能代表多數宇宙歷史的標準時間線。利用跨宇宙與跨時間線的全史資料，往後的史家能將蒐集的歷史資料與標準時間線比較，推測事件的偶然與必然，指引未來史的發展方向。</p>
@@ -1301,6 +1302,24 @@
 <p>它可以作為一個強大的文獻管理工具，幫助研究者整理和分析涉及替代歷史或假想情境的文獻。</p>
 </blockquote>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">也許往後會有類似 IUPAC 的機構，凝聚各領域事件編碼的共識。<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">網路上有不少關於歷史策略遊戲的史觀討論資源，此處參考<a href="https://necromanov.wordpress.com/2010/09/01/victoria2/">维多利亚2（Victoria2）：历史的逻辑</a>的總結<a href="#fnref:2" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+  </entry>
+  <entry>
+    <title>讀後感｜太空生物學</title>
+    <url>/lee-2017-astrobiology/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
+<span id="more"></span>
+<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
+<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
+<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
+<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <categories>
+        <category>astrobiology</category>
+        <category>life in the universe</category>
+      </categories>
+      <tags>
+        <tag>reading</tag>
+      </tags>
   </entry>
   <entry>
     <title>讀後感｜戲說統計</title>
@@ -2610,6 +2629,30 @@
       </tags>
   </entry>
   <entry>
+    <title>Nextflow｜模仿 docstring 來註解 process and workflow</title>
+    <url>/nextflow-extract-docstring-from-a-module/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。</p>
+<span id="more"></span>
+
+<p>python 的 docstring 是 function 的強大特性，能讓開發者在參數類別之外，補充關於 function 的用途、假設條件以及運作原理等額外資訊。透過 <code>__doc__</code> 屬性，docstring 能夠被其他程式讀取，實現開發文檔自動化等功能。</p>
+<p>更重要的是，docstring 位於 function 內部，這讓開發者更動程式碼後，能夠輕易地同步更新文檔，減少文檔與程式碼不一致的情形。</p>
+<p>然而，Nextflow 目前並不支援 docstring 功能。不過，我們可使用多行註解（即介於 <code>/*</code> 與 <code>*/</code> 之間的文字）來模仿 docstring 的效果。這對於協助開發者了解當前的 module（無論是 process 或 workflow）都很有幫助。</p>
+<p>鑒於 Nextflow 的註解無法像 python docstring 那樣透過物件方法呼叫，我寫了一支小腳本來<a href="https://github.com/5uperb0y/nf-tools/tree/main/src/get_docstring">節錄這些資訊</a>。</p>
+<p>簡言之，我將位於 module 名稱與 directive 之間的多行註解定義為 Nextflow 的 docstring，例如：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">process &lt;name&gt; &#123;</span><br><span class="line">	<span class="comment">/* your comments */</span></span><br><span class="line">	directives</span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	your code</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這支腳本運用正則表達式（感謝 chatgpt 幫忙想出裏頭可怕的正則表達式）來抓取 docstring，將其與 module 類型（即 workflow 或 process）和名稱一併輸出。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python get_docstring.py workflow.nf</span><br><span class="line">process FASTQC</span><br><span class="line">this text is from FASTQC</span><br><span class="line">workflow VARIANT_CALLING</span><br><span class="line">this text is from VARIANT_CALLING</span><br></pre></td></tr></table></figure>
+<p>如此一來，我們就能取得 docstring 的內容，不僅方便瀏覽 module 功能，也便於自動生成文檔。</p>
+<p>雖然目前功能還蠻陽春的，但之後也許可以新增其他實用功能，例如支援以名稱篩遠 docstring，或是使用 groovy 開發，使之能在 Nextflow 內部調用。</p>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
     <url>/nextflow-escape-characters/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
@@ -2664,30 +2707,6 @@ echo &quot;\$title \n $PWD&quot;
 <li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
 <li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
 </ul>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜模仿 docstring 來註解 process and workflow</title>
-    <url>/nextflow-extract-docstring-from-a-module/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。</p>
-<span id="more"></span>
-
-<p>python 的 docstring 是 function 的強大特性，能讓開發者在參數類別之外，補充關於 function 的用途、假設條件以及運作原理等額外資訊。透過 <code>__doc__</code> 屬性，docstring 能夠被其他程式讀取，實現開發文檔自動化等功能。</p>
-<p>更重要的是，docstring 位於 function 內部，這讓開發者更動程式碼後，能夠輕易地同步更新文檔，減少文檔與程式碼不一致的情形。</p>
-<p>然而，Nextflow 目前並不支援 docstring 功能。不過，我們可使用多行註解（即介於 <code>/*</code> 與 <code>*/</code> 之間的文字）來模仿 docstring 的效果。這對於協助開發者了解當前的 module（無論是 process 或 workflow）都很有幫助。</p>
-<p>鑒於 Nextflow 的註解無法像 python docstring 那樣透過物件方法呼叫，我寫了一支小腳本來<a href="https://github.com/5uperb0y/nf-tools/tree/main/src/get_docstring">節錄這些資訊</a>。</p>
-<p>簡言之，我將位於 module 名稱與 directive 之間的多行註解定義為 Nextflow 的 docstring，例如：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">process &lt;name&gt; &#123;</span><br><span class="line">	<span class="comment">/* your comments */</span></span><br><span class="line">	directives</span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	your code</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>這支腳本運用正則表達式（感謝 chatgpt 幫忙想出裏頭可怕的正則表達式）來抓取 docstring，將其與 module 類型（即 workflow 或 process）和名稱一併輸出。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python get_docstring.py workflow.nf</span><br><span class="line">process FASTQC</span><br><span class="line">this text is from FASTQC</span><br><span class="line">workflow VARIANT_CALLING</span><br><span class="line">this text is from VARIANT_CALLING</span><br></pre></td></tr></table></figure>
-<p>如此一來，我們就能取得 docstring 的內容，不僅方便瀏覽 module 功能，也便於自動生成文檔。</p>
-<p>雖然目前功能還蠻陽春的，但之後也許可以新增其他實用功能，例如支援以名稱篩遠 docstring，或是使用 groovy 開發，使之能在 Nextflow 內部調用。</p>
 ]]></content>
       <categories>
         <category>bioinformatics</category>
@@ -3911,10 +3930,10 @@ echo &quot;\$title \n $PWD&quot;
 <p>bash 的 tr (transform) 可用於替換、刪除、修改等多種字符操作。此例使用的是其替換功能，參數設定為：$string | tr old new，意指將字串中的 old（舊字符） 替換為 new（新字符）。相較於 R 的 gsub() 和 python 的 replace()，tr 只針對字符的操作（即只能 A→T，不能 AT→CG），若要替換字符串則要使用 sed，其參數設定為：sed “s&#x2F;old&#x2F;new&#x2F;g”。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Transcribing DNA into RNA using tr</span></span><br><span class="line">dna=<span class="string">&quot;GATGGAACTTGACTACGTAAATT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Translating RNA into protein using sed</span></span><br><span class="line">dna=<span class="string">&quot;GGTGGTGGTGGT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line">protein=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span> |  sed <span class="string">&quot;s/GGU/G/g&quot;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$protein</span>&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>sf</category>
+        <category>bioinformatics</category>
       </categories>
       <tags>
-        <tag>reading</tag>
+        <tag>rosalind</tag>
       </tags>
   </entry>
   <entry>
@@ -4361,6 +4380,69 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
   </entry>
   <entry>
+    <title>人類存在的意義</title>
+    <url>/wilson-2014-the-meaning-of-human-existence/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最早認識 E.O. Wilson 是讀 Stephen Gould 的書，Wilson 作為 Gould 反對的對象存在我的記憶中。隨後，我在小說《螞蟻》裡讀到致敬Wilson 所創造的角色—— 艾德蒙．威爾斯，才逐漸了解 Wilson 在螞蟻、演化和生物多樣性方面的成就。</p>
+<p>而想讀這本書的動機，則是寫故事時對於意義的追求，想了解不同思想家怎麼回答人類從何而來，該往何處去等問題。不過讀完以後意識到，這本書試圖解釋的不是個人的存在焦慮，也沒有為人類這樣短暫存在的物種是否有意義給上結論。</p>
+<p>這本書做到的，是解釋道德、愛、心等被視為人類存在重要價值怎麼演化出來。Wilson 推廣其多層次擇汰學說，主張那些人類之所以為人類的特質，是群體選擇與個體選擇的結果。（這讓我挺好奇的，就我理解 Wilson 的社會生物學應該也是基於親緣選擇學說，但在此書中，他的立場卻反駁親緣選擇學說。這也許要多讀一點演化學說的發展，以及 Wilson 近年的著作才會知道為什麼。）</p>
+<span id="more"></span>
+
+<h1 id="我們存在的理由"><a href="#我們存在的理由" class="headerlink" title="我們存在的理由"></a>我們存在的理由</h1><h2 id="意義的「意義」"><a href="#意義的「意義」" class="headerlink" title="意義的「意義」"></a>意義的「意義」</h2><p>《人類存在的意義》探討人類存在於世間的理由與地位，認為應結合人文與科學共同思索這個問題。</p>
+<p>卷初作者便釐清意義的兩種含意：事物之所以發生的遠因與近因。近因帶有目的，例如蜘蛛結網捕蟲，蜘蛛網存在的意義就是為了獵食求生，或說神創論者相信人類是造物主規劃下的產物，人類生存的意義便是達成被賦予使命或任務。至於遠因則無關意向和動機，是事情發展至現況所經歷的一切偶然與歷史因素，沒有任何規劃與目的。</p>
+<p>探究近因能理解事情怎麼發生，而探究遠因則能明白事情為什麼會如此。由於生物技術和優生學發展，人類已經能逐步跨出遠因的支配，依照目的性規畫自己演化的途徑，但究竟我們該翻修自己到何種程度？面對這樣的道德困境，此書著墨於人類存在的遠因——亦即人類的祖先是怎麼經歷一連串的累積而成為我們，繼而探討當我們理解這種意義後又該怎麼考量自己的處境，明瞭未來的方向。</p>
+<h2 id="解開人類之謎"><a href="#解開人類之謎" class="headerlink" title="解開人類之謎"></a>解開人類之謎</h2><p>文明社會是人類的重要屬性，其發源於真社會性（eusociality），已知的人類外的真社會性生物僅出現在昆蟲、某些海生甲殼綱動物和生活在地下的齧齒類動物，並不超過三十種。儘管經歷數次物種爆發，真社會性一直要到近兩億年才出現，儘管如此，真社會性替生物帶來非常大的利益。不過發展真社會性需要在演化過程中出現一連串改變，首先建立巢穴，然後以此為據點覓食哺育，成員分工合作最終形成真社會性的群體，因此儘管能帶來許多好處，仍然很晚近才發展出來。</p>
+<p>人類的真社會性可能源於飲食習慣改變為肉食，因此要更嚴謹的分工合作，繼而設立營地，因為合作與競爭發展人際關係，交流中凸顯心智的重要性，因此逐步演化出心智能力。</p>
+<p>而解釋演化趨力的學說主流學說有兩種：「親緣選擇 （kin selection）」以及「總括生殖成就（inclusibe fitness）或是整體適存度」。前者認為個體互助源於基因相似，能從利他行為獲利，最終發展出社會行為；後者則是只要行為能確保最大基因流傳，則群體就可能發展出社會行為。然而作者主張的多層次擇汰（multilevel selection），認為自然選擇發生在個體在群體內的競爭（個體擇汰）以及群體和群體間的競爭（群體擇汰），因此人類不僅會對群體有認同感，也極其關注群體內的是是非非。</p>
+<h2 id="演化與我們內在的衝突"><a href="#演化與我們內在的衝突" class="headerlink" title="演化與我們內在的衝突"></a>演化與我們內在的衝突</h2><p>人類的善與惡即是利他與利己的衝突，這種矛盾特徵源於基因的個體選擇和群體選擇。僅影響個體的不利基因會在群體內或群體外的人際關係中被汰除，而會影響群體（即個體互動）的基因，則會在群體與群體互動中汰除，因為無法合作協調的群體難以對抗較團結的群體。人類的利己基因能讓個體在群體內競爭中勝出，於是團體逐漸變成自私的團體，然而自私的團體在群體間競爭卻無法對抗因帶有利他基因而合作的團體。個體擇汰篩選出利己基因，群體擇汰篩選出利他基因，兩者會在演化過程中拉扯游移。</p>
+<p>「個體擇汰」（個體和同一群體內的其他個體競爭）和和「群體擇汰」（群體與其他群體競爭）這兩種力量之間發生了衝突。後者會使同一群體的所有成員懷抱利他精神，相互合作，並產生道德意識、良知與榮譽感。簡而言之，這兩股力量之間的中途在於：在同一個群體內，自私的個體會擊敗具有利他精神的個體，但由利他主義者所組成的群體，會擊敗由自私的個體所組成的群體。說得更簡單一些：個體擇汰會助長邪惡，群體擇汰則會增強美德。</p>
+<p>史前時期這段「多層次擇汰」的演化過程，使得人類的心中永遠充滿了矛盾與衝突，不時在這兩股極端的演化力量之間游移。我們不可能完全屈服於其中任何一種力量，因為它們都不是解決我們的社會與政治問題的理想方式。如果我們完全聽任「個體擇汰」的本能趨使，則整個社會終將瓦解。反過來說，我們如果完全臣服於「群體擇汰」的趨力，則會變成天使一般的機器人，如同一群特大號的螞蟻。（page 49）</p>
+<h1 id="知識的統合"><a href="#知識的統合" class="headerlink" title="知識的統合"></a>知識的統合</h1><h2 id="新啟蒙時代"><a href="#新啟蒙時代" class="headerlink" title="新啟蒙時代"></a>新啟蒙時代</h2><p>雖然意在強調整合人文與科學以探索人類之所以為人類的理由，但作者卻以大量篇幅敘述人文學科的侷限，列舉科學進展飛速試圖證明科學已經到了可以解決問題的時候。</p>
+<h2 id="人文學科的重要"><a href="#人文學科的重要" class="headerlink" title="人文學科的重要"></a>人文學科的重要</h2><p>儘管作者認為人文學科難以解釋人類的意義，但是能從倫理學的角度解決科技進步的衝擊。作者提及的道德危機是「人類是否應為了避免疾病或培養特質而編輯自己的基因」，作者支持存在保守主義（existential conservatism）主張人的生物特性是一項神聖的資產，有義務要加以保存。另外科技能被科技取代，且在傳播中會逐漸均質；但文化多樣性是獨一無二，它的演進越來越複雜越來越獨特，人文學科的第二個價值就在於它保留了人類之所以為人的特質。</p>
+<p>總言之，作者認為人文學科不能解決我們的疑問，但它一方面作為解決道德抉擇的利器，一方面作為標本保留了文化發展獨一無二的一面。</p>
+<h2 id="社會演化的驅力"><a href="#社會演化的驅力" class="headerlink" title="社會演化的驅力"></a>社會演化的驅力</h2><p>本章節敘述總括生殖理論和多層次擇汰的內涵，並提出前者的反證。總括生殖理論的核心觀點可以用漢彌爾頓的不等式（Hamilton inequality）表達：</p>
+<blockquote>
+<p>某個利他行為所造福的對象，如果他所繁衍的後代數量，超過那位利他者因該利他行為而損失的後代數量，則表現這個利他行為的基因就會增加。然而，唯有在利他者和他所造福的對象彼此的親緣關係很近的情況之下，利他者才能從自己的利他行為中受惠。至於兩者親緣接近的程度，則視他們共同擁有的基因的比例而定：兄弟姊妹是四分之一，堂（表）兄弟姊妹是八分之一，依此類推。親緣關係愈遠，比例愈低，而且下降得很快。這樣的過程後來稱為『親緣選擇』（kin selection）。(p.87)</p>
+</blockquote>
+<blockquote>
+<p>……他（漢彌爾頓）認為，生活在群體中的個體會與群體中的其他成員互動。在這個過程中，牠和每一個與牠有互動關係的成員都共同參與了「親緣選擇」。這些行為的總和對牠能傳給下一代的基因數量的影響，便是牠的總括生殖成就，也就是將這些行為的好處與成本統統加起來，再用牠和每一個成員之間的親緣等級來打折所得出的數字。依照「總括生殖成就理論」，擇汰的單位在不知不覺間從『基因』變成了『個體』。(p.89)</p>
+</blockquote>
+<p>而作者反對的理由有：</p>
+<ul>
+<li>過於抽象，脫離實際觀察結果。</li>
+<li>僅觀察少數現象做出結論，忽略生態學、譜系學、神經生物學等領域。</li>
+<li>錯將選擇單位界定為個體。</li>
+<li>行為的效應不一定可以加總。</li>
+</ul>
+<h1 id="人類之外的世界"><a href="#人類之外的世界" class="headerlink" title="人類之外的世界"></a>人類之外的世界</h1><p>（前兩節略過，閱讀無收穫）</p>
+<h2 id="外星人的模樣"><a href="#外星人的模樣" class="headerlink" title="外星人的模樣"></a>外星人的模樣</h2><p>作者依據地球生物學知識推論能發展出文明的外星人是什麼模樣。</p>
+<ul>
+<li>陸生：文明發展的基礎是能源，需要乾燥的環境生火或應用其他能源。</li>
+<li>體型大：智慧需要記憶體，而記憶體大小受限於空間大小。</li>
+<li>視覺與聽覺溝通：化學物質的擴散太慢，不利於迅速溝通，因此文明生物需以光或波動傳訊。</li>
+<li>觸手：任何可以製作工具的構造。</li>
+<li>道德：由於群體擇汰和個體擇汰作用，很可能在外星趨同演化出道德觀念。</li>
+<li>社會性：能夠合作和促使競爭，讓團體本身和其中成員具有演化優勢。</li>
+</ul>
+<h2 id="生物多樣性的崩壞"><a href="#生物多樣性的崩壞" class="headerlink" title="生物多樣性的崩壞"></a>生物多樣性的崩壞</h2><p>分類學的價值在於</p>
+<ul>
+<li>分類學家本身就是該生物的專家，是生物學知識的源頭。</li>
+<li>生態學或其他學說需要以來自分類學的研究作為基礎，否則可能會發生誤判關鍵物種等錯誤，導致錯誤的生態改良。</li>
+<li>發掘新物種可以擴充基因改良工具，促進生物學發展。</li>
+</ul>
+<h1 id="心靈的幻象"><a href="#心靈的幻象" class="headerlink" title="心靈的幻象"></a>心靈的幻象</h1><p>作者說明人性是源於「人類的心智發展過程中，得自遺傳的一些規律行為，而這些行為又使得人類的文化朝特定的方向發展，因此它是人腦中基因與文化的連結。」（p176），並舉出人們對居住地的偏好為證，還沒有居住地偏見的兒童天性愛好稀樹草原這種人類發源地的環境（African savanna hypothesis）。這些個性來自基因裡頭的預備學習（prepared learning），預備學習而來的行為因人而異，而學習傾向的多樣性在演化擇汰保留下來，導致族群普世的內在價值觀。</p>
+<h1 id="補充心得"><a href="#補充心得" class="headerlink" title="補充心得"></a>補充心得</h1><p>我後來在《做哲學》這本書讀到蠻貼切的說法：威爾森確實為人類的信念和行為提供了一種生物學解釋，不過，了解人類「是」怎樣的存在，還不足以答覆人類「該」如何存在。</p>
+<p>「我們從哪來？」尋找的是解釋，「我們要走向何方？」追求的則是規範。解釋擷取遺傳、社會和心理等學科的知識來釐清過去；而規範則寄託了人們的渴望、期許與畏懼來展望未來，它受限於過去，但不必與過去一致。這本書提供了解釋，也暗示遵循解釋的規範。然而，是否認同這樣的價值觀還是讀者的功課了。</p>
+<h1 id="摘錄"><a href="#摘錄" class="headerlink" title="摘錄"></a>摘錄</h1><ul>
+<li>人類的存在或許比我們所想像的更加簡單。沒有既定的宿命，沒有深邃難解的生命奧秘，也沒有競相要我們宣示效忠的魔鬼與神祇。我們只不過是靠著自己的努力適應環境，因而得以在這個生物世界中存活的一個獨特物種，獨立而脆弱。若欲永續存活，我們就必須敢於突破現今仍存在於社會（包括那些已經極為民主的社會）的制約，秉持獨立思考的精神與理性，好好地認識我們自己。(page 42)</li>
+<li>「人類的所有煩惱皆起因於我們不知道自己是什麼，對於我們想要成為什麼，也沒有一致的看法」(Jean Bruller&#x2F;Vercors You Shall Know Them, page 166)</li>
+<li>宗教在凡夫俗子的眼中是真的，在智者的眼中是假的，在統治者的眼中則是有用的。(小塞內卡, page 188)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>reading</category>
+      </categories>
+  </entry>
+  <entry>
     <title>凝視太陽 — 學習面對死亡也是學習自由</title>
     <url>/yalom-2008-staring-at-the-sun/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>自我意識是人類最珍貴的特質，但伴隨著思考能力而來的，卻是對消亡的恐懼。雖然嬰兒在出生時沒有被灌輸死亡的觀念，但從季節更迭、花開花謝和親人離世等跡象中，他們也會留意到，有些東西會因某個原因「永遠消失」。</p>
@@ -4405,6 +4487,105 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <categories>
         <category>reading</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>生物調控原理的上課筆記</title>
+    <url>/yang-2019-principles-of-biological-regulation/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我在上課的時候發現，把任何定義裏頭的名詞換成人生，聽起來都會很有道理。</p>
+<span id="more"></span>
+
+<blockquote>
+<p>人生的哲學是化約、假說和驗證。</p>
+</blockquote>
+<blockquote>
+<p>如果你碰到一個問題卻沒辦法解釋，但有毅力把生物系統劃分為子系統，那麼你就有機會藉由研究較單純的子系統，拼湊出整個系統的運作機制。在生物學上，我們稱這種決心叫化約。</p>
+</blockquote>
+<blockquote>
+<p>小紙條放在口袋裡面，有點像錦囊妙計，問題解決不了時就拿出來看看。</p>
+</blockquote>
+<blockquote>
+<p>要在不一樣的人生中看到相似性。</p>
+</blockquote>
+<blockquote>
+<p>巴斯德的鵝頸瓶裏頭的肉汁到現在還是清澈的。</p>
+</blockquote>
+<blockquote>
+<p>每個人都有屬於自己的宿命，人在年輕的時候，或許會走偏，或許會原地踏步，甚至繞了一大圈仍然迷惑不已，但最終終究會走回自己應走的道路上。</p>
+</blockquote>
+<blockquote>
+<p>你說「生物系統這個黑盒子這麼難我怎麼可能理解」，但我們台灣人的長處就是 reverse engineering。</p>
+</blockquote>
+<blockquote>
+<p>人生是由物件（components）、事件（events）、順序（pathways）與循環（circuits）組成。</p>
+</blockquote>
+<blockquote>
+<p>小分子碰撞在一起會立即彈開，大分子碰撞在一起則會接觸一陣子才彈開，相處時間決定反應是否發生。</p>
+</blockquote>
+<blockquote>
+<p>以前的生物化學強調記憶，現在的生物化學注重道理。</p>
+</blockquote>
+<blockquote>
+<p>TCA cycle 與人生都是由拋棄與弭補構成的循環。</p>
+</blockquote>
+<blockquote>
+<p>人生中很常出現 duplicate。</p>
+</blockquote>
+<blockquote>
+<p>人生有兩個難題：找到該走的路（puzzle），決定該怎麼走（maze）。如果不搞清楚的話，思考的時候就會亂掉。</p>
+</blockquote>
+<blockquote>
+<p>人生怎麼從高峰走向低潮是動力學問題，為什麼既有高峰也有低潮則是熱力學問題。</p>
+</blockquote>
+<blockquote>
+<p>人生的轉變很難像個理想的開關，只有 All or None。</p>
+</blockquote>
+<blockquote>
+<p>兩個人想要追求目標，要考慮先形成 complex 再 binding，還是先 binding 再建立 cooperativity？</p>
+</blockquote>
+<blockquote>
+<p>台灣做的味精大多是用發酵作的。</p>
+</blockquote>
+<p>如今，我已經忘記當初是用人生來替換哪些字眼，但還是記得該怎麼活下去的訣竅唷。</p>
+]]></content>
+      <categories>
+        <category>reading</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>夏娃的時間</title>
+    <url>/yoshiura-2008-time-of-eve/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>未來，大概日本。<br>機器人應用行之有年。<br>人形機器人才剛實用化。</p>
+</blockquote>
+<p>女孩小時候出了車禍成為植物人，二十年後奇蹟甦醒醒面對大不同的環境</p>
+<span id="more"></span>
+
+<p>在病榻前不離不棄的哥哥陪著她學習走路、說話重新認識世界。隨著記憶恢復，女孩卻察覺哥哥和童年印象不同，和其他人比起來多了一分淡然。有次到祭拜父母時居然發現哥哥的墓碑居然立在爸媽旁，受驚嚇的女孩不可置信地望著站在一旁的哥哥，卻毫無頭緒。</p>
+<p>她往回家衝，瘋狂打開家中抽屜想索出蛛絲馬跡。最後她打開哥哥那不曾進過的房間，裏頭的擺設和車禍早上那天相同：2050年的電影海報、新推出的機器人玩具……。</p>
+<p>這時她老哥在他身後，眼睛突然放出亮光，在牆上投影出一幕幕影像。</p>
+<p>原來那天車禍奪去了爸爸媽媽和哥哥的性命，女孩的爺爺在臨終前打造了哥哥機器人，希望在自己往生後能持續照顧她。</p>
+<p>女孩忍不住悲傷哭了起來，突然天空出現異變，被拉扯出一個大洞，巨大的宇宙生物竄出，在東京上空噴出一百兆五百億度的火焰，大氣層被點燃延燒全球。女孩毅然決然搭上巨大化的哥哥機器人和宇宙怪物進行決戰。</p>
+<p>陸續擊潰了四大天王和最終宇宙生命後發現這些「怪物」其實是守護世界的神獸，牠們正在和看不見的敵人作戰。百億年來不甘死去的智慧生命亡魂吞食暗能量與暗物質後以量子態聚積，最終成為威脅宇宙存亡的次元惡魔。</p>
+<p>為了守護爸爸、媽媽、哥哥與爺爺的宇宙，女孩將自己量子化將時間軸前後二十年的時空給炸毀，犧牲了過去與未來在現在全力一搏。強大的時壓消滅了次元惡魔 99.999999% 的能量，但仍然剩餘將近 $10^{5989454}$ 焦耳，女孩將之永遠放逐到過去的過去，將邪惡的力量化為創世的大霹靂。</p>
+<p>戰鬥的最後，女孩倒臥在殘破的東京都，惆悵地望著餘暉。一眨眼，她竟因時間炸毀的關係回到了 2050 年，正站在馬路中央，迎面撞上的車上她看見了爸爸、媽媽和哥哥，卻沒看見自己。</p>
+<h1 id="讀後感"><a href="#讀後感" class="headerlink" title="讀後感"></a>讀後感</h1><p>以上情節與動畫無關，只是看完動畫後有感而發瞎掰的。我一開始猜店長凪的老爸在過世前以自己形象打造機器人來照顧受傷的凪，結果劇情發展與我的猜想大相逕庭。既然都起了頭，便把心中預想的劇情一口氣打出來了。</p>
+<p>這部動畫才六集，可以直接從劇場版開始看，裏頭有網路播映沒有的內容，是個輕鬆溫馨的科幻小品（大概是艾西莫夫機器人短篇集那樣的篇幅吧？雖然動畫和小說比較好像怪怪的。）</p>
+<p>故事的開頭寫著：未來，大概日本。機器人應用行之有年，但人型機器人才剛實用化。但是劇中機器人得用投影光環以便與人區別，這不就代表機器人在外表已經跨越恐怖谷了嗎？</p>
+<p>故事主要地點是在一家不區分人機的咖啡廳。在裏頭，主角和他同學若不是親眼看見零件或是光環也無法從對話中分辨人與機器人，這不就代表連人工智慧都通過圖靈測試了。</p>
+<p>外表和智慧都和人類無異，而且外表可愛還會賣萌的機器人，真的是人形機器人剛實用化的時代嗎？不得不說我十分期待……</p>
+<p>先不論科技的先進程度，《夏娃的時間》的設定還挺細緻，但都說得很隱諱，在結尾也有很多未解釋的部分，所以看得時候還是得把重點放在人機相處，不然會有種意猶未竟的感覺。</p>
+<p>六集的主題分別是背景介紹、主僕矛盾、愛戀、認同、忌妒與羈絆。</p>
+<p>我覺得被非法拋棄的機器人那集最好看，前面是主角和他同學滑稽地想保護壞掉的機器人不會因邏輯錯誤或是誤喝咖啡而爆炸，後面店長出來和機器人聊天才知道他雖然被拋棄卻仍懷念小主人，並想要獲得別人認同與記憶。在壞掉前一刻，店長也不顧機器人一臉機器人樣（薩米或麗莎都一副人樣，這舊機器人只有金屬殼子還踏著機械步）抱著他給他安慰。</p>
+<p>然後第五集講到男主角討厭他家的機器人的緣故，是因為擔心他家機器人會比他還會彈鋼琴。這主題可以寫很大，不過導演把重點放在薩米和男主角的和解上而沒去討論機器人取代人類的事情（這些議題都在背景中出現呢）。</p>
+<p>不過就算機器人很屌好了，彈鋼琴還是一項需要努力練習的技能啊！機車賽出來後腳踏車賽還是一樣熱門，阿法狗在圍棋上打敗人類最強後，下棋還是一件充滿智慧且有趣的事情啊。</p>
+<p>周邊也做得一副欠買的樣子<br>不只美術設計，連周邊也做得一副欠買的模樣</p>
+<p><img src="https://p2.bahamut.com.tw/B/2KU/37/0000827037.JPG?w=1000"><br>（圖：<a href="https://gnn.gamer.com.tw/detail.php?sn=82019%EF%BC%89">https://gnn.gamer.com.tw/detail.php?sn=82019）</a></p>
+<p>我不懂電影製作，不過總覺這部作品的分鏡和其他動畫不大一樣呢！一些小圖示設計很漂亮，咖啡廳光看就覺得療癒。</p>
+<p>另外，機器人上的光環是有意要和天使做連結嗎？</p>
+]]></content>
+      <categories>
+        <category>sf</category>
       </categories>
   </entry>
 </search>
