@@ -3152,9 +3152,9 @@ echo &quot;\$title \n $PWD&quot;
 <span id="more"></span>
 
 <h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>染色體特定片段前後翻轉的現象稱為 inversion，它是基因體重排最常見的形式。計算兩條染色體透過 inversion 互相轉換所需的最少次數，可視同求解兩數列之間的反轉距離（reversal distance）。</p>
-<p>假設我們有一個起始數列和一個目標數列。若兩數列完全相同，則反轉距離為 0，不須進行任何反轉操作。但如果兩者不一致，可已先列出起始數列經過一次反轉後可能產生的所有數列，再檢查目標數列是否出現在新生成的數列中。</p>
+<p>假設我們有一個起始數列和一個目標數列。若兩數列完全相同，則反轉距離為 0，不須進行任何反轉操作。但如果兩者不一致，可先列出起始數列經過一次反轉後可能產生的所有數列，再檢查目標數列是否出現在新生成的數列中。</p>
 <p>如果找到目標數列，就回報所需的反轉次數；如果沒找到，就列出這些數列再次返喘後可能產生的所有數列。</p>
-<p>重述上述過程，列出經過 n 次反轉後可能產生的所有數列，並且檢查目標數列是否出現其中，直到找到目標數列或窮盡所有可能為止。</p>
+<p>重複上述過程，列出經過 n 次反轉後可能產生的所有數列，並且檢查目標數列是否出現其中，直到找到目標數列或窮盡所有可能為止。</p>
 <p>為了實現這個算法，首先需要一個副程式，用於列出一個數列經過一次反轉後可能產生的所有數列。簡言之，在數列上任選兩個位置，用 <code>[::-1]</code> 反轉居於其間的子數列，再連結反轉數列與剩餘數列。</p>
 <p>這些數列可以儲存在 list、tuple、或 set 等資料型別中。我選擇使用 set 是因為它能自動排除重複的數列，減少多餘的比較。其次，與 list 和 tuple 相比，判斷一個元素是否在 set 之中只需要常數時間，能減少比較的時間成本。最後，set 支援交集、聯集和差集等操作，在比較數列集合時有比較多彈性。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">swap</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Generate all possible subsequences of a tuple by reversing segments.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        l (tuple): Input tuple, e.g., (1, 2).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        set: Set of tuples with reversed segments, e.g., &#123;(1, 2), (2, 1)&#125;.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        l[:i] + l[i:j][::-<span class="number">1</span>] + l[j:]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(l) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(j)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -3296,6 +3296,74 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>reading</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>ROSALIND｜Sorting by Reversals (SORT)</title>
+    <url>/sorting-by-reversals/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一對數列，計算兩者的最小反轉距離，並依序列出反轉數列的步驟。</p>
+<blockquote>
+<p>A reversal of a permutation can be encoded by the two indices at the endpoints of the interval that it inverts; for example, the reversal that transforms (4,1,2,6,3,5) into (4,1,3,6,2,5) is encoded by [3,5] .<br>A collection of reversals sorts π into γ if the collection contains drev(π,γ) reversals, which when successively applied to π yield γ .</p>
+</blockquote>
+<blockquote>
+<p>Given: Two permutations π and γ , each of length 10.<br>Return: The reversal distance drev(π,γ) , followed by a collection of reversals sorting π into γ . If multiple collections of such reversals exist, you may return any one.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/sort/">https://rosalind.info/problems/sort/</a>)</p>
+<span id="more"></span>
+
+<p>這題的概念與 <a href="https://5uperb0y.com/reversal-distance/">Reversal Distance</a> 相同，只是需要修改程式碼以便記錄和追蹤數列反轉的步驟。首先，在生成反轉數列的同時，我用 dictionary 記錄新生成數列的來源以及被反轉的子數列的首尾位置。這裡把首位座標值加 1 是因為題目的座標系統從 1 開始）。</p>
+<p>雖然這些資訊也可以用 list 紀錄，但使用 dictionary 可以透過 key 將資訊分門別類，在取值時會比用 list 時以座標取值明確。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">swap</span>(<span class="params">t</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        t[:i] + t[i:j][::-<span class="number">1</span>] + t[j:]: &#123;<span class="string">&quot;parent&quot;</span>: t, <span class="string">&quot;move&quot;</span>: (i + <span class="number">1</span>, j)&#125;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(t) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(j)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下這個副程式用於生成數列集合的每個元素在經過一次反轉後可能產生的所有數列。由於修改了 swap 的輸出格式，所以這副程式也要跟著調整，確保之後能取得新生成的數列、這些數列的來源以及反轉步驟等資訊。</p>
+<p>雖然以 for 調用 dictionary 的時候，直接寫變項名稱（<code>var</code>）的效果與 <code>var.keys()</code> 一致，不過因為我常常忘記這特性，所以覺得還是清楚列出來比較好。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_next_steps</span>(<span class="params">current, visited</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        swap_e: details</span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> current.keys()</span><br><span class="line">        <span class="keyword">for</span> swap_e, details <span class="keyword">in</span> swap(e).items()</span><br><span class="line">        <span class="keyword">if</span> swap_e <span class="keyword">not</span> <span class="keyword">in</span> visited.keys()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>由於記錄了各數列的源頭與反轉方式，所以配合已檢查過的數列清單 visited，即可追蹤數列的反轉步驟。簡而言之，就是拿當前數列去查詢 visited，記錄反轉步驟，再查出該數列的源頭，查詢數列源頭的反轉步驟，直到追蹤到起始數列。</p>
+<p>這裡我假設起始數列的資料格式為 <code>&#123;seq: -1&#125;</code>，所以只要檢查到 -1 就表示已經追蹤到起點了。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_moves</span>(<span class="params">meet_point, visited</span>):</span><br><span class="line">    moves = []</span><br><span class="line">    current = visited[meet_point]</span><br><span class="line">    <span class="keyword">while</span> current != -<span class="number">1</span>:</span><br><span class="line">        moves.append(current[<span class="string">&quot;move&quot;</span>])</span><br><span class="line">        current = visited[current[<span class="string">&quot;parent&quot;</span>]]</span><br><span class="line">    <span class="keyword">return</span> moves</span><br></pre></td></tr></table></figure>
+
+<p>除了變項名稱以外，我也對計算反轉距離的功能做了一些調整。首先，因應使用 dictionary 記錄數列，比較雙向搜索是否有交集時，得額外取出兩者的 keys 來比對。</p>
+<p>其次，我轉而以交錯方式來推進搜索：利用 <code>check_forward</code> 當成開關，這變項決定這次檢查要從哪個方向開始，這樣能確保每次迴圈只會從數列前端或後端推進一步。這樣就不用像我之前寫得那樣，在每個迴圈為各方向的推進檢查兩次。</p>
+<p>其餘的步驟與先前的寫法類似，一旦雙向搜索的進度交錯，就分別使用 get_moves 重建反轉步驟。</p>
+<p>因為這個副程式預設用 append() 添加元素，所以對於從前端開始的檢查而言，在追蹤完所有反轉步驟後，要將輸出的 list 反轉才能得到正確的順序。結合前後兩端的反轉步驟，即得到兩數列互相轉換所需經過得最少反轉步驟。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rev_dist</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    cur_fwd, vis_fwd = &#123;s1: -<span class="number">1</span>&#125;, &#123;s1: -<span class="number">1</span>&#125;</span><br><span class="line">    cur_bwd, vis_bwd = &#123;s2: -<span class="number">1</span>&#125;, &#123;s2: -<span class="number">1</span>&#125;</span><br><span class="line">    dist = <span class="number">0</span></span><br><span class="line">    check_forward = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">while</span> cur_fwd <span class="keyword">and</span> cur_bwd:</span><br><span class="line">        intersection = cur_fwd.keys() &amp; cur_bwd.keys()</span><br><span class="line">        <span class="keyword">if</span> intersection:</span><br><span class="line">            meet_point = intersection.pop()</span><br><span class="line">            <span class="keyword">return</span> dist, get_moves(meet_point, vis_fwd)[::-<span class="number">1</span>] + get_moves(meet_point, vis_bwd)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> check_forward:</span><br><span class="line">                cur_fwd = get_next_steps(cur_fwd, vis_fwd)</span><br><span class="line">                vis_fwd.update(cur_fwd)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur_bwd = get_next_steps(cur_bwd, vis_bwd)</span><br><span class="line">                vis_bwd.update(cur_bwd)</span><br><span class="line">            dist = dist + <span class="number">1</span></span><br><span class="line">            check_forward = <span class="keyword">not</span> check_forward</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="and、-和-intersection-的差異"><a href="#and、-和-intersection-的差異" class="headerlink" title="and、&amp; 和 intersection 的差異"></a>and、&amp; 和 intersection 的差異</h2><p>intersection 和 &amp; 是 set 專用的操作符，兩者的功能相同。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt; a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">&gt; b = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line">&gt; a &amp; b</span><br><span class="line">&#123;<span class="number">3</span>&#125;</span><br><span class="line">&gt; a.intersection(b)</span><br><span class="line">&#123;<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>然而 &amp; 只允許 set 之前的操作，intersection 則支援 set 和任何 iterable 的比較，所以有可讀性和泛用性的優勢。詳情可參考這則 <a href="https://stackoverflow.com/questions/63827915/and-intersection-difference">stackoverflow 的說明</a> 和<a href="https://docs.python.org/3.8/library/stdtypes.html#frozenset.intersection">官方文件</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt; a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">&gt; a.intersection([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">&#123;<span class="number">3</span>&#125;</span><br><span class="line">&gt; a.intersection(&#123;<span class="number">3</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">4</span>, <span class="number">5</span>:<span class="number">5</span>&#125;)</span><br><span class="line">&#123;<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>and 則是邏輯判斷符，不能用來集合運算。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 這裡的邏輯是：a is True, then b，所以印出 b。</span></span><br><span class="line">&gt; a <span class="keyword">and</span> b</span><br><span class="line">&#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line"><span class="comment"># 用這案例會更加清楚：&#123;&#125; is False，所以不會印出 b，只有呈現 &#123;&#125;</span></span><br><span class="line">&gt; &#123;&#125; <span class="keyword">and</span> b</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他解題想法"><a href="#其他解題想法" class="headerlink" title="其他解題想法"></a>其他解題想法</h2><p>我覺得這種需要追蹤路徑的問題，如果用 class 來設計結構與方法可能會讓程式碼變得好維護許多。另外，之前在 Reversal Distance 也有列出用遞迴的解題方式，或許有空都可以拿來改寫看看。</p>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微國家：獨立建國的簡易操作手冊</title>
+    <url>/strauss-2008-how-to-start-your-own-country/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
+<span id="more"></span>
+
+<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
+<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
+<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
+<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
+<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
+<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
+<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
+<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
+<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
+]]></content>
+      <categories>
+        <category>reading</category>
+      </categories>
   </entry>
   <entry>
     <title>Vim｜Vimium，學習 Vim 的新途徑</title>
@@ -3497,26 +3565,6 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>vim</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>微國家：獨立建國的簡易操作手冊</title>
-    <url>/strauss-2008-how-to-start-your-own-country/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
-<span id="more"></span>
-
-<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
-<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
-<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
-<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
-<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
-<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
-<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
-<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
-<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
-]]></content>
-      <categories>
-        <category>reading</category>
-      </categories>
   </entry>
   <entry>
     <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
