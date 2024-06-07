@@ -455,6 +455,41 @@
       </tags>
   </entry>
   <entry>
+    <title>ROSALIND | Enumerating k-mers Lexicographically (LEXF)</title>
+    <url>/enumerating-k-mers-lexicographically/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度為 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
+<blockquote>
+<p>Given: A permutation of at most 12 symbols defining an ordered alphabet $\mathscr{A}$ and a positive integer n (n≤4).</p>
+<p>Return: All strings of length at most n formed from $\mathscr{A}$ , ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/lexv/">https://rosalind.info/problems/lexv/</a>)</p>
+<span id="more"></span>
+<p>$\mathscr{A}$ 是一個字符序列，除了規範了可用的字符外，也定義了這些字符的字典序。像是英文字母的字典序是從 A 到 Z，所以 “AA” 會排在 “AB” 前面。這題要求從 $\mathscr{A}$ 生成指定長度的所有可能字串，並確保這些字串依照字典序排序。</p>
+<p>假設今有 $\mathscr{A}$ 為 <code>[&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]</code>，而且指定長度為 3，則生成步驟為：</p>
+<ol>
+<li>從 $\mathscr{A}$ 依序取出字符來組成字串（”A”、”B”、”C”）</li>
+<li>對於每個字符，追加 $\mathscr{A}$ 中的每个字符，生成長度為 2 的所有可能字串（”AA”、”AB”、”AC”、”BA”、”BB”、……”CC”）</li>
+<li>對於長度為 2 的字串，再度追加 $\mathscr{A}$ 中的每个字符，生成長度為 3 的所有可能字串（”AAA”、”AAB”、”AAC”、”ABA”、……”CCC”）</li>
+<li>最終將生成 $3 \times 3 \times 3 &#x3D; 27$ 個字串。</li>
+</ol>
+<p>由上述案例，我們可以歸納遞迴關係如下：</p>
+<ul>
+<li>終止條件：當 <code>k=1</code> 時，回傳 $\mathscr{A}$。</li>
+<li>遞迴關係：對於 $\mathscr{A}$ 每個字符，生成長度為 <code>k - 1</code> 的所有可能字串，再讓字符作為這些字串的前綴。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lexf</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Generate all permutations of a specified length from a given set of elements.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> elements</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            <span class="string">f&quot;<span class="subst">&#123;e&#125;</span><span class="subst">&#123;k_str&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">for</span> e <span class="keyword">in</span> elements</span><br><span class="line">            <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k - <span class="number">1</span>)</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+
+<p>最後再把結果依題目要求的格式印出來。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_results</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k):</span><br><span class="line">        <span class="built_in">print</span>(k_str)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>bioinformatics</category>
+      </categories>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROSALIND｜Enumerating Gene Orders (PERM)</title>
     <url>/enumerating-gene-orders/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 的所有可能數列與其總數。</p>
@@ -506,41 +541,6 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># !!!! WRONG SOLUTION !!!!</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> = [</span><br><span class="line">            p + [e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l):</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> lperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">        ]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
 <p>關鍵在於遞迴關係的初始狀態設定，這個 function 預期要回傳一個存儲所有可能數列的巢狀 list，但我在初始狀態的時候寫成 <code>return l</code>，導致遞迴調用 function 回傳了一個攤平的 list。於是 <code>p</code> 就成了整數，自然無法和 <code>[e]</code> 相連，讓程式無法運作。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:ewald2009"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">ewald2009.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ewald et al. (2009). Genomic rearrangements in BRCA1 and BRCA2: A literature review. Genetics and Molecular Biology, 32, 437-446.<a href="#fnref:ewald2009" rev="footnote">↩</a></span></li><li id="fn:gu2008"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">gu2008.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Gu et al. (2008). Mechanisms for human genomic rearrangements. Pathogenetics, 1, 1-17.<a href="#fnref:gu2008" rev="footnote">↩</a></span></li><li id="fn:touchman2010"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">touchman2010.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/">https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/</a><a href="#fnref:touchman2010" rev="footnote">↩</a></span></li></ol></div></div></p>
-]]></content>
-      <categories>
-        <category>bioinformatics</category>
-      </categories>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROSALIND | Enumerating k-mers Lexicographically (LEXF)</title>
-    <url>/enumerating-k-mers-lexicographically/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度為 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
-<blockquote>
-<p>Given: A permutation of at most 12 symbols defining an ordered alphabet $\mathscr{A}$ and a positive integer n (n≤4).</p>
-<p>Return: All strings of length at most n formed from $\mathscr{A}$ , ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/lexv/">https://rosalind.info/problems/lexv/</a>)</p>
-<span id="more"></span>
-<p>$\mathscr{A}$ 是一個字符序列，除了規範了可用的字符外，也定義了這些字符的字典序。像是英文字母的字典序是從 A 到 Z，所以 “AA” 會排在 “AB” 前面。這題要求從 $\mathscr{A}$ 生成指定長度的所有可能字串，並確保這些字串依照字典序排序。</p>
-<p>假設今有 $\mathscr{A}$ 為 <code>[&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]</code>，而且指定長度為 3，則生成步驟為：</p>
-<ol>
-<li>從 $\mathscr{A}$ 依序取出字符來組成字串（”A”、”B”、”C”）</li>
-<li>對於每個字符，追加 $\mathscr{A}$ 中的每个字符，生成長度為 2 的所有可能字串（”AA”、”AB”、”AC”、”BA”、”BB”、……”CC”）</li>
-<li>對於長度為 2 的字串，再度追加 $\mathscr{A}$ 中的每个字符，生成長度為 3 的所有可能字串（”AAA”、”AAB”、”AAC”、”ABA”、……”CCC”）</li>
-<li>最終將生成 $3 \times 3 \times 3 &#x3D; 27$ 個字串。</li>
-</ol>
-<p>由上述案例，我們可以歸納遞迴關係如下：</p>
-<ul>
-<li>終止條件：當 <code>k=1</code> 時，回傳 $\mathscr{A}$。</li>
-<li>遞迴關係：對於 $\mathscr{A}$ 每個字符，生成長度為 <code>k - 1</code> 的所有可能字串，再讓字符作為這些字串的前綴。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lexf</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Generate all permutations of a specified length from a given set of elements.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> elements</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            <span class="string">f&quot;<span class="subst">&#123;e&#125;</span><span class="subst">&#123;k_str&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">for</span> e <span class="keyword">in</span> elements</span><br><span class="line">            <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k - <span class="number">1</span>)</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
-
-<p>最後再把結果依題目要求的格式印出來。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_results</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k):</span><br><span class="line">        <span class="built_in">print</span>(k_str)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>bioinformatics</category>
@@ -748,6 +748,24 @@
       <tags>
         <tag>rosalind</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>戰爭，不再適用於描述宿主與微生物的關係</title>
+    <url>/forum-on-microbial-threats-2006-ending-the-war-metaphor/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撇除雷文霍克和虎克那個用顯微鏡觀察微生物以展示風雅的時代，微生物學的重大發展皆與解決釀酒、蠶業、農業等產業問題息息相關，而人體微生物學也是源於臨床應用背景。</p>
+<p>(Forum on Microbial Threats. (2006). Ending the War Metaphor: The Changing Agenda for Unraveling the Host-Microbe Relationship-Workshop Summary. National Academies Press.)</p>
+<span id="more"></span>
+
+<p>二十世紀初人類的衛生觀念基於巴斯德和柯霍等人確立的細菌致病學說（the germ theory of disease），認為特定病原菌破壞人體健康狀態而導致疾病，所以當時的防疫觀念著重消毒，試圖透過全面滅菌降低細菌傳播。在細菌致病學說指引下，研究者系統地搜索病原菌，結合同時期發展的疫苗、化學療法和抗生素挽救無數人性命。此外，細菌致病學說納入了病毒致病因素後，拓展為更為成熟的微生物致病學說，持續引領晚近的人體微生物學研究。　<br>　<br>儘管微生物致病的典範取得了巨大的成功，這種以病原為中心的觀點（pathogen-centered）過度強調疾病與特定物種的關係，忽略了物種與物種、物種與宿主間交互作用變動造成的疾病，也沒有考慮到物種的多重屬性。因此面對晚近浮現的超級細菌、腸道發炎疾病及自體免疫等的問題時，施用不同藥物試圖全面撲滅病原的策略往往不能奏效，傷害患者身體的同時還間接篩選更頑強的細菌。<br>　<br>除了致病菌以外，晚近的研究也指出體內微生物的組成和神經疾病、肥胖、過敏相關，這意味著微生物不只單純棲息於體內，它們可能參與人體生理的大小反應。</p>
+<p>新興疾病的醫療危機以及微生物與宿主的生理相關性揭示了微生物與宿主間的複雜關係，於是學界漸漸重視微生物致病的其他因素，例如：微生物的變化、微生物與環境的關係、微生物間的作用網路、免疫系統與微生物間的互動、……等，模糊了人類與病原菌之間壁壘分明的界線。</p>
+<p>換句話說，學界引進了生態學的思考方式，將人體視為棲息地（human-as-habitat perspective）而不是廝殺的戰場（body-as-battleground perspective or the War matephor），微生物是人體的一部份而非外來的異客，身體狀態是細菌與人體細胞共同作用的外顯特徵，而健康則是生態系平衡的紅利（ecosystem service）不是固有的狀態。</p>
+<p>看待微生物的觀點轉變不僅影響研究圈，也會影響臨床醫療的決策。雖然傳統醫療手段不會被取代，但是面臨複雜症狀的疾病時需要更仔細考量發病的環境脈絡，以免貿然治療造成反效果。另外生態系適應性經營（adaptive management）或許能運用於人體，透過連續的調查與評估，鎖定生態網路中的致病節點，借鑑動植物生態學的經驗，修復生態或引進原生物種以移除病原（probiotics therapy）。</p>
+<p>然而要達成上述目標需要更深入理解人體微生物生態學和演化學，並釐清微生物的組成、功能與交互作用網路，而 Allan 和Stankey 設想生態系適應性經營的四步驟則能協助理解的前提。首先必須識別生態紅利的供應者，篩選影響其功能的環境或生物因素，最後評估作用的時空限制。就此框架看來，僅確認微生物與特定現象的因果仍不夠，必須深入理解造成現象的特定因素，而這些關鍵的要素就藏在微生物的生態網路當中，所以架起了基礎科學和應用科學的聯繫。</p>
+<p>由於觀測、培養和分類困難，微生物生態學的發展落後於動植物生態學，直到基於核酸的鑑定理論與方法成熟才得以開啟微生物學的博物學時代，此階段的研究雖然看起來像過往一樣遵循「鑑定物種分析關聯」的流程，但往後以功能與交互作用等更複雜的現象為目標。這些基礎科學的成果，不只有助於治療疾病也將能開拓微生物的應用價值。</p>
+]]></content>
+      <categories>
+        <category>reading</category>
+      </categories>
   </entry>
   <entry>
     <title>寫論文的糟糕和美好經驗</title>
@@ -1319,6 +1337,39 @@
       </categories>
       <tags>
         <tag>reading</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>攻殼機動隊 STAND ALONE COMPLEX</title>
+    <url>/kenji-2002-ghost-in-the-shell-stand-alone-complex/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這部由主線──笑臉男事件和支線──電子腦、義體普及引發新型社會問題組成。</p>
+<p>主線外的小故事可以獨立看，不影響通篇劇情理解。但是支線是以公安九課的各幹部為主角(還有思考機器人，塔奇克馬)，只聚焦笑面男事件就會錯失了解個別配角的機會。例如每次調查幾乎都是佗古薩上陣，笑面男的突破線索幾乎由這個有家庭沒義體化的new comer給找出來。</p>
+<p>不過我覺得笑面男事件結尾有點不過癮，反派顯得不夠力。前頭醞釀的巨大陰謀在夕陽西下的最後一集平淡結束，讓前一集被激起的情緒無處宣洩。</p>
+<span id="more"></span>
+
+<h1 id="電子腦和義體"><a href="#電子腦和義體" class="headerlink" title="電子腦和義體"></a>電子腦和義體</h1><p>本作最重要的設定為電子腦和義體：電子腦是把意識和網路、程式連結起來的設備。義體簡單如義肢、義眼用以取代或強化原有器官，複雜的可以直接作為意識的載體。</p>
+<p>依照電子腦的連結對象又可分為三種情形：硬體、軟體、其他人腦(在能把意識資訊化的世界觀裡，自我意識要算廣義的軟體了)，每個情形出現異常、矛盾或是和社會價值衝突就成為個小故事的題材。</p>
+<p>電腦有各種存取資料的結構搭配不同的演算法以解決問題。人腦雖然沒有堆疊、佇列或樹來保留學習記憶和本能，處理問題卻比電腦有創意多了。</p>
+<p>像 26 集「公安九課 再臨」最後面笑臉男和少佐講一堆名言時，課長把電子腦和連結到外部資料庫以聽懂他們的對話。要及時理解對話，就要對那些名言佳句有印象。</p>
+<p>印象，也就是記憶。當電子腦和資料庫連結架起，且讀取資料的時間能和人們讀取回憶一樣快時，就會產生有印象的錯覺。但假若資料庫沒辦法像人腦那樣存取，那讀取的速度就會受限於資料庫本身設計，這樣的連結頂多是不用手指划的智慧型手機。</p>
+<p>可是每個人記憶的模式不一樣，資料庫是為通用的查詢所設計，所以連結的同時也得對資料進行處理。也許是那瞬間將資料庫依序放進電子腦，再依照個人特質進行儲存。或者，因應電子腦的出現，個人資料庫和個人網站一樣跟著普及起來。畢竟前述方法仍要花時間在預先分類資料。</p>
+<h1 id="義體與本體感覺"><a href="#義體與本體感覺" class="headerlink" title="義體與本體感覺"></a>義體與本體感覺</h1><p>而第11集「在若林的森林」提到的電子腦自閉症，是電子腦和硬體連結不協調進一步到病症的例子。</p>
+<p>器官移植要解決免疫系統在生理上的排他，義體又是比器官移植更劇烈的變化還須克服心理上的排他。雖然組成身體的分子每分每秒都在代換，但是結構不變我還是能認得自己。但像是換肢手術的例子，就算免疫系統接納了捐贈者的器官，受贈者心理上仍須花時間適應。</p>
+<p>義體更是把腦以外全換為人造器官，面臨的心靈衝擊又更大，輕者只是感知遲鈍地像醉酒，重者產生自閉症、甚至變植物人完全無法協調。像少佐很小的時候就全身義體化，要隨成長更換義體，每次都要對更大的身體重新適應（難怪叫ghost in shell , 隨成長更換的外骨骼）</p>
+<p>另外比較小的問題就是電子腦和武器做連結若不能達成人機一體的同步率，會造成使用者的不便(例如 15 集「機器們的時間」裡面的新型狙擊裝置)</p>
+<h1 id="電子腦與自我意識"><a href="#電子腦與自我意識" class="headerlink" title="電子腦與自我意識"></a>電子腦與自我意識</h1><p>除了高同步率(即操作、讀取的效率)，電子腦也得內建系統避免人與人的界線因電子腦間的連結而消弭。畢竟讀取別人的腦和讀取自己的腦一樣便捷，還能認得出我是誰嗎？</p>
+<p>像第 18 集「暗殺二重奏」 連結上父親記憶的兒子在舉止上越來越像父親，甚至在兒子身上產生父親的人格。第 21 集「丟棄的軌跡」巴特錯把佗古薩重傷的時的情緒當成自己的情緒變得暴躁起來。</p>
+<p>電子腦發明前，人的意識被肉身包覆，要彼此影響只能靠有限的五官(語言、行為)，雖然意念轉換成過程有可能造成誤會，但也保護了個體的獨立性：只能用嘴巴說服、用行為證明、用金錢誘惑……只能從外在下手，而且一個人即便行為舉止受制於人，仍能保有自我思考這最後的自由。</p>
+<p>一旦原始的防壁敞開，意識就有被人操作的危險(笑臉男就常控制別人意識幫她代言)，所以也就有個人防壁的產生。</p>
+<p>然而，也有不設防壁的例子，讓別人不需迂迴地經過文字、圖畫、影像、聲音來理解自己的概念，例如 15 集「機器們的時間」把自己電子腦開放的導演，讓與之連結的人沉迷於其腦海裡的電影構想而無法自拔。</p>
+<h1 id="義體、電子腦與社會"><a href="#義體、電子腦與社會" class="headerlink" title="義體、電子腦與社會"></a>義體、電子腦與社會</h1><p>至於價值觀、宗教的反對電子腦化，貧富不均導致義體分配不均……都是些老問題，癥結點往往不是出在科技本身。</p>
+<p>像是宗教和價值觀的反對是個人理念，貧富不均則是社會體制的問題，就算沒有電子腦換成別的發明都會持續存在。</p>
+]]></content>
+      <categories>
+        <category>sf</category>
+      </categories>
+      <tags>
+        <tag>sf</tag>
       </tags>
   </entry>
   <entry>
@@ -1904,6 +1955,32 @@
 ]]></content>
       <categories>
         <category>programming</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>解開生命之謎：運用量子生物學，揭開生命起源與真相的前衛科學</title>
+    <url>/mcfadden-and-ai-khalili-2016-life-on-the-edge/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我覺得英文書名（life on the edge）比中文書名更能反映作者的生物觀點。無機物和生命體在肉眼可見的範圍皆遵循牛頓力學，但其差異在於部分粒子的變動能否影響整體的行為。無機物的特性（熱漲冷縮、結晶、……）源於數量龐大的粒子分攤掉個別粒子的隨機特性，因此個別粒子無法影響整體。</p>
+<p>但是生命卻可以營造合宜環境，隔離或駕馭不規則擾動，保持個別粒子的特性，進而擴增到整個生命體驅動大大小小的反應，而這種特性可以用量子力學描述。換句話說，生命是在量子力學或古典力學支配的兩種秩序中間的微妙平衡，死亡意味著這平衡被打破，喪失微觀秩序和巨觀秩序的連結。</p>
+<span id="more"></span>
+
+<p>薛丁格在《生命是什麼》中提及基因包含的原子數量不足以用熱力學原則（秩序源於大量不規則行為的平均）說明其遺傳精確性，因此得援用量子力學解釋。繼承此信念的物理學家在生物體內找尋能應用量子力學的場合，因為量子效應僅出現在微觀尺度，又容易受細胞內隨機運動的粒子影響而失效，所以這類反應系統應該只涉及數目少、質量小的粒子，而且能藉由孤立空間或其他方法排除干擾。此外，反應系統需在維繫生命運作的關鍵位置上維持平衡，使微觀層次的變動得牽動巨觀層次。</p>
+<p>此書前半部討論的酵素活性位、植物光系統、嗅覺受器以及磁導航器官皆屬此例，它們是維持生命的重要反應，又僅涉及電子或質子等小粒子轉移。作者用大量篇幅回顧這些領域的研究成果，接著點出傳統理論的缺陷，再舉出量子效應在其中扮演重要角色的證據，最後用比喻的方式引介量子生物學詮釋，幫助讀者理解抽象概念。</p>
+<p>為了呼應其生物觀點，作者在後半部將量子理論應用到生物演化、大腦意識和生命起源等議題上，試圖將之推廣為為生命運作的基石。不過相較於前半段內容有較多實驗和文獻支持，這部份把量子理論套用在巨觀階層的種種模型仍屬推測。</p>
+<p>雖然含有大量物理術語，可是畢竟這是介紹如何應用量子力學解釋生物現象的科普作品，不是量子物理課本。即使沒有讀通（但可了解作者嘗試讓我們更容易理解的努力），也能評估這樣的應用有何優點和限制，並且留意到一些值得思考的問題：</p>
+<ul>
+<li>書中提到的是經實驗佐證的理論還是大膽的猜測？</li>
+<li>這些有證據的理論是挑戰了傳統學說，還是其解釋含糊的細節？</li>
+<li>是生物體依賴量子效應，還是量子效應出現在生物體中？</li>
+<li>微觀尺度的量子效應是否影響巨觀層次？</li>
+<li>量子效應是反應的先決條件，還是從眾多選擇演化而來的結果？</li>
+</ul>
+<p>生命起源相關的議題集中在第一、二、九和十章，當中介紹的生命起源機制奠基於RNA世界說，只是傳統理論難以解釋該如何從有機分子中產生自我複製體，所以想像了一個能利用量子效應同時展現各種結構的「原酶」，能比化學重組更有效率地測試可能結構。當某個結構出現自我複製功能時，原酶就會喪失量子效應，維持穩定並持續複製下去。然而傳統理論的挫敗無法證明這個理論是對的，而且這想法只停留在模型階段還沒有任何證據支持，因此應謹慎看待。</p>
+<p>作者在最後對建造人工細胞的提議類似《再創世紀》裡面提到的方法，沒有推翻以往研究者的成果：湊齊已知生命需要的功能元件、酵素和分子，安裝在脂肪隔間裡。不過強調要考慮量子效應，否則人工生命體沒辦法運作。</p>
+<p>題外話：簡中版的書名叫《神秘的量子生命》，乍看之下讓人聯想到劉慈欣小說《球狀閃電》裡的量子幽魂，一眼之下還以為是什麼靈修著作，和正體版一樣都沒有凸顯此書前半部嚴謹的敘述，反而把重點放在仍有許多討論空間的後半部，還過度延伸些作者一直澄清不該和科學混淆的靈魂、哲學、神學概念，這點實在讓人感到困惑。</p>
+]]></content>
+      <categories>
+        <category>reading</category>
       </categories>
   </entry>
   <entry>
@@ -3366,6 +3443,203 @@ echo &quot;\$title \n $PWD&quot;
       </categories>
   </entry>
   <entry>
+    <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
+    <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
+<p>然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。</p>
+<span id="more"></span>
+
+<h1 id="必要軟體安裝與設定"><a href="#必要軟體安裝與設定" class="headerlink" title="必要軟體安裝與設定"></a>必要軟體安裝與設定</h1><p>首先，我們要完成必要軟體的安裝與設定。</p>
+<ol>
+<li>安裝 Steam 並購買 <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop simulator</a>。</li>
+<li>安裝 <a href="https://code.visualstudio.com/">VSCode</a>。雖然官方推薦的 Lua 開發環境是 Atom，但 VSCode 的功能更加強大，近幾年也比較廣泛被使用（參考 <a href="https://github.blog/2022-06-08-sunsetting-atom/">Github 停止支援 ATOM IDE 的新聞</a>）。</li>
+<li>在 VSCode 當中安裝 <a href="https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua">Tabletop Simulator Lua</a> 套件。這款套件能從遊戲儲存檔擷取 Tabletop Simulator 的 Lua 腳本，讓我們直接能在 VSCode 中開發，並享有自動補全、檔案瀏覽以及其他擴充套件的功能。</li>
+</ol>
+<h1 id="連結遊戲與編輯器"><a href="#連結遊戲與編輯器" class="headerlink" title="連結遊戲與編輯器"></a>連結遊戲與編輯器</h1><p>接著要設定遊戲與編輯器的連結</p>
+<ol>
+<li>在 Steam 中啟動 Tabletop Simulator，並開啟任意一款遊戲（步驟為：<code>Create</code>、<code>Singleplayer</code>、<code>Classic/DLC/Workshop</code>、挑選遊戲）。</li>
+<li>打開 VSCode 時，Tabletop Simulator Lua 套件會自動辨識遊戲所在的資料夾（在 Windows 預設為 <code>%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</code>），將遊戲腳本 (<code>*.lua</code>)和設置檔 (<code>.xml</code>) 從遊戲儲存檔 (<code>*.json</code>) 獨立出來，並且放置到暫存資料夾中（預設為 <code>%UserProfile%\AppData\Local\Temp\TabletopSimulator\Tabletop Simulator Lua</code>。</li>
+<li>如果套件沒有自動更新或是想要更換其他遊戲時，可以鍵入 <code>Ctrl</code>+<code>Alt</code>+<code>L</code> 更新連結。</li>
+</ol>
+<h1 id="編輯遊戲腳本"><a href="#編輯遊戲腳本" class="headerlink" title="編輯遊戲腳本"></a>編輯遊戲腳本</h1><p>現在，我們已經可以在 VSCode 當中編輯遊戲腳本了。Lua 腳本是遊戲儲存檔的一部份，而遊戲儲存檔則是一個 <code>JSON</code> 檔，記錄了啟動遊戲所需的所有元素。Tabletop Simulator Lua 的功能即是從儲存檔中擷取 Lua 腳本，並且轉換為適合閱讀與編輯的格式。</p>
+<p>編輯完成後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 儲存並重啟腳本。此時，Tabletop Simulator 會將腳本變動更新到遊戲儲存檔，讓遊戲呈現腳本所做的變動。</p>
+<p>如果希望在編輯腳本的同時能觀察遊戲畫面，有兩種方式可以達成：</p>
+<p>首先，將 Tabletop Simulator 設定為視窗模式（<code>Menu</code>、<code>Configuration</code>、<code>Graphics</code>、取消勾選 <code>Fullscreen</code>）。</p>
+<ul>
+<li>使用 Windows 視窗分割功能 （<code>Win</code> + <code>←</code>&#x2F;<code>→</code>&#x2F;<code>↑</code>），同時陳列編輯器與遊戲視窗。</li>
+<li>下載 Windows PowerToys，這是一個功能強大的 Windows 工具集，其中包含了能將遊戲視窗固定在螢幕上的功能。(<a href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top">always on top feature</a>)</li>
+</ul>
+<h1 id="建立專案資料夾"><a href="#建立專案資料夾" class="headerlink" title="建立專案資料夾"></a>建立專案資料夾</h1><p>由於無法指定 Tabletop Simulator 遊戲儲存檔的存放位置，所以想要進行版本控管或專案管理時需要一些權變措施。</p>
+<ol>
+<li>首先，建立一個新的專案資料夾，例如命名為 <code>project/</code>。專案資料夾的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br></pre></td></tr></table></figure></li>
+<li>再次開啟 Tabletop Simulator，選擇任意遊戲並儲存。遊戲會自動建立包含遊戲所有設定與資訊的 JSON 儲存檔 (<code>TS_Save_*.json</code>)，並附上一張遊戲截圖 (<code>TS_Save_*.jpg</code>)。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>由於 Tabletop Simulator 並未提供選擇遊戲儲存檔位置的選項，我們可以先將儲存檔和截圖檔案移至專案資料夾，以便之後進行版本控管。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>接下來，在 Tabletop Simulator 的資料夾內建立一個指向專案資料夾的軟連結，以確保儲存檔可以在遊戲的載入遊戲清單中被找到。由於軟連結會連結到原始檔案，因此我們可以透過軟連結對原始檔案進行修改，並將變動同步到遊戲中。（Windows 系統在 cmd 當中使用 <a href="https://learn.microsoft.com/zh-tw/windows-server/administration/windows-commands/mklink">mklink 建立軟連結</a>） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- project/ -&gt; /path/to/project/</span><br></pre></td></tr></table></figure></li>
+<li>再次開啟 VSCode 並啟動 Tabletop Simulator Lua 套件。此時 VSCode 的探索欄應該會出現 Tabletop Simulator Lua 資料夾以及由套件從遊戲儲存檔中提取出來的 Lua 腳本。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br></pre></td></tr></table></figure></li>
+<li>將專案資料夾加入 VSCode 的工作空間：選擇 <code>File</code> → <code>Add Folder to Workspace</code>，然後選擇專案資料夾。此時，探索欄的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>在專案資料夾中建立需要的檔案或資料夾，例如 <code>src/</code>（用來儲存遊戲腳本）。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br><span class="line">|- src\</span><br><span class="line">    |- script1.lua</span><br><span class="line">    |- script2.lua</span><br></pre></td></tr></table></figure></li>
+<li>接著開啟 <code>Global.-*.lua</code>，加入以下命令以指定要導入的腳本。由於套件會自動在工作空間的資料夾尋找副檔名為 <code>.ttslua</code>和<code>.lua</code> 的檔案，所以呼叫時就不需要加入副檔名了。 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script1&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script2&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>現在，已經成功設定 Tabletop Simulator 的 Lua 開發環境，也將遊戲依照專案資料夾的規劃納入版本控管，可以按照自己的習慣開發遊戲腳本了。</p>
+<p>只是要記得在修改腳本或遊戲設定後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 以同步變動到遊戲儲存檔中，也不要忘記在新增腳本時更新導入的指令。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://tts-vscode.rolandostar.com/">TTS VSCode Docs</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/27">Require and Path</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/21">Best way to commit the main json file?</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/20">Get&#x2F;Send LUA scripts to&#x2F;from workspace folder</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>programming</category>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>lua</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>The Door into Astrobiology | 天文生物學入門資源</title>
+    <url>/the-door-into-astrobiology/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>天文生物學（Astrobiology）是研究生命在宇宙中形成、演化和分布的跨領域學科。由於至今只在地球上發現生物，所以眼下課題就是釐清形成地球生命的機制與先決條件，欲達成這目標不僅得追溯組成生物的原料來源，還需了解有哪些因素影響適居環境的構成，並從演化和地質證據推敲無機物轉變為生物的過程。</p>
+<p>利用前述知識，研究者得以探討太陽系其他天體存在生命的可能，當今最具希望者無疑是我們的鄰居火星，不過類木行星的衛星，例如歐羅巴、泰坦，也有孕育生命的潛力。倘若能在這些迥異的環境中發現生命，它將成為地球生命的對照組，有助於釐清「生命是什麼？」這類問題，也會擴張對生命起源條件的想像。目前歐洲和美國太空總署皆有探索生命跡象的太空任務，至於迄今人類科技水準仍無法到達的遙遠恆星系統，則有賴天文觀測及光譜分析技術去尋找生命存在的間接證據。</p>
+<p>總而言之，天文生物學不只是天文學加上生物學，它集結了宇宙學、演化學、地球科學、資訊科學、生物化學、比較行星學、分子生物學……等等無數學科，研究對象從五微米大的細胞到十萬光年長的星河，從宇宙爆發到生命誕生。因此，無論喜歡哪種尺度、身懷哪種學術專業，只要想探索生命起源的終極問題，總能在其中找到安身立命的地方。</p>
+<p>本文整理了有關天文生物學（Astrobiology）的書籍、線上課、演講等學習資源，並依其內容劃分為通論、生命起源、搜索地外生命、科學史四類，歡迎大家留言補充。</p>
+<span id="more"></span>
+<h1 id="科普書籍"><a href="#科普書籍" class="headerlink" title="科普書籍"></a>科普書籍</h1><h2 id="通論"><a href="#通論" class="headerlink" title="通論"></a>通論</h2><ul>
+<li>田村元秀 (2023) [《天文生物學超入門》] (<a href="https://www.books.com.tw/products/0010968407?sloc=main">https://www.books.com.tw/products/0010968407?sloc=main</a>) [台灣東販]</li>
+<li>Jeffrey Bennett &amp; Seth Shostak (2016)：<a href="https://www.books.com.tw/products/CN11331116">《宇宙中的生命》</a> [機械工業]（簡）</li>
+<li>Gerda Horneck &amp; 莊逢源 (2010)：<a href="https://www.books.com.tw/products/CN10159991">《宇宙生物學》</a> [中國宇航]（簡）</li>
+<li>Peter D. Ward &amp; Donald Brownlee (2017)：<a href="https://www.books.com.tw/products/0010741618">《寂寞的地球：宇宙唯一有複雜生命的行星》</a> [貓頭鷹]</li>
+<li>Michael William Ovenden (1964)：<a href="https://www.amazon.com/Universe-Science-Study-Michael-Ovenden/dp/0435550292">《宇宙中的生命》</a> [徐氏]</li>
+</ul>
+<h2 id="生命起源"><a href="#生命起源" class="headerlink" title="生命起源"></a>生命起源</h2><ul>
+<li>Sir Paul Nurse (2021)：<a href="https://www.books.com.tw/products/0010909520?sloc=main">《生命之鑰》</a> [三采]</li>
+<li>Addy Pross (2018)：<a href="https://www.books.com.tw/products/CN11604089">《生命是什麼：40億年生命史詩的開端》</a> [中信]（簡）</li>
+<li>王立銘 (2018)：<a href="https://www.books.com.tw/products/CN11599405">《生命是什麼》</a> [人民郵電]（簡）</li>
+<li>Freeman Dyson (2017)：<a href="https://www.sanmin.com.tw/product/index/006310600">《生命的起源》</a> [浙江大學]（簡）</li>
+<li>Nick Lane (2016)：<a href="https://www.books.com.tw/products/0010730616">《生命之源：能量、演化與複雜生命的起源》</a> [貓頭鷹]</li>
+<li>Erwin Schrodinger (2016)：<a href="https://www.books.com.tw/products/0010708022">《薛丁格生命物理學講義：生命是什麼？》</a>[貓頭鷹]</li>
+<li>Christian de Duve (2011)：<a href="https://www.books.com.tw/products/0010516325">《生物決定論：人類一定會出現在地球上嗎？》</a> [左岸文化]</li>
+<li>李杰信 (2008)：<a href="https://www.sanmin.com.tw/Product/Index/000791958">《生命的起始點：談生命起源》</a> [科學普及]（簡）</li>
+<li>A.G.Cairns-Smith (1995)：<a href="https://www.books.com.tw/products/CN10041905">《生命起源的七條線索》</a> [中國對外翻譯]（簡）</li>
+<li>Francis Crick (1993)：<a href="https://book.douban.com/subject/2420069/">《生命：起源和本質》</a> [科學普及]（簡）</li>
+</ul>
+<h2 id="尋找地外生命"><a href="#尋找地外生命" class="headerlink" title="尋找地外生命"></a>尋找地外生命</h2><ul>
+<li>Dara Oacute; Briain (2023)： <a href="https://www.books.com.tw/products/CN11895285">《真的有外星人嗎》</a> [中國紡織]（簡）</li>
+<li>Ben Miller (2022)： <a href="https://www.sanmin.com.tw/product/index/010759160">《外星人來了？》</a> [中國友誼]（簡）</li>
+<li>瀧澤美奈子 (2021)：<a href="https://www.sanmin.com.tw/product/index/010419542">《當天文學遇上生物學》</a> [機械工業]（簡）</li>
+<li>Lewis Dartnell (2021)：<a href="https://www.sanmin.com.tw/product/index/010408023">《人人都該懂的地外生命》</a> [浙江教育]（簡）</li>
+<li>李傑信 (2021)：<a href="http://《穿越4.7億公里的拜訪：追尋跟著水走的火星生命》">《穿越4.7億公里的拜訪：追尋跟著水走的火星生命》</a>[三民書局]</li>
+<li>Jon Willis (2018)：<a href="https://www.books.com.tw/products/CN11579783">《群星都是你們的世界》</a> [中信]（簡）</li>
+<li>Димитър Д. Съселов (2017)：<a href="https://www.books.com.tw/products/CN11465684">《超級地球上的生命》</a> [上海科學技術]（簡）</li>
+<li>Louisa Preston (2017)：<a href="https://www.books.com.tw/products/CN11440032">《地外生命探索之旅》</a> [中國計量]（簡）</li>
+<li>李炎 (2016)：<a href="https://www.sanmin.com.tw/product/index/006090615">《太空生物學》</a> [漢珍]</li>
+<li>Bignami G. (2013)：<a href="https://www.books.com.tw/products/CN11062152">《我們就是火星人：尋找宇宙中的地外生命》</a> [科學]（簡）</li>
+<li>李冰 (2011)：<a href="https://www.sanmin.com.tw/product/index/001680995">《尋找外星人》</a> [北京師大]（簡）</li>
+<li>Donald Goldsmith &amp; Tobias Owen (1999)：<a href="https://www.amazon.co.jp/-/en/Donald-Goldsmith/dp/0201569493">《尋找宇宙生命》</a> [朗文]</li>
+</ul>
+<h2 id="科學史"><a href="#科學史" class="headerlink" title="科學史"></a>科學史</h2><ul>
+<li>Sara Seager (2021)：<a href="https://www.books.com.tw/products/0010882271">《尋找太陽系外的行星：天文學家莎拉．西格的愛與探索》</a>[天下文化]</li>
+<li>Ron Miller (2018)：<a href="https://www.books.com.tw/products/CN11600118">《外星生命簡史：人類400年地外生命探索與想象全記錄》</a> [北京聯合]（簡）</li>
+<li>Bill Mesler &amp; H. James Cleaves II (2017)：<a href="https://www.books.com.tw/products/CN11438003">《生命的誕生——我們究竟來自哪裡》</a> [人民郵電]（簡體）</li>
+<li>Lee Billings (2017)：<a href="https://www.books.com.tw/products/0010741343">《五十億年的孤寂：繁星間尋找生命》</a> [八旗文化]</li>
+<li>汪洁 (2017)：<a href="https://www.sanmin.com.tw/Product/index/006841620">《億萬年的孤獨：地外文明探尋史話》</a> [北京時代華文書局]（簡）</li>
+</ul>
+<h1 id="線上課程"><a href="#線上課程" class="headerlink" title="線上課程"></a>線上課程</h1><h2 id="通論-1"><a href="#通論-1" class="headerlink" title="通論"></a>通論</h2><ul>
+<li><a href="https://www.acoea.com/?utm_campaign=6647bde1-a2ee-4363-adb3-ecaa2466dff5&utm_source=so&utm_medium=mail&cid=ab330e43-978b-4e52-8b2a-7347df1555d3">“Introduction to Astrobiology”</a> [Amity University]（Centre of Excellence in Astrobiology）</li>
+<li><a href="https://astrobiovideo.com/en/">“Online Courses in Astrobiology”</a> [ International Astronomical Unio]</li>
+</ul>
+<h2 id="生命起源-1"><a href="#生命起源-1" class="headerlink" title="生命起源"></a>生命起源</h2><ul>
+<li>Bruce W. Fouke，<a href="https://www.coursera.org/learn/emergence-of-life">“Emergence of Life”</a> [The University of Illinois]（coursera）</li>
+<li>Jack Szostak，<a href="https://www.ibiology.org/speakers/jack-szostak/">“The Origin of Life on Earth”</a>（iBiology）</li>
+<li>Sarah Maurer &amp; Chris Kempes，<a href="https://www.complexityexplorer.org/courses/103-origins-of-life">“Origins Of Life”</a> [Santa fe institute]（Complexity Explorer）</li>
+</ul>
+<h2 id="尋找地外生命-1"><a href="#尋找地外生命-1" class="headerlink" title="尋找地外生命"></a>尋找地外生命</h2><ul>
+<li>Charles Cockell，<a href="https://www.coursera.org/learn/astrobiology">“Astrobiology and the Search for Extraterrestrial Life”</a> [The University of Edinburgh]（coursera）</li>
+<li>Charles Cockell， <a href="https://www.youtube.com/channel/UCBTwJSnAqZZczK7stBaYq5w/playlists">“Life in the Universe – the pandemic series”</a>（Youtube）</li>
+<li>Chris Impey，<a href="https://www.coursera.org/learn/astrobiology-exploring-other-worlds#syllabus">“Astrobiology: Exploring Other Worlds”</a> [The University of Arizona]（coursera）</li>
+<li>David Spergel，<a href="https://www.coursera.org/learn/life-on-other-planets">“Imagining Other Earths”</a> [Princeton University]（coursera）</li>
+<li>Lynn Rothschild，<a href="https://cosmolearning.org/courses/astrobiology-and-space-exploration">“Astrobiology and Space Exploration”</a> [Stanford University]（CosmoLearning）</li>
+<li>Димитър Д. Съселов，<a href="https://www.edx.org/course/super-earths-and-life">“Super-Earths and Life”</a> [Harvard University]（edX）</li>
+</ul>
+<h1 id="演講"><a href="#演講" class="headerlink" title="演講"></a>演講</h1><h2 id="通論-2"><a href="#通論-2" class="headerlink" title="通論"></a>通論</h2><p>待補</p>
+<h2 id="生命起源-2"><a href="#生命起源-2" class="headerlink" title="生命起源"></a>生命起源</h2><ul>
+<li>Christoph Adami，<a href="https://www.ted.com/talks/christophe_adami_finding_life_we_can_t_imagine?language=zh-tw">〈尋找難以想像的生命〉</a>[TEDxUIUC]</li>
+<li>Lee Cronin，<a href="https://www.ted.com/talks/lee_cronin_making_matter_come_alive?language=zh-tw">〈讓物質變活〉</a>[TEDGlobal]</li>
+<li>Martin Hanczyc，<a href="https://www.ted.com/talks/martin_hanczyc_the_line_between_life_and_not_life?language=zh-tw">〈生命與非生命的界線〉</a>[TEDSalon London]</li>
+<li>Nathalie Cabrol，<a href="https://www.ted.com/talks/nathalie_cabrol_how_mars_might_hold_the_secret_to_the_origin_of_life?language=zh-tw">〈探秘火星，解開地球生命之謎〉</a>[TED]</li>
+</ul>
+<h2 id="尋找地外生命-2"><a href="#尋找地外生命-2" class="headerlink" title="尋找地外生命"></a>尋找地外生命</h2><ul>
+<li>Aomawa Shields，<a href="https://www.ted.com/talks/aomawa_shields_how_we_ll_find_life_on_other_planets?language=zh-tw">〈我們如何尋找存在於另一顆行星上的生命〉</a>[TED]</li>
+<li>Carolyn Porco，<a href="https://www.ted.com/talks/carolyn_porco_could_a_saturn_moon_harbor_life?language=zh-tw">〈土星的衛星可能有生命存在嗎？〉</a>[TED]</li>
+<li>Dave Brain，<a href="https://www.ted.com/talks/dave_brain_what_a_planet_needs_to_sustain_life/transcript?language=zh-tw">〈行星維持生命存在的要素〉</a>[TEDxBoulder]</li>
+<li>Freeman Dyson，<a href="https://www.ted.com/talks/freeman_dyson_says_let_s_look_for_life_in_the_outer_solar_system?language=zh-tw">〈在太陽系外圍找尋生命〉</a>[TED]</li>
+<li>Garik Israelian，<a href="https://www.ted.com/talks/garik_israelian_what_s_inside_a_star">〈How spectroscopy could reveal alien life〉</a>[TEDGlobal]</li>
+<li>James Green，<a href="https://www.ted.com/talks/james_green_3_moons_and_a_planet_that_could_have_alien_life?language=zh-tw">〈可能有生命存在的一個行星和三個衛星〉</a>[TED Talks Live]</li>
+<li>Lucianne Walkowicz，<a href="https://www.ted.com/talks/lucianne_walkowicz_finding_planets_around_other_stars">〈Finding planets around other stars〉</a>[TEDGlobal]</li>
+<li>Penelope Boston，<a href="https://www.ted.com/talks/penelope_boston?language=zh-tw">〈火星可能有生命存在〉</a>[TED]</li>
+<li>Sara Seager，<a href="https://www.ted.com/talks/sara_seager_the_search_for_planets_beyond_our_solar_system/transcript?language=zh-tw">〈尋找太陽系外的行星〉</a>[TED]</li>
+<li>Seth Shostak，<a href="https://www.ted.com/talks/seth_shostak_et_is_probably_out_there_get_ready?language=zh-tw">〈準備好，ET (可能) 就在那裡〉</a>[TEDxSanJoseCA]</li>
+<li>Tabetha Boyajian，<a href="https://www.ted.com/talks/tabetha_boyajian_the_most_mysterious_star_in_the_universe?language=zh-tw">〈宇宙中最神秘的一顆星〉</a>[TED]</li>
+<li>Димитър Д. Съселов，<a href="https://www.ted.com/talks/dimitar_sasselov_how_we_found_hundreds_of_potential_earth_like_planets/transcript?language=zh-tw">〈發現數百顆類似地球的行星〉</a>[TEDGlobal]</li>
+</ul>
+<h2 id="科學史-1"><a href="#科學史-1" class="headerlink" title="科學史"></a>科學史</h2><ul>
+<li>Jill Tarter，<a href="https://www.ted.com/talks/jill_tarter_s_call_to_join_the_seti_search/transcript?language=zh-tw">〈加入SETI計劃〉</a>[TED]</li>
+</ul>
+<h1 id="知識普及網站"><a href="#知識普及網站" class="headerlink" title="知識普及網站"></a>知識普及網站</h1><ul>
+<li><a href="https://www.facebook.com/Abiogenesis-262675454086715/">Abiogenesis</a></li>
+<li><a href="https://www.facebook.com/Abiogenesis-Hall-of-Fame-138681233223461/">Abiogenesis Hall of Fame</a></li>
+<li><a href="https://www.astrobio.net/">Astrobiology Magazine</a></li>
+<li><a href="http://astrobiology.com/">Astrobiology Web</a></li>
+<li><a href="https://www.facebook.com/Life-the-Origin-of-245683669160907/">Life, the Origin of</a></li>
+<li><a href="https://www.facebook.com/Origin-of-Life-293514407692658/">Origin of Life</a></li>
+<li><a href="https://www.zhihu.com/column/gswxzt">古生物新聞</a></li>
+</ul>
+<h1 id="學術機構"><a href="#學術機構" class="headerlink" title="學術機構"></a>學術機構</h1><h2 id="研究單位"><a href="#研究單位" class="headerlink" title="研究單位"></a>研究單位</h2><ul>
+<li><a href="https://www.bmsis.org/">Blue Marble Space Institute of Science</a></li>
+<li><a href="https://cool.gatech.edu/">Center for the Origin Of Life</a> [Georgia Institute of Technology]</li>
+<li><a href="http://www.elsi.jp/en/">Earth-Life Science Institute</a> [Tokyo Institute of Technology]</li>
+<li><a href="https://www.emergence-of-life.de/index.html">Emergence of Life</a></li>
+<li><a href="https://www.originscenter.nl/">Origins Center</a> [University of Groningen]</li>
+<li><a href="https://origins.harvard.edu/">Origins of Life Initiative</a> [Harvard University]</li>
+<li><a href="https://www.simonsfoundation.org/life-sciences/origins-of-life/simons-collaboration-on-the-origins-of-life/">The Simons Collaboration on the Origins of Life</a> [Simons Foundation]</li>
+</ul>
+<h2 id="社群與學會"><a href="#社群與學會" class="headerlink" title="社群與學會"></a>社群與學會</h2><ul>
+<li><a href="https://www.facebook.com/groups/2221810485/">Astrobiology Club</a> [Facebook club]</li>
+<li><a href="https://astrobiologysociety.org/">Astrobiology Society of Britain</a></li>
+<li><a href="https://saganet.ning.com/">Social Action for a Grassroots Astrobiology Network (SAGANet)</a></li>
+<li><a href="http://issol.org/">International Society for the Study of the Origin of Life (ISSOL)</a></li>
+<li><a href="https://www.facebook.com/groups/515811491814739/">Virtual Astrobiology Society</a> [Facebook club]</li>
+</ul>
+<h2 id="研討會"><a href="#研討會" class="headerlink" title="研討會"></a>研討會</h2><ul>
+<li><a href="https://www.abgradcon.org/">Astrobiology Graduate Conference</a></li>
+<li><a href="https://connect.agu.org/abscicon/home">Astrobiology Science Conference</a></li>
+<li>Biennial European Astrobiology Conference</li>
+<li><a href="https://issol.org/meetings/">International Conference on the Origin of Life</a></li>
+<li><a href="https://www.grc.org/origins-of-life-conference/">Origins of Life Gordon Research Conference</a></li>
+<li><a href="https://indico.physik.uni-muenchen.de/event/63/">Molecular Origins of Life</a>, Munich</li>
+</ul>
+<h1 id="研究中心與學術合作網路"><a href="#研究中心與學術合作網路" class="headerlink" title="研究中心與學術合作網路"></a>研究中心與學術合作網路</h1><h2 id="亞洲及大洋洲"><a href="#亞洲及大洋洲" class="headerlink" title="亞洲及大洋洲"></a>亞洲及大洋洲</h2><ul>
+<li><a href="https://www.aca.unsw.edu.au/">Australian Centre for Astrobiology</a></li>
+<li><a href="http://abc-nins.jp/en/">Astrobiology Center</a> (in Japan)</li>
+<li><a href="https://astrobiologyindia.in/">Astrobiology India</a></li>
+<li><a href="https://www.facebook.com/AstrobioPak/">Astrobiology Network of Pakistan</a></li>
+<li><a href="https://www.acoea.com/">Centre of Excellence in Astrobiology</a> (in India)</li>
+<li><a href="https://logos.ls.toyaku.ac.jp/~astrobiology-japan/en/">Japan Astrobiology Network</a></li>
+</ul>
+<h2 id="美洲"><a href="#美洲" class="headerlink" title="美洲"></a>美洲</h2><ul>
+<li><a href="https://astrobiology.nasa.gov/">Astrobiology at NASA</a></li>
+</ul>
+<h2 id="歐洲"><a href="#歐洲" class="headerlink" title="歐洲"></a>歐洲</h2><ul>
+<li><a href="http://www.eana-net.eu/">European Astrobiology Network Association (EANA)</a></li>
+<li><a href="http://life-origins.com/">life-origins.com</a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="https://oolen.org/">Origin of Life Early-career Network (OoLEN)</a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>Vim｜Vimium，學習 Vim 的新途徑</title>
     <url>/start-learning-vim-from-vimium/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb">Vimium</a> 是 Chrome 的一款擴充套件，它借鑒了 Vim 的鍵位設計與操作邏輯，讓用戶只需要鍵盤便能執行分頁管理、連結點擊與頁面瀏覽等操作。</p>
@@ -3565,203 +3839,6 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>vim</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
-    <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
-<p>然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。</p>
-<span id="more"></span>
-
-<h1 id="必要軟體安裝與設定"><a href="#必要軟體安裝與設定" class="headerlink" title="必要軟體安裝與設定"></a>必要軟體安裝與設定</h1><p>首先，我們要完成必要軟體的安裝與設定。</p>
-<ol>
-<li>安裝 Steam 並購買 <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop simulator</a>。</li>
-<li>安裝 <a href="https://code.visualstudio.com/">VSCode</a>。雖然官方推薦的 Lua 開發環境是 Atom，但 VSCode 的功能更加強大，近幾年也比較廣泛被使用（參考 <a href="https://github.blog/2022-06-08-sunsetting-atom/">Github 停止支援 ATOM IDE 的新聞</a>）。</li>
-<li>在 VSCode 當中安裝 <a href="https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua">Tabletop Simulator Lua</a> 套件。這款套件能從遊戲儲存檔擷取 Tabletop Simulator 的 Lua 腳本，讓我們直接能在 VSCode 中開發，並享有自動補全、檔案瀏覽以及其他擴充套件的功能。</li>
-</ol>
-<h1 id="連結遊戲與編輯器"><a href="#連結遊戲與編輯器" class="headerlink" title="連結遊戲與編輯器"></a>連結遊戲與編輯器</h1><p>接著要設定遊戲與編輯器的連結</p>
-<ol>
-<li>在 Steam 中啟動 Tabletop Simulator，並開啟任意一款遊戲（步驟為：<code>Create</code>、<code>Singleplayer</code>、<code>Classic/DLC/Workshop</code>、挑選遊戲）。</li>
-<li>打開 VSCode 時，Tabletop Simulator Lua 套件會自動辨識遊戲所在的資料夾（在 Windows 預設為 <code>%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</code>），將遊戲腳本 (<code>*.lua</code>)和設置檔 (<code>.xml</code>) 從遊戲儲存檔 (<code>*.json</code>) 獨立出來，並且放置到暫存資料夾中（預設為 <code>%UserProfile%\AppData\Local\Temp\TabletopSimulator\Tabletop Simulator Lua</code>。</li>
-<li>如果套件沒有自動更新或是想要更換其他遊戲時，可以鍵入 <code>Ctrl</code>+<code>Alt</code>+<code>L</code> 更新連結。</li>
-</ol>
-<h1 id="編輯遊戲腳本"><a href="#編輯遊戲腳本" class="headerlink" title="編輯遊戲腳本"></a>編輯遊戲腳本</h1><p>現在，我們已經可以在 VSCode 當中編輯遊戲腳本了。Lua 腳本是遊戲儲存檔的一部份，而遊戲儲存檔則是一個 <code>JSON</code> 檔，記錄了啟動遊戲所需的所有元素。Tabletop Simulator Lua 的功能即是從儲存檔中擷取 Lua 腳本，並且轉換為適合閱讀與編輯的格式。</p>
-<p>編輯完成後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 儲存並重啟腳本。此時，Tabletop Simulator 會將腳本變動更新到遊戲儲存檔，讓遊戲呈現腳本所做的變動。</p>
-<p>如果希望在編輯腳本的同時能觀察遊戲畫面，有兩種方式可以達成：</p>
-<p>首先，將 Tabletop Simulator 設定為視窗模式（<code>Menu</code>、<code>Configuration</code>、<code>Graphics</code>、取消勾選 <code>Fullscreen</code>）。</p>
-<ul>
-<li>使用 Windows 視窗分割功能 （<code>Win</code> + <code>←</code>&#x2F;<code>→</code>&#x2F;<code>↑</code>），同時陳列編輯器與遊戲視窗。</li>
-<li>下載 Windows PowerToys，這是一個功能強大的 Windows 工具集，其中包含了能將遊戲視窗固定在螢幕上的功能。(<a href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top">always on top feature</a>)</li>
-</ul>
-<h1 id="建立專案資料夾"><a href="#建立專案資料夾" class="headerlink" title="建立專案資料夾"></a>建立專案資料夾</h1><p>由於無法指定 Tabletop Simulator 遊戲儲存檔的存放位置，所以想要進行版本控管或專案管理時需要一些權變措施。</p>
-<ol>
-<li>首先，建立一個新的專案資料夾，例如命名為 <code>project/</code>。專案資料夾的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br></pre></td></tr></table></figure></li>
-<li>再次開啟 Tabletop Simulator，選擇任意遊戲並儲存。遊戲會自動建立包含遊戲所有設定與資訊的 JSON 儲存檔 (<code>TS_Save_*.json</code>)，並附上一張遊戲截圖 (<code>TS_Save_*.jpg</code>)。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>由於 Tabletop Simulator 並未提供選擇遊戲儲存檔位置的選項，我們可以先將儲存檔和截圖檔案移至專案資料夾，以便之後進行版本控管。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>接下來，在 Tabletop Simulator 的資料夾內建立一個指向專案資料夾的軟連結，以確保儲存檔可以在遊戲的載入遊戲清單中被找到。由於軟連結會連結到原始檔案，因此我們可以透過軟連結對原始檔案進行修改，並將變動同步到遊戲中。（Windows 系統在 cmd 當中使用 <a href="https://learn.microsoft.com/zh-tw/windows-server/administration/windows-commands/mklink">mklink 建立軟連結</a>） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- project/ -&gt; /path/to/project/</span><br></pre></td></tr></table></figure></li>
-<li>再次開啟 VSCode 並啟動 Tabletop Simulator Lua 套件。此時 VSCode 的探索欄應該會出現 Tabletop Simulator Lua 資料夾以及由套件從遊戲儲存檔中提取出來的 Lua 腳本。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br></pre></td></tr></table></figure></li>
-<li>將專案資料夾加入 VSCode 的工作空間：選擇 <code>File</code> → <code>Add Folder to Workspace</code>，然後選擇專案資料夾。此時，探索欄的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>在專案資料夾中建立需要的檔案或資料夾，例如 <code>src/</code>（用來儲存遊戲腳本）。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br><span class="line">|- src\</span><br><span class="line">    |- script1.lua</span><br><span class="line">    |- script2.lua</span><br></pre></td></tr></table></figure></li>
-<li>接著開啟 <code>Global.-*.lua</code>，加入以下命令以指定要導入的腳本。由於套件會自動在工作空間的資料夾尋找副檔名為 <code>.ttslua</code>和<code>.lua</code> 的檔案，所以呼叫時就不需要加入副檔名了。 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script1&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script2&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>現在，已經成功設定 Tabletop Simulator 的 Lua 開發環境，也將遊戲依照專案資料夾的規劃納入版本控管，可以按照自己的習慣開發遊戲腳本了。</p>
-<p>只是要記得在修改腳本或遊戲設定後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 以同步變動到遊戲儲存檔中，也不要忘記在新增腳本時更新導入的指令。</p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
-<li><a href="https://tts-vscode.rolandostar.com/">TTS VSCode Docs</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/27">Require and Path</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/21">Best way to commit the main json file?</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/20">Get&#x2F;Send LUA scripts to&#x2F;from workspace folder</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>programming</category>
-        <category>tools</category>
-      </categories>
-      <tags>
-        <tag>lua</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>The Door into Astrobiology | 天文生物學入門資源</title>
-    <url>/the-door-into-astrobiology/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>天文生物學（Astrobiology）是研究生命在宇宙中形成、演化和分布的跨領域學科。由於至今只在地球上發現生物，所以眼下課題就是釐清形成地球生命的機制與先決條件，欲達成這目標不僅得追溯組成生物的原料來源，還需了解有哪些因素影響適居環境的構成，並從演化和地質證據推敲無機物轉變為生物的過程。</p>
-<p>利用前述知識，研究者得以探討太陽系其他天體存在生命的可能，當今最具希望者無疑是我們的鄰居火星，不過類木行星的衛星，例如歐羅巴、泰坦，也有孕育生命的潛力。倘若能在這些迥異的環境中發現生命，它將成為地球生命的對照組，有助於釐清「生命是什麼？」這類問題，也會擴張對生命起源條件的想像。目前歐洲和美國太空總署皆有探索生命跡象的太空任務，至於迄今人類科技水準仍無法到達的遙遠恆星系統，則有賴天文觀測及光譜分析技術去尋找生命存在的間接證據。</p>
-<p>總而言之，天文生物學不只是天文學加上生物學，它集結了宇宙學、演化學、地球科學、資訊科學、生物化學、比較行星學、分子生物學……等等無數學科，研究對象從五微米大的細胞到十萬光年長的星河，從宇宙爆發到生命誕生。因此，無論喜歡哪種尺度、身懷哪種學術專業，只要想探索生命起源的終極問題，總能在其中找到安身立命的地方。</p>
-<p>本文整理了有關天文生物學（Astrobiology）的書籍、線上課、演講等學習資源，並依其內容劃分為通論、生命起源、搜索地外生命、科學史四類，歡迎大家留言補充。</p>
-<span id="more"></span>
-<h1 id="科普書籍"><a href="#科普書籍" class="headerlink" title="科普書籍"></a>科普書籍</h1><h2 id="通論"><a href="#通論" class="headerlink" title="通論"></a>通論</h2><ul>
-<li>田村元秀 (2023) [《天文生物學超入門》] (<a href="https://www.books.com.tw/products/0010968407?sloc=main">https://www.books.com.tw/products/0010968407?sloc=main</a>) [台灣東販]</li>
-<li>Jeffrey Bennett &amp; Seth Shostak (2016)：<a href="https://www.books.com.tw/products/CN11331116">《宇宙中的生命》</a> [機械工業]（簡）</li>
-<li>Gerda Horneck &amp; 莊逢源 (2010)：<a href="https://www.books.com.tw/products/CN10159991">《宇宙生物學》</a> [中國宇航]（簡）</li>
-<li>Peter D. Ward &amp; Donald Brownlee (2017)：<a href="https://www.books.com.tw/products/0010741618">《寂寞的地球：宇宙唯一有複雜生命的行星》</a> [貓頭鷹]</li>
-<li>Michael William Ovenden (1964)：<a href="https://www.amazon.com/Universe-Science-Study-Michael-Ovenden/dp/0435550292">《宇宙中的生命》</a> [徐氏]</li>
-</ul>
-<h2 id="生命起源"><a href="#生命起源" class="headerlink" title="生命起源"></a>生命起源</h2><ul>
-<li>Sir Paul Nurse (2021)：<a href="https://www.books.com.tw/products/0010909520?sloc=main">《生命之鑰》</a> [三采]</li>
-<li>Addy Pross (2018)：<a href="https://www.books.com.tw/products/CN11604089">《生命是什麼：40億年生命史詩的開端》</a> [中信]（簡）</li>
-<li>王立銘 (2018)：<a href="https://www.books.com.tw/products/CN11599405">《生命是什麼》</a> [人民郵電]（簡）</li>
-<li>Freeman Dyson (2017)：<a href="https://www.sanmin.com.tw/product/index/006310600">《生命的起源》</a> [浙江大學]（簡）</li>
-<li>Nick Lane (2016)：<a href="https://www.books.com.tw/products/0010730616">《生命之源：能量、演化與複雜生命的起源》</a> [貓頭鷹]</li>
-<li>Erwin Schrodinger (2016)：<a href="https://www.books.com.tw/products/0010708022">《薛丁格生命物理學講義：生命是什麼？》</a>[貓頭鷹]</li>
-<li>Christian de Duve (2011)：<a href="https://www.books.com.tw/products/0010516325">《生物決定論：人類一定會出現在地球上嗎？》</a> [左岸文化]</li>
-<li>李杰信 (2008)：<a href="https://www.sanmin.com.tw/Product/Index/000791958">《生命的起始點：談生命起源》</a> [科學普及]（簡）</li>
-<li>A.G.Cairns-Smith (1995)：<a href="https://www.books.com.tw/products/CN10041905">《生命起源的七條線索》</a> [中國對外翻譯]（簡）</li>
-<li>Francis Crick (1993)：<a href="https://book.douban.com/subject/2420069/">《生命：起源和本質》</a> [科學普及]（簡）</li>
-</ul>
-<h2 id="尋找地外生命"><a href="#尋找地外生命" class="headerlink" title="尋找地外生命"></a>尋找地外生命</h2><ul>
-<li>Dara Oacute; Briain (2023)： <a href="https://www.books.com.tw/products/CN11895285">《真的有外星人嗎》</a> [中國紡織]（簡）</li>
-<li>Ben Miller (2022)： <a href="https://www.sanmin.com.tw/product/index/010759160">《外星人來了？》</a> [中國友誼]（簡）</li>
-<li>瀧澤美奈子 (2021)：<a href="https://www.sanmin.com.tw/product/index/010419542">《當天文學遇上生物學》</a> [機械工業]（簡）</li>
-<li>Lewis Dartnell (2021)：<a href="https://www.sanmin.com.tw/product/index/010408023">《人人都該懂的地外生命》</a> [浙江教育]（簡）</li>
-<li>李傑信 (2021)：<a href="http://《穿越4.7億公里的拜訪：追尋跟著水走的火星生命》">《穿越4.7億公里的拜訪：追尋跟著水走的火星生命》</a>[三民書局]</li>
-<li>Jon Willis (2018)：<a href="https://www.books.com.tw/products/CN11579783">《群星都是你們的世界》</a> [中信]（簡）</li>
-<li>Димитър Д. Съселов (2017)：<a href="https://www.books.com.tw/products/CN11465684">《超級地球上的生命》</a> [上海科學技術]（簡）</li>
-<li>Louisa Preston (2017)：<a href="https://www.books.com.tw/products/CN11440032">《地外生命探索之旅》</a> [中國計量]（簡）</li>
-<li>李炎 (2016)：<a href="https://www.sanmin.com.tw/product/index/006090615">《太空生物學》</a> [漢珍]</li>
-<li>Bignami G. (2013)：<a href="https://www.books.com.tw/products/CN11062152">《我們就是火星人：尋找宇宙中的地外生命》</a> [科學]（簡）</li>
-<li>李冰 (2011)：<a href="https://www.sanmin.com.tw/product/index/001680995">《尋找外星人》</a> [北京師大]（簡）</li>
-<li>Donald Goldsmith &amp; Tobias Owen (1999)：<a href="https://www.amazon.co.jp/-/en/Donald-Goldsmith/dp/0201569493">《尋找宇宙生命》</a> [朗文]</li>
-</ul>
-<h2 id="科學史"><a href="#科學史" class="headerlink" title="科學史"></a>科學史</h2><ul>
-<li>Sara Seager (2021)：<a href="https://www.books.com.tw/products/0010882271">《尋找太陽系外的行星：天文學家莎拉．西格的愛與探索》</a>[天下文化]</li>
-<li>Ron Miller (2018)：<a href="https://www.books.com.tw/products/CN11600118">《外星生命簡史：人類400年地外生命探索與想象全記錄》</a> [北京聯合]（簡）</li>
-<li>Bill Mesler &amp; H. James Cleaves II (2017)：<a href="https://www.books.com.tw/products/CN11438003">《生命的誕生——我們究竟來自哪裡》</a> [人民郵電]（簡體）</li>
-<li>Lee Billings (2017)：<a href="https://www.books.com.tw/products/0010741343">《五十億年的孤寂：繁星間尋找生命》</a> [八旗文化]</li>
-<li>汪洁 (2017)：<a href="https://www.sanmin.com.tw/Product/index/006841620">《億萬年的孤獨：地外文明探尋史話》</a> [北京時代華文書局]（簡）</li>
-</ul>
-<h1 id="線上課程"><a href="#線上課程" class="headerlink" title="線上課程"></a>線上課程</h1><h2 id="通論-1"><a href="#通論-1" class="headerlink" title="通論"></a>通論</h2><ul>
-<li><a href="https://www.acoea.com/?utm_campaign=6647bde1-a2ee-4363-adb3-ecaa2466dff5&utm_source=so&utm_medium=mail&cid=ab330e43-978b-4e52-8b2a-7347df1555d3">“Introduction to Astrobiology”</a> [Amity University]（Centre of Excellence in Astrobiology）</li>
-<li><a href="https://astrobiovideo.com/en/">“Online Courses in Astrobiology”</a> [ International Astronomical Unio]</li>
-</ul>
-<h2 id="生命起源-1"><a href="#生命起源-1" class="headerlink" title="生命起源"></a>生命起源</h2><ul>
-<li>Bruce W. Fouke，<a href="https://www.coursera.org/learn/emergence-of-life">“Emergence of Life”</a> [The University of Illinois]（coursera）</li>
-<li>Jack Szostak，<a href="https://www.ibiology.org/speakers/jack-szostak/">“The Origin of Life on Earth”</a>（iBiology）</li>
-<li>Sarah Maurer &amp; Chris Kempes，<a href="https://www.complexityexplorer.org/courses/103-origins-of-life">“Origins Of Life”</a> [Santa fe institute]（Complexity Explorer）</li>
-</ul>
-<h2 id="尋找地外生命-1"><a href="#尋找地外生命-1" class="headerlink" title="尋找地外生命"></a>尋找地外生命</h2><ul>
-<li>Charles Cockell，<a href="https://www.coursera.org/learn/astrobiology">“Astrobiology and the Search for Extraterrestrial Life”</a> [The University of Edinburgh]（coursera）</li>
-<li>Charles Cockell， <a href="https://www.youtube.com/channel/UCBTwJSnAqZZczK7stBaYq5w/playlists">“Life in the Universe – the pandemic series”</a>（Youtube）</li>
-<li>Chris Impey，<a href="https://www.coursera.org/learn/astrobiology-exploring-other-worlds#syllabus">“Astrobiology: Exploring Other Worlds”</a> [The University of Arizona]（coursera）</li>
-<li>David Spergel，<a href="https://www.coursera.org/learn/life-on-other-planets">“Imagining Other Earths”</a> [Princeton University]（coursera）</li>
-<li>Lynn Rothschild，<a href="https://cosmolearning.org/courses/astrobiology-and-space-exploration">“Astrobiology and Space Exploration”</a> [Stanford University]（CosmoLearning）</li>
-<li>Димитър Д. Съселов，<a href="https://www.edx.org/course/super-earths-and-life">“Super-Earths and Life”</a> [Harvard University]（edX）</li>
-</ul>
-<h1 id="演講"><a href="#演講" class="headerlink" title="演講"></a>演講</h1><h2 id="通論-2"><a href="#通論-2" class="headerlink" title="通論"></a>通論</h2><p>待補</p>
-<h2 id="生命起源-2"><a href="#生命起源-2" class="headerlink" title="生命起源"></a>生命起源</h2><ul>
-<li>Christoph Adami，<a href="https://www.ted.com/talks/christophe_adami_finding_life_we_can_t_imagine?language=zh-tw">〈尋找難以想像的生命〉</a>[TEDxUIUC]</li>
-<li>Lee Cronin，<a href="https://www.ted.com/talks/lee_cronin_making_matter_come_alive?language=zh-tw">〈讓物質變活〉</a>[TEDGlobal]</li>
-<li>Martin Hanczyc，<a href="https://www.ted.com/talks/martin_hanczyc_the_line_between_life_and_not_life?language=zh-tw">〈生命與非生命的界線〉</a>[TEDSalon London]</li>
-<li>Nathalie Cabrol，<a href="https://www.ted.com/talks/nathalie_cabrol_how_mars_might_hold_the_secret_to_the_origin_of_life?language=zh-tw">〈探秘火星，解開地球生命之謎〉</a>[TED]</li>
-</ul>
-<h2 id="尋找地外生命-2"><a href="#尋找地外生命-2" class="headerlink" title="尋找地外生命"></a>尋找地外生命</h2><ul>
-<li>Aomawa Shields，<a href="https://www.ted.com/talks/aomawa_shields_how_we_ll_find_life_on_other_planets?language=zh-tw">〈我們如何尋找存在於另一顆行星上的生命〉</a>[TED]</li>
-<li>Carolyn Porco，<a href="https://www.ted.com/talks/carolyn_porco_could_a_saturn_moon_harbor_life?language=zh-tw">〈土星的衛星可能有生命存在嗎？〉</a>[TED]</li>
-<li>Dave Brain，<a href="https://www.ted.com/talks/dave_brain_what_a_planet_needs_to_sustain_life/transcript?language=zh-tw">〈行星維持生命存在的要素〉</a>[TEDxBoulder]</li>
-<li>Freeman Dyson，<a href="https://www.ted.com/talks/freeman_dyson_says_let_s_look_for_life_in_the_outer_solar_system?language=zh-tw">〈在太陽系外圍找尋生命〉</a>[TED]</li>
-<li>Garik Israelian，<a href="https://www.ted.com/talks/garik_israelian_what_s_inside_a_star">〈How spectroscopy could reveal alien life〉</a>[TEDGlobal]</li>
-<li>James Green，<a href="https://www.ted.com/talks/james_green_3_moons_and_a_planet_that_could_have_alien_life?language=zh-tw">〈可能有生命存在的一個行星和三個衛星〉</a>[TED Talks Live]</li>
-<li>Lucianne Walkowicz，<a href="https://www.ted.com/talks/lucianne_walkowicz_finding_planets_around_other_stars">〈Finding planets around other stars〉</a>[TEDGlobal]</li>
-<li>Penelope Boston，<a href="https://www.ted.com/talks/penelope_boston?language=zh-tw">〈火星可能有生命存在〉</a>[TED]</li>
-<li>Sara Seager，<a href="https://www.ted.com/talks/sara_seager_the_search_for_planets_beyond_our_solar_system/transcript?language=zh-tw">〈尋找太陽系外的行星〉</a>[TED]</li>
-<li>Seth Shostak，<a href="https://www.ted.com/talks/seth_shostak_et_is_probably_out_there_get_ready?language=zh-tw">〈準備好，ET (可能) 就在那裡〉</a>[TEDxSanJoseCA]</li>
-<li>Tabetha Boyajian，<a href="https://www.ted.com/talks/tabetha_boyajian_the_most_mysterious_star_in_the_universe?language=zh-tw">〈宇宙中最神秘的一顆星〉</a>[TED]</li>
-<li>Димитър Д. Съселов，<a href="https://www.ted.com/talks/dimitar_sasselov_how_we_found_hundreds_of_potential_earth_like_planets/transcript?language=zh-tw">〈發現數百顆類似地球的行星〉</a>[TEDGlobal]</li>
-</ul>
-<h2 id="科學史-1"><a href="#科學史-1" class="headerlink" title="科學史"></a>科學史</h2><ul>
-<li>Jill Tarter，<a href="https://www.ted.com/talks/jill_tarter_s_call_to_join_the_seti_search/transcript?language=zh-tw">〈加入SETI計劃〉</a>[TED]</li>
-</ul>
-<h1 id="知識普及網站"><a href="#知識普及網站" class="headerlink" title="知識普及網站"></a>知識普及網站</h1><ul>
-<li><a href="https://www.facebook.com/Abiogenesis-262675454086715/">Abiogenesis</a></li>
-<li><a href="https://www.facebook.com/Abiogenesis-Hall-of-Fame-138681233223461/">Abiogenesis Hall of Fame</a></li>
-<li><a href="https://www.astrobio.net/">Astrobiology Magazine</a></li>
-<li><a href="http://astrobiology.com/">Astrobiology Web</a></li>
-<li><a href="https://www.facebook.com/Life-the-Origin-of-245683669160907/">Life, the Origin of</a></li>
-<li><a href="https://www.facebook.com/Origin-of-Life-293514407692658/">Origin of Life</a></li>
-<li><a href="https://www.zhihu.com/column/gswxzt">古生物新聞</a></li>
-</ul>
-<h1 id="學術機構"><a href="#學術機構" class="headerlink" title="學術機構"></a>學術機構</h1><h2 id="研究單位"><a href="#研究單位" class="headerlink" title="研究單位"></a>研究單位</h2><ul>
-<li><a href="https://www.bmsis.org/">Blue Marble Space Institute of Science</a></li>
-<li><a href="https://cool.gatech.edu/">Center for the Origin Of Life</a> [Georgia Institute of Technology]</li>
-<li><a href="http://www.elsi.jp/en/">Earth-Life Science Institute</a> [Tokyo Institute of Technology]</li>
-<li><a href="https://www.emergence-of-life.de/index.html">Emergence of Life</a></li>
-<li><a href="https://www.originscenter.nl/">Origins Center</a> [University of Groningen]</li>
-<li><a href="https://origins.harvard.edu/">Origins of Life Initiative</a> [Harvard University]</li>
-<li><a href="https://www.simonsfoundation.org/life-sciences/origins-of-life/simons-collaboration-on-the-origins-of-life/">The Simons Collaboration on the Origins of Life</a> [Simons Foundation]</li>
-</ul>
-<h2 id="社群與學會"><a href="#社群與學會" class="headerlink" title="社群與學會"></a>社群與學會</h2><ul>
-<li><a href="https://www.facebook.com/groups/2221810485/">Astrobiology Club</a> [Facebook club]</li>
-<li><a href="https://astrobiologysociety.org/">Astrobiology Society of Britain</a></li>
-<li><a href="https://saganet.ning.com/">Social Action for a Grassroots Astrobiology Network (SAGANet)</a></li>
-<li><a href="http://issol.org/">International Society for the Study of the Origin of Life (ISSOL)</a></li>
-<li><a href="https://www.facebook.com/groups/515811491814739/">Virtual Astrobiology Society</a> [Facebook club]</li>
-</ul>
-<h2 id="研討會"><a href="#研討會" class="headerlink" title="研討會"></a>研討會</h2><ul>
-<li><a href="https://www.abgradcon.org/">Astrobiology Graduate Conference</a></li>
-<li><a href="https://connect.agu.org/abscicon/home">Astrobiology Science Conference</a></li>
-<li>Biennial European Astrobiology Conference</li>
-<li><a href="https://issol.org/meetings/">International Conference on the Origin of Life</a></li>
-<li><a href="https://www.grc.org/origins-of-life-conference/">Origins of Life Gordon Research Conference</a></li>
-<li><a href="https://indico.physik.uni-muenchen.de/event/63/">Molecular Origins of Life</a>, Munich</li>
-</ul>
-<h1 id="研究中心與學術合作網路"><a href="#研究中心與學術合作網路" class="headerlink" title="研究中心與學術合作網路"></a>研究中心與學術合作網路</h1><h2 id="亞洲及大洋洲"><a href="#亞洲及大洋洲" class="headerlink" title="亞洲及大洋洲"></a>亞洲及大洋洲</h2><ul>
-<li><a href="https://www.aca.unsw.edu.au/">Australian Centre for Astrobiology</a></li>
-<li><a href="http://abc-nins.jp/en/">Astrobiology Center</a> (in Japan)</li>
-<li><a href="https://astrobiologyindia.in/">Astrobiology India</a></li>
-<li><a href="https://www.facebook.com/AstrobioPak/">Astrobiology Network of Pakistan</a></li>
-<li><a href="https://www.acoea.com/">Centre of Excellence in Astrobiology</a> (in India)</li>
-<li><a href="https://logos.ls.toyaku.ac.jp/~astrobiology-japan/en/">Japan Astrobiology Network</a></li>
-</ul>
-<h2 id="美洲"><a href="#美洲" class="headerlink" title="美洲"></a>美洲</h2><ul>
-<li><a href="https://astrobiology.nasa.gov/">Astrobiology at NASA</a></li>
-</ul>
-<h2 id="歐洲"><a href="#歐洲" class="headerlink" title="歐洲"></a>歐洲</h2><ul>
-<li><a href="http://www.eana-net.eu/">European Astrobiology Network Association (EANA)</a></li>
-<li><a href="http://life-origins.com/">life-origins.com</a></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><a href="https://oolen.org/">Origin of Life Early-career Network (OoLEN)</a></li>
-</ul>
-]]></content>
   </entry>
   <entry>
     <title>科學溝通能力的重要性</title>
