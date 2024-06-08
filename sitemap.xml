@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/lewis-2004-moneyball/</loc>
+    
+    <lastmod>2024-06-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/nishi-2015-junior-baseball-coaching-book/</loc>
+    
+    <lastmod>2024-06-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/mishima-1951-natsukos-adventure/</loc>
     
     <lastmod>2024-06-08</lastmod>
@@ -695,7 +713,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/how-nature-contains-life-in-early-earth/</loc>
+    <loc>https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -704,7 +722,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/how-to-decide-max-mismatch-when-merging-paired-end-reads/</loc>
+    <loc>https://5uperb0y.com/how-nature-contains-life-in-early-earth/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -810,14 +828,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/communication/</loc>
+    <loc>https://5uperb0y.com/tags/reading/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/reading/</loc>
+    <loc>https://5uperb0y.com/tags/communication/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -917,13 +935,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/</loc>
-    <lastmod>2024-06-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/categories/astrobiology/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -938,14 +949,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/bioinformatics/</loc>
+    <loc>https://5uperb0y.com/categories/academic/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/writing/</loc>
+    <loc>https://5uperb0y.com/categories/bioinformatics/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -960,6 +971,13 @@
   
   <url>
     <loc>https://5uperb0y.com/categories/astrobiology/what-is-life/</loc>
+    <lastmod>2024-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/categories/academic/writing/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -994,14 +1012,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/astrobiology/origins-of-life/</loc>
+    <loc>https://5uperb0y.com/categories/bioinformatics/metagenomics/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/bioinformatics/metagenomics/</loc>
+    <loc>https://5uperb0y.com/categories/astrobiology/origins-of-life/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1029,14 +1047,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/sf/reading/</loc>
+    <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/programming/leetcode/</loc>
+    <loc>https://5uperb0y.com/categories/sf/reading/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
