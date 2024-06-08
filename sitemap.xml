@@ -677,7 +677,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/leetcode-1480-running-sum-of-1d-array/</loc>
+    <loc>https://5uperb0y.com/leetcode-1-two-sum/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -686,7 +686,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/leetcode-1-two-sum/</loc>
+    <loc>https://5uperb0y.com/leetcode-1480-running-sum-of-1d-array/</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -866,6 +866,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/tags/career/</loc>
+    <lastmod>2024-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/tags/vim/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -874,13 +881,6 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/tips-and-tricks/</loc>
-    <lastmod>2024-06-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/tags/career/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -973,14 +973,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/life/</loc>
+    <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/academic/mindset/</loc>
+    <loc>https://5uperb0y.com/categories/life/</loc>
     <lastmod>2024-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
