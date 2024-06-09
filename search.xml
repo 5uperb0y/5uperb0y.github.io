@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>常見的生物資訊軟體開發文件</title>
+    <url>/a-collection-of-essential-documents-for-bioinformatis-software/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
+<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
+<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
+<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
+<span id="more"></span>
+
+<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>內容</th>
+<th>額外受眾</th>
+<th>指引</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Issues</td>
+<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
+<td>專案經理</td>
+<td><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
+</tr>
+<tr>
+<td>Docstring &amp; Type hints</td>
+<td>描述程式模組的功能、參數與回傳資訊</td>
+<td>開發者</td>
+<td><a href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a href="https://peps.python.org/pep-0484/">PEP 484</a></td>
+</tr>
+<tr>
+<td>Code comments</td>
+<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
+<td>開發者</td>
+<td><a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
+</tr>
+<tr>
+<td>Built-in help</td>
+<td>軟體內建的用戶幫助訊息</td>
+<td>用戶</td>
+<td><a href="http://docopt.org/">docopt</a></td>
+</tr>
+<tr>
+<td>Commit messages</td>
+<td>摘要程式碼異動的內容、理由與背景</td>
+<td>開發者</td>
+<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
+</tr>
+<tr>
+<td>Pull requests</td>
+<td>簡述為滿足需求對應的軟體異動及其理據</td>
+<td>審查者</td>
+<td><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
+</tr>
+<tr>
+<td>README</td>
+<td>介紹專案目標、安裝使用與授權等入門資訊</td>
+<td>用戶</td>
+<td><a href="https://www.makeareadme.com/">Make a README</a></td>
+</tr>
+<tr>
+<td>CHANGELOG</td>
+<td>紀錄專案開發歷程與各版本更新內容</td>
+<td>用戶</td>
+<td><a href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
+</tr>
+</tbody></table>
+<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
+<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
+<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
+<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
+
+<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
+<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
+<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
+<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
+<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
+<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
+<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
+<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
+<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
+<ul>
+<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
+<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
+<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
+</ul>
+<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
+<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
+<p>常見的專案文件結構如下，例如 Python 的 <a href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
+<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
+<li><a href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
+<li><a href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
+<li><a href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
+<li><a href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>development</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>〈教育的烏托邦〉</title>
     <url>/5uperb0y-2016-utopian-education/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　夢臨市的天空是電腦的顏色，電腦死機的蔚藍。</p>
@@ -127,113 +237,17 @@
       </tags>
   </entry>
   <entry>
-    <title>常見的生物資訊軟體開發文件</title>
-    <url>/a-collection-of-essential-documents-for-bioinformatis-software/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
-<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
-<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
-<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
+    <title>bad interpreter: No such file or directory</title>
+    <url>/bad-interpreter-no-such-file-or-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
 <span id="more"></span>
 
-<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
-<table>
-<thead>
-<tr>
-<th>名稱</th>
-<th>內容</th>
-<th>額外受眾</th>
-<th>指引</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Issues</td>
-<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
-<td>專案經理</td>
-<td><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
-</tr>
-<tr>
-<td>Docstring &amp; Type hints</td>
-<td>描述程式模組的功能、參數與回傳資訊</td>
-<td>開發者</td>
-<td><a href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a href="https://peps.python.org/pep-0484/">PEP 484</a></td>
-</tr>
-<tr>
-<td>Code comments</td>
-<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
-<td>開發者</td>
-<td><a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
-</tr>
-<tr>
-<td>Built-in help</td>
-<td>軟體內建的用戶幫助訊息</td>
-<td>用戶</td>
-<td><a href="http://docopt.org/">docopt</a></td>
-</tr>
-<tr>
-<td>Commit messages</td>
-<td>摘要程式碼異動的內容、理由與背景</td>
-<td>開發者</td>
-<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
-</tr>
-<tr>
-<td>Pull requests</td>
-<td>簡述為滿足需求對應的軟體異動及其理據</td>
-<td>審查者</td>
-<td><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
-</tr>
-<tr>
-<td>README</td>
-<td>介紹專案目標、安裝使用與授權等入門資訊</td>
-<td>用戶</td>
-<td><a href="https://www.makeareadme.com/">Make a README</a></td>
-</tr>
-<tr>
-<td>CHANGELOG</td>
-<td>紀錄專案開發歷程與各版本更新內容</td>
-<td>用戶</td>
-<td><a href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
-</tr>
-</tbody></table>
-<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
-<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
-<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
-<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
-
-<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
-<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
-<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
-<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
-<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
-<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
-<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
-<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
-<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
-<ul>
-<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
-<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
-<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
-</ul>
-<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
-<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
-<p>常見的專案文件結構如下，例如 Python 的 <a href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
-<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
-<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
-<li><a href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
-<li><a href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
-<li><a href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
-<li><a href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
-</ul>
+<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
+<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
+<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
 ]]></content>
       <tags>
-        <tag>development</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -271,20 +285,6 @@
 ]]></content>
       <tags>
         <tag>astrobiology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>bad interpreter: No such file or directory</title>
-    <url>/bad-interpreter-no-such-file-or-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
-<span id="more"></span>
-
-<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
-<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
-<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -327,6 +327,31 @@
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <tags>
         <tag>what is life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROSALIND｜Counting DNA Nucleotides (DNA)</title>
+    <url>/counting-dna-nucleotides/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 DNA 字串，依照 “A”、”C”、”G”、”T” 的順序，印出四種鹼基符號的數量。</p>
+<blockquote>
+<p>Given: A DNA string s of length at most 1000 nt.</p>
+<p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/dna/">https://rosalind.info/problems/dna/</a>)</p>
+<span id="more"></span>
+
+<p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
+<p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 <em>dictionary</em> 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，要在輸出前調整順序。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    freq = &#123;<span class="string">&quot;A&quot;</span>: <span class="number">0</span>, <span class="string">&quot;T&quot;</span>: <span class="number">0</span>, <span class="string">&quot;C&quot;</span>: <span class="number">0</span>, <span class="string">&quot;G&quot;</span>: <span class="number">0</span>&#125;</span><br><span class="line">    <span class="keyword">for</span> nt <span class="keyword">in</span> dna:</span><br><span class="line">        freq[nt] = freq[nt] + <span class="number">1</span></span><br><span class="line">    output = <span class="string">&quot; &quot;</span>.join( <span class="built_in">str</span>(freq[nt]) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span> )</span><br><span class="line">    <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
+
+<p>也可以不自己寫迴圈，套用 python 的字串方法 <em>count()</em> 來統計特定鹼基的數量。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(<span class="built_in">str</span>(dna.count(nt)) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>shell script 要尋找字串也有許多寫法，其中一種做法是透過 grep -o 取得匹配的鹼基，再傳給 wc -l 計算列數（即字串中，指定鹼基符號的數量）。四種鹼基符號的統計值儲存於 array 並以空格間隔，以便輸出時辨識 array 各項目的數值。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">s=<span class="string">&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span></span><br><span class="line">d=()</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> A C G T;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    d+=$(<span class="built_in">echo</span> $(<span class="built_in">echo</span> <span class="variable">$s</span> | grep -o <span class="variable">$ch</span> | <span class="built_in">wc</span> -l) <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">printf</span>  <span class="string">&quot;<span class="variable">$&#123;d[@]&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
       </tags>
   </entry>
   <entry>
@@ -377,31 +402,6 @@
 <h2 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h2><p>bash 的作法較 python 和 R 簡潔，讀取字串，以 rev 反轉字串順序，再以 tr 替換互補鹼基等步驟可寫成一行。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dna=&quot;AAAACCCGGT&quot;</span><br><span class="line">echo &quot;$dna&quot;| rev | tr ATCG TAGC</span><br></pre></td></tr></table></figure>
 
-]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROSALIND｜Counting DNA Nucleotides (DNA)</title>
-    <url>/counting-dna-nucleotides/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 DNA 字串，依照 “A”、”C”、”G”、”T” 的順序，印出四種鹼基符號的數量。</p>
-<blockquote>
-<p>Given: A DNA string s of length at most 1000 nt.</p>
-<p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/dna/">https://rosalind.info/problems/dna/</a>)</p>
-<span id="more"></span>
-
-<p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
-<p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 <em>dictionary</em> 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，要在輸出前調整順序。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    freq = &#123;<span class="string">&quot;A&quot;</span>: <span class="number">0</span>, <span class="string">&quot;T&quot;</span>: <span class="number">0</span>, <span class="string">&quot;C&quot;</span>: <span class="number">0</span>, <span class="string">&quot;G&quot;</span>: <span class="number">0</span>&#125;</span><br><span class="line">    <span class="keyword">for</span> nt <span class="keyword">in</span> dna:</span><br><span class="line">        freq[nt] = freq[nt] + <span class="number">1</span></span><br><span class="line">    output = <span class="string">&quot; &quot;</span>.join( <span class="built_in">str</span>(freq[nt]) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span> )</span><br><span class="line">    <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
-
-<p>也可以不自己寫迴圈，套用 python 的字串方法 <em>count()</em> 來統計特定鹼基的數量。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(<span class="built_in">str</span>(dna.count(nt)) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>shell script 要尋找字串也有許多寫法，其中一種做法是透過 grep -o 取得匹配的鹼基，再傳給 wc -l 計算列數（即字串中，指定鹼基符號的數量）。四種鹼基符號的統計值儲存於 array 並以空格間隔，以便輸出時辨識 array 各項目的數值。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">s=<span class="string">&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span></span><br><span class="line">d=()</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> A C G T;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    d+=$(<span class="built_in">echo</span> $(<span class="built_in">echo</span> <span class="variable">$s</span> | grep -o <span class="variable">$ch</span> | <span class="built_in">wc</span> -l) <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">printf</span>  <span class="string">&quot;<span class="variable">$&#123;d[@]&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>rosalind</tag>
@@ -1173,20 +1173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>讀後感｜太空生物學</title>
-    <url>/lee-2017-astrobiology/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
-<span id="more"></span>
-<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
-<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
-<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
-<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>life in the universe</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF)</title>
     <url>/introduction-to-multiverse-variant-call-format/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>假設在很久很久以後的未來，人類有能力偵測到發生在多重宇宙各時間線的事件，也有演算法來比較事件間的異同，從而彙整出能代表多數宇宙歷史的標準時間線。利用跨宇宙與跨時間線的全史資料，往後的史家能將蒐集的歷史資料與標準時間線比較，推測事件的偶然與必然，指引未來史的發展方向。</p>
@@ -1372,6 +1358,20 @@
 ]]></content>
       <tags>
         <tag>sf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>讀後感｜太空生物學</title>
+    <url>/lee-2017-astrobiology/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。</p>
+<span id="more"></span>
+<p>中段改編自美國國家太空生物研究中心發表的《人類在太空的生理學》(Human Physiology in Space)，這是太空生物學(Space biology)的一環，雖然和字面上的涵義和天文生物學(Astrobiology)相似，但是前者研究太空環境對既有生物的影響，後者探討生命是怎麼來的。</p>
+<p>太空生物學有許多實用價值，例如若能了解動物的生理變化將有助於設計太空人的健康維護措施，而掌握植物的太空生理學知識也能應用在太空農業上。至於微生物生長繁殖的狀況，則與天文生物學息息相關。由於各行星可能因隕石衝擊而把表土拋向太空，假如土中的微生物能捱過最初的撞擊，並在微重力、高輻射的極端環境存活，便有機會把生命播種到其他星球。</p>
+<p>此書各章節較為零碎，例如第一部分看起來像鄉野奇談、第二部分讀起來像人體生理學課本，較難看出與主題的關聯。此書末以幾篇應用藍菌淨化代謝廢物的實驗報告作結。查詢了作者與其研究生的論文，發現原文僅提到可處理畜牧業或廚餘廢水，沒說明是否能應用在太空船的維生系統，因此這部分內容可能是作者自行延伸而來。</p>
+<p>這部分有點可惜的是，作者用很大的篇幅（幾乎把整份論文貼了上來）來強調藍菌具有生物淨化的潛力。可是，閱讀以太空生物學為題的作品時，會期待能了解太空與畜牧環境差異，以及應用時會碰上的困難，但是作者較少著墨這些問題。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">李炎 (2017)《太空生物學》，漢珍數位圖書股份有限公司。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>life in the universe</tag>
       </tags>
   </entry>
   <entry>
@@ -1982,32 +1982,6 @@
       </tags>
   </entry>
   <entry>
-    <title>解開生命之謎：運用量子生物學，揭開生命起源與真相的前衛科學</title>
-    <url>/mcfadden-and-ai-khalili-2016-life-on-the-edge/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我覺得英文書名（life on the edge）比中文書名更能反映作者的生物觀點。無機物和生命體在肉眼可見的範圍皆遵循牛頓力學，但其差異在於部分粒子的變動能否影響整體的行為。無機物的特性（熱漲冷縮、結晶、……）源於數量龐大的粒子分攤掉個別粒子的隨機特性，因此個別粒子無法影響整體。</p>
-<p>但是生命卻可以營造合宜環境，隔離或駕馭不規則擾動，保持個別粒子的特性，進而擴增到整個生命體驅動大大小小的反應，而這種特性可以用量子力學描述。換句話說，生命是在量子力學或古典力學支配的兩種秩序中間的微妙平衡，死亡意味著這平衡被打破，喪失微觀秩序和巨觀秩序的連結。</p>
-<span id="more"></span>
-
-<p>薛丁格在《生命是什麼》中提及基因包含的原子數量不足以用熱力學原則（秩序源於大量不規則行為的平均）說明其遺傳精確性，因此得援用量子力學解釋。繼承此信念的物理學家在生物體內找尋能應用量子力學的場合，因為量子效應僅出現在微觀尺度，又容易受細胞內隨機運動的粒子影響而失效，所以這類反應系統應該只涉及數目少、質量小的粒子，而且能藉由孤立空間或其他方法排除干擾。此外，反應系統需在維繫生命運作的關鍵位置上維持平衡，使微觀層次的變動得牽動巨觀層次。</p>
-<p>此書前半部討論的酵素活性位、植物光系統、嗅覺受器以及磁導航器官皆屬此例，它們是維持生命的重要反應，又僅涉及電子或質子等小粒子轉移。作者用大量篇幅回顧這些領域的研究成果，接著點出傳統理論的缺陷，再舉出量子效應在其中扮演重要角色的證據，最後用比喻的方式引介量子生物學詮釋，幫助讀者理解抽象概念。</p>
-<p>為了呼應其生物觀點，作者在後半部將量子理論應用到生物演化、大腦意識和生命起源等議題上，試圖將之推廣為為生命運作的基石。不過相較於前半段內容有較多實驗和文獻支持，這部份把量子理論套用在巨觀階層的種種模型仍屬推測。</p>
-<p>雖然含有大量物理術語，可是畢竟這是介紹如何應用量子力學解釋生物現象的科普作品，不是量子物理課本。即使沒有讀通（但可了解作者嘗試讓我們更容易理解的努力），也能評估這樣的應用有何優點和限制，並且留意到一些值得思考的問題：</p>
-<ul>
-<li>書中提到的是經實驗佐證的理論還是大膽的猜測？</li>
-<li>這些有證據的理論是挑戰了傳統學說，還是其解釋含糊的細節？</li>
-<li>是生物體依賴量子效應，還是量子效應出現在生物體中？</li>
-<li>微觀尺度的量子效應是否影響巨觀層次？</li>
-<li>量子效應是反應的先決條件，還是從眾多選擇演化而來的結果？</li>
-</ul>
-<p>生命起源相關的議題集中在第一、二、九和十章，當中介紹的生命起源機制奠基於RNA世界說，只是傳統理論難以解釋該如何從有機分子中產生自我複製體，所以想像了一個能利用量子效應同時展現各種結構的「原酶」，能比化學重組更有效率地測試可能結構。當某個結構出現自我複製功能時，原酶就會喪失量子效應，維持穩定並持續複製下去。然而傳統理論的挫敗無法證明這個理論是對的，而且這想法只停留在模型階段還沒有任何證據支持，因此應謹慎看待。</p>
-<p>作者在最後對建造人工細胞的提議類似《再創世紀》裡面提到的方法，沒有推翻以往研究者的成果：湊齊已知生命需要的功能元件、酵素和分子，安裝在脂肪隔間裡。不過強調要考慮量子效應，否則人工生命體沒辦法運作。</p>
-<p>題外話：簡中版的書名叫《神秘的量子生命》，乍看之下讓人聯想到劉慈欣小說《球狀閃電》裡的量子幽魂，一眼之下還以為是什麼靈修著作，和正體版一樣都沒有凸顯此書前半部嚴謹的敘述，反而把重點放在仍有許多討論空間的後半部，還過度延伸些作者一直澄清不該和科學混淆的靈魂、哲學、神學概念，這點實在讓人感到困惑。</p>
-]]></content>
-      <tags>
-        <tag>what is life</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？</title>
     <url>/mayer-2023-the-art-of-clean-code-80-20-principle/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -2049,6 +2023,32 @@
 ]]></content>
       <tags>
         <tag>development</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解開生命之謎：運用量子生物學，揭開生命起源與真相的前衛科學</title>
+    <url>/mcfadden-and-ai-khalili-2016-life-on-the-edge/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我覺得英文書名（life on the edge）比中文書名更能反映作者的生物觀點。無機物和生命體在肉眼可見的範圍皆遵循牛頓力學，但其差異在於部分粒子的變動能否影響整體的行為。無機物的特性（熱漲冷縮、結晶、……）源於數量龐大的粒子分攤掉個別粒子的隨機特性，因此個別粒子無法影響整體。</p>
+<p>但是生命卻可以營造合宜環境，隔離或駕馭不規則擾動，保持個別粒子的特性，進而擴增到整個生命體驅動大大小小的反應，而這種特性可以用量子力學描述。換句話說，生命是在量子力學或古典力學支配的兩種秩序中間的微妙平衡，死亡意味著這平衡被打破，喪失微觀秩序和巨觀秩序的連結。</p>
+<span id="more"></span>
+
+<p>薛丁格在《生命是什麼》中提及基因包含的原子數量不足以用熱力學原則（秩序源於大量不規則行為的平均）說明其遺傳精確性，因此得援用量子力學解釋。繼承此信念的物理學家在生物體內找尋能應用量子力學的場合，因為量子效應僅出現在微觀尺度，又容易受細胞內隨機運動的粒子影響而失效，所以這類反應系統應該只涉及數目少、質量小的粒子，而且能藉由孤立空間或其他方法排除干擾。此外，反應系統需在維繫生命運作的關鍵位置上維持平衡，使微觀層次的變動得牽動巨觀層次。</p>
+<p>此書前半部討論的酵素活性位、植物光系統、嗅覺受器以及磁導航器官皆屬此例，它們是維持生命的重要反應，又僅涉及電子或質子等小粒子轉移。作者用大量篇幅回顧這些領域的研究成果，接著點出傳統理論的缺陷，再舉出量子效應在其中扮演重要角色的證據，最後用比喻的方式引介量子生物學詮釋，幫助讀者理解抽象概念。</p>
+<p>為了呼應其生物觀點，作者在後半部將量子理論應用到生物演化、大腦意識和生命起源等議題上，試圖將之推廣為為生命運作的基石。不過相較於前半段內容有較多實驗和文獻支持，這部份把量子理論套用在巨觀階層的種種模型仍屬推測。</p>
+<p>雖然含有大量物理術語，可是畢竟這是介紹如何應用量子力學解釋生物現象的科普作品，不是量子物理課本。即使沒有讀通（但可了解作者嘗試讓我們更容易理解的努力），也能評估這樣的應用有何優點和限制，並且留意到一些值得思考的問題：</p>
+<ul>
+<li>書中提到的是經實驗佐證的理論還是大膽的猜測？</li>
+<li>這些有證據的理論是挑戰了傳統學說，還是其解釋含糊的細節？</li>
+<li>是生物體依賴量子效應，還是量子效應出現在生物體中？</li>
+<li>微觀尺度的量子效應是否影響巨觀層次？</li>
+<li>量子效應是反應的先決條件，還是從眾多選擇演化而來的結果？</li>
+</ul>
+<p>生命起源相關的議題集中在第一、二、九和十章，當中介紹的生命起源機制奠基於RNA世界說，只是傳統理論難以解釋該如何從有機分子中產生自我複製體，所以想像了一個能利用量子效應同時展現各種結構的「原酶」，能比化學重組更有效率地測試可能結構。當某個結構出現自我複製功能時，原酶就會喪失量子效應，維持穩定並持續複製下去。然而傳統理論的挫敗無法證明這個理論是對的，而且這想法只停留在模型階段還沒有任何證據支持，因此應謹慎看待。</p>
+<p>作者在最後對建造人工細胞的提議類似《再創世紀》裡面提到的方法，沒有推翻以往研究者的成果：湊齊已知生命需要的功能元件、酵素和分子，安裝在脂肪隔間裡。不過強調要考慮量子效應，否則人工生命體沒辦法運作。</p>
+<p>題外話：簡中版的書名叫《神秘的量子生命》，乍看之下讓人聯想到劉慈欣小說《球狀閃電》裡的量子幽魂，一眼之下還以為是什麼靈修著作，和正體版一樣都沒有凸顯此書前半部嚴謹的敘述，反而把重點放在仍有許多討論空間的後半部，還過度延伸些作者一直澄清不該和科學混淆的靈魂、哲學、神學概念，這點實在讓人感到困惑。</p>
+]]></content>
+      <tags>
+        <tag>what is life</tag>
       </tags>
   </entry>
   <entry>
@@ -2133,35 +2133,6 @@
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">三島由紀夫（1951），夏子的冒險。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
   </entry>
   <entry>
-    <title>三島由紀夫書信教室</title>
-    <url>/mishima-1968-yukio-mishima-letter-classroom/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這本書是由五個角色書信往來所構成的故事，他們分別是厭惡市儈作風的文藝青年炎丈流、故意寫英文情書來評價心儀對象的美艷寡婦冰真間子、收藏著五百條領帶和收養五隻貓的風流男士山鳶夫、對工作毫無熱誠只等著嫁人的粉領族空美津子，以及執著於奶油蛋糕和彩色電視機的丸虎一。</p>
-<span id="more"></span>
-
-<p>炎丈流與空美津子因通信來往而萌生情愫。眼見情侶倆關係日漸密切，暗戀炎丈流的空美津子找上損友山鳶夫，想寫封黑函來拆散這對情侶。不料，山鳶夫亦在彼此閒談與奚落的互動中，愛上了空美津子。於是基於一番妒意，暗中幫助炎丈流與空美津子，替他們向雙方的家長說情，促成這對情侶的婚事。</p>
-<p>得知消息的空美津子，寫了封信大罵山鳶夫，還斷言要與之絕交。所幸，丸虎一在無意間勸和兩人，讓故事的結局兩對情侶皆成眷屬，而丸虎一也如願得到他想要的彩色電視和奶油蛋糕。</p>
-<p>雖然作者對感情的見解有趣以及對損友關係的描述恰到好處，但這本書最大的看點還是丸虎一那充滿現代感的垃圾話，喜歡到我幾乎把他寫的每封信都抄了下來。</p>
-<p>好比說，他因為借不到錢（向冰真間子）買彩色電視機又被對方揶揄一番，憤而威脅對方要到處宣傳她的學生英文很爛。</p>
-<blockquote>
-<p>要是不願意請客，我會在東京到處宣傳您英文補習班的每一個學生英文都很糟糕。</p>
-</blockquote>
-<p>又因看不到彩色節目，憂鬱纏身，寫了封信邀請冰真間子陪他殉情，只因對方老得無法作為戀愛與結婚對象：</p>
-<blockquote>
-<p>不光如此，我每看一個鐘頭節目，必定會吃掉一包奶油花生，也就是同時進行「看、寫、吃」這三件事，這樣一來，我相當於活了別人的三輩子。<br>不過，悲慘的現實卻是我只能觀看黑白節目，連一台彩色電視機都買不起。既然已經活了別人的三輩子，不如趁著青春年華好時光，在眾人的惋惜之下離開人——今晚忽然如此有感而發，倍覺空虛，於是選中了您陪我殉情。</p>
-</blockquote>
-<p>或是最終替朋友出氣的方式也令人拍案叫絕：</p>
-<blockquote>
-<p>最近收到一封冰真間子女式的信，信裡寫道「山鳶夫實在惹人厭，一想到他就讓人反胃！你遇到那個傢伙時，記得代我朝他吐口水」，可是這陣子沒機會見到您，又不好拖延真間子女士的交代，所以隨信附上一張沾有我口水的紙，請您把它放在臉上抹一抹。</p>
-</blockquote>
-<p>三島由紀夫說他們的通信內容「既可視為書信格式，也可當成寫作範本」。然而，當代人的情感生活往往比小說人物單純，我們觀念也相對開放，所以要用到這些信件的場合不多。諸如「力邀殉情的信」和「已非處子之身的坦白信」可能已充滿時代感。</p>
-<p>不過，三島由紀夫在最後一章給讀者的信中，還是總結了寫信的要點：</p>
-<blockquote>
-<p>寫信時一定要先了解一個前提條件，那就是收信人根本不在乎寫信人的一切。這是最重要的關鍵。<br>一個洞悉世態者深知人們對其他人毫不在意，唯有攸關自身利害得失的時候才會產生興趣，儘管這是一種苦澀的人生哲學。<br>直到你深切體悟，世上的每一個人只顧朝著自私自利的目標邁進、除了極少數的例外幾乎不會在意其他人，這時你的文字才有躍然紙上的力量，能夠寫出撼動人心的書信。</p>
-</blockquote>
-<p>我覺得這道理無論哪個時代或哪種通訊媒介，只要人類仍是人類便依然適用。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>不道德教育講座</title>
     <url>/mishima-1958-lectures-on-immoral-education/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1958年，三島由紀夫在《明星週刊》連載不道德教育講座，針對當代日本的文化、事件與風俗，提出有違常人價值觀的看法，例如「應該盡量說謊」、「要打從心底瞧不起老師」、還倡議「千萬不要遵守諾言」。</p>
@@ -2195,6 +2166,35 @@
 <p>因此，三島由紀夫才說「在現代社會裡，肌肉發達不過是可憐又滑稽的東西。可也因為如此，我才會對積極鍛鍊出強健的體魄不遺餘力。」</p>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以前是從楯之會的維基百科條目了解三島由紀夫的生平，在還沒讀過其作時，已對其人有一堆印象。直到最近被討論串的<a href="https://www.ptt.cc/bbs/Gossiping/M.1677326783.A.D04.html">留言</a>（「 20多年前看過《潮騷》，青春純愛故事，字裡行間聞得到海的味道」）打動，才開始接觸他的作品。</p>
 <p>由於我是從三島由紀夫的娛樂小說和散文作品入門，所以有機會認識這位作家別於外人給定標籤的一面。雖然不是每本書都看得懂，至少這本書我是看得蠻開心的。像讀〈應當打從心底瞧不起老師〉的時候，會想要是早點讀到就好了；但也有像〈肉體的無常〉那樣親身經歷才能體會的感動。最後要坦白，我其實也抄了一些講話很靠北的段落，但那屬於適合自娛的陰暗笑點，就不放上來了 :)</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>三島由紀夫書信教室</title>
+    <url>/mishima-1968-yukio-mishima-letter-classroom/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這本書是由五個角色書信往來所構成的故事，他們分別是厭惡市儈作風的文藝青年炎丈流、故意寫英文情書來評價心儀對象的美艷寡婦冰真間子、收藏著五百條領帶和收養五隻貓的風流男士山鳶夫、對工作毫無熱誠只等著嫁人的粉領族空美津子，以及執著於奶油蛋糕和彩色電視機的丸虎一。</p>
+<span id="more"></span>
+
+<p>炎丈流與空美津子因通信來往而萌生情愫。眼見情侶倆關係日漸密切，暗戀炎丈流的空美津子找上損友山鳶夫，想寫封黑函來拆散這對情侶。不料，山鳶夫亦在彼此閒談與奚落的互動中，愛上了空美津子。於是基於一番妒意，暗中幫助炎丈流與空美津子，替他們向雙方的家長說情，促成這對情侶的婚事。</p>
+<p>得知消息的空美津子，寫了封信大罵山鳶夫，還斷言要與之絕交。所幸，丸虎一在無意間勸和兩人，讓故事的結局兩對情侶皆成眷屬，而丸虎一也如願得到他想要的彩色電視和奶油蛋糕。</p>
+<p>雖然作者對感情的見解有趣以及對損友關係的描述恰到好處，但這本書最大的看點還是丸虎一那充滿現代感的垃圾話，喜歡到我幾乎把他寫的每封信都抄了下來。</p>
+<p>好比說，他因為借不到錢（向冰真間子）買彩色電視機又被對方揶揄一番，憤而威脅對方要到處宣傳她的學生英文很爛。</p>
+<blockquote>
+<p>要是不願意請客，我會在東京到處宣傳您英文補習班的每一個學生英文都很糟糕。</p>
+</blockquote>
+<p>又因看不到彩色節目，憂鬱纏身，寫了封信邀請冰真間子陪他殉情，只因對方老得無法作為戀愛與結婚對象：</p>
+<blockquote>
+<p>不光如此，我每看一個鐘頭節目，必定會吃掉一包奶油花生，也就是同時進行「看、寫、吃」這三件事，這樣一來，我相當於活了別人的三輩子。<br>不過，悲慘的現實卻是我只能觀看黑白節目，連一台彩色電視機都買不起。既然已經活了別人的三輩子，不如趁著青春年華好時光，在眾人的惋惜之下離開人——今晚忽然如此有感而發，倍覺空虛，於是選中了您陪我殉情。</p>
+</blockquote>
+<p>或是最終替朋友出氣的方式也令人拍案叫絕：</p>
+<blockquote>
+<p>最近收到一封冰真間子女式的信，信裡寫道「山鳶夫實在惹人厭，一想到他就讓人反胃！你遇到那個傢伙時，記得代我朝他吐口水」，可是這陣子沒機會見到您，又不好拖延真間子女士的交代，所以隨信附上一張沾有我口水的紙，請您把它放在臉上抹一抹。</p>
+</blockquote>
+<p>三島由紀夫說他們的通信內容「既可視為書信格式，也可當成寫作範本」。然而，當代人的情感生活往往比小說人物單純，我們觀念也相對開放，所以要用到這些信件的場合不多。諸如「力邀殉情的信」和「已非處子之身的坦白信」可能已充滿時代感。</p>
+<p>不過，三島由紀夫在最後一章給讀者的信中，還是總結了寫信的要點：</p>
+<blockquote>
+<p>寫信時一定要先了解一個前提條件，那就是收信人根本不在乎寫信人的一切。這是最重要的關鍵。<br>一個洞悉世態者深知人們對其他人毫不在意，唯有攸關自身利害得失的時候才會產生興趣，儘管這是一種苦澀的人生哲學。<br>直到你深切體悟，世上的每一個人只顧朝著自私自利的目標邁進、除了極少數的例外幾乎不會在意其他人，這時你的文字才有躍然紙上的力量，能夠寫出撼動人心的書信。</p>
+</blockquote>
+<p>我覺得這道理無論哪個時代或哪種通訊媒介，只要人類仍是人類便依然適用。</p>
 ]]></content>
   </entry>
   <entry>
@@ -2354,6 +2354,35 @@
 ]]></content>
       <tags>
         <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜調整工作目錄的路徑</title>
+    <url>/nextflow-change-path-to-work-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
+<span id="more"></span>
+
+<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
+
+<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
+<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
+<blockquote>
+<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -2712,35 +2741,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Nextflow｜調整工作目錄的路徑</title>
-    <url>/nextflow-change-path-to-work-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
-<span id="more"></span>
-
-<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
-
-<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
-<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
-<blockquote>
-<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nextflow｜如何為輸入的資料建立辨識碼</title>
     <url>/nextflow-combine-data-into-a-tuple-with-key/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Nextflow 的框架，channel 媒介了 process 間的資料傳遞。雖然資料進出 channel 遵循先進先出 (first-in, first out, FIFO) 原則，但隨後 nextflow 會平行處理這些資料，所以 process 釋出資料的順序取決於執行速率，而不是原先輸入的順序（見下例）。</p>
@@ -3021,36 +3021,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>Nextflow｜背景執行 workflow 的方法</title>
-    <url>/nextflow-run-in-background/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
-<span id="more"></span>
-<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
-
-<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
-<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
-
-<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
-<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
-]]></content>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nextflow｜怎麼從運行中的腳本取回參數？</title>
     <url>/nextflow-retrieve-configuration-when-workflow-runs/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在執行腳本前，Nextflow 會讀取設置檔 (configuration files) 中的參數，將之代入腳本的對應位置後再執行程式。這項特性有助於使用者管理複雜流程的輸入值與環境設定，也將具體數值從流程邏輯抽離，讓開發者專注於流程的梳理與串接。</p>
@@ -3106,6 +3076,36 @@ echo &quot;\$title \n $PWD&quot;
 <li><code>params</code>：記錄了不同管道導入的參數，可以在 <code>*.nf</code> 檔各處呼叫以取得書入的參數和設定。</li>
 <li><code>launchDir</code>：雖然本身與參數無關，但此變項記錄了腳本執行位置，其中的 <code>.nextflow.log</code> 記錄了 <code>*.config</code> 路徑。讀取該檔即可獲取輸入的參數和設定。</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜背景執行 workflow 的方法</title>
+    <url>/nextflow-run-in-background/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
+<span id="more"></span>
+<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
+
+<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
+<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
+<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
 ]]></content>
       <tags>
         <tag>nextflow</tag>
@@ -3183,6 +3183,26 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>ROSALIND | Ordering Strings of Varying Length Lexicographically (LEXV)</title>
+    <url>/ordering-strings-of-varying-length-lexicographically/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度小於等於 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
+<blockquote>
+<p>Given: A permutation of at most 12 symbols defining an ordered alphabet $\mathscr{A}$ and a positive integer n (n≤4).</p>
+<p>Return: All strings of length at most n formed from $\mathscr{A}$, ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/lexv/">https://rosalind.info/problems/lexv/</a>)</p>
+<span id="more"></span>
+
+<p>這題是 <a href="https://5uperb0y.com/enumerating-k-mers-lexicographically/">“Enumerating k-mers lexicographically”</a> 的變體。在原始題目中，只需列出長度為 k 的所有可能字串，這些字串都能直接從長度為 k - 1 的字串延伸而來。</p>
+<p>都是從長度為 k - 1 的字串延伸而來。是以，最終解是遞迴的直接產物，也能追溯到遞迴的基本狀況。</p>
+<p>然而，這題則要求列出所有長度「小於等於 k」的字串，例如 $\mathscr{A}$ 為 <code>[&quot;A&quot;, &quot;B&quot;]</code> 而且 k &#x3D; 2 時，則輸出應包含 <code>[&quot;A&quot;, &quot;AA&quot;, &quot;AB&quot;, &quot;B&quot;, &quot;BA&quot;, &quot;BB&quot;]</code>。</p>
+<p>雖然 “AA” 和 “AB” 是透過添加字符組成，但是 “A” 和 “B” 則否，輸出結果之前來自不同的關係。為了解決這問題，每次遞迴不只要生成指定長度的字串，還要保留每次遞迴的中繼結果。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lexv</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Ordering Strings of Varying Length Lexicographically</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> elements</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        output = []</span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> elements:</span><br><span class="line">            output.append(e)</span><br><span class="line">            output.extend([<span class="string">f&quot;<span class="subst">&#123;e&#125;</span><span class="subst">&#123;k_str&#125;</span>&quot;</span> <span class="keyword">for</span> k_str <span class="keyword">in</span> lexv(elements, k - <span class="number">1</span>) ])</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>少棒的基礎</title>
     <url>/nishi-2015-junior-baseball-coaching-book/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>相較於影片，要以圖文解釋複雜動作有許多限制，所以此書的重點不在於老生常談的技術內容，而是引進刻意練習的帶隊觀念。</p>
@@ -3215,26 +3235,6 @@ echo &quot;\$title \n $PWD&quot;
 <p>應該說，教學時若要求球員的動作與教練一致，那球員很有可能為了達到標準而顧此失彼。由於差勁的打者不會逼你學他們，所以能避開這項教學錯誤。</p>
 <p>至於能否對球員的問題感同身受，我覺得跟球技無關，而是跟教練的背景有關。所以不同類型的教練能幫助到不同類型的球員。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>ROSALIND | Ordering Strings of Varying Length Lexicographically (LEXV)</title>
-    <url>/ordering-strings-of-varying-length-lexicographically/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度小於等於 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
-<blockquote>
-<p>Given: A permutation of at most 12 symbols defining an ordered alphabet $\mathscr{A}$ and a positive integer n (n≤4).</p>
-<p>Return: All strings of length at most n formed from $\mathscr{A}$, ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/lexv/">https://rosalind.info/problems/lexv/</a>)</p>
-<span id="more"></span>
-
-<p>這題是 <a href="https://5uperb0y.com/enumerating-k-mers-lexicographically/">“Enumerating k-mers lexicographically”</a> 的變體。在原始題目中，只需列出長度為 k 的所有可能字串，這些字串都能直接從長度為 k - 1 的字串延伸而來。</p>
-<p>都是從長度為 k - 1 的字串延伸而來。是以，最終解是遞迴的直接產物，也能追溯到遞迴的基本狀況。</p>
-<p>然而，這題則要求列出所有長度「小於等於 k」的字串，例如 $\mathscr{A}$ 為 <code>[&quot;A&quot;, &quot;B&quot;]</code> 而且 k &#x3D; 2 時，則輸出應包含 <code>[&quot;A&quot;, &quot;AA&quot;, &quot;AB&quot;, &quot;B&quot;, &quot;BA&quot;, &quot;BB&quot;]</code>。</p>
-<p>雖然 “AA” 和 “AB” 是透過添加字符組成，但是 “A” 和 “B” 則否，輸出結果之前來自不同的關係。為了解決這問題，每次遞迴不只要生成指定長度的字串，還要保留每次遞迴的中繼結果。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lexv</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Ordering Strings of Varying Length Lexicographically</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> elements</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        output = []</span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> elements:</span><br><span class="line">            output.append(e)</span><br><span class="line">            output.extend([<span class="string">f&quot;<span class="subst">&#123;e&#125;</span><span class="subst">&#123;k_str&#125;</span>&quot;</span> <span class="keyword">for</span> k_str <span class="keyword">in</span> lexv(elements, k - <span class="number">1</span>) ])</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
   </entry>
   <entry>
     <title>可能反映與嬰兒飲食相關的腸道菌相演替機制的現象</title>
@@ -4061,23 +4061,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>科學溝通能力的重要性</title>
-    <url>/the-importance-of-science-communication/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
-<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
-<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
-<span id="more"></span>
-
-<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
-<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
-<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
-<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
-]]></content>
-      <tags>
-        <tag>communication</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>The Door into Astrobiology | 天文生物學入門資源</title>
     <url>/the-door-into-astrobiology/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>天文生物學（Astrobiology）是研究生命在宇宙中形成、演化和分布的跨領域學科。由於至今只在地球上發現生物，所以眼下課題就是釐清形成地球生命的機制與先決條件，欲達成這目標不僅得追溯組成生物的原料來源，還需了解有哪些因素影響適居環境的構成，並從演化和地質證據推敲無機物轉變為生物的過程。</p>
@@ -4220,6 +4203,23 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>astrobiology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科學溝通能力的重要性</title>
+    <url>/the-importance-of-science-communication/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>科學溝通能力究竟有什麼重要性，為何值得投注心力練習？</p>
+<p>溝通是學術的一環。科學的進展大抵可以分為「發現新知」和「傳播新知」兩個部分。發覺問題、建立假說，最後設計實驗證明的過程，仰賴研究能力；將新發現以具體而且可信的論證方式傳遞給他人，則仰賴表達能力。</p>
+<p>越是非凡的發現，越需要清晰的語言才能充分闡明。因此，除了研究的本領，科學溝通的能力也值得重視。</p>
+<span id="more"></span>
+
+<p>在學界內最普及的溝通方式就是撰寫論文，論文不僅是傳達和保留研究成果的媒介，也是評斷個人成就的標準。在論文以外，還有研討會或學者間的非正式交流，讓研究者得以接觸學界前沿的狀況。</p>
+<p>除了和他人溝通，研究者在探索問題的途中也得不斷和自己對話，例如撰寫計劃書安排研究進度，或是時時回顧實驗記錄，藉此鞏固概念及引導思考以順利完成研究。</p>
+<p>最後，隨著科學的進展，研究成果的影響不會只限於學術圈，而會漸漸擴及社會。然而知識在傳播中可能被誤解，混淆的觀念恐怕扭曲大眾對科研的看法，導致恐慌及失當的決策。這些問題有賴研究者、媒體和社會間有效的溝通才能解決。</p>
+<p>換句話說，社會支持著學術圈，學術圈則讓個人有立足空間，個人再反過來影響學界與社會。溝通參與了個人、學術乃至於社會三方面的發展，這也是為什麼值得投入心力在科學溝通能力養成的原因。</p>
+]]></content>
+      <tags>
+        <tag>communication</tag>
       </tags>
   </entry>
   <entry>
