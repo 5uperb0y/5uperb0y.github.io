@@ -1,116 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>常見的生物資訊軟體開發文件</title>
-    <url>/a-collection-of-essential-documents-for-bioinformatis-software/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
-<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
-<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
-<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
-<span id="more"></span>
-
-<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
-<table>
-<thead>
-<tr>
-<th>名稱</th>
-<th>內容</th>
-<th>額外受眾</th>
-<th>指引</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Issues</td>
-<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
-<td>專案經理</td>
-<td><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
-</tr>
-<tr>
-<td>Docstring &amp; Type hints</td>
-<td>描述程式模組的功能、參數與回傳資訊</td>
-<td>開發者</td>
-<td><a href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a href="https://peps.python.org/pep-0484/">PEP 484</a></td>
-</tr>
-<tr>
-<td>Code comments</td>
-<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
-<td>開發者</td>
-<td><a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
-</tr>
-<tr>
-<td>Built-in help</td>
-<td>軟體內建的用戶幫助訊息</td>
-<td>用戶</td>
-<td><a href="http://docopt.org/">docopt</a></td>
-</tr>
-<tr>
-<td>Commit messages</td>
-<td>摘要程式碼異動的內容、理由與背景</td>
-<td>開發者</td>
-<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
-</tr>
-<tr>
-<td>Pull requests</td>
-<td>簡述為滿足需求對應的軟體異動及其理據</td>
-<td>審查者</td>
-<td><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
-</tr>
-<tr>
-<td>README</td>
-<td>介紹專案目標、安裝使用與授權等入門資訊</td>
-<td>用戶</td>
-<td><a href="https://www.makeareadme.com/">Make a README</a></td>
-</tr>
-<tr>
-<td>CHANGELOG</td>
-<td>紀錄專案開發歷程與各版本更新內容</td>
-<td>用戶</td>
-<td><a href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
-</tr>
-</tbody></table>
-<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
-<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
-<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
-<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
-
-<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
-<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
-<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
-<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
-<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
-<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
-<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
-<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
-<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
-<ul>
-<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
-<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
-<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
-</ul>
-<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
-<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
-<p>常見的專案文件結構如下，例如 Python 的 <a href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
-<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
-<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
-<li><a href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
-<li><a href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
-<li><a href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
-<li><a href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>development</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>〈教育的烏托邦〉</title>
     <url>/5uperb0y-2016-utopian-education/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　夢臨市的天空是電腦的顏色，電腦死機的蔚藍。</p>
@@ -237,17 +127,113 @@
       </tags>
   </entry>
   <entry>
-    <title>bad interpreter: No such file or directory</title>
-    <url>/bad-interpreter-no-such-file-or-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
+    <title>常見的生物資訊軟體開發文件</title>
+    <url>/a-collection-of-essential-documents-for-bioinformatis-software/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
+<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
+<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
+<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
 <span id="more"></span>
 
-<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
-<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
-<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
+<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>內容</th>
+<th>額外受眾</th>
+<th>指引</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Issues</td>
+<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
+<td>專案經理</td>
+<td><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
+</tr>
+<tr>
+<td>Docstring &amp; Type hints</td>
+<td>描述程式模組的功能、參數與回傳資訊</td>
+<td>開發者</td>
+<td><a href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a href="https://peps.python.org/pep-0484/">PEP 484</a></td>
+</tr>
+<tr>
+<td>Code comments</td>
+<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
+<td>開發者</td>
+<td><a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
+</tr>
+<tr>
+<td>Built-in help</td>
+<td>軟體內建的用戶幫助訊息</td>
+<td>用戶</td>
+<td><a href="http://docopt.org/">docopt</a></td>
+</tr>
+<tr>
+<td>Commit messages</td>
+<td>摘要程式碼異動的內容、理由與背景</td>
+<td>開發者</td>
+<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
+</tr>
+<tr>
+<td>Pull requests</td>
+<td>簡述為滿足需求對應的軟體異動及其理據</td>
+<td>審查者</td>
+<td><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
+</tr>
+<tr>
+<td>README</td>
+<td>介紹專案目標、安裝使用與授權等入門資訊</td>
+<td>用戶</td>
+<td><a href="https://www.makeareadme.com/">Make a README</a></td>
+</tr>
+<tr>
+<td>CHANGELOG</td>
+<td>紀錄專案開發歷程與各版本更新內容</td>
+<td>用戶</td>
+<td><a href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
+</tr>
+</tbody></table>
+<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
+<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
+<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
+<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
+
+<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
+<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
+<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
+<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
+<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
+<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
+<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
+<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
+<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
+<ul>
+<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
+<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
+<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
+</ul>
+<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
+<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
+<p>常見的專案文件結構如下，例如 Python 的 <a href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
+<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
+<li><a href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
+<li><a href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
+<li><a href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
+<li><a href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
+</ul>
 ]]></content>
       <tags>
-        <tag>linux</tag>
+        <tag>development</tag>
       </tags>
   </entry>
   <entry>
@@ -285,6 +271,20 @@
 ]]></content>
       <tags>
         <tag>astrobiology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>bad interpreter: No such file or directory</title>
+    <url>/bad-interpreter-no-such-file-or-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
+<span id="more"></span>
+
+<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
+<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
+<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -327,31 +327,6 @@
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Church &amp; Regis. (2014). Regenesis: how synthetic biology will reinvent nature and ourselves. 中國由電子工業出版社翻譯並出版，《再創世紀：合成生物學將如何重新創造自然和我們人類》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <tags>
         <tag>what is life</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROSALIND｜Counting DNA Nucleotides (DNA)</title>
-    <url>/counting-dna-nucleotides/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 DNA 字串，依照 “A”、”C”、”G”、”T” 的順序，印出四種鹼基符號的數量。</p>
-<blockquote>
-<p>Given: A DNA string s of length at most 1000 nt.</p>
-<p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/dna/">https://rosalind.info/problems/dna/</a>)</p>
-<span id="more"></span>
-
-<p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
-<p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 <em>dictionary</em> 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，要在輸出前調整順序。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    freq = &#123;<span class="string">&quot;A&quot;</span>: <span class="number">0</span>, <span class="string">&quot;T&quot;</span>: <span class="number">0</span>, <span class="string">&quot;C&quot;</span>: <span class="number">0</span>, <span class="string">&quot;G&quot;</span>: <span class="number">0</span>&#125;</span><br><span class="line">    <span class="keyword">for</span> nt <span class="keyword">in</span> dna:</span><br><span class="line">        freq[nt] = freq[nt] + <span class="number">1</span></span><br><span class="line">    output = <span class="string">&quot; &quot;</span>.join( <span class="built_in">str</span>(freq[nt]) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span> )</span><br><span class="line">    <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
-
-<p>也可以不自己寫迴圈，套用 python 的字串方法 <em>count()</em> 來統計特定鹼基的數量。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(<span class="built_in">str</span>(dna.count(nt)) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>shell script 要尋找字串也有許多寫法，其中一種做法是透過 grep -o 取得匹配的鹼基，再傳給 wc -l 計算列數（即字串中，指定鹼基符號的數量）。四種鹼基符號的統計值儲存於 array 並以空格間隔，以便輸出時辨識 array 各項目的數值。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">s=<span class="string">&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span></span><br><span class="line">d=()</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> A C G T;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    d+=$(<span class="built_in">echo</span> $(<span class="built_in">echo</span> <span class="variable">$s</span> | grep -o <span class="variable">$ch</span> | <span class="built_in">wc</span> -l) <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">printf</span>  <span class="string">&quot;<span class="variable">$&#123;d[@]&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>rosalind</tag>
       </tags>
   </entry>
   <entry>
@@ -402,6 +377,31 @@
 <h2 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h2><p>bash 的作法較 python 和 R 簡潔，讀取字串，以 rev 反轉字串順序，再以 tr 替換互補鹼基等步驟可寫成一行。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dna=&quot;AAAACCCGGT&quot;</span><br><span class="line">echo &quot;$dna&quot;| rev | tr ATCG TAGC</span><br></pre></td></tr></table></figure>
 
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROSALIND｜Counting DNA Nucleotides (DNA)</title>
+    <url>/counting-dna-nucleotides/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 DNA 字串，依照 “A”、”C”、”G”、”T” 的順序，印出四種鹼基符號的數量。</p>
+<blockquote>
+<p>Given: A DNA string s of length at most 1000 nt.</p>
+<p>Return: Four integers (separated by spaces) counting the respective number of times that the symbols ‘A’, ‘C’, ‘G’, and ‘T’ occur in s.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/dna/">https://rosalind.info/problems/dna/</a>)</p>
+<span id="more"></span>
+
+<p>在此例使用 dictionary 的 key 記錄鹼基符號，利用 value 記錄出現頻率，透過迴圈遍歷整個字串，每逢與 key 相同的字符即增加該 key 之 value。</p>
+<p>儘管統計鹼基的方法很直觀，但輸出的順序要留意。題目要求以 A、C、G、T 之順序輸出鹼基出現頻率，但 python 的 <em>dictionary</em> 為無排序的雜湊表，所以值不會依照字母的順序或定義時的順序印出。為了回傳排序後的統計量，要在輸出前調整順序。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    freq = &#123;<span class="string">&quot;A&quot;</span>: <span class="number">0</span>, <span class="string">&quot;T&quot;</span>: <span class="number">0</span>, <span class="string">&quot;C&quot;</span>: <span class="number">0</span>, <span class="string">&quot;G&quot;</span>: <span class="number">0</span>&#125;</span><br><span class="line">    <span class="keyword">for</span> nt <span class="keyword">in</span> dna:</span><br><span class="line">        freq[nt] = freq[nt] + <span class="number">1</span></span><br><span class="line">    output = <span class="string">&quot; &quot;</span>.join( <span class="built_in">str</span>(freq[nt]) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span> )</span><br><span class="line">    <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
+
+<p>也可以不自己寫迴圈，套用 python 的字串方法 <em>count()</em> 來統計特定鹼基的數量。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">nt_freq</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Counting DNA nucleotide</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot; &quot;</span>.join(<span class="built_in">str</span>(dna.count(nt)) <span class="keyword">for</span> nt <span class="keyword">in</span> <span class="string">&quot;ACGT&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>shell script 要尋找字串也有許多寫法，其中一種做法是透過 grep -o 取得匹配的鹼基，再傳給 wc -l 計算列數（即字串中，指定鹼基符號的數量）。四種鹼基符號的統計值儲存於 array 並以空格間隔，以便輸出時辨識 array 各項目的數值。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">s=<span class="string">&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span></span><br><span class="line">d=()</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> A C G T;</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    d+=$(<span class="built_in">echo</span> $(<span class="built_in">echo</span> <span class="variable">$s</span> | grep -o <span class="variable">$ch</span> | <span class="built_in">wc</span> -l) <span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="built_in">printf</span>  <span class="string">&quot;<span class="variable">$&#123;d[@]&#125;</span>&quot;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>rosalind</tag>
@@ -842,7 +842,7 @@
     <title>hexo 部屬後網頁報錯 &quot;cannot get /&quot;</title>
     <url>/hexo-cannot-get-slash-error/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>新的一年好不容易提振精神來寫文章，想說先把文章的調整更新到網站上。不料，輸入完 <code>hexo clean &amp;&amp; hexo delopy</code> 之後，雖然 Github action 顯示部屬正常，但網頁卻無法瀏覽，分別顯示 “This is not the web page you are looking for” 以及 “There isn’t a GitHub Pages site here”</p>
-<p><img src="https://i.stack.imgur.com/Hp57y.png" alt="This is not the web page you are looking for."></p>
+<p><img data-src="https://i.stack.imgur.com/Hp57y.png" alt="This is not the web page you are looking for."></p>
 <ul>
 <li><a href="https://github.com/hexojs/hexo/issues/4098">404 There isn’t a GitHub Pages site here. #4098</a></li>
 <li><a href="https://stackoverflow.com/questions/66569047/github-what-causes-gaps-in-issue-number-404-this-is-not">GitHub what causes gaps in issue #Number (404 This is Not…)</a></li>
@@ -1064,7 +1064,7 @@
   <entry>
     <title>如何管理常用的 Command Line 指令？</title>
     <url>/how-to-manage-commands/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="https://imgs.xkcd.com/comics/tar_2x.png" alt="xkcd:tar (https://imgs.xkcd.com/comics/tar.png)"></p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img data-src="https://imgs.xkcd.com/comics/tar_2x.png" alt="xkcd:tar (https://imgs.xkcd.com/comics/tar.png)"></p>
 <p>有些指令很常用，但使用頻率不見得高到能讓人既起來。那麼，除了使用記事本以外，還有什麼方法能有效管理這些指令呢？</p>
 <p>本文總結一些管理指令的經驗和訣竅，並且介紹好用的開源工具供參考。</p>
 <span id="more"></span>
@@ -1781,88 +1781,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>All-Species Living Tree Project (LTP) 物種資訊的訂正和維護</title>
-    <url>/living-tree-project-database-curation/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>All-Species Living Tree Project (LTP)<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="All-Species Living Tree Project (LTP)  相關文獻，Yarza & Munoz. (2014). The all-species living tree project. *In Methods in Microbiology* (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. *Systematic and applied microbiology*, 31(4), 241-250.">1</span></a></sup> 旨在維護所有已知古菌和細菌 type strain 的 16S rRNA 基因序列，並基於這些序列，建立古菌和細菌的譜系樹。</p>
-<p>LTP 主要由四個單位參與</p>
-<ul>
-<li>LPSN 提供分類與命名資訊 (<a href="https://www.bacterio.net/">https://www.bacterio.net/</a>)</li>
-<li>ARB 支援譜系樹建立與分類 (<a href="http://www.arb-home.de/">http://www.arb-home.de/</a>)</li>
-<li>Ribocon 則負責資料庫的管理 (<a href="https://www.ribocon.com/">https://www.ribocon.com/</a>)</li>
-<li>SILVA 則提供序列資料庫、計算資源與網頁介面 (<a href="https://www.arb-silva.de/">https://www.arb-silva.de/</a>)</li>
-</ul>
-<p>（自 2020 年起，LTP 的遷出 SILVA，獨立為一個網頁：<a href="https://imedea.uib-csic.es/mmg/ltp/%EF%BC%89">https://imedea.uib-csic.es/mmg/ltp/）</a></p>
-<p>LTP 的資料常用於 16S rRNA 基因增幅序列的物種註解，而基於其收錄序列所構建的譜系樹，也能作為 Phylogenetic placement 的基礎<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. *Msystems*, 3(3), e00021-18.">2</span></a></sup>。</p>
-<p>另外，由於 LTP與 RDP training set 都只收錄了 type strain 的序列資料，所以相較於透過序列預測建立的資料庫，LTP 的序列資料較為可靠，能避免在物種註釋時，要在分類錯誤之外面臨資料庫錯誤的問題。</p>
-<p>儘管 LTP 已是人工維護且品質好的資料庫，但目前版本 ( LTP_01_2022) 的部分物種資訊仍有誤騰的狀況。在官方修正這些問題之前，資料庫的使用者得自己訂正這些錯誤。</p>
-<span id="more"></span>
-
-<h1 id="分類階層間少了分隔符"><a href="#分類階層間少了分隔符" class="headerlink" title="分類階層間少了分隔符"></a>分類階層間少了分隔符</h1><p>若使用 “;” 來分割這樣的字串，會得到較短的列表。</p>
-<blockquote>
-<p>AF251436 Ferrimicrobium acidiphilum Bacteria;ActinomycetotaAcidimicrobiia;Acidimicrobiales;Acidimicrobiaceae;Ferrimicrobium</p>
-</blockquote>
-<h1 id="分類名稱出現額外符號"><a href="#分類名稱出現額外符號" class="headerlink" title="分類名稱出現額外符號"></a>分類名稱出現額外符號</h1><p>文字前後出現空格、引號和句號等，可能會因字串不同而高估該分類階層的分類群數量，也可能在資料處理造成意外麻煩。</p>
-<h2 id="額外的雙引號"><a href="#額外的雙引號" class="headerlink" title="額外的雙引號"></a>額外的雙引號</h2><blockquote>
-<p>AY102612 Caedibacter taeniospiralis “Bacteria;Pseudomonadota;Alphaproteobacteria;Holosporales;””Caedimonadaceae””;Caedibacter </p>
-</blockquote>
-<h2 id="額外的句號"><a href="#額外的句號" class="headerlink" title="額外的句號"></a>額外的句號</h2><blockquote>
-<p>LC552068 Conexivisphaera calida Archaea;Crenarchaeota;Conexivisphaeria;Conexivisphaerales;Conexivisphaeraceae;Conexivisphaera.</p>
-</blockquote>
-<h2 id="額外的空格（位於-Hyphomonas-adhaerens-與-Bacteria-之間）"><a href="#額外的空格（位於-Hyphomonas-adhaerens-與-Bacteria-之間）" class="headerlink" title="額外的空格（位於 Hyphomonas adhaerens 與 Bacteria 之間）"></a>額外的空格（位於 Hyphomonas adhaerens 與 Bacteria 之間）</h2><blockquote>
-<p>KF863150 Hyphomonas adhaerens Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomonadales;Hyphomonadaceae;Hyphomonas Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Hyphomonadaceae;Hyphomonas</p>
-</blockquote>
-<h1 id="分類名稱間有額外的分隔符"><a href="#分類名稱間有額外的分隔符" class="headerlink" title="分類名稱間有額外的分隔符"></a>分類名稱間有額外的分隔符</h1><p>會導致該紀錄多一個分類階層 </p>
-<blockquote>
-<p>HQ223108 Thermoleophilum minutum Bacteria;Actinomycetota;;Thermoleophilia;Thermoleophilales;Thermoleophilaceae;Thermoleophilum</p>
-</blockquote>
-<h1 id="重複出現的分類名稱"><a href="#重複出現的分類名稱" class="headerlink" title="重複出現的分類名稱"></a>重複出現的分類名稱</h1><p>例如同樣的分類寫兩遍，或是整個條目寫了兩遍，會導致該紀錄增加多個分類階層</p>
-<h2 id="門名重複出現"><a href="#門名重複出現" class="headerlink" title="門名重複出現"></a>門名重複出現</h2><blockquote>
-<p>AJ288899 Bacteriovorax stolpii Bacteria;Bdellovibrionota;Bdellovibrionota;Bacteriovoracia;Bacteriovoracales;Bacteriovoracaceae;Bacteriovorax</p>
-</blockquote>
-<h2 id="整串分類名稱重複出現"><a href="#整串分類名稱重複出現" class="headerlink" title="整串分類名稱重複出現"></a>整串分類名稱重複出現</h2><blockquote>
-<p>“AF082795 Hyphomonas rosenbergii Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomonadales;Hyphomonadaceae;Hyphomonas Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Hyphomonadaceae;Hyphomonas</p>
-</blockquote>
-<h1 id="誤植分類名稱"><a href="#誤植分類名稱" class="headerlink" title="誤植分類名稱"></a>誤植分類名稱</h1><p>在此例中，屬名 Amnimonas 被誤謄為 Aminomonas（這是另一個屬）例如因為形似而寫成其他分類名、打錯字，會導致 convergent 現象（即相同子分類群卻有不同母分類群）</p>
-<h2 id="誤植-Aminomonas-→-Amnimonas"><a href="#誤植-Aminomonas-→-Amnimonas" class="headerlink" title="誤植 (Aminomonas → Amnimonas)"></a>誤植 (Aminomonas → Amnimonas)</h2><blockquote>
-<p>MF682432 Amnimonas aquatica Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Aminomonas</p>
-</blockquote>
-<h2 id="錯字-Jatrophihabitantaless→Jatrophihabitantales"><a href="#錯字-Jatrophihabitantaless→Jatrophihabitantales" class="headerlink" title="錯字 (Jatrophihabitantaless→Jatrophihabitantales)"></a>錯字 (Jatrophihabitantaless→Jatrophihabitantales)</h2><blockquote>
-<p>LC323105 Jatrophihabitans telluris Bacteria;Actinomycetota;Actinobacteria;Jatrophihabitantaless;Jatrophihabitantaceae;Jatrophihabitans</p>
-</blockquote>
-<h1 id="異名"><a href="#異名" class="headerlink" title="異名"></a>異名</h1><p>即條目間使用該分類群的不同名稱，會導致 convergent 現象（即相同子分類群卻有不同母分類群）</p>
-<h2 id="異名-1"><a href="#異名-1" class="headerlink" title="異名"></a>異名</h2><blockquote>
-<p>(Bdellovibrionia [synonym] → Oligoflexia [correct name])</p>
-</blockquote>
-<h2 id="俗名"><a href="#俗名" class="headerlink" title="俗名"></a>俗名</h2><blockquote>
-<p>(Bdellovibrionota [not validly published] → Bdellovibrionota [correct name]) HM038000 Vampirovibrio chlorellavorus Bacteria;Bdellovibrionota;Oligoflexia;Bdellovibrionales;Bdellovibrionaceae;Vampirovibrio AJ292759 Bdellovibrio bacteriovorus Bacteria;Bdellovibrionota;Bdellovibrionia;Bdellovibrionales;Bdellovibrionaceae;Bdellovibrio</p>
-</blockquote>
-<h1 id="欠缺完整分類階層"><a href="#欠缺完整分類階層" class="headerlink" title="欠缺完整分類階層"></a>欠缺完整分類階層</h1><p>比其它條目少了一個分類階層 </p>
-<blockquote>
-<p> # Lack information at Genus level (Ulvibacterium)<br> KF303137 Aestuariibaculum scopimerae Bacteria;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae</p>
-</blockquote>
-<h1 id="檢查方式以及我們的義務"><a href="#檢查方式以及我們的義務" class="headerlink" title="檢查方式以及我們的義務"></a>檢查方式以及我們的義務</h1><p>這些問題的模式紛亂，其實不容易找到有效的偵測方法，以下枚舉幾個我曾用過的策略，</p>
-<ul>
-<li>以分隔符切割字串，檢查輸出字串列表當中，長度異常的條目</li>
-<li>下載 LPSN 物種資訊，檢查未出現在 LPSN 的條目</li>
-<li>檢查出現分號、括號、空格以外的符號的條目</li>
-<li>利用這些方法檢查完畢後，就順道把自己的發現寄給他們，當作對資料庫維護團隊的感謝吧。</li>
-</ul>
-<p>最後，分享一個我原本以為是因為以下原因而產生的 typo …..</p>
-<blockquote>
-<p>VIFM01000001 Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis Bacteria;Myxococcota;Myxococcia;Myxococcales;Myxococcaceae;Myxococcus</p>
-</blockquote>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_ptt.png?raw=true" alt="這難道不是因為某個老梗產生的物種名稱嗎......"></p>
-<p>拿去 Goolge 才知道，還真的有名字這麼長的生物<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. *Genome biology and evolution*, 12(12), 2289-2302.">3</span></a></sup>，長到維基百科側欄都破圖了。</p>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_wiki.png?raw=true" alt="名字太長了，網頁都破圖囉。"></p>
-<p>Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis 命名自其被分離的地點，位於威爾斯安格爾西島的 Llanfair­pwll­gwyn­gyll­go­gery­chwyrn­drobwll­llan­tysilio­gogo­goch 小鎮，分離地點附近還有一間四星級飯店😮。</p>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_map.png?raw=true" alt="分離地點附近有間四星級飯店"></p>
-<p>註</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">All-Species Living Tree Project (LTP)  相關文獻，Yarza &amp; Munoz. (2014). The all-species living tree project. <em>In Methods in Microbiology</em> (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. <em>Systematic and applied microbiology</em>, 31(4), 241-250.<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. <em>Msystems</em>, 3(3), e00021-18.<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. <em>Genome biology and evolution</em>, 12(12), 2289-2302.<a href="#fnref:3" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>metagenomics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ROSALIND | Longest Increasing Subsequence (LGIS)</title>
     <url>/longest-increasing-subsequence/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給一正整數列，求其最長的遞增與遞減子數列。例如數列 5, 1, 4, 2, 3 的最長遞增數列為 1, 2, 3，最長遞減數列則為 5, 4, 3。</p>
@@ -1879,7 +1797,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">甲：1, 2, 3, 4, 5</span><br><span class="line">乙：3, 2, 1, 4, 5  &lt;-- 可能發生一次轉置</span><br></pre></td></tr></table></figure>
 
 <p>儘管以符號標記 synteny blocks 可直觀呈現基因體差異，不過隨著比較對象和內容增加，可以使用距離指標來簡化基因體差異分析。</p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Human-mouse_synteny.jpg"><br>（人類與老鼠的染色體 synteny blocks 分布圖，<a href="https://en.wikipedia.org/wiki/Synteny%EF%BC%89">https://en.wikipedia.org/wiki/Synteny）</a></p>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/0/05/Human-mouse_synteny.jpg"><br>（人類與老鼠的染色體 synteny blocks 分布圖，<a href="https://en.wikipedia.org/wiki/Synteny%EF%BC%89">https://en.wikipedia.org/wiki/Synteny）</a></p>
 <p>在 <a href="https://5uperb0y.com/counting-point-mutations/">“Counting Point Mutations”</a> 當中已介紹 Hamming distance 來評估發生點突變的序列間的差異。在這題則引進最長遞增&#x2F;遞減子數列的概念，透過 synteny block 的順序來定量基因體間的差異。最長遞增&#x2F;遞減子數列的長度越長，表示兩基因體越相似；長度越短，則表示可能發生較多次基因體重排等結構上的變化。</p>
 <h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>由於找最長遞增子數列的方式也能用在找最長遞減子數列，所以我將專注討論最長遞增子數列的解法。</p>
 <p>假設數列皆如 1, 2, 3, 4,… 嚴格遞增，那麼尋找最長遞增數列並不困難。然而，對於數列元素順序凌亂的狀況，如 2, 5, 3, 1, 4, …，隨著數列長度增加，會越來越難直觀看出答案。</p>
@@ -1982,6 +1900,88 @@
       </tags>
   </entry>
   <entry>
+    <title>All-Species Living Tree Project (LTP) 物種資訊的訂正和維護</title>
+    <url>/living-tree-project-database-curation/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>All-Species Living Tree Project (LTP)<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="All-Species Living Tree Project (LTP)  相關文獻，Yarza & Munoz. (2014). The all-species living tree project. *In Methods in Microbiology* (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. *Systematic and applied microbiology*, 31(4), 241-250.">1</span></a></sup> 旨在維護所有已知古菌和細菌 type strain 的 16S rRNA 基因序列，並基於這些序列，建立古菌和細菌的譜系樹。</p>
+<p>LTP 主要由四個單位參與</p>
+<ul>
+<li>LPSN 提供分類與命名資訊 (<a href="https://www.bacterio.net/">https://www.bacterio.net/</a>)</li>
+<li>ARB 支援譜系樹建立與分類 (<a href="http://www.arb-home.de/">http://www.arb-home.de/</a>)</li>
+<li>Ribocon 則負責資料庫的管理 (<a href="https://www.ribocon.com/">https://www.ribocon.com/</a>)</li>
+<li>SILVA 則提供序列資料庫、計算資源與網頁介面 (<a href="https://www.arb-silva.de/">https://www.arb-silva.de/</a>)</li>
+</ul>
+<p>（自 2020 年起，LTP 的遷出 SILVA，獨立為一個網頁：<a href="https://imedea.uib-csic.es/mmg/ltp/%EF%BC%89">https://imedea.uib-csic.es/mmg/ltp/）</a></p>
+<p>LTP 的資料常用於 16S rRNA 基因增幅序列的物種註解，而基於其收錄序列所構建的譜系樹，也能作為 Phylogenetic placement 的基礎<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. *Msystems*, 3(3), e00021-18.">2</span></a></sup>。</p>
+<p>另外，由於 LTP與 RDP training set 都只收錄了 type strain 的序列資料，所以相較於透過序列預測建立的資料庫，LTP 的序列資料較為可靠，能避免在物種註釋時，要在分類錯誤之外面臨資料庫錯誤的問題。</p>
+<p>儘管 LTP 已是人工維護且品質好的資料庫，但目前版本 ( LTP_01_2022) 的部分物種資訊仍有誤騰的狀況。在官方修正這些問題之前，資料庫的使用者得自己訂正這些錯誤。</p>
+<span id="more"></span>
+
+<h1 id="分類階層間少了分隔符"><a href="#分類階層間少了分隔符" class="headerlink" title="分類階層間少了分隔符"></a>分類階層間少了分隔符</h1><p>若使用 “;” 來分割這樣的字串，會得到較短的列表。</p>
+<blockquote>
+<p>AF251436 Ferrimicrobium acidiphilum Bacteria;ActinomycetotaAcidimicrobiia;Acidimicrobiales;Acidimicrobiaceae;Ferrimicrobium</p>
+</blockquote>
+<h1 id="分類名稱出現額外符號"><a href="#分類名稱出現額外符號" class="headerlink" title="分類名稱出現額外符號"></a>分類名稱出現額外符號</h1><p>文字前後出現空格、引號和句號等，可能會因字串不同而高估該分類階層的分類群數量，也可能在資料處理造成意外麻煩。</p>
+<h2 id="額外的雙引號"><a href="#額外的雙引號" class="headerlink" title="額外的雙引號"></a>額外的雙引號</h2><blockquote>
+<p>AY102612 Caedibacter taeniospiralis “Bacteria;Pseudomonadota;Alphaproteobacteria;Holosporales;””Caedimonadaceae””;Caedibacter </p>
+</blockquote>
+<h2 id="額外的句號"><a href="#額外的句號" class="headerlink" title="額外的句號"></a>額外的句號</h2><blockquote>
+<p>LC552068 Conexivisphaera calida Archaea;Crenarchaeota;Conexivisphaeria;Conexivisphaerales;Conexivisphaeraceae;Conexivisphaera.</p>
+</blockquote>
+<h2 id="額外的空格（位於-Hyphomonas-adhaerens-與-Bacteria-之間）"><a href="#額外的空格（位於-Hyphomonas-adhaerens-與-Bacteria-之間）" class="headerlink" title="額外的空格（位於 Hyphomonas adhaerens 與 Bacteria 之間）"></a>額外的空格（位於 Hyphomonas adhaerens 與 Bacteria 之間）</h2><blockquote>
+<p>KF863150 Hyphomonas adhaerens Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomonadales;Hyphomonadaceae;Hyphomonas Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Hyphomonadaceae;Hyphomonas</p>
+</blockquote>
+<h1 id="分類名稱間有額外的分隔符"><a href="#分類名稱間有額外的分隔符" class="headerlink" title="分類名稱間有額外的分隔符"></a>分類名稱間有額外的分隔符</h1><p>會導致該紀錄多一個分類階層 </p>
+<blockquote>
+<p>HQ223108 Thermoleophilum minutum Bacteria;Actinomycetota;;Thermoleophilia;Thermoleophilales;Thermoleophilaceae;Thermoleophilum</p>
+</blockquote>
+<h1 id="重複出現的分類名稱"><a href="#重複出現的分類名稱" class="headerlink" title="重複出現的分類名稱"></a>重複出現的分類名稱</h1><p>例如同樣的分類寫兩遍，或是整個條目寫了兩遍，會導致該紀錄增加多個分類階層</p>
+<h2 id="門名重複出現"><a href="#門名重複出現" class="headerlink" title="門名重複出現"></a>門名重複出現</h2><blockquote>
+<p>AJ288899 Bacteriovorax stolpii Bacteria;Bdellovibrionota;Bdellovibrionota;Bacteriovoracia;Bacteriovoracales;Bacteriovoracaceae;Bacteriovorax</p>
+</blockquote>
+<h2 id="整串分類名稱重複出現"><a href="#整串分類名稱重複出現" class="headerlink" title="整串分類名稱重複出現"></a>整串分類名稱重複出現</h2><blockquote>
+<p>“AF082795 Hyphomonas rosenbergii Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomonadales;Hyphomonadaceae;Hyphomonas Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Hyphomonadaceae;Hyphomonas</p>
+</blockquote>
+<h1 id="誤植分類名稱"><a href="#誤植分類名稱" class="headerlink" title="誤植分類名稱"></a>誤植分類名稱</h1><p>在此例中，屬名 Amnimonas 被誤謄為 Aminomonas（這是另一個屬）例如因為形似而寫成其他分類名、打錯字，會導致 convergent 現象（即相同子分類群卻有不同母分類群）</p>
+<h2 id="誤植-Aminomonas-→-Amnimonas"><a href="#誤植-Aminomonas-→-Amnimonas" class="headerlink" title="誤植 (Aminomonas → Amnimonas)"></a>誤植 (Aminomonas → Amnimonas)</h2><blockquote>
+<p>MF682432 Amnimonas aquatica Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Aminomonas</p>
+</blockquote>
+<h2 id="錯字-Jatrophihabitantaless→Jatrophihabitantales"><a href="#錯字-Jatrophihabitantaless→Jatrophihabitantales" class="headerlink" title="錯字 (Jatrophihabitantaless→Jatrophihabitantales)"></a>錯字 (Jatrophihabitantaless→Jatrophihabitantales)</h2><blockquote>
+<p>LC323105 Jatrophihabitans telluris Bacteria;Actinomycetota;Actinobacteria;Jatrophihabitantaless;Jatrophihabitantaceae;Jatrophihabitans</p>
+</blockquote>
+<h1 id="異名"><a href="#異名" class="headerlink" title="異名"></a>異名</h1><p>即條目間使用該分類群的不同名稱，會導致 convergent 現象（即相同子分類群卻有不同母分類群）</p>
+<h2 id="異名-1"><a href="#異名-1" class="headerlink" title="異名"></a>異名</h2><blockquote>
+<p>(Bdellovibrionia [synonym] → Oligoflexia [correct name])</p>
+</blockquote>
+<h2 id="俗名"><a href="#俗名" class="headerlink" title="俗名"></a>俗名</h2><blockquote>
+<p>(Bdellovibrionota [not validly published] → Bdellovibrionota [correct name]) HM038000 Vampirovibrio chlorellavorus Bacteria;Bdellovibrionota;Oligoflexia;Bdellovibrionales;Bdellovibrionaceae;Vampirovibrio AJ292759 Bdellovibrio bacteriovorus Bacteria;Bdellovibrionota;Bdellovibrionia;Bdellovibrionales;Bdellovibrionaceae;Bdellovibrio</p>
+</blockquote>
+<h1 id="欠缺完整分類階層"><a href="#欠缺完整分類階層" class="headerlink" title="欠缺完整分類階層"></a>欠缺完整分類階層</h1><p>比其它條目少了一個分類階層 </p>
+<blockquote>
+<p> # Lack information at Genus level (Ulvibacterium)<br> KF303137 Aestuariibaculum scopimerae Bacteria;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae</p>
+</blockquote>
+<h1 id="檢查方式以及我們的義務"><a href="#檢查方式以及我們的義務" class="headerlink" title="檢查方式以及我們的義務"></a>檢查方式以及我們的義務</h1><p>這些問題的模式紛亂，其實不容易找到有效的偵測方法，以下枚舉幾個我曾用過的策略，</p>
+<ul>
+<li>以分隔符切割字串，檢查輸出字串列表當中，長度異常的條目</li>
+<li>下載 LPSN 物種資訊，檢查未出現在 LPSN 的條目</li>
+<li>檢查出現分號、括號、空格以外的符號的條目</li>
+<li>利用這些方法檢查完畢後，就順道把自己的發現寄給他們，當作對資料庫維護團隊的感謝吧。</li>
+</ul>
+<p>最後，分享一個我原本以為是因為以下原因而產生的 typo …..</p>
+<blockquote>
+<p>VIFM01000001 Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis Bacteria;Myxococcota;Myxococcia;Myxococcales;Myxococcaceae;Myxococcus</p>
+</blockquote>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_ptt.png?raw=true" alt="這難道不是因為某個老梗產生的物種名稱嗎......"></p>
+<p>拿去 Goolge 才知道，還真的有名字這麼長的生物<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. *Genome biology and evolution*, 12(12), 2289-2302.">3</span></a></sup>，長到維基百科側欄都破圖了。</p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_wiki.png?raw=true" alt="名字太長了，網頁都破圖囉。"></p>
+<p>Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis 命名自其被分離的地點，位於威爾斯安格爾西島的 Llanfair­pwll­gwyn­gyll­go­gery­chwyrn­drobwll­llan­tysilio­gogo­goch 小鎮，分離地點附近還有一間四星級飯店😮。</p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_map.png?raw=true" alt="分離地點附近有間四星級飯店"></p>
+<p>註</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">All-Species Living Tree Project (LTP)  相關文獻，Yarza &amp; Munoz. (2014). The all-species living tree project. <em>In Methods in Microbiology</em> (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. <em>Systematic and applied microbiology</em>, 31(4), 241-250.<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. <em>Msystems</em>, 3(3), e00021-18.<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. <em>Genome biology and evolution</em>, 12(12), 2289-2302.<a href="#fnref:3" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>metagenomics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？</title>
     <url>/mayer-2023-the-art-of-clean-code-80-20-principle/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -2054,7 +2054,8 @@
   <entry>
     <title>夏子的冒險</title>
     <url>/mishima-1951-natsukos-adventure/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>二十歲的松浦夏子是個言出必行的女孩，她有著一旦下定決心便不肯輕言放棄的頑固個性，七歲那年，她受夠了菠菜，她的筷子再也不曾沾過這種蔬菜；等到十五歲時，聽聞他人評論紅色不適合她，夏子便立誓不再穿紅色系的衣服，任誰來勸說也無法動搖她的決心。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="三島由紀夫（1951），夏子的冒險。">1</span></a></sup></p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>二十歲的松浦夏子是個言出必行的女孩，她有著一旦下定決心便不肯輕言放棄的頑固個性，七歲那年，她受夠了菠菜，她的筷子再也不曾沾過這種蔬菜；等到十五歲時，聽聞他人評論紅色不適合她，夏子便立誓不再穿紅色系的衣服，任誰來勸說也無法動搖她的決心。</p>
+<p>（三島由紀夫（1951），夏子的冒險。）</p>
 <span id="more"></span>
 
 <p>夏子有張典型的南方人的臉孔——烏黑的頭髮、飽滿的雙唇、挺立的鼻樑、慵懶而性感的眼神、剽悍而狂熱的氣質。儘管夏子身邊不乏追求者，她卻對那些汲汲營營於追逐金錢地位的都市青年感到乏味。她像觀察昆蟲般審視每個男人，將他們分門別類：這個只顧著怎麼爬上更高的職位，那個對教授、處長等頭銜著迷；還有些人以為只要開著跑車和送上禮物就能博得她的歡心。</p>
@@ -2130,7 +2131,36 @@
 <blockquote>
 <p>她猛然轉身，用那種充滿個性、具有某種特徵的斷定口吻說，<br>「我還是決定進修道院。」<br>三人目瞪口呆，放下茶匙。唯有三個咖啡杯冒出的熱氣，在這神秘的沉默中，像青煙一樣冉冉上升……</p>
 </blockquote>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">三島由紀夫（1951），夏子的冒險。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+]]></content>
+  </entry>
+  <entry>
+    <title>三島由紀夫書信教室</title>
+    <url>/mishima-1968-yukio-mishima-letter-classroom/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這本書是由五個角色書信往來所構成的故事，他們分別是厭惡市儈作風的文藝青年炎丈流、故意寫英文情書來評價心儀對象的美艷寡婦冰真間子、收藏著五百條領帶和收養五隻貓的風流男士山鳶夫、對工作毫無熱誠只等著嫁人的粉領族空美津子，以及執著於奶油蛋糕和彩色電視機的丸虎一。</p>
+<span id="more"></span>
+
+<p>炎丈流與空美津子因通信來往而萌生情愫。眼見情侶倆關係日漸密切，暗戀炎丈流的空美津子找上損友山鳶夫，想寫封黑函來拆散這對情侶。不料，山鳶夫亦在彼此閒談與奚落的互動中，愛上了空美津子。於是基於一番妒意，暗中幫助炎丈流與空美津子，替他們向雙方的家長說情，促成這對情侶的婚事。</p>
+<p>得知消息的空美津子，寫了封信大罵山鳶夫，還斷言要與之絕交。所幸，丸虎一在無意間勸和兩人，讓故事的結局兩對情侶皆成眷屬，而丸虎一也如願得到他想要的彩色電視和奶油蛋糕。</p>
+<p>雖然作者對感情的見解有趣以及對損友關係的描述恰到好處，但這本書最大的看點還是丸虎一那充滿現代感的垃圾話，喜歡到我幾乎把他寫的每封信都抄了下來。</p>
+<p>好比說，他因為借不到錢（向冰真間子）買彩色電視機又被對方揶揄一番，憤而威脅對方要到處宣傳她的學生英文很爛。</p>
+<blockquote>
+<p>要是不願意請客，我會在東京到處宣傳您英文補習班的每一個學生英文都很糟糕。</p>
+</blockquote>
+<p>又因看不到彩色節目，憂鬱纏身，寫了封信邀請冰真間子陪他殉情，只因對方老得無法作為戀愛與結婚對象：</p>
+<blockquote>
+<p>不光如此，我每看一個鐘頭節目，必定會吃掉一包奶油花生，也就是同時進行「看、寫、吃」這三件事，這樣一來，我相當於活了別人的三輩子。<br>不過，悲慘的現實卻是我只能觀看黑白節目，連一台彩色電視機都買不起。既然已經活了別人的三輩子，不如趁著青春年華好時光，在眾人的惋惜之下離開人——今晚忽然如此有感而發，倍覺空虛，於是選中了您陪我殉情。</p>
+</blockquote>
+<p>或是最終替朋友出氣的方式也令人拍案叫絕：</p>
+<blockquote>
+<p>最近收到一封冰真間子女式的信，信裡寫道「山鳶夫實在惹人厭，一想到他就讓人反胃！你遇到那個傢伙時，記得代我朝他吐口水」，可是這陣子沒機會見到您，又不好拖延真間子女士的交代，所以隨信附上一張沾有我口水的紙，請您把它放在臉上抹一抹。</p>
+</blockquote>
+<p>三島由紀夫說他們的通信內容「既可視為書信格式，也可當成寫作範本」。然而，當代人的情感生活往往比小說人物單純，我們觀念也相對開放，所以要用到這些信件的場合不多。諸如「力邀殉情的信」和「已非處子之身的坦白信」可能已充滿時代感。</p>
+<p>不過，三島由紀夫在最後一章給讀者的信中，還是總結了寫信的要點：</p>
+<blockquote>
+<p>寫信時一定要先了解一個前提條件，那就是收信人根本不在乎寫信人的一切。這是最重要的關鍵。<br>一個洞悉世態者深知人們對其他人毫不在意，唯有攸關自身利害得失的時候才會產生興趣，儘管這是一種苦澀的人生哲學。<br>直到你深切體悟，世上的每一個人只顧朝著自私自利的目標邁進、除了極少數的例外幾乎不會在意其他人，這時你的文字才有躍然紙上的力量，能夠寫出撼動人心的書信。</p>
+</blockquote>
+<p>我覺得這道理無論哪個時代或哪種通訊媒介，只要人類仍是人類便依然適用。</p>
+]]></content>
   </entry>
   <entry>
     <title>不道德教育講座</title>
@@ -2166,35 +2196,6 @@
 <p>因此，三島由紀夫才說「在現代社會裡，肌肉發達不過是可憐又滑稽的東西。可也因為如此，我才會對積極鍛鍊出強健的體魄不遺餘力。」</p>
 <h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以前是從楯之會的維基百科條目了解三島由紀夫的生平，在還沒讀過其作時，已對其人有一堆印象。直到最近被討論串的<a href="https://www.ptt.cc/bbs/Gossiping/M.1677326783.A.D04.html">留言</a>（「 20多年前看過《潮騷》，青春純愛故事，字裡行間聞得到海的味道」）打動，才開始接觸他的作品。</p>
 <p>由於我是從三島由紀夫的娛樂小說和散文作品入門，所以有機會認識這位作家別於外人給定標籤的一面。雖然不是每本書都看得懂，至少這本書我是看得蠻開心的。像讀〈應當打從心底瞧不起老師〉的時候，會想要是早點讀到就好了；但也有像〈肉體的無常〉那樣親身經歷才能體會的感動。最後要坦白，我其實也抄了一些講話很靠北的段落，但那屬於適合自娛的陰暗笑點，就不放上來了 :)</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>三島由紀夫書信教室</title>
-    <url>/mishima-1968-yukio-mishima-letter-classroom/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這本書是由五個角色書信往來所構成的故事，他們分別是厭惡市儈作風的文藝青年炎丈流、故意寫英文情書來評價心儀對象的美艷寡婦冰真間子、收藏著五百條領帶和收養五隻貓的風流男士山鳶夫、對工作毫無熱誠只等著嫁人的粉領族空美津子，以及執著於奶油蛋糕和彩色電視機的丸虎一。</p>
-<span id="more"></span>
-
-<p>炎丈流與空美津子因通信來往而萌生情愫。眼見情侶倆關係日漸密切，暗戀炎丈流的空美津子找上損友山鳶夫，想寫封黑函來拆散這對情侶。不料，山鳶夫亦在彼此閒談與奚落的互動中，愛上了空美津子。於是基於一番妒意，暗中幫助炎丈流與空美津子，替他們向雙方的家長說情，促成這對情侶的婚事。</p>
-<p>得知消息的空美津子，寫了封信大罵山鳶夫，還斷言要與之絕交。所幸，丸虎一在無意間勸和兩人，讓故事的結局兩對情侶皆成眷屬，而丸虎一也如願得到他想要的彩色電視和奶油蛋糕。</p>
-<p>雖然作者對感情的見解有趣以及對損友關係的描述恰到好處，但這本書最大的看點還是丸虎一那充滿現代感的垃圾話，喜歡到我幾乎把他寫的每封信都抄了下來。</p>
-<p>好比說，他因為借不到錢（向冰真間子）買彩色電視機又被對方揶揄一番，憤而威脅對方要到處宣傳她的學生英文很爛。</p>
-<blockquote>
-<p>要是不願意請客，我會在東京到處宣傳您英文補習班的每一個學生英文都很糟糕。</p>
-</blockquote>
-<p>又因看不到彩色節目，憂鬱纏身，寫了封信邀請冰真間子陪他殉情，只因對方老得無法作為戀愛與結婚對象：</p>
-<blockquote>
-<p>不光如此，我每看一個鐘頭節目，必定會吃掉一包奶油花生，也就是同時進行「看、寫、吃」這三件事，這樣一來，我相當於活了別人的三輩子。<br>不過，悲慘的現實卻是我只能觀看黑白節目，連一台彩色電視機都買不起。既然已經活了別人的三輩子，不如趁著青春年華好時光，在眾人的惋惜之下離開人——今晚忽然如此有感而發，倍覺空虛，於是選中了您陪我殉情。</p>
-</blockquote>
-<p>或是最終替朋友出氣的方式也令人拍案叫絕：</p>
-<blockquote>
-<p>最近收到一封冰真間子女式的信，信裡寫道「山鳶夫實在惹人厭，一想到他就讓人反胃！你遇到那個傢伙時，記得代我朝他吐口水」，可是這陣子沒機會見到您，又不好拖延真間子女士的交代，所以隨信附上一張沾有我口水的紙，請您把它放在臉上抹一抹。</p>
-</blockquote>
-<p>三島由紀夫說他們的通信內容「既可視為書信格式，也可當成寫作範本」。然而，當代人的情感生活往往比小說人物單純，我們觀念也相對開放，所以要用到這些信件的場合不多。諸如「力邀殉情的信」和「已非處子之身的坦白信」可能已充滿時代感。</p>
-<p>不過，三島由紀夫在最後一章給讀者的信中，還是總結了寫信的要點：</p>
-<blockquote>
-<p>寫信時一定要先了解一個前提條件，那就是收信人根本不在乎寫信人的一切。這是最重要的關鍵。<br>一個洞悉世態者深知人們對其他人毫不在意，唯有攸關自身利害得失的時候才會產生興趣，儘管這是一種苦澀的人生哲學。<br>直到你深切體悟，世上的每一個人只顧朝著自私自利的目標邁進、除了極少數的例外幾乎不會在意其他人，這時你的文字才有躍然紙上的力量，能夠寫出撼動人心的書信。</p>
-</blockquote>
-<p>我覺得這道理無論哪個時代或哪種通訊媒介，只要人類仍是人類便依然適用。</p>
 ]]></content>
   </entry>
   <entry>
@@ -2328,15 +2329,15 @@
 <p>然而，網頁中仍能有自訂元素，這些元素的名稱和行為未必與 html 原生元素一致，所以 Vimium 只能嘗試搜索可能可點擊的元素名稱，例如 buttom 或是 link，間接推論這些元素可點擊。不過實際的網頁往往不會使用這麼直白的名稱，可能使用縮寫或是帶好來命名這些元素，導致 vimium 無法標註這些元素。</p>
 <p>讀了<a href="https://ithelp.ithome.com.tw/articles/10091999">Vimium 介紹與支持 Plurk (噗浪)</a>之後，覺得最直觀的想法是 修改 Vimium 程式碼的判斷式，看能不能找到彈出視窗共同的特徵，例如名稱、類別或是辨識碼等，拓展 Vimium 能辨識的元素，讓程式也能夠為彈出視窗標記快捷鍵。</p>
 <p>不過這篇文章距今已十年，Vimium 也經歷多次改版，所以可能要找一下 github page 找到辨識網頁元素的區域在何處。所幸在<a href="https://stackoverflow.com/questions/53918093/how-can-i-make-my-element-clickable-for-vimium">這篇文章</a>找到了一些參考。</p>
-<p>我嘗試各大新聞網都失敗，只有知乎成功，因此以下會用知乎為例，說明要怎麼修改程式碼讓 Vimium 可以關閉彈出連結。<br><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_before.png?raw=true" alt="Vimium 無法辨識知乎登入視窗的關閉符號"></p>
+<p>我嘗試各大新聞網都失敗，只有知乎成功，因此以下會用知乎為例，說明要怎麼修改程式碼讓 Vimium 可以關閉彈出連結。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_before.png?raw=true" alt="Vimium 無法辨識知乎登入視窗的關閉符號"></p>
 <h1 id="調查彈出視窗是否有共同的特徵"><a href="#調查彈出視窗是否有共同的特徵" class="headerlink" title="調查彈出視窗是否有共同的特徵"></a>調查彈出視窗是否有共同的特徵</h1><p>下一步是觀察彈出視窗的網頁元素的構建方式，歸納出彈出視窗的共通特徵，以便讓 Vimium 辨識。首先，在瀏覽器按 <code>F12</code> 開啟開發人員視窗來檢視網頁原始碼，接著於彈出視窗依序點擊右鍵和檢查，即可鎖定對應位置的網頁原始碼。</p>
-<p>我檢查了幾個網站後發現，每個網頁的彈出視窗設計都不一樣，例如元素的組成、對應的滑鼠行為(e.g. hover or click)，乃至於元素的 class 與 id 也因網頁而異。這意味著，也許沒有共通的值可以辨識這些自訂元素，只能針對常用的網頁來做修改。<br><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_check.png?raw=true"></p>
+<p>我檢查了幾個網站後發現，每個網頁的彈出視窗設計都不一樣，例如元素的組成、對應的滑鼠行為(e.g. hover or click)，乃至於元素的 class 與 id 也因網頁而異。這意味著，也許沒有共通的值可以辨識這些自訂元素，只能針對常用的網頁來做修改。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_check.png?raw=true"></p>
 <h1 id="下載擴充套件程式碼"><a href="#下載擴充套件程式碼" class="headerlink" title="下載擴充套件程式碼"></a>下載擴充套件程式碼</h1><p>下載擴充套件的方式可參考<a href="https://stackoverflow.com/questions/16680682/how-to-modify-an-extension-from-the-chrome-web-store">此文</a></p>
 <ol>
 <li>安裝 <a href="https://chrome.google.com/webstore/detail/chrome-extension-source-v/jifpbeccnghkjeaalbbjmodiffmgedin">Chrome extension source viewer</a></li>
 <li>點開 Vimium 頁面</li>
 <li>點擊 “Chrome extension source viewer”</li>
-<li>點擊 “Download as zip”<br><img src="https://lh3.googleusercontent.com/dCvSGp9T3LZP6PLfzgxNpxlX5qxizpjKN8g9R3eNKTg98e4MfAEDc5IRVFGr5O4VtC4nq62HNKpGxkNaDLscK1VXLw=w640-h400-e365-rj-sc0x00ffffff" alt="於擴充套件頁面點擊 &quot;CRX&quot; 即可下載套件原始碼（圖：Chrome extension source viewer 頁面）"></li>
+<li>點擊 “Download as zip”<br><img data-src="https://lh3.googleusercontent.com/dCvSGp9T3LZP6PLfzgxNpxlX5qxizpjKN8g9R3eNKTg98e4MfAEDc5IRVFGr5O4VtC4nq62HNKpGxkNaDLscK1VXLw=w640-h400-e365-rj-sc0x00ffffff" alt="於擴充套件頁面點擊 &quot;CRX&quot; 即可下載套件原始碼（圖：Chrome extension source viewer 頁面）"></li>
 </ol>
 <h1 id="修改程式碼並套用於瀏覽器"><a href="#修改程式碼並套用於瀏覽器" class="headerlink" title="修改程式碼並套用於瀏覽器"></a>修改程式碼並套用於瀏覽器</h1><p>解壓縮後，接著點開，在這段加入<br><a href="https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992">https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992</a></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!isClickable &amp;&amp; className &amp;&amp; className.<span class="title function_">toLowerCase</span>().<span class="title function_">includes</span>(<span class="string">&quot;zdi&quot;</span>))</span><br><span class="line">  possibleFalsePositive = isClickable = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
@@ -2347,42 +2348,13 @@
 <li>點選「載入未封裝項目」</li>
 <li>重新整理頁面，查看是否順利修改</li>
 </ol>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_after.png?raw=true" alt="修改 Vimium 的程式碼後，關閉視窗的符號被標上標籤了。"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_after.png?raw=true" alt="修改 Vimium 的程式碼後，關閉視窗的符號被標上標籤了。"></p>
 <h1 id="困難與限制"><a href="#困難與限制" class="headerlink" title="困難與限制"></a>困難與限制</h1><p>實作之後才發現，許多網站不是用 Html 既有物件來構建彈出視窗，而是自訂許多 class 與 id，再透過 Javascript 控制。這些自定義物件的行為由 Javascript 控制，每個網頁的命名、行為與能見度都不一樣，所以 Vimium 也無法一次搞定所有可能性。</p>
 <p>換句話說，本文陳述的嘗試只適用於常用的網站，好比說常看的新聞網或社群論壇等，不能一勞永逸地克服所有彈出視窗。</p>
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>目前，彈出視窗仍是鍵盤瀏覽網頁的最大阻礙，原因是彈出是往往是自訂元素。，諸如 Vimium 等擴充套件也不易辨識多樣的自訂元素。鍵盤的可及性受限於網頁元素的設計共識，所以政府對於無障礙網頁設計才有相關的規範與建議吧。</p>
 ]]></content>
       <tags>
         <tag>vim</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜調整工作目錄的路徑</title>
-    <url>/nextflow-change-path-to-work-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
-<span id="more"></span>
-
-<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
-
-<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
-<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
-<blockquote>
-<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -2726,7 +2698,7 @@
 <p>Vim 的 Normal 模式有許多便於移動與跳轉指標的指令，這些有用的指令在鍵鼠系統裡多被滑鼠取代，導致鍵盤不足以支持瀏覽網頁的需求。然而，除了輸入關鍵字外，瀏覽網頁時其實少有編輯文字的需求，也就沒有下達指令與輸入文字的衝突。這種情況可以類比為 Vim 的 Normal 模式，如果能透過 vimium 之類的套件，移植 Vim 好用的指令到這些閒置的文字鍵，便能充分發會鍵盤的潛能。</p>
 <h2 id="Vimium-解決了鍵盤開啟連結的麻煩"><a href="#Vimium-解決了鍵盤開啟連結的麻煩" class="headerlink" title="Vimium 解決了鍵盤開啟連結的麻煩"></a>Vimium 解決了鍵盤開啟連結的麻煩</h2><p>雖然 Vimium 還有許多功能（這些功能可透過輸入 <code>?</code> 查詢），但我覺得在改善瀏覽網頁方面，快速開啟連結是最方便也最重要的功能。</p>
 <p>若使用 Chrome 內建的快捷鍵，必須透過遍歷或是搜尋來找到連結。當網站連結編排不友善時，遍歷的時間會延長非常多。相較之下，Vimium 引進了 Vim Easymotion 功能，用戶只要鍵入 <code>f</code>，Vimium 便會自動為連結標記關鍵字，只要輸入關鍵字就能直接開啟標註的連結。</p>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="按下 `f` 即可自動標註連結，再按下標註的字母即可開啟連結。由於每個連結至多標註兩個字母，所以視窗內的連結都可以在輸入三個鍵以內開啟。"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="按下 `f` 即可自動標註連結，再按下標註的字母即可開啟連結。由於每個連結至多標註兩個字母，所以視窗內的連結都可以在輸入三個鍵以內開啟。"></p>
 <p>學會以 Vimium 開啟連結，再配合 Windows 與 Chrome 內建直觀的快捷鍵，其實就足以查資料、逛論壇或是到社群平台串門子了。若對於效率有要求，還可以再讀 Vimium 的說明，學習以 home row 為核心的鍵盤操作。</p>
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>網頁瀏覽是少量文字編輯，加上大量查詢、瀏覽、點擊與切換等指令的循環。鍵鼠系統已能流暢地瀏覽網頁，所以是否要單用鍵盤瀏覽網頁是風格問題，我對此議題的總結如下，</p>
 <ul>
@@ -2738,6 +2710,35 @@
 ]]></content>
       <tags>
         <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜調整工作目錄的路徑</title>
+    <url>/nextflow-change-path-to-work-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
+<span id="more"></span>
+
+<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
+
+<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
+<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
+<blockquote>
+<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -2759,7 +2760,7 @@
 <h1 id="透過-nextflow-operator"><a href="#透過-nextflow-operator" class="headerlink" title="透過 nextflow operator"></a>透過 nextflow operator</h1><p>假設已經把辨識碼與輸入資料定義成前一節的形式，而且要組合在一起的資料於 nextflow 各變項內的順序也相同，那麼可以先建立包含全數資料的 tuple，再使用 <code>transpose</code> operator 轉置。</p>
 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">workflow &#123;</span><br><span class="line">    channel.of([id, fq1, fq2]).transpose()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/combine-data-into-a-tuple-with-key_transpose.png?raw=true" alt="`transpose` 能轉置 channel 的組成。"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/combine-data-into-a-tuple-with-key_transpose.png?raw=true" alt="`transpose` 能轉置 channel 的組成。"></p>
 <p>由於 channel 遵循 FIFO 原則，所以使用 <code>view()</code> 瀏覽結果時，確認資料釋出與輸入順序一致。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[a, /path/to/data/a_r1.fq, /path/to/data/a_r2.fq]</span><br><span class="line">[b, /path/to/data/b_r1.fq, /path/to/data/b_r2.fq]</span><br><span class="line">[c, /path/to/data/c_r1.fq, /path/to/data/c_r2.fq]</span><br></pre></td></tr></table></figure>
 <h1 id="透過-bash-in-process"><a href="#透過-bash-in-process" class="headerlink" title="透過 bash in process"></a>透過 bash in process</h1><p>假設辨識碼為檔名的一部份，那麼也可以用 bash script 擷取字串，並在 output channel 將擷取到的辨識碼與輸入的資料組合成 <code>tuple</code>。</p>
@@ -3183,26 +3184,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>ROSALIND | Ordering Strings of Varying Length Lexicographically (LEXV)</title>
-    <url>/ordering-strings-of-varying-length-lexicographically/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度小於等於 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
-<blockquote>
-<p>Given: A permutation of at most 12 symbols defining an ordered alphabet $\mathscr{A}$ and a positive integer n (n≤4).</p>
-<p>Return: All strings of length at most n formed from $\mathscr{A}$, ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/lexv/">https://rosalind.info/problems/lexv/</a>)</p>
-<span id="more"></span>
-
-<p>這題是 <a href="https://5uperb0y.com/enumerating-k-mers-lexicographically/">“Enumerating k-mers lexicographically”</a> 的變體。在原始題目中，只需列出長度為 k 的所有可能字串，這些字串都能直接從長度為 k - 1 的字串延伸而來。</p>
-<p>都是從長度為 k - 1 的字串延伸而來。是以，最終解是遞迴的直接產物，也能追溯到遞迴的基本狀況。</p>
-<p>然而，這題則要求列出所有長度「小於等於 k」的字串，例如 $\mathscr{A}$ 為 <code>[&quot;A&quot;, &quot;B&quot;]</code> 而且 k &#x3D; 2 時，則輸出應包含 <code>[&quot;A&quot;, &quot;AA&quot;, &quot;AB&quot;, &quot;B&quot;, &quot;BA&quot;, &quot;BB&quot;]</code>。</p>
-<p>雖然 “AA” 和 “AB” 是透過添加字符組成，但是 “A” 和 “B” 則否，輸出結果之前來自不同的關係。為了解決這問題，每次遞迴不只要生成指定長度的字串，還要保留每次遞迴的中繼結果。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lexv</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Ordering Strings of Varying Length Lexicographically</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> elements</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        output = []</span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> elements:</span><br><span class="line">            output.append(e)</span><br><span class="line">            output.extend([<span class="string">f&quot;<span class="subst">&#123;e&#125;</span><span class="subst">&#123;k_str&#125;</span>&quot;</span> <span class="keyword">for</span> k_str <span class="keyword">in</span> lexv(elements, k - <span class="number">1</span>) ])</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>少棒的基礎</title>
     <url>/nishi-2015-junior-baseball-coaching-book/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>相較於影片，要以圖文解釋複雜動作有許多限制，所以此書的重點不在於老生常談的技術內容，而是引進刻意練習的帶隊觀念。</p>
@@ -3235,6 +3216,26 @@ echo &quot;\$title \n $PWD&quot;
 <p>應該說，教學時若要求球員的動作與教練一致，那球員很有可能為了達到標準而顧此失彼。由於差勁的打者不會逼你學他們，所以能避開這項教學錯誤。</p>
 <p>至於能否對球員的問題感同身受，我覺得跟球技無關，而是跟教練的背景有關。所以不同類型的教練能幫助到不同類型的球員。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>ROSALIND | Ordering Strings of Varying Length Lexicographically (LEXV)</title>
+    <url>/ordering-strings-of-varying-length-lexicographically/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度小於等於 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
+<blockquote>
+<p>Given: A permutation of at most 12 symbols defining an ordered alphabet $\mathscr{A}$ and a positive integer n (n≤4).</p>
+<p>Return: All strings of length at most n formed from $\mathscr{A}$, ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/lexv/">https://rosalind.info/problems/lexv/</a>)</p>
+<span id="more"></span>
+
+<p>這題是 <a href="https://5uperb0y.com/enumerating-k-mers-lexicographically/">“Enumerating k-mers lexicographically”</a> 的變體。在原始題目中，只需列出長度為 k 的所有可能字串，這些字串都能直接從長度為 k - 1 的字串延伸而來。</p>
+<p>都是從長度為 k - 1 的字串延伸而來。是以，最終解是遞迴的直接產物，也能追溯到遞迴的基本狀況。</p>
+<p>然而，這題則要求列出所有長度「小於等於 k」的字串，例如 $\mathscr{A}$ 為 <code>[&quot;A&quot;, &quot;B&quot;]</code> 而且 k &#x3D; 2 時，則輸出應包含 <code>[&quot;A&quot;, &quot;AA&quot;, &quot;AB&quot;, &quot;B&quot;, &quot;BA&quot;, &quot;BB&quot;]</code>。</p>
+<p>雖然 “AA” 和 “AB” 是透過添加字符組成，但是 “A” 和 “B” 則否，輸出結果之前來自不同的關係。為了解決這問題，每次遞迴不只要生成指定長度的字串，還要保留每次遞迴的中繼結果。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lexv</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Ordering Strings of Varying Length Lexicographically</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> elements</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        output = []</span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> elements:</span><br><span class="line">            output.append(e)</span><br><span class="line">            output.extend([<span class="string">f&quot;<span class="subst">&#123;e&#125;</span><span class="subst">&#123;k_str&#125;</span>&quot;</span> <span class="keyword">for</span> k_str <span class="keyword">in</span> lexv(elements, k - <span class="number">1</span>) ])</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
   </entry>
   <entry>
     <title>可能反映與嬰兒飲食相關的腸道菌相演替機制的現象</title>
@@ -3447,7 +3448,7 @@ echo &quot;\$title \n $PWD&quot;
 <p>有趣的是，數字再大一點時數字會以科學記號表示，不符合 rep 的輸入規範，也會顯示錯誤。</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="operator">&gt;</span> seq <span class="operator">&lt;-</span> paste0<span class="punctuation">(</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;ABCDEFG&quot;</span><span class="punctuation">,</span> <span class="number">1000000000000000000000</span><span class="punctuation">)</span><span class="punctuation">,</span> collapse <span class="operator">=</span> <span class="string">&quot;&quot;</span><span class="punctuation">)</span></span><br><span class="line">Error <span class="keyword">in</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;ABCDEFG&quot;</span><span class="punctuation">,</span> <span class="number">1e+21</span><span class="punctuation">)</span> <span class="operator">:</span> invalid <span class="string">&#x27;times&#x27;</span> argument</span><br></pre></td></tr></table></figure>
 <p>這些道理我都懂，可是，我的 pipeline 是以腳本執行啊，怎麼還會碰到這問題？經過一番苦思，發現 bug 出在我的程式邏輯上，跟本文提到的限制一點關係都沒有。</p>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/r-console-upper-limit-on-the-string-length.png?raw=true" alt="meme, it&#39;s my fault, not R&#39;s"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/r-console-upper-limit-on-the-string-length.png?raw=true" alt="meme, it&#39;s my fault, not R&#39;s"></p>
 ]]></content>
       <tags>
         <tag>linux</tag>
@@ -3585,6 +3586,26 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>讀後感｜生命是什麼 — 如何推論基因的尺寸？</title>
+    <url>/schrodinger-1944-what-is-life-chapter-2/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>依照<a href="./schrodinger-1944-what-is-life-chapter-1.md">第一章</a>的推理，生物及其生理過程有賴大量原子參與，來抵銷個別原子的隨機行為，以維持生存所需的宏觀秩序。</p>
+<p>乍看之下，這項推論似乎符合當代多數的生物學觀察。畢竟個體由無數細胞組成，而細胞又由多樣的園子、分子和聚合物構築。即使是維繫生存最基本的呼吸作用，也需要大量的分子參與。這些園子的數量大小，吻合統計物理的要求，能讓物理和化學過程順利運作。</p>
+<p>然而，在這章當中，我們可以看到維繫遺傳的關鍵因素，基因，相較於其穩定性，卻令人訝異地有著幾乎無法維持嚴格統計定律的數量。</p>
+<span id="more"></span>
+
+<h2 id="基因相當穩定"><a href="#基因相當穩定" class="headerlink" title="基因相當穩定"></a>基因相當穩定</h2><p>相較於紙張、磁碟片、或是塗鴉在牆上的紀錄，基因在保存事務上的能力相當穩定。基因的穩定型從色盲、鐮刀行貧血、乃至於哈布斯堡家族鮮明的戽斗等遺傳行疾病更為顯著，即使經過了上千年，這些性狀仍仍能忠實地在世代間傳遞，以致於當今的社會仍要為其奮鬥。</p>
+<p>考量其穩定性，究竟需要多少原子才能讓基因維持這樣的穩定性呢？</p>
+<h2 id="以染色體影像估算基因的最大尺寸"><a href="#以染色體影像估算基因的最大尺寸" class="headerlink" title="以染色體影像估算基因的最大尺寸"></a>以染色體影像估算基因的最大尺寸</h2><p>一種直觀的估算方法是透過細胞學的觀察為依據。果蠅唾腺細胞的染色體在分裂時會凝聚成顯微鏡可見的棒狀物，這些染色體上有深淺間格的調帶，假設這些條帶是基因的性向，那麼可以ˇ用染色惡體的體積，再除以調代的數量，那麼即可推論基因的尺寸。</p>
+<h2 id="以遺傳圖譜估算基因的最大尺寸"><a href="#以遺傳圖譜估算基因的最大尺寸" class="headerlink" title="以遺傳圖譜估算基因的最大尺寸"></a>以遺傳圖譜估算基因的最大尺寸</h2><p>另一種迂迴但是巧妙的手法是透過遺傳方法，推論基因的數量。生物形成配子時，會先行減數分裂。減數分裂過程，同源染色體間的片段可能彼此互換，導致原先坐落相同染色體的性狀，被置換到對偶染色體上。互換會導致子代性狀的機率分布脫離孟德爾的假設，因此透過育種雜交實驗，可從子代性狀的分布推論互換的機率。</p>
+<p>假設染色體各處發生互換的機率一致，若性狀間距越大，當中也有較多位點可能發生互換，也表示兩者互換的機率也越高（因為兩者之間有較多位置可能發生互換），反之則表示兩者互換機率愈高，則間距越大。基於這項假設，可以從性狀間的互換率，推論性狀在染色體上的相對位置與距離。</p>
+<p>這項任務有助於在遺傳學上譜出基因的相對位置，其在推論基因尺寸的用途則在於。若我們定義基因為乘載性狀的基本單位，若一項性狀能隨互換而遷移，表示這段區域至少包含了能獨立展現性狀的基因。因此，基因的最大尺寸可由染色體的體積，除以可互換而分離的性狀數量來估計。（由於）</p>
+<h2 id="基因具有令人訝異的穩定性"><a href="#基因具有令人訝異的穩定性" class="headerlink" title="基因具有令人訝異的穩定性"></a>基因具有令人訝異的穩定性</h2><p>無論透過何種方式推論，原子的最大體積約為 300 Å,而單一原子的尺寸約為 1 Å，這意味著基因所含的原子數頂多在數百萬個之間。透過前一章所推論的，這樣的尺寸顯然過少了。那麼究竟有什麼使得基因能以保有如此問訂的特性</p>
+]]></content>
+      <tags>
+        <tag>what is life</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>讀後感｜生命是什麼 — 鴿子為什麼那麼大？</title>
     <url>/schrodinger-1944-what-is-life-chapter-1/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》">1</span></a></sup></p>
@@ -3606,26 +3627,6 @@ echo &quot;\$title \n $PWD&quot;
 <p>在這尺度，影響鴿子的不再是氣流、重力和光線等巨觀現象，而是電荷、碰撞、量子穿隧等微觀現象。僅僅一個離子，就可能破壞迷你鴿子的結構；即使是少量原子刺激，都會影響鴿子的感官，以致於不能辨明關鍵的環境訊號。既然無法維繫體內運作和對外互動，這樣的生命也就不會是我們定義的「鴿子」了。</p>
 <h2 id="古典物理無法解釋遺傳的分子機制"><a href="#古典物理無法解釋遺傳的分子機制" class="headerlink" title="古典物理無法解釋遺傳的分子機制"></a>古典物理無法解釋遺傳的分子機制</h2><p>儘管統計物理似乎為有機體的尺存給出了圓滿的解釋，但此處的議論實為楔子：依照前述討論，有機體的秩序仰賴大量原子參與。不過就當時所知，基因很可能僅由少量原子組成，那麼基因是怎麼表現出遺傳、突變與分裂等在巨觀層次可觀測到的高度秩序？薛丁格主張，這個矛盾或許可用量子力學的概念解釋。</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">讀書筆記的內容源於 Schrödinger. (1944) What is life?: with mind and matter and autobiographical sketches。台灣由貓頭鷹出版社翻譯代理：《薛丁格生命物理學講義|生命是什麼？》<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">原文裡，薛丁格提出的問題是：「（前略）人體為什麼這麼大呢？」<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dokkum &amp; Conroy. (2010). A substantial population of low-mass stars in luminous elliptical galaxies. Nature, 468(7326), 940-942.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">「由外界物體對組織嚴密的物質系統所產生的物理影響，顯然也和相對應思維中的知覺和經驗（它們構成我上面說的思維的素材）相對應。因此，一般說來，我們的系統和其他系統之間的互動必須要有起碼的秩序，（後略）」<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">氧氣磁化的強度除了隨磁場增強以外，也會隨降溫而提升，這現象支持了熱運動持續抵消磁化影響的假說。<a href="#fnref:5" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>what is life</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>讀後感｜生命是什麼 — 如何推論基因的尺寸？</title>
-    <url>/schrodinger-1944-what-is-life-chapter-2/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>依照<a href="./schrodinger-1944-what-is-life-chapter-1.md">第一章</a>的推理，生物及其生理過程有賴大量原子參與，來抵銷個別原子的隨機行為，以維持生存所需的宏觀秩序。</p>
-<p>乍看之下，這項推論似乎符合當代多數的生物學觀察。畢竟個體由無數細胞組成，而細胞又由多樣的園子、分子和聚合物構築。即使是維繫生存最基本的呼吸作用，也需要大量的分子參與。這些園子的數量大小，吻合統計物理的要求，能讓物理和化學過程順利運作。</p>
-<p>然而，在這章當中，我們可以看到維繫遺傳的關鍵因素，基因，相較於其穩定性，卻令人訝異地有著幾乎無法維持嚴格統計定律的數量。</p>
-<span id="more"></span>
-
-<h2 id="基因相當穩定"><a href="#基因相當穩定" class="headerlink" title="基因相當穩定"></a>基因相當穩定</h2><p>相較於紙張、磁碟片、或是塗鴉在牆上的紀錄，基因在保存事務上的能力相當穩定。基因的穩定型從色盲、鐮刀行貧血、乃至於哈布斯堡家族鮮明的戽斗等遺傳行疾病更為顯著，即使經過了上千年，這些性狀仍仍能忠實地在世代間傳遞，以致於當今的社會仍要為其奮鬥。</p>
-<p>考量其穩定性，究竟需要多少原子才能讓基因維持這樣的穩定性呢？</p>
-<h2 id="以染色體影像估算基因的最大尺寸"><a href="#以染色體影像估算基因的最大尺寸" class="headerlink" title="以染色體影像估算基因的最大尺寸"></a>以染色體影像估算基因的最大尺寸</h2><p>一種直觀的估算方法是透過細胞學的觀察為依據。果蠅唾腺細胞的染色體在分裂時會凝聚成顯微鏡可見的棒狀物，這些染色體上有深淺間格的調帶，假設這些條帶是基因的性向，那麼可以ˇ用染色惡體的體積，再除以調代的數量，那麼即可推論基因的尺寸。</p>
-<h2 id="以遺傳圖譜估算基因的最大尺寸"><a href="#以遺傳圖譜估算基因的最大尺寸" class="headerlink" title="以遺傳圖譜估算基因的最大尺寸"></a>以遺傳圖譜估算基因的最大尺寸</h2><p>另一種迂迴但是巧妙的手法是透過遺傳方法，推論基因的數量。生物形成配子時，會先行減數分裂。減數分裂過程，同源染色體間的片段可能彼此互換，導致原先坐落相同染色體的性狀，被置換到對偶染色體上。互換會導致子代性狀的機率分布脫離孟德爾的假設，因此透過育種雜交實驗，可從子代性狀的分布推論互換的機率。</p>
-<p>假設染色體各處發生互換的機率一致，若性狀間距越大，當中也有較多位點可能發生互換，也表示兩者互換的機率也越高（因為兩者之間有較多位置可能發生互換），反之則表示兩者互換機率愈高，則間距越大。基於這項假設，可以從性狀間的互換率，推論性狀在染色體上的相對位置與距離。</p>
-<p>這項任務有助於在遺傳學上譜出基因的相對位置，其在推論基因尺寸的用途則在於。若我們定義基因為乘載性狀的基本單位，若一項性狀能隨互換而遷移，表示這段區域至少包含了能獨立展現性狀的基因。因此，基因的最大尺寸可由染色體的體積，除以可互換而分離的性狀數量來估計。（由於）</p>
-<h2 id="基因具有令人訝異的穩定性"><a href="#基因具有令人訝異的穩定性" class="headerlink" title="基因具有令人訝異的穩定性"></a>基因具有令人訝異的穩定性</h2><p>無論透過何種方式推論，原子的最大體積約為 300 Å,而單一原子的尺寸約為 1 Å，這意味著基因所含的原子數頂多在數百萬個之間。透過前一章所推論的，這樣的尺寸顯然過少了。那麼究竟有什麼使得基因能以保有如此問訂的特性</p>
-]]></content>
       <tags>
         <tag>what is life</tag>
       </tags>
@@ -3737,7 +3738,7 @@ echo &quot;\$title \n $PWD&quot;
 <p>Press <code>f</code> to master Vimium (and navigate internet without a mouse.)</p>
 </blockquote>
 <p>Vimium 最大的特色是能透過「標記與跳轉」的模式開啟連結。一旦按下 <code>f</code>，Vimium 便會為視窗內所有可互動的項目（例如連結、欄位與按鈕）標註辨識碼，接著只要輸入辨識碼即可開啟連結。</p>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="鍵入 `f` 後, Vimium 會為視窗內的可互動物件標記辨識碼，鍵入辨識碼即可開啟連結（使用 Vimium 操作 Google search)"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="鍵入 `f` 後, Vimium 會為視窗內的可互動物件標記辨識碼，鍵入辨識碼即可開啟連結（使用 Vimium 操作 Google search)"></p>
 <ul>
 <li><code>L</code>：開啟「Vimium」</li>
 <li><code>SK</code>：開啟「工具」，透過 Vimium 的連結辨識碼，免除網頁設定欄位快捷鍵的負擔</li>
@@ -3811,7 +3812,7 @@ echo &quot;\$title \n $PWD&quot;
 <td><code>End</code></td>
 </tr>
 </tbody></table>
-<h2 id="分頁管理"><a href="#分頁管理" class="headerlink" title="分頁管理"></a>分頁管理</h2><p>分頁管理是網頁瀏覽的特殊需求，所以 Vimium 就沒有照搬 Vim 的快捷鍵，而是將那些負責編輯或是功能與其他移動指令相近的按紐分配給分頁管理。<br><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_tab-operation.png?raw=true" alt="Vimium 分頁管理與頁面瀏覽的快捷鍵"><br>比對 Vimium 指令與 Chrome 快捷鍵會發現，後者需要用 <code>Ctrl</code> 和 <code>Alt</code> 等特殊控制鍵去定義。此外，觀察鍵盤位置分布可得知，Chrome 快捷鍵位置集中在兩側，似乎也是為了因應特殊控制鍵的分布以及持滑鼠的手的擺放位置。然而，瀏覽網頁時其實沒有文字輸入的需求，所以文字區塊的鍵盤等於閒置了。</p>
+<h2 id="分頁管理"><a href="#分頁管理" class="headerlink" title="分頁管理"></a>分頁管理</h2><p>分頁管理是網頁瀏覽的特殊需求，所以 Vimium 就沒有照搬 Vim 的快捷鍵，而是將那些負責編輯或是功能與其他移動指令相近的按紐分配給分頁管理。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_tab-operation.png?raw=true" alt="Vimium 分頁管理與頁面瀏覽的快捷鍵"><br>比對 Vimium 指令與 Chrome 快捷鍵會發現，後者需要用 <code>Ctrl</code> 和 <code>Alt</code> 等特殊控制鍵去定義。此外，觀察鍵盤位置分布可得知，Chrome 快捷鍵位置集中在兩側，似乎也是為了因應特殊控制鍵的分布以及持滑鼠的手的擺放位置。然而，瀏覽網頁時其實沒有文字輸入的需求，所以文字區塊的鍵盤等於閒置了。</p>
 <table>
 <thead>
 <tr>
@@ -3880,7 +3881,7 @@ echo &quot;\$title \n $PWD&quot;
 <p>首先鍵入 <code>?</code> 開啟 “Vimium Help”，再點選 “Options” 進入設定面板，即能看到以下設定</p>
 <h2 id="“Excluded-URLs-and-keys”"><a href="#“Excluded-URLs-and-keys”" class="headerlink" title="“Excluded URLs and keys”"></a>“Excluded URLs and keys”</h2><p>這設定能限定特定網域適用的 Vimium 快捷鍵，以避免其覆蓋網頁或瀏覽器預設的快捷鍵。舉例來說，Vimium 的 <code>/</code>（搜尋頁內文字）會覆蓋 Google search 的 <code>/</code>（重返搜尋列）。</p>
 <p>如果我已經很習慣使用 <code>Ctrl</code> + <code>F</code> 來查找頁內文字或是使用 <code>/</code> 來編輯搜索關鍵字，可以透過編輯 “Patterns” 和 “Keys”，讓 Vimium 的 <code>/</code> 設定不套用在 Google search 上。</p>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_excluded-urls.png?raw=true" alt="編輯 &quot;Excluded URLs and keys&quot; 來設定 Vimium 快捷鍵的適用範圍（Keys 預設是禁用全數快捷鍵，而 Patterns 可用正則表達式編寫規則）"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_excluded-urls.png?raw=true" alt="編輯 &quot;Excluded URLs and keys&quot; 來設定 Vimium 快捷鍵的適用範圍（Keys 預設是禁用全數快捷鍵，而 Patterns 可用正則表達式編寫規則）"></p>
 <h2 id="“Custom-key-mapping”"><a href="#“Custom-key-mapping”" class="headerlink" title="“Custom key mapping”"></a>“Custom key mapping”</h2><p>這設定能調整預設的快捷鍵以符合用戶的使用習慣。好比說，如果不習慣 <code>h</code> <code>j</code> <code>k</code> <code>l</code> 的操作，可以透過以下方式改成動作遊戲常用的 <code>a</code> <code>s</code> <code>w</code> <code>d</code> (<code>map &lt;key&gt; &lt;command&gt;</code>)。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 改以 wasd 配置移動視窗</span></span><br><span class="line">map a scrollLeft </span><br><span class="line">map s scrollDown</span><br><span class="line">map w scrollUp</span><br><span class="line">map d scrollRight</span><br></pre></td></tr></table></figure>
 <p>進階一點也能為常用網址設置快捷鍵 (<code>map &lt;key&gt; createTab &lt;url&gt;</code>)</p>
@@ -3892,7 +3893,7 @@ echo &quot;\$title \n $PWD&quot;
 <li>編輯 “Previous patterns” 與 “Next patterns” </li>
 <li>依照自己常用的網頁添加搜索標的（例如：Google search，上一頁&#x2F;下一頁；ptt.cc，&lt;&#x2F;&gt;；巴哈姆特，◄&#x2F;►）</li>
 </ol>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_page-navigation.png?raw=true" alt="可以檢查常用網站的上一頁/下一頁來調整快捷鍵偵測的字串"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_page-navigation.png?raw=true" alt="可以檢查常用網站的上一頁/下一頁來調整快捷鍵偵測的字串"></p>
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>《原子習慣》，這些訣竅也適用於學習新事物。</p>
 <ol>
 <li>善用 <code>f</code> 點擊連結</li>
@@ -4657,7 +4658,7 @@ echo &quot;\$title \n $PWD&quot;
 <h2 id="Power-Mode"><a href="#Power-Mode" class="headerlink" title="Power Mode"></a>Power Mode</h2><blockquote>
 <p>This is the most necessary and MUST TO plugin EVER. Now I can feel the power of my typing. Recommended to all my friends and colleges. 1000000&#x2F;10</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/hoovercj/vscode-power-mode/7bbc4f68dd46da883b24011ae67516c861d09d1b/images/demo-presets-particles.gif" alt="powermode"></p>
+<p><img data-src="https://raw.githubusercontent.com/hoovercj/vscode-power-mode/7bbc4f68dd46da883b24011ae67516c861d09d1b/images/demo-presets-particles.gif" alt="powermode"></p>
 <p>Power Mode 能大幅增加 coding 的回饋感，除了隨著打字噴發的特效與劇烈震動以外，在頁面右上角也會顯示連續打字次數，讓打字除了聽覺與觸覺的回饋感以外，還增加了視覺的激情與火爆。</p>
 <p>Power Mode 的設定健全，無論特效的形式、時間、幅度、頻率或觸發條件都可調整。以震動特效為例，若覺得太過干擾，可以透過以下方式關閉，</p>
 <ol>
@@ -4670,7 +4671,7 @@ echo &quot;\$title \n $PWD&quot;
 </blockquote>
 <p><a href="https://hackertyper.net/">HackerTyper</a> 是模擬駭客寫程式的網頁。一點開網頁，映入眼簾的即典型的駭客工作環境：黑底綠字的終端畫面、等寬的程式碼字體、閃爍的文字游標等。</p>
 <p>在這畫面中，無論敲打哪個按鍵，網頁都會印出虛構的迴圈、變數、判斷，營造出用戶正在快速寫程式的模樣。</p>
-<p><img src="https://github.com/jevakallio/vscode-hacker-typer/raw/master/docs/hackertyper-video.gif" alt="VSCode HackerTyper 讓你像個駭客一樣 coding"></p>
+<p><img data-src="https://github.com/jevakallio/vscode-hacker-typer/raw/master/docs/hackertyper-video.gif" alt="VSCode HackerTyper 讓你像個駭客一樣 coding"></p>
 <p>相較之下，VSCode HackerTyper 可以印出「真正」的程式碼。這款套件能錄製文件編輯行為，再透過用戶每次按鍵撥放來達到網頁版的效果。由於是採用自己的程式碼，所以這項套件也挺適合在現場示範時博其它人一笑的（詳見開發者親自示範如何<a href="https://www.youtube.com/watch?v=ulnC-SDBDKE">像個駭客一樣現場 demo</a>。</p>
 <ol>
 <li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VSCode 命令列。（接下來指令皆於命令列執行)</li>
@@ -4689,23 +4690,23 @@ echo &quot;\$title \n $PWD&quot;
 <li>搜尋 “smooth”</li>
 <li>勾選 “Cursor smooth Caret Animation”</li>
 </ol>
-<h2 id="hacker-theme"><a href="#hacker-theme" class="headerlink" title="hacker theme"></a>hacker theme</h2><p>有了 Power Mode、HackerTyper、smooth cursor，再加上 VScode 商店許多駭客佈景主題，就能打造一座自嗨小天地，或是秀一回盛大而且浮誇的表演囉。<br><img src="https://github.com/thorerik/vscode-hacker-theme/raw/HEAD/media/Code_2020-08-12_01-55-19.png" alt="pro hacker theme"></p>
+<h2 id="hacker-theme"><a href="#hacker-theme" class="headerlink" title="hacker theme"></a>hacker theme</h2><p>有了 Power Mode、HackerTyper、smooth cursor，再加上 VScode 商店許多駭客佈景主題，就能打造一座自嗨小天地，或是秀一回盛大而且浮誇的表演囉。<br><img data-src="https://github.com/thorerik/vscode-hacker-theme/raw/HEAD/media/Code_2020-08-12_01-55-19.png" alt="pro hacker theme"></p>
 <h1 id="寫程式時不再孤獨"><a href="#寫程式時不再孤獨" class="headerlink" title="寫程式時不再孤獨"></a>寫程式時不再孤獨</h1><p>接著讓 coding 在鍵盤敲擊聲、鍵盤的觸感與閃爍的游標之外，還增添人造互動的套件。</p>
 <h2 id="vscode-pet"><a href="#vscode-pet" class="headerlink" title="vscode-pet"></a>vscode-pet</h2><blockquote>
 <p>Coding can be lonely sometimes but these pets always keep me company !! (Aya Lahrech)</p>
 </blockquote>
 <p>vscode-pets 會在 VSCode 側欄新增寵物窗格，可以在其中添加貓咪、小狗與小雞等寵物。除了看著寵物閒晃以外，也能透過點擊或擲球與他們互動。</p>
-<p><img src="https://tonybaloney.github.io/vscode-pets/_images/throw-ball.gif" alt="VSCode 小動物會追著丟出的球跑，也會以表情符號回應點擊。"></p>
+<p><img data-src="https://tonybaloney.github.io/vscode-pets/_images/throw-ball.gif" alt="VSCode 小動物會追著丟出的球跑，也會以表情符號回應點擊。"></p>
 <p>若覺得預設的背景太單調，可以在設定更換背景</p>
 <ol>
 <li><code>Ctrl</code> + <code>,</code>，開啟設定</li>
 <li>搜尋 “vscode-pets.theme”，設定想要的主題</li>
 </ol>
-<p><img src="https://tonybaloney.github.io/vscode-pets/_images/forest.gif" alt="除了森林，還有城堡與海灘背景"></p>
+<p><img data-src="https://tonybaloney.github.io/vscode-pets/_images/forest.gif" alt="除了森林，還有城堡與海灘背景"></p>
 <h2 id="Encourage"><a href="#Encourage" class="headerlink" title="Encourage"></a>Encourage</h2><blockquote>
 <p>There are times when writing code is drudgery. In those dark times, bathed in the soft glow of your monitor, engrossed in the rhythmic ticky tacka sound of of your keyboard, a few kind words can make a big difference. And who better to give you those kind words than your partner in crime - your editor. (Haacked)</p>
 </blockquote>
-<p><img src="https://user-images.githubusercontent.com/7860985/79793932-66320380-831f-11ea-8188-fb4a627f670a.gif" alt="Encourage 會在文件儲存時，根據程式碼正確與否給予對應的回饋。"></p>
+<p><img data-src="https://user-images.githubusercontent.com/7860985/79793932-66320380-831f-11ea-8188-fb4a627f670a.gif" alt="Encourage 會在文件儲存時，根據程式碼正確與否給予對應的回饋。"></p>
 <p>Encourage 是款文字互動套件<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="此處介紹的是 Nicollas R. 承襲 Haacked 所開發的 Encourage 套件，後者的版本目前在 VSCode 1.74.3 的 MarketPlace 已經找不到了。 ">1</span></a></sup>，會根據文件儲存當下，程式碼是否語法錯誤給予對應的回饋。假如沒有錯誤，則會隨機印出鼓勵的話；反之，則會吐出吐槽或挖苦的句子。</p>
 <p>這套件支援自訂語錄，所以可以自行添加喜歡的座右銘、名言或幹話等，</p>
 <ol>
@@ -4724,12 +4725,12 @@ echo &quot;\$title \n $PWD&quot;
 <h2 id="Cage-Icons"><a href="#Cage-Icons" class="headerlink" title="Cage Icons"></a>Cage Icons</h2><blockquote>
 <p>With this I’m gonna steal the Declaration of Independence. (Kishore Newton)</p>
 </blockquote>
-<p>我覺得尼可拉斯凱吉是詮釋「身不由己」最出色的演員，他的表情也是迷因的重要來源。這套件會將原生圖標替換那些常在梗圖裡看到的尼可拉斯凱吉表情。<br><img src="https://raw.githubusercontent.com/GabeStep/cage-icons/master/example.png" alt="用膩了 Materials Icon Theme？何不試試 Cage Icons！"></p>
+<p>我覺得尼可拉斯凱吉是詮釋「身不由己」最出色的演員，他的表情也是迷因的重要來源。這套件會將原生圖標替換那些常在梗圖裡看到的尼可拉斯凱吉表情。<br><img data-src="https://raw.githubusercontent.com/GabeStep/cage-icons/master/example.png" alt="用膩了 Materials Icon Theme？何不試試 Cage Icons！"></p>
 <h2 id="Hot-dog-stand"><a href="#Hot-dog-stand" class="headerlink" title="Hot dog stand"></a>Hot dog stand</h2><blockquote>
 <p>This is AMAZING! I can hardly see anymore, recently started using a walking stick. couldn’t recommend more! (Franklin Volcic)</p>
 </blockquote>
 <p>Hot dog stand 套件復刻了 Win 3.1 史上最糟糕的視覺設計<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="https://blog.codinghorror.com/a-tribute-to-the-windows-31-hot-dog-stand-color-scheme/">3</span></a></sup>。套件開發者介紹說，這套主題能在 15 秒內毀了用戶雙眼，但根據 VSCode 推特小編的說法，其實大約只需兩秒鐘……</p>
-<p><img src="https://raw.githubusercontent.com/SomeKittens/VSC-HDS/master/theme.png" alt="安裝這款主題後，我只堅持了一秒鐘就移除了。"></p>
+<p><img data-src="https://raw.githubusercontent.com/SomeKittens/VSC-HDS/master/theme.png" alt="安裝這款主題後，我只堅持了一秒鐘就移除了。"></p>
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>有時，認真研究點沒意義的事，其實也挺好玩的啊！</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">此處介紹的是 Nicollas R. 承襲 Haacked 所開發的 Encourage 套件，後者的版本目前在 VSCode 1.74.3 的 MarketPlace 已經找不到了。<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">https://twitter.com/code/status/928315998075215873<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">https://blog.codinghorror.com/a-tribute-to-the-windows-31-hot-dog-stand-color-scheme/<a href="#fnref:3" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <tags>
@@ -5199,7 +5200,7 @@ echo &quot;\$title \n $PWD&quot;
 <p>然後第五集講到男主角討厭他家的機器人的緣故，是因為擔心他家機器人會比他還會彈鋼琴。這主題可以寫很大，不過導演把重點放在薩米和男主角的和解上而沒去討論機器人取代人類的事情（這些議題都在背景中出現呢）。</p>
 <p>不過就算機器人很屌好了，彈鋼琴還是一項需要努力練習的技能啊！機車賽出來後腳踏車賽還是一樣熱門，阿法狗在圍棋上打敗人類最強後，下棋還是一件充滿智慧且有趣的事情啊。</p>
 <p>周邊也做得一副欠買的樣子<br>不只美術設計，連周邊也做得一副欠買的模樣</p>
-<p><img src="https://p2.bahamut.com.tw/B/2KU/37/0000827037.JPG?w=1000"><br>（圖：<a href="https://gnn.gamer.com.tw/detail.php?sn=82019%EF%BC%89">https://gnn.gamer.com.tw/detail.php?sn=82019）</a></p>
+<p><img data-src="https://p2.bahamut.com.tw/B/2KU/37/0000827037.JPG?w=1000"><br>（圖：<a href="https://gnn.gamer.com.tw/detail.php?sn=82019%EF%BC%89">https://gnn.gamer.com.tw/detail.php?sn=82019）</a></p>
 <p>我不懂電影製作，不過總覺這部作品的分鏡和其他動畫不大一樣呢！一些小圖示設計很漂亮，咖啡廳光看就覺得療癒。</p>
 <p>另外，機器人上的光環是有意要和天使做連結嗎？</p>
 ]]></content>

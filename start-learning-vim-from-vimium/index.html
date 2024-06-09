@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.css" integrity="sha256-6cQIC71/iBIYXFK+0RHAvwmjwWzkWd+r7v/BX3/vZDc=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="Vimium 是 Chrome 的一款擴充套件，它借鑒了 Vim 的鍵位設計與操作邏輯，讓用戶只需要鍵盤便能執行分頁管理、連結點擊與頁面瀏覽等操作。 由於瀏覽器終究不等同編輯器，所以 Vimium 並沒有移植 Vim 所有的功能與指令。然而，即使只納入 Vim 的部分性質，Vimium 仍顯著改善了 Chrome 的鍵盤瀏覽體驗。以點擊連結為例，Chrome 的預設作法是慢慢用 Tab 切到連結位">
 <meta property="og:type" content="blog">
@@ -386,7 +386,7 @@
 <p>Press <code>f</code> to master Vimium (and navigate internet without a mouse.)</p>
 </blockquote>
 <p>Vimium 最大的特色是能透過「標記與跳轉」的模式開啟連結。一旦按下 <code>f</code>，Vimium 便會為視窗內所有可互動的項目（例如連結、欄位與按鈕）標註辨識碼，接著只要輸入辨識碼即可開啟連結。</p>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="鍵入 `f` 後, Vimium 會為視窗內的可互動物件標記辨識碼，鍵入辨識碼即可開啟連結（使用 Vimium 操作 Google search)"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="鍵入 `f` 後, Vimium 會為視窗內的可互動物件標記辨識碼，鍵入辨識碼即可開啟連結（使用 Vimium 操作 Google search)"></p>
 <ul>
 <li><code>L</code>：開啟「Vimium」</li>
 <li><code>SK</code>：開啟「工具」，透過 Vimium 的連結辨識碼，免除網頁設定欄位快捷鍵的負擔</li>
@@ -460,7 +460,7 @@
 <td><code>End</code></td>
 </tr>
 </tbody></table>
-<h2 id="分頁管理"><a href="#分頁管理" class="headerlink" title="分頁管理"></a>分頁管理</h2><p>分頁管理是網頁瀏覽的特殊需求，所以 Vimium 就沒有照搬 Vim 的快捷鍵，而是將那些負責編輯或是功能與其他移動指令相近的按紐分配給分頁管理。<br><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_tab-operation.png?raw=true" alt="Vimium 分頁管理與頁面瀏覽的快捷鍵"><br>比對 Vimium 指令與 Chrome 快捷鍵會發現，後者需要用 <code>Ctrl</code> 和 <code>Alt</code> 等特殊控制鍵去定義。此外，觀察鍵盤位置分布可得知，Chrome 快捷鍵位置集中在兩側，似乎也是為了因應特殊控制鍵的分布以及持滑鼠的手的擺放位置。然而，瀏覽網頁時其實沒有文字輸入的需求，所以文字區塊的鍵盤等於閒置了。</p>
+<h2 id="分頁管理"><a href="#分頁管理" class="headerlink" title="分頁管理"></a>分頁管理</h2><p>分頁管理是網頁瀏覽的特殊需求，所以 Vimium 就沒有照搬 Vim 的快捷鍵，而是將那些負責編輯或是功能與其他移動指令相近的按紐分配給分頁管理。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_tab-operation.png?raw=true" alt="Vimium 分頁管理與頁面瀏覽的快捷鍵"><br>比對 Vimium 指令與 Chrome 快捷鍵會發現，後者需要用 <code>Ctrl</code> 和 <code>Alt</code> 等特殊控制鍵去定義。此外，觀察鍵盤位置分布可得知，Chrome 快捷鍵位置集中在兩側，似乎也是為了因應特殊控制鍵的分布以及持滑鼠的手的擺放位置。然而，瀏覽網頁時其實沒有文字輸入的需求，所以文字區塊的鍵盤等於閒置了。</p>
 <table>
 <thead>
 <tr>
@@ -529,7 +529,7 @@
 <p>首先鍵入 <code>?</code> 開啟 “Vimium Help”，再點選 “Options” 進入設定面板，即能看到以下設定</p>
 <h2 id="“Excluded-URLs-and-keys”"><a href="#“Excluded-URLs-and-keys”" class="headerlink" title="“Excluded URLs and keys”"></a>“Excluded URLs and keys”</h2><p>這設定能限定特定網域適用的 Vimium 快捷鍵，以避免其覆蓋網頁或瀏覽器預設的快捷鍵。舉例來說，Vimium 的 <code>/</code>（搜尋頁內文字）會覆蓋 Google search 的 <code>/</code>（重返搜尋列）。</p>
 <p>如果我已經很習慣使用 <code>Ctrl</code> + <code>F</code> 來查找頁內文字或是使用 <code>/</code> 來編輯搜索關鍵字，可以透過編輯 “Patterns” 和 “Keys”，讓 Vimium 的 <code>/</code> 設定不套用在 Google search 上。</p>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_excluded-urls.png?raw=true" alt="編輯 &quot;Excluded URLs and keys&quot; 來設定 Vimium 快捷鍵的適用範圍（Keys 預設是禁用全數快捷鍵，而 Patterns 可用正則表達式編寫規則）"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_excluded-urls.png?raw=true" alt="編輯 &quot;Excluded URLs and keys&quot; 來設定 Vimium 快捷鍵的適用範圍（Keys 預設是禁用全數快捷鍵，而 Patterns 可用正則表達式編寫規則）"></p>
 <h2 id="“Custom-key-mapping”"><a href="#“Custom-key-mapping”" class="headerlink" title="“Custom key mapping”"></a>“Custom key mapping”</h2><p>這設定能調整預設的快捷鍵以符合用戶的使用習慣。好比說，如果不習慣 <code>h</code> <code>j</code> <code>k</code> <code>l</code> 的操作，可以透過以下方式改成動作遊戲常用的 <code>a</code> <code>s</code> <code>w</code> <code>d</code> (<code>map &lt;key&gt; &lt;command&gt;</code>)。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 改以 wasd 配置移動視窗</span></span><br><span class="line">map a scrollLeft </span><br><span class="line">map s scrollDown</span><br><span class="line">map w scrollUp</span><br><span class="line">map d scrollRight</span><br></pre></td></tr></table></figure>
 <p>進階一點也能為常用網址設置快捷鍵 (<code>map &lt;key&gt; createTab &lt;url&gt;</code>)</p>
@@ -541,7 +541,7 @@
 <li>編輯 “Previous patterns” 與 “Next patterns” </li>
 <li>依照自己常用的網頁添加搜索標的（例如：Google search，上一頁&#x2F;下一頁；ptt.cc，&lt;&#x2F;&gt;；巴哈姆特，◄&#x2F;►）</li>
 </ol>
-<p><img src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_page-navigation.png?raw=true" alt="可以檢查常用網站的上一頁/下一頁來調整快捷鍵偵測的字串"></p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_page-navigation.png?raw=true" alt="可以檢查常用網站的上一頁/下一頁來調整快捷鍵偵測的字串"></p>
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>《原子習慣》，這些訣竅也適用於學習新事物。</p>
 <ol>
 <li>善用 <code>f</code> 點擊連結</li>
@@ -632,6 +632,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.umd.js" integrity="sha256-ytMJGN3toR+a84u7g7NuHm91VIR06Q41kMWDr2pq7Zo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
