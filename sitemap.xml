@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/about/index.html</loc>
+    
+    <lastmod>2024-06-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/mitalk-6-thu-2022/</loc>
     
     <lastmod>2024-06-09</lastmod>
@@ -839,15 +848,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/about/index.html</loc>
-    
-    <lastmod>2024-06-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/the-simple-math-of-document-management-in-software-development/</loc>
     
     <lastmod>2024-04-21</lastmod>
@@ -857,7 +857,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/index.html</loc>
+    <loc>https://5uperb0y.com/tags/index.html</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -866,7 +866,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/index.html</loc>
+    <loc>https://5uperb0y.com/categories/index.html</loc>
     
     <lastmod>2024-01-01</lastmod>
     
