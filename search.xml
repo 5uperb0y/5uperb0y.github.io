@@ -237,6 +237,20 @@
       </tags>
   </entry>
   <entry>
+    <title>bad interpreter: No such file or directory</title>
+    <url>/bad-interpreter-no-such-file-or-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
+<span id="more"></span>
+
+<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
+<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
+<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>天體生物學和尋找外星生命</title>
     <url>/astrobiology-and-the-search-for-extraterrestrial-life/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>低調的人類從學會抬頭那一刻，就不斷在地球、月球、火星乃至其它銀河尋找自己不特別的證據。</p>
@@ -271,20 +285,6 @@
 ]]></content>
       <tags>
         <tag>astrobiology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>bad interpreter: No such file or directory</title>
-    <url>/bad-interpreter-no-such-file-or-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
-<span id="more"></span>
-
-<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
-<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
-<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1173,36 +1173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>攻殼機動隊 STAND ALONE COMPLEX</title>
-    <url>/kenji-2002-ghost-in-the-shell-stand-alone-complex/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這部由主線──笑臉男事件和支線──電子腦、義體普及引發新型社會問題組成。</p>
-<p>主線外的小故事可以獨立看，不影響通篇劇情理解。但是支線是以公安九課的各幹部為主角(還有思考機器人，塔奇克馬)，只聚焦笑面男事件就會錯失了解個別配角的機會。例如每次調查幾乎都是佗古薩上陣，笑面男的突破線索幾乎由這個有家庭沒義體化的new comer給找出來。</p>
-<p>不過我覺得笑面男事件結尾有點不過癮，反派顯得不夠力。前頭醞釀的巨大陰謀在夕陽西下的最後一集平淡結束，讓前一集被激起的情緒無處宣洩。</p>
-<span id="more"></span>
-
-<h1 id="電子腦和義體"><a href="#電子腦和義體" class="headerlink" title="電子腦和義體"></a>電子腦和義體</h1><p>本作最重要的設定為電子腦和義體：電子腦是把意識和網路、程式連結起來的設備。義體簡單如義肢、義眼用以取代或強化原有器官，複雜的可以直接作為意識的載體。</p>
-<p>依照電子腦的連結對象又可分為三種情形：硬體、軟體、其他人腦(在能把意識資訊化的世界觀裡，自我意識要算廣義的軟體了)，每個情形出現異常、矛盾或是和社會價值衝突就成為個小故事的題材。</p>
-<p>電腦有各種存取資料的結構搭配不同的演算法以解決問題。人腦雖然沒有堆疊、佇列或樹來保留學習記憶和本能，處理問題卻比電腦有創意多了。</p>
-<p>像 26 集「公安九課 再臨」最後面笑臉男和少佐講一堆名言時，課長把電子腦和連結到外部資料庫以聽懂他們的對話。要及時理解對話，就要對那些名言佳句有印象。</p>
-<p>印象，也就是記憶。當電子腦和資料庫連結架起，且讀取資料的時間能和人們讀取回憶一樣快時，就會產生有印象的錯覺。但假若資料庫沒辦法像人腦那樣存取，那讀取的速度就會受限於資料庫本身設計，這樣的連結頂多是不用手指划的智慧型手機。</p>
-<p>可是每個人記憶的模式不一樣，資料庫是為通用的查詢所設計，所以連結的同時也得對資料進行處理。也許是那瞬間將資料庫依序放進電子腦，再依照個人特質進行儲存。或者，因應電子腦的出現，個人資料庫和個人網站一樣跟著普及起來。畢竟前述方法仍要花時間在預先分類資料。</p>
-<h1 id="義體與本體感覺"><a href="#義體與本體感覺" class="headerlink" title="義體與本體感覺"></a>義體與本體感覺</h1><p>而第11集「在若林的森林」提到的電子腦自閉症，是電子腦和硬體連結不協調進一步到病症的例子。</p>
-<p>器官移植要解決免疫系統在生理上的排他，義體又是比器官移植更劇烈的變化還須克服心理上的排他。雖然組成身體的分子每分每秒都在代換，但是結構不變我還是能認得自己。但像是換肢手術的例子，就算免疫系統接納了捐贈者的器官，受贈者心理上仍須花時間適應。</p>
-<p>義體更是把腦以外全換為人造器官，面臨的心靈衝擊又更大，輕者只是感知遲鈍地像醉酒，重者產生自閉症、甚至變植物人完全無法協調。像少佐很小的時候就全身義體化，要隨成長更換義體，每次都要對更大的身體重新適應（難怪叫ghost in shell , 隨成長更換的外骨骼）</p>
-<p>另外比較小的問題就是電子腦和武器做連結若不能達成人機一體的同步率，會造成使用者的不便(例如 15 集「機器們的時間」裡面的新型狙擊裝置)</p>
-<h1 id="電子腦與自我意識"><a href="#電子腦與自我意識" class="headerlink" title="電子腦與自我意識"></a>電子腦與自我意識</h1><p>除了高同步率(即操作、讀取的效率)，電子腦也得內建系統避免人與人的界線因電子腦間的連結而消弭。畢竟讀取別人的腦和讀取自己的腦一樣便捷，還能認得出我是誰嗎？</p>
-<p>像第 18 集「暗殺二重奏」 連結上父親記憶的兒子在舉止上越來越像父親，甚至在兒子身上產生父親的人格。第 21 集「丟棄的軌跡」巴特錯把佗古薩重傷的時的情緒當成自己的情緒變得暴躁起來。</p>
-<p>電子腦發明前，人的意識被肉身包覆，要彼此影響只能靠有限的五官(語言、行為)，雖然意念轉換成過程有可能造成誤會，但也保護了個體的獨立性：只能用嘴巴說服、用行為證明、用金錢誘惑……只能從外在下手，而且一個人即便行為舉止受制於人，仍能保有自我思考這最後的自由。</p>
-<p>一旦原始的防壁敞開，意識就有被人操作的危險(笑臉男就常控制別人意識幫她代言)，所以也就有個人防壁的產生。</p>
-<p>然而，也有不設防壁的例子，讓別人不需迂迴地經過文字、圖畫、影像、聲音來理解自己的概念，例如 15 集「機器們的時間」把自己電子腦開放的導演，讓與之連結的人沉迷於其腦海裡的電影構想而無法自拔。</p>
-<h1 id="義體、電子腦與社會"><a href="#義體、電子腦與社會" class="headerlink" title="義體、電子腦與社會"></a>義體、電子腦與社會</h1><p>至於價值觀、宗教的反對電子腦化，貧富不均導致義體分配不均……都是些老問題，癥結點往往不是出在科技本身。</p>
-<p>像是宗教和價值觀的反對是個人理念，貧富不均則是社會體制的問題，就算沒有電子腦換成別的發明都會持續存在。</p>
-]]></content>
-      <tags>
-        <tag>sf</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF)</title>
     <url>/introduction-to-multiverse-variant-call-format/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>假設在很久很久以後的未來，人類有能力偵測到發生在多重宇宙各時間線的事件，也有演算法來比較事件間的異同，從而彙整出能代表多數宇宙歷史的標準時間線。利用跨宇宙與跨時間線的全史資料，往後的史家能將蒐集的歷史資料與標準時間線比較，推測事件的偶然與必然，指引未來史的發展方向。</p>
@@ -1356,6 +1326,36 @@
 <p>它可以作為一個強大的文獻管理工具，幫助研究者整理和分析涉及替代歷史或假想情境的文獻。</p>
 </blockquote>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">也許往後會有類似 IUPAC 的機構，凝聚各領域事件編碼的共識。<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">網路上有不少關於歷史策略遊戲的史觀討論資源，此處參考<a href="https://necromanov.wordpress.com/2010/09/01/victoria2/">维多利亚2（Victoria2）：历史的逻辑</a>的總結<a href="#fnref:2" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>sf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>攻殼機動隊 STAND ALONE COMPLEX</title>
+    <url>/kenji-2002-ghost-in-the-shell-stand-alone-complex/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這部由主線──笑臉男事件和支線──電子腦、義體普及引發新型社會問題組成。</p>
+<p>主線外的小故事可以獨立看，不影響通篇劇情理解。但是支線是以公安九課的各幹部為主角(還有思考機器人，塔奇克馬)，只聚焦笑面男事件就會錯失了解個別配角的機會。例如每次調查幾乎都是佗古薩上陣，笑面男的突破線索幾乎由這個有家庭沒義體化的new comer給找出來。</p>
+<p>不過我覺得笑面男事件結尾有點不過癮，反派顯得不夠力。前頭醞釀的巨大陰謀在夕陽西下的最後一集平淡結束，讓前一集被激起的情緒無處宣洩。</p>
+<span id="more"></span>
+
+<h1 id="電子腦和義體"><a href="#電子腦和義體" class="headerlink" title="電子腦和義體"></a>電子腦和義體</h1><p>本作最重要的設定為電子腦和義體：電子腦是把意識和網路、程式連結起來的設備。義體簡單如義肢、義眼用以取代或強化原有器官，複雜的可以直接作為意識的載體。</p>
+<p>依照電子腦的連結對象又可分為三種情形：硬體、軟體、其他人腦(在能把意識資訊化的世界觀裡，自我意識要算廣義的軟體了)，每個情形出現異常、矛盾或是和社會價值衝突就成為個小故事的題材。</p>
+<p>電腦有各種存取資料的結構搭配不同的演算法以解決問題。人腦雖然沒有堆疊、佇列或樹來保留學習記憶和本能，處理問題卻比電腦有創意多了。</p>
+<p>像 26 集「公安九課 再臨」最後面笑臉男和少佐講一堆名言時，課長把電子腦和連結到外部資料庫以聽懂他們的對話。要及時理解對話，就要對那些名言佳句有印象。</p>
+<p>印象，也就是記憶。當電子腦和資料庫連結架起，且讀取資料的時間能和人們讀取回憶一樣快時，就會產生有印象的錯覺。但假若資料庫沒辦法像人腦那樣存取，那讀取的速度就會受限於資料庫本身設計，這樣的連結頂多是不用手指划的智慧型手機。</p>
+<p>可是每個人記憶的模式不一樣，資料庫是為通用的查詢所設計，所以連結的同時也得對資料進行處理。也許是那瞬間將資料庫依序放進電子腦，再依照個人特質進行儲存。或者，因應電子腦的出現，個人資料庫和個人網站一樣跟著普及起來。畢竟前述方法仍要花時間在預先分類資料。</p>
+<h1 id="義體與本體感覺"><a href="#義體與本體感覺" class="headerlink" title="義體與本體感覺"></a>義體與本體感覺</h1><p>而第11集「在若林的森林」提到的電子腦自閉症，是電子腦和硬體連結不協調進一步到病症的例子。</p>
+<p>器官移植要解決免疫系統在生理上的排他，義體又是比器官移植更劇烈的變化還須克服心理上的排他。雖然組成身體的分子每分每秒都在代換，但是結構不變我還是能認得自己。但像是換肢手術的例子，就算免疫系統接納了捐贈者的器官，受贈者心理上仍須花時間適應。</p>
+<p>義體更是把腦以外全換為人造器官，面臨的心靈衝擊又更大，輕者只是感知遲鈍地像醉酒，重者產生自閉症、甚至變植物人完全無法協調。像少佐很小的時候就全身義體化，要隨成長更換義體，每次都要對更大的身體重新適應（難怪叫ghost in shell , 隨成長更換的外骨骼）</p>
+<p>另外比較小的問題就是電子腦和武器做連結若不能達成人機一體的同步率，會造成使用者的不便(例如 15 集「機器們的時間」裡面的新型狙擊裝置)</p>
+<h1 id="電子腦與自我意識"><a href="#電子腦與自我意識" class="headerlink" title="電子腦與自我意識"></a>電子腦與自我意識</h1><p>除了高同步率(即操作、讀取的效率)，電子腦也得內建系統避免人與人的界線因電子腦間的連結而消弭。畢竟讀取別人的腦和讀取自己的腦一樣便捷，還能認得出我是誰嗎？</p>
+<p>像第 18 集「暗殺二重奏」 連結上父親記憶的兒子在舉止上越來越像父親，甚至在兒子身上產生父親的人格。第 21 集「丟棄的軌跡」巴特錯把佗古薩重傷的時的情緒當成自己的情緒變得暴躁起來。</p>
+<p>電子腦發明前，人的意識被肉身包覆，要彼此影響只能靠有限的五官(語言、行為)，雖然意念轉換成過程有可能造成誤會，但也保護了個體的獨立性：只能用嘴巴說服、用行為證明、用金錢誘惑……只能從外在下手，而且一個人即便行為舉止受制於人，仍能保有自我思考這最後的自由。</p>
+<p>一旦原始的防壁敞開，意識就有被人操作的危險(笑臉男就常控制別人意識幫她代言)，所以也就有個人防壁的產生。</p>
+<p>然而，也有不設防壁的例子，讓別人不需迂迴地經過文字、圖畫、影像、聲音來理解自己的概念，例如 15 集「機器們的時間」把自己電子腦開放的導演，讓與之連結的人沉迷於其腦海裡的電影構想而無法自拔。</p>
+<h1 id="義體、電子腦與社會"><a href="#義體、電子腦與社會" class="headerlink" title="義體、電子腦與社會"></a>義體、電子腦與社會</h1><p>至於價值觀、宗教的反對電子腦化，貧富不均導致義體分配不均……都是些老問題，癥結點往往不是出在科技本身。</p>
+<p>像是宗教和價值觀的反對是個人理念，貧富不均則是社會體制的問題，就算沒有電子腦換成別的發明都會持續存在。</p>
+]]></content>
       <tags>
         <tag>sf</tag>
       </tags>
@@ -1555,42 +1555,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜217. Contains Duplicate</title>
-    <url>/leetcode-217-contains-duplicate/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
-</blockquote>
-<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
-<p>Example:</p>
-<blockquote>
-<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
-<ul>
-<li>數字重複出現</li>
-<li>array 長度大於其中數字種類數</li>
-<li>若將 array 排序，則重複的數字比鄰出現</li>
-</ul>
-<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
-
-<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
-<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
-</li>
-<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
-</li>
-<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
-</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 筆記｜53. Maximum Subarray</title>
     <url>/leetcode-53-maximum-subarray/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
@@ -1631,6 +1595,42 @@
 <ul>
 <li><code>sums</code>：紀錄當前累加值</li>
 <li><code>maxVal</code>：紀錄當前累加的最大值</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜217. Contains Duplicate</title>
+    <url>/leetcode-217-contains-duplicate/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears at least twice in the array, and return <code>false</code> if every element is distinct.</p>
+</blockquote>
+<p>(給定一整數陣列，判斷其中是否含重複的數字。)</p>
+<p>Example:</p>
+<blockquote>
+<p>Input: nums &#x3D; [1,2,3,1]<br>Output: true</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h2><p>若 array 含重複數字，則有以下特性：</p>
+<ul>
+<li>數字重複出現</li>
+<li>array 長度大於其中數字種類數</li>
+<li>若將 array 排序，則重複的數字比鄰出現</li>
+</ul>
+<p>根據第一種特性，可用 hash table 存儲讀過的數字，再判斷讀入的數字是否已存在 hash table 中。此處，我以 python 的 <code>dict</code> 充作 hash table 來實踐這個想法。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        occur = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> n <span class="keyword">in</span> occur.keys():</span><br><span class="line">                <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                occur[n] = n</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">False</span>)</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">由於計算時間和空間需求都隨陣列大小線性增長，所以時間與空間複雜度都是 $O(n)$</span><br><span class="line"></span><br><span class="line">除了 `<span class="built_in">dict</span>`，python 的 `<span class="built_in">set</span>` 也能體現 <span class="built_in">hash</span> table 的特性。`<span class="built_in">set</span>` 可想像為僅有 key 的 `<span class="built_in">dict</span>`，由於 `<span class="built_in">set</span>` 的元素皆獨一無二，故可將 array 轉為 `<span class="built_in">set</span>`，再比較兩者的長度。若 `<span class="built_in">set</span>` 長度小於 array，則表示 array 含重複值。</span><br><span class="line">```python</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">containsDuplicate</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">set</span>(nums)) != <span class="built_in">len</span>(nums):</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>至於先排序，再比較數值兩側是否有重複值的做法，可參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a></p>
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><ul>
+<li><p>使用 list, dict, set 存讀過的數字有什麼差異？（參考：<a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1017104324028448">廖雪峰的官方網站：使用dict和set</a>）</p>
+</li>
+<li><p>python 是怎麼體現 <code>set</code> 的概念？（參考：<a href="https://stackoverflow.com/questions/3949310/how-is-set-implemented">How is set() implemented?</a>）</p>
+</li>
+<li><p>排序算法跟 hash table 算法相比有什麼優點？（參考：<a href="https://medium.com/roywannago-%E6%97%85%E8%A1%8C%E4%B8%8D%E9%9C%80%E7%90%86%E7%94%B1/leetcode-%E5%88%B7%E9%A1%8C%E7%B4%80%E9%8C%84-217-contains-duplicate-easy-647bc2ccdcf6">LeetCode 刷題紀錄 ｜217. Contains Duplicate (Easy)</a>）</p>
+</li>
 </ul>
 ]]></content>
       <tags>
@@ -1863,6 +1863,50 @@
       </tags>
   </entry>
   <entry>
+    <title>假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？</title>
+    <url>/mayer-2023-the-art-of-clean-code-80-20-principle/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>The principle says that the majority of effects come from the minority of causes.</p>
+</blockquote>
+<p>本文是<a href="https://www.books.com.tw/products/0010959955">《精通無瑕程式碼：工程師也能斷捨離》</a> 其中一章的心得。</p>
+<p>80&#x2F;20 法則是指少數變項左右了多數結果，它既不是能預測結果的物理定律，也不是行事時得遵循的規範。精確來說，80&#x2F;20 法則是一項觀察，它可以讓我們思考，假設自己在乎的事情遵循這種分布，對我們的決策和努力方向有什麼影響。</p>
+<p>雖然這原則對近代的讀者而言應該是耳熟能詳，但我覺得作者 Mayer 的解讀引人入勝。文中除了實際案例也有簡單計算來佐證為什麼基於 80&#x2F;20 法則，我們要投資成本在抉擇、必須保持專注、要關心核心的指標等等。因此，我覺得蠻值得寫一則心得來記錄。</p>
+<span id="more"></span>
+
+<h1 id="關鍵事物的影響超乎想像"><a href="#關鍵事物的影響超乎想像" class="headerlink" title="關鍵事物的影響超乎想像"></a>關鍵事物的影響超乎想像</h1><p>多數結果是建立在少數因素上，假設這項觀察或原則適用在多數情境，那麼有兩方面的暗示。 首先，在一個領域中，少數人員能佔有多數資源或成果，例如少數人發表了多數的論文，少數人賺進了多數的錢。</p>
+<p>其次，在成就這現象的行為中，也只有關鍵的行為與成就有關。 換句話說，若目標是在某領與取得一定的成績，那麼若能夠辨識並投注心力在事物的關鍵環節，便不需要搞得筋疲力盡，也能維持一定成績。</p>
+<p>從效益的角度來看，關鍵環節與其他環節的差異更加明顯。假設兩成的努力造就八成的結果，那麼每一成努力造就四成結果，相較之下，在非關鍵事物的投注僅造就四分之一的成果。單位投入下，關鍵事物造就的效益是非關鍵事物的十六倍。那這種比例的差異在實際情形中可能更加懸殊，例如在生物體方面，少數基因轉變主宰了大多數的變化，這些基因的影響力是其他基因的數千倍以上。</p>
+<h1 id="選擇能反映結果並指引方向的指標"><a href="#選擇能反映結果並指引方向的指標" class="headerlink" title="選擇能反映結果並指引方向的指標"></a>選擇能反映結果並指引方向的指標</h1><p>當然，除了原則背後的機制以外，作者也解釋了要怎麼透過這些原則指引行動，讓自己在有限的資源，更有效率達成目標，從而有餘裕去完成或享受其他事情。</p>
+<p>這涉及了 80&#x2F;20 法則的另一項暗示，除了大部分資源為少數人所佔據，多數的進展也取決於少數的行為。而辨識關鍵行為的重點則是選擇適當的指標來衡量行為效益。</p>
+<p>舉例來說，如果目標是擁有健美體態，那麼各式各樣的飲食法與健身菜單都是潛在的選項，而體重、體脂肪、身體測量值都是衡量判斷行為對目標影響的指標。</p>
+<p>然而，不是所有指標都能忠實反映行為的影響或指引往後的行為。好比說，他人對身材的稱讚的確能反映此人的體態，不過這些讚美反映的是過往投入成本的效益，而非當下行為的影響。此外，他人評價又受長相、穿搭或其他難以捉摸的因素，未必能從中檢討出能讓自己體態變好的方向。</p>
+<p>另一方面，體脂與肌肉尺寸則是反映行為結果忠實的指標，但很難在每次訓練中即時回饋自己到底做了多好。相較之下，訓練量（負重乘以次數）即是其中一個能及時反應行為的指標，肌肉量與耐力提昇就能提升更多訓練量，也能從當下行為反應到成效。</p>
+<p>以作者用語總結，假如體態是衡量成功的依據，讚美並不是衡量進展的指標，體脂和肌肉量是呈現過往投資的 lagging indicator。而我們要關注的則是能反映當下行為影響的 leading indicator，後者能指引我們做有效的努力以達成目標，也能幫助我們在出錯時檢討問題所在。</p>
+<h1 id="透過學習減少摸索與排序指標的成本"><a href="#透過學習減少摸索與排序指標的成本" class="headerlink" title="透過學習減少摸索與排序指標的成本"></a>透過學習減少摸索與排序指標的成本</h1><p>然而，排序任務、選定指標、標記價值、學習技術也需要成本（想想看演算法課裏頭那些時間複雜度不一的排序方法），這些成本有可能攤平投資在關鍵行為與項目的效益。</p>
+<p>因此，需要借重他人的經驗來減少摸索與排序的成本。在此書中，作者舉了寫作和寫程式兩個案例供讀者參考。對於作家而言，最重要的行為是寫作，而衡量寫作的指標則是「寫了多少句子&#x2F;幾本書&#x2F;幾個故事」；而對程式設計師而言，最重要的行為是寫程式，衡量寫程式的指標則是「寫了多少行程式碼&#x2F;提出多少修訂&#x2F;完成多少專案」</p>
+<p>雖然這些指標看起來有點簡化，但簡化不代表單調或沒意義。相反地，越少原則表示越容易追蹤與遵循，即使是盲目地寫程式和寫作，也起碼有以下好處：</p>
+<ul>
+<li>你能把自己的觀點、意見、想法、風格與巧思等所有你存在過、活過、學習過的證據儲存在可交流的媒介</li>
+<li>有了資訊，便能做為籌碼與他人交流，用以兌換經驗</li>
+<li>即使不算精通，持續寫起碼能造就熟練，讓你能更快完成同樣或類似的任務</li>
+<li>經驗節省的時間能反過來投資寫作和寫程式，或是物色更好的方法</li>
+</ul>
+<h1 id="保持專注"><a href="#保持專注" class="headerlink" title="保持專注"></a>保持專注</h1><blockquote>
+<p>a critical strategy for moving up the Pareto curve is to stay in the game longer while participating in fewer games</p>
+</blockquote>
+<p>值得注意的是，前述好處的前提是專注。假設各項領域皆呈 80&#x2F;20 法則的分布，那麼投注與報酬呈指數關係。若將投注分散在不同領域，則綜合成長幅度會少於全數投資在單一領域的成長幅度。</p>
+<p>畢竟 80&#x2F;20 法則是指多數取決於少數，若這項原則適用各領域，那麼因為分布不均，要懂得取捨；由於輕重不一，得學會排序。取捨與排序又需要經驗累積，這有賴持之以恆的專注。</p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>作者在這章最後有提幾項老生常的建議，我覺得最值得提醒自己的是這個：</p>
+<blockquote>
+<p>Don’t do things that reduce value.  These are things like smoking, eating unhealthily, sleeping little, drinking alcohol, and watching too much Netflix. Avoiding things that drag you down is one of your biggest leverage points. If you skip doing things that harm you, you’ll become healthier, happier, and more successful.  And you’ll have more time and money to enjoy the good things in life: relationships, nature, and positive experiences.</p>
+</blockquote>
+<p>他提到的行為是否有害見仁見智，可是不惹自己麻煩卻是很好的主意。畢竟我們不會每次能做出有效的投資，避開風險能保留更多選擇或資源以把握下次機會。</p>
+]]></content>
+      <tags>
+        <tag>development</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROSALIND | Longest Increasing Subsequence (LGIS)</title>
     <url>/longest-increasing-subsequence/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給一正整數列，求其最長的遞增與遞減子數列。例如數列 5, 1, 4, 2, 3 的最長遞增數列為 1, 2, 3，最長遞減數列則為 5, 4, 3。</p>
@@ -1979,50 +2023,6 @@
 ]]></content>
       <tags>
         <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？</title>
-    <url>/mayer-2023-the-art-of-clean-code-80-20-principle/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>The principle says that the majority of effects come from the minority of causes.</p>
-</blockquote>
-<p>本文是<a href="https://www.books.com.tw/products/0010959955">《精通無瑕程式碼：工程師也能斷捨離》</a> 其中一章的心得。</p>
-<p>80&#x2F;20 法則是指少數變項左右了多數結果，它既不是能預測結果的物理定律，也不是行事時得遵循的規範。精確來說，80&#x2F;20 法則是一項觀察，它可以讓我們思考，假設自己在乎的事情遵循這種分布，對我們的決策和努力方向有什麼影響。</p>
-<p>雖然這原則對近代的讀者而言應該是耳熟能詳，但我覺得作者 Mayer 的解讀引人入勝。文中除了實際案例也有簡單計算來佐證為什麼基於 80&#x2F;20 法則，我們要投資成本在抉擇、必須保持專注、要關心核心的指標等等。因此，我覺得蠻值得寫一則心得來記錄。</p>
-<span id="more"></span>
-
-<h1 id="關鍵事物的影響超乎想像"><a href="#關鍵事物的影響超乎想像" class="headerlink" title="關鍵事物的影響超乎想像"></a>關鍵事物的影響超乎想像</h1><p>多數結果是建立在少數因素上，假設這項觀察或原則適用在多數情境，那麼有兩方面的暗示。 首先，在一個領域中，少數人員能佔有多數資源或成果，例如少數人發表了多數的論文，少數人賺進了多數的錢。</p>
-<p>其次，在成就這現象的行為中，也只有關鍵的行為與成就有關。 換句話說，若目標是在某領與取得一定的成績，那麼若能夠辨識並投注心力在事物的關鍵環節，便不需要搞得筋疲力盡，也能維持一定成績。</p>
-<p>從效益的角度來看，關鍵環節與其他環節的差異更加明顯。假設兩成的努力造就八成的結果，那麼每一成努力造就四成結果，相較之下，在非關鍵事物的投注僅造就四分之一的成果。單位投入下，關鍵事物造就的效益是非關鍵事物的十六倍。那這種比例的差異在實際情形中可能更加懸殊，例如在生物體方面，少數基因轉變主宰了大多數的變化，這些基因的影響力是其他基因的數千倍以上。</p>
-<h1 id="選擇能反映結果並指引方向的指標"><a href="#選擇能反映結果並指引方向的指標" class="headerlink" title="選擇能反映結果並指引方向的指標"></a>選擇能反映結果並指引方向的指標</h1><p>當然，除了原則背後的機制以外，作者也解釋了要怎麼透過這些原則指引行動，讓自己在有限的資源，更有效率達成目標，從而有餘裕去完成或享受其他事情。</p>
-<p>這涉及了 80&#x2F;20 法則的另一項暗示，除了大部分資源為少數人所佔據，多數的進展也取決於少數的行為。而辨識關鍵行為的重點則是選擇適當的指標來衡量行為效益。</p>
-<p>舉例來說，如果目標是擁有健美體態，那麼各式各樣的飲食法與健身菜單都是潛在的選項，而體重、體脂肪、身體測量值都是衡量判斷行為對目標影響的指標。</p>
-<p>然而，不是所有指標都能忠實反映行為的影響或指引往後的行為。好比說，他人對身材的稱讚的確能反映此人的體態，不過這些讚美反映的是過往投入成本的效益，而非當下行為的影響。此外，他人評價又受長相、穿搭或其他難以捉摸的因素，未必能從中檢討出能讓自己體態變好的方向。</p>
-<p>另一方面，體脂與肌肉尺寸則是反映行為結果忠實的指標，但很難在每次訓練中即時回饋自己到底做了多好。相較之下，訓練量（負重乘以次數）即是其中一個能及時反應行為的指標，肌肉量與耐力提昇就能提升更多訓練量，也能從當下行為反應到成效。</p>
-<p>以作者用語總結，假如體態是衡量成功的依據，讚美並不是衡量進展的指標，體脂和肌肉量是呈現過往投資的 lagging indicator。而我們要關注的則是能反映當下行為影響的 leading indicator，後者能指引我們做有效的努力以達成目標，也能幫助我們在出錯時檢討問題所在。</p>
-<h1 id="透過學習減少摸索與排序指標的成本"><a href="#透過學習減少摸索與排序指標的成本" class="headerlink" title="透過學習減少摸索與排序指標的成本"></a>透過學習減少摸索與排序指標的成本</h1><p>然而，排序任務、選定指標、標記價值、學習技術也需要成本（想想看演算法課裏頭那些時間複雜度不一的排序方法），這些成本有可能攤平投資在關鍵行為與項目的效益。</p>
-<p>因此，需要借重他人的經驗來減少摸索與排序的成本。在此書中，作者舉了寫作和寫程式兩個案例供讀者參考。對於作家而言，最重要的行為是寫作，而衡量寫作的指標則是「寫了多少句子&#x2F;幾本書&#x2F;幾個故事」；而對程式設計師而言，最重要的行為是寫程式，衡量寫程式的指標則是「寫了多少行程式碼&#x2F;提出多少修訂&#x2F;完成多少專案」</p>
-<p>雖然這些指標看起來有點簡化，但簡化不代表單調或沒意義。相反地，越少原則表示越容易追蹤與遵循，即使是盲目地寫程式和寫作，也起碼有以下好處：</p>
-<ul>
-<li>你能把自己的觀點、意見、想法、風格與巧思等所有你存在過、活過、學習過的證據儲存在可交流的媒介</li>
-<li>有了資訊，便能做為籌碼與他人交流，用以兌換經驗</li>
-<li>即使不算精通，持續寫起碼能造就熟練，讓你能更快完成同樣或類似的任務</li>
-<li>經驗節省的時間能反過來投資寫作和寫程式，或是物色更好的方法</li>
-</ul>
-<h1 id="保持專注"><a href="#保持專注" class="headerlink" title="保持專注"></a>保持專注</h1><blockquote>
-<p>a critical strategy for moving up the Pareto curve is to stay in the game longer while participating in fewer games</p>
-</blockquote>
-<p>值得注意的是，前述好處的前提是專注。假設各項領域皆呈 80&#x2F;20 法則的分布，那麼投注與報酬呈指數關係。若將投注分散在不同領域，則綜合成長幅度會少於全數投資在單一領域的成長幅度。</p>
-<p>畢竟 80&#x2F;20 法則是指多數取決於少數，若這項原則適用各領域，那麼因為分布不均，要懂得取捨；由於輕重不一，得學會排序。取捨與排序又需要經驗累積，這有賴持之以恆的專注。</p>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>作者在這章最後有提幾項老生常的建議，我覺得最值得提醒自己的是這個：</p>
-<blockquote>
-<p>Don’t do things that reduce value.  These are things like smoking, eating unhealthily, sleeping little, drinking alcohol, and watching too much Netflix. Avoiding things that drag you down is one of your biggest leverage points. If you skip doing things that harm you, you’ll become healthier, happier, and more successful.  And you’ll have more time and money to enjoy the good things in life: relationships, nature, and positive experiences.</p>
-</blockquote>
-<p>他提到的行為是否有害見仁見智，可是不惹自己麻煩卻是很好的主意。畢竟我們不會每次能做出有效的投資，避開風險能保留更多選擇或資源以把握下次機會。</p>
-]]></content>
-      <tags>
-        <tag>development</tag>
       </tags>
   </entry>
   <entry>
@@ -2199,6 +2199,46 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Vim｜嘗試修改 Vimium 來關閉網頁 pop-up</title>
+    <url>/modify-vimium-to-label-and-close-pop-up/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>彈出視窗是以鍵盤瀏覽網頁的最大阻礙。這些視窗的內容不外乎會員邀請、推薦連結、蓋板廣告與網站公告等，是網站而定，通常沒辦法以 tab 來點擊，之前介紹的 Vimium 功能也沒辦法為這些視窗上的連結打標籤。由於彈出視窗並非廣告，所以下載 adblock 也無法阻擋之。所以往往只能乖乖移動滑鼠關閉之。</p>
+<p>因為這些彈出視窗設計有別於html 內建的元素，所以有些更糟糕的案例是連關閉按鈕都沒有顯示在頁面上，強迫使用這點開網頁才能關閉之。</p>
+<p>在得知 Vimium 點擊連結的方便之後，我嘗試修改 Vimium 的程式碼，讓他可以為原先沒辦法點擊的連結標註標籤</p>
+<span id="more"></span>
+
+<h1 id="想法與策略"><a href="#想法與策略" class="headerlink" title="想法與策略"></a>想法與策略</h1><p>Vimium 能為網頁中可點擊的元素標註標籤，讓用戶得以用這些標籤的快捷鍵點開連結，不用經手滑鼠或用tab 遍歷。其原理是透過html元素，辨識可能可點擊的元素，例如連結、按鈕等。</p>
+<p>然而，網頁中仍能有自訂元素，這些元素的名稱和行為未必與 html 原生元素一致，所以 Vimium 只能嘗試搜索可能可點擊的元素名稱，例如 buttom 或是 link，間接推論這些元素可點擊。不過實際的網頁往往不會使用這麼直白的名稱，可能使用縮寫或是帶好來命名這些元素，導致 vimium 無法標註這些元素。</p>
+<p>讀了<a href="https://ithelp.ithome.com.tw/articles/10091999">Vimium 介紹與支持 Plurk (噗浪)</a>之後，覺得最直觀的想法是 修改 Vimium 程式碼的判斷式，看能不能找到彈出視窗共同的特徵，例如名稱、類別或是辨識碼等，拓展 Vimium 能辨識的元素，讓程式也能夠為彈出視窗標記快捷鍵。</p>
+<p>不過這篇文章距今已十年，Vimium 也經歷多次改版，所以可能要找一下 github page 找到辨識網頁元素的區域在何處。所幸在<a href="https://stackoverflow.com/questions/53918093/how-can-i-make-my-element-clickable-for-vimium">這篇文章</a>找到了一些參考。</p>
+<p>我嘗試各大新聞網都失敗，只有知乎成功，因此以下會用知乎為例，說明要怎麼修改程式碼讓 Vimium 可以關閉彈出連結。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_before.png?raw=true" alt="Vimium 無法辨識知乎登入視窗的關閉符號"></p>
+<h1 id="調查彈出視窗是否有共同的特徵"><a href="#調查彈出視窗是否有共同的特徵" class="headerlink" title="調查彈出視窗是否有共同的特徵"></a>調查彈出視窗是否有共同的特徵</h1><p>下一步是觀察彈出視窗的網頁元素的構建方式，歸納出彈出視窗的共通特徵，以便讓 Vimium 辨識。首先，在瀏覽器按 <code>F12</code> 開啟開發人員視窗來檢視網頁原始碼，接著於彈出視窗依序點擊右鍵和檢查，即可鎖定對應位置的網頁原始碼。</p>
+<p>我檢查了幾個網站後發現，每個網頁的彈出視窗設計都不一樣，例如元素的組成、對應的滑鼠行為(e.g. hover or click)，乃至於元素的 class 與 id 也因網頁而異。這意味著，也許沒有共通的值可以辨識這些自訂元素，只能針對常用的網頁來做修改。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_check.png?raw=true"></p>
+<h1 id="下載擴充套件程式碼"><a href="#下載擴充套件程式碼" class="headerlink" title="下載擴充套件程式碼"></a>下載擴充套件程式碼</h1><p>下載擴充套件的方式可參考<a href="https://stackoverflow.com/questions/16680682/how-to-modify-an-extension-from-the-chrome-web-store">此文</a></p>
+<ol>
+<li>安裝 <a href="https://chrome.google.com/webstore/detail/chrome-extension-source-v/jifpbeccnghkjeaalbbjmodiffmgedin">Chrome extension source viewer</a></li>
+<li>點開 Vimium 頁面</li>
+<li>點擊 “Chrome extension source viewer”</li>
+<li>點擊 “Download as zip”<br><img data-src="https://lh3.googleusercontent.com/dCvSGp9T3LZP6PLfzgxNpxlX5qxizpjKN8g9R3eNKTg98e4MfAEDc5IRVFGr5O4VtC4nq62HNKpGxkNaDLscK1VXLw=w640-h400-e365-rj-sc0x00ffffff" alt="於擴充套件頁面點擊 &quot;CRX&quot; 即可下載套件原始碼（圖：Chrome extension source viewer 頁面）"></li>
+</ol>
+<h1 id="修改程式碼並套用於瀏覽器"><a href="#修改程式碼並套用於瀏覽器" class="headerlink" title="修改程式碼並套用於瀏覽器"></a>修改程式碼並套用於瀏覽器</h1><p>解壓縮後，接著點開，在這段加入<br><a href="https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992">https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!isClickable &amp;&amp; className &amp;&amp; className.<span class="title function_">toLowerCase</span>().<span class="title function_">includes</span>(<span class="string">&quot;zdi&quot;</span>))</span><br><span class="line">  possibleFalsePositive = isClickable = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>開啟 Chrome，點選工具列的擴充功能圖示</li>
+<li>點選「管理擴充管理」</li>
+<li>點選「載入未封裝項目」</li>
+<li>重新整理頁面，查看是否順利修改</li>
+</ol>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_after.png?raw=true" alt="修改 Vimium 的程式碼後，關閉視窗的符號被標上標籤了。"></p>
+<h1 id="困難與限制"><a href="#困難與限制" class="headerlink" title="困難與限制"></a>困難與限制</h1><p>實作之後才發現，許多網站不是用 Html 既有物件來構建彈出視窗，而是自訂許多 class 與 id，再透過 Javascript 控制。這些自定義物件的行為由 Javascript 控制，每個網頁的命名、行為與能見度都不一樣，所以 Vimium 也無法一次搞定所有可能性。</p>
+<p>換句話說，本文陳述的嘗試只適用於常用的網站，好比說常看的新聞網或社群論壇等，不能一勞永逸地克服所有彈出視窗。</p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>目前，彈出視窗仍是鍵盤瀏覽網頁的最大阻礙，原因是彈出是往往是自訂元素。，諸如 Vimium 等擴充套件也不易辨識多樣的自訂元素。鍵盤的可及性受限於網頁元素的設計共識，所以政府對於無障礙網頁設計才有相關的規範與建議吧。</p>
+]]></content>
+      <tags>
+        <tag>vim</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MiTalk 2022：在講台上</title>
     <url>/mitalk-6-thu-2022/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>兩年前，我曾以聽眾的身分報名 MiTalk，如今總算有點結果可以參加口頭報告。趁著記憶猶新，我想紀錄此次工作坊的所見所得，並且借題敘述一些尚未獨立成篇的想法。</p>
@@ -2318,43 +2358,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Vim｜嘗試修改 Vimium 來關閉網頁 pop-up</title>
-    <url>/modify-vimium-to-label-and-close-pop-up/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>彈出視窗是以鍵盤瀏覽網頁的最大阻礙。這些視窗的內容不外乎會員邀請、推薦連結、蓋板廣告與網站公告等，是網站而定，通常沒辦法以 tab 來點擊，之前介紹的 Vimium 功能也沒辦法為這些視窗上的連結打標籤。由於彈出視窗並非廣告，所以下載 adblock 也無法阻擋之。所以往往只能乖乖移動滑鼠關閉之。</p>
-<p>因為這些彈出視窗設計有別於html 內建的元素，所以有些更糟糕的案例是連關閉按鈕都沒有顯示在頁面上，強迫使用這點開網頁才能關閉之。</p>
-<p>在得知 Vimium 點擊連結的方便之後，我嘗試修改 Vimium 的程式碼，讓他可以為原先沒辦法點擊的連結標註標籤</p>
+    <title>Nextflow｜調整工作目錄的路徑</title>
+    <url>/nextflow-change-path-to-work-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
 <span id="more"></span>
 
-<h1 id="想法與策略"><a href="#想法與策略" class="headerlink" title="想法與策略"></a>想法與策略</h1><p>Vimium 能為網頁中可點擊的元素標註標籤，讓用戶得以用這些標籤的快捷鍵點開連結，不用經手滑鼠或用tab 遍歷。其原理是透過html元素，辨識可能可點擊的元素，例如連結、按鈕等。</p>
-<p>然而，網頁中仍能有自訂元素，這些元素的名稱和行為未必與 html 原生元素一致，所以 Vimium 只能嘗試搜索可能可點擊的元素名稱，例如 buttom 或是 link，間接推論這些元素可點擊。不過實際的網頁往往不會使用這麼直白的名稱，可能使用縮寫或是帶好來命名這些元素，導致 vimium 無法標註這些元素。</p>
-<p>讀了<a href="https://ithelp.ithome.com.tw/articles/10091999">Vimium 介紹與支持 Plurk (噗浪)</a>之後，覺得最直觀的想法是 修改 Vimium 程式碼的判斷式，看能不能找到彈出視窗共同的特徵，例如名稱、類別或是辨識碼等，拓展 Vimium 能辨識的元素，讓程式也能夠為彈出視窗標記快捷鍵。</p>
-<p>不過這篇文章距今已十年，Vimium 也經歷多次改版，所以可能要找一下 github page 找到辨識網頁元素的區域在何處。所幸在<a href="https://stackoverflow.com/questions/53918093/how-can-i-make-my-element-clickable-for-vimium">這篇文章</a>找到了一些參考。</p>
-<p>我嘗試各大新聞網都失敗，只有知乎成功，因此以下會用知乎為例，說明要怎麼修改程式碼讓 Vimium 可以關閉彈出連結。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_before.png?raw=true" alt="Vimium 無法辨識知乎登入視窗的關閉符號"></p>
-<h1 id="調查彈出視窗是否有共同的特徵"><a href="#調查彈出視窗是否有共同的特徵" class="headerlink" title="調查彈出視窗是否有共同的特徵"></a>調查彈出視窗是否有共同的特徵</h1><p>下一步是觀察彈出視窗的網頁元素的構建方式，歸納出彈出視窗的共通特徵，以便讓 Vimium 辨識。首先，在瀏覽器按 <code>F12</code> 開啟開發人員視窗來檢視網頁原始碼，接著於彈出視窗依序點擊右鍵和檢查，即可鎖定對應位置的網頁原始碼。</p>
-<p>我檢查了幾個網站後發現，每個網頁的彈出視窗設計都不一樣，例如元素的組成、對應的滑鼠行為(e.g. hover or click)，乃至於元素的 class 與 id 也因網頁而異。這意味著，也許沒有共通的值可以辨識這些自訂元素，只能針對常用的網頁來做修改。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_check.png?raw=true"></p>
-<h1 id="下載擴充套件程式碼"><a href="#下載擴充套件程式碼" class="headerlink" title="下載擴充套件程式碼"></a>下載擴充套件程式碼</h1><p>下載擴充套件的方式可參考<a href="https://stackoverflow.com/questions/16680682/how-to-modify-an-extension-from-the-chrome-web-store">此文</a></p>
-<ol>
-<li>安裝 <a href="https://chrome.google.com/webstore/detail/chrome-extension-source-v/jifpbeccnghkjeaalbbjmodiffmgedin">Chrome extension source viewer</a></li>
-<li>點開 Vimium 頁面</li>
-<li>點擊 “Chrome extension source viewer”</li>
-<li>點擊 “Download as zip”<br><img data-src="https://lh3.googleusercontent.com/dCvSGp9T3LZP6PLfzgxNpxlX5qxizpjKN8g9R3eNKTg98e4MfAEDc5IRVFGr5O4VtC4nq62HNKpGxkNaDLscK1VXLw=w640-h400-e365-rj-sc0x00ffffff" alt="於擴充套件頁面點擊 &quot;CRX&quot; 即可下載套件原始碼（圖：Chrome extension source viewer 頁面）"></li>
-</ol>
-<h1 id="修改程式碼並套用於瀏覽器"><a href="#修改程式碼並套用於瀏覽器" class="headerlink" title="修改程式碼並套用於瀏覽器"></a>修改程式碼並套用於瀏覽器</h1><p>解壓縮後，接著點開，在這段加入<br><a href="https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992">https://github.com/philc/vimium/blob/v1.67.4/content_scripts/link_hints.js#L987-L992</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!isClickable &amp;&amp; className &amp;&amp; className.<span class="title function_">toLowerCase</span>().<span class="title function_">includes</span>(<span class="string">&quot;zdi&quot;</span>))</span><br><span class="line">  possibleFalsePositive = isClickable = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
 
-<ol>
-<li>開啟 Chrome，點選工具列的擴充功能圖示</li>
-<li>點選「管理擴充管理」</li>
-<li>點選「載入未封裝項目」</li>
-<li>重新整理頁面，查看是否順利修改</li>
-</ol>
-<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/modify-vimium-to-label-and-close-pop-up_after.png?raw=true" alt="修改 Vimium 的程式碼後，關閉視窗的符號被標上標籤了。"></p>
-<h1 id="困難與限制"><a href="#困難與限制" class="headerlink" title="困難與限制"></a>困難與限制</h1><p>實作之後才發現，許多網站不是用 Html 既有物件來構建彈出視窗，而是自訂許多 class 與 id，再透過 Javascript 控制。這些自定義物件的行為由 Javascript 控制，每個網頁的命名、行為與能見度都不一樣，所以 Vimium 也無法一次搞定所有可能性。</p>
-<p>換句話說，本文陳述的嘗試只適用於常用的網站，好比說常看的新聞網或社群論壇等，不能一勞永逸地克服所有彈出視窗。</p>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>目前，彈出視窗仍是鍵盤瀏覽網頁的最大阻礙，原因是彈出是往往是自訂元素。，諸如 Vimium 等擴充套件也不易辨識多樣的自訂元素。鍵盤的可及性受限於網頁元素的設計共識，所以政府對於無障礙網頁設計才有相關的規範與建議吧。</p>
+<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
+
+<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
+<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
+<blockquote>
+<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
+</blockquote>
 ]]></content>
       <tags>
-        <tag>vim</tag>
+        <tag>nextflow</tag>
       </tags>
   </entry>
   <entry>
@@ -2713,29 +2742,81 @@
       </tags>
   </entry>
   <entry>
-    <title>Nextflow｜調整工作目錄的路徑</title>
-    <url>/nextflow-change-path-to-work-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 <code>work/</code>，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。</p>
+    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
+    <url>/nextflow-escape-characters/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
+<span id="more"></span>
+<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
+<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
+<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
+<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
+
+<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
+<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
+<pre><code>title=&quot;The current directory is,&quot;
+echo &quot;\$title \n $PWD&quot;
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
+<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
+
+<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
+<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
+<ul>
+<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
+<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
+<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nextflow｜模仿 docstring 來註解 process and workflow</title>
+    <url>/nextflow-extract-docstring-from-a-module/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。</p>
 <span id="more"></span>
 
-<h1 id="添加執行選項"><a href="#添加執行選項" class="headerlink" title="添加執行選項"></a>添加執行選項</h1><p>執行 Nextflow 腳本時，加上 <code>-w</code> 便能指定工作目錄的存放路徑與名稱，是優先度最高的方式。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -w <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="調整參數設定"><a href="#調整參數設定" class="headerlink" title="調整參數設定"></a>調整參數設定</h1><p>其次，也能在<a href="https://www.nextflow.io/docs/latest/config.html">設置檔內定義工作目錄</a>，再使用 <code>-c</code> 導入設置檔。（除此之外，使用 <code>-params-file</code> 導入參數或是直接將<code>workDir</code> 定義在 nextflow 腳本內都是無效的手法。）</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// config.json</span></span><br><span class="line">workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -c config.json</span><br></pre></td></tr></table></figure>
-
-<p>要留意的是，雖然在設置檔內常使用 <code>params.var</code> 的方式來定義變項，但 <code>workDir</code> 不等同 <code>params.workDir</code>，因此以下兩種寫法都無法調整工作目錄的存放路徑。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">params.workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line">params <span class="punctuation">&#123;</span></span><br><span class="line">    workDir = <span class="string">&quot;/path/to/workdir&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="設置環境變項"><a href="#設置環境變項" class="headerlink" title="設置環境變項"></a>設置環境變項</h1><p>第三種方法則是在 nextflow 的執行環境重設環境變數，是優先度最低的方式。（Nextflow 相關的環境變項可參照 <a href="https://www.nextflow.io/docs/latest/metadata.html">Workflow introspection</a>）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> NXF_WORK=<span class="string">&quot;/path/to/workdir/&quot;</span></span><br><span class="line">$ nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>工作目錄的內容有助於追蹤程式錯誤，為了管理方便，可透過執行指令、內製變項和環境變項來調整工作目錄的路徑。</p>
-<p>除了工作目錄外，或許也有人想調整 <code>.nextflow</code> 等暫存目錄的位置，但根據<a href="https://github.com/nextflow-io/nextflow/issues/1747">開發者所述</a>，目前應該是無法更動。</p>
-<blockquote>
-<p>The <code>.nextflow</code> has to be in the launching directory to properly maintain the history of the executions.</p>
-</blockquote>
+<p>python 的 docstring 是 function 的強大特性，能讓開發者在參數類別之外，補充關於 function 的用途、假設條件以及運作原理等額外資訊。透過 <code>__doc__</code> 屬性，docstring 能夠被其他程式讀取，實現開發文檔自動化等功能。</p>
+<p>更重要的是，docstring 位於 function 內部，這讓開發者更動程式碼後，能夠輕易地同步更新文檔，減少文檔與程式碼不一致的情形。</p>
+<p>然而，Nextflow 目前並不支援 docstring 功能。不過，我們可使用多行註解（即介於 <code>/*</code> 與 <code>*/</code> 之間的文字）來模仿 docstring 的效果。這對於協助開發者了解當前的 module（無論是 process 或 workflow）都很有幫助。</p>
+<p>鑒於 Nextflow 的註解無法像 python docstring 那樣透過物件方法呼叫，我寫了一支小腳本來<a href="https://github.com/5uperb0y/nf-tools/tree/main/src/get_docstring">節錄這些資訊</a>。</p>
+<p>簡言之，我將位於 module 名稱與 directive 之間的多行註解定義為 Nextflow 的 docstring，例如：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">process &lt;name&gt; &#123;</span><br><span class="line">	<span class="comment">/* your comments */</span></span><br><span class="line">	directives</span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	your code</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>這支腳本運用正則表達式（感謝 chatgpt 幫忙想出裏頭可怕的正則表達式）來抓取 docstring，將其與 module 類型（即 workflow 或 process）和名稱一併輸出。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python get_docstring.py workflow.nf</span><br><span class="line">process FASTQC</span><br><span class="line">this text is from FASTQC</span><br><span class="line">workflow VARIANT_CALLING</span><br><span class="line">this text is from VARIANT_CALLING</span><br></pre></td></tr></table></figure>
+<p>如此一來，我們就能取得 docstring 的內容，不僅方便瀏覽 module 功能，也便於自動生成文檔。</p>
+<p>雖然目前功能還蠻陽春的，但之後也許可以新增其他實用功能，例如支援以名稱篩遠 docstring，或是使用 groovy 開發，使之能在 Nextflow 內部調用。</p>
 ]]></content>
       <tags>
         <tag>nextflow</tag>
@@ -2826,87 +2907,6 @@
 <td>輸入路徑</td>
 </tr>
 </tbody></table>
-]]></content>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜程式碼區塊的跳脫符號 (escape characters)</title>
-    <url>/nextflow-escape-characters/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。</p>
-<span id="more"></span>
-<h2 id="Nextflow-管理程式的單位"><a href="#Nextflow-管理程式的單位" class="headerlink" title="Nextflow 管理程式的單位"></a>Nextflow 管理程式的單位</h2><p>Process 是 Nextflow 管理程式的單位，其中必然包含 script 區塊來定義想執行的程式。除了 script 區塊，還有 directives（環境設置）、inputs（輸入資料）、outputs（輸出資料）等非必要但有助流程控管的區塊。</p>
-<p>在執行程式前，Nextflow 會解讀 script 區塊帶有 <code>$</code> 前綴的變項，代入 inputs、parameters 或 config files 的對應內容。<br>以 process fastQC 為例，nextflow 將 <code>fq</code> (input) 的內容代入 <code>$&#123;fq&#125;</code> (script) 後才執行程式，再將輸出結果透過 <code>fqc</code>(output) 傳遞。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process fastQC &#123;</span><br><span class="line">    publishDir &quot;$&#123;params.outdir&#125;/qc&quot;, mode: &#x27;copy&#x27;, overwrite: true</span><br><span class="line">    input:</span><br><span class="line">        path fq</span><br><span class="line">    output:</span><br><span class="line">        path &quot;*_fastqc.&#123;zip,html&#125;&quot; into fqc</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    fastqc --nogroup -q $&#123;fq&#125;</span><br><span class="line">    &quot;&quot;&quot;       </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="程式碼與nextflow-語法衝突"><a href="#程式碼與nextflow-語法衝突" class="headerlink" title="程式碼與nextflow 語法衝突"></a>程式碼與nextflow 語法衝突</h2><p>值得留意的是，perl 或 bash 等語言也使用 <code>$</code> 標記變項（例如：<code>$i</code>、<code>$path</code>）。Nextflow 無法區分以 <code>$</code> 為前綴的變項是定義在 script 內（script 變項），還是得自於 inputs, parameters 或 config files（nextflow 變項）。</p>
-<p>因此，如果程式碼出現以 <code>$</code> 定義或呼叫的 script 變項 ，nextflow 便有可能因為無法在 inputs、parameters 或 config files 找到對應內容而報錯。</p>
-<p>舉以下案例來說，<code>title</code>&#x2F;<code>$title</code> 是使用 bash 定義的 script 變項。然而，nextflow 卻誤判該變項的來源，以至於找不到其內容（<code>No such variable</code>）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># printPath.nf</span><br><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    title=&quot;The current directory is,&quot;</span><br><span class="line">    echo &quot;$title \n $PWD&quot;</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    printDir().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run printPath.nf</span><br><span class="line">Error executing process &gt; &#x27;printDir&#x27;</span><br><span class="line"></span><br><span class="line">Caused by:</span><br><span class="line">    No such variable: title -- Check script &#x27;printDir.nf&#x27; at line: 4</span><br></pre></td></tr></table></figure>
-
-<p>對於這個問題，主要的解法是透過更換標記符號來區分 script 變項和 nextflow 變項。</p>
-<h2 id="更換-nextflow-變項的標記符號"><a href="#更換-nextflow-變項的標記符號" class="headerlink" title="更換 nextflow 變項的標記符號"></a>更換 nextflow 變項的標記符號</h2><p>第一種方法是改以三個單引號夾註程式碼，提示 nextflow 改以 <code>！&#123;&#125;</code> 標記 nextflow 變項。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更換-跳脫-script-變項的標記符號"><a href="#更換-跳脫-script-變項的標記符號" class="headerlink" title="更換 (跳脫) script 變項的標記符號"></a>更換 (跳脫) script 變項的標記符號</h2><p>若 script 變項不多，也可以在 <code>＄</code> 前面加上反斜線(<code>\$</code>)，提示 nextflow 忽略 <code>$</code> 符號。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">processs printDir &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br></pre></td></tr></table></figure>
-<pre><code>title=&quot;The current directory is,&quot;
-echo &quot;\$title \n $PWD&quot;
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h2 id="更動跳脫字元"><a href="#更動跳脫字元" class="headerlink" title="更動跳脫字元"></a>更動跳脫字元</h2><p>由於 nextflow 的底層是 groovy，所以除了 script 與 nextflow 的語法衝突，也可能碰到 script 與 groovy 語法衝突的狀況。</p>
-<p>以下兩個案例都在 script 區塊使用反斜線來編輯文字。由於反斜線是 groovy 預設的跳脫符號，所以執行這些 processes 時也可能發生編譯錯誤。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># sepReplace.nf</span><br><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    sepReplace().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run sepReplace.nf</span><br><span class="line">(skip)</span><br><span class="line">Command error:</span><br><span class="line">    .command.sh line3: unexpected EOF while looking for matching `&quot;&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>或是<a href="https://github.com/nextflow-io/nextflow/issues/67">這個案例</a>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># strRemove.nf</span><br><span class="line">process strRemove &#123;</span><br><span class="line">    outpur:</span><br><span class="line">        stdout</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    echo &quot;Hello lg:en&quot; | sed &quot;s/.*lg:\(.*\).*/\1/&quot;</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">&#125;</span><br><span class="line">workflow &#123;</span><br><span class="line">    strRemove().view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nextflow run strRemove.nf</span><br><span class="line">Script compilation error</span><br><span class="line">- file : /path/to/workdir/strRemove.nf</span><br><span class="line">- cause: Unexpected character: &#x27;\&#x27;&#x27; @ line 4, column 7.</span><br><span class="line">       &#x27;&#x27;&#x27;</span><br><span class="line">         ^</span><br></pre></td></tr></table></figure>
-
-<p>碰到這種情形，首先要使用 <code>$/</code> 和 <code>/$</code> 夾註程式碼，提示 groovy 改以 <code>$</code> 作為跳脫符號，以區分 script 和 groovy 語法。</p>
-<p>接著，在 script 變項的 <code>$</code> 前面再加一個 <code>$</code> (<code>$$</code>)，提示 nextflow 忽略 <code>$</code> 符號，以區分 script 和 nextflow 語法。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    $/</span><br><span class="line">    str=&quot;A,B,C&quot;</span><br><span class="line">    echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br><span class="line">    /$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="封裝為腳本"><a href="#封裝為腳本" class="headerlink" title="封裝為腳本"></a>封裝為腳本</h2><p>不過，如果程式碼用到大量變項，前述方法會讓程式碼顯得囉嗦又不易讀。此時，可以考慮將程式碼封裝為腳本，再從 script 區塊呼叫。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># sepReplace.sh</span><br><span class="line">str=&quot;A,B,C&quot;</span><br><span class="line">echo $$str | sed &quot;s/,/\&quot;/g&quot;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">process sepReplace &#123;</span><br><span class="line">    output:</span><br><span class="line">        stdout</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    $baseDir/sepReplace.sh</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>因為 nextflow、bash、perl 都以 <code>$</code> 標記變項，所以執行 process 時可能會無法正確辨識 script 區塊內的變項來源而報錯。可能的解決途徑如下，</p>
-<ul>
-<li><strong>nextflow 變項少</strong>：以三個單引號夾註程式碼，再以 <code>！&#123;&#125;</code> 標記 nextflow 變項</li>
-<li><strong>script 變項少</strong>：以 <code>\</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>出現反斜線</strong>：以 <code>$/</code> 和 <code>/$</code> 夾註程式碼，再以 <code>$</code> 跳脫 script 變項的 <code>$</code></li>
-<li><strong>程式碼龐雜</strong>：將程式碼封裝為腳本，再從 process 呼叫腳本</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜模仿 docstring 來註解 process and workflow</title>
-    <url>/nextflow-extract-docstring-from-a-module/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。</p>
-<span id="more"></span>
-
-<p>python 的 docstring 是 function 的強大特性，能讓開發者在參數類別之外，補充關於 function 的用途、假設條件以及運作原理等額外資訊。透過 <code>__doc__</code> 屬性，docstring 能夠被其他程式讀取，實現開發文檔自動化等功能。</p>
-<p>更重要的是，docstring 位於 function 內部，這讓開發者更動程式碼後，能夠輕易地同步更新文檔，減少文檔與程式碼不一致的情形。</p>
-<p>然而，Nextflow 目前並不支援 docstring 功能。不過，我們可使用多行註解（即介於 <code>/*</code> 與 <code>*/</code> 之間的文字）來模仿 docstring 的效果。這對於協助開發者了解當前的 module（無論是 process 或 workflow）都很有幫助。</p>
-<p>鑒於 Nextflow 的註解無法像 python docstring 那樣透過物件方法呼叫，我寫了一支小腳本來<a href="https://github.com/5uperb0y/nf-tools/tree/main/src/get_docstring">節錄這些資訊</a>。</p>
-<p>簡言之，我將位於 module 名稱與 directive 之間的多行註解定義為 Nextflow 的 docstring，例如：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">process &lt;name&gt; &#123;</span><br><span class="line">	<span class="comment">/* your comments */</span></span><br><span class="line">	directives</span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	your code</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>這支腳本運用正則表達式（感謝 chatgpt 幫忙想出裏頭可怕的正則表達式）來抓取 docstring，將其與 module 類型（即 workflow 或 process）和名稱一併輸出。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python get_docstring.py workflow.nf</span><br><span class="line">process FASTQC</span><br><span class="line">this text is from FASTQC</span><br><span class="line">workflow VARIANT_CALLING</span><br><span class="line">this text is from VARIANT_CALLING</span><br></pre></td></tr></table></figure>
-<p>如此一來，我們就能取得 docstring 的內容，不僅方便瀏覽 module 功能，也便於自動生成文檔。</p>
-<p>雖然目前功能還蠻陽春的，但之後也許可以新增其他實用功能，例如支援以名稱篩遠 docstring，或是使用 groovy 開發，使之能在 Nextflow 內部調用。</p>
 ]]></content>
       <tags>
         <tag>nextflow</tag>
@@ -3113,40 +3113,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>少棒的基礎</title>
-    <url>/nishi-2015-junior-baseball-coaching-book/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>相較於影片，要以圖文解釋複雜動作有許多限制，所以此書的重點不在於老生常談的技術內容，而是引進刻意練習的帶隊觀念。</p>
-<p>訓練的目的是在比賽中獲勝。而比賽取勝則是我方投、打、傳、接等基本技巧，以及戰術、補位和佈陣等團體默契勝過對方。</p>
-<p>流於形式的訓練無法讓技術進步，惟有發現真正的不足，思考進步方法並付諸實行，才是訓練的根本意義。</p>
-<span id="more"></span>
-
-<h1 id="以提升實力為目標進行訓練"><a href="#以提升實力為目標進行訓練" class="headerlink" title="以提升實力為目標進行訓練"></a>以提升實力為目標進行訓練</h1><p>訓練的目的是讓球技進步並在比賽中展現成果。和比賽相比，訓練佔了球員大部分的時間，為了讓訓練契合進步這個目的，訓練必須有效率，讓有限的時間更加充實。</p>
-<p>想要進步的衝動源於有所不足的自覺，但進步的關鍵在於思考。球員必須思考練習的目的，從中察覺自己的弱點，並時刻檢討是否因練習而進步。</p>
-<p>若否，則要找出原因，而非一味加重練習量。先了解自己的不足並專項特訓才有機會克服弱點，逐步達到原先辦不到的事。</p>
-<p>此外，雖然球員可以在比賽中累積經驗，但不能僅憑密集的賽事提升能力，因為比賽多屬成果驗收，欠缺讓球員進步的時間。</p>
-<h1 id="技術有意識可控制和不可控制的部分"><a href="#技術有意識可控制和不可控制的部分" class="headerlink" title="技術有意識可控制和不可控制的部分"></a>技術有意識可控制和不可控制的部分</h1><p>每個球員都有個性，優於無意識的習慣難以改變，所以明確的建言很危險。若球員無法體會教練的指導，過於明確的指示會使球員只注意到建言的表面，而忽略沒提到的重點。</p>
-<p>此外，當球員專注於達到教練的標準時，也會為了矯正無法改變的錯誤而顧此失彼。</p>
-<p>是以，指導球員時要採用類比或感性的詞彙，讓球員理解技術的意象而非規範。至於較明確的技術，可以在不影響個性的前提下，從可以意識的部分開始改進。</p>
-<p>（可以參考《魔球》這段話：「這就是為什麼差勁的打者反而會成為最棒的打擊教練。他們不會逼你學他們，因為他們當年太爛了。(p. 226)」）</p>
-<h1 id="養成球員自我思考的習慣"><a href="#養成球員自我思考的習慣" class="headerlink" title="養成球員自我思考的習慣"></a>養成球員自我思考的習慣</h1><p>團隊意識、自主思考是運動的重要資產。</p>
-<p>運動是自主思考並採取行動的活動，所以別等待指示。比賽時雖然有教練和隊友提點，球員仍要主動思考下一步並提前準備，以期反應時間縮短。</p>
-<p>能力可及便自主行動，不可及就勇於發問，別讓問題懸著，重點是要充分表達自己的想法。賽場上要彼此協調互相指揮，在訓練時判斷錯誤也不要緊，重點是養成表達意見的習慣。</p>
-<p>培養比賽默契的方法是建立共識，例如討論一份補位方法、暫停時機，並且在賽場上互相提醒，大喊、比手勢等等。</p>
-<p>最後，沒有進步也會有收穫。身為教練，不該為辦不到的事情責備球員，但是要追究能力可及卻不願努力的事。</p>
-<h1 id="高掛球鞋後讀"><a href="#高掛球鞋後讀" class="headerlink" title="高掛球鞋後讀"></a>高掛球鞋後讀</h1><p>大學花太多時間在打壘球，畢業時感到無盡的空虛，那段光陰似乎對人生一點幫助也沒有，還增添不少苦澀。所以我總跟朋友講：「早知道就進實驗室，去打工、找實習，做啥不好。」</p>
-<p>重新翻這本書，也只是想說服自己有從打球學點有用的東西。但是，棒壘球要怎麼搭上我現在的職業呢？我後來發現《少棒的基礎》提倡的帶隊觀念和刻意練習的精神相符，都主張進步需要訓練和回饋並重。</p>
-<p>所以，也許可以說我從打球體會了刻意練習吧？另外，因為屢戰屢敗又沒什麼人和資源，也漸漸習慣從爛咖的角度思考要怎麼克服障礙，例如學會厚臉皮鑽漏洞之類的非典型途徑。</p>
-<p>可是這些東西得靠打球才學得到嗎？我想不是。因此，與其苦惱過去有什麼價值，不如積極規劃往後的人生。若真想探討所作所為的意義，那麼打球只是成為我自己的必要條件而已。</p>
-<p>好吧，現在已經沒有球員可以訓練，我得學著成為自己的教練。</p>
-<h1 id="留言"><a href="#留言" class="headerlink" title="留言"></a>留言</h1><blockquote>
-<p>Stanley Huang，2020年2月2日 晚上8:46<br>同意這句<br>這就是為什麼差勁的打者反而會成為最棒的打擊教練。他們不會逼你學他們，因為他們當年太爛了。<br>或許也可以說，差勁的打者反而知道大家問題可能出在哪，所以更能對球員的問題感同身受</p>
-</blockquote>
-<p>超級boy，2020年2月3日 下午2:17</p>
-<p>應該說，教學時若要求球員的動作與教練一致，那球員很有可能為了達到標準而顧此失彼。由於差勁的打者不會逼你學他們，所以能避開這項教學錯誤。</p>
-<p>至於能否對球員的問題感同身受，我覺得跟球技無關，而是跟教練的背景有關。所以不同類型的教練能幫助到不同類型的球員。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Nextflow｜利用 `publishDir` 匯出分析檔案</title>
     <url>/nextflow-the-mode-of-publishdir/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 透過 channel 媒介 process 間的檔案傳遞，讓輸出入檔案以軟連結集中到 process 的工作目錄。不過若想從工作目錄取出分析的最終結果，有賴 <code>publishDir</code> directive 的協助。</p>
@@ -3215,6 +3181,147 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>少棒的基礎</title>
+    <url>/nishi-2015-junior-baseball-coaching-book/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>相較於影片，要以圖文解釋複雜動作有許多限制，所以此書的重點不在於老生常談的技術內容，而是引進刻意練習的帶隊觀念。</p>
+<p>訓練的目的是在比賽中獲勝。而比賽取勝則是我方投、打、傳、接等基本技巧，以及戰術、補位和佈陣等團體默契勝過對方。</p>
+<p>流於形式的訓練無法讓技術進步，惟有發現真正的不足，思考進步方法並付諸實行，才是訓練的根本意義。</p>
+<span id="more"></span>
+
+<h1 id="以提升實力為目標進行訓練"><a href="#以提升實力為目標進行訓練" class="headerlink" title="以提升實力為目標進行訓練"></a>以提升實力為目標進行訓練</h1><p>訓練的目的是讓球技進步並在比賽中展現成果。和比賽相比，訓練佔了球員大部分的時間，為了讓訓練契合進步這個目的，訓練必須有效率，讓有限的時間更加充實。</p>
+<p>想要進步的衝動源於有所不足的自覺，但進步的關鍵在於思考。球員必須思考練習的目的，從中察覺自己的弱點，並時刻檢討是否因練習而進步。</p>
+<p>若否，則要找出原因，而非一味加重練習量。先了解自己的不足並專項特訓才有機會克服弱點，逐步達到原先辦不到的事。</p>
+<p>此外，雖然球員可以在比賽中累積經驗，但不能僅憑密集的賽事提升能力，因為比賽多屬成果驗收，欠缺讓球員進步的時間。</p>
+<h1 id="技術有意識可控制和不可控制的部分"><a href="#技術有意識可控制和不可控制的部分" class="headerlink" title="技術有意識可控制和不可控制的部分"></a>技術有意識可控制和不可控制的部分</h1><p>每個球員都有個性，優於無意識的習慣難以改變，所以明確的建言很危險。若球員無法體會教練的指導，過於明確的指示會使球員只注意到建言的表面，而忽略沒提到的重點。</p>
+<p>此外，當球員專注於達到教練的標準時，也會為了矯正無法改變的錯誤而顧此失彼。</p>
+<p>是以，指導球員時要採用類比或感性的詞彙，讓球員理解技術的意象而非規範。至於較明確的技術，可以在不影響個性的前提下，從可以意識的部分開始改進。</p>
+<p>（可以參考《魔球》這段話：「這就是為什麼差勁的打者反而會成為最棒的打擊教練。他們不會逼你學他們，因為他們當年太爛了。(p. 226)」）</p>
+<h1 id="養成球員自我思考的習慣"><a href="#養成球員自我思考的習慣" class="headerlink" title="養成球員自我思考的習慣"></a>養成球員自我思考的習慣</h1><p>團隊意識、自主思考是運動的重要資產。</p>
+<p>運動是自主思考並採取行動的活動，所以別等待指示。比賽時雖然有教練和隊友提點，球員仍要主動思考下一步並提前準備，以期反應時間縮短。</p>
+<p>能力可及便自主行動，不可及就勇於發問，別讓問題懸著，重點是要充分表達自己的想法。賽場上要彼此協調互相指揮，在訓練時判斷錯誤也不要緊，重點是養成表達意見的習慣。</p>
+<p>培養比賽默契的方法是建立共識，例如討論一份補位方法、暫停時機，並且在賽場上互相提醒，大喊、比手勢等等。</p>
+<p>最後，沒有進步也會有收穫。身為教練，不該為辦不到的事情責備球員，但是要追究能力可及卻不願努力的事。</p>
+<h1 id="高掛球鞋後讀"><a href="#高掛球鞋後讀" class="headerlink" title="高掛球鞋後讀"></a>高掛球鞋後讀</h1><p>大學花太多時間在打壘球，畢業時感到無盡的空虛，那段光陰似乎對人生一點幫助也沒有，還增添不少苦澀。所以我總跟朋友講：「早知道就進實驗室，去打工、找實習，做啥不好。」</p>
+<p>重新翻這本書，也只是想說服自己有從打球學點有用的東西。但是，棒壘球要怎麼搭上我現在的職業呢？我後來發現《少棒的基礎》提倡的帶隊觀念和刻意練習的精神相符，都主張進步需要訓練和回饋並重。</p>
+<p>所以，也許可以說我從打球體會了刻意練習吧？另外，因為屢戰屢敗又沒什麼人和資源，也漸漸習慣從爛咖的角度思考要怎麼克服障礙，例如學會厚臉皮鑽漏洞之類的非典型途徑。</p>
+<p>可是這些東西得靠打球才學得到嗎？我想不是。因此，與其苦惱過去有什麼價值，不如積極規劃往後的人生。若真想探討所作所為的意義，那麼打球只是成為我自己的必要條件而已。</p>
+<p>好吧，現在已經沒有球員可以訓練，我得學著成為自己的教練。</p>
+<h1 id="留言"><a href="#留言" class="headerlink" title="留言"></a>留言</h1><blockquote>
+<p>Stanley Huang，2020年2月2日 晚上8:46<br>同意這句<br>這就是為什麼差勁的打者反而會成為最棒的打擊教練。他們不會逼你學他們，因為他們當年太爛了。<br>或許也可以說，差勁的打者反而知道大家問題可能出在哪，所以更能對球員的問題感同身受</p>
+</blockquote>
+<p>超級boy，2020年2月3日 下午2:17</p>
+<p>應該說，教學時若要求球員的動作與教練一致，那球員很有可能為了達到標準而顧此失彼。由於差勁的打者不會逼你學他們，所以能避開這項教學錯誤。</p>
+<p>至於能否對球員的問題感同身受，我覺得跟球技無關，而是跟教練的背景有關。所以不同類型的教練能幫助到不同類型的球員。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ROSALIND｜Open Reading Frames (ORF)</title>
+    <url>/open-reading-frames/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一條以 FASTA 格式儲存的 DNA 序列，依據它的 open reading frames，列出所有可能由這條 DNA 序列轉譯出的蛋白質序列。</p>
+<blockquote>
+<p>An open reading frame (ORF) is one which starts from the start codon and ends by stop codon, without any other stop codons in between. Thus, a candidate protein string is derived by translating an open reading frame into amino acids until a stop codon is reached.</p>
+<p>Given: A DNA string s of length at most 1 kbp in FASTA format.</p>
+<p>Return: Every distinct candidate protein string that can be translated from ORFs of s. Strings can be returned in any order.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/orf/">https://rosalind.info/problems/orf/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在合成蛋白質時，核醣體會以三個核苷酸一組讀取 RNA 序列，添加各組核苷酸對應的胺基酸。核醣體開始讀取 RNA 序列的位置，會影響核苷酸的分組方式以及隨後轉譯出的蛋白質種類。由於 RNA 密碼子的長度為三，所以依據開始讀取序列的位置，每條 RNA 都會有三種劃分核苷酸的方式。</p>
+<p>如下所示，這樣將核酸序列依照密碼子長度劃分，讓核醣體讀取的方式，被稱作 reading frame。每個 reading frame 都定義了一個從不同核苷酸開始讀取的密碼子序列。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">AAA GGG CCC</span><br><span class="line">A AAG GGC CC</span><br><span class="line">AA AGG GCC C</span><br></pre></td></tr></table></figure>
+
+<p>相較於 RNA，DNA 兩股序列的任一股都可能轉錄為 RNA 並且轉譯為蛋白質。因此，每條 DNA 有六種可能的 reading frame，其中三種來自順向股，另外三種則來自逆向股的 reverse complemnt。DNA 這六種 reading frame 對應的蛋白質序列叫做 six-frame translating sequences。</p>
+<p>以下表格呈現了 DNA 序列 <code>AAAGGGCCC</code> 的 six-frame translating sequences，感興趣的人可以到<a href="https://www.bioline.com/media/calculator/01_13.html">這個網頁</a>試試看怎麼計算。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>translation in forward direction</th>
+<th>translation in reverse direction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>frame 1</td>
+<td>KGP</td>
+<td>GPF</td>
+</tr>
+<tr>
+<td>frame 2</td>
+<td>KG</td>
+<td>GP</td>
+</tr>
+<tr>
+<td>frame 3</td>
+<td>RA</td>
+<td>AL</td>
+</tr>
+</tbody></table>
+<p>Open reading frames (ORFs) 則是指 DNA 序列中，可能轉錄為 RNA 並且轉譯為蛋白質的片段。具體地說，ORFs 是由起始密碼子（<code>ATG</code>）延伸至終止密碼子（<code>TAG</code>、<code>TGA</code>、<code>TAA</code>）的區域。</p>
+<p>辨識基因體 ORFs 和 six-frame translating sequences 是尋找蛋白質譯碼基因的重要步驟。在許多臨床與研究場合，DNA 資料比起 RNA 或蛋白質資料更容易取得（或更經濟實惠），研究人員只能依賴 ORFs 和 six-frame translating sequences 來預測蛋白質譯碼基因，已進行功能分析或是基於蛋白質序列比較的親緣關係分析。</p>
+<p>例如在癌症基因檢測中，通常只對部分腫瘤熱點的 DNA 進行定序，再透過變異分析和註解來研究致病或治療相關的基因體功能變化。在微生物總基因體研究（metagenomics）中，也是透過定序環境 DNA 以及隨後的物種註解來普查群落的組成。</p>
+<p>此外，在缺乏足夠基因體註解資訊的情況下，ORFs 和 six-frame translating sequences 能成為尋找新的譯碼基因或預測基因功能的依據。而相較於 six-frame translating sequences，ORFs 更有機會反映真實的蛋白質譯碼基因，所以使用 ORFs 進行後續分析時，能減少數據分析的雜訊，降低計算的複雜性。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>這題要求從 FASTA 檔案讀取一條 DNA 序列，再列出它所有的 ORFs 對應的蛋白質序列。這一種情況與<a href="https://5uperb0y.com/translating-rna-into-protein/">轉譯 mature mRNA 那題</a>的情境不同。在真核生物的基因體中，有許多不參與蛋白質表現的 DNA，例如內含子、偽基因和調控子等非譯碼 DNA （non-coding DNA，它們有些不會被轉錄，有些則在轉錄後被切除，這導致 DNA 序列和實際會被轉譯出蛋白質的 mature mRNA 序列有所不同。</p>
+<p>即使 mRNA 能忠實地保留 DNA 的大部分序列，read frame 也取決於起始密碼子的位置。以 DNA 序列 <code>ATGCATGTAA</code> 為例，從前後兩個起始密碼子轉譯會產生兩種不同的蛋白質序列，它們各自來自不同的 read frame。因此，直接從 DNA 序列預測蛋白質序列時，必須考慮所有可能的 read frames，以確保不遺漏任何潛在的 ORFs。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 從第一個起始密碼子開始轉譯</span><br><span class="line">ATG CAT GTA A</span><br><span class="line"># 從第二個起始密碼子開始轉譯</span><br><span class="line">. ... ATG TAA</span><br></pre></td></tr></table></figure>
+
+<p>在此提供一個辨識 ORFs 的策略：</p>
+<ol>
+<li>由 5’ 到 3’ 一一讀取 DNA 序列。</li>
+<li>讀到起始密碼子時，暫存它的座標，再記錄當下的 read frame。</li>
+<li>如果碰到多個起始密碼子，都按步驟 2. 依照所在的 read frame 儲存它們的座標。</li>
+<li>一旦碰到終止密碼子，就取出對應 read frame 的起始密碼子座標，直到取出所有暫存的座標。</li>
+<li>ORFs 正是終止密碼子與起始密碼子之間的區域</li>
+<li>持續讀取 DNA 序列直到最後一個核苷酸為止。</li>
+</ol>
+<p>接著再用同樣的流程讀取反向互補序列，就能得到 DNA 所有 read frame 的 ORFs。最後根據 DNA 密碼表把 ORFs 序列轉換為對應的蛋白質序列即可滿足題目要求。</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>因為完成這題所需的幾項功能在先前的文章已經解釋過了，所以接下來我只會解釋要怎麼用 python 實作 ORFs 的辨識。解題的完整程式碼可參考<a href="https://github.com/5uperb0y/rosalind/blob/main/code/orf/orf.py">我的 github</a>。</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>題目</th>
+<th>連結</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>讀取 FASTA 檔案</td>
+<td>Finding a Shared Motif</td>
+<td><a href="https://5uperb0y.com/finding-a-shared-motif/">Link</a></td>
+</tr>
+<tr>
+<td>取得反向互補序列</td>
+<td>Complementing a Strand of DNA</td>
+<td><a href="https://5uperb0y.com/complementing-a-strand-of-dna/">Link</a></td>
+</tr>
+<tr>
+<td>轉譯RNA序列</td>
+<td>Translating RNA into Protein</td>
+<td><a href="https://5uperb0y.com/translating-rna-into-protein/">Link</a></td>
+</tr>
+</tbody></table>
+<p>我使用 orf_locs (list) 儲存所有 ORFs 的座標。為了暫存不同 read frame 上發現的起始密碼子座標，我建立了一個由 3 個 lists 組成的 list，start_locs。其中的三個 list 分別對應 DNA 序列三種可能的 read frame (0, 1, 2)。</p>
+<p>在讀取 DNA 序列的過程中，透過將當前核苷酸的位置索引值對 3 取模數 ($position \mod 3$)，可以得知當前所在的 read frame 索引值。一旦遇到起始密碼子，將其座標存入 start_locs 對應 read frame 的 list；直到碰到終止密碼子，才把 start_locs 對應 list 的起始密碼子座標清空，與當前終止密碼子的座標組成 ORFs 區段，存入 orf_locs。</p>
+<p>讀取完整條序列後，再根據 ORFs 座標擷取所有 ORFs 對應的 DNA 子序列。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">orf</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Identifies all open reading frames (ORFs) from all read frames in a DNA sequence</span></span><br><span class="line"><span class="string">    that start with &#x27;ATG&#x27; and end with a stop codon (&#x27;TAA&#x27;, &#x27;TAG&#x27;, &#x27;TGA&#x27;).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA sequence.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        list: A list of ORF sequences.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    orf_locs = []</span><br><span class="line">    start_locs = [[], [], []]</span><br><span class="line">    <span class="keyword">for</span> pos, _ <span class="keyword">in</span> <span class="built_in">enumerate</span>(dna):</span><br><span class="line">        frame = pos % <span class="number">3</span></span><br><span class="line">        codon = dna[pos: pos + <span class="number">3</span>]</span><br><span class="line">        <span class="keyword">if</span> codon == <span class="string">&quot;ATG&quot;</span>:</span><br><span class="line">            start_locs[frame].append(pos)</span><br><span class="line">        <span class="keyword">elif</span> codon <span class="keyword">in</span> [<span class="string">&quot;TGA&quot;</span>, <span class="string">&quot;TAG&quot;</span>, <span class="string">&quot;TAA&quot;</span>]:</span><br><span class="line">            <span class="keyword">while</span> start_locs[frame]:</span><br><span class="line">                orf_locs.append((start_locs[frame].pop(), pos))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> [ dna[i:j] <span class="keyword">for</span> i, j <span class="keyword">in</span> orf_locs ]</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論：open-reading-frame-的定義"><a href="#討論：open-reading-frame-的定義" class="headerlink" title="討論：open reading frame 的定義"></a>討論：open reading frame 的定義</h1><p>Open reading frame 一詞的字面意思是：”Frames that remain open to keep ribosome reading”，指的是核酸序列中未被終止密碼子中斷的一段區域。由於 ORFs 主要用於預測蛋白質譯碼基因，所以也衍伸出許多能用於設計演算法的操作型定義 (Sievar et al., 2018)</p>
+<ul>
+<li>定義1：ORFs 是指長度為 3 的倍數，而且介於起始密碼子和終止密碼子之間的序列。</li>
+<li>定義2：ORFs 是指長度為 3 的倍數，而且介於兩組終止密碼子之間的序列。</li>
+<li>定義3：ORFs 是介於核酸裁切位點之間的序列。</li>
+</ul>
+<p><img data-src="https://ars.els-cdn.com/content/image/1-s2.0-S0168952517302299-gr1.jpg"></p>
+<p>（當中橘色線條標記的區域即為各種定義下的 ORFs，圖片來源：Sieber et al., 2018.）</p>
+<p>在這些定義中，第一種最為常見，包含這道題目都採用起始和終止密碼子來定義 ORFs 的範圍。定義 1 適用於基因體結構相對單純的原核生物，但在應用於真核生物時會有些問題。</p>
+<p>首先，位於內含子中的終止密碼子會導致 ORFs 短於實際可以轉譯出蛋白質的序列。其次，由於起始密碼子既作為開始轉譯的訊號，也是甲硫胺酸的密碼子，定義 1 在實務上難以區分這兩種狀況。</p>
+<p>相較之下，定義 2 只考慮終止密碼子，因此可以避免起始密碼子帶來的混淆問題。此外，定義 2 所構成的 ORFs 能夠較全面涵蓋到外顯子的位置，因此 Sievar et al. 推薦使用定義 2。至於第三種定義，則要仰賴基因體註解資訊（通常是在基因預測之後的步驟），而且只能用於真核生物，並不是偵測 ORF 演算法的常見方式。</p>
+<p>Sieber et al. (2018). The definition of open reading frame revisited. Trends in Genetics, 34(3), 167-170.</p>
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
       </tags>
   </entry>
   <entry>
@@ -4484,74 +4591,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>Vim｜VSCodeVim 常用設定</title>
-    <url>/vscode-common-settings-for-vscodevim/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。</p>
-<span id="more"></span>
-<h1 id="除了-Esc，還有哪些鍵適合作為模式切換快捷鍵？"><a href="#除了-Esc，還有哪些鍵適合作為模式切換快捷鍵？" class="headerlink" title="除了 Esc，還有哪些鍵適合作為模式切換快捷鍵？"></a>除了 <code>Esc</code>，還有哪些鍵適合作為模式切換快捷鍵？</h1><p>Vim 被開發出來的時候，<code>Esc</code> 位於現今當代鍵盤 <code>Tab</code> 和 <code>Caps</code> 的位置。如今，<code>Esc</code> 被移到鍵盤左上角，已不若以往方便了。既然 VSCodeVim 支援重新設定快捷鍵，那麼有哪些鍵適合作為模式切換快捷鍵？</p>
-<ol>
-<li><code>jj</code>：位置很棒，只是打字打到 j 時，會有輕微的停頓感。缺點是編輯中文時，要頻繁切換輸入法。</li>
-<li><code>jk</code>：一次按兩顆鍵，但因為可以一起按，沒有連續按鈕的卡頓感，只是同樣要解決換模式前得切換輸入法的問題。</li>
-<li><code>Enter</code>*2：剛開始使用 vim 很容易忘記切回 normal 模式，既然中文輸入會頻繁輸入 enter讓文字寫入文件，enter 設定為切換模式的快捷鍵既不會干擾文字輸入也好記。只是碰到換行時會延遲等候第二次按鍵的訊號，有時還挺煩人的。</li>
-<li><code>Shift</code> + <code>Enter</code>：雖然要兩個按鈕，但位置其實不錯按，而且不會輸入新列的卡頓感。唯一的缺點是設置稍嫌麻煩。</li>
-</ol>
-<h2 id="前述三種方法要修改-setting-json"><a href="#前述三種方法要修改-setting-json" class="headerlink" title="前述三種方法要修改 setting.json"></a>前述三種方法要修改 setting.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;vim.insertModeKeyBindings&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;before&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;CR&quot;</span><span class="punctuation">,</span> <span class="string">&quot;CR&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;after&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;Esc&gt;&quot;</span><span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="Shift-Enter-的方法要改-keybindings-json"><a href="#Shift-Enter-的方法要改-keybindings-json" class="headerlink" title="Shift + Enter 的方法要改 keybindings.json"></a><code>Shift</code> + <code>Enter</code> 的方法要改 keybindings.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">//https://github.com/VSCodeVim/Vim/issues/2584#issuecomment-385561286</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shift+Enter&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;extension.vim_escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;when&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editorTextFocus&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="使用相對列名"><a href="#使用相對列名" class="headerlink" title="使用相對列名"></a>使用相對列名</h1><p>由於 vim 可以為指令添加數字以重複執行，所以為了計算方便，需要設置相對行號，設定方式為：</p>
-<ol>
-<li><code>Ctrl</code> + <code>,</code>，啟動 UI 設定</li>
-<li>搜尋 “Line numbers” </li>
-<li>由 “on” 改為 “relative”，預設為絕對行號</li>
-</ol>
-<p>然而，內建方式只能顯示絕對行號或相對行號，若要一併顯示，則要安裝 <em>Double Line Numbers</em> 套件。</p>
-<ol>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>X</code>，開啟擴充套件。</li>
-<li>搜尋並安裝 <em>Double Line Numbers</em> </li>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，輸入 <code>Double Line Numbers: Relative + Absolute</code></li>
-</ol>
-<h1 id="怎樣設定快捷鍵"><a href="#怎樣設定快捷鍵" class="headerlink" title="怎樣設定快捷鍵"></a>怎樣設定快捷鍵</h1><p>vscode 和 vim 有些彼此衝突的快捷鍵，例如常用的 <code>Ctrl</code> + <code>F</code> 或 <code>Ctrl</code> +<code>W</code> 等。依照個人習慣，可以選擇 vim 模式要啟用那些快捷鍵</p>
-<ol>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
-<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
-<li>新增以下設置來關掉 vim的快捷鍵 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">    <span class="attr">&quot;vim.handleKeys&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-d&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-s&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-w&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-t&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-z&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-這些是我常用的指令。</li>
-</ol>
-<h1 id="怎樣才不會忘記在切換模式後切為英文輸入法"><a href="#怎樣才不會忘記在切換模式後切為英文輸入法" class="headerlink" title="怎樣才不會忘記在切換模式後切為英文輸入法"></a>怎樣才不會忘記在切換模式後切為英文輸入法</h1><p>由於 Normal mode 僅能以英文輸入法下指令，假如在 Insert mode 以中文輸入法編輯文件，使用預設的 <code>Esc</code> 切換模式後，仍維持中文輸入法，還要將輸入法切回英文，才能下達指令。為了解決這問題有兩個策略：</p>
-<h2 id="改變模式切換快捷鍵"><a href="#改變模式切換快捷鍵" class="headerlink" title="改變模式切換快捷鍵"></a>改變模式切換快捷鍵</h2><p>第一種策略是把切換模式的快捷鍵設定為 <code>jj</code>，雖然不見得比較快，但一定能避免中文輸入法讓指令無法執行的問題。由於改用英文字母作為切換快捷鍵，所以在切換模式前一定要更換輸入法，所以能確保切換後一定是英文輸入法</p>
-<ol>
-<li><code>Shift</code>, then <code>jj</code>，切為 Normal mode</li>
-<li><code>i</code>，切為 Insert mode</li>
-<li><code>Shift</code>，切為中文輸入法</li>
-</ol>
-<h2 id="自動切換輸入法"><a href="#自動切換輸入法" class="headerlink" title="自動切換輸入法"></a>自動切換輸入法</h2><p>另一種是呼叫自動切換輸入法的腳本，在切回 normal mode 時自動幫我們切換文字</p>
-<ol>
-<li>下載 (im.select.exe)[<a href="https://github.com/daipeihust/im-select]">https://github.com/daipeihust/im-select]</a> 放到任何你喜歡的路徑</li>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
-<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
-<li>新增以下設置以啟用輸入法自動切換 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.enable&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.defaultIM&quot;</span><span class="punctuation">:</span> <span class="string">&quot;us&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe -s &#123;im&#125;&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>透過這樣設置，在切回 normal mode 瞬間，就會變成英文輸入法。而進入 insert mode 時，就會回到當初離開時的輸入法。</p>
-<h1 id="關閉括號自動補全"><a href="#關閉括號自動補全" class="headerlink" title="關閉括號自動補全"></a>關閉括號自動補全</h1><p>VSCode 內建括號與引號自動補全，然而有時這還挺雞肋的，因為在括號內打完字還要使用方向鍵移到括號外才能繼續打字，若使用 Vim 還得切模式再移動，不管哪種方式都沒省太多功夫。因此，對於一般文本編輯或編輯程式碼的需求而言，似乎可以在 setting.json 添加以下設置來關閉自動補全。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// automatical closing</span></span><br><span class="line">    <span class="attr">&quot;editor.autoClosingQuotes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;editor.autoClosingBrackets&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="調整視窗大小的快捷鍵"><a href="#調整視窗大小的快捷鍵" class="headerlink" title="調整視窗大小的快捷鍵"></a>調整視窗大小的快捷鍵</h1><p>設定快捷鍵，就不用為了調整欄位大小，辛苦地讓游標對齊邊框了。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// put those into keybinding.json</span></span><br><span class="line">   <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+shift+d&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.decreaseViewSize&quot;</span></span><br><span class="line">   <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">   <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+shift+i&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.increaseViewSize&quot;</span></span><br><span class="line">   <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="更新檔案瀏覽側欄"><a href="#更新檔案瀏覽側欄" class="headerlink" title="更新檔案瀏覽側欄"></a>更新檔案瀏覽側欄</h1><p>使用終端或指令新增或刪除檔案不會同步更新在檔案探索側欄，因為重新整理的按鈕太小了，所以我也設定快捷鍵輔助。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// put those into keybinding.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+f5&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;command&quot;</span><span class="punctuation">:</span><span class="string">&quot;workbench.files.action.refreshFilesExplorer&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;when&quot;</span><span class="punctuation">:</span><span class="string">&quot;filesExplorerFocus&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h1 id="超棒的學習資源和網站"><a href="#超棒的學習資源和網站" class="headerlink" title="超棒的學習資源和網站"></a>超棒的學習資源和網站</h1><ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10291847">VsCodeVim 自動在normal mode切回英文輸入法的方法</a></li>
-<li><a href="https://www.blog.lasai.com.tw/2020/07/05/vscode-vim-mode/">vscode vim mode</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>vim</tag>
-        <tag>vscode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ROSALIND｜Translating RNA into Protein (PROT)</title>
     <url>/translating-rna-into-protein/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>轉譯RNA字串為蛋白質字串</p>
@@ -4649,47 +4688,70 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>VSCode｜ Failed to parse remote port from server output</title>
-    <url>/vscode-remote-ssh-connection-not-working-after-update/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="狀況描述"><a href="#狀況描述" class="headerlink" title="狀況描述"></a>狀況描述</h2><p>原本在 Windows 都能正常用 VSCode Remote SSH 連線伺服器，但一早卻發現連線失敗。當時，VSCode 不斷要求輸入密碼卻無法登入，”OUTPUT” 頁面提示的訊息節錄如下：</p>
-<blockquote>
-<p>Failed to parse remote port from server output</p>
-</blockquote>
-<blockquote>
-<p>Acquiring lock on &#x2F;home&#x2F;username&#x2F;.vscode-server&#x2F;bin&#x2F;some-hash-code-here&#x2F;vscode-remote-lock.username.some-hash-code-here</p>
-</blockquote>
-<p><em>版本資訊：windows 21H2, VSCode 1.74.2</em></p>
+    <title>Vim｜VSCodeVim 常用設定</title>
+    <url>/vscode-common-settings-for-vscodevim/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。</p>
 <span id="more"></span>
-<h2 id="原因與解決辦法"><a href="#原因與解決辦法" class="headerlink" title="原因與解決辦法"></a>原因與解決辦法</h2><p>參考 <a href="https://stackoverflow.com/questions/64034813/vs-code-remote-ssh-connection-not-working">VSCode remote ssh connection not working</a>，簡言之，VSCode 遠端連線前，需要在伺服器端的 <code>.vscode-server/bin</code> 安裝連線相關的工具並進行一些連線設置。假設伺服器已有這些套件，”OUTPUT” 會提示 <code>Found existing installation at (.vscode-server/bin 的路徑)</code>；若沒有這些套件，則會從官方網站下載與安裝。</p>
-<p>若伺服器的套件和配置沒有隨本地 Vscode 更新，便可能因為連線兩端的資訊不相符而無法順利連線，此時可刪除並重新安裝這些工具與配置檔來解決問題。</p>
+<h1 id="除了-Esc，還有哪些鍵適合作為模式切換快捷鍵？"><a href="#除了-Esc，還有哪些鍵適合作為模式切換快捷鍵？" class="headerlink" title="除了 Esc，還有哪些鍵適合作為模式切換快捷鍵？"></a>除了 <code>Esc</code>，還有哪些鍵適合作為模式切換快捷鍵？</h1><p>Vim 被開發出來的時候，<code>Esc</code> 位於現今當代鍵盤 <code>Tab</code> 和 <code>Caps</code> 的位置。如今，<code>Esc</code> 被移到鍵盤左上角，已不若以往方便了。既然 VSCodeVim 支援重新設定快捷鍵，那麼有哪些鍵適合作為模式切換快捷鍵？</p>
 <ol>
-<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟指令視窗</li>
-<li>搜尋並執行 “Remote-SSH: Kill VS Code Server on Host”，刪除 <code>vscode-server</code> 檔案與目錄</li>
-<li>選取欲清除既有工具的伺服器</li>
-<li>重新連線，VSCode 便會重新安裝相關軟體了</li>
+<li><code>jj</code>：位置很棒，只是打字打到 j 時，會有輕微的停頓感。缺點是編輯中文時，要頻繁切換輸入法。</li>
+<li><code>jk</code>：一次按兩顆鍵，但因為可以一起按，沒有連續按鈕的卡頓感，只是同樣要解決換模式前得切換輸入法的問題。</li>
+<li><code>Enter</code>*2：剛開始使用 vim 很容易忘記切回 normal 模式，既然中文輸入會頻繁輸入 enter讓文字寫入文件，enter 設定為切換模式的快捷鍵既不會干擾文字輸入也好記。只是碰到換行時會延遲等候第二次按鍵的訊號，有時還挺煩人的。</li>
+<li><code>Shift</code> + <code>Enter</code>：雖然要兩個按鈕，但位置其實不錯按，而且不會輸入新列的卡頓感。唯一的缺點是設置稍嫌麻煩。</li>
 </ol>
-<h2 id="檢查方式"><a href="#檢查方式" class="headerlink" title="檢查方式"></a>檢查方式</h2><ol>
-<li>開啟 command line 工具，以 <code>ping</code> 確認連線正常</li>
-<li>使用 putty 或 mobaXtern 等工具連線伺服器，確認問題出在 VSCode </li>
-<li>重新開機、重新安裝 Remote SSH、移除 <code>C:/Users/username/.ssh/Known_host</code> 的內容，確認問題不在本地端</li>
-<li>按照前述步驟刪除伺服器內 <code>vscode-server</code> 的內容，重新連線</li>
+<h2 id="前述三種方法要修改-setting-json"><a href="#前述三種方法要修改-setting-json" class="headerlink" title="前述三種方法要修改 setting.json"></a>前述三種方法要修改 setting.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;vim.insertModeKeyBindings&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;before&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;CR&quot;</span><span class="punctuation">,</span> <span class="string">&quot;CR&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;after&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;Esc&gt;&quot;</span><span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Shift-Enter-的方法要改-keybindings-json"><a href="#Shift-Enter-的方法要改-keybindings-json" class="headerlink" title="Shift + Enter 的方法要改 keybindings.json"></a><code>Shift</code> + <code>Enter</code> 的方法要改 keybindings.json</h2><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">//https://github.com/VSCodeVim/Vim/issues/2584#issuecomment-385561286</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shift+Enter&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;extension.vim_escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;when&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editorTextFocus&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="使用相對列名"><a href="#使用相對列名" class="headerlink" title="使用相對列名"></a>使用相對列名</h1><p>由於 vim 可以為指令添加數字以重複執行，所以為了計算方便，需要設置相對行號，設定方式為：</p>
+<ol>
+<li><code>Ctrl</code> + <code>,</code>，啟動 UI 設定</li>
+<li>搜尋 “Line numbers” </li>
+<li>由 “on” 改為 “relative”，預設為絕對行號</li>
 </ol>
-<h2 id="其他可能解法"><a href="#其他可能解法" class="headerlink" title="其他可能解法"></a>其他可能解法</h2><p>若此處提及的方式無法解決問題，可參考以下連結試試看其他人的解法。</p>
-<ul>
-<li><a href="https://mushding.space/2021/12/22/vscode%20remote-ssh%20%E5%95%8F%E9%A1%8C%E8%B8%A9%E5%9D%91%E5%BF%83%E5%BE%97/">首次遠端連線且因為網路問題下載工具受阻</a> </li>
-<li><a href="https://www.cnblogs.com/netsa/p/14857577.html">本地與伺服器的 SSH key 因為更新等緣故沒有同步</a></li>
-<li><a href="https://stackoverflow.com/questions/64034813/vs-code-remote-ssh-connection-not-working">任何可能與遠端連線配置或安裝的問題</a></li>
-<li><a href="https://blog.csdn.net/myWorld001/article/details/119443079">伺服器上的 <code>vscode-server</code> 文件過時</a></li>
+<p>然而，內建方式只能顯示絕對行號或相對行號，若要一併顯示，則要安裝 <em>Double Line Numbers</em> 套件。</p>
+<ol>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>X</code>，開啟擴充套件。</li>
+<li>搜尋並安裝 <em>Double Line Numbers</em> </li>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，輸入 <code>Double Line Numbers: Relative + Absolute</code></li>
+</ol>
+<h1 id="怎樣設定快捷鍵"><a href="#怎樣設定快捷鍵" class="headerlink" title="怎樣設定快捷鍵"></a>怎樣設定快捷鍵</h1><p>vscode 和 vim 有些彼此衝突的快捷鍵，例如常用的 <code>Ctrl</code> + <code>F</code> 或 <code>Ctrl</code> +<code>W</code> 等。依照個人習慣，可以選擇 vim 模式要啟用那些快捷鍵</p>
+<ol>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
+<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
+<li>新增以下設置來關掉 vim的快捷鍵 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">    <span class="attr">&quot;vim.handleKeys&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-d&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-s&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-w&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-t&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-z&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+這些是我常用的指令。</li>
+</ol>
+<h1 id="怎樣才不會忘記在切換模式後切為英文輸入法"><a href="#怎樣才不會忘記在切換模式後切為英文輸入法" class="headerlink" title="怎樣才不會忘記在切換模式後切為英文輸入法"></a>怎樣才不會忘記在切換模式後切為英文輸入法</h1><p>由於 Normal mode 僅能以英文輸入法下指令，假如在 Insert mode 以中文輸入法編輯文件，使用預設的 <code>Esc</code> 切換模式後，仍維持中文輸入法，還要將輸入法切回英文，才能下達指令。為了解決這問題有兩個策略：</p>
+<h2 id="改變模式切換快捷鍵"><a href="#改變模式切換快捷鍵" class="headerlink" title="改變模式切換快捷鍵"></a>改變模式切換快捷鍵</h2><p>第一種策略是把切換模式的快捷鍵設定為 <code>jj</code>，雖然不見得比較快，但一定能避免中文輸入法讓指令無法執行的問題。由於改用英文字母作為切換快捷鍵，所以在切換模式前一定要更換輸入法，所以能確保切換後一定是英文輸入法</p>
+<ol>
+<li><code>Shift</code>, then <code>jj</code>，切為 Normal mode</li>
+<li><code>i</code>，切為 Insert mode</li>
+<li><code>Shift</code>，切為中文輸入法</li>
+</ol>
+<h2 id="自動切換輸入法"><a href="#自動切換輸入法" class="headerlink" title="自動切換輸入法"></a>自動切換輸入法</h2><p>另一種是呼叫自動切換輸入法的腳本，在切回 normal mode 時自動幫我們切換文字</p>
+<ol>
+<li>下載 (im.select.exe)[<a href="https://github.com/daipeihust/im-select]">https://github.com/daipeihust/im-select]</a> 放到任何你喜歡的路徑</li>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
+<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
+<li>新增以下設置以啟用輸入法自動切換 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.enable&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.defaultIM&quot;</span><span class="punctuation">:</span> <span class="string">&quot;us&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe -s &#123;im&#125;&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>透過這樣設置，在切回 normal mode 瞬間，就會變成英文輸入法。而進入 insert mode 時，就會回到當初離開時的輸入法。</p>
+<h1 id="關閉括號自動補全"><a href="#關閉括號自動補全" class="headerlink" title="關閉括號自動補全"></a>關閉括號自動補全</h1><p>VSCode 內建括號與引號自動補全，然而有時這還挺雞肋的，因為在括號內打完字還要使用方向鍵移到括號外才能繼續打字，若使用 Vim 還得切模式再移動，不管哪種方式都沒省太多功夫。因此，對於一般文本編輯或編輯程式碼的需求而言，似乎可以在 setting.json 添加以下設置來關閉自動補全。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// automatical closing</span></span><br><span class="line">    <span class="attr">&quot;editor.autoClosingQuotes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;editor.autoClosingBrackets&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="調整視窗大小的快捷鍵"><a href="#調整視窗大小的快捷鍵" class="headerlink" title="調整視窗大小的快捷鍵"></a>調整視窗大小的快捷鍵</h1><p>設定快捷鍵，就不用為了調整欄位大小，辛苦地讓游標對齊邊框了。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// put those into keybinding.json</span></span><br><span class="line">   <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+shift+d&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.decreaseViewSize&quot;</span></span><br><span class="line">   <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">   <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+shift+i&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.increaseViewSize&quot;</span></span><br><span class="line">   <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="更新檔案瀏覽側欄"><a href="#更新檔案瀏覽側欄" class="headerlink" title="更新檔案瀏覽側欄"></a>更新檔案瀏覽側欄</h1><p>使用終端或指令新增或刪除檔案不會同步更新在檔案探索側欄，因為重新整理的按鈕太小了，所以我也設定快捷鍵輔助。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="comment">// put those into keybinding.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+f5&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;command&quot;</span><span class="punctuation">:</span><span class="string">&quot;workbench.files.action.refreshFilesExplorer&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;when&quot;</span><span class="punctuation">:</span><span class="string">&quot;filesExplorerFocus&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="超棒的學習資源和網站"><a href="#超棒的學習資源和網站" class="headerlink" title="超棒的學習資源和網站"></a>超棒的學習資源和網站</h1><ul>
+<li><a href="https://ithelp.ithome.com.tw/articles/10291847">VsCodeVim 自動在normal mode切回英文輸入法的方法</a></li>
+<li><a href="https://www.blog.lasai.com.tw/2020/07/05/vscode-vim-mode/">vscode vim mode</a></li>
 </ul>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>IDE 及其擴充套件相當方面，可以免去不少開發環境設置的功夫。畢竟我們不會等到摸熟了 IDE 所有功能及其實踐方式才開始開發，所以功能故障算是讓了解 IDE 機制或潛在設定的好機會。在本文的案例哩，可以關閉自動更新來避免這種狀況發生。</p>
-<ol>
-<li><code>Ctrl</code> + <code>,</code>，開啟 Settings</li>
-<li>搜尋 “update: Mode”</li>
-<li>設定為 “manual” 或 “none”</li>
-<li>重新啟動 VScode</li>
-</ol>
 ]]></content>
       <tags>
+        <tag>vim</tag>
         <tag>vscode</tag>
       </tags>
   </entry>
@@ -4778,6 +4840,51 @@ echo &quot;\$title \n $PWD&quot;
 <p><img data-src="https://raw.githubusercontent.com/SomeKittens/VSC-HDS/master/theme.png" alt="安裝這款主題後，我只堅持了一秒鐘就移除了。"></p>
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>有時，認真研究點沒意義的事，其實也挺好玩的啊！</p>
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">此處介紹的是 Nicollas R. 承襲 Haacked 所開發的 Encourage 套件，後者的版本目前在 VSCode 1.74.3 的 MarketPlace 已經找不到了。<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">https://twitter.com/code/status/928315998075215873<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">https://blog.codinghorror.com/a-tribute-to-the-windows-31-hot-dog-stand-color-scheme/<a href="#fnref:3" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>vscode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VSCode｜ Failed to parse remote port from server output</title>
+    <url>/vscode-remote-ssh-connection-not-working-after-update/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="狀況描述"><a href="#狀況描述" class="headerlink" title="狀況描述"></a>狀況描述</h2><p>原本在 Windows 都能正常用 VSCode Remote SSH 連線伺服器，但一早卻發現連線失敗。當時，VSCode 不斷要求輸入密碼卻無法登入，”OUTPUT” 頁面提示的訊息節錄如下：</p>
+<blockquote>
+<p>Failed to parse remote port from server output</p>
+</blockquote>
+<blockquote>
+<p>Acquiring lock on &#x2F;home&#x2F;username&#x2F;.vscode-server&#x2F;bin&#x2F;some-hash-code-here&#x2F;vscode-remote-lock.username.some-hash-code-here</p>
+</blockquote>
+<p><em>版本資訊：windows 21H2, VSCode 1.74.2</em></p>
+<span id="more"></span>
+<h2 id="原因與解決辦法"><a href="#原因與解決辦法" class="headerlink" title="原因與解決辦法"></a>原因與解決辦法</h2><p>參考 <a href="https://stackoverflow.com/questions/64034813/vs-code-remote-ssh-connection-not-working">VSCode remote ssh connection not working</a>，簡言之，VSCode 遠端連線前，需要在伺服器端的 <code>.vscode-server/bin</code> 安裝連線相關的工具並進行一些連線設置。假設伺服器已有這些套件，”OUTPUT” 會提示 <code>Found existing installation at (.vscode-server/bin 的路徑)</code>；若沒有這些套件，則會從官方網站下載與安裝。</p>
+<p>若伺服器的套件和配置沒有隨本地 Vscode 更新，便可能因為連線兩端的資訊不相符而無法順利連線，此時可刪除並重新安裝這些工具與配置檔來解決問題。</p>
+<ol>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟指令視窗</li>
+<li>搜尋並執行 “Remote-SSH: Kill VS Code Server on Host”，刪除 <code>vscode-server</code> 檔案與目錄</li>
+<li>選取欲清除既有工具的伺服器</li>
+<li>重新連線，VSCode 便會重新安裝相關軟體了</li>
+</ol>
+<h2 id="檢查方式"><a href="#檢查方式" class="headerlink" title="檢查方式"></a>檢查方式</h2><ol>
+<li>開啟 command line 工具，以 <code>ping</code> 確認連線正常</li>
+<li>使用 putty 或 mobaXtern 等工具連線伺服器，確認問題出在 VSCode </li>
+<li>重新開機、重新安裝 Remote SSH、移除 <code>C:/Users/username/.ssh/Known_host</code> 的內容，確認問題不在本地端</li>
+<li>按照前述步驟刪除伺服器內 <code>vscode-server</code> 的內容，重新連線</li>
+</ol>
+<h2 id="其他可能解法"><a href="#其他可能解法" class="headerlink" title="其他可能解法"></a>其他可能解法</h2><p>若此處提及的方式無法解決問題，可參考以下連結試試看其他人的解法。</p>
+<ul>
+<li><a href="https://mushding.space/2021/12/22/vscode%20remote-ssh%20%E5%95%8F%E9%A1%8C%E8%B8%A9%E5%9D%91%E5%BF%83%E5%BE%97/">首次遠端連線且因為網路問題下載工具受阻</a> </li>
+<li><a href="https://www.cnblogs.com/netsa/p/14857577.html">本地與伺服器的 SSH key 因為更新等緣故沒有同步</a></li>
+<li><a href="https://stackoverflow.com/questions/64034813/vs-code-remote-ssh-connection-not-working">任何可能與遠端連線配置或安裝的問題</a></li>
+<li><a href="https://blog.csdn.net/myWorld001/article/details/119443079">伺服器上的 <code>vscode-server</code> 文件過時</a></li>
+</ul>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>IDE 及其擴充套件相當方面，可以免去不少開發環境設置的功夫。畢竟我們不會等到摸熟了 IDE 所有功能及其實踐方式才開始開發，所以功能故障算是讓了解 IDE 機制或潛在設定的好機會。在本文的案例哩，可以關閉自動更新來避免這種狀況發生。</p>
+<ol>
+<li><code>Ctrl</code> + <code>,</code>，開啟 Settings</li>
+<li>搜尋 “update: Mode”</li>
+<li>設定為 “manual” 或 “none”</li>
+<li>重新啟動 VScode</li>
+</ol>
+]]></content>
       <tags>
         <tag>vscode</tag>
       </tags>
