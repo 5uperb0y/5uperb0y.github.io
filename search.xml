@@ -1,116 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>常見的生物資訊軟體開發文件</title>
-    <url>/a-collection-of-essential-documents-for-bioinformatis-software/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
-<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
-<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
-<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
-<span id="more"></span>
-
-<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
-<table>
-<thead>
-<tr>
-<th>名稱</th>
-<th>內容</th>
-<th>額外受眾</th>
-<th>指引</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Issues</td>
-<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
-<td>專案經理</td>
-<td><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
-</tr>
-<tr>
-<td>Docstring &amp; Type hints</td>
-<td>描述程式模組的功能、參數與回傳資訊</td>
-<td>開發者</td>
-<td><a href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a href="https://peps.python.org/pep-0484/">PEP 484</a></td>
-</tr>
-<tr>
-<td>Code comments</td>
-<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
-<td>開發者</td>
-<td><a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
-</tr>
-<tr>
-<td>Built-in help</td>
-<td>軟體內建的用戶幫助訊息</td>
-<td>用戶</td>
-<td><a href="http://docopt.org/">docopt</a></td>
-</tr>
-<tr>
-<td>Commit messages</td>
-<td>摘要程式碼異動的內容、理由與背景</td>
-<td>開發者</td>
-<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
-</tr>
-<tr>
-<td>Pull requests</td>
-<td>簡述為滿足需求對應的軟體異動及其理據</td>
-<td>審查者</td>
-<td><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
-</tr>
-<tr>
-<td>README</td>
-<td>介紹專案目標、安裝使用與授權等入門資訊</td>
-<td>用戶</td>
-<td><a href="https://www.makeareadme.com/">Make a README</a></td>
-</tr>
-<tr>
-<td>CHANGELOG</td>
-<td>紀錄專案開發歷程與各版本更新內容</td>
-<td>用戶</td>
-<td><a href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
-</tr>
-</tbody></table>
-<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
-<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
-<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
-<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
-
-<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
-<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
-<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
-<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
-<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
-<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
-<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
-<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
-<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
-<ul>
-<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
-<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
-<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
-</ul>
-<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
-<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
-<p>常見的專案文件結構如下，例如 Python 的 <a href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
-<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
-<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
-<li><a href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
-<li><a href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
-<li><a href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
-<li><a href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>development</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>〈教育的烏托邦〉</title>
     <url>/5uperb0y-2016-utopian-education/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　夢臨市的天空是電腦的顏色，電腦死機的蔚藍。</p>
@@ -237,6 +127,130 @@
       </tags>
   </entry>
   <entry>
+    <title>常見的生物資訊軟體開發文件</title>
+    <url>/a-collection-of-essential-documents-for-bioinformatis-software/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
+<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
+<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
+<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
+<span id="more"></span>
+
+<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>內容</th>
+<th>額外受眾</th>
+<th>指引</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Issues</td>
+<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
+<td>專案經理</td>
+<td><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
+</tr>
+<tr>
+<td>Docstring &amp; Type hints</td>
+<td>描述程式模組的功能、參數與回傳資訊</td>
+<td>開發者</td>
+<td><a href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a href="https://peps.python.org/pep-0484/">PEP 484</a></td>
+</tr>
+<tr>
+<td>Code comments</td>
+<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
+<td>開發者</td>
+<td><a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
+</tr>
+<tr>
+<td>Built-in help</td>
+<td>軟體內建的用戶幫助訊息</td>
+<td>用戶</td>
+<td><a href="http://docopt.org/">docopt</a></td>
+</tr>
+<tr>
+<td>Commit messages</td>
+<td>摘要程式碼異動的內容、理由與背景</td>
+<td>開發者</td>
+<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
+</tr>
+<tr>
+<td>Pull requests</td>
+<td>簡述為滿足需求對應的軟體異動及其理據</td>
+<td>審查者</td>
+<td><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
+</tr>
+<tr>
+<td>README</td>
+<td>介紹專案目標、安裝使用與授權等入門資訊</td>
+<td>用戶</td>
+<td><a href="https://www.makeareadme.com/">Make a README</a></td>
+</tr>
+<tr>
+<td>CHANGELOG</td>
+<td>紀錄專案開發歷程與各版本更新內容</td>
+<td>用戶</td>
+<td><a href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
+</tr>
+</tbody></table>
+<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
+<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
+<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
+<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
+
+<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
+<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
+<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
+<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
+<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
+<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
+<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
+<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
+<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
+<ul>
+<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
+<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
+<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
+</ul>
+<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
+<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
+<p>常見的專案文件結構如下，例如 Python 的 <a href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
+<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
+<li><a href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
+<li><a href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
+<li><a href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
+<li><a href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>development</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>bad interpreter: No such file or directory</title>
+    <url>/bad-interpreter-no-such-file-or-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
+<span id="more"></span>
+
+<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
+<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
+<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>天體生物學和尋找外星生命</title>
     <url>/astrobiology-and-the-search-for-extraterrestrial-life/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>低調的人類從學會抬頭那一刻，就不斷在地球、月球、火星乃至其它銀河尋找自己不特別的證據。</p>
@@ -271,20 +285,6 @@
 ]]></content>
       <tags>
         <tag>astrobiology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>bad interpreter: No such file or directory</title>
-    <url>/bad-interpreter-no-such-file-or-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
-<span id="more"></span>
-
-<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
-<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
-<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -588,47 +588,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ROSALIND | Finding a Motif in DNA (SUBS)</title>
-    <url>/finding-a-motif-in-dna/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給定字串 s 與 t，其中 t 的長度小於等於 s，求 s 與 t 一致之子序列的起始位置。</p>
-<blockquote>
-<p>Given: Two DNA strings s and t (each of length at most 1 kbp).</p>
-<p>Return: All locations of t as a substring of s.</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/subs/">https://rosalind.info/problems/subs/</a>)</p>
-<span id="more"></span>
-<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Motif 是指在一範圍內反覆出現且具鮮明特質的物體或概念，其指涉的對象因脈絡而異 。在分子生物中，motif 被用以形容一段為生物體共享的核酸或蛋白質序列，這些序列可能有相似的功能，且對各生物都至關重要。在網路生物學中，motif 則可用以形容一出現頻率高於隨機分布的子圖，這些子圖的出現頻率很高且有獨特的網路結構，因此能在欠缺相關生物學知識的情況被辨識出來。而在結構生物學中，motif 則代表核酸或蛋白質上呈規律結構的區段，這些區段可能由多個二級結構所構成。</p>
-<p>雖然 motif 定義多元，但皆不脫「重複」與「特別」兩項屬性。是以，透過在核酸或蛋白質序列尋找重複序列來辨識 motif，也算在找尋某種特別的屬性。在結構生物學中，domain 是與 motif 相關的概念。Domain 也具有規律的結構和鮮明的特質，但與 motif 不同，domain 能獨立發揮某項功能。換句話說，motif 強調結構的實體，而 domain 則強調功能的實體。</p>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>此題意在尋找與 motif 相符的子字串之位置。在 Python 中，我首先建立 list 儲存子字串位置，接著以 for 迴圈依序取出長度與 motif 一致的子字串，再比對兩者的序列。若序列一致，則將子字串的起始位置儲存至 list。由於 python 計數由 0 開始，所以輸出結果還要 +1 才符合題目要求。因為最後要回傳 list，所以也能用 list comprehension 呈現。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">subs</span>(<span class="params">s, t</span>):</span><br><span class="line">	<span class="keyword">return</span> [</span><br><span class="line">		i + <span class="number">1</span></span><br><span class="line">		<span class="keyword">for</span> i, _ <span class="keyword">in</span> <span class="built_in">enumerate</span>(s[:-<span class="built_in">len</span>(t)])</span><br><span class="line">		<span class="keyword">if</span> s[i:i+<span class="built_in">len</span>(t)] == t</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
-
-<p>最後再把結果依照題目要求印出，</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="built_in">map</span>(subs(s,t))))</span><br></pre></td></tr></table></figure>
-
-<p>在 R 中，我採取了另一種策略：先列出所有與 motif 長度一致的子字串，再回傳序列與 motif 相同的子字串位置。因此，我先定義了能從一字串取出所有特定長度子字串的 function。接著再以 grep 搜索子字串中，與 motif 相符者的位置。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># exemplified data</span><br><span class="line">dna &lt;- &quot;GATATATGCATATACTT&quot;</span><br><span class="line">motif &lt;- &quot;ATAT&quot;</span><br><span class="line"># Generate kmer from a string</span><br><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br><span class="line"># identify motif from kmer with grep </span><br><span class="line">find_motif &lt;- function (dna, motif) &#123;</span><br><span class="line">  mer &lt;- kmer(dna, nchar(motif))</span><br><span class="line">  return(grep(motif, mer))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="1-motif-相關知識來源"><a href="#1-motif-相關知識來源" class="headerlink" title="1. motif 相關知識來源"></a>1. motif 相關知識來源</h2><p>本文關於 motif 的定義參考以下文獻與網站</p>
-<ul>
-<li><a href="https://www.merriam-webster.com/dictionary/motif">https://www.merriam-webster.com/dictionary/motif</a></li>
-<li>[莊榮輝，生物化學基礎 Biochemistry Basics 2008] (<a href="http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm">http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm</a>)</li>
-<li>Pizzuti, &amp; Rombo. (2018). Algorithms for Graph and Network Analysis: Clustering and Search of Motifs in Graphs. Encyclopedia of Bioinformatics and Computational Biology: ABC of Bioinformatics, 95.</li>
-</ul>
-<h2 id="2-R-kmer-function"><a href="#2-R-kmer-function" class="headerlink" title="2. R: kmer function"></a>2. R: kmer function</h2><p>K-mers 是指一字串所有長度為 k 的子字串，長度為 l 之字串會有 l - k + 1 個 k-mers，此概念常用於基因體學的序列比對和品質篩選的演算法。</p>
-<p>我的 kmer function 的運作方式是先將字串分割為獨立字符，再用 lapply 依序取出 k 個字符以 paste0 合併為長度為 k 的子字串。由於僅有 l - k + 1 個 k-mers，所以 lapply 迴圈僅執行  l - k + 1 次。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-R-grep-和-grepl"><a href="#3-R-grep-和-grepl" class="headerlink" title="3. R: grep 和 grepl"></a>3. R: grep 和 grepl</h2><p>grep 用以尋找文字向量中符合特定模式的元素之索引值</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grep(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1] 1 5</span><br></pre></td></tr></table></figure>
-<p>grepl 用以判斷文字向量的各元素是否符合特定模式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grepl(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1]  TRUE FALSE FALSE FALSE  TRUE</span><br></pre></td></tr></table></figure>
-<p>由於此題要求回報子字串的位置，因此使用 grep 實踐之。</p>
-]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《時空旅人之妻》的人物描繪分析</title>
     <url>/exploring-character-depictions-in-the-time-travelers-wife/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《時空旅人之妻》細膩地刻劃出由於時空錯置所引發的複雜情緒，如悲傷、惆悵與無奈等。以主角亨利為例，在他首次覺悟到，自己竟然是唯一的時空穿越者的情節中，作者精確地捕捉並揭露了年幼亨利的失落與成年亨利的無助，以及無論在何時都無法擺脫的孤獨。</p>
@@ -705,6 +664,93 @@
       </tags>
   </entry>
   <entry>
+    <title>ROSALIND | Finding a Motif in DNA (SUBS)</title>
+    <url>/finding-a-motif-in-dna/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給定字串 s 與 t，其中 t 的長度小於等於 s，求 s 與 t 一致之子序列的起始位置。</p>
+<blockquote>
+<p>Given: Two DNA strings s and t (each of length at most 1 kbp).</p>
+<p>Return: All locations of t as a substring of s.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/subs/">https://rosalind.info/problems/subs/</a>)</p>
+<span id="more"></span>
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Motif 是指在一範圍內反覆出現且具鮮明特質的物體或概念，其指涉的對象因脈絡而異 。在分子生物中，motif 被用以形容一段為生物體共享的核酸或蛋白質序列，這些序列可能有相似的功能，且對各生物都至關重要。在網路生物學中，motif 則可用以形容一出現頻率高於隨機分布的子圖，這些子圖的出現頻率很高且有獨特的網路結構，因此能在欠缺相關生物學知識的情況被辨識出來。而在結構生物學中，motif 則代表核酸或蛋白質上呈規律結構的區段，這些區段可能由多個二級結構所構成。</p>
+<p>雖然 motif 定義多元，但皆不脫「重複」與「特別」兩項屬性。是以，透過在核酸或蛋白質序列尋找重複序列來辨識 motif，也算在找尋某種特別的屬性。在結構生物學中，domain 是與 motif 相關的概念。Domain 也具有規律的結構和鮮明的特質，但與 motif 不同，domain 能獨立發揮某項功能。換句話說，motif 強調結構的實體，而 domain 則強調功能的實體。</p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>此題意在尋找與 motif 相符的子字串之位置。在 Python 中，我首先建立 list 儲存子字串位置，接著以 for 迴圈依序取出長度與 motif 一致的子字串，再比對兩者的序列。若序列一致，則將子字串的起始位置儲存至 list。由於 python 計數由 0 開始，所以輸出結果還要 +1 才符合題目要求。因為最後要回傳 list，所以也能用 list comprehension 呈現。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">subs</span>(<span class="params">s, t</span>):</span><br><span class="line">	<span class="keyword">return</span> [</span><br><span class="line">		i + <span class="number">1</span></span><br><span class="line">		<span class="keyword">for</span> i, _ <span class="keyword">in</span> <span class="built_in">enumerate</span>(s[:-<span class="built_in">len</span>(t)])</span><br><span class="line">		<span class="keyword">if</span> s[i:i+<span class="built_in">len</span>(t)] == t</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
+
+<p>最後再把結果依照題目要求印出，</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="built_in">map</span>(subs(s,t))))</span><br></pre></td></tr></table></figure>
+
+<p>在 R 中，我採取了另一種策略：先列出所有與 motif 長度一致的子字串，再回傳序列與 motif 相同的子字串位置。因此，我先定義了能從一字串取出所有特定長度子字串的 function。接著再以 grep 搜索子字串中，與 motif 相符者的位置。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># exemplified data</span><br><span class="line">dna &lt;- &quot;GATATATGCATATACTT&quot;</span><br><span class="line">motif &lt;- &quot;ATAT&quot;</span><br><span class="line"># Generate kmer from a string</span><br><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br><span class="line"># identify motif from kmer with grep </span><br><span class="line">find_motif &lt;- function (dna, motif) &#123;</span><br><span class="line">  mer &lt;- kmer(dna, nchar(motif))</span><br><span class="line">  return(grep(motif, mer))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="1-motif-相關知識來源"><a href="#1-motif-相關知識來源" class="headerlink" title="1. motif 相關知識來源"></a>1. motif 相關知識來源</h2><p>本文關於 motif 的定義參考以下文獻與網站</p>
+<ul>
+<li><a href="https://www.merriam-webster.com/dictionary/motif">https://www.merriam-webster.com/dictionary/motif</a></li>
+<li>[莊榮輝，生物化學基礎 Biochemistry Basics 2008] (<a href="http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm">http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm</a>)</li>
+<li>Pizzuti, &amp; Rombo. (2018). Algorithms for Graph and Network Analysis: Clustering and Search of Motifs in Graphs. Encyclopedia of Bioinformatics and Computational Biology: ABC of Bioinformatics, 95.</li>
+</ul>
+<h2 id="2-R-kmer-function"><a href="#2-R-kmer-function" class="headerlink" title="2. R: kmer function"></a>2. R: kmer function</h2><p>K-mers 是指一字串所有長度為 k 的子字串，長度為 l 之字串會有 l - k + 1 個 k-mers，此概念常用於基因體學的序列比對和品質篩選的演算法。</p>
+<p>我的 kmer function 的運作方式是先將字串分割為獨立字符，再用 lapply 依序取出 k 個字符以 paste0 合併為長度為 k 的子字串。由於僅有 l - k + 1 個 k-mers，所以 lapply 迴圈僅執行  l - k + 1 次。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-R-grep-和-grepl"><a href="#3-R-grep-和-grepl" class="headerlink" title="3. R: grep 和 grepl"></a>3. R: grep 和 grepl</h2><p>grep 用以尋找文字向量中符合特定模式的元素之索引值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grep(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1] 1 5</span><br></pre></td></tr></table></figure>
+<p>grepl 用以判斷文字向量的各元素是否符合特定模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grepl(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1]  TRUE FALSE FALSE FALSE  TRUE</span><br></pre></td></tr></table></figure>
+<p>由於此題要求回報子字串的位置，因此使用 grep 實踐之。</p>
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROSALIND | Finding a Shared Motif (LCSM)</title>
+    <url>/finding-a-shared-motif/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一 FASTA 檔案，內含數條由 A、C、G、T 組成的字串，求這些字串共享的最長子字串。</p>
+<blockquote>
+<p>A common substring of a collection of strings is a substring of every member of the collection. We say that a common substring is a longest common substring if there does not exist a longer common substring. For example, “CG” is a common substring of “ACGTACGT” and “AACCGTATA”, but it is not as long as possible; in this case, “CGTA” is a longest common substring of “ACGTACGT” and “AACCGTATA”.<br>Note that the longest common substring is not necessarily unique; for a simple example, “AA” and “CC” are both longest common substrings of “AACC” and “CCAA”.</p>
+<p>Given: A collection of k (k≤100) DNA strings of length at most 1 kbp each in FASTA format.</p>
+<p>Return: A longest common substring of the collection. (If multiple solutions exist, you may return any single solution.)</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/lcsm/">https://rosalind.info/problems/lcsm/</a>)</p>
+<span id="more"></span>
+
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>如果我們能夠透過理論計算或是資料庫數據得知某種 motif 的組成，便能按照 <a href="https://5uperb0y.com/finding-a-motif-in-dna/">Finding a motif in dna</a> 這題的要求，在一條 DNA 中尋找已知 motif 的位置。然而，並非所有研究對象都能事前得知 motif 的資訊，所以更常見的方法是透過比較多組基因體，歸納出反覆出現且序列相似的 motif。</p>
+<p>為了簡化問題，這題只要求找出最長的 motif，因為長度愈長，motif 涉及的功能往往越多。此外，題目還假設同一種 motif 的序列完全一致，這意味著這些 motif 在演化中沒發生任何突變，暗示其功能相當重要，具有相當的穩定性。換句話說，這些 motif 可能反映了各基因體共享的核心功能。</p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題相當於尋找各字串的最長共同子字串（longest common substring, LCS）。最直觀的解法在於了解「 LCS 的長度不大於最短字串的長度」，因此可以列出最短字串的所有子字串，再拿這些子字串由長至短一一與其它字串比較。第一個出現在所有字串的子字串就是題目要求的 LCS。</p>
+<p>以下使用 python 實作這個算法，首先找到最短的子字串 <code>min_s</code>，求出它所有的子字串 <code>kmer</code>，最後由長至短檢查子字串是否出現在所有字串中，一旦符合條件，便直接回傳結果。（由於這裡是由短至長生成 <code>kmer</code>，所以後面把它倒置 <code>kmer[::-1]</code> 來改變比對的順序。）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcs</span>(<span class="params">strs</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common substring from multiple strings</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    min_s = <span class="built_in">min</span>(strs, key = <span class="built_in">len</span>)</span><br><span class="line">    kmer = [</span><br><span class="line">        min_s[i:i+k+<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(min_s) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(min_s) - k)</span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">for</span> mer <span class="keyword">in</span> kmer[::-<span class="number">1</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">all</span>(mer <span class="keyword">in</span> s <span class="keyword">for</span> s <span class="keyword">in</span> strs):</span><br><span class="line">            <span class="keyword">return</span> mer</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>由於題目要求輸入 FASTA 檔案，所以需要一個讀檔的副程式。FASTA 檔案是紀錄序列的通用文字格式，<code>&gt;</code> 開頭的列紀錄 DNA、RNA或蛋白質序列的名稱，直到碰到下一個 <code>&gt;</code> 符號之前的列則記錄了序列本身。為了方便在終端機用肉眼判讀，有些 FASTA 檔案中的序列會分成數列表示。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;Read_id</span><br><span class="line">ACTGACTGATCGGATAGTAGTGATAGCGATCGATCAGCATATCGACTATCAGCTAGCTACAGCTGAGCATCGATCG</span><br><span class="line">ACGATTACGACGATCAG</span><br></pre></td></tr></table></figure>
+
+<p>以下程式將 FASTA 讀進 python dictionary。凡是 <code>&gt;</code> 開頭的列，就把它當作 dictionary 的 key，而其餘的列則串接起來成為 dictionary 的 value。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">read_fasta</span>(<span class="params">path</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Read a fasta file into a dictionary</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        reads = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">            <span class="keyword">if</span> line.startswith(<span class="string">&quot;&gt;&quot;</span>):</span><br><span class="line">                key = line[<span class="number">1</span>:].strip()</span><br><span class="line">                reads[key] = <span class="string">&quot;&quot;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                reads[key] = reads[key] + line.strip()</span><br><span class="line">        <span class="keyword">return</span> reads</span><br></pre></td></tr></table></figure>
+
+<p>結合讀檔與 LCS 主程式，便能滿足題目的要求了。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcsm</span>(<span class="params">fasta</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common nucleotide sequence from multiple sequences in a fasta file</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    seqs = <span class="built_in">list</span>(read_fasta(fasta).values())</span><br><span class="line">    <span class="keyword">return</span>(lcs(seqs))</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="longest-common-substring-longest-common-subsequence"><a href="#longest-common-substring-longest-common-subsequence" class="headerlink" title="longest common substring &amp; longest common subsequence"></a>longest common substring &amp; longest common subsequence</h2><p><a href="https://en.wikipedia.org/wiki/Longest_common_substring">Longest common substring</a> 和 <a href="https://en.wikipedia.org/wiki/Longest_common_subsequence">longest common subsequence</a> 是不同的問題：”AB” 是 “ABXC” 和 “ABOC” 的 longest common substring，”ABC” 則否；<code>[A, B, C]</code> 是 <code>[A, B, X, C]</code> 和 <code>[A, B, O, C]</code> 的 longest common subsequence，<code>[A, B]</code> 則否。</p>
+<p>因為在生物資訊的語境裡，序列（sequence）也用於描述 DNA&#x2F;RNA&#x2F;蛋白質，而這些序列資訊往往也用字串（string）紀錄。因此，當初想這題有什麼巧妙解法時，誤入歧途去查了 longest common “subsequence” 的解法。</p>
+<p>寫出的程式沒有返回預期結果時，問問 chatgpt 怎麼解 longest common subsequence 還覺得是不是 AI 變笨了，怎麼給你 Rosalind 題目的完整輸出入結果還嘴硬。分清楚這兩個問題後，我才明白小丑是我自己🤡。</p>
+<p>（如果想要找到更快的算法，可以點進 Longest common substring 連結看看維基百科的解釋）</p>
+<h2 id="所有字串的-LCS-不見得與一對字串的-LCS-一致"><a href="#所有字串的-LCS-不見得與一對字串的-LCS-一致" class="headerlink" title="所有字串的 LCS 不見得與一對字串的 LCS 一致"></a>所有字串的 LCS 不見得與一對字串的 LCS 一致</h2><p>明白小丑是我自己之後，我謄錄了一份利用動態規劃尋找兩字串 longest common substring 的方法。簡言之，這方法會一一比對兩字串每個字符，並且將最長子字串的長度紀錄在一個矩陣中。再比對過所有字符後，便能得出 LCS。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcs</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common substring from two strings</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    dp = [[<span class="number">0</span>] * (<span class="built_in">len</span>(s2) + <span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s1) + <span class="number">1</span>)]</span><br><span class="line">    max_len, end_pos = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(s1) + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(s2) + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> s1[i-<span class="number">1</span>] == s2[j-<span class="number">1</span>]:</span><br><span class="line">                dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> max_len &lt; dp[i][j]:</span><br><span class="line">                    max_len = dp[i][j]</span><br><span class="line">                    end_pos = i</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i][j] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> s1[end_pos - max_len:end_pos]</span><br></pre></td></tr></table></figure>
+
+<p>我原先的以為，一對字串的 LCS 會與所有字串的 LCS 相同，所以我可以像是「找出最大的數字」一樣，找出「最長的共同子字串」，</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 這是錯的!!!!!</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lcsm</span>(<span class="params">fasta</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common nucleotide sequence from multiple sequences in a fasta file</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    seqs = <span class="built_in">list</span>(read_fasta(fasta).values())</span><br><span class="line">    m = seqs[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> seqs[<span class="number">1</span>:]:</span><br><span class="line">        m = lcs(s, m)</span><br><span class="line">    <span class="keyword">return</span> m</span><br></pre></td></tr></table></figure>
+
+<p>雖然這支程式可順利通過 ROSALIND 的測資，但我在討論區立刻看到一則反例，才乖乖寫成題解那個形式。</p>
+<blockquote>
+<p>I’m not sure the LCS of all the strings would necessarily be a substring of the pairwise LCS’s. For example, in this set of strings:<br>AAAAATATATAACGT AAAAACCCCCACGT ACACACCCCCACGT<br>The LCS of the first and second string will be AAAAA, the LCS of the second and third string will be CCCCC, but the LCS of all three strings will be ACGT.</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>戰爭，不再適用於描述宿主與微生物的關係</title>
     <url>/forum-on-microbial-threats-2006-ending-the-war-metaphor/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撇除雷文霍克和虎克那個用顯微鏡觀察微生物以展示風雅的時代，微生物學的重大發展皆與解決釀酒、蠶業、農業等產業問題息息相關，而人體微生物學也是源於臨床應用背景。</p>
@@ -718,6 +764,29 @@
 <p>然而要達成上述目標需要更深入理解人體微生物生態學和演化學，並釐清微生物的組成、功能與交互作用網路，而 Allan 和Stankey 設想生態系適應性經營的四步驟則能協助理解的前提。首先必須識別生態紅利的供應者，篩選影響其功能的環境或生物因素，最後評估作用的時空限制。就此框架看來，僅確認微生物與特定現象的因果仍不夠，必須深入理解造成現象的特定因素，而這些關鍵的要素就藏在微生物的生態網路當中，所以架起了基礎科學和應用科學的聯繫。</p>
 <p>由於觀測、培養和分類困難，微生物生態學的發展落後於動植物生態學，直到基於核酸的鑑定理論與方法成熟才得以開啟微生物學的博物學時代，此階段的研究雖然看起來像過往一樣遵循「鑑定物種分析關聯」的流程，但往後以功能與交互作用等更複雜的現象為目標。這些基礎科學的成果，不只有助於治療疾病也將能開拓微生物的應用價值。</p>
 ]]></content>
+      <tags>
+        <tag>ecology</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+<span id="more"></span>
+
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <tags>
         <tag>ecology</tag>
       </tags>
@@ -770,52 +839,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ROSALIND | Finding a Shared Motif (LCSM)</title>
-    <url>/finding-a-shared-motif/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一 FASTA 檔案，內含數條由 A、C、G、T 組成的字串，求這些字串共享的最長子字串。</p>
-<blockquote>
-<p>A common substring of a collection of strings is a substring of every member of the collection. We say that a common substring is a longest common substring if there does not exist a longer common substring. For example, “CG” is a common substring of “ACGTACGT” and “AACCGTATA”, but it is not as long as possible; in this case, “CGTA” is a longest common substring of “ACGTACGT” and “AACCGTATA”.<br>Note that the longest common substring is not necessarily unique; for a simple example, “AA” and “CC” are both longest common substrings of “AACC” and “CCAA”.</p>
-<p>Given: A collection of k (k≤100) DNA strings of length at most 1 kbp each in FASTA format.</p>
-<p>Return: A longest common substring of the collection. (If multiple solutions exist, you may return any single solution.)</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/lcsm/">https://rosalind.info/problems/lcsm/</a>)</p>
-<span id="more"></span>
-
-<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>如果我們能夠透過理論計算或是資料庫數據得知某種 motif 的組成，便能按照 <a href="https://5uperb0y.com/finding-a-motif-in-dna/">Finding a motif in dna</a> 這題的要求，在一條 DNA 中尋找已知 motif 的位置。然而，並非所有研究對象都能事前得知 motif 的資訊，所以更常見的方法是透過比較多組基因體，歸納出反覆出現且序列相似的 motif。</p>
-<p>為了簡化問題，這題只要求找出最長的 motif，因為長度愈長，motif 涉及的功能往往越多。此外，題目還假設同一種 motif 的序列完全一致，這意味著這些 motif 在演化中沒發生任何突變，暗示其功能相當重要，具有相當的穩定性。換句話說，這些 motif 可能反映了各基因體共享的核心功能。</p>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題相當於尋找各字串的最長共同子字串（longest common substring, LCS）。最直觀的解法在於了解「 LCS 的長度不大於最短字串的長度」，因此可以列出最短字串的所有子字串，再拿這些子字串由長至短一一與其它字串比較。第一個出現在所有字串的子字串就是題目要求的 LCS。</p>
-<p>以下使用 python 實作這個算法，首先找到最短的子字串 <code>min_s</code>，求出它所有的子字串 <code>kmer</code>，最後由長至短檢查子字串是否出現在所有字串中，一旦符合條件，便直接回傳結果。（由於這裡是由短至長生成 <code>kmer</code>，所以後面把它倒置 <code>kmer[::-1]</code> 來改變比對的順序。）</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcs</span>(<span class="params">strs</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common substring from multiple strings</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    min_s = <span class="built_in">min</span>(strs, key = <span class="built_in">len</span>)</span><br><span class="line">    kmer = [</span><br><span class="line">        min_s[i:i+k+<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(min_s) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(min_s) - k)</span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">for</span> mer <span class="keyword">in</span> kmer[::-<span class="number">1</span>]:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">all</span>(mer <span class="keyword">in</span> s <span class="keyword">for</span> s <span class="keyword">in</span> strs):</span><br><span class="line">            <span class="keyword">return</span> mer</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>由於題目要求輸入 FASTA 檔案，所以需要一個讀檔的副程式。FASTA 檔案是紀錄序列的通用文字格式，<code>&gt;</code> 開頭的列紀錄 DNA、RNA或蛋白質序列的名稱，直到碰到下一個 <code>&gt;</code> 符號之前的列則記錄了序列本身。為了方便在終端機用肉眼判讀，有些 FASTA 檔案中的序列會分成數列表示。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;Read_id</span><br><span class="line">ACTGACTGATCGGATAGTAGTGATAGCGATCGATCAGCATATCGACTATCAGCTAGCTACAGCTGAGCATCGATCG</span><br><span class="line">ACGATTACGACGATCAG</span><br></pre></td></tr></table></figure>
-
-<p>以下程式將 FASTA 讀進 python dictionary。凡是 <code>&gt;</code> 開頭的列，就把它當作 dictionary 的 key，而其餘的列則串接起來成為 dictionary 的 value。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">read_fasta</span>(<span class="params">path</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Read a fasta file into a dictionary</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        reads = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">            <span class="keyword">if</span> line.startswith(<span class="string">&quot;&gt;&quot;</span>):</span><br><span class="line">                key = line[<span class="number">1</span>:].strip()</span><br><span class="line">                reads[key] = <span class="string">&quot;&quot;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                reads[key] = reads[key] + line.strip()</span><br><span class="line">        <span class="keyword">return</span> reads</span><br></pre></td></tr></table></figure>
-
-<p>結合讀檔與 LCS 主程式，便能滿足題目的要求了。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcsm</span>(<span class="params">fasta</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common nucleotide sequence from multiple sequences in a fasta file</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    seqs = <span class="built_in">list</span>(read_fasta(fasta).values())</span><br><span class="line">    <span class="keyword">return</span>(lcs(seqs))</span><br></pre></td></tr></table></figure>
-
-<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="longest-common-substring-longest-common-subsequence"><a href="#longest-common-substring-longest-common-subsequence" class="headerlink" title="longest common substring &amp; longest common subsequence"></a>longest common substring &amp; longest common subsequence</h2><p><a href="https://en.wikipedia.org/wiki/Longest_common_substring">Longest common substring</a> 和 <a href="https://en.wikipedia.org/wiki/Longest_common_subsequence">longest common subsequence</a> 是不同的問題：”AB” 是 “ABXC” 和 “ABOC” 的 longest common substring，”ABC” 則否；<code>[A, B, C]</code> 是 <code>[A, B, X, C]</code> 和 <code>[A, B, O, C]</code> 的 longest common subsequence，<code>[A, B]</code> 則否。</p>
-<p>因為在生物資訊的語境裡，序列（sequence）也用於描述 DNA&#x2F;RNA&#x2F;蛋白質，而這些序列資訊往往也用字串（string）紀錄。因此，當初想這題有什麼巧妙解法時，誤入歧途去查了 longest common “subsequence” 的解法。</p>
-<p>寫出的程式沒有返回預期結果時，問問 chatgpt 怎麼解 longest common subsequence 還覺得是不是 AI 變笨了，怎麼給你 Rosalind 題目的完整輸出入結果還嘴硬。分清楚這兩個問題後，我才明白小丑是我自己🤡。</p>
-<p>（如果想要找到更快的算法，可以點進 Longest common substring 連結看看維基百科的解釋）</p>
-<h2 id="所有字串的-LCS-不見得與一對字串的-LCS-一致"><a href="#所有字串的-LCS-不見得與一對字串的-LCS-一致" class="headerlink" title="所有字串的 LCS 不見得與一對字串的 LCS 一致"></a>所有字串的 LCS 不見得與一對字串的 LCS 一致</h2><p>明白小丑是我自己之後，我謄錄了一份利用動態規劃尋找兩字串 longest common substring 的方法。簡言之，這方法會一一比對兩字串每個字符，並且將最長子字串的長度紀錄在一個矩陣中。再比對過所有字符後，便能得出 LCS。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcs</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common substring from two strings</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    dp = [[<span class="number">0</span>] * (<span class="built_in">len</span>(s2) + <span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s1) + <span class="number">1</span>)]</span><br><span class="line">    max_len, end_pos = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(s1) + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(s2) + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> s1[i-<span class="number">1</span>] == s2[j-<span class="number">1</span>]:</span><br><span class="line">                dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> max_len &lt; dp[i][j]:</span><br><span class="line">                    max_len = dp[i][j]</span><br><span class="line">                    end_pos = i</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i][j] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> s1[end_pos - max_len:end_pos]</span><br></pre></td></tr></table></figure>
-
-<p>我原先的以為，一對字串的 LCS 會與所有字串的 LCS 相同，所以我可以像是「找出最大的數字」一樣，找出「最長的共同子字串」，</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 這是錯的!!!!!</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lcsm</span>(<span class="params">fasta</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Finding the longest common nucleotide sequence from multiple sequences in a fasta file</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    seqs = <span class="built_in">list</span>(read_fasta(fasta).values())</span><br><span class="line">    m = seqs[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> seqs[<span class="number">1</span>:]:</span><br><span class="line">        m = lcs(s, m)</span><br><span class="line">    <span class="keyword">return</span> m</span><br></pre></td></tr></table></figure>
-
-<p>雖然這支程式可順利通過 ROSALIND 的測資，但我在討論區立刻看到一則反例，才乖乖寫成題解那個形式。</p>
-<blockquote>
-<p>I’m not sure the LCS of all the strings would necessarily be a substring of the pairwise LCS’s. For example, in this set of strings:<br>AAAAATATATAACGT AAAAACCCCCACGT ACACACCCCCACGT<br>The LCS of the first and second string will be AAAAA, the LCS of the second and third string will be CCCCC, but the LCS of all three strings will be ACGT.</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo 部屬後網頁報錯 &quot;cannot get /&quot;</title>
     <url>/hexo-cannot-get-slash-error/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>新的一年好不容易提振精神來寫文章，想說先把文章的調整更新到網站上。不料，輸入完 <code>hexo clean &amp;&amp; hexo delopy</code> 之後，雖然 Github action 顯示部屬正常，但網頁卻無法瀏覽，分別顯示 “This is not the web page you are looking for” 以及 “There isn’t a GitHub Pages site here”</p>
@@ -843,29 +866,6 @@
 ]]></content>
       <tags>
         <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
-<span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
-<ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>ecology</tag>
       </tags>
   </entry>
   <entry>
@@ -939,22 +939,6 @@
 ]]></content>
       <tags>
         <tag>life in the universe</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>很久很久以前，自然用什麼盛裝生命？</title>
-    <url>/how-nature-contains-life-in-early-earth/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
-<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
-<span id="more"></span>
-
-<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
-<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
-<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
-<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>origins of life</tag>
       </tags>
   </entry>
   <entry>
@@ -1032,33 +1016,19 @@
       </tags>
   </entry>
   <entry>
-    <title>如何下載和安裝 RDP classifier</title>
-    <url>/how-to-download-and-install-rdp-classifier/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>RDP classifier 是基於 Naive Bayes 的物種分類器，常用於註解 16S rRNA 基因序列的分類資訊。除了使用內建的 RDP 資料庫以外，RDP classifier 也允許使用自訂資料庫來訓練分類器。除了內建的 RDP database，也支援以其他資料庫來訓練分類器。</p>
-<p>目前，RDP classifier 的核心演算法已被整合到 Mothur 和 DADA2 等流程的副程式庫，所以只要有安裝這些流程軟體，即使沒有安裝 RDP classifier，也能以相同的演算法註解物種資訊。然而，若想要依據自訂或最新的資料庫註解序列，或是使用 copy number 校正等功能，仍有獨立使用 RDP classifier 的必要。</p>
-<p>本文將介紹三種下載和安裝 RDP classifier 的方式。</p>
+    <title>很久很久以前，自然用什麼盛裝生命？</title>
+    <url>/how-nature-contains-life-in-early-earth/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。</p>
+<p>隨著多種有機質在實驗室合成或於隕石中發現，研究人員逐漸了解生命的物質來源。然而，散落各處的有機質需要彼此接觸才有機會引發生化反應。在早期環境中，有什麼物質能夠形成容器，匯集生命形成所需的反應物？</p>
 <span id="more"></span>
 
-<h2 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h2><p>透過 conda 安裝的方式可參考 <a href="https://anaconda.org/bioconda/rdp_classifier">Anaconda 的教學</a>。目前，conda 與 RDP 官網提供的 classifier 皆為最新的 2.13 版。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c bioconda rdp_classifier</span><br><span class="line">conda install -c bioconda/label/cf201901 rdp_classifier</span><br></pre></td></tr></table></figure>
-
-<h2 id="官方網站"><a href="#官方網站" class="headerlink" title="官方網站"></a>官方網站</h2><p>若不想要裝一堆附加的軟體或剛好 conda 沒有需要的版本，也可以直接到官網提供的<a href="https://sourceforge.net/projects/rdp-classifier/">連結</a>下載可執行檔。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://jaist.dl.sourceforge.net/project/rdp-classifier/rdp-class</span><br><span class="line">ifier/rdp_classifier_2.13.zip</span><br><span class="line">unzip rdp_classifier_2.13.zip</span><br><span class="line"><span class="built_in">chmod</span> u+x path/to/rdp_classifier_2.13/dist/classifier.jar</span><br></pre></td></tr></table></figure>
-
-<p>由於 RDP classifier 是依賴 JAVA 的軟體，所以執行時要輸入 .jar 的絕對路徑。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar /path/to/rdp_classifier_2.13/dist/classifier.jar &lt;<span class="built_in">command</span>&gt;  </span><br><span class="line">&lt;parameters&gt;</span><br></pre></td></tr></table></figure>
-<p>為了簡化指令，可以創造名為 rdp_classifier 的腳本，並將腳本所在的目錄加入環境變數。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch rdp_classifier</span><br><span class="line">chmod u+x rdp_classifier</span><br><span class="line">vim rdp_classifier</span><br></pre></td></tr></table></figure>
-<p>接著把落落長的指令放到腳本中。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">java -jar /path/to/rdp_classifier_2.13/dist/classifier.jar $*</span><br></pre></td></tr></table></figure>
-<p>如此一來，往後執行時就只需要輸入 rdp_classifier即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rdp_classifier &lt;<span class="built_in">command</span>&gt; &lt;parameters&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><p>若是 Ubuntu，則可以從套件庫安裝。只是相較於 conda，ubuntu 套件庫內的 RDP classifier 還<a href="https://packages.ubuntu.com/impish/rdp-classifier">停在 2.10 版</a>。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get -y install rdp-classifier</span><br></pre></td></tr></table></figure>
-<p>除了前述方法，也能夠安裝集合了 RDP 團隊包含了 classifier 在內各種開發工具的 <a href="https://github.com/rdpstaff/RDPTools">RDPTools</a>。只是 RDPTools 是透過 make 和 makefile 來編譯與安裝。由於依賴的軟體和環境設定等問題，我到現在還沒成功過，暫時無法整理出相關的筆記。</p>
-]]></content>
+<p>現存生命被包覆在由磷脂組成的細胞膜內。磷脂膜的結構穩定且功能齊全，但其組成複雜，所以可能不是最早形成的容器。相較之下，脂肪酸不僅結構簡單，也能形成會膨大與分裂的囊泡。因此，脂質囊泡是構成原始細胞膜的可能選項。 </p>
+<p>然而，脂質囊泡對酸鹼值與離子濃度敏感，可能難於多變的環境中穩定存在。是以，Jia等認為在磷脂膜或脂質囊泡形成前，其他容易形成的物質可能組成結構穩定的過渡容器，發揮匯集物質及促進反應的功能。 </p>
+<p>為了檢驗這項假說，Jia等採取類似米勒與尤里的策略。Jia等發現，可能普遍存在早期地球的果酸可於模擬環境中形成微滴。這些微滴不僅耐受溫度、壓力和酸鹼值變動，也能吸納蛋白質和RNA等生物分子。</p>
+<p>儘管目前無法確認生命是否透過果酸微滴形成，Jia等的研究成果仍支持了新的研究途徑：除了構成現存生命的大分子，存在早期地球的其他分子也可能形成過渡容器，在細胞膜出現前匯集生命形成所需的反應物。</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Jia et al. (2019). Membraneless polyester microdroplets as primordial compartments at the origins of life. <em>Proceedings of the National Academy of Sciences</em>, 116(32), 15830-15835.<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <tags>
-        <tag>metagenomics</tag>
+        <tag>origins of life</tag>
       </tags>
   </entry>
   <entry>
@@ -1173,8 +1143,38 @@
       </tags>
   </entry>
   <entry>
+    <title>如何下載和安裝 RDP classifier</title>
+    <url>/how-to-download-and-install-rdp-classifier/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>RDP classifier 是基於 Naive Bayes 的物種分類器，常用於註解 16S rRNA 基因序列的分類資訊。除了使用內建的 RDP 資料庫以外，RDP classifier 也允許使用自訂資料庫來訓練分類器。除了內建的 RDP database，也支援以其他資料庫來訓練分類器。</p>
+<p>目前，RDP classifier 的核心演算法已被整合到 Mothur 和 DADA2 等流程的副程式庫，所以只要有安裝這些流程軟體，即使沒有安裝 RDP classifier，也能以相同的演算法註解物種資訊。然而，若想要依據自訂或最新的資料庫註解序列，或是使用 copy number 校正等功能，仍有獨立使用 RDP classifier 的必要。</p>
+<p>本文將介紹三種下載和安裝 RDP classifier 的方式。</p>
+<span id="more"></span>
+
+<h2 id="Conda"><a href="#Conda" class="headerlink" title="Conda"></a>Conda</h2><p>透過 conda 安裝的方式可參考 <a href="https://anaconda.org/bioconda/rdp_classifier">Anaconda 的教學</a>。目前，conda 與 RDP 官網提供的 classifier 皆為最新的 2.13 版。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c bioconda rdp_classifier</span><br><span class="line">conda install -c bioconda/label/cf201901 rdp_classifier</span><br></pre></td></tr></table></figure>
+
+<h2 id="官方網站"><a href="#官方網站" class="headerlink" title="官方網站"></a>官方網站</h2><p>若不想要裝一堆附加的軟體或剛好 conda 沒有需要的版本，也可以直接到官網提供的<a href="https://sourceforge.net/projects/rdp-classifier/">連結</a>下載可執行檔。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://jaist.dl.sourceforge.net/project/rdp-classifier/rdp-class</span><br><span class="line">ifier/rdp_classifier_2.13.zip</span><br><span class="line">unzip rdp_classifier_2.13.zip</span><br><span class="line"><span class="built_in">chmod</span> u+x path/to/rdp_classifier_2.13/dist/classifier.jar</span><br></pre></td></tr></table></figure>
+
+<p>由於 RDP classifier 是依賴 JAVA 的軟體，所以執行時要輸入 .jar 的絕對路徑。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar /path/to/rdp_classifier_2.13/dist/classifier.jar &lt;<span class="built_in">command</span>&gt;  </span><br><span class="line">&lt;parameters&gt;</span><br></pre></td></tr></table></figure>
+<p>為了簡化指令，可以創造名為 rdp_classifier 的腳本，並將腳本所在的目錄加入環境變數。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">touch rdp_classifier</span><br><span class="line">chmod u+x rdp_classifier</span><br><span class="line">vim rdp_classifier</span><br></pre></td></tr></table></figure>
+<p>接著把落落長的指令放到腳本中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">java -jar /path/to/rdp_classifier_2.13/dist/classifier.jar $*</span><br></pre></td></tr></table></figure>
+<p>如此一來，往後執行時就只需要輸入 rdp_classifier即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rdp_classifier &lt;<span class="built_in">command</span>&gt; &lt;parameters&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><p>若是 Ubuntu，則可以從套件庫安裝。只是相較於 conda，ubuntu 套件庫內的 RDP classifier 還<a href="https://packages.ubuntu.com/impish/rdp-classifier">停在 2.10 版</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get -y install rdp-classifier</span><br></pre></td></tr></table></figure>
+<p>除了前述方法，也能夠安裝集合了 RDP 團隊包含了 classifier 在內各種開發工具的 <a href="https://github.com/rdpstaff/RDPTools">RDPTools</a>。只是 RDPTools 是透過 make 和 makefile 來編譯與安裝。由於依賴的軟體和環境設定等問題，我到現在還沒成功過，暫時無法整理出相關的筆記。</p>
+]]></content>
+      <tags>
+        <tag>metagenomics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的職業是網路小說家：韓國人氣作家的致富寫作教室</title>
-    <url>/jeong-2021-making-a-living-by-writing-web-novels/</url>
+    <url>/jeong-2021-i-make-a-living-by-writing-webnovels/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
 <p>我們的競爭對手不是綜合榜的暢銷書，而是YouTube、網路漫畫、遊戲、Netflix等。下班回家的路上，在客滿的地鐵裡用手機看網路小說的讀者，因為周邊環境嘈雜，再加上一整天上班後的疲勞，使得他們的眼睛十分乾澀。你覺得他們會想看哪種句子呢？</p>
 </blockquote>
@@ -1668,48 +1668,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜724. Find Pivot Index</title>
-    <url>/leetcode-724-find-pivot-index/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
-<span id="more"></span>
-<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
-</blockquote>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
-</blockquote>
-<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
-<p><strong>限制</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
-<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
-</ul>
-<p><strong>知識點</strong><br>prefix sum &amp; array</p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
-<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
-<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
-<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
-<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
-<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
-]]></content>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 筆記｜53. Maximum Subarray</title>
     <url>/leetcode-53-maximum-subarray/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
@@ -1751,6 +1709,48 @@
 <li><code>sums</code>：紀錄當前累加值</li>
 <li><code>maxVal</code>：紀錄當前累加的最大值</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜724. Find Pivot Index</title>
+    <url>/leetcode-724-find-pivot-index/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
+<span id="more"></span>
+<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
+</blockquote>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
+</blockquote>
+<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
+</ul>
+<p><strong>知識點</strong><br>prefix sum &amp; array</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
+<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
+<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
+<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
+<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
+<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
 ]]></content>
       <tags>
         <tag>leetcode</tag>
@@ -2129,42 +2129,6 @@
       </tags>
   </entry>
   <entry>
-    <title>不道德教育講座</title>
-    <url>/mishima-1958-lectures-on-immoral-education/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1958年，三島由紀夫在《明星週刊》連載不道德教育講座，針對當代日本的文化、事件與風俗，提出有違常人價值觀的看法，例如「應該盡量說謊」、「要打從心底瞧不起老師」、還倡議「千萬不要遵守諾言」。</p>
-<p>據他所述，老掉牙的說教作品無趣又矯情，與其重述時下倡導的道德教育，不如談些大逆不道的誇張故事還來得有趣。畢竟，讀者在看了這些荒謬情節之後，沒有產生群起效法的念頭，反倒被激起高尚的品德也說不定。</p>
-<p>坦白講，讀過三島由紀夫其他詞藻華美、情節扭曲的小說之後，很難想像這些專欄文章出自同一人之手。《不道德教育講座》裡頭雖然有些看法引人深思，但也充滿反串、強詞奪理、偏見和誇飾的論述，簡直就像是穿越回二十世紀中葉的 PTT 八卦版鄉民。</p>
-<span id="more"></span>
-
-<p>舉例來說，三島由紀夫在此書鼓勵讀者盡早擺脫處男，畢竟沒性經驗的男生滿腦子猥褻想法，根本純潔不起來。他也鼓吹喝湯時要發出聲響干擾別人，因為這些奇怪規範是出自於盲從的社會羊群，「傲然的孤郎無須起而效尤」。</p>
-<p>在〈應該由文弱陰柔當道〉當中，他諷刺日本人表面崇尚陰柔氣質，骨子裡還是被陽剛氣概所吸引。文末說道自己現在練了一身肌肉，即使收到徵兵單也無所謂畏懼，但好家在他的年紀已經收不到兵單了。這是什麼「還好我退了」的發言啊？</p>
-<p>另一篇〈偷盜的奇妙功效〉則批評那些貪圖物質利益、手段又拙劣的小偷根本在丟盜賊的臉，鼓勵大家即使作奸犯科也要有宏大目標與卓越手段。三島由紀夫還以身作則，講了一則他巧妙偷走陌生人昂貴鋼筆的小故事，最後在那邊靠北：「呵呵，你看到這篇文章，我也不會還給你喔！」</p>
-<p>除了這些驚世駭俗的言論與觀點，這選集還可以看到表面上是要問卦或討論什麼嚴肅議題，結果只是三島由紀夫想要曬貓：</p>
-<blockquote>
-<p>我是個愛貓成癡的人。因為，貓這種傢伙實在有點自私又忘恩，還有大部分的貓都只是忘恩之徒，而不會像卑劣人類會恩將仇報。</p>
-</blockquote>
-<blockquote>
-<p>我立刻聯想到，人類最應該像貓看齊。因為再沒有比貓更冷淡、更無情、更韌性，並且絕不任由人類擺弄的動物了！牠恐怕也是最不容易被催眠成功的動物吧。因此，我也想要模仿貓，盡量讓自己變得冷淡、薄情、麻木不仁、自主獨立……。而且，只在想吃魚的時候，才願意發出撒嬌的喵喵聲。</p>
-</blockquote>
-<blockquote>
-<p>比如，有隻貓剛從廚房偷吃了一條魚，來到簷廊下曬太陽，接著若無其事地擦抹乾淨，就是「Who knows?」的最佳體現。</p>
-</blockquote>
-<p>此書選錄的文章裏頭，我最喜歡的是「應當打從心底瞧不起老師」、「應當追隨流行」和「肉體的無常」這三則對教育、流行和健身的討論。</p>
-<h2 id="應當打從心底瞧不起老師"><a href="#應當打從心底瞧不起老師" class="headerlink" title="應當打從心底瞧不起老師"></a>應當打從心底瞧不起老師</h2><p>由於尊師重道的觀念以及教師與學生間年齡、地位與知識的落差，學生面對老師時，不免產生崇敬、害怕或依靠等感受。若這層關係僅止於知識的傳授也罷，可是某些教師的控制欲可能干預了學生的價值觀與人生抉擇，蔑視了個體決定自我前途的責任與權利。</p>
-<p>老師在知識上未必全面，在情感上脫離青春期太遠，未必能設身處地體會學生的困擾。其次，決策的後果無論利弊都得由個人承受，老師作為局外人不須擔負選擇的重量，所作所為也不見得貼近學生的需求。因此，對於人生，老師的位置似乎不適合多做什麼，他們可以傳授知識和了解學生，但各自的人生還是得放手讓學生去面對。</p>
-<p>而學生這方，也不能期待老師有能力或義務理解自己。畢竟，無論大人或小孩，各年齡層皆有各自的煩惱，都需要費很多心力來解決。因此，不只不該依賴老師，還要有超越老師的鬥志才行。不管老師表現出輕視的態度還是關愛的態度也好，都可以盡情睥睨他們，只要盡可能從課堂中撈取知識油水就夠了。至於其他奇奇怪怪的刁難或干涉，可以當作往後人生的預習，畢竟這些老師可能是那些惡質成年人當中最容易對付的。</p>
-<h2 id="應當追隨流行"><a href="#應當追隨流行" class="headerlink" title="應當追隨流行"></a>應當追隨流行</h2><p>流行的事物往往被貼上膚淺、易逝和俗套等標籤，三島由紀夫在這篇討論了上流階層輕視流行的現象，並且指出流行的可貴正是這些「不去思考本質」的特性。誠然，流行的事物之所以能迅速普及，正是因為其通俗易懂而沒有深度；之所以短暫亦逝也是因為其輕佻膚淺。</p>
-<p>然而，比起引發了區域衝突甚至世界大戰的各式意識形態，這些膚淺的文化反而保留了更多人類美好的回憶片段。流行的循環性也會讓它在短暫的生命以後，以全新的樣貌出現在人們的生活中，意外地延續流行的壽命。</p>
-<h2 id="肉體的無常"><a href="#肉體的無常" class="headerlink" title="肉體的無常"></a>肉體的無常</h2><p>由於我自己也有在健身，所以很好奇三島由紀夫對健身的看法。三島由紀夫自小體格矮小且單薄，直到在三十歲後讀到健美雜誌了解到這項運動後才開始健身。從網路上可取得的寫真照看來，在那個營養和運動科學才逐漸發展，大眾健身尚不普及的年代，其實也算練得有模有樣了。</p>
-<p>曾想像「如果自己強壯起來，那麼或許……」的人，在慘澹的街燈下走回家，看著自己透過店面玻璃映出的單薄身影時，難免會懷疑自己到底在幹嘛吧？肉體總有一天會衰老、練壯了可還長同一副臉、何況現在也沒練很壯、蛋白質好貴、吃掉的東西怎麼全都變成熱逸散在大氣中……之類的。</p>
-<p>然而，這些懷疑不構成輕視自己肉體的理由。相反地，當你流著汗走回家時，應該要對自己更有自信一點，因為健壯體格短暫無常的特性，反映了人類這種生物荒謬的存在。我們只有一次人生，每分每秒每次呼吸都是絕無僅有，不管活得漂亮瀟灑還是醜陋掙扎，最終同樣要塵歸塵土歸土，隨宇宙熱寂而默然。</p>
-<p>這點跟肌肉一樣。體格是與生俱來，有的人骨架好，有的人長肉快，但所有人都需要經過刻苦訓練與飲食自律才能練出健壯的體魄。沒有人能夠永遠維持精壯，每一次臥推和深蹲都是用力活在當下的證據，都是努力延長「現在」的嘗試。</p>
-<p>因此，三島由紀夫才說「在現代社會裡，肌肉發達不過是可憐又滑稽的東西。可也因為如此，我才會對積極鍛鍊出強健的體魄不遺餘力。」</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以前是從楯之會的維基百科條目了解三島由紀夫的生平，在還沒讀過其作時，已對其人有一堆印象。直到最近被討論串的<a href="https://www.ptt.cc/bbs/Gossiping/M.1677326783.A.D04.html">留言</a>（「 20多年前看過《潮騷》，青春純愛故事，字裡行間聞得到海的味道」）打動，才開始接觸他的作品。</p>
-<p>由於我是從三島由紀夫的娛樂小說和散文作品入門，所以有機會認識這位作家別於外人給定標籤的一面。雖然不是每本書都看得懂，至少這本書我是看得蠻開心的。像讀〈應當打從心底瞧不起老師〉的時候，會想要是早點讀到就好了；但也有像〈肉體的無常〉那樣親身經歷才能體會的感動。最後要坦白，我其實也抄了一些講話很靠北的段落，但那屬於適合自娛的陰暗笑點，就不放上來了 :)</p>
-]]></content>
-  </entry>
-  <entry>
     <title>夏子的冒險</title>
     <url>/mishima-1951-natsukos-adventure/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>二十歲的松浦夏子是個言出必行的女孩，她有著一旦下定決心便不肯輕言放棄的頑固個性，七歲那年，她受夠了菠菜，她的筷子再也不曾沾過這種蔬菜；等到十五歲時，聽聞他人評論紅色不適合她，夏子便立誓不再穿紅色系的衣服，任誰來勸說也無法動搖她的決心。</p>
@@ -2244,6 +2208,42 @@
 <blockquote>
 <p>她猛然轉身，用那種充滿個性、具有某種特徵的斷定口吻說，<br>「我還是決定進修道院。」<br>三人目瞪口呆，放下茶匙。唯有三個咖啡杯冒出的熱氣，在這神秘的沉默中，像青煙一樣冉冉上升……</p>
 </blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>不道德教育講座</title>
+    <url>/mishima-1958-lectures-on-immoral-education/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1958年，三島由紀夫在《明星週刊》連載不道德教育講座，針對當代日本的文化、事件與風俗，提出有違常人價值觀的看法，例如「應該盡量說謊」、「要打從心底瞧不起老師」、還倡議「千萬不要遵守諾言」。</p>
+<p>據他所述，老掉牙的說教作品無趣又矯情，與其重述時下倡導的道德教育，不如談些大逆不道的誇張故事還來得有趣。畢竟，讀者在看了這些荒謬情節之後，沒有產生群起效法的念頭，反倒被激起高尚的品德也說不定。</p>
+<p>坦白講，讀過三島由紀夫其他詞藻華美、情節扭曲的小說之後，很難想像這些專欄文章出自同一人之手。《不道德教育講座》裡頭雖然有些看法引人深思，但也充滿反串、強詞奪理、偏見和誇飾的論述，簡直就像是穿越回二十世紀中葉的 PTT 八卦版鄉民。</p>
+<span id="more"></span>
+
+<p>舉例來說，三島由紀夫在此書鼓勵讀者盡早擺脫處男，畢竟沒性經驗的男生滿腦子猥褻想法，根本純潔不起來。他也鼓吹喝湯時要發出聲響干擾別人，因為這些奇怪規範是出自於盲從的社會羊群，「傲然的孤郎無須起而效尤」。</p>
+<p>在〈應該由文弱陰柔當道〉當中，他諷刺日本人表面崇尚陰柔氣質，骨子裡還是被陽剛氣概所吸引。文末說道自己現在練了一身肌肉，即使收到徵兵單也無所謂畏懼，但好家在他的年紀已經收不到兵單了。這是什麼「還好我退了」的發言啊？</p>
+<p>另一篇〈偷盜的奇妙功效〉則批評那些貪圖物質利益、手段又拙劣的小偷根本在丟盜賊的臉，鼓勵大家即使作奸犯科也要有宏大目標與卓越手段。三島由紀夫還以身作則，講了一則他巧妙偷走陌生人昂貴鋼筆的小故事，最後在那邊靠北：「呵呵，你看到這篇文章，我也不會還給你喔！」</p>
+<p>除了這些驚世駭俗的言論與觀點，這選集還可以看到表面上是要問卦或討論什麼嚴肅議題，結果只是三島由紀夫想要曬貓：</p>
+<blockquote>
+<p>我是個愛貓成癡的人。因為，貓這種傢伙實在有點自私又忘恩，還有大部分的貓都只是忘恩之徒，而不會像卑劣人類會恩將仇報。</p>
+</blockquote>
+<blockquote>
+<p>我立刻聯想到，人類最應該像貓看齊。因為再沒有比貓更冷淡、更無情、更韌性，並且絕不任由人類擺弄的動物了！牠恐怕也是最不容易被催眠成功的動物吧。因此，我也想要模仿貓，盡量讓自己變得冷淡、薄情、麻木不仁、自主獨立……。而且，只在想吃魚的時候，才願意發出撒嬌的喵喵聲。</p>
+</blockquote>
+<blockquote>
+<p>比如，有隻貓剛從廚房偷吃了一條魚，來到簷廊下曬太陽，接著若無其事地擦抹乾淨，就是「Who knows?」的最佳體現。</p>
+</blockquote>
+<p>此書選錄的文章裏頭，我最喜歡的是「應當打從心底瞧不起老師」、「應當追隨流行」和「肉體的無常」這三則對教育、流行和健身的討論。</p>
+<h2 id="應當打從心底瞧不起老師"><a href="#應當打從心底瞧不起老師" class="headerlink" title="應當打從心底瞧不起老師"></a>應當打從心底瞧不起老師</h2><p>由於尊師重道的觀念以及教師與學生間年齡、地位與知識的落差，學生面對老師時，不免產生崇敬、害怕或依靠等感受。若這層關係僅止於知識的傳授也罷，可是某些教師的控制欲可能干預了學生的價值觀與人生抉擇，蔑視了個體決定自我前途的責任與權利。</p>
+<p>老師在知識上未必全面，在情感上脫離青春期太遠，未必能設身處地體會學生的困擾。其次，決策的後果無論利弊都得由個人承受，老師作為局外人不須擔負選擇的重量，所作所為也不見得貼近學生的需求。因此，對於人生，老師的位置似乎不適合多做什麼，他們可以傳授知識和了解學生，但各自的人生還是得放手讓學生去面對。</p>
+<p>而學生這方，也不能期待老師有能力或義務理解自己。畢竟，無論大人或小孩，各年齡層皆有各自的煩惱，都需要費很多心力來解決。因此，不只不該依賴老師，還要有超越老師的鬥志才行。不管老師表現出輕視的態度還是關愛的態度也好，都可以盡情睥睨他們，只要盡可能從課堂中撈取知識油水就夠了。至於其他奇奇怪怪的刁難或干涉，可以當作往後人生的預習，畢竟這些老師可能是那些惡質成年人當中最容易對付的。</p>
+<h2 id="應當追隨流行"><a href="#應當追隨流行" class="headerlink" title="應當追隨流行"></a>應當追隨流行</h2><p>流行的事物往往被貼上膚淺、易逝和俗套等標籤，三島由紀夫在這篇討論了上流階層輕視流行的現象，並且指出流行的可貴正是這些「不去思考本質」的特性。誠然，流行的事物之所以能迅速普及，正是因為其通俗易懂而沒有深度；之所以短暫亦逝也是因為其輕佻膚淺。</p>
+<p>然而，比起引發了區域衝突甚至世界大戰的各式意識形態，這些膚淺的文化反而保留了更多人類美好的回憶片段。流行的循環性也會讓它在短暫的生命以後，以全新的樣貌出現在人們的生活中，意外地延續流行的壽命。</p>
+<h2 id="肉體的無常"><a href="#肉體的無常" class="headerlink" title="肉體的無常"></a>肉體的無常</h2><p>由於我自己也有在健身，所以很好奇三島由紀夫對健身的看法。三島由紀夫自小體格矮小且單薄，直到在三十歲後讀到健美雜誌了解到這項運動後才開始健身。從網路上可取得的寫真照看來，在那個營養和運動科學才逐漸發展，大眾健身尚不普及的年代，其實也算練得有模有樣了。</p>
+<p>曾想像「如果自己強壯起來，那麼或許……」的人，在慘澹的街燈下走回家，看著自己透過店面玻璃映出的單薄身影時，難免會懷疑自己到底在幹嘛吧？肉體總有一天會衰老、練壯了可還長同一副臉、何況現在也沒練很壯、蛋白質好貴、吃掉的東西怎麼全都變成熱逸散在大氣中……之類的。</p>
+<p>然而，這些懷疑不構成輕視自己肉體的理由。相反地，當你流著汗走回家時，應該要對自己更有自信一點，因為健壯體格短暫無常的特性，反映了人類這種生物荒謬的存在。我們只有一次人生，每分每秒每次呼吸都是絕無僅有，不管活得漂亮瀟灑還是醜陋掙扎，最終同樣要塵歸塵土歸土，隨宇宙熱寂而默然。</p>
+<p>這點跟肌肉一樣。體格是與生俱來，有的人骨架好，有的人長肉快，但所有人都需要經過刻苦訓練與飲食自律才能練出健壯的體魄。沒有人能夠永遠維持精壯，每一次臥推和深蹲都是用力活在當下的證據，都是努力延長「現在」的嘗試。</p>
+<p>因此，三島由紀夫才說「在現代社會裡，肌肉發達不過是可憐又滑稽的東西。可也因為如此，我才會對積極鍛鍊出強健的體魄不遺餘力。」</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以前是從楯之會的維基百科條目了解三島由紀夫的生平，在還沒讀過其作時，已對其人有一堆印象。直到最近被討論串的<a href="https://www.ptt.cc/bbs/Gossiping/M.1677326783.A.D04.html">留言</a>（「 20多年前看過《潮騷》，青春純愛故事，字裡行間聞得到海的味道」）打動，才開始接觸他的作品。</p>
+<p>由於我是從三島由紀夫的娛樂小說和散文作品入門，所以有機會認識這位作家別於外人給定標籤的一面。雖然不是每本書都看得懂，至少這本書我是看得蠻開心的。像讀〈應當打從心底瞧不起老師〉的時候，會想要是早點讀到就好了；但也有像〈肉體的無常〉那樣親身經歷才能體會的感動。最後要坦白，我其實也抄了一些講話很靠北的段落，但那屬於適合自娛的陰暗笑點，就不放上來了 :)</p>
 ]]></content>
   </entry>
   <entry>
@@ -4092,23 +4092,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>微國家：獨立建國的簡易操作手冊</title>
-    <url>/strauss-2008-how-to-start-your-own-country/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
-<span id="more"></span>
-
-<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
-<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
-<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
-<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
-<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
-<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
-<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
-<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
-<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
     <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
@@ -4158,6 +4141,23 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>lua</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>微國家：獨立建國的簡易操作手冊</title>
+    <url>/strauss-2008-how-to-start-your-own-country/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
+<span id="more"></span>
+
+<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
+<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
+<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
+<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
+<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
+<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
+<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
+<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
+<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
+]]></content>
   </entry>
   <entry>
     <title>人際的法則 — 怎麼面對他人求助？</title>
@@ -4645,29 +4645,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>ROSALIND｜Transcribing DNA into RNA (RNA)</title>
-    <url>/transcribing-dna-into-rna/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>模擬 DNA 轉錄 RNA 的過程，將給定 DNA 字串中的 T 替換為 U。</p>
-<blockquote>
-<p>Given: A DNA string t having length at most 1000 nt.</p>
-<p>Return: The transcribed RNA string of t.</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/rna/">https://rosalind.info/problems/rna/</a>)</p>
-<span id="more"></span>
-
-<p>此題為字符替換問題，可使用 *str.replace(old, new, max)*，將字串中的 old（舊字符串） 替換為 new（新字符串）。若指定第三個參數 max，還可設定最大替換次數。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transcribe</span>(<span class="params">dna</span>):</span><br><span class="line">	<span class="string">&quot;&quot;&quot;Transcribe DNA into RNA</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	<span class="keyword">return</span> dna.replace(<span class="string">&quot;T&quot;</span>, <span class="string">&quot;U&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>R 語言與 replace 相應的 function 為 gsub，然而 gsub 可以接受向量，批次替換字符串。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">dna <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;GATGGAACTTGACTACGTAAATT&quot;</span><span class="punctuation">,</span> <span class="string">&quot;AAATTTT&quot;</span><span class="punctuation">)</span></span><br><span class="line">rna <span class="operator">&lt;-</span> gsub<span class="punctuation">(</span>pattern <span class="operator">=</span> <span class="string">&quot;T&quot;</span><span class="punctuation">,</span> replacement <span class="operator">=</span> <span class="string">&quot;U&quot;</span><span class="punctuation">,</span> x <span class="operator">=</span>  dna<span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span>rna<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-<p>bash 的 tr (transform) 可用於替換、刪除、修改等多種字符操作。此例使用的是其替換功能，參數設定為：$string | tr old new，意指將字串中的 old（舊字符） 替換為 new（新字符）。相較於 R 的 gsub() 和 python 的 replace()，tr 只針對字符的操作（即只能 A→T，不能 AT→CG），若要替換字符串則要使用 sed，其參數設定為：sed “s&#x2F;old&#x2F;new&#x2F;g”。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Transcribing DNA into RNA using tr</span></span><br><span class="line">dna=<span class="string">&quot;GATGGAACTTGACTACGTAAATT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Translating RNA into protein using sed</span></span><br><span class="line">dna=<span class="string">&quot;GGTGGTGGTGGT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line">protein=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span> |  sed <span class="string">&quot;s/GGU/G/g&quot;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$protein</span>&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ROSALIND｜Translating RNA into Protein (PROT)</title>
     <url>/translating-rna-into-protein/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>轉譯RNA字串為蛋白質字串</p>
@@ -4760,6 +4737,29 @@ echo &quot;\$title \n $PWD&quot;
 <h2 id="R-為什麼要以-unlist-處理-strsplit-的輸出結果？"><a href="#R-為什麼要以-unlist-處理-strsplit-的輸出結果？" class="headerlink" title="R: 為什麼要以 unlist 處理 strsplit 的輸出結果？"></a>R: 為什麼要以 unlist 處理 strsplit 的輸出結果？</h2><p>strsplit 原始輸出為 list 形式，所以需要使用 unlist 將之轉換為 vector 以利後續處理</p>
 <figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="operator">&gt;</span> strsplit<span class="punctuation">(</span><span class="string">&quot;A,B,C,D&quot;</span><span class="punctuation">,</span> <span class="string">&quot;,&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">[[</span><span class="number">1</span><span class="punctuation">]</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="string">&quot;A&quot;</span> <span class="string">&quot;B&quot;</span> <span class="string">&quot;C&quot;</span> <span class="string">&quot;D&quot;</span></span><br><span class="line"><span class="operator">&gt;</span> unlist<span class="punctuation">(</span>strsplit<span class="punctuation">(</span><span class="string">&quot;A,B,C,D&quot;</span><span class="punctuation">,</span> <span class="string">&quot;,&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span> <span class="string">&quot;A&quot;</span> <span class="string">&quot;B&quot;</span> <span class="string">&quot;C&quot;</span> <span class="string">&quot;D&quot;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROSALIND｜Transcribing DNA into RNA (RNA)</title>
+    <url>/transcribing-dna-into-rna/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>模擬 DNA 轉錄 RNA 的過程，將給定 DNA 字串中的 T 替換為 U。</p>
+<blockquote>
+<p>Given: A DNA string t having length at most 1000 nt.</p>
+<p>Return: The transcribed RNA string of t.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/rna/">https://rosalind.info/problems/rna/</a>)</p>
+<span id="more"></span>
+
+<p>此題為字符替換問題，可使用 *str.replace(old, new, max)*，將字串中的 old（舊字符串） 替換為 new（新字符串）。若指定第三個參數 max，還可設定最大替換次數。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transcribe</span>(<span class="params">dna</span>):</span><br><span class="line">	<span class="string">&quot;&quot;&quot;Transcribe DNA into RNA</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	<span class="keyword">return</span> dna.replace(<span class="string">&quot;T&quot;</span>, <span class="string">&quot;U&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>R 語言與 replace 相應的 function 為 gsub，然而 gsub 可以接受向量，批次替換字符串。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">dna <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;GATGGAACTTGACTACGTAAATT&quot;</span><span class="punctuation">,</span> <span class="string">&quot;AAATTTT&quot;</span><span class="punctuation">)</span></span><br><span class="line">rna <span class="operator">&lt;-</span> gsub<span class="punctuation">(</span>pattern <span class="operator">=</span> <span class="string">&quot;T&quot;</span><span class="punctuation">,</span> replacement <span class="operator">=</span> <span class="string">&quot;U&quot;</span><span class="punctuation">,</span> x <span class="operator">=</span>  dna<span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span>rna<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>bash 的 tr (transform) 可用於替換、刪除、修改等多種字符操作。此例使用的是其替換功能，參數設定為：$string | tr old new，意指將字串中的 old（舊字符） 替換為 new（新字符）。相較於 R 的 gsub() 和 python 的 replace()，tr 只針對字符的操作（即只能 A→T，不能 AT→CG），若要替換字符串則要使用 sed，其參數設定為：sed “s&#x2F;old&#x2F;new&#x2F;g”。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Transcribing DNA into RNA using tr</span></span><br><span class="line">dna=<span class="string">&quot;GATGGAACTTGACTACGTAAATT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Translating RNA into protein using sed</span></span><br><span class="line">dna=<span class="string">&quot;GGTGGTGGTGGT&quot;</span></span><br><span class="line">rna=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$dna</span>&quot;</span> | <span class="built_in">tr</span> T U)</span><br><span class="line">protein=$(<span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$rna</span>&quot;</span> |  sed <span class="string">&quot;s/GGU/G/g&quot;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$protein</span>&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>rosalind</tag>
       </tags>
@@ -5106,6 +5106,23 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
+    <url>/why-should-we-watch-bangdream-its-my-go/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
+<span id="more"></span>
+<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
+<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
+<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
+<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
+<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
+<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
+<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
+]]></content>
+      <tags>
+        <tag>acgn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>寫科普又不能當飯吃，為什麼還要寫？</title>
     <url>/why-do-people-write-scientific-articles/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文是 Mitalk 4 講座「科普如何當飯吃？」的聽講心得，陳俊堯老師在演講一開始先回答了這問題，再一一告訴我們，如果無法靠寫科普賺錢營生，那麼從事研究的學生、老師和學者們，到底有什麼理由勞心費神去寫科普文？</p>
@@ -5164,23 +5181,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>writing</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
-    <url>/why-should-we-watch-bangdream-its-my-go/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
-<span id="more"></span>
-<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
-<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
-<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
-<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
-<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
-<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
-<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
-]]></content>
-      <tags>
-        <tag>acgn</tag>
       </tags>
   </entry>
   <entry>
