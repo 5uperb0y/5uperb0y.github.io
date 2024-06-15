@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.css" integrity="sha256-6cQIC71/iBIYXFK+0RHAvwmjwWzkWd+r7v/BX3/vZDc=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="假設在很久很久以後的未來，人類有能力偵測到發生在多重宇宙各時間線的事件，也有演算法來比較事件間的異同，從而彙整出能代表多數宇宙歷史的標準時間線。利用跨宇宙與跨時間線的全史資料，往後的史家能將蒐集的歷史資料與標準時間線比較，推測事件的偶然與必然，指引未來史的發展方向。 面對龐大歷史分歧資料，這些史家或許需要適當的格式與軟體來管理之。對於這個數萬年後才會出現的新興史學與其困境，我想聊聊一些衍伸自生物資">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF)">
+<meta property="og:url" content="https://5uperb0y.com/introduction-to-multiverse-variant-call-format/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="假設在很久很久以後的未來，人類有能力偵測到發生在多重宇宙各時間線的事件，也有演算法來比較事件間的異同，從而彙整出能代表多數宇宙歷史的標準時間線。利用跨宇宙與跨時間線的全史資料，往後的史家能將蒐集的歷史資料與標準時間線比較，推測事件的偶然與必然，指引未來史的發展方向。 面對龐大歷史分歧資料，這些史家或許需要適當的格式與軟體來管理之。對於這個數萬年後才會出現的新興史學與其困境，我想聊聊一些衍伸自生物資">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-01-06T06:05:34.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:20:56.637Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="sf">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/introduction-to-multiverse-variant-call-format/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/introduction-to-multiverse-variant-call-format/","path":"introduction-to-multiverse-variant-call-format/","title":"多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF) | 5uperb0y's blog</title>
+  
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">97</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-mVCF%EF%BC%9F%E8%B7%9F-VCF-%E6%9C%89%E4%BB%80%E9%BA%BC%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什麼是 mVCF？跟 VCF 有什麼不同？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E8%AE%80-mVCF%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">如何解讀 mVCF？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E5%89%8D-mVCF-%E9%82%84%E6%9C%89%E4%BB%80%E9%BA%BC%E5%BE%85%E8%A7%A3%E6%88%96%E7%A0%94%E7%A9%B6%E8%AD%B0%E9%A1%8C%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">目前 mVCF 還有什麼待解或研究議題？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%B7%A8%E7%A2%BC%E4%BA%8B%E4%BB%B6%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">如何編碼事件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E8%A8%98%E9%8C%84%E4%BB%80%E9%BA%BC%E4%BA%8B%E4%BB%B6%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">要記錄什麼事件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%8B%E6%A1%88%E7%A0%94%E7%A9%B6%EF%BC%9A%E6%98%9F%E9%9A%9B%E7%A7%BB%E6%B0%91%E5%8F%B2"><span class="nav-number">3.3.</span> <span class="nav-text">個案研究：星際移民史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E7%95%B0%E8%AE%8A%EF%BC%88%E5%88%86%E6%AD%A7%E4%BA%8B%E4%BB%B6%EF%BC%89%EF%BC%8C%E6%99%82%E9%96%93%E7%B7%9A%E7%9A%84%E5%88%86%E6%AD%A7%E5%8F%88%E6%84%8F%E5%91%B3%E8%91%97%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">3.4.</span> <span class="nav-text">什麼是異變（分歧事件），時間線的分歧又意味著什麼？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E9%82%84%E7%AD%89%E4%B8%8D%E5%88%B0%E4%BE%86%E8%87%AA%E5%85%B6%E4%BB%96%E6%99%82%E9%96%93%E7%B7%9A%E7%9A%84%E6%8B%9B%E5%91%BC%E2%80%A6"><span class="nav-number">4.</span> <span class="nav-text">如果還等不到來自其他時間線的招呼…</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-15T02:10:03+08:00">
+        06/15
+      </time>
+      <a href="/gailman-2002-coraline/" title="第十四道門 Coraline">第十四道門 Coraline</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-13T00:52:24+08:00">
+        06/13
+      </time>
+      <a href="/jeong-2021-i-make-a-living-by-writing-webnovels/" title="我的職業是網路小說家：韓國人氣作家的致富寫作教室">我的職業是網路小說家：韓國人氣作家的致富寫作教室</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-11T22:11:25+08:00">
+        06/11
+      </time>
+      <a href="/open-reading-frames/" title="ROSALIND｜Open Reading Frames (ORF)">ROSALIND｜Open Reading Frames (ORF)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-09T21:32:14+08:00">
+        06/09
+      </time>
+      <a href="/translating-rna-into-protein/" title="ROSALIND｜Translating RNA into Protein (PROT)">ROSALIND｜Translating RNA into Protein (PROT)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-08T21:44:29+08:00">
+        06/08
+      </time>
+      <a href="/mishima-1951-natsukos-adventure/" title="夏子的冒險">夏子的冒險</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/introduction-to-multiverse-variant-call-format/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-01-06 14:05:34" itemprop="dateCreated datePublished" datetime="2024-01-06T14:05:34+08:00">2024-01-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:20:56" itemprop="dateModified" datetime="2024-06-09T22:20:56+08:00">2024-06-09</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>6.1k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>22 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>假設在很久很久以後的未來，人類有能力偵測到發生在多重宇宙各時間線的事件，也有演算法來比較事件間的異同，從而彙整出能代表多數宇宙歷史的標準時間線。利用跨宇宙與跨時間線的全史資料，往後的史家能將蒐集的歷史資料與標準時間線比較，推測事件的偶然與必然，指引未來史的發展方向。</p>
+<p>面對龐大歷史分歧資料，這些史家或許需要適當的格式與軟體來管理之。對於這個數萬年後才會出現的新興史學與其困境，我想聊聊一些衍伸自生物資訊經驗的想像和白日夢……</p>
+<span id="more"></span>
+
+<h1 id="什麼是-mVCF？跟-VCF-有什麼不同？"><a href="#什麼是-mVCF？跟-VCF-有什麼不同？" class="headerlink" title="什麼是 mVCF？跟 VCF 有什麼不同？"></a>什麼是 mVCF？跟 VCF 有什麼不同？</h1><p>多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, 以下簡稱為 mVCF) 是一種純文字檔案格式，用於紀錄觀測事件在特定宇宙內各時間線的分歧（詳細內容可參考我寫的<a target="_blank" rel="noopener" href="https://github.com/5uperb0y/mVCF/blob/main/mVCF-spec.md">格式規範</a>）</p>
+<p>mVCF 的構想源於基因體學的 <a target="_blank" rel="noopener" href="https://github.com/samtools/hts-specs/blob/master/VCFv4.3.pdf">VCF</a> (Varaint Call Format)。VCF 檔案紀錄了樣本基因體與參考基因體的 DNA 鹼基差異，這些差異被稱之為變異 (variant)。因為基因變異可能與生物的疾病、性狀與演化史相關，所以可作為臨床診斷、族群遺傳乃至生態演化的研究基礎。</p>
+<p>由於 VCF 檔為純文字檔、排版友善、容易擴充又被辨識基因變異的軟體所重用，所以 VCF 已是生物資訊領域通用的格式。去年，VCF 已經更新至 v4.3 版本，除了少數鹼基的變動、插入與刪除外，也納入倒置、跨染色體合併或是大片段缺失等結構變異的表示法。</p>
+<p>當我在一個百無聊賴的下午，讀著 VCFv4.3 格式細則時，萌生了一個想法：既然 VCF 能用來紀錄 DNA 變異，那能否描述同為線性結構的時間？更進一步地，我能否用 VCF 檔紀錄一則關於平行宇宙、時空跳躍與蝴蝶效應的懸疑故事？於是我模仿 VCF，著手設計能像描述基因變異一樣，描述各時間線歧異事件的 mVCF。</p>
+<p>不過，基因體與時間線的性質顯然有許多差異，所以雖然能挪用 VCF 的格式規範，不過要留意指涉對象的含意。</p>
+<ul>
+<li><strong>樣本</strong>：樣本是研究母體的子集，其範疇與形象因研究目的而異。在基因體學裡，樣本可以是細胞、組織乃至一盆湖水；而史學裡，可能是個人、國家乃至某種文化與風潮。</li>
+<li><strong>鹼基&#x2F;事件</strong>：基因體的基本單位是鹼基，而歷史的基本單位則是事件。然而，相較於離散基因，時間則是連續的。因此，研究事件時更需要定義其範圍與尺度，事件間的差異也不只是字串比對，還需要梳理事件來龍去脈。</li>
+<li><strong>建庫&#x2F;考古</strong>：基因體研究始於採樣與抽取 DNA，而史學也需要蒐集考古材料與文獻。如同 DNA 建庫的手段多元，未來也許會發展出更多考古技術，能取得其他宇宙與時間線的文物或口述記錄，讓歷史事件的輪廓更加清晰。</li>
+<li><strong>定序&#x2F;編年</strong>：DNA 需經定序解碼鹼基的順序與種類，其結果構成<em>樣本的基因體</em>（樣本DNA的集合）；而考古材料也需要編年與考證，確認事件的順序與可信度，其結果構成<em>樣本的時間線</em>（樣本事件的集合）。</li>
+<li><strong>參考基因體&#x2F;標準時間線</strong>：參考基因體是特定物種基因體的整合；而標準時間線則是特定實體（個人、國家或文化等）時間線的整合。兩者都匯集了多樣本的結果，涵蓋較全面的鹼基定序或事件編年資訊，可作為研究與比較的基礎。</li>
+<li><strong>染色體&#x2F;宇宙</strong>：每條染色體都乘載了特定的基因，在 VCF 檔裡也有各自的座標；而每個宇宙都有各自的宇宙常數與物理定律，有其獨特的歷史脈絡與事件變化。</li>
+<li><strong>變異&#x2F;異變</strong>：基因變異是樣本基因體與參考基因體的歧異，事件異變則是樣本時間線與標準時間線的歧異。</li>
+</ul>
+<p>釐清 mVCF 和 VCF 的概念差異之後，讓我以《高堡奇人》的假想歷史為例，說明 mVCF 紀錄歷史分歧事件的方式。</p>
+<h1 id="如何解讀-mVCF？"><a href="#如何解讀-mVCF？" class="headerlink" title="如何解讀 mVCF？"></a>如何解讀 mVCF？</h1><p>《高堡奇人》是菲利普狄克的假想歷史著作，描述了軸心國贏得二戰後的故事。小說世界與真實歷史的分歧始於 1933 年小羅斯福總統遇刺身亡，導致美國無法脫離經濟蕭條並於歐戰爆發時仍保持孤立。</p>
+<p>由於美國的政治態度與國力衰退，孤立無援的英國與歐陸為納粹所征服，隨後太平洋戰爭也以日軍大捷作結。分歧的歷史中，二戰遲至納粹德國與日本帝國於 1947 年征服美國並瓜分世界才告終。</p>
+<p>以下即是小說時間線比對真實歷史的 mVCF 範例。若曾接觸生物資訊的話，應該能留意到它的形式其實與 VCF 一致，只是紀錄項目因應歷史事件的特徵而有所調整。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">##fileformat=mVCFv0.1</span><br><span class="line">##fileDate=20240105</span><br><span class="line">##source=BiblioMapperv1.0.7</span><br><span class="line">##eventEncoding=CEES27</span><br><span class="line">##reference=file:///chronology/100000HumanHistory-pilot.tl</span><br><span class="line">##INFO=&lt;ID=EF,Number=A,Type=Float,Description=&quot;Alternative Event Frequency&quot;&gt;</span><br><span class="line">##INFO=&lt;ID=DP,Number=A,Type=Integer,Description=&quot;Read Depth, number of bibliography supporting alternate events&quot;&gt;</span><br><span class="line">##INFO=&lt;ID=DESCRIB,Number=R,Type=String,Description&quot;Event Description&quot;&gt;</span><br><span class="line">#COSMOS	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	MITHC</span><br><span class="line">U34	1933	.	P	ρ	.	.	EF=0.5;DP=1;DESCRIB=&quot;Mayor cermak is assassination&quot;,&quot;President Roosevelt is assassinated&quot;	.	.</span><br><span class="line">U34	1933	.	E	EEEEEEEE	.	.	EF=0.5;DP=1;DESCRIB=&quot;US Great Depression&quot;,&quot;US Great Depression&quot;	.	.</span><br><span class="line">U34	1945	.	W	WWW	.	.	EF=0.5;DP=1;DESCRIB=&quot;WWII&quot;,&quot;WWII&quot;	.	.</span><br><span class="line">U34	1945	.	P	.	.	.	EF=0.5;DP=1;DESCRIB=&quot;United Nations Founds&quot;	.	.</span><br></pre></td></tr></table></figure>
+
+<p>每份 mVCF 依序分為三個部分：元資訊列 (meta-information line)、標題列 (header line)、資料列 (entry line)。</p>
+<ul>
+<li><strong>元資訊列</strong>：以 <code>##</code> 開頭，紀錄「如何讀懂這份檔案」的資訊，例如檔案格式、產出日期、縮寫含意等。</li>
+<li><strong>標題列</strong>：以 <code>#</code> 開頭，紀錄資料列各欄的含意</li>
+<li><strong>資料列</strong>：紀錄分歧事件所發生的宇宙、時間、性質、證據以及描述等資訊，每一列都表示某時間點發生的分歧事件。</li>
+</ul>
+<p>此處先忽略看起來更繁雜的元資訊列（這部分通常是不懂時查找用的），專注在假想歷史的第一項分歧「小羅斯福刺殺事件」。</p>
+<table>
+<thead>
+<tr>
+<th>#COSMOS</th>
+<th>POS</th>
+<th>ID</th>
+<th>REF</th>
+<th>ALT</th>
+<th>QUAL</th>
+<th>FILTER</th>
+<th>INFO</th>
+<th>FORMAT</th>
+<th>MITHC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>U34</td>
+<td>1933</td>
+<td>.</td>
+<td>P</td>
+<td>ρ</td>
+<td>.</td>
+<td>.</td>
+<td>EF&#x3D;0.5;DP&#x3D;1;DESCRIB&#x3D;”Mayor cermak is assassination”,”President Roosevelt is assassinated”</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>#COSMOS</code>：發生事件的宇宙（具有特定宇宙常數與物理定律的環境），用以規範時間線描述的範圍。<code>U34</code> 是我們所處宇宙的代號。</li>
+<li><code>POS</code>：發生事件的時間點。由於時間尺度因事件而異，所以需參照元資訊列確認所用的時間單位。此處以日歷年為單位，符合二戰歷史的事件發生頻率和時長。</li>
+<li><code>ID</code>：特定事件的辨識碼。通常在各宇宙與時間線普遍發生的重大事件，例如地球生命起源或宇宙爆發等，會被標註辨識碼供交流與研究用。</li>
+<li><code>REF</code>：在標準時間線預期發生的事件代碼。標準時間線是全史學家採樣可探測宇宙各時間線所拼湊的歷史，便於後續研究察覺罕見分歧事件。為了記錄方便，事件通常會以單字符碼概括。各領域有其常用的編碼系統，此處採用 CEES27 系統，<code>P</code> 為重大政治事件 (“politics”)，即芝加哥市長 Cermak 遇刺事件。</li>
+<li><code>ALT</code>：在觀測時間線實際發生的事件代碼，可稱之「分歧事件」或「異變」，比較 <code>REF</code> 和 <code>ALT</code> 即可了解事件在各時間線的差異。在《高堡奇人》的時間線中，遇刺死亡的人不是 Cermak 是小羅斯福總統。</li>
+<li><code>QUAL</code>：分歧事件的可信程度。受限於跨時空探測技術以及殘存的文獻紀錄，並非所有發現的事件都那麼可靠，這項數值即反映了研究人員對分歧事件是否存在的信心。</li>
+<li><code>FILTER</code>：分歧事件是否可靠，基於文獻品質、數量以及考古證據等資訊，判斷分歧事件的可信程度是否達所設定的標準。</li>
+<li><code>INFO</code>：其餘關於事件本身、探測技術或是可信程度的補充資訊。例如 <code>DP=1</code> (Read Depth) 表示僅有一份文件佐證分歧事件的發生，而後續的 <code>DESCRIB</code> 則提供了事件的摘要。</li>
+<li><code>FORMAT</code>：假設我們不只採樣《高堡奇人》小說版的時間線，也納入影集版本的時間線，那麼就需要標記各自與標準時間線的分歧。此欄規範了標記各觀測時間線的格式。</li>
+<li><code>MITHC</code>：觀測時間線的辨識碼 (the Main in The High Castle, MITHC)。每份 mVCF 皆可含有多筆觀測紀錄（或稱「樣本」），屬於該觀測的紀錄規範在 <code>FORMAT</code> 之中。每個觀測皆獨立一欄，依序置於<code>FORMAT</code> 之後。</li>
+</ul>
+<p>綜合這些欄位的資訊，這條紀錄可解讀為「1933年，於我們所處宇宙的時間線發生政治事件分歧，小羅斯福取代 Cermak 死於 Giuseppe Zangara 刺殺事件。這項分歧可在一半的時間線中觀測到，但僅有一份文獻支持其存在。」，而接續幾列則陳述了在假想的歷史中，經濟蕭條 (E, Economy) 與二戰 (W, War) 拖延的比預期更久，聯合國也不曾成立。</p>
+<p>至此，我已介紹了 mVCF 的雛型，但對於怎麼取得分歧事件資料，或說如何詮釋歷史分歧的影響等問題仍有許多討論空間。以下分別陳述我認為值得研究和改善的議題。</p>
+<h1 id="目前-mVCF-還有什麼待解或研究議題？"><a href="#目前-mVCF-還有什麼待解或研究議題？" class="headerlink" title="目前 mVCF 還有什麼待解或研究議題？"></a>目前 mVCF 還有什麼待解或研究議題？</h1><h2 id="如何編碼事件？"><a href="#如何編碼事件？" class="headerlink" title="如何編碼事件？"></a>如何編碼事件？</h2><p>構成 DNA 和蛋白質的基本單元只有 24 個分子，所以使用 26 個英文字母便足以表示。然而，構成時間線的事件彼此之間在時空尺度、內容性質、牽涉對象可能大相逕庭。好比說，國際政治是十數年間的的合縱連橫，地質年代則是百萬年的板塊遷移；個人史涉及了數十人的愛恨情仇，但戰史卻攸關數萬人的生離死別。</p>
+<p>換句話說，定義事件基本單位的方式會因領域而異 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="也許往後會有類似 IUPAC 的機構，凝聚各領域事件編碼的共識。">1</span></a></sup>，無法像基因體學只用一套編碼描述各物種的遺傳變化。因此，若想模仿 VCF 或 FASTA 等格式以單字符描述基本單元，需要適當的編碼系統，依照事件屬性將之分門別類，賦予簡明的代號以利用戶判讀。</p>
+<p>舉前述的《高堡奇人》為例，書中的國際關係事件便用以下系統化約少量的英文字母方便於表中呈現，其餘細節則補充在於 <code>INFO</code> 欄位供參照。</p>
+<table>
+<thead>
+<tr>
+<th>編碼</th>
+<th>事件類型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P</td>
+<td>Political Changes</td>
+<td>政權更迭或其他事件，例如政權更迭與當權者上位等</td>
+</tr>
+<tr>
+<td>W</td>
+<td>War and Conflict</td>
+<td>戰爭或軍事衝突，例如歐戰與二戰</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Technological and Scientific Breakthroughs</td>
+<td>科學發現或科技發明，例如發明蒸汽機與發現核能</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cultural and Societal Shifts</td>
+<td>社會變遷或文化風行，例如啟蒙思潮</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Economic Shifts</td>
+<td>經濟危機或發展，例如經濟大蕭條</td>
+</tr>
+<tr>
+<td>X</td>
+<td>Discovery and Exploration</td>
+<td>開拓生存空間，例如發現新大陸與航路</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Disasters and Catastrophes</td>
+<td>天然或人為災難，例如西班牙大流感與南亞海嘯</td>
+</tr>
+</tbody></table>
+<p>值得留意的是，編碼意味著篩選、歸納與簡化，所以不免捨棄部分資訊並引入主觀判斷。所以可預期每份 mVCF 的編碼系統都反映了記錄者的觀點，反映他們對驅動歷史的根本邏輯與關鍵動力的認知。這就像基因體學的 VCF 不只記錄了序列的差異，其實也蘊藏了識別變異的算法邏輯和假設。</p>
+<p>是以，當我們討論 mVCF 所記錄的事件時，必須承認歷史的多元性與複雜性。歷史不僅由大事件構成，同時期也包含了眾多零星事件、個人故事或文化現象等。然而，實務上不一定要標記出所有事件的分歧，因為 mVCF 要涵蓋的事件內容可透過確定研究前提與範疇而聚焦。</p>
+<h2 id="要記錄什麼事件？"><a href="#要記錄什麼事件？" class="headerlink" title="要記錄什麼事件？"></a>要記錄什麼事件？</h2><p>儘管目前沒有其他時間線的觀測報告，我們仍然可以從歷史策略遊戲的設計理念得到一些靈感。這些遊戲容許玩家參與特定時代，左右國家政權的發展，創造出與現實截然不同的歷史途徑<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="網路上有不少關於歷史策略遊戲的史觀討論資源，此處參考[维多利亚2（Victoria2）：历史的逻辑](https://necromanov.wordpress.com/2010/09/01/victoria2/)的總結">2</span></a></sup>。</p>
+<p>以《世紀帝國》系列遊戲為例，玩家將選定特定文明，歷經黑暗、封建、城堡與帝王時代，逐步發展經濟與強化軍事，並以征服對手的文明為目標。在這種情況下，驅動事件的是勝負，遊戲機制維護的是玩家操作的合理性。</p>
+<p>事件發展皆與取勝密切相關，例如生產村民、升級科技或建立軍隊等，玩家會因戰局的發展做出行動，而不是各項遊戲內的社會因素與事件長遠影響。 歷史在此處作為遊戲氛圍的點綴，其真實性與玩家舉動沒什麼關係，也可能出現與史實脫節的狀況。</p>
+<p>而光榮的《三國誌》系列則展現了以人物為中心的敘事方式，讓玩家沉浸在大時代的故事中，挑戰歷史人物曾面臨的困境，實現他們曾立下的宏願。 基於這項設計，遊戲維護著歷史事件本身的獨特性。舉例來說，即使遊玩過程有別，赤壁之戰的劇本就該由曹操、劉備與孫權三方參與，才能營造出當代的氛圍。</p>
+<p>即使是假想的劇情，也會遵循一條合適的劇本發展。由於驅動遊戲進行的是劇本，因此事件紀錄更為著重在決定劇本分歧的選擇，這些會成為往後重啟遊戲回顧的關鍵（例如嘗試失敗，就得回到存檔點再試一次）。</p>
+<p>相比之下，由 paradox 公司出品的遊戲（例如《維多利亞》和《鋼鐵雄心》），更強調事件發生的合理性。在這種觀點下，遊戲機制維護的是事件發生的邏輯，而不是歷史事件本身。簡言之，參與事件的各方被抽象化，當各項參數合乎條件時，即可能觸發事件，然而因為國家環境與政治初始條件的影響，宏觀的歷史軌跡很可能相似，但在細節上可能會有差異。這類遊戲事件則更為複雜，紀錄的是影響參數的事件，例如革命事件可能會跟民生、外交與軍事等行為相關，從而影響民心之類的參數。</p>
+<p>這類歷史模擬遊戲的假想時間線是三款之中較接近基因體學研究現況的，相較之下，世紀帝國系列的歷史發展更像遵循熱力學（在遊戲的情境中即是取得勝利）而隨機構成的聚合物，事件的前因後果較為鬆散；這類遊戲的假想歷史紀錄呈現明顯的歷史分岔和障壁，在特定檢查點的狀況會引領迥然不同的路線。</p>
+<p>綜上所述，mVCF 紀錄的事件類型取決於紀錄者對歷史的看法。這些事件會與影響歷史的因素相關，從而允許我們從中歸納出歷史的必然和偶然。</p>
+<h2 id="個案研究：星際移民史"><a href="#個案研究：星際移民史" class="headerlink" title="個案研究：星際移民史"></a>個案研究：星際移民史</h2><p>既然已經探討了事件類型與其編碼方法，不妨透過個案研究來加深理解。想像一下，如果我們打算研究某個文明在不同時間線上展開星際移民的可能性。考量跨星系移動所需的龐大能量，可從文明的利用效率來推斷其進行星際移民的可能性。在這樣的研究框架下，我們將關注那些直接影響能源應用效率和規模的關鍵事件；而相對地，社會文化或國際政治事件則較無關緊要。</p>
+<p>為了有效編碼事件，我們可採用卡爾達肖夫指數 (<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kardashev_scale">Kardashev scale</a>) 作為衡量標準，標記一個文明各時期所能利用的能量規模。假設該文明能在夠長的時間內維持可觀的能源利用，這表明該文明更有可能具備承擔星際旅行所需能源的能力；反之，這個文明也可能因為戰爭或自然災害而喪失先進的科技水準。雖然這種事件編碼方式省略了許多細節，但它依然能夠概括地呈現文明的發展軌跡。</p>
+<p>在以下範例中，自然數代表卡爾達肖夫指數。在標準時間線中，可預期該文明將在四萬年後掌握恆星能源的應用。然而，在可觀測的眾多時間線裡，多數情況下 (99.99%) 文明會因某些事件而喪失這種能力。只有極為罕見的案例 (0.01%)，該文明的技術水準蕙突飛猛進，達到了能夠掌握並維持星系能源利用的階段。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#COSMOS	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	MITHC</span><br><span class="line">U42	40000	.	2	2333333333333333333333333,20	.	.	EF=0.0001,0.9999;DP=1000,1000	.	.</span><br></pre></td></tr></table></figure>
+
+<p>基於這項範例的觀察，星際交流可能非常罕見，因為在大多數時間線上都能觀察到科技衰退現象。這意味著或許存在某種過濾機制限制了文明的發展，這可以為人類文明的未來，或是解釋費米悖論指引一些研究方向。</p>
+<h2 id="什麼是異變（分歧事件），時間線的分歧又意味著什麼？"><a href="#什麼是異變（分歧事件），時間線的分歧又意味著什麼？" class="headerlink" title="什麼是異變（分歧事件），時間線的分歧又意味著什麼？"></a>什麼是異變（分歧事件），時間線的分歧又意味著什麼？</h2><blockquote>
+<p>異變或分歧事件在 mVCF 中指的是在不同時間線中發生的、與標準時間線不同的事件。這些分歧可以是小到一場戰役的結果不同，也可以是大到整個文明的興衰不同。這些分歧事件揭示了歷史的非線性和多變性，表明即使是微小的改變也可能引發巨大的連鎖反應。理解這些分歧有助於我們更深刻地認識決策的重要性以及歷史的複雜性。<br>基因變異與事件變異在性質上有顯著差異。基因變異通常局限於生物的物理屬性，而事件變異則涉及複雜的歷史語境。事件比對（類似於序列比對）涉及了事件的完整背景、因果關係和語境。例如，在科技發展史研究中，牛頓與萊布尼茲的微積分發明可能被視為同一事件，但在英德歷史研究中則被視為不同事件。這種比對可能需要更複雜的演算法或全面的人工智慧判斷。<br>在研究目的上，類似於基因變異的臨床檢驗、生態演化與族群遺傳，時間線分歧的研究可能專注於預測未來、判斷歷史驅動因素的必然性或偶然性，或是進行時間線間的比較研究。不同於基因變異影響衍生物，時間線的變異直接作用於其自身，這可能導致對歷史事件的解釋和影響分析更為複雜。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">事件異變與基因變異在本質上有顯著區別。基因變異影響的是生物體的物理特性，而事件異變則涉及更為複雜的歷史語境和因果關係。在分析事件異變時，我們需要考慮事件的整體背景、相互關聯和影響。例如，在科技發展史的研究中，牛頓和萊布尼茲各自發展的微積分可能被視為相同的事件，但在英國和德國的國家史中，則可能被視為不同的事件。這種事件比對比基因序列比對更為複雜，可能需要全面的人工智慧判斷或高度專業的人工分析。</span><br><span class="line"></span><br><span class="line">就研究目的而言，時間線分歧的分析可用於預測未來、判斷歷史驅動因素的必然性或偶然性，或進行不同時間線的比較研究。不同於基因變異影響生物體的衍生特性，時間線的變異直接作用於其自身，這可能對歷史事件的解釋和影響分析帶來更為複雜的挑戰。</span><br><span class="line">在處理事件異變時，我們需要的不僅是簡單的序列比對，而是對事件背景、動機、影響和連帶後果的全面分析。例如，科技發展史中的牛頓和萊布尼茲微積分的發明，雖然可以被視為相同的事件，但在英國和德國的國家史中，這兩件事就可能被視為不同事件。這需要比基因序列比對更複雜的演算法或全面的人工智慧判斷。</span><br><span class="line"></span><br><span class="line">比如，在臨床檢驗中，基因變異的研究可以幫助我們理解疾病的成因和治療方法。在歷史的脈絡中，分析事件的異變可以幫助我們理解特定決策或事件對歷史進程的影響。在生態演化中，基因變異的研究可以揭示生物多樣性和物種進化的機制；類似地，研究歷史事件的異變可以揭示文化和社會結構的演變。在族群遺傳學中，基因變異的研究有助於描繪人群遷徙和混合的歷史，而在mVCF的脈絡下，類似的分析可以揭示不同文化和政治力量如何塑造歷史的走向。</span><br></pre></td></tr></table></figure>
+<p>怎麼樣才知道事件發生分歧？換句話說，在辨別分歧事件時，我們需要迥異於序列比對的手段。事件可能很類似，但他們有完全不一樣的語境，那能否視為。<br>例如牛頓發明微積分與萊布尼茲發明微積分在是否可歸類於相同事件，若</p>
+<p>目前我還沒有比較明確的想法，但<br>在基因體學，偵測變異的原因不外乎歸納成因、<br>基因體與時間線其它差異在於：基因變異影響蛋白質與性狀，事件分歧則影響隨後的事件；基因變異作用在其衍生物，時間線發生分歧卻作用在其本身。</p>
+<h1 id="如果還等不到來自其他時間線的招呼…"><a href="#如果還等不到來自其他時間線的招呼…" class="headerlink" title="如果還等不到來自其他時間線的招呼…"></a>如果還等不到來自其他時間線的招呼…</h1><p>最後談談發現多重宇宙與其他時間線之前，能利用 mVCF 做些什麼。</p>
+<ul>
+<li>文獻管理</li>
+<li>完善格式</li>
+</ul>
+<blockquote>
+<p>它可以作為一個強大的文獻管理工具，幫助研究者整理和分析涉及替代歷史或假想情境的文獻。</p>
+</blockquote>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">也許往後會有類似 IUPAC 的機構，凝聚各領域事件編碼的共識。<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">網路上有不少關於歷史策略遊戲的史觀討論資源，此處參考<a target="_blank" rel="noopener" href="https://necromanov.wordpress.com/2010/09/01/victoria2/">维多利亚2（Victoria2）：历史的逻辑</a>的總結<a href="#fnref:2" rev="footnote">↩</a></span></li></ol></div></div>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/sf/" rel="tag"># sf</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/mayer-2023-the-art-of-clean-code-80-20-principle/" rel="prev" title="假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？">
+                  <i class="fa fa-angle-left"></i> 假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/nextflow-improve-user-experience-on-cli/" rel="next" title="Nextflow｜如何改善用戶的命令列使用體驗">
+                  Nextflow｜如何改善用戶的命令列使用體驗 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">184k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:08</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.umd.js" integrity="sha256-ytMJGN3toR+a84u7g7NuHm91VIR06Q41kMWDr2pq7Zo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/introduction-to-multiverse-variant-call-format/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

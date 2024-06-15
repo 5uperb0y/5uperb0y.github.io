@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.css" integrity="sha256-6cQIC71/iBIYXFK+0RHAvwmjwWzkWd+r7v/BX3/vZDc=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="給定一對數列，計算兩者的最小反轉距離，並依序列出反轉數列的步驟。  A reversal of a permutation can be encoded by the two indices at the endpoints of the interval that it inverts; for example, the reversal that transforms (4,1,2,6,3,5">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ROSALIND｜Sorting by Reversals (SORT)">
+<meta property="og:url" content="https://5uperb0y.com/sorting-by-reversals/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="給定一對數列，計算兩者的最小反轉距離，並依序列出反轉數列的步驟。  A reversal of a permutation can be encoded by the two indices at the endpoints of the interval that it inverts; for example, the reversal that transforms (4,1,2,6,3,5">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-06-07T09:53:35.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:37:46.141Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/sorting-by-reversals/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/sorting-by-reversals/","path":"sorting-by-reversals/","title":"ROSALIND｜Sorting by Reversals (SORT)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ROSALIND｜Sorting by Reversals (SORT) | 5uperb0y's blog</title>
+  
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">97</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%8E%E8%AB%96"><span class="nav-number">1.</span> <span class="nav-text">討論</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#and%E3%80%81-%E5%92%8C-intersection-%E7%9A%84%E5%B7%AE%E7%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">and、&amp; 和 intersection 的差異</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%A7%A3%E9%A1%8C%E6%83%B3%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">其他解題想法</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-15T02:10:03+08:00">
+        06/15
+      </time>
+      <a href="/gailman-2002-coraline/" title="第十四道門 Coraline">第十四道門 Coraline</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-13T00:52:24+08:00">
+        06/13
+      </time>
+      <a href="/jeong-2021-i-make-a-living-by-writing-webnovels/" title="我的職業是網路小說家：韓國人氣作家的致富寫作教室">我的職業是網路小說家：韓國人氣作家的致富寫作教室</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-11T22:11:25+08:00">
+        06/11
+      </time>
+      <a href="/open-reading-frames/" title="ROSALIND｜Open Reading Frames (ORF)">ROSALIND｜Open Reading Frames (ORF)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-09T21:32:14+08:00">
+        06/09
+      </time>
+      <a href="/translating-rna-into-protein/" title="ROSALIND｜Translating RNA into Protein (PROT)">ROSALIND｜Translating RNA into Protein (PROT)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-08T21:44:29+08:00">
+        06/08
+      </time>
+      <a href="/mishima-1951-natsukos-adventure/" title="夏子的冒險">夏子的冒險</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/reversal-distance/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-03</time>
+        <br>
+      ROSALIND｜Reversal Distance (REAR)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-point-mutations/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-04</time>
+        <br>
+      ROSALIND｜Counting Point Mutations (HAMM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/complementing-a-strand-of-dna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-03</time>
+        <br>
+      ROSALIND｜Complementing a strand of DNA (REVC)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-dna-nucleotides/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-01</time>
+        <br>
+      ROSALIND｜Counting DNA Nucleotides (DNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-shared-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-11</time>
+        <br>
+      ROSALIND | Finding a Shared Motif (LCSM)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/sorting-by-reversals/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Sorting by Reversals (SORT) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Sorting by Reversals (SORT)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-06-07 17:53:35" itemprop="dateCreated datePublished" datetime="2024-06-07T17:53:35+08:00">2024-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:37:46" itemprop="dateModified" datetime="2024-06-09T22:37:46+08:00">2024-06-09</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一對數列，計算兩者的最小反轉距離，並依序列出反轉數列的步驟。</p>
+<blockquote>
+<p>A reversal of a permutation can be encoded by the two indices at the endpoints of the interval that it inverts; for example, the reversal that transforms (4,1,2,6,3,5) into (4,1,3,6,2,5) is encoded by [3,5] .<br>A collection of reversals sorts π into γ if the collection contains drev(π,γ) reversals, which when successively applied to π yield γ .</p>
+</blockquote>
+<blockquote>
+<p>Given: Two permutations π and γ , each of length 10.<br>Return: The reversal distance drev(π,γ) , followed by a collection of reversals sorting π into γ . If multiple collections of such reversals exist, you may return any one.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/sort/">https://rosalind.info/problems/sort/</a>)</p>
+<span id="more"></span>
+
+<p>這題的概念與 <a href="https://5uperb0y.com/reversal-distance/">Reversal Distance</a> 相同，只是需要修改程式碼以便記錄和追蹤數列反轉的步驟。首先，在生成反轉數列的同時，我用 dictionary 記錄新生成數列的來源以及被反轉的子數列的首尾位置。這裡把首位座標值加 1 是因為題目的座標系統從 1 開始）。</p>
+<p>雖然這些資訊也可以用 list 紀錄，但使用 dictionary 可以透過 key 將資訊分門別類，在取值時會比用 list 時以座標取值明確。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">swap</span>(<span class="params">t</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        t[:i] + t[i:j][::-<span class="number">1</span>] + t[j:]: &#123;<span class="string">&quot;parent&quot;</span>: t, <span class="string">&quot;move&quot;</span>: (i + <span class="number">1</span>, j)&#125;</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(t) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(j)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>以下這個副程式用於生成數列集合的每個元素在經過一次反轉後可能產生的所有數列。由於修改了 swap 的輸出格式，所以這副程式也要跟著調整，確保之後能取得新生成的數列、這些數列的來源以及反轉步驟等資訊。</p>
+<p>雖然以 for 調用 dictionary 的時候，直接寫變項名稱（<code>var</code>）的效果與 <code>var.keys()</code> 一致，不過因為我常常忘記這特性，所以覺得還是清楚列出來比較好。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_next_steps</span>(<span class="params">current, visited</span>):</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        swap_e: details</span><br><span class="line">        <span class="keyword">for</span> e <span class="keyword">in</span> current.keys()</span><br><span class="line">        <span class="keyword">for</span> swap_e, details <span class="keyword">in</span> swap(e).items()</span><br><span class="line">        <span class="keyword">if</span> swap_e <span class="keyword">not</span> <span class="keyword">in</span> visited.keys()</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>由於記錄了各數列的源頭與反轉方式，所以配合已檢查過的數列清單 visited，即可追蹤數列的反轉步驟。簡而言之，就是拿當前數列去查詢 visited，記錄反轉步驟，再查出該數列的源頭，查詢數列源頭的反轉步驟，直到追蹤到起始數列。</p>
+<p>這裡我假設起始數列的資料格式為 <code>&#123;seq: -1&#125;</code>，所以只要檢查到 -1 就表示已經追蹤到起點了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_moves</span>(<span class="params">meet_point, visited</span>):</span><br><span class="line">    moves = []</span><br><span class="line">    current = visited[meet_point]</span><br><span class="line">    <span class="keyword">while</span> current != -<span class="number">1</span>:</span><br><span class="line">        moves.append(current[<span class="string">&quot;move&quot;</span>])</span><br><span class="line">        current = visited[current[<span class="string">&quot;parent&quot;</span>]]</span><br><span class="line">    <span class="keyword">return</span> moves</span><br></pre></td></tr></table></figure>
+
+<p>除了變項名稱以外，我也對計算反轉距離的功能做了一些調整。首先，因應使用 dictionary 記錄數列，比較雙向搜索是否有交集時，得額外取出兩者的 keys 來比對。</p>
+<p>其次，我轉而以交錯方式來推進搜索：利用 <code>check_forward</code> 當成開關，這變項決定這次檢查要從哪個方向開始，這樣能確保每次迴圈只會從數列前端或後端推進一步。這樣就不用像我之前寫得那樣，在每個迴圈為各方向的推進檢查兩次。</p>
+<p>其餘的步驟與先前的寫法類似，一旦雙向搜索的進度交錯，就分別使用 get_moves 重建反轉步驟。</p>
+<p>因為這個副程式預設用 append() 添加元素，所以對於從前端開始的檢查而言，在追蹤完所有反轉步驟後，要將輸出的 list 反轉才能得到正確的順序。結合前後兩端的反轉步驟，即得到兩數列互相轉換所需經過得最少反轉步驟。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rev_dist</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    cur_fwd, vis_fwd = &#123;s1: -<span class="number">1</span>&#125;, &#123;s1: -<span class="number">1</span>&#125;</span><br><span class="line">    cur_bwd, vis_bwd = &#123;s2: -<span class="number">1</span>&#125;, &#123;s2: -<span class="number">1</span>&#125;</span><br><span class="line">    dist = <span class="number">0</span></span><br><span class="line">    check_forward = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">while</span> cur_fwd <span class="keyword">and</span> cur_bwd:</span><br><span class="line">        intersection = cur_fwd.keys() &amp; cur_bwd.keys()</span><br><span class="line">        <span class="keyword">if</span> intersection:</span><br><span class="line">            meet_point = intersection.pop()</span><br><span class="line">            <span class="keyword">return</span> dist, get_moves(meet_point, vis_fwd)[::-<span class="number">1</span>] + get_moves(meet_point, vis_bwd)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> check_forward:</span><br><span class="line">                cur_fwd = get_next_steps(cur_fwd, vis_fwd)</span><br><span class="line">                vis_fwd.update(cur_fwd)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur_bwd = get_next_steps(cur_bwd, vis_bwd)</span><br><span class="line">                vis_bwd.update(cur_bwd)</span><br><span class="line">            dist = dist + <span class="number">1</span></span><br><span class="line">            check_forward = <span class="keyword">not</span> check_forward</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="and、-和-intersection-的差異"><a href="#and、-和-intersection-的差異" class="headerlink" title="and、&amp; 和 intersection 的差異"></a>and、&amp; 和 intersection 的差異</h2><p>intersection 和 &amp; 是 set 專用的操作符，兩者的功能相同。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">&gt; b = &#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line">&gt; a &amp; b</span><br><span class="line">&#123;<span class="number">3</span>&#125;</span><br><span class="line">&gt; a.intersection(b)</span><br><span class="line">&#123;<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>然而 &amp; 只允許 set 之前的操作，intersection 則支援 set 和任何 iterable 的比較，所以有可讀性和泛用性的優勢。詳情可參考這則 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/63827915/and-intersection-difference">stackoverflow 的說明</a> 和<a target="_blank" rel="noopener" href="https://docs.python.org/3.8/library/stdtypes.html#frozenset.intersection">官方文件</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; a = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line">&gt; a.intersection([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</span><br><span class="line">&#123;<span class="number">3</span>&#125;</span><br><span class="line">&gt; a.intersection(&#123;<span class="number">3</span>:<span class="number">3</span>, <span class="number">4</span>:<span class="number">4</span>, <span class="number">5</span>:<span class="number">5</span>&#125;)</span><br><span class="line">&#123;<span class="number">3</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>and 則是邏輯判斷符，不能用來集合運算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 這裡的邏輯是：a is True, then b，所以印出 b。</span></span><br><span class="line">&gt; a <span class="keyword">and</span> b</span><br><span class="line">&#123;<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;</span><br><span class="line"><span class="comment"># 用這案例會更加清楚：&#123;&#125; is False，所以不會印出 b，只有呈現 &#123;&#125;</span></span><br><span class="line">&gt; &#123;&#125; <span class="keyword">and</span> b</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他解題想法"><a href="#其他解題想法" class="headerlink" title="其他解題想法"></a>其他解題想法</h2><p>我覺得這種需要追蹤路徑的問題，如果用 class 來設計結構與方法可能會讓程式碼變得好維護許多。另外，之前在 Reversal Distance 也有列出用遞迴的解題方式，或許有空都可以拿來改寫看看。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/reversal-distance/" rel="prev" title="ROSALIND｜Reversal Distance (REAR)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Reversal Distance (REAR)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/mishima-1951-natsukos-adventure/" rel="next" title="夏子的冒險">
+                  夏子的冒險 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">184k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:08</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.umd.js" integrity="sha256-ytMJGN3toR+a84u7g7NuHm91VIR06Q41kMWDr2pq7Zo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/sorting-by-reversals/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

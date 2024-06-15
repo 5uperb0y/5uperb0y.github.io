@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.css" integrity="sha256-6cQIC71/iBIYXFK+0RHAvwmjwWzkWd+r7v/BX3/vZDc=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="給定一條以 FASTA 格式儲存的 DNA 序列，依據它的 open reading frames，列出所有可能由這條 DNA 序列轉譯出的蛋白質序列。  An open reading frame (ORF) is one which starts from the start codon and ends by stop codon, without any other stop codons">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ROSALIND｜Open Reading Frames (ORF)">
+<meta property="og:url" content="https://5uperb0y.com/open-reading-frames/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="給定一條以 FASTA 格式儲存的 DNA 序列，依據它的 open reading frames，列出所有可能由這條 DNA 序列轉譯出的蛋白質序列。  An open reading frame (ORF) is one which starts from the start codon and ends by stop codon, without any other stop codons">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://ars.els-cdn.com/content/image/1-s2.0-S0168952517302299-gr1.jpg">
+<meta property="article:published_time" content="2024-06-11T14:11:25.000Z">
+<meta property="article:modified_time" content="2024-06-11T14:45:57.647Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ars.els-cdn.com/content/image/1-s2.0-S0168952517302299-gr1.jpg">
+
+
+<link rel="canonical" href="https://5uperb0y.com/open-reading-frames/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/open-reading-frames/","path":"open-reading-frames/","title":"ROSALIND｜Open Reading Frames (ORF)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ROSALIND｜Open Reading Frames (ORF) | 5uperb0y's blog</title>
+  
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">97</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Python 實作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%8E%E8%AB%96%EF%BC%9Aopen-reading-frame-%E7%9A%84%E5%AE%9A%E7%BE%A9"><span class="nav-number">4.</span> <span class="nav-text">討論：open reading frame 的定義</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-15T02:10:03+08:00">
+        06/15
+      </time>
+      <a href="/gailman-2002-coraline/" title="第十四道門 Coraline">第十四道門 Coraline</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-13T00:52:24+08:00">
+        06/13
+      </time>
+      <a href="/jeong-2021-i-make-a-living-by-writing-webnovels/" title="我的職業是網路小說家：韓國人氣作家的致富寫作教室">我的職業是網路小說家：韓國人氣作家的致富寫作教室</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-11T22:11:25+08:00">
+        06/11
+      </time>
+      <a href="/open-reading-frames/" title="ROSALIND｜Open Reading Frames (ORF)">ROSALIND｜Open Reading Frames (ORF)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-09T21:32:14+08:00">
+        06/09
+      </time>
+      <a href="/translating-rna-into-protein/" title="ROSALIND｜Translating RNA into Protein (PROT)">ROSALIND｜Translating RNA into Protein (PROT)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-08T21:44:29+08:00">
+        06/08
+      </time>
+      <a href="/mishima-1951-natsukos-adventure/" title="夏子的冒險">夏子的冒險</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/translating-rna-into-protein/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-09</time>
+        <br>
+      ROSALIND｜Translating RNA into Protein (PROT)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/complementing-a-strand-of-dna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-03</time>
+        <br>
+      ROSALIND｜Complementing a strand of DNA (REVC)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/open-reading-frames/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Open Reading Frames (ORF) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Open Reading Frames (ORF)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-06-11 22:11:25 / 修改時間：22:45:57" itemprop="dateCreated datePublished" datetime="2024-06-11T22:11:25+08:00">2024-06-11</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.2k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>8 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一條以 FASTA 格式儲存的 DNA 序列，依據它的 open reading frames，列出所有可能由這條 DNA 序列轉譯出的蛋白質序列。</p>
+<blockquote>
+<p>An open reading frame (ORF) is one which starts from the start codon and ends by stop codon, without any other stop codons in between. Thus, a candidate protein string is derived by translating an open reading frame into amino acids until a stop codon is reached.</p>
+<p>Given: A DNA string s of length at most 1 kbp in FASTA format.</p>
+<p>Return: Every distinct candidate protein string that can be translated from ORFs of s. Strings can be returned in any order.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/orf/">https://rosalind.info/problems/orf/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在合成蛋白質時，核醣體會以三個核苷酸一組讀取 RNA 序列，添加各組核苷酸對應的胺基酸。核醣體開始讀取 RNA 序列的位置，會影響核苷酸的分組方式以及隨後轉譯出的蛋白質種類。由於 RNA 密碼子的長度為三，所以依據開始讀取序列的位置，每條 RNA 都會有三種劃分核苷酸的方式。</p>
+<p>如下所示，這樣將核酸序列依照密碼子長度劃分，讓核醣體讀取的方式，被稱作 reading frame。每個 reading frame 都定義了一個從不同核苷酸開始讀取的密碼子序列。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AAA GGG CCC</span><br><span class="line">A AAG GGC CC</span><br><span class="line">AA AGG GCC C</span><br></pre></td></tr></table></figure>
+
+<p>相較於 RNA，DNA 兩股序列的任一股都可能轉錄為 RNA 並且轉譯為蛋白質。因此，每條 DNA 有六種可能的 reading frame，其中三種來自順向股，另外三種則來自逆向股的 reverse complemnt。DNA 這六種 reading frame 對應的蛋白質序列叫做 six-frame translating sequences。</p>
+<p>以下表格呈現了 DNA 序列 <code>AAAGGGCCC</code> 的 six-frame translating sequences，感興趣的人可以到<a target="_blank" rel="noopener" href="https://www.bioline.com/media/calculator/01_13.html">這個網頁</a>試試看怎麼計算。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>translation in forward direction</th>
+<th>translation in reverse direction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>frame 1</td>
+<td>KGP</td>
+<td>GPF</td>
+</tr>
+<tr>
+<td>frame 2</td>
+<td>KG</td>
+<td>GP</td>
+</tr>
+<tr>
+<td>frame 3</td>
+<td>RA</td>
+<td>AL</td>
+</tr>
+</tbody></table>
+<p>Open reading frames (ORFs) 則是指 DNA 序列中，可能轉錄為 RNA 並且轉譯為蛋白質的片段。具體地說，ORFs 是由起始密碼子（<code>ATG</code>）延伸至終止密碼子（<code>TAG</code>、<code>TGA</code>、<code>TAA</code>）的區域。</p>
+<p>辨識基因體 ORFs 和 six-frame translating sequences 是尋找蛋白質譯碼基因的重要步驟。在許多臨床與研究場合，DNA 資料比起 RNA 或蛋白質資料更容易取得（或更經濟實惠），研究人員只能依賴 ORFs 和 six-frame translating sequences 來預測蛋白質譯碼基因，已進行功能分析或是基於蛋白質序列比較的親緣關係分析。</p>
+<p>例如在癌症基因檢測中，通常只對部分腫瘤熱點的 DNA 進行定序，再透過變異分析和註解來研究致病或治療相關的基因體功能變化。在微生物總基因體研究（metagenomics）中，也是透過定序環境 DNA 以及隨後的物種註解來普查群落的組成。</p>
+<p>此外，在缺乏足夠基因體註解資訊的情況下，ORFs 和 six-frame translating sequences 能成為尋找新的譯碼基因或預測基因功能的依據。而相較於 six-frame translating sequences，ORFs 更有機會反映真實的蛋白質譯碼基因，所以使用 ORFs 進行後續分析時，能減少數據分析的雜訊，降低計算的複雜性。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>這題要求從 FASTA 檔案讀取一條 DNA 序列，再列出它所有的 ORFs 對應的蛋白質序列。這一種情況與<a href="https://5uperb0y.com/translating-rna-into-protein/">轉譯 mature mRNA 那題</a>的情境不同。在真核生物的基因體中，有許多不參與蛋白質表現的 DNA，例如內含子、偽基因和調控子等非譯碼 DNA （non-coding DNA，它們有些不會被轉錄，有些則在轉錄後被切除，這導致 DNA 序列和實際會被轉譯出蛋白質的 mature mRNA 序列有所不同。</p>
+<p>即使 mRNA 能忠實地保留 DNA 的大部分序列，read frame 也取決於起始密碼子的位置。以 DNA 序列 <code>ATGCATGTAA</code> 為例，從前後兩個起始密碼子轉譯會產生兩種不同的蛋白質序列，它們各自來自不同的 read frame。因此，直接從 DNA 序列預測蛋白質序列時，必須考慮所有可能的 read frames，以確保不遺漏任何潛在的 ORFs。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 從第一個起始密碼子開始轉譯</span><br><span class="line">ATG CAT GTA A</span><br><span class="line"># 從第二個起始密碼子開始轉譯</span><br><span class="line">. ... ATG TAA</span><br></pre></td></tr></table></figure>
+
+<p>在此提供一個辨識 ORFs 的策略：</p>
+<ol>
+<li>由 5’ 到 3’ 一一讀取 DNA 序列。</li>
+<li>讀到起始密碼子時，暫存它的座標，再記錄當下的 read frame。</li>
+<li>如果碰到多個起始密碼子，都按步驟 2. 依照所在的 read frame 儲存它們的座標。</li>
+<li>一旦碰到終止密碼子，就取出對應 read frame 的起始密碼子座標，直到取出所有暫存的座標。</li>
+<li>ORFs 正是終止密碼子與起始密碼子之間的區域</li>
+<li>持續讀取 DNA 序列直到最後一個核苷酸為止。</li>
+</ol>
+<p>接著再用同樣的流程讀取反向互補序列，就能得到 DNA 所有 read frame 的 ORFs。最後根據 DNA 密碼表把 ORFs 序列轉換為對應的蛋白質序列即可滿足題目要求。</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>因為完成這題所需的幾項功能在先前的文章已經解釋過了，所以接下來我只會解釋要怎麼用 python 實作 ORFs 的辨識。解題的完整程式碼可參考<a target="_blank" rel="noopener" href="https://github.com/5uperb0y/rosalind/blob/main/code/orf/orf.py">我的 github</a>。</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>題目</th>
+<th>連結</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>讀取 FASTA 檔案</td>
+<td>Finding a Shared Motif</td>
+<td><a href="https://5uperb0y.com/finding-a-shared-motif/">Link</a></td>
+</tr>
+<tr>
+<td>取得反向互補序列</td>
+<td>Complementing a Strand of DNA</td>
+<td><a href="https://5uperb0y.com/complementing-a-strand-of-dna/">Link</a></td>
+</tr>
+<tr>
+<td>轉譯RNA序列</td>
+<td>Translating RNA into Protein</td>
+<td><a href="https://5uperb0y.com/translating-rna-into-protein/">Link</a></td>
+</tr>
+</tbody></table>
+<p>我使用 orf_locs (list) 儲存所有 ORFs 的座標。為了暫存不同 read frame 上發現的起始密碼子座標，我建立了一個由 3 個 lists 組成的 list，start_locs。其中的三個 list 分別對應 DNA 序列三種可能的 read frame (0, 1, 2)。</p>
+<p>在讀取 DNA 序列的過程中，透過將當前核苷酸的位置索引值對 3 取模數 ($position \mod 3$)，可以得知當前所在的 read frame 索引值。一旦遇到起始密碼子，將其座標存入 start_locs 對應 read frame 的 list；直到碰到終止密碼子，才把 start_locs 對應 list 的起始密碼子座標清空，與當前終止密碼子的座標組成 ORFs 區段，存入 orf_locs。</p>
+<p>讀取完整條序列後，再根據 ORFs 座標擷取所有 ORFs 對應的 DNA 子序列。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">orf</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Identifies all open reading frames (ORFs) from all read frames in a DNA sequence</span></span><br><span class="line"><span class="string">    that start with &#x27;ATG&#x27; and end with a stop codon (&#x27;TAA&#x27;, &#x27;TAG&#x27;, &#x27;TGA&#x27;).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA sequence.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        list: A list of ORF sequences.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    orf_locs = []</span><br><span class="line">    start_locs = [[], [], []]</span><br><span class="line">    <span class="keyword">for</span> pos, _ <span class="keyword">in</span> <span class="built_in">enumerate</span>(dna):</span><br><span class="line">        frame = pos % <span class="number">3</span></span><br><span class="line">        codon = dna[pos: pos + <span class="number">3</span>]</span><br><span class="line">        <span class="keyword">if</span> codon == <span class="string">&quot;ATG&quot;</span>:</span><br><span class="line">            start_locs[frame].append(pos)</span><br><span class="line">        <span class="keyword">elif</span> codon <span class="keyword">in</span> [<span class="string">&quot;TGA&quot;</span>, <span class="string">&quot;TAG&quot;</span>, <span class="string">&quot;TAA&quot;</span>]:</span><br><span class="line">            <span class="keyword">while</span> start_locs[frame]:</span><br><span class="line">                orf_locs.append((start_locs[frame].pop(), pos))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> [ dna[i:j] <span class="keyword">for</span> i, j <span class="keyword">in</span> orf_locs ]</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論：open-reading-frame-的定義"><a href="#討論：open-reading-frame-的定義" class="headerlink" title="討論：open reading frame 的定義"></a>討論：open reading frame 的定義</h1><p>Open reading frame 一詞的字面意思是：”Frames that remain open to keep ribosome reading”，指的是核酸序列中未被終止密碼子中斷的一段區域。由於 ORFs 主要用於預測蛋白質譯碼基因，所以也衍伸出許多能用於設計演算法的操作型定義 (Sievar et al., 2018)</p>
+<ul>
+<li>定義1：ORFs 是指長度為 3 的倍數，而且介於起始密碼子和終止密碼子之間的序列。</li>
+<li>定義2：ORFs 是指長度為 3 的倍數，而且介於兩組終止密碼子之間的序列。</li>
+<li>定義3：ORFs 是介於核酸裁切位點之間的序列。</li>
+</ul>
+<p><img data-src="https://ars.els-cdn.com/content/image/1-s2.0-S0168952517302299-gr1.jpg"></p>
+<p>（當中橘色線條標記的區域即為各種定義下的 ORFs，圖片來源：Sieber et al., 2018.）</p>
+<p>在這些定義中，第一種最為常見，包含這道題目都採用起始和終止密碼子來定義 ORFs 的範圍。定義 1 適用於基因體結構相對單純的原核生物，但在應用於真核生物時會有些問題。</p>
+<p>首先，位於內含子中的終止密碼子會導致 ORFs 短於實際可以轉譯出蛋白質的序列。其次，由於起始密碼子既作為開始轉譯的訊號，也是甲硫胺酸的密碼子，定義 1 在實務上難以區分這兩種狀況。</p>
+<p>相較之下，定義 2 只考慮終止密碼子，因此可以避免起始密碼子帶來的混淆問題。此外，定義 2 所構成的 ORFs 能夠較全面涵蓋到外顯子的位置，因此 Sievar et al. 推薦使用定義 2。至於第三種定義，則要仰賴基因體註解資訊（通常是在基因預測之後的步驟），而且只能用於真核生物，並不是偵測 ORF 演算法的常見方式。</p>
+<p>Sieber et al. (2018). The definition of open reading frame revisited. Trends in Genetics, 34(3), 167-170.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/translating-rna-into-protein/" rel="prev" title="ROSALIND｜Translating RNA into Protein (PROT)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Translating RNA into Protein (PROT)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/jeong-2021-i-make-a-living-by-writing-webnovels/" rel="next" title="我的職業是網路小說家：韓國人氣作家的致富寫作教室">
+                  我的職業是網路小說家：韓國人氣作家的致富寫作教室 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">184k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:08</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.umd.js" integrity="sha256-ytMJGN3toR+a84u7g7NuHm91VIR06Q41kMWDr2pq7Zo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/open-reading-frames/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

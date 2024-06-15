@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.css" integrity="sha256-6cQIC71/iBIYXFK+0RHAvwmjwWzkWd+r7v/BX3/vZDc=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Vim｜VSCodeVim 常用設定">
+<meta property="og:url" content="https://5uperb0y.com/vscode-common-settings-for-vscodevim/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-12-28T14:09:40.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:39:20.418Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="vim">
+<meta property="article:tag" content="vscode">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/vscode-common-settings-for-vscodevim/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/vscode-common-settings-for-vscodevim/","path":"vscode-common-settings-for-vscodevim/","title":"Vim｜VSCodeVim 常用設定"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Vim｜VSCodeVim 常用設定 | 5uperb0y's blog</title>
+  
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">97</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%A4%E4%BA%86-Esc%EF%BC%8C%E9%82%84%E6%9C%89%E5%93%AA%E4%BA%9B%E9%8D%B5%E9%81%A9%E5%90%88%E4%BD%9C%E7%82%BA%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8F%9B%E5%BF%AB%E6%8D%B7%E9%8D%B5%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">除了 Esc，還有哪些鍵適合作為模式切換快捷鍵？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%BF%B0%E4%B8%89%E7%A8%AE%E6%96%B9%E6%B3%95%E8%A6%81%E4%BF%AE%E6%94%B9-setting-json"><span class="nav-number">1.1.</span> <span class="nav-text">前述三種方法要修改 setting.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shift-Enter-%E7%9A%84%E6%96%B9%E6%B3%95%E8%A6%81%E6%94%B9-keybindings-json"><span class="nav-number">1.2.</span> <span class="nav-text">Shift + Enter 的方法要改 keybindings.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%B0%8D%E5%88%97%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">使用相對列名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%8E%E6%A8%A3%E8%A8%AD%E5%AE%9A%E5%BF%AB%E6%8D%B7%E9%8D%B5"><span class="nav-number">3.</span> <span class="nav-text">怎樣設定快捷鍵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%8E%E6%A8%A3%E6%89%8D%E4%B8%8D%E6%9C%83%E5%BF%98%E8%A8%98%E5%9C%A8%E5%88%87%E6%8F%9B%E6%A8%A1%E5%BC%8F%E5%BE%8C%E5%88%87%E7%82%BA%E8%8B%B1%E6%96%87%E8%BC%B8%E5%85%A5%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">怎樣才不會忘記在切換模式後切為英文輸入法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%AE%8A%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8F%9B%E5%BF%AB%E6%8D%B7%E9%8D%B5"><span class="nav-number">4.1.</span> <span class="nav-text">改變模式切換快捷鍵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8B%95%E5%88%87%E6%8F%9B%E8%BC%B8%E5%85%A5%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">自動切換輸入法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%9C%E9%96%89%E6%8B%AC%E8%99%9F%E8%87%AA%E5%8B%95%E8%A3%9C%E5%85%A8"><span class="nav-number">5.</span> <span class="nav-text">關閉括號自動補全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AA%BF%E6%95%B4%E8%A6%96%E7%AA%97%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%8D%B5"><span class="nav-number">6.</span> <span class="nav-text">調整視窗大小的快捷鍵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%AA%94%E6%A1%88%E7%80%8F%E8%A6%BD%E5%81%B4%E6%AC%84"><span class="nav-number">7.</span> <span class="nav-text">更新檔案瀏覽側欄</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B6%85%E6%A3%92%E7%9A%84%E5%AD%B8%E7%BF%92%E8%B3%87%E6%BA%90%E5%92%8C%E7%B6%B2%E7%AB%99"><span class="nav-number">8.</span> <span class="nav-text">超棒的學習資源和網站</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-15T02:10:03+08:00">
+        06/15
+      </time>
+      <a href="/gailman-2002-coraline/" title="第十四道門 Coraline">第十四道門 Coraline</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-13T00:52:24+08:00">
+        06/13
+      </time>
+      <a href="/jeong-2021-i-make-a-living-by-writing-webnovels/" title="我的職業是網路小說家：韓國人氣作家的致富寫作教室">我的職業是網路小說家：韓國人氣作家的致富寫作教室</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-11T22:11:25+08:00">
+        06/11
+      </time>
+      <a href="/open-reading-frames/" title="ROSALIND｜Open Reading Frames (ORF)">ROSALIND｜Open Reading Frames (ORF)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-09T21:32:14+08:00">
+        06/09
+      </time>
+      <a href="/translating-rna-into-protein/" title="ROSALIND｜Translating RNA into Protein (PROT)">ROSALIND｜Translating RNA into Protein (PROT)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-08T21:44:29+08:00">
+        06/08
+      </time>
+      <a href="/mishima-1951-natsukos-adventure/" title="夏子的冒險">夏子的冒險</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-remote-ssh-connection-not-working-after-update/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-07</time>
+        <br>
+      VSCode｜ Failed to parse remote port from server output
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-useful-shortcuts-and-their-settings/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-08</time>
+        <br>
+      VSCode｜常用快捷鍵與個人設置
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/navigate-websites-with-keyboard/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-24</time>
+        <br>
+      網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-extensions-that-are-do-nothing-but-are-cool/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-20</time>
+        <br>
+      VScode｜無助於開發，但有助於身心的套件
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/tabletop-simulator-lua-vscode-development-environment-building/" rel="bookmark">
+        <time class="popular-posts-time">2023-07-22</time>
+        <br>
+      在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/vscode-common-settings-for-vscodevim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Vim｜VSCodeVim 常用設定 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vim｜VSCodeVim 常用設定
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-12-28 22:09:40" itemprop="dateCreated datePublished" datetime="2022-12-28T22:09:40+08:00">2022-12-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:39:20" itemprop="dateModified" datetime="2024-06-09T22:39:20+08:00">2024-06-09</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>5 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。</p>
+<span id="more"></span>
+<h1 id="除了-Esc，還有哪些鍵適合作為模式切換快捷鍵？"><a href="#除了-Esc，還有哪些鍵適合作為模式切換快捷鍵？" class="headerlink" title="除了 Esc，還有哪些鍵適合作為模式切換快捷鍵？"></a>除了 <code>Esc</code>，還有哪些鍵適合作為模式切換快捷鍵？</h1><p>Vim 被開發出來的時候，<code>Esc</code> 位於現今當代鍵盤 <code>Tab</code> 和 <code>Caps</code> 的位置。如今，<code>Esc</code> 被移到鍵盤左上角，已不若以往方便了。既然 VSCodeVim 支援重新設定快捷鍵，那麼有哪些鍵適合作為模式切換快捷鍵？</p>
+<ol>
+<li><code>jj</code>：位置很棒，只是打字打到 j 時，會有輕微的停頓感。缺點是編輯中文時，要頻繁切換輸入法。</li>
+<li><code>jk</code>：一次按兩顆鍵，但因為可以一起按，沒有連續按鈕的卡頓感，只是同樣要解決換模式前得切換輸入法的問題。</li>
+<li><code>Enter</code>*2：剛開始使用 vim 很容易忘記切回 normal 模式，既然中文輸入會頻繁輸入 enter讓文字寫入文件，enter 設定為切換模式的快捷鍵既不會干擾文字輸入也好記。只是碰到換行時會延遲等候第二次按鍵的訊號，有時還挺煩人的。</li>
+<li><code>Shift</code> + <code>Enter</code>：雖然要兩個按鈕，但位置其實不錯按，而且不會輸入新列的卡頓感。唯一的缺點是設置稍嫌麻煩。</li>
+</ol>
+<h2 id="前述三種方法要修改-setting-json"><a href="#前述三種方法要修改-setting-json" class="headerlink" title="前述三種方法要修改 setting.json"></a>前述三種方法要修改 setting.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vim.insertModeKeyBindings&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;before&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;CR&quot;</span><span class="punctuation">,</span> <span class="string">&quot;CR&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;after&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;&lt;Esc&gt;&quot;</span><span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Shift-Enter-的方法要改-keybindings-json"><a href="#Shift-Enter-的方法要改-keybindings-json" class="headerlink" title="Shift + Enter 的方法要改 keybindings.json"></a><code>Shift</code> + <code>Enter</code> 的方法要改 keybindings.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">        <span class="comment">//https://github.com/VSCodeVim/Vim/issues/2584#issuecomment-385561286</span></span><br><span class="line">        <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shift+Enter&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;extension.vim_escape&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;when&quot;</span><span class="punctuation">:</span> <span class="string">&quot;editorTextFocus&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="使用相對列名"><a href="#使用相對列名" class="headerlink" title="使用相對列名"></a>使用相對列名</h1><p>由於 vim 可以為指令添加數字以重複執行，所以為了計算方便，需要設置相對行號，設定方式為：</p>
+<ol>
+<li><code>Ctrl</code> + <code>,</code>，啟動 UI 設定</li>
+<li>搜尋 “Line numbers” </li>
+<li>由 “on” 改為 “relative”，預設為絕對行號</li>
+</ol>
+<p>然而，內建方式只能顯示絕對行號或相對行號，若要一併顯示，則要安裝 <em>Double Line Numbers</em> 套件。</p>
+<ol>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>X</code>，開啟擴充套件。</li>
+<li>搜尋並安裝 <em>Double Line Numbers</em> </li>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，輸入 <code>Double Line Numbers: Relative + Absolute</code></li>
+</ol>
+<h1 id="怎樣設定快捷鍵"><a href="#怎樣設定快捷鍵" class="headerlink" title="怎樣設定快捷鍵"></a>怎樣設定快捷鍵</h1><p>vscode 和 vim 有些彼此衝突的快捷鍵，例如常用的 <code>Ctrl</code> + <code>F</code> 或 <code>Ctrl</code> +<code>W</code> 等。依照個人習慣，可以選擇 vim 模式要啟用那些快捷鍵</p>
+<ol>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
+<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
+<li>新增以下設置來關掉 vim的快捷鍵 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="attr">&quot;vim.handleKeys&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-d&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-s&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-w&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-t&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;&lt;C-z&gt;&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+這些是我常用的指令。</li>
+</ol>
+<h1 id="怎樣才不會忘記在切換模式後切為英文輸入法"><a href="#怎樣才不會忘記在切換模式後切為英文輸入法" class="headerlink" title="怎樣才不會忘記在切換模式後切為英文輸入法"></a>怎樣才不會忘記在切換模式後切為英文輸入法</h1><p>由於 Normal mode 僅能以英文輸入法下指令，假如在 Insert mode 以中文輸入法編輯文件，使用預設的 <code>Esc</code> 切換模式後，仍維持中文輸入法，還要將輸入法切回英文，才能下達指令。為了解決這問題有兩個策略：</p>
+<h2 id="改變模式切換快捷鍵"><a href="#改變模式切換快捷鍵" class="headerlink" title="改變模式切換快捷鍵"></a>改變模式切換快捷鍵</h2><p>第一種策略是把切換模式的快捷鍵設定為 <code>jj</code>，雖然不見得比較快，但一定能避免中文輸入法讓指令無法執行的問題。由於改用英文字母作為切換快捷鍵，所以在切換模式前一定要更換輸入法，所以能確保切換後一定是英文輸入法</p>
+<ol>
+<li><code>Shift</code>, then <code>jj</code>，切為 Normal mode</li>
+<li><code>i</code>，切為 Insert mode</li>
+<li><code>Shift</code>，切為中文輸入法</li>
+</ol>
+<h2 id="自動切換輸入法"><a href="#自動切換輸入法" class="headerlink" title="自動切換輸入法"></a>自動切換輸入法</h2><p>另一種是呼叫自動切換輸入法的腳本，在切回 normal mode 時自動幫我們切換文字</p>
+<ol>
+<li>下載 (im.select.exe)[<a target="_blank" rel="noopener" href="https://github.com/daipeihust/im-select]">https://github.com/daipeihust/im-select]</a> 放到任何你喜歡的路徑</li>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>P</code>，開啟 VScode 擴充套件命令列</li>
+<li>搜尋 “open user settings”，輸入 <code>Enter</code> 開啟 <code>setting.json</code></li>
+<li>新增以下設置以啟用輸入法自動切換 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.enable&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.defaultIM&quot;</span><span class="punctuation">:</span> <span class="string">&quot;us&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/path/to/im-select.exe -s &#123;im&#125;&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>透過這樣設置，在切回 normal mode 瞬間，就會變成英文輸入法。而進入 insert mode 時，就會回到當初離開時的輸入法。</p>
+<h1 id="關閉括號自動補全"><a href="#關閉括號自動補全" class="headerlink" title="關閉括號自動補全"></a>關閉括號自動補全</h1><p>VSCode 內建括號與引號自動補全，然而有時這還挺雞肋的，因為在括號內打完字還要使用方向鍵移到括號外才能繼續打字，若使用 Vim 還得切模式再移動，不管哪種方式都沒省太多功夫。因此，對於一般文本編輯或編輯程式碼的需求而言，似乎可以在 setting.json 添加以下設置來關閉自動補全。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// automatical closing</span></span><br><span class="line">    <span class="attr">&quot;editor.autoClosingQuotes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;editor.autoClosingBrackets&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="調整視窗大小的快捷鍵"><a href="#調整視窗大小的快捷鍵" class="headerlink" title="調整視窗大小的快捷鍵"></a>調整視窗大小的快捷鍵</h1><p>設定快捷鍵，就不用為了調整欄位大小，辛苦地讓游標對齊邊框了。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// put those into keybinding.json</span></span><br><span class="line">   <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+shift+d&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.decreaseViewSize&quot;</span></span><br><span class="line">   <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">   <span class="punctuation">&#123;</span></span><br><span class="line">       <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+shift+i&quot;</span><span class="punctuation">,</span></span><br><span class="line">       <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;workbench.action.increaseViewSize&quot;</span></span><br><span class="line">   <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="更新檔案瀏覽側欄"><a href="#更新檔案瀏覽側欄" class="headerlink" title="更新檔案瀏覽側欄"></a>更新檔案瀏覽側欄</h1><p>使用終端或指令新增或刪除檔案不會同步更新在檔案探索側欄，因為重新整理的按鈕太小了，所以我也設定快捷鍵輔助。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// put those into keybinding.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ctrl+f5&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;command&quot;</span><span class="punctuation">:</span><span class="string">&quot;workbench.files.action.refreshFilesExplorer&quot;</span><span class="punctuation">,</span></span><br><span class="line">	<span class="attr">&quot;when&quot;</span><span class="punctuation">:</span><span class="string">&quot;filesExplorerFocus&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="超棒的學習資源和網站"><a href="#超棒的學習資源和網站" class="headerlink" title="超棒的學習資源和網站"></a>超棒的學習資源和網站</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10291847">VsCodeVim 自動在normal mode切回英文輸入法的方法</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.blog.lasai.com.tw/2020/07/05/vscode-vim-mode/">vscode vim mode</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vim/" rel="tag"># vim</a>
+              <a href="/tags/vscode/" rel="tag"># vscode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/nextflow-input-with-an-empty-channel/" rel="prev" title="Nextflow｜輸入 empty channel 會發生什麼事？">
+                  <i class="fa fa-angle-left"></i> Nextflow｜輸入 empty channel 會發生什麼事？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/start-learning-vim-from-vimium/" rel="next" title="Vim｜Vimium，學習 Vim 的新途徑">
+                  Vim｜Vimium，學習 Vim 的新途徑 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">184k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:08</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.umd.js" integrity="sha256-ytMJGN3toR+a84u7g7NuHm91VIR06Q41kMWDr2pq7Zo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/vscode-common-settings-for-vscodevim/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

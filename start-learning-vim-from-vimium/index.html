@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.css" integrity="sha256-6cQIC71/iBIYXFK+0RHAvwmjwWzkWd+r7v/BX3/vZDc=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Vimium 是 Chrome 的一款擴充套件，它借鑒了 Vim 的鍵位設計與操作邏輯，讓用戶只需要鍵盤便能執行分頁管理、連結點擊與頁面瀏覽等操作。 由於瀏覽器終究不等同編輯器，所以 Vimium 並沒有移植 Vim 所有的功能與指令。然而，即使只納入 Vim 的部分性質，Vimium 仍顯著改善了 Chrome 的鍵盤瀏覽體驗。以點擊連結為例，Chrome 的預設作法是慢慢用 Tab 切到連結位">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Vim｜Vimium，學習 Vim 的新途徑">
+<meta property="og:url" content="https://5uperb0y.com/start-learning-vim-from-vimium/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="Vimium 是 Chrome 的一款擴充套件，它借鑒了 Vim 的鍵位設計與操作邏輯，讓用戶只需要鍵盤便能執行分頁管理、連結點擊與頁面瀏覽等操作。 由於瀏覽器終究不等同編輯器，所以 Vimium 並沒有移植 Vim 所有的功能與指令。然而，即使只納入 Vim 的部分性質，Vimium 仍顯著改善了 Chrome 的鍵盤瀏覽體驗。以點擊連結為例，Chrome 的預設作法是慢慢用 Tab 切到連結位">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true">
+<meta property="og:image" content="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_tab-operation.png?raw=true">
+<meta property="og:image" content="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_excluded-urls.png?raw=true">
+<meta property="og:image" content="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_page-navigation.png?raw=true">
+<meta property="article:published_time" content="2022-12-30T17:06:11.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:37:51.412Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true">
+
+
+<link rel="canonical" href="https://5uperb0y.com/start-learning-vim-from-vimium/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/start-learning-vim-from-vimium/","path":"start-learning-vim-from-vimium/","title":"Vim｜Vimium，學習 Vim 的新途徑"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Vim｜Vimium，學習 Vim 的新途徑 | 5uperb0y's blog</title>
+  
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">97</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%BD%E5%BE%9E-Vimium"><span class="nav-number">1.</span> <span class="nav-text">能從 Vimium</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%B8%E6%9C%83-Vimium-%E5%8F%AA%E8%A6%81%E4%B8%89%E5%88%86%E9%90%98"><span class="nav-number">2.</span> <span class="nav-text">學會 Vimium 只要三分鐘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5-Vim-style-%E7%80%8F%E8%A6%BD%E7%B6%B2%E9%A0%81"><span class="nav-number">3.</span> <span class="nav-text">以 Vim style 瀏覽網頁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8B%95%E6%B8%B8%E6%A8%99%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">移動游標的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A0%81%E7%AE%A1%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">分頁管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B8%E5%80%BC%E5%8F%83%E6%95%B8"><span class="nav-number">3.3.</span> <span class="nav-text">數值參數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A0%81%E9%9D%A2%E6%9B%B8%E7%B1%A4"><span class="nav-number">3.4.</span> <span class="nav-text">頁面書籤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mode-%E5%88%87%E6%8F%9B"><span class="nav-number">3.5.</span> <span class="nav-text">mode 切換</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88%E8%87%AA%E5%B7%B1%E5%B0%88%E5%B1%AC%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%8D%B5%E7%B5%84%E5%90%88"><span class="nav-number">4.</span> <span class="nav-text">設計自己專屬的快捷鍵組合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%9CExcluded-URLs-and-keys%E2%80%9D"><span class="nav-number">4.1.</span> <span class="nav-text">“Excluded URLs and keys”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%9CCustom-key-mapping%E2%80%9D"><span class="nav-number">4.2.</span> <span class="nav-text">“Custom key mapping”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%9CPrevious-patterns-and-Next-patterns%E2%80%9D"><span class="nav-number">4.3.</span> <span class="nav-text">“Previous patterns and Next patterns”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">5.</span> <span class="nav-text">結論</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-15T02:10:03+08:00">
+        06/15
+      </time>
+      <a href="/gailman-2002-coraline/" title="第十四道門 Coraline">第十四道門 Coraline</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-13T00:52:24+08:00">
+        06/13
+      </time>
+      <a href="/jeong-2021-i-make-a-living-by-writing-webnovels/" title="我的職業是網路小說家：韓國人氣作家的致富寫作教室">我的職業是網路小說家：韓國人氣作家的致富寫作教室</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-11T22:11:25+08:00">
+        06/11
+      </time>
+      <a href="/open-reading-frames/" title="ROSALIND｜Open Reading Frames (ORF)">ROSALIND｜Open Reading Frames (ORF)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-09T21:32:14+08:00">
+        06/09
+      </time>
+      <a href="/translating-rna-into-protein/" title="ROSALIND｜Translating RNA into Protein (PROT)">ROSALIND｜Translating RNA into Protein (PROT)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-08T21:44:29+08:00">
+        06/08
+      </time>
+      <a href="/mishima-1951-natsukos-adventure/" title="夏子的冒險">夏子的冒險</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/modify-vimium-to-label-and-close-pop-up/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-22</time>
+        <br>
+      Vim｜嘗試修改 Vimium 來關閉網頁 pop-up
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/navigate-websites-with-keyboard/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-24</time>
+        <br>
+      網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/start-learning-vim-from-vimium/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Vim｜Vimium，學習 Vim 的新途徑 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vim｜Vimium，學習 Vim 的新途徑
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-12-31 01:06:11" itemprop="dateCreated datePublished" datetime="2022-12-31T01:06:11+08:00">2022-12-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:37:51" itemprop="dateModified" datetime="2024-06-09T22:37:51+08:00">2024-06-09</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>8 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb">Vimium</a> 是 Chrome 的一款擴充套件，它借鑒了 Vim 的鍵位設計與操作邏輯，讓用戶只需要鍵盤便能執行分頁管理、連結點擊與頁面瀏覽等操作。</p>
+<p>由於瀏覽器終究不等同編輯器，所以 Vimium 並沒有移植 Vim 所有的功能與指令。然而，即使只納入 Vim 的部分性質，Vimium 仍顯著改善了 Chrome 的鍵盤瀏覽體驗。以點擊連結為例，Chrome 的預設作法是<a href="https://5uperb0y.com/navigate-websites-with-keyboard/">慢慢用 <code>Tab</code> 切到連結位置</a>；Vimium 則會自動標記視窗內的連結，用戶只要鍵入標記字符即可開啟連結。因為最多輸入三個字即可開啟連結，所以有時甚至比滑鼠點擊還迅速。</p>
+<p>對於習慣鍵鼠操作卻有心學習 Vim 的用戶而言，一時要以 Vim 取代既有的工作流程，可能是繁瑣且費時的過程。若先從 Vimium 著手，在體驗鍵盤瀏覽網頁的流暢感之餘，也能讓 Vim 操作的抽象性質融入日常生活（例如：查資料與逛論壇）。待初探了 Vim 的設計緣由，再逐步精進其他操作模式，也不失為一種學習 Vim 的可行策略。</p>
+<span id="more"></span>
+
+<h1 id="能從-Vimium"><a href="#能從-Vimium" class="headerlink" title="能從 Vimium"></a>能從 Vimium</h1><p>借鑒了 Vim 鍵位設計與操作邏輯，無論是管理分頁、點擊連結或瀏覽頁面都能夠只憑鍵盤操作。</p>
+<ul>
+<li><strong>習慣在 normal 模式瀏覽文件的方式</strong>：</li>
+<li><strong>理解以 home row 為核心的鍵位安排</strong>：Vim 的鍵位設計以 home row（<code>f</code> 和 <code>j</code> 那列）為核心，不用為了點選特殊控制鍵而過度伸展手指（例如：<code>Shift</code> + <code>Alt</code> + <code>F</code>），所有操作都不超過字母鍵盤，減少了手部位移的距離。</li>
+<li><strong>學習 vim 實用功能的邏輯與效果</strong>：Vimium 移植了</li>
+<li><strong>了解自訂快捷鍵的意義</strong>：相較於滑鼠，快捷鍵操作有更多空間能夠因應個人的需求調整。</li>
+<li></li>
+<li>能夠更為習慣 normal mode 的瀏覽方式j，</li>
+<li>體會以 home row 為中心的指令鍵位安排</li>
+<li>習慣使用垂直移動游標，例如 <code>j</code> &amp; <code>k</code></li>
+<li>了解 Vim easymotion 跳轉的邏輯與效果</li>
+<li>學會使用 <code>/</code> 搜尋文字</li>
+<li>體驗指令組合的效果</li>
+<li>依據需求自訂快捷鍵</li>
+<li>使用書籤功能</li>
+</ul>
+<h1 id="學會-Vimium-只要三分鐘"><a href="#學會-Vimium-只要三分鐘" class="headerlink" title="學會 Vimium 只要三分鐘"></a>學會 Vimium 只要三分鐘</h1><blockquote>
+<p>Press <code>f</code> to master Vimium (and navigate internet without a mouse.)</p>
+</blockquote>
+<p>Vimium 最大的特色是能透過「標記與跳轉」的模式開啟連結。一旦按下 <code>f</code>，Vimium 便會為視窗內所有可互動的項目（例如連結、欄位與按鈕）標註辨識碼，接著只要輸入辨識碼即可開啟連結。</p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="鍵入 `f` 後, Vimium 會為視窗內的可互動物件標記辨識碼，鍵入辨識碼即可開啟連結（使用 Vimium 操作 Google search)"></p>
+<ul>
+<li><code>L</code>：開啟「Vimium」</li>
+<li><code>SK</code>：開啟「工具」，透過 Vimium 的連結辨識碼，免除網頁設定欄位快捷鍵的負擔</li>
+<li><code>SA</code>：切換至「搜尋列」，可以編輯搜尋內容</li>
+</ul>
+<p>雖然 Vimium 有一套基於 home row 指令，Chrome 與 Windows 內建快捷鍵已能直觀地管理分頁（例如 <code>Ctrl</code> + <code>T</code>）與滑動視窗（例如方向鍵與空白鍵），要配合瀏覽網頁的需求是綽綽有餘。例如Vimium 配合特殊控制鍵，即可在不同分頁開啟連結。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>於當前分頁開啟</td>
+<td><code>f</code>, then ID</td>
+</tr>
+<tr>
+<td>於新分頁開啟</td>
+<td><code>f</code>, then <code>Shift</code> + ID</td>
+</tr>
+<tr>
+<td>於新分頁開啟並切換至新分頁</td>
+<td><code>f</code>, then <code>Ctrl</code> + ID</td>
+</tr>
+</tbody></table>
+<h1 id="以-Vim-style-瀏覽網頁"><a href="#以-Vim-style-瀏覽網頁" class="headerlink" title="以 Vim style 瀏覽網頁"></a>以 Vim style 瀏覽網頁</h1><p>鍵鼠操作以 <code>Ctrl</code>、<code>Home</code>、<code>PageUp</code> 等控制鍵，</p>
+<h2 id="移動游標的方式"><a href="#移動游標的方式" class="headerlink" title="移動游標的方式"></a>移動游標的方式</h2><table>
+<thead>
+<tr>
+<th>行為</th>
+<th>Vimium 快捷鍵</th>
+<th>Vim 快捷鍵</th>
+<th>Chrome 快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移至頂部</td>
+<td><code>gg</code></td>
+<td><code>gg</code></td>
+<td><code>Home</code></td>
+</tr>
+<tr>
+<td>向上移動半個視窗</td>
+<td><code>u</code></td>
+<td><code>Ctrl</code> + <code>u</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>向上移動一列</td>
+<td><code>k</code></td>
+<td><code>k</code></td>
+<td><code>↑</code></td>
+</tr>
+<tr>
+<td>向下移動一列</td>
+<td><code>j</code></td>
+<td><code>j</code></td>
+<td><code>↓</code></td>
+</tr>
+<tr>
+<td>向下移動半個視窗</td>
+<td><code>d</code></td>
+<td><code>Ctrl</code> + <code>d</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>移至底部</td>
+<td><code>G</code></td>
+<td><code>G</code></td>
+<td><code>End</code></td>
+</tr>
+</tbody></table>
+<h2 id="分頁管理"><a href="#分頁管理" class="headerlink" title="分頁管理"></a>分頁管理</h2><p>分頁管理是網頁瀏覽的特殊需求，所以 Vimium 就沒有照搬 Vim 的快捷鍵，而是將那些負責編輯或是功能與其他移動指令相近的按紐分配給分頁管理。<br><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_tab-operation.png?raw=true" alt="Vimium 分頁管理與頁面瀏覽的快捷鍵"><br>比對 Vimium 指令與 Chrome 快捷鍵會發現，後者需要用 <code>Ctrl</code> 和 <code>Alt</code> 等特殊控制鍵去定義。此外，觀察鍵盤位置分布可得知，Chrome 快捷鍵位置集中在兩側，似乎也是為了因應特殊控制鍵的分布以及持滑鼠的手的擺放位置。然而，瀏覽網頁時其實沒有文字輸入的需求，所以文字區塊的鍵盤等於閒置了。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>Vimium 指令</th>
+<th>Chrome 快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>開新分頁</td>
+<td><code>t</code></td>
+<td><code>Ctrl</code> + <code>T</code></td>
+</tr>
+<tr>
+<td>關閉分頁</td>
+<td><code>x</code></td>
+<td><code>Ctrl</code> + <code>W</code></td>
+</tr>
+<tr>
+<td>上一頁</td>
+<td><code>H</code></td>
+<td><code>Alt</code> + <code>←</code></td>
+</tr>
+<tr>
+<td>下一頁</td>
+<td><code>L</code></td>
+<td><code>Alt</code> + <code>→</code></td>
+</tr>
+<tr>
+<td>直達分頁</td>
+<td><code>#g0</code></td>
+<td><code>Ctrl</code> + <code>#</code></td>
+</tr>
+<tr>
+<td>上一分頁</td>
+<td><code>J</code></td>
+<td><code>Alt</code> + <code>Shift</code> + <code>Tab</code></td>
+</tr>
+<tr>
+<td>下一分頁</td>
+<td><code>K</code></td>
+<td><code>Alt</code> + <code>Tab</code></td>
+</tr>
+</tbody></table>
+<h2 id="數值參數"><a href="#數值參數" class="headerlink" title="數值參數"></a>數值參數</h2><p>就目前使用下來的想法，為什麼稱呼 Vimium 的行為為「指令」，而chrome的操作為「快捷鍵」，這是因為 Vimium 移植了 Vim 的機制，視每次操作為單元指令，指令可彼此疊加與重複創造出更複雜的行為。Vim 指令的行為分為 motion, replication factor, and operator。前述提及的所有指令都可算是 motion，亦即移動游標數個單位，例如一個視窗、一列、整個頁面等。這些指令都可以再前面冠上 replication factor 來增加執行次數 <replication factor> <motion>。</p>
+<p>而 operator 則是對文字的編輯，這包含了 c (change)、y (yank拖)、d(delete)等，<br>Vimium 保留了 Vim 重複計數 (repeat count or replication factor) 的機制，用戶只要在命令前加上數字，便能指定命令的重複執行次數。</p>
+<ul>
+<li><code>4t</code>：開啟四個分頁</li>
+<li><code>3x</code>：關閉前三個分頁</li>
+<li><code>2d</code>：下移一個視窗(半個視窗 * 2)</li>
+<li><code>3g0</code>：直達第三個分頁</li>
+</ul>
+<h2 id="頁面書籤"><a href="#頁面書籤" class="headerlink" title="頁面書籤"></a>頁面書籤</h2><ol>
+<li><code>mc</code>，建立分頁內標記，<code>c</code> 可替換為其他小寫字母</li>
+<li><code>mC</code>，建立跨分頁標記，<code>C</code> 可替換為其他大寫字母</li>
+<li>&#96;&#96;c&#96;，跳轉至標記的位置</li>
+</ol>
+<h2 id="mode-切換"><a href="#mode-切換" class="headerlink" title="mode 切換"></a>mode 切換</h2><p>其實 Vimium 也有 insert 與 visual 模式，但相當罕用，原因如下：</p>
+<ol>
+<li>網頁瀏覽唯一的編輯機會是調整網址</li>
+<li>若有大量編輯需求，也是在 google doc 或 Rstudio 這種瀏覽器編輯器編輯，裏頭應該有對應的 vim 套件才對</li>
+<li>調整網址或更新關鍵字幾乎沒有重複操作或複雜編輯的需求</li>
+</ol>
+<p>Vimium 的 insert 模式與其說是用於編輯文字，不如說是為了暫時脫離 Vimium 指令模式。Normal 模式的指令與快捷鍵在 Insert 模式無效，在 youtube, gmail 等內建快捷鍵相當完善的網頁時，使用 insert mode 就能用網頁預設的快捷鍵，避免衝突。</p>
+<h1 id="設計自己專屬的快捷鍵組合"><a href="#設計自己專屬的快捷鍵組合" class="headerlink" title="設計自己專屬的快捷鍵組合"></a>設計自己專屬的快捷鍵組合</h1><p>鼓勵用戶，Vimium 支援了自訂以下項目的功能，</p>
+<p>首先鍵入 <code>?</code> 開啟 “Vimium Help”，再點選 “Options” 進入設定面板，即能看到以下設定</p>
+<h2 id="“Excluded-URLs-and-keys”"><a href="#“Excluded-URLs-and-keys”" class="headerlink" title="“Excluded URLs and keys”"></a>“Excluded URLs and keys”</h2><p>這設定能限定特定網域適用的 Vimium 快捷鍵，以避免其覆蓋網頁或瀏覽器預設的快捷鍵。舉例來說，Vimium 的 <code>/</code>（搜尋頁內文字）會覆蓋 Google search 的 <code>/</code>（重返搜尋列）。</p>
+<p>如果我已經很習慣使用 <code>Ctrl</code> + <code>F</code> 來查找頁內文字或是使用 <code>/</code> 來編輯搜索關鍵字，可以透過編輯 “Patterns” 和 “Keys”，讓 Vimium 的 <code>/</code> 設定不套用在 Google search 上。</p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_excluded-urls.png?raw=true" alt="編輯 &quot;Excluded URLs and keys&quot; 來設定 Vimium 快捷鍵的適用範圍（Keys 預設是禁用全數快捷鍵，而 Patterns 可用正則表達式編寫規則）"></p>
+<h2 id="“Custom-key-mapping”"><a href="#“Custom-key-mapping”" class="headerlink" title="“Custom key mapping”"></a>“Custom key mapping”</h2><p>這設定能調整預設的快捷鍵以符合用戶的使用習慣。好比說，如果不習慣 <code>h</code> <code>j</code> <code>k</code> <code>l</code> 的操作，可以透過以下方式改成動作遊戲常用的 <code>a</code> <code>s</code> <code>w</code> <code>d</code> (<code>map &lt;key&gt; &lt;command&gt;</code>)。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 改以 wasd 配置移動視窗</span></span><br><span class="line">map a scrollLeft </span><br><span class="line">map s scrollDown</span><br><span class="line">map w scrollUp</span><br><span class="line">map d scrollRight</span><br></pre></td></tr></table></figure>
+<p>進階一點也能為常用網址設置快捷鍵 (<code>map &lt;key&gt; createTab &lt;url&gt;</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 鍵入 @tl 以開啟 Google 翻譯</span></span><br><span class="line">map @tl createTab https://translate.google.com.tw/?hl=zh-TW</span><br></pre></td></tr></table></figure>
+
+<h2 id="“Previous-patterns-and-Next-patterns”"><a href="#“Previous-patterns-and-Next-patterns”" class="headerlink" title="“Previous patterns and Next patterns”"></a>“Previous patterns and Next patterns”</h2><p>輸入 <code>[[</code>（上一頁）或 <code>]]</code>（下一頁）之後，Vimium 會搜尋並開啟頁面內含「上一頁」或「下一頁」的連結。這功能完全解決了 Google search 無法迅速跳轉到下一頁搜索結果的問題。然而 Vimium 預設是辨識英文和箭頭符號，所以要應用於中文網站時得自行添加搜索標的。</p>
+<ol>
+<li>點選 “Show Advanced Options”</li>
+<li>編輯 “Previous patterns” 與 “Next patterns” </li>
+<li>依照自己常用的網頁添加搜索標的（例如：Google search，上一頁&#x2F;下一頁；ptt.cc，&lt;&#x2F;&gt;；巴哈姆特，◄&#x2F;►）</li>
+</ol>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_page-navigation.png?raw=true" alt="可以檢查常用網站的上一頁/下一頁來調整快捷鍵偵測的字串"></p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>《原子習慣》，這些訣竅也適用於學習新事物。</p>
+<ol>
+<li>善用 <code>f</code> 點擊連結</li>
+<li>維持原本的瀏覽網頁</li>
+<li>透過 <code>?</code> 查詢指令</li>
+<li>學習使用 vim-like 指令瀏覽與管理分頁</li>
+<li>配合習慣，自訂適合自己的快捷鍵組合</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vim/" rel="tag"># vim</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/vscode-common-settings-for-vscodevim/" rel="prev" title="Vim｜VSCodeVim 常用設定">
+                  <i class="fa fa-angle-left"></i> Vim｜VSCodeVim 常用設定
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/nextflow-how-data-is-passed-between-processes-through-channels/" rel="next" title="Nextflow｜資料是怎麼在 Process 間傳遞？">
+                  Nextflow｜資料是怎麼在 Process 間傳遞？ <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">184k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:08</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.umd.js" integrity="sha256-ytMJGN3toR+a84u7g7NuHm91VIR06Q41kMWDr2pq7Zo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/start-learning-vim-from-vimium/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

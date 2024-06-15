@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.css" integrity="sha256-6cQIC71/iBIYXFK+0RHAvwmjwWzkWd+r7v/BX3/vZDc=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。 在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="常見的生物資訊軟體開發文件">
+<meta property="og:url" content="https://5uperb0y.com/a-collection-of-essential-documents-for-bioinformatis-software/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。 在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-01-21T12:52:59.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:34:46.689Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="development">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/a-collection-of-essential-documents-for-bioinformatis-software/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/a-collection-of-essential-documents-for-bioinformatis-software/","path":"a-collection-of-essential-documents-for-bioinformatis-software/","title":"常見的生物資訊軟體開發文件"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>常見的生物資訊軟體開發文件 | 5uperb0y's blog</title>
+  
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">97</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E7%9A%84%E7%94%9F%E7%89%A9%E8%B3%87%E8%A8%8A%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC%E6%96%87%E4%BB%B6%E6%B8%85%E5%96%AE"><span class="nav-number">1.</span> <span class="nav-text">常見的生物資訊軟體開發文件清單</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#README-%E5%92%8C-CHANGELOG-%E7%9A%84%E5%B7%AE%E7%95%B0"><span class="nav-number">2.</span> <span class="nav-text">README 和 CHANGELOG 的差異</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Commits-%E5%92%8C-CHANGELOG-%E7%9A%84%E5%B7%AE%E7%95%B0"><span class="nav-number">3.</span> <span class="nav-text">Commits 和 CHANGELOG 的差異</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code-comments-%E5%92%8C-Docstring-%E7%9A%84%E5%B7%AE%E7%95%B0"><span class="nav-number">4.</span> <span class="nav-text">Code comments 和 Docstring 的差異</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E6%96%87%E4%BB%B6%E6%87%89%E5%AD%98%E6%94%BE%E4%BD%95%E8%99%95%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">開發文件應存放何處？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">6.</span> <span class="nav-text">結論</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E9%96%B1%E8%AE%80"><span class="nav-number">7.</span> <span class="nav-text">延伸閱讀</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-15T02:10:03+08:00">
+        06/15
+      </time>
+      <a href="/gailman-2002-coraline/" title="第十四道門 Coraline">第十四道門 Coraline</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-13T00:52:24+08:00">
+        06/13
+      </time>
+      <a href="/jeong-2021-i-make-a-living-by-writing-webnovels/" title="我的職業是網路小說家：韓國人氣作家的致富寫作教室">我的職業是網路小說家：韓國人氣作家的致富寫作教室</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-11T22:11:25+08:00">
+        06/11
+      </time>
+      <a href="/open-reading-frames/" title="ROSALIND｜Open Reading Frames (ORF)">ROSALIND｜Open Reading Frames (ORF)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-09T21:32:14+08:00">
+        06/09
+      </time>
+      <a href="/translating-rna-into-protein/" title="ROSALIND｜Translating RNA into Protein (PROT)">ROSALIND｜Translating RNA into Protein (PROT)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-06-08T21:44:29+08:00">
+        06/08
+      </time>
+      <a href="/mishima-1951-natsukos-adventure/" title="夏子的冒險">夏子的冒險</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-extract-docstring-from-a-module/" rel="bookmark">
+        <time class="popular-posts-time">2024-01-11</time>
+        <br>
+      Nextflow｜模仿 docstring 來註解 process and workflow
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/hexo-cannot-get-slash-error/" rel="bookmark">
+        <time class="popular-posts-time">2024-01-02</time>
+        <br>
+      hexo 部屬後網頁報錯 "cannot get /"
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/a-collection-of-essential-documents-for-bioinformatis-software/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="常見的生物資訊軟體開發文件 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          常見的生物資訊軟體開發文件
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-01-21 20:52:59" itemprop="dateCreated datePublished" datetime="2024-01-21T20:52:59+08:00">2024-01-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:34:46" itemprop="dateModified" datetime="2024-06-09T22:34:46+08:00">2024-06-09</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.7k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>10 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
+<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
+<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
+<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
+<span id="more"></span>
+
+<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>內容</th>
+<th>額外受眾</th>
+<th>指引</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Issues</td>
+<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
+<td>專案經理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a target="_blank" rel="noopener" href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
+</tr>
+<tr>
+<td>Docstring &amp; Type hints</td>
+<td>描述程式模組的功能、參數與回傳資訊</td>
+<td>開發者</td>
+<td><a target="_blank" rel="noopener" href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a target="_blank" rel="noopener" href="https://peps.python.org/pep-0484/">PEP 484</a></td>
+</tr>
+<tr>
+<td>Code comments</td>
+<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
+<td>開發者</td>
+<td><a target="_blank" rel="noopener" href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
+</tr>
+<tr>
+<td>Built-in help</td>
+<td>軟體內建的用戶幫助訊息</td>
+<td>用戶</td>
+<td><a target="_blank" rel="noopener" href="http://docopt.org/">docopt</a></td>
+</tr>
+<tr>
+<td>Commit messages</td>
+<td>摘要程式碼異動的內容、理由與背景</td>
+<td>開發者</td>
+<td><a target="_blank" rel="noopener" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
+</tr>
+<tr>
+<td>Pull requests</td>
+<td>簡述為滿足需求對應的軟體異動及其理據</td>
+<td>審查者</td>
+<td><a target="_blank" rel="noopener" href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a target="_blank" rel="noopener" href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
+</tr>
+<tr>
+<td>README</td>
+<td>介紹專案目標、安裝使用與授權等入門資訊</td>
+<td>用戶</td>
+<td><a target="_blank" rel="noopener" href="https://www.makeareadme.com/">Make a README</a></td>
+</tr>
+<tr>
+<td>CHANGELOG</td>
+<td>紀錄專案開發歷程與各版本更新內容</td>
+<td>用戶</td>
+<td><a target="_blank" rel="noopener" href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
+</tr>
+</tbody></table>
+<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
+<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
+<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
+<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
+
+<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
+<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
+<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
+<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
+<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
+<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
+<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
+<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
+<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
+<ul>
+<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
+<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
+<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
+</ul>
+<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
+<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
+<p>常見的專案文件結構如下，例如 Python 的 <a target="_blank" rel="noopener" href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a target="_blank" rel="noopener" href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
+<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
+<li><a target="_blank" rel="noopener" href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/development/" rel="tag"># development</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/the-door-into-astrobiology/" rel="prev" title="The Door into Astrobiology | 天文生物學入門資源">
+                  <i class="fa fa-angle-left"></i> The Door into Astrobiology | 天文生物學入門資源
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/how-william-gibson-depict-the-future-in-neuromancer/" rel="next" title="莫莉的眼睛：《神經喚術士》的未來描寫">
+                  莫莉的眼睛：《神經喚術士》的未來描寫 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">184k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:08</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.28/fancybox/fancybox.umd.js" integrity="sha256-ytMJGN3toR+a84u7g7NuHm91VIR06Q41kMWDr2pq7Zo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/a-collection-of-essential-documents-for-bioinformatis-software/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
