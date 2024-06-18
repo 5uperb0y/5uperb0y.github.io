@@ -274,6 +274,20 @@
       </tags>
   </entry>
   <entry>
+    <title>bad interpreter: No such file or directory</title>
+    <url>/bad-interpreter-no-such-file-or-directory/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
+<span id="more"></span>
+
+<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
+<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
+<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
+]]></content>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我們就是火星人：尋找宇宙中的地外生命</title>
     <url>/bignami-2012-we-are-the-martians/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>生命和宇宙的聯繫是《我們就是火星人》的主旋律。大霹靂後的原初核合成（Big Bang nucleosynthesis）雖然僅持續短暫時間，卻製造了宇宙含量最豐富的元素氫、氦。然而隨著空間持續膨脹，溫度下降到無法維持核融合反應，導致原初核合成中止。</p>
@@ -292,20 +306,6 @@
 ]]></content>
       <tags>
         <tag>life in the universe</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>bad interpreter: No such file or directory</title>
-    <url>/bad-interpreter-no-such-file-or-directory/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Linux 執行 Perl、R 或 Python 腳本時，有幾種情況可能會跳出 “bad interpreter: No such file or directory”。</p>
-<span id="more"></span>
-
-<h1 id="打錯字"><a href="#打錯字" class="headerlink" title="打錯字"></a>打錯字</h1><p>檢查 #!&#x2F;usr&#x2F;bin&#x2F;env 有沒有拼對，如果拼錯的話也會報錯。</p>
-<h1 id="路徑不對"><a href="#路徑不對" class="headerlink" title="路徑不對"></a>路徑不對</h1><p>即「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">執行Python “&#x2F;bin&#x2F;usr&#x2F;python: bad interpreter: No such file or directory” 錯誤</a>」中提到的問題：當腳本開頭寫成 #!&#x2F;usr&#x2F;bin&#x2F;python 時，如果沒有主動連結到安裝的 python 版本，有可能找不到。改寫成 #!&#x2F;usr&#x2F;bin&#x2F;env python，就會自動尋找 python 的路徑了。</p>
-<h1 id="腳本的編碼格式不相容"><a href="#腳本的編碼格式不相容" class="headerlink" title="腳本的編碼格式不相容"></a>腳本的編碼格式不相容</h1><p>Windows 記事本的格式和 Linux 的腳本不同，所以會因為隱藏的字元而無法判讀，解決方法可參考「<a href="https://www.cnblogs.com/xuxianren/p/4612440.html">sh腳本異常：&#x2F;bin&#x2F;sh^M:bad interpreter: No such file or directory</a>」，在 vi 或 vim 編輯器下，以 :set fileformat&#x3D;unix 修改腳本編碼。</p>
-]]></content>
-      <tags>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -447,6 +447,33 @@
       </tags>
   </entry>
   <entry>
+    <title>DADA2 execution halted (Error in table: attempt to make a table with &gt;= 2^31 elements)</title>
+    <url>/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文純粹是技術問題。我之前以 Qiime2 外掛的 DADA2 處理已切除轉接子的 16S rRNA 基因序列 (V4 region) 時，因為以下錯誤而中斷了執行四天的程式。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">Plugin error from dada2<span class="operator">:</span> An error was encountered <span class="keyword">while</span> running DADA2 <span class="keyword">in</span> R <span class="punctuation">(</span><span class="built_in">return</span> code <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">,</span> please inspect stdout and stderr to learn more.</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>我檢查錯誤報告後發現以下敘述：</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">Error <span class="keyword">in</span> table<span class="punctuation">(</span>pairdf<span class="operator">$</span>forward<span class="punctuation">,</span> pairdf<span class="operator">$</span>reverse<span class="punctuation">)</span> <span class="operator">:</span></span><br><span class="line">attempt to make a table with <span class="operator">&gt;=</span> <span class="number">2</span><span class="operator">^</span><span class="number">31</span> elements</span><br><span class="line">Calls<span class="operator">:</span> mergePairs <span class="operator">-&gt;</span> lapply <span class="operator">-&gt;</span> FUN <span class="operator">-&gt;</span> table</span><br><span class="line">Execution halted</span><br><span class="line">Running external command line application<span class="punctuation">(</span>s<span class="punctuation">)</span>. This may print messages to stdout and<span class="operator">/</span>or stderr.</span><br><span class="line">The command<span class="punctuation">(</span>s<span class="punctuation">)</span> being run are below. These commands cannot be manually re<span class="operator">-</span>run as they will depend on temporary files that no longer exist.</span><br></pre></td></tr></table></figure>
+
+<p>於是根據關鍵字查詢只找到<a href="https://github.com/benjjneb/dada2/issues/641">一起相似案例</a>，但該討論串沒有提供可行的解決辦法。簡言之，提問者的資料中可能有人類序列汙染，導致獨特序列的數量超出 DADA2 演算法的上限，所以程式才異常中斷。</p>
+<p>然而，抽檢資料卻沒發現人類序列汙染，而且使用小量資料可以順利執行，讓我難以判斷問題的癥結點。因此，我蒐集 Qiime2 論壇上常提到的出錯狀況，一一測試來確認能否解決問題。</p>
+<p>首先，我<a href="https://forum.qiime2.org/t/dada2-error-return-code-1/7140/3">調整了線程</a>以免記憶體用罄，接著<a href="https://forum.qiime2.org/t/dada2-return-code-1/2972">檢查格式</a>確保資料完整無誤，也重新安裝以排除未知問題，但這些方法都無濟於事，所以我只好 Qiime2 論壇<a href="https://forum.qiime2.org/t/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/11845">求助</a>。</p>
+<p>開發團隊指出，這狀況可能是資料中有未清除的技術片段、定序品質太差或是存在汙染序列，使得 DADA2 在其中一步驟時，因數據量過載而中斷（這也可以解釋少量資料可以順利執行的原因）。</p>
+<p>在我移除潛在的文庫汙染，切除末端的低品質序列後，DADA2 便能順利執行了。綜上所述，此錯誤源於數量過多的低品質&#x2F;汙染序列，在移除汙染和品質控管後，即可解決問題。</p>
+<p>而關於除錯，我也學到了幾個經驗：</p>
+<ul>
+<li>仔細閱讀錯誤訊息，鎖定問題癥結點後才能有效排除障礙。胡亂猜測出錯原因無濟於事，反而浪費時間和精力。</li>
+<li>要以錯誤訊息為關鍵字，上網找尋類似問題的解決方式；若找不到直接相關的問題，則重新檢視演算法，說不定可以找到問題來源。</li>
+<li>把蒐集到的方法整理成表，一一測試結果。</li>
+<li>若查詢和測試皆無果，則準備詳盡資料到專門論壇求助。</li>
+<li>解決問題後把過程記錄下來，幫助其他人克服困難🥰</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>metagenomics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROSALIND｜Enumerating Gene Orders (PERM)</title>
     <url>/enumerating-gene-orders/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 的所有可能數列與其總數。</p>
@@ -501,33 +528,6 @@
 ]]></content>
       <tags>
         <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DADA2 execution halted (Error in table: attempt to make a table with &gt;= 2^31 elements)</title>
-    <url>/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文純粹是技術問題。我之前以 Qiime2 外掛的 DADA2 處理已切除轉接子的 16S rRNA 基因序列 (V4 region) 時，因為以下錯誤而中斷了執行四天的程式。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">Plugin error from dada2<span class="operator">:</span> An error was encountered <span class="keyword">while</span> running DADA2 <span class="keyword">in</span> R <span class="punctuation">(</span><span class="built_in">return</span> code <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">,</span> please inspect stdout and stderr to learn more.</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>我檢查錯誤報告後發現以下敘述：</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">Error <span class="keyword">in</span> table<span class="punctuation">(</span>pairdf<span class="operator">$</span>forward<span class="punctuation">,</span> pairdf<span class="operator">$</span>reverse<span class="punctuation">)</span> <span class="operator">:</span></span><br><span class="line">attempt to make a table with <span class="operator">&gt;=</span> <span class="number">2</span><span class="operator">^</span><span class="number">31</span> elements</span><br><span class="line">Calls<span class="operator">:</span> mergePairs <span class="operator">-&gt;</span> lapply <span class="operator">-&gt;</span> FUN <span class="operator">-&gt;</span> table</span><br><span class="line">Execution halted</span><br><span class="line">Running external command line application<span class="punctuation">(</span>s<span class="punctuation">)</span>. This may print messages to stdout and<span class="operator">/</span>or stderr.</span><br><span class="line">The command<span class="punctuation">(</span>s<span class="punctuation">)</span> being run are below. These commands cannot be manually re<span class="operator">-</span>run as they will depend on temporary files that no longer exist.</span><br></pre></td></tr></table></figure>
-
-<p>於是根據關鍵字查詢只找到<a href="https://github.com/benjjneb/dada2/issues/641">一起相似案例</a>，但該討論串沒有提供可行的解決辦法。簡言之，提問者的資料中可能有人類序列汙染，導致獨特序列的數量超出 DADA2 演算法的上限，所以程式才異常中斷。</p>
-<p>然而，抽檢資料卻沒發現人類序列汙染，而且使用小量資料可以順利執行，讓我難以判斷問題的癥結點。因此，我蒐集 Qiime2 論壇上常提到的出錯狀況，一一測試來確認能否解決問題。</p>
-<p>首先，我<a href="https://forum.qiime2.org/t/dada2-error-return-code-1/7140/3">調整了線程</a>以免記憶體用罄，接著<a href="https://forum.qiime2.org/t/dada2-return-code-1/2972">檢查格式</a>確保資料完整無誤，也重新安裝以排除未知問題，但這些方法都無濟於事，所以我只好 Qiime2 論壇<a href="https://forum.qiime2.org/t/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/11845">求助</a>。</p>
-<p>開發團隊指出，這狀況可能是資料中有未清除的技術片段、定序品質太差或是存在汙染序列，使得 DADA2 在其中一步驟時，因數據量過載而中斷（這也可以解釋少量資料可以順利執行的原因）。</p>
-<p>在我移除潛在的文庫汙染，切除末端的低品質序列後，DADA2 便能順利執行了。綜上所述，此錯誤源於數量過多的低品質&#x2F;汙染序列，在移除汙染和品質控管後，即可解決問題。</p>
-<p>而關於除錯，我也學到了幾個經驗：</p>
-<ul>
-<li>仔細閱讀錯誤訊息，鎖定問題癥結點後才能有效排除障礙。胡亂猜測出錯原因無濟於事，反而浪費時間和精力。</li>
-<li>要以錯誤訊息為關鍵字，上網找尋類似問題的解決方式；若找不到直接相關的問題，則重新檢視演算法，說不定可以找到問題來源。</li>
-<li>把蒐集到的方法整理成表，一一測試結果。</li>
-<li>若查詢和測試皆無果，則準備詳盡資料到專門論壇求助。</li>
-<li>解決問題後把過程記錄下來，幫助其他人克服困難🥰</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>metagenomics</tag>
       </tags>
   </entry>
   <entry>
@@ -751,6 +751,24 @@
       </tags>
   </entry>
   <entry>
+    <title>戰爭，不再適用於描述宿主與微生物的關係</title>
+    <url>/forum-on-microbial-threats-2006-ending-the-war-metaphor/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撇除雷文霍克和虎克那個用顯微鏡觀察微生物以展示風雅的時代，微生物學的重大發展皆與解決釀酒、蠶業、農業等產業問題息息相關，而人體微生物學也是源於臨床應用背景。</p>
+<p>(Forum on Microbial Threats. (2006). Ending the War Metaphor: The Changing Agenda for Unraveling the Host-Microbe Relationship-Workshop Summary. National Academies Press.)</p>
+<span id="more"></span>
+
+<p>二十世紀初人類的衛生觀念基於巴斯德和柯霍等人確立的細菌致病學說（the germ theory of disease），認為特定病原菌破壞人體健康狀態而導致疾病，所以當時的防疫觀念著重消毒，試圖透過全面滅菌降低細菌傳播。在細菌致病學說指引下，研究者系統地搜索病原菌，結合同時期發展的疫苗、化學療法和抗生素挽救無數人性命。此外，細菌致病學說納入了病毒致病因素後，拓展為更為成熟的微生物致病學說，持續引領晚近的人體微生物學研究。　<br>　<br>儘管微生物致病的典範取得了巨大的成功，這種以病原為中心的觀點（pathogen-centered）過度強調疾病與特定物種的關係，忽略了物種與物種、物種與宿主間交互作用變動造成的疾病，也沒有考慮到物種的多重屬性。因此面對晚近浮現的超級細菌、腸道發炎疾病及自體免疫等的問題時，施用不同藥物試圖全面撲滅病原的策略往往不能奏效，傷害患者身體的同時還間接篩選更頑強的細菌。<br>　<br>除了致病菌以外，晚近的研究也指出體內微生物的組成和神經疾病、肥胖、過敏相關，這意味著微生物不只單純棲息於體內，它們可能參與人體生理的大小反應。</p>
+<p>新興疾病的醫療危機以及微生物與宿主的生理相關性揭示了微生物與宿主間的複雜關係，於是學界漸漸重視微生物致病的其他因素，例如：微生物的變化、微生物與環境的關係、微生物間的作用網路、免疫系統與微生物間的互動、……等，模糊了人類與病原菌之間壁壘分明的界線。</p>
+<p>換句話說，學界引進了生態學的思考方式，將人體視為棲息地（human-as-habitat perspective）而不是廝殺的戰場（body-as-battleground perspective or the War matephor），微生物是人體的一部份而非外來的異客，身體狀態是細菌與人體細胞共同作用的外顯特徵，而健康則是生態系平衡的紅利（ecosystem service）不是固有的狀態。</p>
+<p>看待微生物的觀點轉變不僅影響研究圈，也會影響臨床醫療的決策。雖然傳統醫療手段不會被取代，但是面臨複雜症狀的疾病時需要更仔細考量發病的環境脈絡，以免貿然治療造成反效果。另外生態系適應性經營（adaptive management）或許能運用於人體，透過連續的調查與評估，鎖定生態網路中的致病節點，借鑑動植物生態學的經驗，修復生態或引進原生物種以移除病原（probiotics therapy）。</p>
+<p>然而要達成上述目標需要更深入理解人體微生物生態學和演化學，並釐清微生物的組成、功能與交互作用網路，而 Allan 和Stankey 設想生態系適應性經營的四步驟則能協助理解的前提。首先必須識別生態紅利的供應者，篩選影響其功能的環境或生物因素，最後評估作用的時空限制。就此框架看來，僅確認微生物與特定現象的因果仍不夠，必須深入理解造成現象的特定因素，而這些關鍵的要素就藏在微生物的生態網路當中，所以架起了基礎科學和應用科學的聯繫。</p>
+<p>由於觀測、培養和分類困難，微生物生態學的發展落後於動植物生態學，直到基於核酸的鑑定理論與方法成熟才得以開啟微生物學的博物學時代，此階段的研究雖然看起來像過往一樣遵循「鑑定物種分析關聯」的流程，但往後以功能與交互作用等更複雜的現象為目標。這些基礎科學的成果，不只有助於治療疾病也將能開拓微生物的應用價值。</p>
+]]></content>
+      <tags>
+        <tag>ecology</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第十四道門 Coraline</title>
     <url>/gailman-2002-coraline/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -824,24 +842,6 @@
 ]]></content>
       <tags>
         <tag>sf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>戰爭，不再適用於描述宿主與微生物的關係</title>
-    <url>/forum-on-microbial-threats-2006-ending-the-war-metaphor/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撇除雷文霍克和虎克那個用顯微鏡觀察微生物以展示風雅的時代，微生物學的重大發展皆與解決釀酒、蠶業、農業等產業問題息息相關，而人體微生物學也是源於臨床應用背景。</p>
-<p>(Forum on Microbial Threats. (2006). Ending the War Metaphor: The Changing Agenda for Unraveling the Host-Microbe Relationship-Workshop Summary. National Academies Press.)</p>
-<span id="more"></span>
-
-<p>二十世紀初人類的衛生觀念基於巴斯德和柯霍等人確立的細菌致病學說（the germ theory of disease），認為特定病原菌破壞人體健康狀態而導致疾病，所以當時的防疫觀念著重消毒，試圖透過全面滅菌降低細菌傳播。在細菌致病學說指引下，研究者系統地搜索病原菌，結合同時期發展的疫苗、化學療法和抗生素挽救無數人性命。此外，細菌致病學說納入了病毒致病因素後，拓展為更為成熟的微生物致病學說，持續引領晚近的人體微生物學研究。　<br>　<br>儘管微生物致病的典範取得了巨大的成功，這種以病原為中心的觀點（pathogen-centered）過度強調疾病與特定物種的關係，忽略了物種與物種、物種與宿主間交互作用變動造成的疾病，也沒有考慮到物種的多重屬性。因此面對晚近浮現的超級細菌、腸道發炎疾病及自體免疫等的問題時，施用不同藥物試圖全面撲滅病原的策略往往不能奏效，傷害患者身體的同時還間接篩選更頑強的細菌。<br>　<br>除了致病菌以外，晚近的研究也指出體內微生物的組成和神經疾病、肥胖、過敏相關，這意味著微生物不只單純棲息於體內，它們可能參與人體生理的大小反應。</p>
-<p>新興疾病的醫療危機以及微生物與宿主的生理相關性揭示了微生物與宿主間的複雜關係，於是學界漸漸重視微生物致病的其他因素，例如：微生物的變化、微生物與環境的關係、微生物間的作用網路、免疫系統與微生物間的互動、……等，模糊了人類與病原菌之間壁壘分明的界線。</p>
-<p>換句話說，學界引進了生態學的思考方式，將人體視為棲息地（human-as-habitat perspective）而不是廝殺的戰場（body-as-battleground perspective or the War matephor），微生物是人體的一部份而非外來的異客，身體狀態是細菌與人體細胞共同作用的外顯特徵，而健康則是生態系平衡的紅利（ecosystem service）不是固有的狀態。</p>
-<p>看待微生物的觀點轉變不僅影響研究圈，也會影響臨床醫療的決策。雖然傳統醫療手段不會被取代，但是面臨複雜症狀的疾病時需要更仔細考量發病的環境脈絡，以免貿然治療造成反效果。另外生態系適應性經營（adaptive management）或許能運用於人體，透過連續的調查與評估，鎖定生態網路中的致病節點，借鑑動植物生態學的經驗，修復生態或引進原生物種以移除病原（probiotics therapy）。</p>
-<p>然而要達成上述目標需要更深入理解人體微生物生態學和演化學，並釐清微生物的組成、功能與交互作用網路，而 Allan 和Stankey 設想生態系適應性經營的四步驟則能協助理解的前提。首先必須識別生態紅利的供應者，篩選影響其功能的環境或生物因素，最後評估作用的時空限制。就此框架看來，僅確認微生物與特定現象的因果仍不夠，必須深入理解造成現象的特定因素，而這些關鍵的要素就藏在微生物的生態網路當中，所以架起了基礎科學和應用科學的聯繫。</p>
-<p>由於觀測、培養和分類困難，微生物生態學的發展落後於動植物生態學，直到基於核酸的鑑定理論與方法成熟才得以開啟微生物學的博物學時代，此階段的研究雖然看起來像過往一樣遵循「鑑定物種分析關聯」的流程，但往後以功能與交互作用等更複雜的現象為目標。這些基礎科學的成果，不只有助於治療疾病也將能開拓微生物的應用價值。</p>
-]]></content>
-      <tags>
-        <tag>ecology</tag>
       </tags>
   </entry>
   <entry>
@@ -1744,48 +1744,6 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCode 筆記｜724. Find Pivot Index</title>
-    <url>/leetcode-724-find-pivot-index/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
-<span id="more"></span>
-<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
-<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
-</blockquote>
-<p><strong>樣例</strong></p>
-<blockquote>
-<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
-</blockquote>
-<blockquote>
-<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
-</blockquote>
-<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
-<p><strong>限制</strong></p>
-<ul>
-<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
-<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
-</ul>
-<p><strong>知識點</strong><br>prefix sum &amp; array</p>
-<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
-<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
-<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
-<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
-<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
-<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
-]]></content>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>LeetCode 筆記｜53. Maximum Subarray</title>
     <url>/leetcode-53-maximum-subarray/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
@@ -1827,6 +1785,48 @@
 <li><code>sums</code>：紀錄當前累加值</li>
 <li><code>maxVal</code>：紀錄當前累加的最大值</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 筆記｜724. Find Pivot Index</title>
+    <url>/leetcode-724-find-pivot-index/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 <code>-1</code>。</p>
+<span id="more"></span>
+<h2 id="問題描述"><a href="#問題描述" class="headerlink" title="問題描述"></a>問題描述</h2><blockquote>
+<p>Given an array of integers <code>nums</code>, calculate the pivot index of this array.<br>The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index’s right.<br><strong>If the index is on the left edge of the array, then the left sum is <code>0</code></strong> because there are no elements to the left. This also applies to the right edge of the array.<br>Return the leftmost pivot index. If no such index exists, return <code>-1</code>.</p>
+</blockquote>
+<p><strong>樣例</strong></p>
+<blockquote>
+<p>Input: nums &#x3D; [1,7,3,6,5,6]<br>Output: 3</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,-1,-1,0]<br>Output: 2</p>
+</blockquote>
+<blockquote>
+<p>Input: nums &#x3D; [-1,-1,-1,0,1,1]<br>Output: 0</p>
+</blockquote>
+<p><em>留意負數項、樞紐位於數列首尾、數列只含一項或兩項的案例</em></p>
+<p><strong>限制</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^4</code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code>：留意負數項</li>
+</ul>
+<p><strong>知識點</strong><br>prefix sum &amp; array</p>
+<h2 id="思路與題解"><a href="#思路與題解" class="headerlink" title="思路與題解"></a>思路與題解</h2><p>此處借鑑<a href="https://leetcode.com/problems/find-pivot-index/solutions/127676/find-pivot-index/">官方解法</a>。首先計算數列的級數 (<code>S</code>)，接著依序讀過數列，並計算讀過數字之和 (<code>leftSum</code>，即當前項左側的子數列總和)。</p>
+<p>由於已算過 <code>S</code>，所以當前項右側的子數列總和可透過 <code>S - nums[i] - leftSum</code> 得知。</p>
+<p>若當前項左右兩側的子數列總和一致，表示當前項為樞紐，其索引值便為題解；若總和不一致，則累計 <code>leftSum</code> 的值。若遍歷數列仍未求得樞紐，即可確認此數列無樞紐，依題目要求回傳 <code>-1</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        leftSum = <span class="number">0</span></span><br><span class="line">        S = <span class="built_in">sum</span>(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            <span class="keyword">if</span> leftSum == S - nums[i] - leftSum:</span><br><span class="line">                <span class="keyword">return</span>(i)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                leftSum += nums[i]</span><br><span class="line">        <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="延伸討論"><a href="#延伸討論" class="headerlink" title="延伸討論"></a>延伸討論</h2><h3 id="曾嘗試但失敗的解法"><a href="#曾嘗試但失敗的解法" class="headerlink" title="曾嘗試但失敗的解法"></a>曾嘗試但失敗的解法</h3><p>我原先的想法是定義兩個指標，在一次迴圈中從數列兩側夾擠，同時計算 <code>leftSum</code> 和 <code>rightSum</code>。當兩指標重合，且左右數列總和一致時，指標的位置即為樞紐的索引值；反之，則表示此數列沒有樞紐。</p>
+<p>這種方法的關鍵在於判斷何時要調動兩側的指標，所以在程式碼中間我寫了不少判斷式。然而，當數列正負數穿插的時候，判斷式便會很難寫。</p>
+<p>舉下方的程式碼為例，碰到 <code>[-1,-1,-1,0,1,1]</code> 和 <code>[-1,-1,-1,0,1,1,0]</code> 這兩個案例時，右側指標會在循環中不斷往左側移動，直接錯過樞紐的位置。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pivotIndex</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">        leftSum = nums[l]</span><br><span class="line">        rightSum = nums[r]</span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            <span class="keyword">if</span>  <span class="built_in">abs</span>(leftSum) &lt; <span class="built_in">abs</span>(rightSum):</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">                leftSum += nums[l]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">                rightSum += nums[r]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> leftSum == rightSum:</span><br><span class="line">            <span class="keyword">return</span>(l)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span>(-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="練習題目時，適合使用程式語言定義好的-function-嗎？"><a href="#練習題目時，適合使用程式語言定義好的-function-嗎？" class="headerlink" title="練習題目時，適合使用程式語言定義好的 function 嗎？"></a>練習題目時，適合使用程式語言定義好的 function 嗎？</h3><p>我覺得這算是我其中一種心態糾結，即「為了打好基礎，必須手刻所有功能」。不過追根究柢，做題的目的是透過題目學習該題相關知識。</p>
+<p>以這題為例，<code>sum</code>並非解題的關鍵，也不是這題的核心知識，如果使用這個 function 能改善程式碼的可讀性和簡潔性，那麼我覺得使用程式語言定義好的 function 也不錯。</p>
 ]]></content>
       <tags>
         <tag>leetcode</tag>
@@ -2013,6 +2013,173 @@
 <div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">All-Species Living Tree Project (LTP)  相關文獻，Yarza &amp; Munoz. (2014). The all-species living tree project. <em>In Methods in Microbiology</em> (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. <em>Systematic and applied microbiology</em>, 31(4), 241-250.<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. <em>Msystems</em>, 3(3), e00021-18.<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. <em>Genome biology and evolution</em>, 12(12), 2289-2302.<a href="#fnref:3" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <tags>
         <tag>metagenomics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ROSALIND｜Locating Restriction Sites (REVP)</title>
+    <url>/locating-restriction-sites/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一條以 FASTA 儲存的 DNA 序列，求長度介於 4 到 12 之間的反向迴文（reverse palindrome）的起始位置與長度。</p>
+<blockquote>
+<p>A DNA string is a reverse palindrome if it is equal to its reverse complement. For instance, GCATGC is a reverse palindrome because its reverse complement is GCATGC. See Figure 2.</p>
+<p>Given: A DNA string of length at most 1 kbp in FASTA format.</p>
+<p>Return: The position and length of every reverse palindrome in the string having length between 4 and 12. You may return these pairs in any order.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/revp/">https://rosalind.info/problems/revp/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>限制酶（restriction enzyme）是一種存在於細菌中的酵素，它能夠識別並切割特定的 DNA 序列。這些酵素是細菌免疫系統的一環，主要的功能是抵禦外源 DNA 的威脅，例如噬菌體（bacterial phage）或是質體（plasmid）等。</p>
+<p>限制酶的發現可追溯到 1950 年代 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Loenen et al. (2014). Highlights of the DNA cutters: a short history of the restriction enzymes. Nucleic acids research, 42(1), 3-19.
+">1</span></a></sup>。當時，Luria 和 Human 發現，有些噬菌體感染新宿主的能力會受到前宿主的影響，而且這種影響是可逆的，不依賴基因突變。這一現象後來被證明是因為宿主細菌的限制酶切割了噬菌體的核酸，從而「限制」了它們的感染能力。</p>
+<p>細菌和外源 DNA 都可能成為限制酶的作用對象，而細菌和噬菌體也各自演化出能對抗限制酶的機制。細菌能透過甲基化酶，修飾限制酶識別位置的核苷酸，讓自身的 DNA 免受傷害。限制酶與甲基化酶組成了細菌的限制與修飾系統，兩者的平衡影響著細菌基因體的穩定性<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Shaw et al. (2023). Restriction-modification systems have shaped the evolution and distribution of plasmids across bacteria. Nucleic acids research, 51(13), 6806-6818.
+">2</span></a></sup>。另一方面，在部分細菌和病毒基因體中，限制酶識別序列的出現頻率偏低，這可能是一種適應性的演化，能減少 DNA 被限制酶切割的機率<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Rusinov et al. (2018). Avoidance of recognition sites of restriction-modification systems is a widespread but not universal anti-restriction strategy of prokaryotic viruses. BMC genomics, 19, 1-11.
+">3</span></a></sup><sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Rusinov et al. (2015). Lifespan of restriction-modification systems critically affects avoidance of their recognition sites in host genomes. BMC genomics, 16, 1-15.">4</span></a></sup>。</p>
+<p>限制酶切割後可能留下黏性端（Sticky end），這些黏性端能讓不同來源 DNA 片段互相配對，如果使用 DNA 接合酶連接比次，就能達成重組基因的目的。</p>
+<p>不同類型的限制酶識別和切割 DNA 的模式與反應條件不同。其中，II 型限制酶的識別和切割位置相近，這種切割的精準性與可預測性，使其在生物科技上有廣泛的應用。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Sticky End</span><br><span class="line">5&#x27;-...A   TAT...-3&#x27;</span><br><span class="line">3&#x27;-...TAT   A...-5&#x27;</span><br><span class="line"></span><br><span class="line"># Blunt End</span><br><span class="line">5&#x27;-...AT   AT...-3&#x27;</span><br><span class="line">3&#x27;-...TA   TA...-5&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>其次，由於個體間基因體的微小差異，若這些差異恰好出現在限制酶辨識位置，那麼使用相同的限制酶切割 DNA 時，會產生長度不同的片段。</p>
+<p>這些 DNA 片段能透過電泳技術分離，提供基因體比較的資訊，這使得限制酶也成為物種鑑定、遺傳變異分析、鑑識科學等的工具 <sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Di Felice et al. (2019). Restriction enzymes and their use in molecular biology: An overview. Journal of biosciences, 44(2), 38.">5</span></a></sup>。</p>
+<p>在基因體學，反向迴文（reverse palindom）是指一段 DNA 序列與其反向互補序列一致。許多 II 型限制酶會識別基因體上這種迴文序列。</p>
+<p>儘管不是所有限制酶都是如此，不過迴文序列的對稱性讓它能夠與同一股 DNA 序列的其它部分配對，形成可能有利於酵素作用的特殊結構，例如髮夾（hairpin）結構等。</p>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/DNA_palindrome.svg/1280px-DNA_palindrome.svg.png" alt="DNA palindromes"><br>（圖片源自：<a href="https://en.wikipedia.org/wiki/Palindromic_sequence%EF%BC%89">https://en.wikipedia.org/wiki/Palindromic_sequence）</a></p>
+<p>其次，迴文序列表示，酵素能透過相同序列來辨識相同位置。這有助於限制酶單體聚集在鄰近位置而形成更有效率的雙聯體，同時切斷兩股序列，造成難以修補的傷害。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">5&#x27;-...ATAT...-3&#x27;</span><br><span class="line">3&#x27;-...TATA...-5&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>反之，如果限制酶辨識的不是迴文序列，那麼兩股 DNA 的識別位置可能相距很遠，這不僅降低切割的效率。即使順利切割，也可能形成較長的黏性端，使其更容易被連接酶修復。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">5&#x27;-GAGA......-3&#x27;</span><br><span class="line">3&#x27;-......AGAG-5&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>若想了解限制酶偏好迴文序列的解釋，可參考以下幾個討論串：</p>
+<ul>
+<li><a href="https://biology.stackexchange.com/questions/9913/why-do-type-ii-restriction-endonucleases-cleave-at-palindromic-sequences">Why do Type II Restriction Endonucleases cleave at palindromic sequences?</a></li>
+<li><a href="https://biology.stackexchange.com/questions/81626/why-are-restriction-sites-palindromic-in-nature">Why are restriction sites palindromic in nature?</a></li>
+<li><a href="https://biology.stackexchange.com/questions/1167/why-do-restriction-enzymes-tend-to-have-an-even-number-of-bases-in-their-recogni">Why do restriction enzymes tend to have an even number of bases in their recognition site?</a></li>
+</ul>
+<p>綜上所述，雖然不是所有限制酶都辨識迴文序列 <sup id="fnref:6"><a href="#fn:6" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="https://en.wikipedia.org/wiki/List_of_restriction_enzyme_cutting_sites">6</span></a></sup>，但迴文序列對於限制酶而言，似乎有一些結構上的優勢。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>嚴格來說，這道題其實不是找出限制酶的位置，畢竟限制酶是透過實驗決定的。題目的要求是尋找長度介於 4 - 12 之間的反向迴文序列，這是 II 型限制酶識別位置的常見長度。我們可以先設計出能找出所有反向迴文序列的方式，再移除超出範圍的序列即可滿足題目要求。</p>
+<p>窮舉法是解決這個問題最直觀的方式，也就是逐一生成 DNA 所有子字串，判斷它們是否為反向迴文。生成子字串的過程需要 $O(n^2)$ 的時間複雜度，加上判斷反向迴文所需的 $O(n)$，共計 $O(n^3)$。因此，窮舉法雖然直觀而且全面，可是效率不高。</p>
+<p>然而，依據迴文的對稱特性，我們其實沒有必要檢查所有的子字串。迴文字串兩側的字符必然完全對應且相等。因此，如果一個字串不是迴文，那麼從相同中心往兩側延長的字串也必然不是迴文。</p>
+<table>
+<thead>
+<tr>
+<th>座標</th>
+<th>子字串</th>
+<th>反向迴文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>s[i-1:j-1]</code></td>
+<td><code>...11...</code></td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>s[i:j]</code></td>
+<td><code>..2110..</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>s[i-1:j+1]</code></td>
+<td><code>.321103.</code></td>
+<td>否</td>
+</tr>
+</tbody></table>
+<p>（為了方便，這一節暫時使用一般的迴文定義來解說演算法）</p>
+<p>基於這項特性，中心擴展法（middle expansion method）應運而生。這個方法逐一檢查每個位置，將其視為潛在的迴文中心。接著，從中心往兩側擴展，直到兩側的字符不再對稱相等。</p>
+<p>擴展過程中得到的子字串，就是以該位置為中心的迴文。由於這過程需要遍歷所有字符兩次，所以它的時間複雜度為$O(n^2)$。</p>
+<p>1975 年，Manacher 演算法的發現進一步提升了搜尋迴文的效率。這個算法仍以中心擴展法為核心，但利用迴文的對稱特性，避免巢狀迴文的重複計算，使得時間複雜度降至 $O(n)$。</p>
+<p>具體來說，在使用中心擴展法時，如果檢查點位於已知迴文 $S$ 內，就能透過 $S$ 的中心找到與檢查點的對稱點。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">   |-迴文字串-|</span><br><span class="line">...ooooo.ooooo...</span><br><span class="line">     |  |  └ 檢查點</span><br><span class="line">     |  └ 迴文中心</span><br><span class="line">     └ 對稱點</span><br></pre></td></tr></table></figure>
+
+<p>根據迴文的特性，中心兩側字符必然彼此對應且相等。因此，如果左側存在迴文字串，那麼右側對應片段也會有完全相同的迴文字串。</p>
+<p>假設檢查點與對稱點分別是迴文 $s$ 和 $s’$ 的中心，那麼根據它們的長度，可能存在兩種狀況。</p>
+<p>第一，對稱點迴文 $s’$ 完全被 $S$ 覆蓋。根據兩側對稱特性，$s’$ 與 $s$ 的組成和長度完全一致，所以可以透過對稱點來確認檢查點的迴文資訊。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...xoooooooo.oooooooox...</span><br><span class="line">    |&lt;-s&#x27;&gt;|   |&lt;-s-&gt;| </span><br><span class="line">   |&lt;-------S-------&gt;|</span><br></pre></td></tr></table></figure>
+
+<p>第二，對稱點迴文只有部分在 $S$ 內。這表示不能完全依賴對稱點來確認檢查點的迴文資訊，因為 $s’$ 有部分擴展到 $S$ 的邊界外。</p>
+<p>此時，仍要回歸中心擴展法，但這次是從 $S$ 的邊界開始檢查，確認 $s$ 能否繼續延伸並形成新的迴文。如果 $s$ 能繼續延伸，形成更長的迴文，那麼它就會成為新的 $S$，能用來確認其後檢查點的迴文資訊。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">...ooooooo.oooooox...</span><br><span class="line">   |&lt;-s&#x27;&gt;|  &lt;-s-&gt;</span><br><span class="line">    |&lt;----S----&gt;|</span><br></pre></td></tr></table></figure>
+
+<p>這種作法確保了尋找迴文時，只在必要的情形使用中心擴展，其餘情形都可以透過儲存的資訊取得結果。查詢迴文資訊為常數時間，而且中心擴展始於 $S$ 的邊界，而非從頭開始。</p>
+<p>即使沒有對應的迴文資訊，這方法仍持續延伸並記錄各位置的迴文資訊。因此，它才能避免重複計算，達到 $O(n)$ 的時間複雜度。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>改進</th>
+<th>時間複雜度</th>
+<th>空間複雜度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>窮舉法（brute force）</td>
+<td></td>
+<td>$O(n^3)$</td>
+<td>$O(1)$</td>
+</tr>
+<tr>
+<td>中心擴展法（middle expansion）</td>
+<td>跳過不可能形成迴文的字串</td>
+<td>$O(n^2)$</td>
+<td>$O(1)$</td>
+</tr>
+<tr>
+<td>Manacher 法（Manacher’s algorithm）</td>
+<td>只在必要時使用中心擴展法</td>
+<td>$O(n)$</td>
+<td>$O(n)$</td>
+</tr>
+</tbody></table>
+<h1 id="python-實作"><a href="#python-實作" class="headerlink" title="python 實作"></a>python 實作</h1><p>如前所述，根據基因體學的定義，迴文序列與其反向互補序列一致。為了讓程式碼易讀，我新增了 <code>complement</code> function 來生成 DNA 的互補序列。這意味著如果字串 <code>dna</code> 是迴文，那麼它應該滿足 <code>dna == complement(dna)[::-1]</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">complement</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Complementing a DNA sequence.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> dna.translate(<span class="built_in">str</span>.maketrans(<span class="string">&quot;ATCG&quot;</span>, <span class="string">&quot;TAGC&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>考慮到反向迴文的定義，只有偶數長度的 DNA 序列才能形成完全一致的反向互補序列。因此這裡我們只尋找偶數長度的迴文。</p>
+<h2 id="窮舉法"><a href="#窮舉法" class="headerlink" title="窮舉法"></a>窮舉法</h2><p>窮舉法的步驟是列出 DNA 序列的所有子序列，同時確認它們是否滿足反向迴文。根據題目要求，DNA 序列的位置由 1 開始計數，所以在記錄迴文起始位置時，需要額外加 1 以滿足要求。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">revp_bf</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Find a list of all palindromes&#x27; positions and their length, in the DNA</span></span><br><span class="line"><span class="string">    sequence using brute force.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA string composed of nucleotides (&quot;A&quot;, &quot;T&quot;, &quot;C&quot;, &quot;G&quot;).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        list: A list of tuple, recording the position and length of every</span></span><br><span class="line"><span class="string">              reverse palindrome, like [(&lt;position&gt;, &lt;length&gt;)]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        (i + <span class="number">1</span>, j - i)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(dna) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(j)</span><br><span class="line">        <span class="keyword">if</span> dna[i:j] == complement(dna[i:j])[::-<span class="number">1</span>]</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+<h2 id="中心擴展法"><a href="#中心擴展法" class="headerlink" title="中心擴展法"></a>中心擴展法</h2><p>應用中心擴展法時，我們要逐一檢查序列各個位置，將其視為潛在的迴文中心點 <code>mid</code>，再從中心往兩側檢查序列的對稱互補性。</p>
+<p>在這個題目的條件下，DNA 迴文的長度必為偶數，所以 <code>mid</code> 不是特定字符的位置，而是字符間隙的位置。</p>
+<p>其次，DNA 首尾兩個位置無法作為中心點，所以 <code>mid</code> 的數值介於 1 到 <code>len(dna) - 1</code>之間。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DNA   A T C G A G G A G</span><br><span class="line">Pos  0 1 2 3 4 5 6 7 8 9 </span><br><span class="line">      mid-&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>span</code> 則是從 <code>mid</code> 向兩側擴展的距離（或說潛在迴文的半徑）。因為這個距離不會超出 DNA 序列的邊界，所以 <code>span</code> 它的最大值取決於 <code>mid</code> 到 DNA 序列兩端的最短距離。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DNA   A T C G A G G A G</span><br><span class="line">Pos  0 1 2 3 4 5 6 7 8 9 </span><br><span class="line">Span |&lt;---------&gt;|</span><br><span class="line">          mid</span><br></pre></td></tr></table></figure>
+
+<p>在每個 <code>mid</code> 對應的 <code>span</code> 值域內，我們逐步增加 <code>span</code> 的長度，再依次檢查擴展範圍內的 DNA 序列是否滿足迴文（即左側與右側的核苷酸對稱互補）。</p>
+<p>如果兩側核苷酸彼此互補，則記錄它的起始位置和長度，並且持續擴展 <code>span</code>；兩者不匹配，則中斷當前 <code>mid</code> 的擴展，轉向下一個中心點，直到所有位置都檢查過為止。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">revp_me</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Find a list of all palindromes&#x27; positions and their length, in the DNA</span></span><br><span class="line"><span class="string">    sequence using middle expansion approach.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA string composed of nucleotides (&quot;A&quot;, &quot;T&quot;, &quot;C&quot;, &quot;G&quot;).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        list: A list of tuple, recording the position and length of every</span></span><br><span class="line"><span class="string">              reverse palindrome, like [(&lt;position&gt;, &lt;length&gt;)]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    palindromes = []</span><br><span class="line">    <span class="keyword">for</span> mid <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(dna)):</span><br><span class="line">        <span class="keyword">for</span> span <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">min</span>(mid, <span class="built_in">len</span>(dna) - mid) + <span class="number">1</span>):</span><br><span class="line">            left_nt = dna[mid - span]</span><br><span class="line">            right_nt = dna[mid - <span class="number">1</span> + span]</span><br><span class="line">            <span class="keyword">if</span> left_nt == complement(right_nt):</span><br><span class="line">                palindromes.append((mid - span + <span class="number">1</span>, span * <span class="number">2</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> palindromes</span><br></pre></td></tr></table></figure>
+
+<h2 id="Manacher-演算法"><a href="#Manacher-演算法" class="headerlink" title="Manacher 演算法"></a>Manacher 演算法</h2><p>Manacher 演算法最初是設計來尋找最長的迴文字串。不過，如果知道每個中心點的最長迴文字串，其實也能重建出以同樣位置為中心，只是長度較短的迴文字串。因此，這個方法只需一些調整就能用來解這這題。</p>
+<p>另外，迴文中心在偶數長度字串位於兩字符間，而在奇數長度字串則位於特定字符上。為了解決這項分歧，原始的 Manacher 演算法會在字符間安插特殊符號（例如 <code>#</code>，<code>abc</code> -&gt; <code>#a#b#c#</code>），將任何字串統一為奇數長度的形式。</p>
+<p>對於這題，由於已知所有迴文長度都為偶數，所以可以省略插入特殊符號的步驟，直接處理原始的 DNA 序列。</p>
+<p>為了讓程式碼的結構更清晰，我把中心擴展法的功能獨立到 <code>extend</code> function。這個 function 負責從指定的中心點開始，向兩側擴展來檢查序列的對稱互補性。<code>extend</code> function 允許用戶從已知的迴文邊界開始擴展，減少了重複檢查的狀況。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">extend</span>(<span class="params">dna, mid, start_span=<span class="number">1</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Extend the palindrome from the middle point to the maximum span.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA string composed of nucleotides (&quot;A&quot;, &quot;T&quot;, &quot;C&quot;, &quot;G&quot;).</span></span><br><span class="line"><span class="string">        mid (int): Index of the middle point from which to check symmetry.</span></span><br><span class="line"><span class="string">        start_span (int): Initial distance from the middle to start checking.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        int: Maximum span where the sequence remains a palindrome.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    max_span = start_span</span><br><span class="line">    <span class="keyword">for</span> span <span class="keyword">in</span> <span class="built_in">range</span>(start_span, <span class="built_in">min</span>(mid, <span class="built_in">len</span>(dna) - mid) + <span class="number">1</span>):</span><br><span class="line">        left_nt = dna[mid - span]</span><br><span class="line">        right_nt = dna[mid - <span class="number">1</span> + span]</span><br><span class="line">        <span class="keyword">if</span> left_nt == complement(right_nt):</span><br><span class="line">            max_span = span</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> max_span</span><br></pre></td></tr></table></figure>
+<p>Manacher 演算法的核心是利用已知的迴文資訊來避免重複檢查，它需要額外的空間來記錄以下三項資訊：</p>
+<ul>
+<li><code>max_spans</code> 儲存字串各個中心點的最大迴文半徑。它們的數值預設為 -1，表示該位置未經檢查。隨著檢查進度，相應位置的數值會逐步更新。</li>
+<li><code>right</code> 是最靠近 DNA 序列右端的已知迴文的右邊界位置。我們可以透過它來判斷檢查點是否位於已知的迴文內，從而利用已知的迴文資訊。</li>
+<li><code>center</code> 是 <code>right</code> 對應迴文的中心位置。它能幫助我們找到檢查點的對稱點位置。</li>
+</ul>
+<p>Manacher 演算法的計算流程與中心擴展法相似，仍須依序檢查 DNA 序列各個位置。不過在這基礎上，還要額外判斷當前位置是否位於某個已知的迴文內。</p>
+<p>假設當前的檢查點 <code>mid</code> 小於 <code>right</code>，表示我們有機會利用已知的回文資訊。此時，要先找到檢查點在較大迴文中的對稱點 <code>mirror</code>。</p>
+<p>如果對稱點的最大迴文半徑小於 <code>right - mid</code>，表示以對稱點為中心的迴文完全被較大的迴文覆蓋。因此，檢查點的迴文半徑就等於對稱點的迴文半徑。</p>
+<p>如果對稱點的最大迴文半徑大於 <code>right - mid</code>，表示較大的迴文沒有完全覆蓋對稱點的迴文，所以檢查點的迴文半徑最多只能延伸到 <code>right</code> 的位置。</p>
+<p>反之，如果 <code>mid</code> 在 <code>right</code> 之外，表示沒有任何可參考的資訊，所以檢查點的迴文半徑設定為 0，意味著得從頭開始進行中心擴展。</p>
+<p>在判斷了 <code>mid</code> 與 <code>right</code> 的關係後，就能從已知的迴文半徑開始執行中心擴展，避免重複檢查已經擴展過的片段。擴展結束後，需要判斷擴展後的迴文半徑是否超出 <code>right</code>。若是，則要更新 <code>right</code> 與 <code>center</code> 的值。</p>
+<p>最後，從 <code>max_span</code> 可以得到所有位置的最大迴文半徑，進而依據這些資訊還原其他較短迴文的位置和長度。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">revp_manacher</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Find a list of all palindromes&#x27; positions and their length, in the DNA</span></span><br><span class="line"><span class="string">    sequence using the Manacher&#x27;s algorithm.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA string composed of nucleotides (&quot;A&quot;, &quot;T&quot;, &quot;C&quot;, &quot;G&quot;).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        list: A list of tuple, recording the position and length of every</span></span><br><span class="line"><span class="string">              reverse palindrome, like [(&lt;position&gt;, &lt;length&gt;)]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    max_spans = [-<span class="number">1</span>] * <span class="built_in">len</span>(dna)</span><br><span class="line">    right = center = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> mid <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(dna)):</span><br><span class="line">        <span class="keyword">if</span> mid &lt; right:</span><br><span class="line">            mirror = <span class="number">2</span> * center - mid</span><br><span class="line">            max_spans[mid] = <span class="built_in">min</span>(max_spans[mirror], right - mid)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            max_spans[mid] = <span class="number">0</span></span><br><span class="line">        max_spans[mid] = extend(dna, mid, max_spans[mid])</span><br><span class="line">        <span class="keyword">if</span> max_spans[mid] + mid &gt; right:</span><br><span class="line">            right = max_spans[mid] + mid</span><br><span class="line">            center = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        (idx - span + <span class="number">1</span>, span * <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span> idx, max_span <span class="keyword">in</span> <span class="built_in">enumerate</span>(max_spans)</span><br><span class="line">        <span class="keyword">for</span> span <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_span + <span class="number">1</span>)</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論：為什麼-Manacher-演算法好像沒快很多？"><a href="#討論：為什麼-Manacher-演算法好像沒快很多？" class="headerlink" title="討論：為什麼 Manacher 演算法好像沒快很多？"></a>討論：為什麼 Manacher 演算法好像沒快很多？</h1><p>為了檢查寫出來的 function 是否實現了 Manacher 演算法，所以我也使用題目提供的範例數據，比較了不同窮舉法、中心擴展法和 Manacher 法的計算效率。</p>
+<p>窮舉法顯然是三者最慢的，不過為什麼 Manacher 法（$O(n)$）好像沒有比中心擴展法（$O(n^2)$）快？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Using DNA sequnce TCAATGCATGCGGGTCTATATGCAT * 100</span><br><span class="line">Timing revp_bf:</span><br><span class="line">5.213197014000002</span><br><span class="line">Timing revp_me:</span><br><span class="line">0.0027632010000502305</span><br><span class="line">Timing revp_manacher:</span><br><span class="line">0.004045999999959804</span><br></pre></td></tr></table></figure>
+
+<p>雖然我有添加一些程式碼來重建所有長度的迴文序列，但這些應該不至於拖累太多吧？後來回想起來，時間複雜度是基於最差情況的計算，題目提供的示範數據可能無法區分不同算法的效率差異。</p>
+<p>II 型限制酶的長度多半在 4 到 12 之間。由於示範數據是依據這項觀察所設計，所以其中的迴文序列彼此嵌套或重疊的狀況也比較少。因此，即使使用 Manacher 演算法，多數片段仍要依賴中心擴展法。這導致 Manacher 演算法和中心擴展法在這個案例的效率相似。</p>
+<p>為了驗證這個假說，我用 ATAT 組成的序列進行測試，因為它在所有位置都能形成迴文。而結果也如預期，對於多重嵌套的迴文結構，Manacher 演算法展現了它應有的效能。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Using DNA sequnce ATAT * 100</span><br><span class="line">Timing revp_bf:</span><br><span class="line">0.06110990399997718</span><br><span class="line">Timing revp_me:</span><br><span class="line">0.018740201000014167</span><br><span class="line">Timing revp_manacher:</span><br><span class="line">0.004075799999952778</span><br></pre></td></tr></table></figure>
+
+<p>測試的程式碼可參考我的 <a href="https://github.com/5uperb0y/rosalind/blob/main/code/revp/performance.py">Github</a>。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Loenen et al. (2014). Highlights of the DNA cutters: a short history of the restriction enzymes. Nucleic acids research, 42(1), 3-19.<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Shaw et al. (2023). Restriction-modification systems have shaped the evolution and distribution of plasmids across bacteria. Nucleic acids research, 51(13), 6806-6818.<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Rusinov et al. (2018). Avoidance of recognition sites of restriction-modification systems is a widespread but not universal anti-restriction strategy of prokaryotic viruses. BMC genomics, 19, 1-11.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Rusinov et al. (2015). Lifespan of restriction-modification systems critically affects avoidance of their recognition sites in host genomes. BMC genomics, 16, 1-15.<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Di Felice et al. (2019). Restriction enzymes and their use in molecular biology: An overview. Journal of biosciences, 44(2), 38.<a href="#fnref:5" rev="footnote">↩</a></span></li><li id="fn:6"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">6.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://en.wikipedia.org/wiki/List_of_restriction_enzyme_cutting_sites">https://en.wikipedia.org/wiki/List_of_restriction_enzyme_cutting_sites</a><a href="#fnref:6" rev="footnote">↩</a></span></li></ol></div></div></p>
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
       </tags>
   </entry>
   <entry>
@@ -4168,6 +4335,23 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>微國家：獨立建國的簡易操作手冊</title>
+    <url>/strauss-2008-how-to-start-your-own-country/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
+<span id="more"></span>
+
+<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
+<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
+<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
+<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
+<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
+<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
+<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
+<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
+<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
     <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
@@ -4217,23 +4401,6 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>lua</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>微國家：獨立建國的簡易操作手冊</title>
-    <url>/strauss-2008-how-to-start-your-own-country/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
-<span id="more"></span>
-
-<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
-<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
-<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
-<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
-<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
-<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
-<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
-<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
-<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
-]]></content>
   </entry>
   <entry>
     <title>人際的法則 — 怎麼面對他人求助？</title>
@@ -5260,69 +5427,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>人類存在的意義</title>
-    <url>/wilson-2014-the-meaning-of-human-existence/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最早認識 E.O. Wilson 是讀 Stephen Gould 的書，Wilson 作為 Gould 反對的對象存在我的記憶中。隨後，我在小說《螞蟻》裡讀到致敬Wilson 所創造的角色—— 艾德蒙．威爾斯，才逐漸了解 Wilson 在螞蟻、演化和生物多樣性方面的成就。</p>
-<p>而想讀這本書的動機，則是寫故事時對於意義的追求，想了解不同思想家怎麼回答人類從何而來，該往何處去等問題。不過讀完以後意識到，這本書試圖解釋的不是個人的存在焦慮，也沒有為人類這樣短暫存在的物種是否有意義給上結論。</p>
-<p>這本書做到的，是解釋道德、愛、心等被視為人類存在重要價值怎麼演化出來。Wilson 推廣其多層次擇汰學說，主張那些人類之所以為人類的特質，是群體選擇與個體選擇的結果。（這讓我挺好奇的，就我理解 Wilson 的社會生物學應該也是基於親緣選擇學說，但在此書中，他的立場卻反駁親緣選擇學說。這也許要多讀一點演化學說的發展，以及 Wilson 近年的著作才會知道為什麼。）</p>
-<span id="more"></span>
-
-<h1 id="我們存在的理由"><a href="#我們存在的理由" class="headerlink" title="我們存在的理由"></a>我們存在的理由</h1><h2 id="意義的「意義」"><a href="#意義的「意義」" class="headerlink" title="意義的「意義」"></a>意義的「意義」</h2><p>《人類存在的意義》探討人類存在於世間的理由與地位，認為應結合人文與科學共同思索這個問題。</p>
-<p>卷初作者便釐清意義的兩種含意：事物之所以發生的遠因與近因。近因帶有目的，例如蜘蛛結網捕蟲，蜘蛛網存在的意義就是為了獵食求生，或說神創論者相信人類是造物主規劃下的產物，人類生存的意義便是達成被賦予使命或任務。至於遠因則無關意向和動機，是事情發展至現況所經歷的一切偶然與歷史因素，沒有任何規劃與目的。</p>
-<p>探究近因能理解事情怎麼發生，而探究遠因則能明白事情為什麼會如此。由於生物技術和優生學發展，人類已經能逐步跨出遠因的支配，依照目的性規畫自己演化的途徑，但究竟我們該翻修自己到何種程度？面對這樣的道德困境，此書著墨於人類存在的遠因——亦即人類的祖先是怎麼經歷一連串的累積而成為我們，繼而探討當我們理解這種意義後又該怎麼考量自己的處境，明瞭未來的方向。</p>
-<h2 id="解開人類之謎"><a href="#解開人類之謎" class="headerlink" title="解開人類之謎"></a>解開人類之謎</h2><p>文明社會是人類的重要屬性，其發源於真社會性（eusociality），已知的人類外的真社會性生物僅出現在昆蟲、某些海生甲殼綱動物和生活在地下的齧齒類動物，並不超過三十種。儘管經歷數次物種爆發，真社會性一直要到近兩億年才出現，儘管如此，真社會性替生物帶來非常大的利益。不過發展真社會性需要在演化過程中出現一連串改變，首先建立巢穴，然後以此為據點覓食哺育，成員分工合作最終形成真社會性的群體，因此儘管能帶來許多好處，仍然很晚近才發展出來。</p>
-<p>人類的真社會性可能源於飲食習慣改變為肉食，因此要更嚴謹的分工合作，繼而設立營地，因為合作與競爭發展人際關係，交流中凸顯心智的重要性，因此逐步演化出心智能力。</p>
-<p>而解釋演化趨力的學說主流學說有兩種：「親緣選擇 （kin selection）」以及「總括生殖成就（inclusibe fitness）或是整體適存度」。前者認為個體互助源於基因相似，能從利他行為獲利，最終發展出社會行為；後者則是只要行為能確保最大基因流傳，則群體就可能發展出社會行為。然而作者主張的多層次擇汰（multilevel selection），認為自然選擇發生在個體在群體內的競爭（個體擇汰）以及群體和群體間的競爭（群體擇汰），因此人類不僅會對群體有認同感，也極其關注群體內的是是非非。</p>
-<h2 id="演化與我們內在的衝突"><a href="#演化與我們內在的衝突" class="headerlink" title="演化與我們內在的衝突"></a>演化與我們內在的衝突</h2><p>人類的善與惡即是利他與利己的衝突，這種矛盾特徵源於基因的個體選擇和群體選擇。僅影響個體的不利基因會在群體內或群體外的人際關係中被汰除，而會影響群體（即個體互動）的基因，則會在群體與群體互動中汰除，因為無法合作協調的群體難以對抗較團結的群體。人類的利己基因能讓個體在群體內競爭中勝出，於是團體逐漸變成自私的團體，然而自私的團體在群體間競爭卻無法對抗因帶有利他基因而合作的團體。個體擇汰篩選出利己基因，群體擇汰篩選出利他基因，兩者會在演化過程中拉扯游移。</p>
-<p>「個體擇汰」（個體和同一群體內的其他個體競爭）和和「群體擇汰」（群體與其他群體競爭）這兩種力量之間發生了衝突。後者會使同一群體的所有成員懷抱利他精神，相互合作，並產生道德意識、良知與榮譽感。簡而言之，這兩股力量之間的中途在於：在同一個群體內，自私的個體會擊敗具有利他精神的個體，但由利他主義者所組成的群體，會擊敗由自私的個體所組成的群體。說得更簡單一些：個體擇汰會助長邪惡，群體擇汰則會增強美德。</p>
-<p>史前時期這段「多層次擇汰」的演化過程，使得人類的心中永遠充滿了矛盾與衝突，不時在這兩股極端的演化力量之間游移。我們不可能完全屈服於其中任何一種力量，因為它們都不是解決我們的社會與政治問題的理想方式。如果我們完全聽任「個體擇汰」的本能趨使，則整個社會終將瓦解。反過來說，我們如果完全臣服於「群體擇汰」的趨力，則會變成天使一般的機器人，如同一群特大號的螞蟻。（page 49）</p>
-<h1 id="知識的統合"><a href="#知識的統合" class="headerlink" title="知識的統合"></a>知識的統合</h1><h2 id="新啟蒙時代"><a href="#新啟蒙時代" class="headerlink" title="新啟蒙時代"></a>新啟蒙時代</h2><p>雖然意在強調整合人文與科學以探索人類之所以為人類的理由，但作者卻以大量篇幅敘述人文學科的侷限，列舉科學進展飛速試圖證明科學已經到了可以解決問題的時候。</p>
-<h2 id="人文學科的重要"><a href="#人文學科的重要" class="headerlink" title="人文學科的重要"></a>人文學科的重要</h2><p>儘管作者認為人文學科難以解釋人類的意義，但是能從倫理學的角度解決科技進步的衝擊。作者提及的道德危機是「人類是否應為了避免疾病或培養特質而編輯自己的基因」，作者支持存在保守主義（existential conservatism）主張人的生物特性是一項神聖的資產，有義務要加以保存。另外科技能被科技取代，且在傳播中會逐漸均質；但文化多樣性是獨一無二，它的演進越來越複雜越來越獨特，人文學科的第二個價值就在於它保留了人類之所以為人的特質。</p>
-<p>總言之，作者認為人文學科不能解決我們的疑問，但它一方面作為解決道德抉擇的利器，一方面作為標本保留了文化發展獨一無二的一面。</p>
-<h2 id="社會演化的驅力"><a href="#社會演化的驅力" class="headerlink" title="社會演化的驅力"></a>社會演化的驅力</h2><p>本章節敘述總括生殖理論和多層次擇汰的內涵，並提出前者的反證。總括生殖理論的核心觀點可以用漢彌爾頓的不等式（Hamilton inequality）表達：</p>
-<blockquote>
-<p>某個利他行為所造福的對象，如果他所繁衍的後代數量，超過那位利他者因該利他行為而損失的後代數量，則表現這個利他行為的基因就會增加。然而，唯有在利他者和他所造福的對象彼此的親緣關係很近的情況之下，利他者才能從自己的利他行為中受惠。至於兩者親緣接近的程度，則視他們共同擁有的基因的比例而定：兄弟姊妹是四分之一，堂（表）兄弟姊妹是八分之一，依此類推。親緣關係愈遠，比例愈低，而且下降得很快。這樣的過程後來稱為『親緣選擇』（kin selection）。(p.87)</p>
-</blockquote>
-<blockquote>
-<p>……他（漢彌爾頓）認為，生活在群體中的個體會與群體中的其他成員互動。在這個過程中，牠和每一個與牠有互動關係的成員都共同參與了「親緣選擇」。這些行為的總和對牠能傳給下一代的基因數量的影響，便是牠的總括生殖成就，也就是將這些行為的好處與成本統統加起來，再用牠和每一個成員之間的親緣等級來打折所得出的數字。依照「總括生殖成就理論」，擇汰的單位在不知不覺間從『基因』變成了『個體』。(p.89)</p>
-</blockquote>
-<p>而作者反對的理由有：</p>
-<ul>
-<li>過於抽象，脫離實際觀察結果。</li>
-<li>僅觀察少數現象做出結論，忽略生態學、譜系學、神經生物學等領域。</li>
-<li>錯將選擇單位界定為個體。</li>
-<li>行為的效應不一定可以加總。</li>
-</ul>
-<h1 id="人類之外的世界"><a href="#人類之外的世界" class="headerlink" title="人類之外的世界"></a>人類之外的世界</h1><p>（前兩節略過，閱讀無收穫）</p>
-<h2 id="外星人的模樣"><a href="#外星人的模樣" class="headerlink" title="外星人的模樣"></a>外星人的模樣</h2><p>作者依據地球生物學知識推論能發展出文明的外星人是什麼模樣。</p>
-<ul>
-<li>陸生：文明發展的基礎是能源，需要乾燥的環境生火或應用其他能源。</li>
-<li>體型大：智慧需要記憶體，而記憶體大小受限於空間大小。</li>
-<li>視覺與聽覺溝通：化學物質的擴散太慢，不利於迅速溝通，因此文明生物需以光或波動傳訊。</li>
-<li>觸手：任何可以製作工具的構造。</li>
-<li>道德：由於群體擇汰和個體擇汰作用，很可能在外星趨同演化出道德觀念。</li>
-<li>社會性：能夠合作和促使競爭，讓團體本身和其中成員具有演化優勢。</li>
-</ul>
-<h2 id="生物多樣性的崩壞"><a href="#生物多樣性的崩壞" class="headerlink" title="生物多樣性的崩壞"></a>生物多樣性的崩壞</h2><p>分類學的價值在於</p>
-<ul>
-<li>分類學家本身就是該生物的專家，是生物學知識的源頭。</li>
-<li>生態學或其他學說需要以來自分類學的研究作為基礎，否則可能會發生誤判關鍵物種等錯誤，導致錯誤的生態改良。</li>
-<li>發掘新物種可以擴充基因改良工具，促進生物學發展。</li>
-</ul>
-<h1 id="心靈的幻象"><a href="#心靈的幻象" class="headerlink" title="心靈的幻象"></a>心靈的幻象</h1><p>作者說明人性是源於「人類的心智發展過程中，得自遺傳的一些規律行為，而這些行為又使得人類的文化朝特定的方向發展，因此它是人腦中基因與文化的連結。」（p176），並舉出人們對居住地的偏好為證，還沒有居住地偏見的兒童天性愛好稀樹草原這種人類發源地的環境（African savanna hypothesis）。這些個性來自基因裡頭的預備學習（prepared learning），預備學習而來的行為因人而異，而學習傾向的多樣性在演化擇汰保留下來，導致族群普世的內在價值觀。</p>
-<h1 id="補充心得"><a href="#補充心得" class="headerlink" title="補充心得"></a>補充心得</h1><p>我後來在《做哲學》這本書讀到蠻貼切的說法：威爾森確實為人類的信念和行為提供了一種生物學解釋，不過，了解人類「是」怎樣的存在，還不足以答覆人類「該」如何存在。</p>
-<p>「我們從哪來？」尋找的是解釋，「我們要走向何方？」追求的則是規範。解釋擷取遺傳、社會和心理等學科的知識來釐清過去；而規範則寄託了人們的渴望、期許與畏懼來展望未來，它受限於過去，但不必與過去一致。這本書提供了解釋，也暗示遵循解釋的規範。然而，是否認同這樣的價值觀還是讀者的功課了。</p>
-<h1 id="摘錄"><a href="#摘錄" class="headerlink" title="摘錄"></a>摘錄</h1><ul>
-<li>人類的存在或許比我們所想像的更加簡單。沒有既定的宿命，沒有深邃難解的生命奧秘，也沒有競相要我們宣示效忠的魔鬼與神祇。我們只不過是靠著自己的努力適應環境，因而得以在這個生物世界中存活的一個獨特物種，獨立而脆弱。若欲永續存活，我們就必須敢於突破現今仍存在於社會（包括那些已經極為民主的社會）的制約，秉持獨立思考的精神與理性，好好地認識我們自己。(page 42)</li>
-<li>「人類的所有煩惱皆起因於我們不知道自己是什麼，對於我們想要成為什麼，也沒有一致的看法」(Jean Bruller&#x2F;Vercors You Shall Know Them, page 166)</li>
-<li>宗教在凡夫俗子的眼中是真的，在智者的眼中是假的，在統治者的眼中則是有用的。(小塞內卡, page 188)</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>evolution</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>凝視太陽 — 學習面對死亡也是學習自由</title>
     <url>/yalom-2008-staring-at-the-sun/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>自我意識是人類最珍貴的特質，但伴隨著思考能力而來的，卻是對消亡的恐懼。雖然嬰兒在出生時沒有被灌輸死亡的觀念，但從季節更迭、花開花謝和親人離世等跡象中，他們也會留意到，有些東西會因某個原因「永遠消失」。</p>
@@ -5430,6 +5534,69 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>philosophy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人類存在的意義</title>
+    <url>/wilson-2014-the-meaning-of-human-existence/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最早認識 E.O. Wilson 是讀 Stephen Gould 的書，Wilson 作為 Gould 反對的對象存在我的記憶中。隨後，我在小說《螞蟻》裡讀到致敬Wilson 所創造的角色—— 艾德蒙．威爾斯，才逐漸了解 Wilson 在螞蟻、演化和生物多樣性方面的成就。</p>
+<p>而想讀這本書的動機，則是寫故事時對於意義的追求，想了解不同思想家怎麼回答人類從何而來，該往何處去等問題。不過讀完以後意識到，這本書試圖解釋的不是個人的存在焦慮，也沒有為人類這樣短暫存在的物種是否有意義給上結論。</p>
+<p>這本書做到的，是解釋道德、愛、心等被視為人類存在重要價值怎麼演化出來。Wilson 推廣其多層次擇汰學說，主張那些人類之所以為人類的特質，是群體選擇與個體選擇的結果。（這讓我挺好奇的，就我理解 Wilson 的社會生物學應該也是基於親緣選擇學說，但在此書中，他的立場卻反駁親緣選擇學說。這也許要多讀一點演化學說的發展，以及 Wilson 近年的著作才會知道為什麼。）</p>
+<span id="more"></span>
+
+<h1 id="我們存在的理由"><a href="#我們存在的理由" class="headerlink" title="我們存在的理由"></a>我們存在的理由</h1><h2 id="意義的「意義」"><a href="#意義的「意義」" class="headerlink" title="意義的「意義」"></a>意義的「意義」</h2><p>《人類存在的意義》探討人類存在於世間的理由與地位，認為應結合人文與科學共同思索這個問題。</p>
+<p>卷初作者便釐清意義的兩種含意：事物之所以發生的遠因與近因。近因帶有目的，例如蜘蛛結網捕蟲，蜘蛛網存在的意義就是為了獵食求生，或說神創論者相信人類是造物主規劃下的產物，人類生存的意義便是達成被賦予使命或任務。至於遠因則無關意向和動機，是事情發展至現況所經歷的一切偶然與歷史因素，沒有任何規劃與目的。</p>
+<p>探究近因能理解事情怎麼發生，而探究遠因則能明白事情為什麼會如此。由於生物技術和優生學發展，人類已經能逐步跨出遠因的支配，依照目的性規畫自己演化的途徑，但究竟我們該翻修自己到何種程度？面對這樣的道德困境，此書著墨於人類存在的遠因——亦即人類的祖先是怎麼經歷一連串的累積而成為我們，繼而探討當我們理解這種意義後又該怎麼考量自己的處境，明瞭未來的方向。</p>
+<h2 id="解開人類之謎"><a href="#解開人類之謎" class="headerlink" title="解開人類之謎"></a>解開人類之謎</h2><p>文明社會是人類的重要屬性，其發源於真社會性（eusociality），已知的人類外的真社會性生物僅出現在昆蟲、某些海生甲殼綱動物和生活在地下的齧齒類動物，並不超過三十種。儘管經歷數次物種爆發，真社會性一直要到近兩億年才出現，儘管如此，真社會性替生物帶來非常大的利益。不過發展真社會性需要在演化過程中出現一連串改變，首先建立巢穴，然後以此為據點覓食哺育，成員分工合作最終形成真社會性的群體，因此儘管能帶來許多好處，仍然很晚近才發展出來。</p>
+<p>人類的真社會性可能源於飲食習慣改變為肉食，因此要更嚴謹的分工合作，繼而設立營地，因為合作與競爭發展人際關係，交流中凸顯心智的重要性，因此逐步演化出心智能力。</p>
+<p>而解釋演化趨力的學說主流學說有兩種：「親緣選擇 （kin selection）」以及「總括生殖成就（inclusibe fitness）或是整體適存度」。前者認為個體互助源於基因相似，能從利他行為獲利，最終發展出社會行為；後者則是只要行為能確保最大基因流傳，則群體就可能發展出社會行為。然而作者主張的多層次擇汰（multilevel selection），認為自然選擇發生在個體在群體內的競爭（個體擇汰）以及群體和群體間的競爭（群體擇汰），因此人類不僅會對群體有認同感，也極其關注群體內的是是非非。</p>
+<h2 id="演化與我們內在的衝突"><a href="#演化與我們內在的衝突" class="headerlink" title="演化與我們內在的衝突"></a>演化與我們內在的衝突</h2><p>人類的善與惡即是利他與利己的衝突，這種矛盾特徵源於基因的個體選擇和群體選擇。僅影響個體的不利基因會在群體內或群體外的人際關係中被汰除，而會影響群體（即個體互動）的基因，則會在群體與群體互動中汰除，因為無法合作協調的群體難以對抗較團結的群體。人類的利己基因能讓個體在群體內競爭中勝出，於是團體逐漸變成自私的團體，然而自私的團體在群體間競爭卻無法對抗因帶有利他基因而合作的團體。個體擇汰篩選出利己基因，群體擇汰篩選出利他基因，兩者會在演化過程中拉扯游移。</p>
+<p>「個體擇汰」（個體和同一群體內的其他個體競爭）和和「群體擇汰」（群體與其他群體競爭）這兩種力量之間發生了衝突。後者會使同一群體的所有成員懷抱利他精神，相互合作，並產生道德意識、良知與榮譽感。簡而言之，這兩股力量之間的中途在於：在同一個群體內，自私的個體會擊敗具有利他精神的個體，但由利他主義者所組成的群體，會擊敗由自私的個體所組成的群體。說得更簡單一些：個體擇汰會助長邪惡，群體擇汰則會增強美德。</p>
+<p>史前時期這段「多層次擇汰」的演化過程，使得人類的心中永遠充滿了矛盾與衝突，不時在這兩股極端的演化力量之間游移。我們不可能完全屈服於其中任何一種力量，因為它們都不是解決我們的社會與政治問題的理想方式。如果我們完全聽任「個體擇汰」的本能趨使，則整個社會終將瓦解。反過來說，我們如果完全臣服於「群體擇汰」的趨力，則會變成天使一般的機器人，如同一群特大號的螞蟻。（page 49）</p>
+<h1 id="知識的統合"><a href="#知識的統合" class="headerlink" title="知識的統合"></a>知識的統合</h1><h2 id="新啟蒙時代"><a href="#新啟蒙時代" class="headerlink" title="新啟蒙時代"></a>新啟蒙時代</h2><p>雖然意在強調整合人文與科學以探索人類之所以為人類的理由，但作者卻以大量篇幅敘述人文學科的侷限，列舉科學進展飛速試圖證明科學已經到了可以解決問題的時候。</p>
+<h2 id="人文學科的重要"><a href="#人文學科的重要" class="headerlink" title="人文學科的重要"></a>人文學科的重要</h2><p>儘管作者認為人文學科難以解釋人類的意義，但是能從倫理學的角度解決科技進步的衝擊。作者提及的道德危機是「人類是否應為了避免疾病或培養特質而編輯自己的基因」，作者支持存在保守主義（existential conservatism）主張人的生物特性是一項神聖的資產，有義務要加以保存。另外科技能被科技取代，且在傳播中會逐漸均質；但文化多樣性是獨一無二，它的演進越來越複雜越來越獨特，人文學科的第二個價值就在於它保留了人類之所以為人的特質。</p>
+<p>總言之，作者認為人文學科不能解決我們的疑問，但它一方面作為解決道德抉擇的利器，一方面作為標本保留了文化發展獨一無二的一面。</p>
+<h2 id="社會演化的驅力"><a href="#社會演化的驅力" class="headerlink" title="社會演化的驅力"></a>社會演化的驅力</h2><p>本章節敘述總括生殖理論和多層次擇汰的內涵，並提出前者的反證。總括生殖理論的核心觀點可以用漢彌爾頓的不等式（Hamilton inequality）表達：</p>
+<blockquote>
+<p>某個利他行為所造福的對象，如果他所繁衍的後代數量，超過那位利他者因該利他行為而損失的後代數量，則表現這個利他行為的基因就會增加。然而，唯有在利他者和他所造福的對象彼此的親緣關係很近的情況之下，利他者才能從自己的利他行為中受惠。至於兩者親緣接近的程度，則視他們共同擁有的基因的比例而定：兄弟姊妹是四分之一，堂（表）兄弟姊妹是八分之一，依此類推。親緣關係愈遠，比例愈低，而且下降得很快。這樣的過程後來稱為『親緣選擇』（kin selection）。(p.87)</p>
+</blockquote>
+<blockquote>
+<p>……他（漢彌爾頓）認為，生活在群體中的個體會與群體中的其他成員互動。在這個過程中，牠和每一個與牠有互動關係的成員都共同參與了「親緣選擇」。這些行為的總和對牠能傳給下一代的基因數量的影響，便是牠的總括生殖成就，也就是將這些行為的好處與成本統統加起來，再用牠和每一個成員之間的親緣等級來打折所得出的數字。依照「總括生殖成就理論」，擇汰的單位在不知不覺間從『基因』變成了『個體』。(p.89)</p>
+</blockquote>
+<p>而作者反對的理由有：</p>
+<ul>
+<li>過於抽象，脫離實際觀察結果。</li>
+<li>僅觀察少數現象做出結論，忽略生態學、譜系學、神經生物學等領域。</li>
+<li>錯將選擇單位界定為個體。</li>
+<li>行為的效應不一定可以加總。</li>
+</ul>
+<h1 id="人類之外的世界"><a href="#人類之外的世界" class="headerlink" title="人類之外的世界"></a>人類之外的世界</h1><p>（前兩節略過，閱讀無收穫）</p>
+<h2 id="外星人的模樣"><a href="#外星人的模樣" class="headerlink" title="外星人的模樣"></a>外星人的模樣</h2><p>作者依據地球生物學知識推論能發展出文明的外星人是什麼模樣。</p>
+<ul>
+<li>陸生：文明發展的基礎是能源，需要乾燥的環境生火或應用其他能源。</li>
+<li>體型大：智慧需要記憶體，而記憶體大小受限於空間大小。</li>
+<li>視覺與聽覺溝通：化學物質的擴散太慢，不利於迅速溝通，因此文明生物需以光或波動傳訊。</li>
+<li>觸手：任何可以製作工具的構造。</li>
+<li>道德：由於群體擇汰和個體擇汰作用，很可能在外星趨同演化出道德觀念。</li>
+<li>社會性：能夠合作和促使競爭，讓團體本身和其中成員具有演化優勢。</li>
+</ul>
+<h2 id="生物多樣性的崩壞"><a href="#生物多樣性的崩壞" class="headerlink" title="生物多樣性的崩壞"></a>生物多樣性的崩壞</h2><p>分類學的價值在於</p>
+<ul>
+<li>分類學家本身就是該生物的專家，是生物學知識的源頭。</li>
+<li>生態學或其他學說需要以來自分類學的研究作為基礎，否則可能會發生誤判關鍵物種等錯誤，導致錯誤的生態改良。</li>
+<li>發掘新物種可以擴充基因改良工具，促進生物學發展。</li>
+</ul>
+<h1 id="心靈的幻象"><a href="#心靈的幻象" class="headerlink" title="心靈的幻象"></a>心靈的幻象</h1><p>作者說明人性是源於「人類的心智發展過程中，得自遺傳的一些規律行為，而這些行為又使得人類的文化朝特定的方向發展，因此它是人腦中基因與文化的連結。」（p176），並舉出人們對居住地的偏好為證，還沒有居住地偏見的兒童天性愛好稀樹草原這種人類發源地的環境（African savanna hypothesis）。這些個性來自基因裡頭的預備學習（prepared learning），預備學習而來的行為因人而異，而學習傾向的多樣性在演化擇汰保留下來，導致族群普世的內在價值觀。</p>
+<h1 id="補充心得"><a href="#補充心得" class="headerlink" title="補充心得"></a>補充心得</h1><p>我後來在《做哲學》這本書讀到蠻貼切的說法：威爾森確實為人類的信念和行為提供了一種生物學解釋，不過，了解人類「是」怎樣的存在，還不足以答覆人類「該」如何存在。</p>
+<p>「我們從哪來？」尋找的是解釋，「我們要走向何方？」追求的則是規範。解釋擷取遺傳、社會和心理等學科的知識來釐清過去；而規範則寄託了人們的渴望、期許與畏懼來展望未來，它受限於過去，但不必與過去一致。這本書提供了解釋，也暗示遵循解釋的規範。然而，是否認同這樣的價值觀還是讀者的功課了。</p>
+<h1 id="摘錄"><a href="#摘錄" class="headerlink" title="摘錄"></a>摘錄</h1><ul>
+<li>人類的存在或許比我們所想像的更加簡單。沒有既定的宿命，沒有深邃難解的生命奧秘，也沒有競相要我們宣示效忠的魔鬼與神祇。我們只不過是靠著自己的努力適應環境，因而得以在這個生物世界中存活的一個獨特物種，獨立而脆弱。若欲永續存活，我們就必須敢於突破現今仍存在於社會（包括那些已經極為民主的社會）的制約，秉持獨立思考的精神與理性，好好地認識我們自己。(page 42)</li>
+<li>「人類的所有煩惱皆起因於我們不知道自己是什麼，對於我們想要成為什麼，也沒有一致的看法」(Jean Bruller&#x2F;Vercors You Shall Know Them, page 166)</li>
+<li>宗教在凡夫俗子的眼中是真的，在智者的眼中是假的，在統治者的眼中則是有用的。(小塞內卡, page 188)</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>evolution</tag>
       </tags>
   </entry>
   <entry>
