@@ -1,8 +1,8 @@
 ---
-title: 讀後感｜再創世紀
+title: 再創世紀
 date: 2019-02-10 19:03:03
-tags: reading
-categories: [astrobiology, what is life]
+tags: what is life
+categories: 
 ---
 《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。
 

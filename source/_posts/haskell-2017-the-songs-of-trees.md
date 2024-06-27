@@ -1,8 +1,8 @@
 ---
-title: 讀後感｜樹之歌
+title: 樹之歌
 date: 2022-02-09 22:20:13
-tags: 
-categories: [life, reading]
+tags: ecology
+categories:
 ---
 
 歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。

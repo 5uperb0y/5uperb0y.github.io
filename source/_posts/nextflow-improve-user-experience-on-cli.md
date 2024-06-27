@@ -2,7 +2,7 @@
 title: Nextflow｜如何改善用戶的命令列使用體驗
 date: 2024-01-08 22:10:02
 tags: nextflow 
-categories: [bioinformatics]
+categories:
 ---
 Nextflow 的命令列介面對開發者而言已相當全面，但對一般用戶而言，仍有可以改善的空間。本文介紹一些 Nextflow 的內建功能，可以因應不同的專案結構，改善用戶的命令列使用體驗。
 

@@ -1,8 +1,8 @@
 ---
 title: 科學論文的結構與撰寫 (Zen of Scientific Writing)
 date: 2019-12-04 17:16:13
-tags: communication
-categories: [academic, mindset]
+tags: writing
+categories:
 ---
 
 

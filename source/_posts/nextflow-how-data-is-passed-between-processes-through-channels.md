@@ -2,7 +2,7 @@
 title: Nextflow｜資料是怎麼在 Process 間傳遞？
 date: 2023-01-05 20:58:15
 tags: nextflow 
-categories: [bioinformatics]
+categories:
 ---
 
 Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda environment）。

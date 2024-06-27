@@ -1,8 +1,8 @@
 ---
 title: 很久很久以前，自然用什麼盛裝生命？
 date: 2022-11-22 21:25:03
-tags: 
-categories: [astrobiology, origins of life]
+tags: origins of life
+categories:
 ---
 1953年，在試管裡的雷鳴閃電與水氣蒸騰之後，米勒與尤里成功在模擬的早期地球環境中合成胺基酸，開啟了研究生命起源的先河。
 

@@ -1,8 +1,8 @@
 ---
 title: 讀後感｜生命是什麼 — 如何推論基因的尺寸？
 date: 2022-12-15 23:31:46
-tags: reading
-categories: [astrobiology, what is life]
+tags: what is life
+categories:
 ---
 
 依照[第一章](./schrodinger-1944-what-is-life-chapter-1.md)的推理，生物及其生理過程有賴大量原子參與，來抵銷個別原子的隨機行為，以維持生存所需的宏觀秩序。

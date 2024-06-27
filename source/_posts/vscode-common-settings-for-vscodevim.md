@@ -1,8 +1,8 @@
 ---
 title: Vim｜VSCodeVim 常用設定
 date: 2022-12-28 22:09:40
-tags: [vim, vscode] 
-categories: [programming, tools]
+tags: [vim, vscode]
+categories:
 ---
 
 本文紀錄一些有助於在 Vscode 使用 vim 的套件與快捷鍵設定。

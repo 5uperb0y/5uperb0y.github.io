@@ -2,7 +2,7 @@
 title: Nextflow｜程式碼區塊的跳脫符號 (escape characters)
 date: 2022-11-10 00:37:46
 tags: nextflow
-categories: [bioinformatics]
+categories:
 ---
 本文介紹程式碼定義變項的符號與 nextflow 內建語法衝突時，有哪些選項可以解決之。
 

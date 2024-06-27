@@ -2,7 +2,7 @@
 title: Nextflow｜背景執行 workflow 的方法
 date: 2022-11-30 00:47:46
 tags: nextflow
-categories: bioinformatics
+categories:
 ---
 一般而言，若想要背景執行 linux 指令，可在指令末端添加 `&`，或是透過 `ctrl + z` 配合 `bg %n` 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version >= 21.10.6），指令挪到背景後會陷入停止狀態。
 

@@ -2,7 +2,7 @@
 title: 〈教育的烏托邦〉
 date: 2016-05-12 18:35:38
 tags: sf
-categories: [sf, story]
+categories:
 ---
 
 　　夢臨市的天空是電腦的顏色，電腦死機的蔚藍。

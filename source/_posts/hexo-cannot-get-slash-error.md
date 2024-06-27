@@ -1,7 +1,7 @@
 ---
 title: hexo 部屬後網頁報錯 "cannot get /"
 date: 2024-01-02 20:47:12
-tags: 
+tags: blog
 categories: 
 ---
 

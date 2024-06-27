@@ -1,8 +1,8 @@
 ---
 title: 寫科普又不能當飯吃，為什麼還要寫？
 date: 2020-01-21 21:20:31
-tags: communication
-categories: [academic, writing]
+tags: writing
+categories:
 ---
 
 本文是 Mitalk 4 講座「科普如何當飯吃？」的聽講心得，陳俊堯老師在演講一開始先回答了這問題，再一一告訴我們，如果無法靠寫科普賺錢營生，那麼從事研究的學生、老師和學者們，到底有什麼理由勞心費神去寫科普文？

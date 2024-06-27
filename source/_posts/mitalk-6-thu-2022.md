@@ -1,8 +1,8 @@
 ---
 title: MiTalk 2022：在講台上
 date: 2022-01-25 18:17:33
-tags: [career, communication]
-categories: [microbial ecology, microbiota]
+tags: [ecology, communication]
+categories:
 ---
 
 兩年前，我曾以聽眾的身分報名 MiTalk，如今總算有點結果可以參加口頭報告。趁著記憶猶新，我想紀錄此次工作坊的所見所得，並且借題敘述一些尚未獨立成篇的想法。

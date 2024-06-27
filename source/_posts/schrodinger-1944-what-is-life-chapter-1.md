@@ -1,8 +1,8 @@
 ---
 title: 讀後感｜生命是什麼 — 鴿子為什麼那麼大？
 date: 2022-02-03 23:13:46
-tags: reading
-categories: [astrobiology, what is life]
+tags: what is life
+categories: 
 ---
 
 七十九年前，薛丁格在都柏林三一學院的系列演講為鴿子尺寸提供了光學以外的解釋。[^1]

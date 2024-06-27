@@ -1,8 +1,8 @@
 ---
 title: VScode｜無助於開發，但有助於身心的套件
 date: 2023-01-20 16:43:08
-tags: [vscode] 
-categories: [programming, tools]
+tags: vscode
+categories:
 ---
 最近調查 VSCode 有哪些能幫助軟體開發的工具時，發現不少有趣的擴充套件，這些套件也許不能提升開發速度，但說不定能為百無聊賴、獨自 coding 的下午增添風格與生氣。
 

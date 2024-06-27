@@ -1,8 +1,8 @@
 ---
 title: R/Rstudio console 的指令長度限制
 date: 2022-03-03 22:38:31
-tags: 
-categories: [programming]
+tags: linux
+categories:
 ---
 
 TL:DR：輸入 R/Rstudio console 的指令之容量上限為 4095 bytes。若超出上限，console 會忽略超出的部分，顯示 + 提醒使用者補完剩餘指令。

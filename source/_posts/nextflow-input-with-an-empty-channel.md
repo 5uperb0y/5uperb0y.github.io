@@ -2,7 +2,7 @@
 title: Nextflow｜輸入 empty channel 會發生什麼事？
 date: 2022-12-27 18:10:49
 tags: nextflow
-categories: bioinformatics
+categories:
 ---
 
 上週碰到一個離奇的 bug，有支 nextflow 腳本可以順利執行，但會無聲無息地略過其中一個 process。該腳本執行後於終端吐出的訊息類似以下形式：

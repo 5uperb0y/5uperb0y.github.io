@@ -2,7 +2,7 @@
 title: 在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境
 date: 2023-07-22 23:35:58
 tags: lua
-categories: [programming, tools]
+categories:
 ---
 # tabletop simulator VSCode 開發環境設定
 Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。

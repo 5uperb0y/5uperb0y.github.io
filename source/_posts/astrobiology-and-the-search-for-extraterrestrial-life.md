@@ -1,8 +1,8 @@
 ---
 title: 天體生物學和尋找外星生命
 date: 2019-09-09 10:18:37
-tags: communication
-categories: [academic, writing]
+tags: astrobiology
+categories:
 ---
 
 低調的人類從學會抬頭那一刻，就不斷在地球、月球、火星乃至其它銀河尋找自己不特別的證據。

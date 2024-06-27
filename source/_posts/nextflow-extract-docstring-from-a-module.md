@@ -2,7 +2,7 @@
 title: Nextflow｜模仿 docstring 來註解 process and workflow
 date: 2024-01-11 21:04:22
 tags: nextflow 
-categories: [bioinformatics]
+categories:
 ---
 
 本文介紹使用 docstring 的好處，並且探討如何在 Nextflow 使用多行註解模仿 python 的 docstring，從而改善撰寫與維護開發文件的流暢性。

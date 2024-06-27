@@ -2,7 +2,7 @@
 title: Vim｜Vimium，學習 Vim 的新途徑
 date: 2022-12-31 01:06:11
 tags: vim
-categories: [programming, tools]
+categories:
 ---
 
 [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) 是 Chrome 的一款擴充套件，它借鑒了 Vim 的鍵位設計與操作邏輯，讓用戶只需要鍵盤便能執行分頁管理、連結點擊與頁面瀏覽等操作。

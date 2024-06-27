@@ -1,8 +1,8 @@
 ---
 title: LeetCode 筆記｜724. Find Pivot Index
 date: 2022-12-20 20:34:20
-tags: array
-categories: [programming, leetcode]
+tags: leetcode
+categories:
 ---
 
 若數列某項兩側各數字的總和相同，則該項為數列的樞紐 (pivot)。給定一整數數列，判斷其是否含樞紐項。若有，求樞紐之索引值；若無，則回傳 `-1`。

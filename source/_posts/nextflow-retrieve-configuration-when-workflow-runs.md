@@ -2,7 +2,7 @@
 title: Nextflow｜怎麼從運行中的腳本取回參數？
 date: 2022-12-06 21:45:37
 tags: nextflow
-categories: bioinformatics
+categories:
 ---
 
 在執行腳本前，Nextflow 會讀取設置檔 (configuration files) 中的參數，將之代入腳本的對應位置後再執行程式。這項特性有助於使用者管理複雜流程的輸入值與環境設定，也將具體數值從流程邏輯抽離，讓開發者專注於流程的梳理與串接。

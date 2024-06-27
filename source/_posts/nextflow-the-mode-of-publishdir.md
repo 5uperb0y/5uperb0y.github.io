@@ -2,7 +2,7 @@
 title: Nextflow｜利用 `publishDir` 匯出分析檔案
 date: 2023-01-14 08:50:46
 tags: nextflow
-categories: bioinformatics
+categories:
 ---
 Nextflow 透過 channel 媒介 process 間的檔案傳遞，讓輸出入檔案以軟連結集中到 process 的工作目錄。不過若想從工作目錄取出分析的最終結果，有賴 `publishDir` directive 的協助。
 

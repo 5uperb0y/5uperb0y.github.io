@@ -1,8 +1,8 @@
 ---
 title: 網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？
 date: 2022-12-24 21:09:24
-tags: tips and tricks
-categories: [programming, tools]
+tags: tools
+categories:
 ---
 
 為什麼想以鍵盤瀏覽網頁？滑鼠是為簡化繁瑣的鍵入指令而生，也與圖形介面的發展相輔相成。因此，當代網頁本來就適合以滑鼠瀏覽，純靠瀏覽器有限的快捷鍵反倒綁手綁腳。

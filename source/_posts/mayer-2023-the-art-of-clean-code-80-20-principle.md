@@ -1,8 +1,8 @@
 ---
 title: 假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？
 date: 2024-01-03 21:06:25
-tags: 
-categories: [programming]
+tags: development
+categories:
 ---
 > The principle says that the majority of effects come from the minority of causes.
 

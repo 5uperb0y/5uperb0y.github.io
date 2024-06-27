@@ -1,8 +1,8 @@
 ---
-title: 讀後感｜戲說統計
+title: 戲說統計
 date: 2020-11-28 13:17:18
-tags: reading
-categories: [academic, mindset]
+tags: statistics
+categories:
 ---
 
 知乎上有段軼聞可以很好地形容我讀《戲說統計》的心境：

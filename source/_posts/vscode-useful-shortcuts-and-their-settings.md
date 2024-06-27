@@ -2,7 +2,7 @@
 title: VSCode｜常用快捷鍵與個人設置
 date: 2023-01-08 02:20:58
 tags: vscode 
-categories: [programming, tools]
+categories: 
 ---
 VSCode 有許多快捷鍵設置，本文記錄一些我覺得挺實用的設置
 

@@ -1,8 +1,8 @@
 ---
 title: 讀後感｜太空生物學
 date: 2019-02-10 19:06:25
-tags: reading
-categories: [astrobiology, life in the universe]
+tags: life in the universe
+categories:
 ---
 
 李炎的太空生物學是台灣少見的天文生物學專著，不過內容卻虛實參半。前半段摘錄新聞網或部落格報導的奇聞軼事，補充維基百科的條目說明，加上一些感想湊成討論生命起源和地外生命的篇章。然而，參考資料似乎不限於期刊論文，好比「墨西哥人發現外星人寶寶」之類的農場新聞也直接收錄，並沒有加以解釋或編輯。

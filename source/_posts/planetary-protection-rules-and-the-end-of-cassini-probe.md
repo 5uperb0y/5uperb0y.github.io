@@ -1,8 +1,8 @@
 ---
 title: 卡西尼號與行星保護
 date: 2017-09-16 21:33:52
-tags: 
-categories: [astrobiology, life in the universe]
+tags: life in the universe
+categories:
 ---
 
 > 歷經20年的太空旅行，美國航太總署（NASA）的卡西尼號（Cassini）太空船今天將最後的訊號傳回地球後，高速衝撞土星，以分解蒸發的壯烈方式，結束13年的土星任務。

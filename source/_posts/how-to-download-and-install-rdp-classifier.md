@@ -1,8 +1,8 @@
 ---
 title: 如何下載和安裝 RDP classifier
 date: 2022-03-07 22:50:09
-tags: database
-categories: [bioinformatics, metagenomics]
+tags: metagenomics
+categories:
 ---
 
 RDP classifier 是基於 Naive Bayes 的物種分類器，常用於註解 16S rRNA 基因序列的分類資訊。除了使用內建的 RDP 資料庫以外，RDP classifier 也允許使用自訂資料庫來訓練分類器。除了內建的 RDP database，也支援以其他資料庫來訓練分類器。

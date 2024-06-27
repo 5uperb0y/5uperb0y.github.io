@@ -1,8 +1,8 @@
 ---
 title: LeetCode 筆記｜1480. Running Sum of 1d Array
 date: 2022-12-19 21:08:37
-tags: array
-categories: [programming, leetcode]
+tags: leetcode 
+categories:
 ---
 計算數列逐項的累積和 (runningSum)
 

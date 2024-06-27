@@ -2,7 +2,7 @@
 title: VSCode｜ Failed to parse remote port from server output
 date: 2023-01-07 14:20:08
 tags: vscode 
-categories: [programming, tools]
+categories:
 ---
 ## 狀況描述
 原本在 Windows 都能正常用 VSCode Remote SSH 連線伺服器，但一早卻發現連線失敗。當時，VSCode 不斷要求輸入密碼卻無法登入，"OUTPUT" 頁面提示的訊息節錄如下：

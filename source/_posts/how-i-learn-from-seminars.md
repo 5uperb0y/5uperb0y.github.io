@@ -1,8 +1,8 @@
 ---
 title: 從碩班第一次專題課說起......
 date: 2022-01-01 20:59:23
-tags: communitcation
-categories: [academic, tips & tricks]
+tags: writing
+categories:
 ---
 
 讀碩班前，我其實不知道 seminar 到底要幹嘛，也不知道和我有什麼關係。所以如同曖昧、戀愛等陌生概念，所有關於 seminar 的知識都是PTT教我的。

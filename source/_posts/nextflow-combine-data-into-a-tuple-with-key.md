@@ -2,7 +2,7 @@
 title: Nextflow｜如何為輸入的資料建立辨識碼 
 date: 2023-01-09 23:50:16
 tags: nextflow 
-categories: [bioinformatics]
+categories:
 ---
 在 Nextflow 的框架，channel 媒介了 process 間的資料傳遞。雖然資料進出 channel 遵循先進先出 (first-in, first out, FIFO) 原則，但隨後 nextflow 會平行處理這些資料，所以 process 釋出資料的順序取決於執行速率，而不是原先輸入的順序（見下例）。
 

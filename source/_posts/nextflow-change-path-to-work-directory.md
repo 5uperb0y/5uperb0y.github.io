@@ -2,7 +2,7 @@
 title: Nextflow｜調整工作目錄的路徑
 date: 2023-01-30 22:36:46
 tags: nextflow
-categories: [bioinformatics]
+categories:
 ---
 Nextflow 會為分析流程的每一步建立工作目錄，再以工作目錄為中心接收資料、儲存暫存檔和匯出結果。工作目錄預設在 nextflow 腳本執行路徑下的 `work/`，可透過添加執行選項、調整參數設定、設置環境變項等三種方式自訂工作目錄的路徑。
 <!--more-->

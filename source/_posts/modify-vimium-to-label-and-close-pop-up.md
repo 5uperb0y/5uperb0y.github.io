@@ -2,7 +2,7 @@
 title: Vim｜嘗試修改 Vimium 來關閉網頁 pop-up
 date: 2023-01-22 20:54:05
 tags: vim
-categories: [programming, tools]
+categories:
 ---
 彈出視窗是以鍵盤瀏覽網頁的最大阻礙。這些視窗的內容不外乎會員邀請、推薦連結、蓋板廣告與網站公告等，是網站而定，通常沒辦法以 tab 來點擊，之前介紹的 Vimium 功能也沒辦法為這些視窗上的連結打標籤。由於彈出視窗並非廣告，所以下載 adblock 也無法阻擋之。所以往往只能乖乖移動滑鼠關閉之。
 

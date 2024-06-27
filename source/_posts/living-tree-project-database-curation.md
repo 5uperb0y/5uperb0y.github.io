@@ -1,8 +1,8 @@
 ---
 title: All-Species Living Tree Project (LTP) 物種資訊的訂正和維護
 date: 2022-11-22 00:03:33
-tags: [database]
-categories: [microbial ecology, microbiota]
+tags: metagenomics
+categories:
 ---
 
 All-Species Living Tree Project (LTP)[^1] 旨在維護所有已知古菌和細菌 type strain 的 16S rRNA 基因序列，並基於這些序列，建立古菌和細菌的譜系樹。

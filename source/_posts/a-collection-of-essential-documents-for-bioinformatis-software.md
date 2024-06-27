@@ -1,7 +1,7 @@
 ---
 title: 常見的生物資訊軟體開發文件
 date: 2024-01-21 20:52:59
-tags: 
+tags: development
 categories:
 ---
 
