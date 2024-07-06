@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/finding-a-spliced-motif/</loc>
+    
+    <lastmod>2024-07-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/remove-unnecessary-elements-to-make-the-jupyterlab-ui-cleaner/</loc>
     
     <lastmod>2024-07-05</lastmod>
@@ -1055,13 +1064,6 @@
 
   
   <url>
-    <loc>https://5uperb0y.com/tags/sf/</loc>
-    <lastmod>2024-07-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/tags/development/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -1069,7 +1071,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/story/</loc>
+    <loc>https://5uperb0y.com/tags/sf/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1083,14 +1085,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/what-is-life/</loc>
+    <loc>https://5uperb0y.com/tags/story/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/linux/</loc>
+    <loc>https://5uperb0y.com/tags/what-is-life/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1104,14 +1106,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/life-in-the-universe/</loc>
+    <loc>https://5uperb0y.com/tags/linux/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
+    <loc>https://5uperb0y.com/tags/life-in-the-universe/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1132,6 +1134,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
+    <lastmod>2024-07-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/tags/ecology/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -1139,14 +1148,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/blog/</loc>
+    <loc>https://5uperb0y.com/tags/writing/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/writing/</loc>
+    <loc>https://5uperb0y.com/tags/blog/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1195,14 +1204,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/tools/</loc>
+    <loc>https://5uperb0y.com/tags/nextflow/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/nextflow/</loc>
+    <loc>https://5uperb0y.com/tags/tools/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1237,14 +1246,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/philosophy/</loc>
+    <loc>https://5uperb0y.com/tags/evolution/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/evolution/</loc>
+    <loc>https://5uperb0y.com/tags/philosophy/</loc>
     <lastmod>2024-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

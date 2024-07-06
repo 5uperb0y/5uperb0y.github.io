@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="「你有去過橋下俱樂部嗎？」 橋下俱樂部，是我家鄉某個村民聯絡感情的地方。俱樂部的位置在中山高某段陸橋底下，旁邊則是一條長滿雜草的臭水溝。整個空間只有一個排球場大，高度也不高，稍微伸展就能摸到因車流而震動的橋底。 原本橋下沒什麼人的，好像某次有一整套家具被棄置到這邊，才吸引了沒事幹的中老年人聚到這，甚至一些被子女拋棄的老人把更多家具堆積到橋下，經營著自己真正的家。 我的舅舅對於這現象有個精闢的見解，">
+    <meta name="description" content="透過 FASTQ 格式給定 s 與 t 兩個 DNA 字串，求 t 的各個字符依序出現在 s 中的位置，使得這些字符構成 s 的子序列（subsequence）。（只需提供其中一組解，不用列出所有可能的子序列位置。）  Given: Two DNA strings s and t (each of length at most 1 kbp) in FASTA format. Return: One">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="橋下俱樂部與都市不對稱性">
-<meta property="og:url" content="https://5uperb0y.com/underbridge-clubs-and-urban-asymmetry/index.html">
+<meta property="og:title" content="ROSALIND｜Finding a Spliced Motif (SSEQ)">
+<meta property="og:url" content="https://5uperb0y.com/finding-a-spliced-motif/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="「你有去過橋下俱樂部嗎？」 橋下俱樂部，是我家鄉某個村民聯絡感情的地方。俱樂部的位置在中山高某段陸橋底下，旁邊則是一條長滿雜草的臭水溝。整個空間只有一個排球場大，高度也不高，稍微伸展就能摸到因車流而震動的橋底。 原本橋下沒什麼人的，好像某次有一整套家具被棄置到這邊，才吸引了沒事幹的中老年人聚到這，甚至一些被子女拋棄的老人把更多家具堆積到橋下，經營著自己真正的家。 我的舅舅對於這現象有個精闢的見解，">
+<meta property="og:description" content="透過 FASTQ 格式給定 s 與 t 兩個 DNA 字串，求 t 的各個字符依序出現在 s 中的位置，使得這些字符構成 s 的子序列（subsequence）。（只需提供其中一組解，不用列出所有可能的子序列位置。）  Given: Two DNA strings s and t (each of length at most 1 kbp) in FASTA format. Return: One">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-06-24T09:14:31.000Z">
-<meta property="article:modified_time" content="2024-06-24T09:15:56.688Z">
+<meta property="article:published_time" content="2024-07-06T13:31:59.000Z">
+<meta property="article:modified_time" content="2024-07-06T13:39:57.611Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="modernology">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/underbridge-clubs-and-urban-asymmetry/">
+<link rel="canonical" href="https://5uperb0y.com/finding-a-spliced-motif/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/underbridge-clubs-and-urban-asymmetry/","path":"underbridge-clubs-and-urban-asymmetry/","title":"橋下俱樂部與都市不對稱性"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/finding-a-spliced-motif/","path":"finding-a-spliced-motif/","title":"ROSALIND｜Finding a Spliced Motif (SSEQ)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>橋下俱樂部與都市不對稱性 | 5uperb0y's blog</title>
+<title>ROSALIND｜Finding a Spliced Motif (SSEQ) | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B0%B8%E7%A6%8F%E6%A9%8B"><span class="nav-number">1.</span> <span class="nav-text">永福橋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A6%8F%E5%92%8C%E6%A9%8B"><span class="nav-number">2.</span> <span class="nav-text">福和橋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A7%80%E6%9C%97%E6%A9%8B"><span class="nav-number">3.</span> <span class="nav-text">秀朗橋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%BD%E5%85%89%E6%A9%8B"><span class="nav-number">4.</span> <span class="nav-text">陽光橋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E5%A4%AE%E8%B7%AF%E6%A9%8B"><span class="nav-number">5.</span> <span class="nav-text">中央路橋</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A2%A7%E6%BD%AD%E5%A4%A7%E6%A9%8B"><span class="nav-number">6.</span> <span class="nav-text">碧潭大橋</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Python 實作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%8E%E8%AB%96%EF%BC%9A%E6%89%BE%E5%87%BA%E6%89%80%E6%9C%89-spliced-motif-%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">討論：找出所有 spliced motif 的位置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8B%95%E6%85%8B%E8%A6%8F%E5%8A%83"><span class="nav-number">4.1.</span> <span class="nav-text">動態規劃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%9E%E8%BF%B4"><span class="nav-number">4.2.</span> <span class="nav-text">遞迴</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -256,6 +256,44 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-motif-in-dna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-09</time>
+        <br>
+      ROSALIND | Finding a Motif in DNA (SUBS)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-shared-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-11</time>
+        <br>
+      ROSALIND | Finding a Shared Motif (LCSM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rna-splicing/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-30</time>
+        <br>
+      ROSALIND｜RNA Splicing (SPLC)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rosalind-a-platform-for-learning-bioinformatics-through-problem-solving/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-25</time>
+        <br>
+      Rosalind，生物資訊的 LeetCode
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
@@ -273,7 +311,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/underbridge-clubs-and-urban-asymmetry/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/finding-a-spliced-motif/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -286,12 +324,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="橋下俱樂部與都市不對稱性 | 5uperb0y's blog">
+      <meta itemprop="name" content="ROSALIND｜Finding a Spliced Motif (SSEQ) | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          橋下俱樂部與都市不對稱性
+          ROSALIND｜Finding a Spliced Motif (SSEQ)
         </h1>
 
         <div class="post-meta-container">
@@ -303,7 +341,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-06-24 17:14:31 / 修改時間：17:15:56" itemprop="dateCreated datePublished" datetime="2024-06-24T17:14:31+08:00">2024-06-24</time>
+      <time title="創建時間：2024-07-06 21:31:59 / 修改時間：21:39:57" itemprop="dateCreated datePublished" datetime="2024-07-06T21:31:59+08:00">2024-07-06</time>
     </span>
 
   
@@ -312,14 +350,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.5k</span>
+      <span>988</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>5 分鐘</span>
+      <span>4 分鐘</span>
     </span>
 </div>
 
@@ -329,27 +367,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「你有去過橋下俱樂部嗎？」</p>
-<p>橋下俱樂部，是我家鄉某個村民聯絡感情的地方。俱樂部的位置在中山高某段陸橋底下，旁邊則是一條長滿雜草的臭水溝。整個空間只有一個排球場大，高度也不高，稍微伸展就能摸到因車流而震動的橋底。</p>
-<p>原本橋下沒什麼人的，好像某次有一整套家具被棄置到這邊，才吸引了沒事幹的中老年人聚到這，甚至一些被子女拋棄的老人把更多家具堆積到橋下，經營著自己真正的家。</p>
-<p>我的舅舅對於這現象有個精闢的見解，他說橋下俱樂部是沒有神的地方。橋下正好位於那邊幾個宮廟的中心，由於橋下附近的居民離廟宇都很遠，所以一旦橋下俱樂部的硬體成形後，村民都聚集到這裡來了。</p>
-<p>橋下俱樂部的興盛可能從我幼稚園開始，而衰退是什麼時候我不清楚，因為等我再次造訪橋下時，「橋下俱樂部」的塗鴉已經被抹去，先前堆積的雜物也被清空，只剩下公路工人在此小憩留下的菸蒂和飲料瓶。</p>
-<p>新店溪左右岸兩岸的橋下俱樂部呈現某種不對稱性。</p>
-<p>不對稱性的其中一層含義是某種事物比另一種多：重子不對稱性是重子的數量大與反重子，掌性不對稱是自然界的胺基酸多數左旋。而都市的不對稱性應該可以說是某種不平衡，例如區域的環境、硬體和人流組成差異等。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>透過 FASTQ 格式給定 s 與 t 兩個 DNA 字串，求 t 的各個字符依序出現在 s 中的位置，使得這些字符構成 s 的子序列（subsequence）。（只需提供其中一組解，不用列出所有可能的子序列位置。）</p>
+<blockquote>
+<p>Given: Two DNA strings s and t (each of length at most 1 kbp) in FASTA format.</p>
+<p>Return: One collection of indices of s in which the symbols of t appear as a subsequence of s. If multiple solutions exist, you may return any one.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/sseq/">https://rosalind.info/problems/sseq/</a>)</p>
 <span id="more"></span>
 
-<h1 id="永福橋"><a href="#永福橋" class="headerlink" title="永福橋"></a>永福橋</h1><p>永福橋左岸端是新北市永和區長春老人健康會，娛樂設施完備，例如歌舞機和桌球桌等，路過總能聽到卡啦ok和桌球乒乒乓乓的聲音。相較之下，右岸端是交通義勇警察大隊中正二中隊的中隊部，未開放給民眾使用。</p>
-<h1 id="福和橋"><a href="#福和橋" class="headerlink" title="福和橋"></a>福和橋</h1><p>福和橋左岸端光線明亮且空間寬闊，下層河階有大尺寸的象棋與棋盤為裝置藝術，棋盤周邊則有幾張石椅，幾個中年人躺在椅上睡覺。上層河階則有一溜冰場，上頭幾張聚在一起的滑輪辦公椅，反映了社交活動的蹤跡。（我覺得這些椅子就像恐龍踩在泥土上的腳印一樣，雖然不是恐龍本身，但都是某種生活的證明。假如這世界人類突然消失，那這些尋常的椅子也會是外人研究當今人類的珍貴資產吧？）目光所及有六名老人，但只有一位女性。遠方傳來的乒乓聲暗示桌球場的存在。</p>
-<p>福和橋右岸端緊鄰公館河濱公園，但空間狹窄，草坪雜亂。雖然在停留的十分鐘間有百人通過，但無人駐足，僅有剛到時即在此處休憩的是兩名自行車騎士和兩名睡覺的人。（15時00分）</p>
-<h1 id="秀朗橋"><a href="#秀朗橋" class="headerlink" title="秀朗橋"></a>秀朗橋</h1><p>秀朗橋左岸端的空間也很寬闊，一旁是溜冰場和籃球場，有許多傳統台式建築的彩繪。共有五位中年人逗留此處，其中有一位演奏家，一名自行車騎士，一名步行者，兩個在餵鴿子。地上有重型機具拖曳重物留下的刮痕，正好劃出一張空白的五線譜。（13時30分）</p>
-<p>秀朗橋右岸端和左岸端截然不同，空間狹窄且陰暗，雖然有十二人在此休息（六小孩，八女性），但多不久留。待我離去時，僅剩一人在此發呆。（14時49分）</p>
-<h1 id="陽光橋"><a href="#陽光橋" class="headerlink" title="陽光橋"></a>陽光橋</h1><p>陽光橋左岸端是近河岸的小平臺，因為陽光橋很狹窄，所以此處沒什麼遮蔭。然而，因鄰近陽光運動公園，仍有一家大小在此處閒聊嬉鬧。（13時45分）</p>
-<p>陽光橋右岸端則是很大的廣場，地面是石磚鋪成，和其他地點的水泥地很不一樣。和左岸端類似，幾乎沒有遮蔭。現場有二十人，七個小孩，大人都坐著看小孩玩耍。（14時30分？）</p>
-<h1 id="中央路橋"><a href="#中央路橋" class="headerlink" title="中央路橋"></a>中央路橋</h1><p>中央路橋左岸端在陽光運動公園往碧潭處腳踏車程十分鐘。地面跟陽光橋右岸端一樣由石磚鋪成。共有十四張石椅子，但有十七人在此休息，幸好有三個小孩，他們只坐半張椅子。（13時55分）</p>
-<p>中央路橋右岸端則是微樂山丘腳踏車躍動體驗區。場址如其名，位於新店溪畔自行車道一旁約四米到五高的小丘。現場佈置了越野腳踏車賽道（例如高低起伏、極度傾斜、蜿蜒的車道等），原本想去體驗躍動感的，但將近三十名小孩在排隊，於是打消此念頭。（14時20分）</p>
-<h1 id="碧潭大橋"><a href="#碧潭大橋" class="headerlink" title="碧潭大橋"></a>碧潭大橋</h1><p>碧潭大橋左岸端就像是宮廟旁的涼亭一樣，擺放了陳舊的桌椅。有一家庭在此處嗑瓜子，兩個中年人躺在木椅上滑手機打瞌睡。現場有五小孩，七女性。跟其他站點相比，這裡零碎的桌椅、野餐的家庭、慵懶的氣氛和低落的人群流動率更像家鄉那個被棄置的橋下俱樂部。（14時00分）</p>
-<p>碧潭大橋右岸端的附近是碧潭風景區，但沒一個人在此處逗留。周邊有一張告示牌，若不細看的話，感覺像在說這幾張石椅子是某些文物（14時14分）</p>
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在真核生物基因體中，introns 會在轉錄後加工時被移除，所以 DNA 序列不會完全呈現在 mRNA 上。因此，某些 motif 可能以不連續的方式出現基因體上。因此，透過 DNA 序列尋找這些 motif 時，不僅要考慮彼此相連的序列，還要納入可能被 introns 分隔的序列。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>這題涉及「子字串」和「子序列」的區別。在生物資訊領域，我們常用序列來描述 DNA，所以這兩個概念可能產生歧義。</p>
+<ul>
+<li>子字串（substring）：字串的一部分，要求字符間彼此相鄰。例如 “abc” 是 “abcde” 的子字串，但 “ac” 不是。</li>
+<li>子序列（subsequence）：序列的一部份，僅要求元素出現的順序與原序列一致，不要求子序列各元素彼此相鄰。例如 [a,b,c] 和 [a,c] 都是 [a,b,c,d,e] 的子序列。</li>
+</ul>
+<p>這一題等價於尋找子序列的位置，而且我們只須找到其中一組解。其中一個方法是依序檢查序列，當碰到與子序列相符的字符時，紀錄它的位置，然後繼續在序列中尋找子序列的下一個元素，直到找到子序列的所有元素。</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>實作時，從 motif 的第一個字符開始，逐一檢查 DNA 序列中的每個字符。一旦發現 DNA 中的字符與當前檢查的 motif 字符相同時，就把該字符的位置記錄到 motif_pos（因為題目要求從 1 開始計數，所以索引值要加 1）。接著，繼續在 DNA 中尋找與 motif 下一個字符相符的字符，直到找到 motif 中所有字符為止。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sseq</span>(<span class="params">dna, motif</span>):</span><br><span class="line">    motif_pos = []</span><br><span class="line">    <span class="keyword">for</span> pos, nt <span class="keyword">in</span> <span class="built_in">enumerate</span>(dna):</span><br><span class="line">        <span class="keyword">if</span> motif:</span><br><span class="line">            <span class="keyword">if</span> nt == motif[<span class="number">0</span>]:</span><br><span class="line">                motif_pos.append(pos + <span class="number">1</span>) </span><br><span class="line">                motif = motif[<span class="number">1</span>:]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> motif_pos</span><br></pre></td></tr></table></figure>
 
+<h1 id="討論：找出所有-spliced-motif-的位置"><a href="#討論：找出所有-spliced-motif-的位置" class="headerlink" title="討論：找出所有 spliced motif 的位置"></a>討論：找出所有 spliced motif 的位置</h1><p>為了挑戰自己，我在解完這題之後，開始研究怎麼找出所有 spliced motif 的位置。不過最終仍沒想出來，也看不太懂 AI 建議的解答。因此，我暫時先把程式碼和自己的見解記錄下來，期待自己在練習更多題目之後能夠開竅😥。</p>
+<h2 id="動態規劃"><a href="#動態規劃" class="headerlink" title="動態規劃"></a>動態規劃</h2><p>使用動態規劃解題的關鍵在於使用 dp[j] 記錄 motif[:j] 在 DNA 中所有可能的子序列位置。對於 DNA 序列中的每個字符，從後往前檢查 motif 的字符是否匹配。一旦兩者當前檢查的字符一致時，舊更新 dp。這個更新的過程利用了一個特性：由於已知 motif[:j] 在 DNA 中所有可能的子序列位置，那麼 motif[:j+1] 的所有可能子序列就可以透過將當前匹配的字符位置添加到 motif[:j] 所有的解來獲得。</p>
+<p>這裡有個技術細節是，因為 tple 無法像是 list 使用 append 添加元素，所以用 <code>prev + (i + 1, )</code> 來創建新 tuple。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_spliced_motifs_dp</span>(<span class="params">dna, motif</span>):</span><br><span class="line">    dp = [<span class="built_in">set</span>() <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(motif) + <span class="number">1</span>)]</span><br><span class="line">    dp[<span class="number">0</span>].add(())</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(dna)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">reversed</span>(<span class="built_in">range</span>(<span class="built_in">len</span>(motif))):</span><br><span class="line">            <span class="keyword">if</span> dna[i] == motif[j]:</span><br><span class="line">                <span class="keyword">for</span> prev <span class="keyword">in</span> dp[j]:</span><br><span class="line">                    dp[j + <span class="number">1</span>].add(prev + (i + <span class="number">1</span>, ) )</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> dp[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="遞迴"><a href="#遞迴" class="headerlink" title="遞迴"></a>遞迴</h2><p>至於遞迴，先擺著等著開悟&#x3D; &#x3D;。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_spliced_motifs_rc</span>(<span class="params">dna, motif</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">search</span>(<span class="params">start, path, index</span>):</span><br><span class="line">        <span class="keyword">if</span> index == <span class="built_in">len</span>(motif):</span><br><span class="line">            <span class="keyword">return</span> &#123;path&#125;</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        results = <span class="built_in">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(start, <span class="built_in">len</span>(dna)):</span><br><span class="line">            <span class="keyword">if</span> dna[i] == motif[index]:</span><br><span class="line">                results.update(search(i + <span class="number">1</span>, path + (i + <span class="number">1</span>, ), index + <span class="number">1</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">        <span class="keyword">return</span> results</span><br><span class="line">    <span class="keyword">return</span> search(<span class="number">0</span>, (), <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -358,21 +400,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/modernology/" rel="tag"># modernology</a>
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/locating-restriction-sites/" rel="prev" title="ROSALIND｜Locating Restriction Sites (REVP)">
-                  <i class="fa fa-angle-left"></i> ROSALIND｜Locating Restriction Sites (REVP)
+                <a href="/remove-unnecessary-elements-to-make-the-jupyterlab-ui-cleaner/" rel="prev" title="移除不必要元件，打造精簡的 JupyterLab 使用者介面">
+                  <i class="fa fa-angle-left"></i> 移除不必要元件，打造精簡的 JupyterLab 使用者介面
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/rosalind-a-platform-for-learning-bioinformatics-through-problem-solving/" rel="next" title="Rosalind，生物資訊的 LeetCode">
-                  Rosalind，生物資訊的 LeetCode <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -456,7 +495,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/underbridge-clubs-and-urban-asymmetry/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/finding-a-spliced-motif/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>
