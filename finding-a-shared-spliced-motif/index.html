@@ -26,8 +26,8 @@
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
 <meta property="og:description" content="給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。  Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format. Return: A longest common subsequence of s and t. (If more than one solution e">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-07-03T11:11:32.000Z">
-<meta property="article:modified_time" content="2024-07-14T14:57:29.862Z">
+<meta property="article:published_time" content="2024-07-14T15:03:26.000Z">
+<meta property="article:modified_time" content="2024-07-14T15:03:02.254Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
@@ -185,6 +185,15 @@
     
     
     <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-07-14T23:03:26+08:00">
+        07/14
+      </time>
+      <a href="/finding-a-shared-spliced-motif/" title="ROSALIND｜Finding a Shared Spliced Motif (LCSQ)">ROSALIND｜Finding a Shared Spliced Motif (LCSQ)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
       <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-07-14T17:37:15+08:00">
         07/14
       </time>
@@ -207,15 +216,6 @@
         07/05
       </time>
       <a href="/remove-unnecessary-elements-to-make-the-jupyterlab-ui-cleaner/" title="移除不必要元件，打造精簡的 JupyterLab 使用者介面">移除不必要元件，打造精簡的 JupyterLab 使用者介面</a>
-      <br>
-      <br>
-    </li>
-    
-    <li class='pull-left' style="white-space:normal; text-align:left" >
-      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-07-03T19:11:32+08:00">
-        07/03
-      </time>
-      <a href="/finding-a-shared-spliced-motif/" title="ROSALIND｜Finding a Shared Spliced Motif (LCSQ)">ROSALIND｜Finding a Shared Spliced Motif (LCSQ)</a>
       <br>
       <br>
     </li>
@@ -346,15 +346,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2024-07-03 19:11:32" itemprop="dateCreated datePublished" datetime="2024-07-03T19:11:32+08:00">2024-07-03</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-07-14 22:57:29" itemprop="dateModified" datetime="2024-07-14T22:57:29+08:00">2024-07-14</time>
+      <time title="創建時間：2024-07-14 23:03:26 / 修改時間：23:03:02" itemprop="dateCreated datePublished" datetime="2024-07-14T23:03:26+08:00">2024-07-14</time>
     </span>
 
   
@@ -405,7 +399,7 @@
 <p>$$ LCS(S, T)&#x3D;<br>\begin{cases}<br>LCS(S_{sub}, T_{sub}) + s &amp; when &amp; s &#x3D; t\<br>LongerOne(LCS(S_{sub}, T), LCS(S, T_{sub})) &amp; when &amp; s\neq t <br>\end{cases}<br>$$</p>
 <p>這個關係式表明，兩序列的 LCS 可以從各自子序列的 LCS 推論出來，這構成了應用動態規劃的基礎。</p>
 <p>我們可以使用一個二維陣列來記錄 $S$ 和 $T$ 所有子序列的 LCS，再逐一檢視各個子序列的最後一個元素，參考前述關係式填滿這個陣列。最終，陣列右下角的元素就是題目要求的最常共同子序列。</p>
-<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>動態規劃的實作通常包含三個步驟：定義資料結構、釐清子結構間的關係，確認初始值<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="我覺得動態規劃難在看得懂但想不到。不過別人花了一輩子研究才想出來的演算法，要我們在周末下午憑空刻出來也是強人所難。因此，我覺得適度原諒遲鈍的自己也是很值得鼓勵的行為喔。順道一提，我蠻喜歡這篇關於動態規劃的文章，推薦給大家:) [动态规划很难？DP连刷40道题，我总结出了这些套路](https://github.com/iamshuaidi/algo-basic/blob/master/%E5%AD%A6%E7%AE%97%E6%B3%95/%E5%AD%A6%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BE%88%E9%9A%BE%EF%BC%9FDP%E8%BF%9E%E5%88%B740%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BA%86%E8%BF%99%E4%BA%9B%E5%A5%97%E8%B7%AF.md)">1</span></a></sup>。考量這題要求找出 DNA 序列的最長共同子序列（為了方便討論，此處字串視為廣義的序列），我選擇以巢狀 list 來模擬二維陣列。每個元素代表對應的 DNA 子序列的最長共同子序列。</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>動態規劃的實作通常包含三個步驟：定義資料結構、釐清子結構間的關係，確認初始值<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="我覺得動態規劃難在看得懂但是想不到。不過別人花了一輩子研究才想出來的演算法，要我們在周末下午憑空刻出來也是強人所難。因此，我覺得適度原諒遲鈍的自己也是很值得鼓勵的行為喔。順道一提，我蠻喜歡這篇關於動態規劃的文章，推薦給大家:) [动态规划很难？DP连刷40道题，我总结出了这些套路](https://github.com/iamshuaidi/algo-basic/blob/master/%E5%AD%A6%E7%AE%97%E6%B3%95/%E5%AD%A6%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BE%88%E9%9A%BE%EF%BC%9FDP%E8%BF%9E%E5%88%B740%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BA%86%E8%BF%99%E4%BA%9B%E5%A5%97%E8%B7%AF.md)">1</span></a></sup>。考量這題要求找出 DNA 序列的最長共同子序列（為了方便討論，此處字串視為廣義的序列），我選擇以巢狀 list 來模擬二維陣列。每個元素代表對應的 DNA 子序列的最長共同子序列。</p>
 <p>這樣方法雖然需要額外的儲存空間，但我覺得比較直觀易懂，因為它需要不額外的步驟來回溯最長共同子序列的內容。</p>
 <p>以下實作需要注意幾點：</p>
 <ul>
@@ -413,7 +407,7 @@
 <li>兩條 DNA 序列最短的子序列是空序列，所以它們的初始值是一個空字串。</li>
 <li>填表時依照前述的關係式來進行，這裡用了 <code>max(a, b, key=len)</code> 來簡化程式碼。</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcsq</span>(<span class="params">S, T</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate and return the longest common subsequence (LCS) of two strings S and T.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        S, T (str): The two input DNA strings.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Return:</span></span><br><span class="line"><span class="string">        str: A longest common subsequence of s1 and t.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># lcs denotes the longest subsequence of all s1&#x27;s and s2&#x27;s substring</span></span><br><span class="line">    lcs = [</span><br><span class="line">        [<span class="string">&quot;&quot;</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>)</span><br><span class="line">        ]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S)):</span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(T)):</span><br><span class="line">            <span class="keyword">if</span> S[s] == T[t]:</span><br><span class="line">                lcs[s + <span class="number">1</span>][t + <span class="number">1</span>] = lcs[s][t] + S[s]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                lcs[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="built_in">max</span>(lcs[s + <span class="number">1</span>][t], lcs[s][t + <span class="number">1</span>], key=<span class="built_in">len</span>)</span><br><span class="line">    <span class="keyword">return</span> lcs[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></table></figure><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">我覺得動態規劃難在看得懂但想不到。不過別人花了一輩子研究才想出來的演算法，要我們在周末下午憑空刻出來也是強人所難。因此，我覺得適度原諒遲鈍的自己也是很值得鼓勵的行為喔。順道一提，我蠻喜歡這篇關於動態規劃的文章，推薦給大家:) <a target="_blank" rel="noopener" href="https://github.com/iamshuaidi/algo-basic/blob/master/%E5%AD%A6%E7%AE%97%E6%B3%95/%E5%AD%A6%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BE%88%E9%9A%BE%EF%BC%9FDP%E8%BF%9E%E5%88%B740%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BA%86%E8%BF%99%E4%BA%9B%E5%A5%97%E8%B7%AF.md">动态规划很难？DP连刷40道题，我总结出了这些套路</a><a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcsq</span>(<span class="params">S, T</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate and return the longest common subsequence (LCS) of two strings S and T.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        S, T (str): The two input DNA strings.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Return:</span></span><br><span class="line"><span class="string">        str: A longest common subsequence of s1 and t.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># lcs denotes the longest subsequence of all s1&#x27;s and s2&#x27;s substring</span></span><br><span class="line">    lcs = [</span><br><span class="line">        [<span class="string">&quot;&quot;</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>)</span><br><span class="line">        ]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S)):</span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(T)):</span><br><span class="line">            <span class="keyword">if</span> S[s] == T[t]:</span><br><span class="line">                lcs[s + <span class="number">1</span>][t + <span class="number">1</span>] = lcs[s][t] + S[s]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                lcs[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="built_in">max</span>(lcs[s + <span class="number">1</span>][t], lcs[s][t + <span class="number">1</span>], key=<span class="built_in">len</span>)</span><br><span class="line">    <span class="keyword">return</span> lcs[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></table></figure><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">我覺得動態規劃難在看得懂但是想不到。不過別人花了一輩子研究才想出來的演算法，要我們在周末下午憑空刻出來也是強人所難。因此，我覺得適度原諒遲鈍的自己也是很值得鼓勵的行為喔。順道一提，我蠻喜歡這篇關於動態規劃的文章，推薦給大家:) <a target="_blank" rel="noopener" href="https://github.com/iamshuaidi/algo-basic/blob/master/%E5%AD%A6%E7%AE%97%E6%B3%95/%E5%AD%A6%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BE%88%E9%9A%BE%EF%BC%9FDP%E8%BF%9E%E5%88%B740%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BA%86%E8%BF%99%E4%BA%9B%E5%A5%97%E8%B7%AF.md">动态规划很难？DP连刷40道题，我总结出了这些套路</a><a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>
     </div>
 
     
@@ -429,14 +423,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/rna-splicing/" rel="prev" title="ROSALIND｜RNA Splicing (SPLC)">
-                  <i class="fa fa-angle-left"></i> ROSALIND｜RNA Splicing (SPLC)
+                <a href="/honobu-2004-shunki-gentei-ichigo-taruto-jiken/" rel="prev" title="《春季限定草莓塔事件》">
+                  <i class="fa fa-angle-left"></i> 《春季限定草莓塔事件》
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/remove-unnecessary-elements-to-make-the-jupyterlab-ui-cleaner/" rel="next" title="移除不必要元件，打造精簡的 JupyterLab 使用者介面">
-                  移除不必要元件，打造精簡的 JupyterLab 使用者介面 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>

@@ -1089,14 +1089,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/story/</loc>
+    <loc>https://5uperb0y.com/tags/development/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/development/</loc>
+    <loc>https://5uperb0y.com/tags/story/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1117,13 +1117,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/linux/</loc>
-    <lastmod>2024-07-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/tags/life-in-the-universe/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -1131,7 +1124,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/rosalind/</loc>
+    <loc>https://5uperb0y.com/tags/linux/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1145,7 +1138,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
+    <loc>https://5uperb0y.com/tags/rosalind/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1153,6 +1146,13 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/microbiota/</loc>
+    <lastmod>2024-07-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1187,14 +1187,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/origins-of-life/</loc>
+    <loc>https://5uperb0y.com/tags/ngs/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/ngs/</loc>
+    <loc>https://5uperb0y.com/tags/origins-of-life/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1229,14 +1229,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/tools/</loc>
+    <loc>https://5uperb0y.com/tags/nextflow/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/nextflow/</loc>
+    <loc>https://5uperb0y.com/tags/tools/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
