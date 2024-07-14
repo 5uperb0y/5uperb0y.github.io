@@ -19,27 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。">
+    <meta name="description" content="給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。  Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format. Return: A longest common subsequence of s and t. (If more than one solution e">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="微國家：獨立建國的簡易操作手冊">
-<meta property="og:url" content="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/index.html">
+<meta property="og:title" content="ROSALIND｜Finding a Shared Spliced Motif (LCSQ)">
+<meta property="og:url" content="https://5uperb0y.com/finding-a-shared-spliced-motif/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。">
+<meta property="og:description" content="給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。  Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format. Return: A longest common subsequence of s and t. (If more than one solution e">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2018-04-19T16:12:37.000Z">
-<meta property="article:modified_time" content="2024-06-09T14:37:55.981Z">
+<meta property="article:published_time" content="2024-07-03T11:11:32.000Z">
+<meta property="article:modified_time" content="2024-07-14T14:55:03.393Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/">
+<link rel="canonical" href="https://5uperb0y.com/finding-a-shared-spliced-motif/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/","path":"strauss-2008-how-to-start-your-own-country/","title":"微國家：獨立建國的簡易操作手冊"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/finding-a-shared-spliced-motif/","path":"finding-a-shared-spliced-motif/","title":"ROSALIND｜Finding a Shared Spliced Motif (LCSQ)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>微國家：獨立建國的簡易操作手冊 | 5uperb0y's blog</title>
+<title>ROSALIND｜Finding a Shared Spliced Motif (LCSQ) | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -129,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -142,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Python 實作</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -254,6 +256,51 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-shared-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-11</time>
+        <br>
+      ROSALIND | Finding a Shared Motif (LCSM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-spliced-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-07-06</time>
+        <br>
+      ROSALIND｜Finding a Spliced Motif (SSEQ)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-motif-in-dna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-09</time>
+        <br>
+      ROSALIND | Finding a Motif in DNA (SUBS)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rna-splicing/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-30</time>
+        <br>
+      ROSALIND｜RNA Splicing (SPLC)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-03</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
@@ -271,7 +318,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/finding-a-shared-spliced-motif/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -284,12 +331,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="微國家：獨立建國的簡易操作手冊 | 5uperb0y's blog">
+      <meta itemprop="name" content="ROSALIND｜Finding a Shared Spliced Motif (LCSQ) | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          微國家：獨立建國的簡易操作手冊
+          ROSALIND｜Finding a Shared Spliced Motif (LCSQ)
         </h1>
 
         <div class="post-meta-container">
@@ -300,14 +347,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2018-04-20 00:12:37" itemprop="dateCreated datePublished" datetime="2018-04-20T00:12:37+08:00">2018-04-20</time>
+      <time title="創建時間：2024-07-03 19:11:32" itemprop="dateCreated datePublished" datetime="2024-07-03T19:11:32+08:00">2024-07-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-06-09 22:37:55" itemprop="dateModified" datetime="2024-06-09T22:37:55+08:00">2024-06-09</time>
+      <time title="修改時間：2024-07-14 22:55:03" itemprop="dateModified" datetime="2024-07-14T22:55:03+08:00">2024-07-14</time>
     </span>
 
   
@@ -316,14 +363,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>1.4k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>5 分鐘</span>
+      <span>4 分鐘</span>
     </span>
 </div>
 
@@ -333,19 +380,38 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這套書由方法篇和實踐篇組成，作者在方法篇中分析五種可行的建國方式，繼而討論該用何種體制經營之，再列舉許多歷史案例，評論其成敗關鍵，最後探討個人建國的前景。實踐篇則是台灣出版社彙編的建國案例以及兩篇專訪，補充已不再更新的原著。</p>
-<span id="more"></span>
-
-<p>微國家並非梵諦岡或安道爾之類主權獨立但領土狹小的國家，也不同於我們這樣陷入爭議但確實存在的政治實體，微國家維基中將之解釋成任何欲取代、模仿或與既有國家共存的政治體，但僅單方面宣稱獨立，不受國際組織或其他國家承認。</p>
-<p>雖然因現實條件限制，其規模通常不大且得立足於既有國家的主權範圍內，卻仍表現出構成國家的部分要素，例如公民、政府等，甚至有些微國家會發行自己的貨幣與郵票。顯然前述定義還是難以涵蓋多樣的微國家形式，不過原書其實沒有強調這名詞，其主題是無權無勢的市井小民該如何創建自己的國家，「微國家」只是暫時狀態而非追求的目標。</p>
-<p>儘管作者著重於介紹手段，沒有談論建國動機，但是從訪談和議論中可以推測：建立國家的用意不全然是對抗政府，很大一部分是在反思既有的權力結構。當今多數國家仍依循民族主義的想法以共同的語言、風俗和歷史等要素凝聚國民，可是即便在同樣民族之下，國民間仍有許多歧異，各自代表不同的利益和價值觀，然而政府依舊積極地營造認同感，讓人民甘於滿足偽裝成國族的特定受益者（不一定是人民自身），不自覺地背負無關的責任與義務。</p>
-<p>於是建立微國家就成為伸張個人主權的行動，表達對個人特質的擁護、對政府體制的懷疑和對隱私財產的堅持。即便無法動搖現狀，在自己的臥室經營模型國家也能起到轉變視角的作用，能從「外國」的視角審視政府以大眾為號召施政的用意和合理性，衡量自己（外國）會受到什麼衝擊，並採取適當行動。</p>
-<p>目前建立國家的最大阻力來自既有國家壓迫，弱勢方不僅沒有容身的根據地，也無可靠的武力對抗傳統軍事動員，所以作者建議從依附強權的小國發跡，一方面只須和單一國家交涉減少複雜狀況，另一方面也能藉強國排除其他國家介入，或者與小國競爭強國支持。</p>
-<p>不過作者推論這種情況會在幾世紀後隨著大規模殺傷性武器成本下降以及星際殖民普及有所改變，外太空將成為待開拓的新天地，大規模毀滅武器也會削弱倚恃傳統武力的國家之優勢。無法承受破壞的政府將因此妥協，於是愈來愈多野心家投入，掀起建立新國家的浪潮，最終導致民族國家式微。</p>
-<p>這推論的前提是大國懾於威脅而向建國者妥協，因此建國者不僅要避免武器被破壞，也得讓大國相信他們擁有相應的報復能力和決心。這當中牽涉到不可捉摸的心理因素，若雙方情報量不對等或是具有同樣決心時，嚇阻的效力就會降低，此時相較於建國者，大國多了輿論操作、傳統兵力、諜報組織等行動自由，故就這點而言對建國者是很不利的。</p>
-<p>此外，建國者不只要面對大國，還得與己方派系或其他建國者鬥爭，由於雙方皆不能承受核攻擊，唯一勝算是先發制人，當競爭者數量達到一定程度時，極可能出現莽撞動手的一方，所以即便已與大國達成協議，建國者間還未必能維持平衡。況且武力不是決定國家存續的僅有條件，微型國家的資源、人力和產業規模仍不及傳統國家，能否捱過經濟壓力仍是未知數。</p>
-<p>當然，除了用武力當基礎的傳統國家，作者也提出了幾個克服領地或主權問題的建國方案，例如先宣稱獨立再和政府打官司的訴訟途徑，仿效吉普賽人擺脫政府管制的離群索居生活，抑或掛著獅子山及賴比瑞亞的船旗馳騁大海，雖不完整但仍擁有構成國家的部分要件。<br>　<br>最後，不管是採用常規還是非典型方式建立國家都不意味著能隱於世俗擺脫其他國家騷擾，建國是向世人表示自我的存在，因此從草創時期到後續經營都會面臨許多既有利益者挑戰。若不想受人擺布，就得主動排除外在干涉，處理內部爭端，在混亂的世局中掙扎求生。</p>
-
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。</p>
+<blockquote>
+<p>Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format.</p>
+<p>Return: A longest common subsequence of s and t. (If more than one solution exists, you may return any one.)</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/lcsq/">https://rosalind.info/problems/lcsq/</a>)</p>
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在實際的基因體研究中，我們可能需要比對多條 DNA 序列，來找出重複出現的 motif 序列。這題要求找出兩條序列最長的共同子序列，它代表了被 introns 分隔的最長 mofif。</p>
+<p>較長的序列通常涵蓋更多功能基因，但也因此更容易受到突變和基因重排的影響。如果一段涉及多種功能的長序列能在物種的基因體長期保存，沒有因為演化過程中的偶發事件而被打斷或消失，就暗示著這段序列可能與該物種的核心功能有關。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>這題是最長共同子序列（LCS, longest common subsequnce）問題的變體，我推薦閱讀<a target="_blank" rel="noopener" href="https://web.ntnu.edu.tw/~algo/Subsequence2.html">演算法筆記</a>的介紹，它清楚解釋了 LCS 的核心觀念與不同解題方法，也有程式實作可供參考。這裡我會依據自己的理解，重述其中一種基於動態規劃的解題方法。</p>
+<p>假設有兩個序列 $S$ 與 $T$，它們的最長共同子序列記為 $LCS(S, T)$。如果單獨考慮兩序列的最後一個元素，可以將 $S$ 與 $T$ 重新表示為 $S &#x3D; S_{sub} + s$ 和 $T &#x3D; T_{sub} + t$。</p>
+<p>那麼根據最後一個元素的狀況，我們可以得出以下關係：</p>
+<ul>
+<li>如果 $s &#x3D; t$，那麼這兩個元素都可以納入 $LCS(S, T)$，即 $LCS(S, T) &#x3D; LCS(S_{sub}, T_{sub}) + s$。</li>
+<li>如果 $s \neq t$，表示不需要檢查完整的序列即可找到 $LCS(S, T)$，<ul>
+<li>$LCS(S, T)$ 不包含 $s$ 或 $t$，即 $LCS(S, T) &#x3D; LongerOne(LCS(S_{sub}, T), LCS(S, T_{sub}))$</li>
+<li>$LCS(S, T)$ 不包含 $s$ 與 $t$，即 $LCS(S, T) &#x3D; LCS(S_{sub}, T_{sub})$</li>
+</ul>
+</li>
+</ul>
+<p>因為 $LCS(S_{sub}, T_{sub})$ 小於等於 $LCS(S_{sub}, T)$ 和 $LCS(S, T_{sub})$，所以這些關係可以化簡為：</p>
+<p>$$ LCS(S, T)&#x3D;<br>\begin{cases}<br>LCS(S_{sub}, T_{sub}) + s &amp; when &amp; s &#x3D; t\<br>LongerOne(LCS(S_{sub}, T), LCS(S, T_{sub})) &amp; when &amp; s\neq t <br>\end{cases}<br>$$</p>
+<p>這個關係式表明，兩序列的 LCS 可以從各自子序列的 LCS 推論出來，這構成了應用動態規劃的基礎。</p>
+<p>我們可以使用一個二維陣列來記錄 $S$ 和 $T$ 所有子序列的 LCS，再逐一檢視各個子序列的最後一個元素，參考前述關係式填滿這個陣列。最終，陣列右下角的元素就是題目要求的最常共同子序列。</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>動態規劃的實作通常包含三個步驟：定義資料結構、釐清子結構間的關係，確認初始值<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="我覺得動態規劃難在看得懂但想不到。不過別人花了一輩子研究才想出來的演算法，要我們在周末下午憑空刻出來也是強人所難。因此，我覺得適度原諒遲鈍的自己也是很值得鼓勵的行為喔。順道一提，我蠻喜歡這篇關於動態規劃的文章，推薦給大家:) [动态规划很难？DP连刷40道题，我总结出了这些套路](https://github.com/iamshuaidi/algo-basic/blob/master/%E5%AD%A6%E7%AE%97%E6%B3%95/%E5%AD%A6%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BE%88%E9%9A%BE%EF%BC%9FDP%E8%BF%9E%E5%88%B740%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BA%86%E8%BF%99%E4%BA%9B%E5%A5%97%E8%B7%AF.md)">1</span></a></sup>。考量這題要求找出 DNA 序列的最長共同子序列（為了方便討論，此處字串視為廣義的序列），我選擇以巢狀 list 來模擬二維陣列。每個元素代表對應的 DNA 子序列的最長共同子序列。</p>
+<p>這樣方法雖然需要額外的儲存空間，但我覺得比較直觀易懂，因為它需要不額外的步驟來回溯最長共同子序列的內容。</p>
+<p>以下實作需要注意幾點：</p>
+<ul>
+<li>二維矩陣的長與寬都要比兩條 DNA 序列的長度各多 1，因為它儲存的是 <code>S[:index]</code> 的最長共同子序列</li>
+<li>兩條 DNA 序列最短的子序列是空序列，所以它們的初始值是一個空字串。</li>
+<li>填表時依照前述的關係式來進行，這裡用了 <code>max(a, b, key=len)</code> 來簡化程式碼。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcsq</span>(<span class="params">S, T</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate and return the longest common subsequence (LCS) of two strings S and T.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        S, T (str): The two input DNA strings.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Return:</span></span><br><span class="line"><span class="string">        str: A longest common subsequence of s1 and t.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># lcs denotes the longest subsequence of all s1&#x27;s and s2&#x27;s substring</span></span><br><span class="line">    lcs = [</span><br><span class="line">        [<span class="string">&quot;&quot;</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>)</span><br><span class="line">        ]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S)):</span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(T)):</span><br><span class="line">            <span class="keyword">if</span> S[s] == T[t]:</span><br><span class="line">                lcs[s + <span class="number">1</span>][t + <span class="number">1</span>] = lcs[s][t] + S[s]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                lcs[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="built_in">max</span>(lcs[s + <span class="number">1</span>][t], lcs[s][t + <span class="number">1</span>], key=<span class="built_in">len</span>)</span><br><span class="line">    <span class="keyword">return</span> lcs[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></table></figure><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">我覺得動態規劃難在看得懂但想不到。不過別人花了一輩子研究才想出來的演算法，要我們在周末下午憑空刻出來也是強人所難。因此，我覺得適度原諒遲鈍的自己也是很值得鼓勵的行為喔。順道一提，我蠻喜歡這篇關於動態規劃的文章，推薦給大家:) <a target="_blank" rel="noopener" href="https://github.com/iamshuaidi/algo-basic/blob/master/%E5%AD%A6%E7%AE%97%E6%B3%95/%E5%AD%A6%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BE%88%E9%9A%BE%EF%BC%9FDP%E8%BF%9E%E5%88%B740%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BA%86%E8%BF%99%E4%BA%9B%E5%A5%97%E8%B7%AF.md">动态规划很难？DP连刷40道题，我总结出了这些套路</a><a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>
     </div>
 
     
@@ -353,18 +419,21 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/psycho-pass-anime-and-novel/" rel="prev" title="PSYCHO-PASS 心靈判官">
-                  <i class="fa fa-angle-left"></i> PSYCHO-PASS 心靈判官
+                <a href="/rna-splicing/" rel="prev" title="ROSALIND｜RNA Splicing (SPLC)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜RNA Splicing (SPLC)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/akasegawa-2014-introduction-to-street-observation/" rel="next" title="路上觀察學入門，走在路上的不同方法">
-                  路上觀察學入門，走在路上的不同方法 <i class="fa fa-angle-right"></i>
+                <a href="/remove-unnecessary-elements-to-make-the-jupyterlab-ui-cleaner/" rel="next" title="移除不必要元件，打造精簡的 JupyterLab 使用者介面">
+                  移除不必要元件，打造精簡的 JupyterLab 使用者介面 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -449,7 +518,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/strauss-2008-how-to-start-your-own-country/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/finding-a-shared-spliced-motif/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>
