@@ -27,7 +27,7 @@
 <meta property="og:description" content="給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。  Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format. Return: A longest common subsequence of s and t. (If more than one solution e">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-07-03T11:11:32.000Z">
-<meta property="article:modified_time" content="2024-07-14T14:55:03.393Z">
+<meta property="article:modified_time" content="2024-07-14T14:57:29.862Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
@@ -354,7 +354,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-07-14 22:55:03" itemprop="dateModified" datetime="2024-07-14T22:55:03+08:00">2024-07-14</time>
+      <time title="修改時間：2024-07-14 22:57:29" itemprop="dateModified" datetime="2024-07-14T22:57:29+08:00">2024-07-14</time>
     </span>
 
   
@@ -386,6 +386,8 @@
 <p>Return: A longest common subsequence of s and t. (If more than one solution exists, you may return any one.)</p>
 </blockquote>
 <p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/lcsq/">https://rosalind.info/problems/lcsq/</a>)</p>
+<span id="more"></span>
+
 <h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在實際的基因體研究中，我們可能需要比對多條 DNA 序列，來找出重複出現的 motif 序列。這題要求找出兩條序列最長的共同子序列，它代表了被 introns 分隔的最長 mofif。</p>
 <p>較長的序列通常涵蓋更多功能基因，但也因此更容易受到突變和基因重排的影響。如果一段涉及多種功能的長序列能在物種的基因體長期保存，沒有因為演化過程中的偶發事件而被打斷或消失，就暗示著這段序列可能與該物種的核心功能有關。</p>
 <h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>這題是最長共同子序列（LCS, longest common subsequnce）問題的變體，我推薦閱讀<a target="_blank" rel="noopener" href="https://web.ntnu.edu.tw/~algo/Subsequence2.html">演算法筆記</a>的介紹，它清楚解釋了 LCS 的核心觀念與不同解題方法，也有程式實作可供參考。這裡我會依據自己的理解，重述其中一種基於動態規劃的解題方法。</p>
