@@ -19,25 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="對世界豎起中指吧">
+    <meta name="description" content="給定兩條以 FASTA 格式儲存的蛋白質字串，計算兩者互相轉換所需的最少編輯次數。編輯方式包含置換、刪除與插入。  Given: Two protein strings s and t in FASTA format (each of length at most 1000 aa). Return: The edit distance d(s,t).  (https:&#x2F;&#x2F;rosalind.info">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/archives/2016/03/index.html">
+<meta property="og:title" content="ROSALIND｜Edit Distance (EDIT)">
+<meta property="og:url" content="https://5uperb0y.com/edit-distance/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="對世界豎起中指吧">
+<meta property="og:description" content="給定兩條以 FASTA 格式儲存的蛋白質字串，計算兩者互相轉換所需的最少編輯次數。編輯方式包含置換、刪除與插入。  Given: Two protein strings s and t in FASTA format (each of length at most 1000 aa). Return: The edit distance d(s,t).  (https:&#x2F;&#x2F;rosalind.info">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-07-19T16:54:47.000Z">
+<meta property="article:modified_time" content="2024-07-19T16:54:09.007Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/archives/2016/03/">
+<link rel="canonical" href="https://5uperb0y.com/edit-distance/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2016/03/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/edit-distance/","path":"edit-distance/","title":"ROSALIND｜Edit Distance (EDIT)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 5uperb0y's blog</title>
+<title>ROSALIND｜Edit Distance (EDIT) | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -74,7 +77,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">5uperb0y's blog</h1>
+      <p class="site-title">5uperb0y's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -127,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -140,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Python 實作</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -252,56 +256,182 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-point-mutations/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-04</time>
+        <br>
+      ROSALIND｜Counting Point Mutations (HAMM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/sorting-by-reversals/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-07</time>
+        <br>
+      ROSALIND｜Sorting by Reversals (SORT)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rosalind-a-platform-for-learning-bioinformatics-through-problem-solving/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-25</time>
+        <br>
+      Rosalind，生物資訊的 LeetCode
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/reversal-distance/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-03</time>
+        <br>
+      ROSALIND｜Reversal Distance (REAR)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-03</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/edit-distance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Edit Distance (EDIT) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Edit Distance (EDIT)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-07-20 00:54:47 / 修改時間：00:54:09" itemprop="dateCreated datePublished" datetime="2024-07-20T00:54:47+08:00">2024-07-20</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>889</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定兩條以 FASTA 格式儲存的蛋白質字串，計算兩者互相轉換所需的最少編輯次數。編輯方式包含置換、刪除與插入。</p>
+<blockquote>
+<p>Given: Two protein strings s and t in FASTA format (each of length at most 1000 aa).</p>
+<p>Return: The edit distance d(s,t).</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/edit/">https://rosalind.info/problems/edit/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在先前的 Rosalind 練習題，我已經陸續介紹兩種評估序列差異的方式，它們各自反映了特定的基因體變化，因此可用於推論親緣關係或演化途徑。</p>
+<ul>
+<li><a href="https://5uperb0y.com/counting-point-mutations/">Hamming distance</a>：兩等長序列彼此轉換所需的鹼基置換次數</li>
+<li><a href="https://5uperb0y.com/reversal-distance/">reversal distance</a>：兩序列彼此轉換所需的子序列反轉次數</li>
+</ul>
+<p>這一題在置換（substitution）的基礎上，額外納入插入（insertion）與刪除（deletion）兩種點突變類型，將 Hamming distance 推廣為編輯距離（edit distance，字串互相轉換所需的編輯次數），以適用於長度不等的序列。</p>
+<p>由於引進了新的突變類型，計算距離時也要考慮不同突變類別的權重。舉例來說，插入或刪除鹼基可能導致 readframe 移位，所以它們對基因體的影響可能比置換更為顯著。不過，這道題目只考慮最簡單的狀況，即所有突變類型對編輯距離的權重一致。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>假設有兩個蛋白質字串 $S$ 與 $T$，兩者之間的最短編輯距離記為 $d(S,T)$。原則上，$S$ 和 $T$ 的長度越長，$d(S,T)$ 的上限也越高。為了評估延長這兩個字串對編輯距離的影響，可以由後往前，逐一比較各自的最後一位字符 $s$ 和 $t$，將字串重新表示為 $S&#x3D;S_{sub}+s$ 與 $T&#x3D;T_{sub}+t$。</p>
+<p>如果 $s$ 與 $t$ 相同，表示添加它們不會增加編輯距離，所以 $d(S,T)&#x3D;d(S_{sub},T_{sub})$。</p>
+<p>如果 $s$ 與 $t$ 相異，則有三種可能的編輯方式，每種方式都會讓編輯距離增加 1。</p>
+<ul>
+<li>把 $s$ 置換為 $t$，所以 $d(S,T)&#x3D;d(S_{sub},T_{sub}) + 1$</li>
+<li>從 $S$ 刪除 $s$（或在 $T_{sub}$ 末端插入 $t$），所以 $d(S,T)&#x3D;d(S_{sub}, T_{sub} + t) + 1$</li>
+<li>從 $T$ 刪除 $t$（或在 $S_{sub}$ 末端插入 $s$），所以 $d(S,T)&#x3D;d(S_{sub} + s, T_{sub}) + 1$</li>
+</ul>
+<p>每次延長字串時，我們都選擇增加最少編輯距離的方式，最終可得 $d(S,T)$。</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>我使用 <code>dist</code> 儲存 $S$ 和 $T$ 各個子字串的編輯距離。<code>dist</code> 是一個雙層嵌套的 list，它的大小比兩個字串的長度多 1，以包含空字串的狀況。</p>
+<p>由於空字串只能透過插入轉換為其它字串，所以 <code>dist</code> 的第 0 列和第 0 欄被設定為各子串的長度，其餘元素則初始化為 0，表示未知的編輯距離。</p>
+<p>接著，由上至下，由左至右遍歷 <code>dist</code>，比較兩個子字串的最後一位字符，依據前述關係判斷當前的最小編輯距離。最終，<code>dist</code> 右下角的元素即為兩個完整字串的最小編輯距離。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">S, T</span>):</span><br><span class="line">    <span class="comment"># The edit distance between S&#x27;s and T&#x27;s substrings</span></span><br><span class="line">    dist = [</span><br><span class="line">        [<span class="number">0</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>)</span><br><span class="line">        ]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(S) + <span class="number">1</span>):</span><br><span class="line">        dist[s][<span class="number">0</span>] = s</span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(T) + <span class="number">1</span>):</span><br><span class="line">        dist[<span class="number">0</span>][t] = t</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S)):</span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(T)):</span><br><span class="line">            <span class="keyword">if</span> S[s] == T[t]:</span><br><span class="line">                dist[s + <span class="number">1</span>][t + <span class="number">1</span>] = dist[s][t]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dist[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="built_in">min</span>(dist[s][t], dist[s + <span class="number">1</span>][t], dist[s][t + <span class="number">1</span>]) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> dist[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
         
-        <span class="collection-header">很好! 目前共有 119 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2016</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2016-03-10T07:19:10+08:00"
-              content="2016-03-10">
-          03-10
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/asimov-1941-nightfall/" itemprop="url">
-          <span itemprop="name">《夜幕低垂》</span>
-        </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/manage-your-writing-corpus-with-vs-code-user-snippets/" rel="prev" title="運用 VSCode snippets 管理並活用個人寫作語料庫">
+                  <i class="fa fa-angle-left"></i> 運用 VSCode snippets 管理並活用個人寫作語料庫
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
@@ -375,7 +505,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/archives/2016/03/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/edit-distance/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>
