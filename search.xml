@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>常見的生物資訊軟體開發文件</title>
+    <url>/a-collection-of-essential-documents-for-bioinformatis-software/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
+<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
+<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
+<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
+<span id="more"></span>
+
+<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
+<table>
+<thead>
+<tr>
+<th>名稱</th>
+<th>內容</th>
+<th>額外受眾</th>
+<th>指引</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Issues</td>
+<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
+<td>專案經理</td>
+<td><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
+</tr>
+<tr>
+<td>Docstring &amp; Type hints</td>
+<td>描述程式模組的功能、參數與回傳資訊</td>
+<td>開發者</td>
+<td><a href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a href="https://peps.python.org/pep-0484/">PEP 484</a></td>
+</tr>
+<tr>
+<td>Code comments</td>
+<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
+<td>開發者</td>
+<td><a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
+</tr>
+<tr>
+<td>Built-in help</td>
+<td>軟體內建的用戶幫助訊息</td>
+<td>用戶</td>
+<td><a href="http://docopt.org/">docopt</a></td>
+</tr>
+<tr>
+<td>Commit messages</td>
+<td>摘要程式碼異動的內容、理由與背景</td>
+<td>開發者</td>
+<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
+</tr>
+<tr>
+<td>Pull requests</td>
+<td>簡述為滿足需求對應的軟體異動及其理據</td>
+<td>審查者</td>
+<td><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
+</tr>
+<tr>
+<td>README</td>
+<td>介紹專案目標、安裝使用與授權等入門資訊</td>
+<td>用戶</td>
+<td><a href="https://www.makeareadme.com/">Make a README</a></td>
+</tr>
+<tr>
+<td>CHANGELOG</td>
+<td>紀錄專案開發歷程與各版本更新內容</td>
+<td>用戶</td>
+<td><a href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
+</tr>
+</tbody></table>
+<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
+<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
+<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
+<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
+
+<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
+<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
+<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
+<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
+<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
+<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
+<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
+<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
+<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
+<ul>
+<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
+<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
+<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
+</ul>
+<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
+<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
+<p>常見的專案文件結構如下，例如 Python 的 <a href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
+<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
+<li><a href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
+<li><a href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
+<li><a href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
+<li><a href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>development</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>〈教育的烏托邦〉</title>
     <url>/5uperb0y-2016-utopian-education/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　夢臨市的天空是電腦的顏色，電腦死機的蔚藍。</p>
@@ -124,116 +234,6 @@
 ]]></content>
       <tags>
         <tag>sf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常見的生物資訊軟體開發文件</title>
-    <url>/a-collection-of-essential-documents-for-bioinformatis-software/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>撰寫軟體的理想目標是讓程式碼自我解釋，使得任何受過訓練的工程師能夠僅靠程式碼本身理解其含意。然而，隨著軟體功能與部件日益複雜，我們仍須依賴額外的文件來說明程式碼的商業邏輯、運作情境與潛在限制等背景知識。</p>
-<p>在生物資訊軟體開發領域，尤其是醫療軟體開發中，文件的詳盡程度與正確性尤為重要。為了把關產品品質與和保障用戶權益，醫療產品驗證要求產品送審時提供完整的軟體設計、需求分析和產品驗證報告。這些文件的種類繁多且規範細緻，撰寫和維護這些文件往往成為開發者的重擔。</p>
-<p>減輕這種負擔的一種方法是讓開發人專注於與開發相關的文件，並將這些文件作為合規文件的來源。透過簡化文件類別和統一內容來源，來簡化文件撰寫和維護的流程。</p>
-<p>因此，本文整理了常見的生物資訊軟體開發文件，闡述與開發密切相關的文件類型，並列舉優良的撰寫指南，同時對各類文件的定位差異提出個人見解。</p>
-<span id="more"></span>
-
-<h1 id="常見的生物資訊軟體開發文件清單"><a href="#常見的生物資訊軟體開發文件清單" class="headerlink" title="常見的生物資訊軟體開發文件清單"></a>常見的生物資訊軟體開發文件清單</h1><p>雖然文件內容會依專案性質與規模而有所不同，但在開發過程中通常會隨專案進展逐步納入以下幾種文件，</p>
-<table>
-<thead>
-<tr>
-<th>名稱</th>
-<th>內容</th>
-<th>額外受眾</th>
-<th>指引</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Issues</td>
-<td>紀錄 bugfix 或 feature request 等開發需求與問題</td>
-<td>專案經理</td>
-<td><a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Feature-Requests">Writing Good Feature Requests</a> &amp; <a href="https://github.com/rstudio/rstudio/wiki/Writing-Good-Bug-Reports">Writing Good Bug Reports</a></td>
-</tr>
-<tr>
-<td>Docstring &amp; Type hints</td>
-<td>描述程式模組的功能、參數與回傳資訊</td>
-<td>開發者</td>
-<td><a href="https://peps.python.org/pep-0257/">PEP 257</a> &amp; <a href="https://peps.python.org/pep-0484/">PEP 484</a></td>
-</tr>
-<tr>
-<td>Code comments</td>
-<td>程式碼的補充說明，包括任務標記和權益作法提示</td>
-<td>開發者</td>
-<td><a href="https://stackoverflow.blog/2021/12/23/best-practices-for-writing-code-comments/">Best practices for writing code comments</a></td>
-</tr>
-<tr>
-<td>Built-in help</td>
-<td>軟體內建的用戶幫助訊息</td>
-<td>用戶</td>
-<td><a href="http://docopt.org/">docopt</a></td>
-</tr>
-<tr>
-<td>Commit messages</td>
-<td>摘要程式碼異動的內容、理由與背景</td>
-<td>開發者</td>
-<td><a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional commits</a></td>
-</tr>
-<tr>
-<td>Pull requests</td>
-<td>簡述為滿足需求對應的軟體異動及其理據</td>
-<td>審查者</td>
-<td><a href="https://www.pullrequest.com/blog/writing-a-great-pull-request-description/">Writing A Great Pull Request Description</a> &amp; <a href="https://github.blog/2015-01-21-how-to-write-the-perfect-pull-request/">How to write the perfect pull request</a></td>
-</tr>
-<tr>
-<td>README</td>
-<td>介紹專案目標、安裝使用與授權等入門資訊</td>
-<td>用戶</td>
-<td><a href="https://www.makeareadme.com/">Make a README</a></td>
-</tr>
-<tr>
-<td>CHANGELOG</td>
-<td>紀錄專案開發歷程與各版本更新內容</td>
-<td>用戶</td>
-<td><a href="https://keepachangelog.com/en/1.1.0/">Keep a CHANGELOG</a></td>
-</tr>
-</tbody></table>
-<p>除了專案進展，開發文件的內容和格式也會根據團隊或任務需求而異。例如，單一腳本構成的小型專案在初期可能僅需程式碼註解和內建幫助訊息；隨著專案成熟，可以逐漸增加 README 文件來補充安裝和授權資訊，並在軟體定版後定期更新CHANGELOG。而個人開發的專案可能沒有 Pull Request 資訊；但團隊開發除了需要 pull request 把關軟體品質外，還需要 issues 管理專案排程。</p>
-<p>表中的連結已提供詳細的文件撰寫指引，以下我將補充一些對個別文件定位的看法。</p>
-<h1 id="README-和-CHANGELOG-的差異"><a href="#README-和-CHANGELOG-的差異" class="headerlink" title="README 和 CHANGELOG 的差異"></a>README 和 CHANGELOG 的差異</h1><p>README 呈現專案的現況，包括專案簡介、安裝和使用方法、軟體授權等必要資訊，是用戶或開發者了解專案的首要途徑。除此之外，README 還充當軟體文件的目錄，連結到用戶手冊、常見問題和開發指南等資源，供進階用戶或開發者參考。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># README</span><br><span class="line"></span><br><span class="line">## Introduction</span><br><span class="line"></span><br><span class="line">## Quick start</span><br><span class="line"></span><br><span class="line">## installation</span><br></pre></td></tr></table></figure>
-<p>CHANGELOG 則記錄專案的過往，包括軟體變更和版本號次等更新資訊，是用戶或開發者了解開發歷程的入門管道。此外，CHANGELOG 也充當專案歷程的目錄，連結到 issue 和 pull request 等資源，供進階用戶或開發者參考。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># CHANGELOG</span><br><span class="line"></span><br><span class="line">## [1.1.0] - 2019-02-15</span><br><span class="line"></span><br><span class="line">### Added</span><br><span class="line"></span><br><span class="line">- Danish translation (#297).</span><br><span class="line">- Georgian translation from (#337).</span><br></pre></td></tr></table></figure>
-
-<p>換言之，README 和 CHANGELOG 總結了專案的現況與過往，是用戶與開發者了解專案最基礎的媒介。因此，這兩份文件通常會擺在專案目錄的最頂層，確保所有人一眼就能找到。</p>
-<h1 id="Commits-和-CHANGELOG-的差異"><a href="#Commits-和-CHANGELOG-的差異" class="headerlink" title="Commits 和 CHANGELOG 的差異"></a>Commits 和 CHANGELOG 的差異</h1><p>如前所述，CHANGELOG 主要記錄軟體的重要變更，這些變更可能影響軟體的功能或使用方式。典型的 CHANGELOG 會按時序編排條目來排列，並依版本和變更類型組織變更紀錄。每條記錄不僅簡要描述了變更內容，還會連接到相關的需求文檔，補充軟體變更背景資訊。</p>
-<p>相較之下，commit messages 主要面向開發者，著重於個別程式碼的變更，而非對整體用戶的影響。標準的 commit messages 通常包括變更類型和簡要說明，其中類型方便篩選和查找相關資訊，而簡要說明則提供了變更的摘要。這些資訊讓查閱者能夠追蹤開發歷程（例如使用 <code>git log --onelines</code>），並在需要時回溯程式碼的變更。</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
-<p>更完整的 commit messages 則包含了變更的背景、原因或機制的詳細解釋，有時還會附上註腳標記相關的 issue 連結，補充程式碼變更的需求情境</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">fix: prevent racing of requests</span><br><span class="line"></span><br><span class="line">Introduce a request id and a reference to latest request. Dismiss</span><br><span class="line">incoming responses other than from latest request.</span><br><span class="line"></span><br><span class="line">Refs: #123</span><br></pre></td></tr></table></figure>
-<p>雖然兩者都是開發紀錄的一部分，但 CHANGELOG 著重於需求的處置，commit 則聚焦程式碼的具體變更；CHANGELOG 通常隨著軟體更新而更新，而 commit 則在提交後鮮少變更；CHANGELOG 強調變更的影響，而 commit 則更注重變更的細節。由於這兩種文件的目標受眾和內容尺度殊異，直接從 commits 生成 CHANGELOG 可能會導致不必要的冗餘資訊，從而無法達到 CHANGELOG 的設計目的。</p>
-<h1 id="Code-comments-和-Docstring-的差異"><a href="#Code-comments-和-Docstring-的差異" class="headerlink" title="Code comments 和 Docstring 的差異"></a>Code comments 和 Docstring 的差異</h1><p>程式碼內的文字不被執行的文字片段可分為 code comments （註解）與 docstring。以 Python 為例，docstring 是記錄函數、類別或模塊的特殊屬性，它們被夾註在三重雙引號之中，用於描述功能、參數和回傳資訊等自訂資訊。透過內置的 <code>__doc__</code> 方法可以取得 docstring，使其能被語義化工具解析，用於自動化文件生成，如 docopt。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def complex(real=0.0, imag=0.0):</span><br><span class="line">    &quot;&quot;&quot;Form a complex number.</span><br><span class="line"></span><br><span class="line">    Keyword arguments:</span><br><span class="line">    real -- the real part (default 0.0)</span><br><span class="line">    imag -- the imaginary part (default 0.0)</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if imag == 0.0 and real == 0.0:</span><br><span class="line">        return complex_zero</span><br></pre></td></tr></table></figure>
-<p>另一方面，註解也是程式碼中不執行的文字片段，可用於解釋程式碼的背景或機制。值得注意的是，註解通常無法以內置方法取得，因此較常用於標記任務（如：<code>TODO</code>）、提供權宜性解法的提示或對複雜程式碼進行補充說明，並會隨著程式碼的改進而被簡化或刪除。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># TODO: remove the deprecated method</span><br><span class="line"></span><br><span class="line"># Use the name as the title if the properties did not include one (issue #1425)</span><br><span class="line"></span><br><span class="line"># Magical formula taken from a stackoverflow post at &lt;URL&gt;, reputedly related to human vision perception.</span><br></pre></td></tr></table></figure>
-<p>總結來說，註解的內容較為多樣，可能包括臨時註記或任務提醒；而 docstring 則是程式碼正式文件的一部分，記錄了關於程式本身使用上的更多資訊。</p>
-<h1 id="開發文件應存放何處？"><a href="#開發文件應存放何處？" class="headerlink" title="開發文件應存放何處？"></a>開發文件應存放何處？</h1><p>理想上，開發文件應具備好找、好讀和好維護等特性。這些特性可以這樣定義：</p>
-<ul>
-<li><strong>好找</strong>：文件應支援全域搜尋或資料庫搜尋，方便獲取重要資訊。</li>
-<li><strong>好讀</strong>：文件應能在網頁、圖形介面或終端機中打開，並且資訊清晰簡潔。</li>
-<li><strong>好維護</strong>：文件應集中存放於單一位置並能進行版本控制，以減少文件與開發進度不一致的風險。</li>
-</ul>
-<p>考量到這些原則，一些常見的文件格式可能不適合管理開發文件。例如，Office 系列文件不易進行搜尋和版本控制。將文件存放在品管系統 (ISO) 或多個資料夾中也不利於取得文件。而 HTML 和 LaTeX 等格式則包含過多無關的排版標記，使內容難以閱讀。</p>
-<p>因此，目前最普遍的做法是使用 Markdown 進行純文本編輯，並將文件統一存放在專案目錄下。這樣不僅便於備份、版控和搜尋，還可以像程式碼一樣按照開發流程更新文件，從而將開發和文件緊密結合，降低不一致的風險。</p>
-<p>常見的專案文件結構如下，例如 Python 的 <a href="https://github.com/psf/requests">requests</a> 專案或生物資訊領域的 <a href="https://github.com/nf-core/sarek/tree/3.4.0">nf-core</a> 等專案都採用了這樣的結構。</p>
-<p>將 README 和 CHANGELOG 這兩種反映專案主要內容的文件放在專案根目錄，方便用戶或開發者取得這些資訊。再以單獨的目錄管理其他自訂文件，並共享多媒體資源，如圖片、影片或字體等。這種做法的好處除了方便管理外，還可以通過程式碼工具將文件編譯成網頁或 PDF 等易於閱讀與分享的格式。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project</span><br><span class="line">|- README.md 					# 專案現況的學習途徑                   </span><br><span class="line">|- CHANGELOG.md              	# 開發歷程的入門管道   </span><br><span class="line">|- docs/                        # 自訂文件</span><br><span class="line">    |- assets/                  # 共享的多媒體資源</span><br><span class="line">    |- &lt;usage/output/faq&gt;.md    # 用戶、開發者或分享用的文件</span><br><span class="line">    |- &lt;makefile&gt;               # 用以編譯文件檔為其他格式</span><br></pre></td></tr></table></figure>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在生物資訊軟體開發的領域中，常見的文件類型可以分為三大類：程式碼本身 (Source Code)、軟體當前狀態 (README)、以及開發歷程 (CHANGELOG)。這些文件不僅涵蓋了軟體的關鍵資訊，還透過互相連結和註腳形式，串聯起相關的文件內容。這樣的做法有利於在必要時將內容改寫為合規文件的格式。最佳的文件管理方法是將其儲存在專案目錄下，採用 Markdown 格式進行純文本編輯。這不僅保證了文件的可檢索性和易讀性，還可通過 Git 進行版本控制，確保文件的維護和更新與程式碼開發流程同步，從而達到易於維護的目的。</p>
-<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
-<li><a href="https://academic.oup.com/bib/article/19/4/693/2907814">Top consideratios for creating bioinformatics software documentation</a></li>
-<li><a href="https://understandlegacycode.com/blog/where-to-put-documentation/">Where should you put the documentation</a></li>
-<li><a href="https://agilemodeling.com/essays/agiledocumentation.htm">Lean&#x2F;Agile Documnetation: strategies for agile teams</a></li>
-<li><a href="https://www.ithome.com.tw/voice/95002">技術文件產能工具</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>development</tag>
       </tags>
   </entry>
   <entry>
@@ -476,29 +476,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《再創世紀：合成生物學將如何重新創造自然和我們人類》</title>
-    <url>/church-2014-regenesis/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
-<span id="more"></span>
-
-<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
-<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
-<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
-<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
-<ul>
-<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
-<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
-<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
-</ul>
-<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
-<hr>
-<p>喬治．丘奇，艾德．里吉西（2017）。再創世紀：合成生物學將如何重新創造自然和我們人類（周東 譯）。電子工業出版社。（原著出版於 2014 年）</p>
-]]></content>
-      <tags>
-        <tag>what is life</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ROSALIND｜Complementing a strand of DNA (REVC)</title>
     <url>/complementing-a-strand-of-dna/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 DNA 序列，回傳其反向互補序列。</p>
@@ -549,6 +526,29 @@
 ]]></content>
       <tags>
         <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《再創世紀：合成生物學將如何重新創造自然和我們人類》</title>
+    <url>/church-2014-regenesis/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《再創世紀》的作者將合成生物學的各項里程碑比擬為生物演化和產業革命的重要階段，簡介晚近的基因工程技術並討論其引發的倫理爭議。雖然主題不是講解天文生物學，但是此書前三章關於合成生命的討論對釐清生命的定義有許多啟發。</p>
+<span id="more"></span>
+
+<p>人造生命可分為三種：由現有物種重組新物種、以生物原料製造生命和電腦模擬的虛擬生命。</p>
+<p>2010年克雷格凡特團隊的人工基因組細菌即是重組生物的一個案例，研究者合成出維持生命所需的最短基因，再轉殖到細菌中取代原本的基因，這種極簡生命體不只排除了影響生產效率或實驗結果的未知干擾，製作過程中也有助於辨別何為生命的必須要素。至於從無到有建立生命的嘗試則能在找不到地外生物的情況下，拓展或是挑戰我們對生命的定義。</p>
+<p>目前這問題仍莫衷一是，除了國中生物課本採用的條列式定義（生命具有繁殖、生長、代謝、運動等性質），還有NASA的定義：生命是能自我增值並遵循達爾文演化的化學系統。</p>
+<p>作者則主張生命並非涇渭分明的概念，而是一種連續的屬性，可以透過再現複雜度（replicated complexity）度量。然而作者沒有明講其定義，只能從他舉的例子推測再現複雜度是指「重現近似複雜結構的能力」和「複雜結構間的關聯性」。這觀念可以解釋條列式定義的反例，例如：</p>
+<ul>
+<li><strong>病毒</strong>：得仰賴宿主的酵素系統複製基因組，因此只有有限重現能力，是再現複雜度較低的生命形式。</li>
+<li><strong>騾子</strong>：雖然不能繁殖，但是體內細胞仍有自我複製能力，而且個體的複雜度源頭可連結自親代，仍有相對高的再現複雜度。</li>
+<li><strong>火焰</strong>：火焰也是能夠成長和自我複製的系統，但是延燒火焰的性質和燃燒物有關，和原本的火焰關聯較低，因此再現複雜度不高。</li>
+</ul>
+<p>不同的定義反映著不同的哲學觀。好比說NASA把生命限制為化學系統是基於太空搜索的實用目的；但是作者作為創造生命的鼓吹者，自然不滿足於這種限制，因此他的定義能涵蓋自我複製並演化的機械人。我覺得重要的不是比較這些定義的優劣，而是了解定義的理論背景和適用範圍。</p>
+<hr>
+<p>喬治．丘奇，艾德．里吉西（2017）。再創世紀：合成生物學將如何重新創造自然和我們人類（周東 譯）。電子工業出版社。（原著出版於 2014 年）</p>
+]]></content>
+      <tags>
+        <tag>what is life</tag>
       </tags>
   </entry>
   <entry>
@@ -616,6 +616,33 @@
       </tags>
   </entry>
   <entry>
+    <title>DADA2 execution halted (Error in table: attempt to make a table with &gt;= 2^31 elements)</title>
+    <url>/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文純粹是技術問題。我之前以 Qiime2 外掛的 DADA2 處理已切除轉接子的 16S rRNA 基因序列 (V4 region) 時，因為以下錯誤而中斷了執行四天的程式。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">Plugin error from dada2<span class="operator">:</span> An error was encountered <span class="keyword">while</span> running DADA2 <span class="keyword">in</span> R <span class="punctuation">(</span><span class="built_in">return</span> code <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">,</span> please inspect stdout and stderr to learn more.</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>我檢查錯誤報告後發現以下敘述：</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">Error <span class="keyword">in</span> table<span class="punctuation">(</span>pairdf<span class="operator">$</span>forward<span class="punctuation">,</span> pairdf<span class="operator">$</span>reverse<span class="punctuation">)</span> <span class="operator">:</span></span><br><span class="line">attempt to make a table with <span class="operator">&gt;=</span> <span class="number">2</span><span class="operator">^</span><span class="number">31</span> elements</span><br><span class="line">Calls<span class="operator">:</span> mergePairs <span class="operator">-&gt;</span> lapply <span class="operator">-&gt;</span> FUN <span class="operator">-&gt;</span> table</span><br><span class="line">Execution halted</span><br><span class="line">Running external command line application<span class="punctuation">(</span>s<span class="punctuation">)</span>. This may print messages to stdout and<span class="operator">/</span>or stderr.</span><br><span class="line">The command<span class="punctuation">(</span>s<span class="punctuation">)</span> being run are below. These commands cannot be manually re<span class="operator">-</span>run as they will depend on temporary files that no longer exist.</span><br></pre></td></tr></table></figure>
+
+<p>於是根據關鍵字查詢只找到<a href="https://github.com/benjjneb/dada2/issues/641">一起相似案例</a>，但該討論串沒有提供可行的解決辦法。簡言之，提問者的資料中可能有人類序列汙染，導致獨特序列的數量超出 DADA2 演算法的上限，所以程式才異常中斷。</p>
+<p>然而，抽檢資料卻沒發現人類序列汙染，而且使用小量資料可以順利執行，讓我難以判斷問題的癥結點。因此，我蒐集 Qiime2 論壇上常提到的出錯狀況，一一測試來確認能否解決問題。</p>
+<p>首先，我<a href="https://forum.qiime2.org/t/dada2-error-return-code-1/7140/3">調整了線程</a>以免記憶體用罄，接著<a href="https://forum.qiime2.org/t/dada2-return-code-1/2972">檢查格式</a>確保資料完整無誤，也重新安裝以排除未知問題，但這些方法都無濟於事，所以我只好 Qiime2 論壇<a href="https://forum.qiime2.org/t/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/11845">求助</a>。</p>
+<p>開發團隊指出，這狀況可能是資料中有未清除的技術片段、定序品質太差或是存在汙染序列，使得 DADA2 在其中一步驟時，因數據量過載而中斷（這也可以解釋少量資料可以順利執行的原因）。</p>
+<p>在我移除潛在的文庫汙染，切除末端的低品質序列後，DADA2 便能順利執行了。綜上所述，此錯誤源於數量過多的低品質&#x2F;汙染序列，在移除汙染和品質控管後，即可解決問題。</p>
+<p>而關於除錯，我也學到了幾個經驗：</p>
+<ul>
+<li>仔細閱讀錯誤訊息，鎖定問題癥結點後才能有效排除障礙。胡亂猜測出錯原因無濟於事，反而浪費時間和精力。</li>
+<li>要以錯誤訊息為關鍵字，上網找尋類似問題的解決方式；若找不到直接相關的問題，則重新檢視演算法，說不定可以找到問題來源。</li>
+<li>把蒐集到的方法整理成表，一一測試結果。</li>
+<li>若查詢和測試皆無果，則準備詳盡資料到專門論壇求助。</li>
+<li>解決問題後把過程記錄下來，幫助其他人克服困難🥰</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>metagenomics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排遺與腸道樣本的細菌群落差異</title>
     <url>/difference-in-bacterial-communities-between-fecal-and-intestinal-samples/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>哺乳動物的排遺樣本代表游離於腸道腔室的細菌（luminal microbes），黏膜樣本則反映棲居於腸道黏膜細菌（mucosal microbes）。許多研究指出，排遺樣本與黏膜樣本的細菌群落組成有別。</p>
@@ -651,30 +678,38 @@
       </tags>
   </entry>
   <entry>
-    <title>DADA2 execution halted (Error in table: attempt to make a table with &gt;= 2^31 elements)</title>
-    <url>/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文純粹是技術問題。我之前以 Qiime2 外掛的 DADA2 處理已切除轉接子的 16S rRNA 基因序列 (V4 region) 時，因為以下錯誤而中斷了執行四天的程式。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">Plugin error from dada2<span class="operator">:</span> An error was encountered <span class="keyword">while</span> running DADA2 <span class="keyword">in</span> R <span class="punctuation">(</span><span class="built_in">return</span> code <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">,</span> please inspect stdout and stderr to learn more.</span><br></pre></td></tr></table></figure>
+    <title>ROSALIND｜Edit Distance (EDIT)</title>
+    <url>/edit-distance/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定兩條以 FASTA 格式儲存的蛋白質字串，計算兩者互相轉換所需的最少編輯次數。編輯方式包含置換、刪除與插入。</p>
+<blockquote>
+<p>Given: Two protein strings s and t in FASTA format (each of length at most 1000 aa).</p>
+<p>Return: The edit distance d(s,t).</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/edit/">https://rosalind.info/problems/edit/</a>)</p>
 <span id="more"></span>
-<p>我檢查錯誤報告後發現以下敘述：</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">Error <span class="keyword">in</span> table<span class="punctuation">(</span>pairdf<span class="operator">$</span>forward<span class="punctuation">,</span> pairdf<span class="operator">$</span>reverse<span class="punctuation">)</span> <span class="operator">:</span></span><br><span class="line">attempt to make a table with <span class="operator">&gt;=</span> <span class="number">2</span><span class="operator">^</span><span class="number">31</span> elements</span><br><span class="line">Calls<span class="operator">:</span> mergePairs <span class="operator">-&gt;</span> lapply <span class="operator">-&gt;</span> FUN <span class="operator">-&gt;</span> table</span><br><span class="line">Execution halted</span><br><span class="line">Running external command line application<span class="punctuation">(</span>s<span class="punctuation">)</span>. This may print messages to stdout and<span class="operator">/</span>or stderr.</span><br><span class="line">The command<span class="punctuation">(</span>s<span class="punctuation">)</span> being run are below. These commands cannot be manually re<span class="operator">-</span>run as they will depend on temporary files that no longer exist.</span><br></pre></td></tr></table></figure>
 
-<p>於是根據關鍵字查詢只找到<a href="https://github.com/benjjneb/dada2/issues/641">一起相似案例</a>，但該討論串沒有提供可行的解決辦法。簡言之，提問者的資料中可能有人類序列汙染，導致獨特序列的數量超出 DADA2 演算法的上限，所以程式才異常中斷。</p>
-<p>然而，抽檢資料卻沒發現人類序列汙染，而且使用小量資料可以順利執行，讓我難以判斷問題的癥結點。因此，我蒐集 Qiime2 論壇上常提到的出錯狀況，一一測試來確認能否解決問題。</p>
-<p>首先，我<a href="https://forum.qiime2.org/t/dada2-error-return-code-1/7140/3">調整了線程</a>以免記憶體用罄，接著<a href="https://forum.qiime2.org/t/dada2-return-code-1/2972">檢查格式</a>確保資料完整無誤，也重新安裝以排除未知問題，但這些方法都無濟於事，所以我只好 Qiime2 論壇<a href="https://forum.qiime2.org/t/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/11845">求助</a>。</p>
-<p>開發團隊指出，這狀況可能是資料中有未清除的技術片段、定序品質太差或是存在汙染序列，使得 DADA2 在其中一步驟時，因數據量過載而中斷（這也可以解釋少量資料可以順利執行的原因）。</p>
-<p>在我移除潛在的文庫汙染，切除末端的低品質序列後，DADA2 便能順利執行了。綜上所述，此錯誤源於數量過多的低品質&#x2F;汙染序列，在移除汙染和品質控管後，即可解決問題。</p>
-<p>而關於除錯，我也學到了幾個經驗：</p>
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在先前的 Rosalind 練習題，我已經陸續介紹兩種評估序列差異的方式，它們各自反映了特定的基因體變化，因此可用於推論親緣關係或演化途徑。</p>
 <ul>
-<li>仔細閱讀錯誤訊息，鎖定問題癥結點後才能有效排除障礙。胡亂猜測出錯原因無濟於事，反而浪費時間和精力。</li>
-<li>要以錯誤訊息為關鍵字，上網找尋類似問題的解決方式；若找不到直接相關的問題，則重新檢視演算法，說不定可以找到問題來源。</li>
-<li>把蒐集到的方法整理成表，一一測試結果。</li>
-<li>若查詢和測試皆無果，則準備詳盡資料到專門論壇求助。</li>
-<li>解決問題後把過程記錄下來，幫助其他人克服困難🥰</li>
+<li><a href="https://5uperb0y.com/counting-point-mutations/">Hamming distance</a>：兩等長序列彼此轉換所需的鹼基置換次數</li>
+<li><a href="https://5uperb0y.com/reversal-distance/">reversal distance</a>：兩序列彼此轉換所需的子序列反轉次數</li>
 </ul>
-]]></content>
+<p>這一題在置換（substitution）的基礎上，額外納入插入（insertion）與刪除（deletion）兩種點突變類型，將 Hamming distance 推廣為編輯距離（edit distance，字串互相轉換所需的編輯次數），以適用於長度不等的序列。</p>
+<p>由於引進了新的突變類型，計算距離時也要考慮不同突變類別的權重。舉例來說，插入或刪除鹼基可能導致 readframe 移位，所以它們對基因體的影響可能比置換更為顯著。不過，這道題目只考慮最簡單的狀況，即所有突變類型對編輯距離的權重一致。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>假設有兩個蛋白質字串 $S$ 與 $T$，兩者之間的最短編輯距離記為 $d(S,T)$。原則上，$S$ 和 $T$ 的長度越長，$d(S,T)$ 的上限也越高。為了評估延長這兩個字串對編輯距離的影響，可以由後往前，逐一比較各自的最後一位字符 $s$ 和 $t$，將字串重新表示為 $S&#x3D;S_{sub}+s$ 與 $T&#x3D;T_{sub}+t$。</p>
+<p>如果 $s$ 與 $t$ 相同，表示添加它們不會增加編輯距離，所以 $d(S,T)&#x3D;d(S_{sub},T_{sub})$。</p>
+<p>如果 $s$ 與 $t$ 相異，則有三種可能的編輯方式，每種方式都會讓編輯距離增加 1。</p>
+<ul>
+<li>把 $s$ 置換為 $t$，所以 $d(S,T)&#x3D;d(S_{sub},T_{sub}) + 1$</li>
+<li>從 $S$ 刪除 $s$（或在 $T_{sub}$ 末端插入 $t$），所以 $d(S,T)&#x3D;d(S_{sub}, T_{sub} + t) + 1$</li>
+<li>從 $T$ 刪除 $t$（或在 $S_{sub}$ 末端插入 $s$），所以 $d(S,T)&#x3D;d(S_{sub} + s, T_{sub}) + 1$</li>
+</ul>
+<p>每次延長字串時，我們都選擇增加最少編輯距離的方式，最終可得 $d(S,T)$。</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>我使用 <code>dist</code> 儲存 $S$ 和 $T$ 各個子字串的編輯距離。<code>dist</code> 是一個雙層嵌套的 list，它的大小比兩個字串的長度多 1，以包含空字串的狀況。</p>
+<p>由於空字串只能透過插入轉換為其它字串，所以 <code>dist</code> 的第 0 列和第 0 欄被設定為各子串的長度，其餘元素則初始化為 0，表示未知的編輯距離。</p>
+<p>接著，由上至下，由左至右遍歷 <code>dist</code>，比較兩個子字串的最後一位字符，依據前述關係判斷當前的最小編輯距離。最終，<code>dist</code> 右下角的元素即為兩個完整字串的最小編輯距離。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">S, T</span>):</span><br><span class="line">    <span class="comment"># The edit distance between S&#x27;s and T&#x27;s substrings</span></span><br><span class="line">    dist = [</span><br><span class="line">        [<span class="number">0</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>)</span><br><span class="line">        ]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(S) + <span class="number">1</span>):</span><br><span class="line">        dist[s][<span class="number">0</span>] = s</span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(T) + <span class="number">1</span>):</span><br><span class="line">        dist[<span class="number">0</span>][t] = t</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S)):</span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(T)):</span><br><span class="line">            <span class="keyword">if</span> S[s] == T[t]:</span><br><span class="line">                dist[s + <span class="number">1</span>][t + <span class="number">1</span>] = dist[s][t]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dist[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="built_in">min</span>(dist[s][t], dist[s + <span class="number">1</span>][t], dist[s][t + <span class="number">1</span>]) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> dist[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
-        <tag>metagenomics</tag>
+        <tag>rosalind</tag>
       </tags>
   </entry>
   <entry>
@@ -735,31 +770,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)</title>
-    <url>/enumerating-oriented-gene-orderings/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。</p>
-<blockquote>
-<p>A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negative sign (for the sake of simplicity, we omit the positive sign). For example, π&#x3D;(5,−3,−2,1,4) is a signed permutation of length 5</p>
-<p>Given: A positive integer n≤6</p>
-<p>Return: The total number of signed permutations of length n, followed by a list of all such permutations (you may list the signed permutations in any order).</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Synteny blocks 是相異物種因為基因體重排而分離的同源片段。在 <a href="https://5uperb0y.com/enumerating-gene-orders/">Enumerating Gene Orders</a> 當中介紹了以數列排列模擬 synteny blocks 重排的想法，我們可以額外考慮 blocks 的方向性來改善模型的精細度。DNA 雖然由兩股去氧核酸構成，但轉錄僅發生在其中一股。</p>
-<p>由於 synteny blocks 在演化過程中除了易位，也可能發生轉置，顛倒基因的排列和方向性，改變轉錄與基因調控等行為，從而影響個體的表徵。例如，Factor VIII Intron 22 的轉置便是血友病A的成因之一。</p>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題的解法近似<a href="https://5uperb0y.com/enumerating-gene-orders/">數列的排列</a>，只是透過正負號來表示 synteny blocks 的方向。因為要考慮正負符號，所以需要兩個調整。</p>
-<ol>
-<li>遞迴的 base case 要回傳數字與其相反數。例如輸入數列 <code>[1]</code>，要回傳 <code>[[1], [-1]]</code>。</li>
-<li>在把數字放回排列後的數列時，也要分別加入數字和其相反數。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">slperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;permutations of a numberic list, including -/+ of each number.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [[l[<span class="number">0</span>]], [-l[<span class="number">0</span>]]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [sign_e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> slperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> sign_e <span class="keyword">in</span> [e, -e]</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
-
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:lakich1993"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">lakich1993.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lakich et al. (1993). Inversions disrupting the factor VIII gene are a common cause of severe haemophilia A. Nature genetics, 5(3), 236-241.<a href="#fnref:lakich1993" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ROSALIND | Enumerating k-mers Lexicographically (LEXF)</title>
     <url>/enumerating-k-mers-lexicographically/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度為 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
@@ -792,36 +802,26 @@
       </tags>
   </entry>
   <entry>
-    <title>ROSALIND｜Edit Distance (EDIT)</title>
-    <url>/edit-distance/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定兩條以 FASTA 格式儲存的蛋白質字串，計算兩者互相轉換所需的最少編輯次數。編輯方式包含置換、刪除與插入。</p>
+    <title>ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)</title>
+    <url>/enumerating-oriented-gene-orderings/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。</p>
 <blockquote>
-<p>Given: Two protein strings s and t in FASTA format (each of length at most 1000 aa).</p>
-<p>Return: The edit distance d(s,t).</p>
+<p>A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negative sign (for the sake of simplicity, we omit the positive sign). For example, π&#x3D;(5,−3,−2,1,4) is a signed permutation of length 5</p>
+<p>Given: A positive integer n≤6</p>
+<p>Return: The total number of signed permutations of length n, followed by a list of all such permutations (you may list the signed permutations in any order).</p>
 </blockquote>
-<p>(<a href="https://rosalind.info/problems/edit/">https://rosalind.info/problems/edit/</a>)</p>
 <span id="more"></span>
 
-<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在先前的 Rosalind 練習題，我已經陸續介紹兩種評估序列差異的方式，它們各自反映了特定的基因體變化，因此可用於推論親緣關係或演化途徑。</p>
-<ul>
-<li><a href="https://5uperb0y.com/counting-point-mutations/">Hamming distance</a>：兩等長序列彼此轉換所需的鹼基置換次數</li>
-<li><a href="https://5uperb0y.com/reversal-distance/">reversal distance</a>：兩序列彼此轉換所需的子序列反轉次數</li>
-</ul>
-<p>這一題在置換（substitution）的基礎上，額外納入插入（insertion）與刪除（deletion）兩種點突變類型，將 Hamming distance 推廣為編輯距離（edit distance，字串互相轉換所需的編輯次數），以適用於長度不等的序列。</p>
-<p>由於引進了新的突變類型，計算距離時也要考慮不同突變類別的權重。舉例來說，插入或刪除鹼基可能導致 readframe 移位，所以它們對基因體的影響可能比置換更為顯著。不過，這道題目只考慮最簡單的狀況，即所有突變類型對編輯距離的權重一致。</p>
-<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>假設有兩個蛋白質字串 $S$ 與 $T$，兩者之間的最短編輯距離記為 $d(S,T)$。原則上，$S$ 和 $T$ 的長度越長，$d(S,T)$ 的上限也越高。為了評估延長這兩個字串對編輯距離的影響，可以由後往前，逐一比較各自的最後一位字符 $s$ 和 $t$，將字串重新表示為 $S&#x3D;S_{sub}+s$ 與 $T&#x3D;T_{sub}+t$。</p>
-<p>如果 $s$ 與 $t$ 相同，表示添加它們不會增加編輯距離，所以 $d(S,T)&#x3D;d(S_{sub},T_{sub})$。</p>
-<p>如果 $s$ 與 $t$ 相異，則有三種可能的編輯方式，每種方式都會讓編輯距離增加 1。</p>
-<ul>
-<li>把 $s$ 置換為 $t$，所以 $d(S,T)&#x3D;d(S_{sub},T_{sub}) + 1$</li>
-<li>從 $S$ 刪除 $s$（或在 $T_{sub}$ 末端插入 $t$），所以 $d(S,T)&#x3D;d(S_{sub}, T_{sub} + t) + 1$</li>
-<li>從 $T$ 刪除 $t$（或在 $S_{sub}$ 末端插入 $s$），所以 $d(S,T)&#x3D;d(S_{sub} + s, T_{sub}) + 1$</li>
-</ul>
-<p>每次延長字串時，我們都選擇增加最少編輯距離的方式，最終可得 $d(S,T)$。</p>
-<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>我使用 <code>dist</code> 儲存 $S$ 和 $T$ 各個子字串的編輯距離。<code>dist</code> 是一個雙層嵌套的 list，它的大小比兩個字串的長度多 1，以包含空字串的狀況。</p>
-<p>由於空字串只能透過插入轉換為其它字串，所以 <code>dist</code> 的第 0 列和第 0 欄被設定為各子串的長度，其餘元素則初始化為 0，表示未知的編輯距離。</p>
-<p>接著，由上至下，由左至右遍歷 <code>dist</code>，比較兩個子字串的最後一位字符，依據前述關係判斷當前的最小編輯距離。最終，<code>dist</code> 右下角的元素即為兩個完整字串的最小編輯距離。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">edit</span>(<span class="params">S, T</span>):</span><br><span class="line">    <span class="comment"># The edit distance between S&#x27;s and T&#x27;s substrings</span></span><br><span class="line">    dist = [</span><br><span class="line">        [<span class="number">0</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>)</span><br><span class="line">        ]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(S) + <span class="number">1</span>):</span><br><span class="line">        dist[s][<span class="number">0</span>] = s</span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(T) + <span class="number">1</span>):</span><br><span class="line">        dist[<span class="number">0</span>][t] = t</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S)):</span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(T)):</span><br><span class="line">            <span class="keyword">if</span> S[s] == T[t]:</span><br><span class="line">                dist[s + <span class="number">1</span>][t + <span class="number">1</span>] = dist[s][t]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dist[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="built_in">min</span>(dist[s][t], dist[s + <span class="number">1</span>][t], dist[s][t + <span class="number">1</span>]) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> dist[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Synteny blocks 是相異物種因為基因體重排而分離的同源片段。在 <a href="https://5uperb0y.com/enumerating-gene-orders/">Enumerating Gene Orders</a> 當中介紹了以數列排列模擬 synteny blocks 重排的想法，我們可以額外考慮 blocks 的方向性來改善模型的精細度。DNA 雖然由兩股去氧核酸構成，但轉錄僅發生在其中一股。</p>
+<p>由於 synteny blocks 在演化過程中除了易位，也可能發生轉置，顛倒基因的排列和方向性，改變轉錄與基因調控等行為，從而影響個體的表徵。例如，Factor VIII Intron 22 的轉置便是血友病A的成因之一。</p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題的解法近似<a href="https://5uperb0y.com/enumerating-gene-orders/">數列的排列</a>，只是透過正負號來表示 synteny blocks 的方向。因為要考慮正負符號，所以需要兩個調整。</p>
+<ol>
+<li>遞迴的 base case 要回傳數字與其相反數。例如輸入數列 <code>[1]</code>，要回傳 <code>[[1], [-1]]</code>。</li>
+<li>在把數字放回排列後的數列時，也要分別加入數字和其相反數。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">slperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;permutations of a numberic list, including -/+ of each number.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [[l[<span class="number">0</span>]], [-l[<span class="number">0</span>]]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [sign_e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> slperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> sign_e <span class="keyword">in</span> [e, -e]</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:lakich1993"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">lakich1993.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lakich et al. (1993). Inversions disrupting the factor VIII gene are a common cause of severe haemophilia A. Nature genetics, 5(3), 236-241.<a href="#fnref:lakich1993" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <tags>
         <tag>rosalind</tag>
       </tags>
@@ -903,6 +903,47 @@
       </tags>
   </entry>
   <entry>
+    <title>ROSALIND | Finding a Motif in DNA (SUBS)</title>
+    <url>/finding-a-motif-in-dna/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給定字串 s 與 t，其中 t 的長度小於等於 s，求 s 與 t 一致之子序列的起始位置。</p>
+<blockquote>
+<p>Given: Two DNA strings s and t (each of length at most 1 kbp).</p>
+<p>Return: All locations of t as a substring of s.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/subs/">https://rosalind.info/problems/subs/</a>)</p>
+<span id="more"></span>
+<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Motif 是指在一範圍內反覆出現且具鮮明特質的物體或概念，其指涉的對象因脈絡而異 。在分子生物中，motif 被用以形容一段為生物體共享的核酸或蛋白質序列，這些序列可能有相似的功能，且對各生物都至關重要。在網路生物學中，motif 則可用以形容一出現頻率高於隨機分布的子圖，這些子圖的出現頻率很高且有獨特的網路結構，因此能在欠缺相關生物學知識的情況被辨識出來。而在結構生物學中，motif 則代表核酸或蛋白質上呈規律結構的區段，這些區段可能由多個二級結構所構成。</p>
+<p>雖然 motif 定義多元，但皆不脫「重複」與「特別」兩項屬性。是以，透過在核酸或蛋白質序列尋找重複序列來辨識 motif，也算在找尋某種特別的屬性。在結構生物學中，domain 是與 motif 相關的概念。Domain 也具有規律的結構和鮮明的特質，但與 motif 不同，domain 能獨立發揮某項功能。換句話說，motif 強調結構的實體，而 domain 則強調功能的實體。</p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>此題意在尋找與 motif 相符的子字串之位置。在 Python 中，我首先建立 list 儲存子字串位置，接著以 for 迴圈依序取出長度與 motif 一致的子字串，再比對兩者的序列。若序列一致，則將子字串的起始位置儲存至 list。由於 python 計數由 0 開始，所以輸出結果還要 +1 才符合題目要求。因為最後要回傳 list，所以也能用 list comprehension 呈現。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">subs</span>(<span class="params">s, t</span>):</span><br><span class="line">	<span class="keyword">return</span> [</span><br><span class="line">		i + <span class="number">1</span></span><br><span class="line">		<span class="keyword">for</span> i, _ <span class="keyword">in</span> <span class="built_in">enumerate</span>(s[:-<span class="built_in">len</span>(t)])</span><br><span class="line">		<span class="keyword">if</span> s[i:i+<span class="built_in">len</span>(t)] == t</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
+
+<p>最後再把結果依照題目要求印出，</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="built_in">map</span>(subs(s,t))))</span><br></pre></td></tr></table></figure>
+
+<p>在 R 中，我採取了另一種策略：先列出所有與 motif 長度一致的子字串，再回傳序列與 motif 相同的子字串位置。因此，我先定義了能從一字串取出所有特定長度子字串的 function。接著再以 grep 搜索子字串中，與 motif 相符者的位置。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># exemplified data</span><br><span class="line">dna &lt;- &quot;GATATATGCATATACTT&quot;</span><br><span class="line">motif &lt;- &quot;ATAT&quot;</span><br><span class="line"># Generate kmer from a string</span><br><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br><span class="line"># identify motif from kmer with grep </span><br><span class="line">find_motif &lt;- function (dna, motif) &#123;</span><br><span class="line">  mer &lt;- kmer(dna, nchar(motif))</span><br><span class="line">  return(grep(motif, mer))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="1-motif-相關知識來源"><a href="#1-motif-相關知識來源" class="headerlink" title="1. motif 相關知識來源"></a>1. motif 相關知識來源</h2><p>本文關於 motif 的定義參考以下文獻與網站</p>
+<ul>
+<li><a href="https://www.merriam-webster.com/dictionary/motif">https://www.merriam-webster.com/dictionary/motif</a></li>
+<li>[莊榮輝，生物化學基礎 Biochemistry Basics 2008] (<a href="http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm">http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm</a>)</li>
+<li>Pizzuti, &amp; Rombo. (2018). Algorithms for Graph and Network Analysis: Clustering and Search of Motifs in Graphs. Encyclopedia of Bioinformatics and Computational Biology: ABC of Bioinformatics, 95.</li>
+</ul>
+<h2 id="2-R-kmer-function"><a href="#2-R-kmer-function" class="headerlink" title="2. R: kmer function"></a>2. R: kmer function</h2><p>K-mers 是指一字串所有長度為 k 的子字串，長度為 l 之字串會有 l - k + 1 個 k-mers，此概念常用於基因體學的序列比對和品質篩選的演算法。</p>
+<p>我的 kmer function 的運作方式是先將字串分割為獨立字符，再用 lapply 依序取出 k 個字符以 paste0 合併為長度為 k 的子字串。由於僅有 l - k + 1 個 k-mers，所以 lapply 迴圈僅執行  l - k + 1 次。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-R-grep-和-grepl"><a href="#3-R-grep-和-grepl" class="headerlink" title="3. R: grep 和 grepl"></a>3. R: grep 和 grepl</h2><p>grep 用以尋找文字向量中符合特定模式的元素之索引值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grep(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1] 1 5</span><br></pre></td></tr></table></figure>
+<p>grepl 用以判斷文字向量的各元素是否符合特定模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grepl(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1]  TRUE FALSE FALSE FALSE  TRUE</span><br></pre></td></tr></table></figure>
+<p>由於此題要求回報子字串的位置，因此使用 grep 實踐之。</p>
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROSALIND | Finding a Shared Motif (LCSM)</title>
     <url>/finding-a-shared-motif/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一 FASTA 檔案，內含數條由 A、C、G、T 組成的字串，求這些字串共享的最長子字串。</p>
@@ -943,47 +984,6 @@
 <blockquote>
 <p>I’m not sure the LCS of all the strings would necessarily be a substring of the pairwise LCS’s. For example, in this set of strings:<br>AAAAATATATAACGT AAAAACCCCCACGT ACACACCCCCACGT<br>The LCS of the first and second string will be AAAAA, the LCS of the second and third string will be CCCCC, but the LCS of all three strings will be ACGT.</p>
 </blockquote>
-]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROSALIND | Finding a Motif in DNA (SUBS)</title>
-    <url>/finding-a-motif-in-dna/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>給定字串 s 與 t，其中 t 的長度小於等於 s，求 s 與 t 一致之子序列的起始位置。</p>
-<blockquote>
-<p>Given: Two DNA strings s and t (each of length at most 1 kbp).</p>
-<p>Return: All locations of t as a substring of s.</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/subs/">https://rosalind.info/problems/subs/</a>)</p>
-<span id="more"></span>
-<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Motif 是指在一範圍內反覆出現且具鮮明特質的物體或概念，其指涉的對象因脈絡而異 。在分子生物中，motif 被用以形容一段為生物體共享的核酸或蛋白質序列，這些序列可能有相似的功能，且對各生物都至關重要。在網路生物學中，motif 則可用以形容一出現頻率高於隨機分布的子圖，這些子圖的出現頻率很高且有獨特的網路結構，因此能在欠缺相關生物學知識的情況被辨識出來。而在結構生物學中，motif 則代表核酸或蛋白質上呈規律結構的區段，這些區段可能由多個二級結構所構成。</p>
-<p>雖然 motif 定義多元，但皆不脫「重複」與「特別」兩項屬性。是以，透過在核酸或蛋白質序列尋找重複序列來辨識 motif，也算在找尋某種特別的屬性。在結構生物學中，domain 是與 motif 相關的概念。Domain 也具有規律的結構和鮮明的特質，但與 motif 不同，domain 能獨立發揮某項功能。換句話說，motif 強調結構的實體，而 domain 則強調功能的實體。</p>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>此題意在尋找與 motif 相符的子字串之位置。在 Python 中，我首先建立 list 儲存子字串位置，接著以 for 迴圈依序取出長度與 motif 一致的子字串，再比對兩者的序列。若序列一致，則將子字串的起始位置儲存至 list。由於 python 計數由 0 開始，所以輸出結果還要 +1 才符合題目要求。因為最後要回傳 list，所以也能用 list comprehension 呈現。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">subs</span>(<span class="params">s, t</span>):</span><br><span class="line">	<span class="keyword">return</span> [</span><br><span class="line">		i + <span class="number">1</span></span><br><span class="line">		<span class="keyword">for</span> i, _ <span class="keyword">in</span> <span class="built_in">enumerate</span>(s[:-<span class="built_in">len</span>(t)])</span><br><span class="line">		<span class="keyword">if</span> s[i:i+<span class="built_in">len</span>(t)] == t</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
-
-<p>最後再把結果依照題目要求印出，</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(<span class="built_in">map</span>(subs(s,t))))</span><br></pre></td></tr></table></figure>
-
-<p>在 R 中，我採取了另一種策略：先列出所有與 motif 長度一致的子字串，再回傳序列與 motif 相同的子字串位置。因此，我先定義了能從一字串取出所有特定長度子字串的 function。接著再以 grep 搜索子字串中，與 motif 相符者的位置。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># exemplified data</span><br><span class="line">dna &lt;- &quot;GATATATGCATATACTT&quot;</span><br><span class="line">motif &lt;- &quot;ATAT&quot;</span><br><span class="line"># Generate kmer from a string</span><br><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br><span class="line"># identify motif from kmer with grep </span><br><span class="line">find_motif &lt;- function (dna, motif) &#123;</span><br><span class="line">  mer &lt;- kmer(dna, nchar(motif))</span><br><span class="line">  return(grep(motif, mer))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="1-motif-相關知識來源"><a href="#1-motif-相關知識來源" class="headerlink" title="1. motif 相關知識來源"></a>1. motif 相關知識來源</h2><p>本文關於 motif 的定義參考以下文獻與網站</p>
-<ul>
-<li><a href="https://www.merriam-webster.com/dictionary/motif">https://www.merriam-webster.com/dictionary/motif</a></li>
-<li>[莊榮輝，生物化學基礎 Biochemistry Basics 2008] (<a href="http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm">http://juang.bst.ntu.edu.tw/BC2008/slides/Proteinx3a.htm</a>)</li>
-<li>Pizzuti, &amp; Rombo. (2018). Algorithms for Graph and Network Analysis: Clustering and Search of Motifs in Graphs. Encyclopedia of Bioinformatics and Computational Biology: ABC of Bioinformatics, 95.</li>
-</ul>
-<h2 id="2-R-kmer-function"><a href="#2-R-kmer-function" class="headerlink" title="2. R: kmer function"></a>2. R: kmer function</h2><p>K-mers 是指一字串所有長度為 k 的子字串，長度為 l 之字串會有 l - k + 1 個 k-mers，此概念常用於基因體學的序列比對和品質篩選的演算法。</p>
-<p>我的 kmer function 的運作方式是先將字串分割為獨立字符，再用 lapply 依序取出 k 個字符以 paste0 合併為長度為 k 的子字串。由於僅有 l - k + 1 個 k-mers，所以 lapply 迴圈僅執行  l - k + 1 次。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">kmer &lt;- function (s, k) &#123;</span><br><span class="line">  char &lt;- unlist(strsplit(s, &quot;&quot;))</span><br><span class="line">  kmer &lt;- unlist(lapply(0:(nchar(s) - k), function (x) &#123;paste0(char[seq(k) + x], collapse = &quot;&quot;)&#125;))</span><br><span class="line">  return(kmer)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-R-grep-和-grepl"><a href="#3-R-grep-和-grepl" class="headerlink" title="3. R: grep 和 grepl"></a>3. R: grep 和 grepl</h2><p>grep 用以尋找文字向量中符合特定模式的元素之索引值</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grep(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1] 1 5</span><br></pre></td></tr></table></figure>
-<p>grepl 用以判斷文字向量的各元素是否符合特定模式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; grepl(pattern = &quot;A&quot;, x = c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;A&quot;))</span><br><span class="line">[1]  TRUE FALSE FALSE FALSE  TRUE</span><br></pre></td></tr></table></figure>
-<p>由於此題要求回報子字串的位置，因此使用 grep 實踐之。</p>
 ]]></content>
       <tags>
         <tag>rosalind</tag>
@@ -1157,26 +1157,33 @@
       </tags>
   </entry>
   <entry>
-    <title>樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+    <title>hexo 部屬後網頁報錯 &quot;cannot get /&quot;</title>
+    <url>/hexo-cannot-get-slash-error/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>新的一年好不容易提振精神來寫文章，想說先把文章的調整更新到網站上。不料，輸入完 <code>hexo clean &amp;&amp; hexo delopy</code> 之後，雖然 Github action 顯示部屬正常，但網頁卻無法瀏覽，分別顯示 “This is not the web page you are looking for” 以及 “There isn’t a GitHub Pages site here”</p>
+<p><img data-src="https://i.stack.imgur.com/Hp57y.png" alt="This is not the web page you are looking for."></p>
+<ul>
+<li><a href="https://github.com/hexojs/hexo/issues/4098">404 There isn’t a GitHub Pages site here. #4098</a></li>
+<li><a href="https://stackoverflow.com/questions/66569047/github-what-causes-gaps-in-issue-number-404-this-is-not">GitHub what causes gaps in issue #Number (404 This is Not…)</a></li>
+</ul>
+<p><strong>TL;DR: 如果你也碰到這情形，可能是 hexo 部屬工具不全或是，上網隨便找一篇教學，或參照以下指令把相關套件更新後再部屬看看。</strong></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br><span class="line">npm update</span><br></pre></td></tr></table></figure>
+
 <span id="more"></span>
 
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<h1 id="環境設置"><a href="#環境設置" class="headerlink" title="環境設置"></a>環境設置</h1><p>忘了，只是想一寫文章啊，眼看元旦就要消失了，急著解問題沒記錄環境設置。不過這倒能衍伸出一項新年展望，下次碰到問題記得留意環境問題喔。</p>
+<h1 id="調查過程"><a href="#調查過程" class="headerlink" title="調查過程"></a>調查過程</h1><p>使用 <code>hexo server</code> 檢查，發現網站根本起不來，只有一串的 <code>Cannot GET /</code> 掛在蒼白的網頁上。</p>
+<p>通常，這項錯誤肇因於 <a href="https://blog.csdn.net/qq_45593330/article/details/116702792"><code>source/_posts</code> 沒有任何文章</a>，可是查看專案資料夾卻發現，所有文章都好端端留在那啊，究竟部屬的時候發生了什麼事？</p>
+<p>回頭翻部屬訊息才注意到，哇乾，hexo 不知何故把 <code>gh-page</code> 大多數檔案移除（慘況可參考 repository 上的 <a href="https://github.com/5uperb0y/5uperb0y.github.io/commit/3929872560d5bb2db64fd0a68eb441cac377e355">commit 歷史</a>）。接下來我推測了各種可能性：</p>
 <ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+<li>token 過期等權限問題？但都能順利推上 github 了，先排除這項可能。</li>
+<li>可能手賤刪除文章不自知？嘗試回到舊 commit 再部屬，問題依舊。</li>
+<li>可能 <code>_config.yml</code> 的分支設錯？檢查設置檔，也確定 origin 分支了，問題依舊</li>
 </ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+<p>到了最後才懷疑套件可能安裝不全或有問題？找了這篇 <a href="https://feifacunzai.github.io/2020/06/29/Hexo-%E7%B4%80%E9%8C%84%E6%9B%B4%E6%96%B0%E9%81%8E%E7%A8%8B/">Hexo 紀錄更新過程</a>，照裡面講的步驟更新套件後再部屬後，網頁和文章都回來啦。</p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>人生難免碰到困難與障礙，有時並非個人不努力，而是大環境的問題。既然錯不在己，過度糾結也無濟於事，不如更新環境或給自己重新開機的機會，也許問題會迎刃而解呢。</p>
+]]></content>
       <tags>
-        <tag>ecology</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1227,33 +1234,26 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo 部屬後網頁報錯 &quot;cannot get /&quot;</title>
-    <url>/hexo-cannot-get-slash-error/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>新的一年好不容易提振精神來寫文章，想說先把文章的調整更新到網站上。不料，輸入完 <code>hexo clean &amp;&amp; hexo delopy</code> 之後，雖然 Github action 顯示部屬正常，但網頁卻無法瀏覽，分別顯示 “This is not the web page you are looking for” 以及 “There isn’t a GitHub Pages site here”</p>
-<p><img data-src="https://i.stack.imgur.com/Hp57y.png" alt="This is not the web page you are looking for."></p>
-<ul>
-<li><a href="https://github.com/hexojs/hexo/issues/4098">404 There isn’t a GitHub Pages site here. #4098</a></li>
-<li><a href="https://stackoverflow.com/questions/66569047/github-what-causes-gaps-in-issue-number-404-this-is-not">GitHub what causes gaps in issue #Number (404 This is Not…)</a></li>
-</ul>
-<p><strong>TL;DR: 如果你也碰到這情形，可能是 hexo 部屬工具不全或是，上網隨便找一篇教學，或參照以下指令把相關套件更新後再部屬看看。</strong></p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm install -g npm-upgrade</span><br><span class="line">npm-upgrade</span><br><span class="line">npm update</span><br></pre></td></tr></table></figure>
-
+    <title>樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
 <span id="more"></span>
 
-<h1 id="環境設置"><a href="#環境設置" class="headerlink" title="環境設置"></a>環境設置</h1><p>忘了，只是想一寫文章啊，眼看元旦就要消失了，急著解問題沒記錄環境設置。不過這倒能衍伸出一項新年展望，下次碰到問題記得留意環境問題喔。</p>
-<h1 id="調查過程"><a href="#調查過程" class="headerlink" title="調查過程"></a>調查過程</h1><p>使用 <code>hexo server</code> 檢查，發現網站根本起不來，只有一串的 <code>Cannot GET /</code> 掛在蒼白的網頁上。</p>
-<p>通常，這項錯誤肇因於 <a href="https://blog.csdn.net/qq_45593330/article/details/116702792"><code>source/_posts</code> 沒有任何文章</a>，可是查看專案資料夾卻發現，所有文章都好端端留在那啊，究竟部屬的時候發生了什麼事？</p>
-<p>回頭翻部屬訊息才注意到，哇乾，hexo 不知何故把 <code>gh-page</code> 大多數檔案移除（慘況可參考 repository 上的 <a href="https://github.com/5uperb0y/5uperb0y.github.io/commit/3929872560d5bb2db64fd0a68eb441cac377e355">commit 歷史</a>）。接下來我推測了各種可能性：</p>
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
 <ul>
-<li>token 過期等權限問題？但都能順利推上 github 了，先排除這項可能。</li>
-<li>可能手賤刪除文章不自知？嘗試回到舊 commit 再部屬，問題依舊。</li>
-<li>可能 <code>_config.yml</code> 的分支設錯？檢查設置檔，也確定 origin 分支了，問題依舊</li>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
 </ul>
-<p>到了最後才懷疑套件可能安裝不全或有問題？找了這篇 <a href="https://feifacunzai.github.io/2020/06/29/Hexo-%E7%B4%80%E9%8C%84%E6%9B%B4%E6%96%B0%E9%81%8E%E7%A8%8B/">Hexo 紀錄更新過程</a>，照裡面講的步驟更新套件後再部屬後，網頁和文章都回來啦。</p>
-<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>人生難免碰到困難與障礙，有時並非個人不努力，而是大環境的問題。既然錯不在己，過度糾結也無濟於事，不如更新環境或給自己重新開機的機會，也許問題會迎刃而解呢。</p>
-]]></content>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
       <tags>
-        <tag>blog</tag>
+        <tag>ecology</tag>
       </tags>
   </entry>
   <entry>
@@ -1275,25 +1275,6 @@
 <h1 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h1><p>這兩部的設定要在衍伸漫畫和小說當中才能補齊，當中也有有趣的東西呀：第二代宇宙戰艦是用魔王星的反物質為動力，這魔王星的反物質我第一次看到是在〈2001夜物語〉裏頭，然後電影內的細節也致敬好多東西，不過我觀影歷練不長，所以實在看不出源頭。</p>
 <p>另外大部分人都比較推第一部，我想是因為一部比二部還要多掙扎、絕望與成長。法子與和美時代的宇宙怪物是以億萬計，且一波又一波襲向地球毫無喘息餘地；然而諾諾時代的戰鬥規模減少很多，最終魔王也只是一部的一雜兵而已。雖然諾諾被塑造成開朗認真的女孩，但是她覺醒成七號buster的過程卻顯得無力，相較之下法子從一個脆弱的女孩在生離死別、私情與大義的拉扯中成長，最終能獨當一面作戰還反過來鼓勵失意的和美姊。</p>
 <p>但是我還是很喜歡二部的，不只是因為他畫風和風格比較接近現在，還多很多元素：例如忌妒與陰謀，那個要消失能力的男駕駛為了保持能力和雙胞胎合謀，還吃一大堆奇怪食物。另外琪可對自己能力不足以保護摯愛的人那段也很不錯。只是僅六集沒法把細節做好，就會給人一種倉促且劇情不集中的印象（其實兩部元素沒有差太多，但是一部把劇情聚焦在法子和美身上，但是二部分散在幾個不同人身上）。</p>
-]]></content>
-      <tags>
-        <tag>sf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>All You Need Is Kill</title>
-    <url>/hiroshi-2004-all-you-need-is-kill/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>距地球四十光年外的智慧生命為了開拓生存空間，向地球投射 Terra forming Bomb，一種行星改造奈米機器。不料，它們和地球生物共生後不斷演化，形成威脅地球人類生存的「擬態」</p>
-<span id="more"></span>
-
-<p>主角銅谷啟二在聯合防衛軍服役，在初陣中意外擊破「主機擬態」而獲得生死輪迴的能力。然而，這種穿越時空的能力實為幻覺。主機擬態在被破壞後，會以速子將訊息回傳過去，以免其他擬態重蹈覆轍；而接觸主機擬態的人類則會連帶接收這些訊息，得到猶如親歷的印象。</p>
-<p>對於自己的遭遇，銅谷起初想要脫逃，卻徒勞無功，每每遭到擬態給殺害。為了找出脫離輪迴並存活下去的方法，他利用每次重生機會鍛鍊戰技，成為優秀的士兵。直到他在第 158 次戰鬥，碰到同樣受困於輪迴的戰鬥天才麗塔，事情才真相大白。原來，銅谷先前得以重置，是因為麗塔擊敗主機擬態的緣故。</p>
-<p>兩人為了生存下去共同擬定了作戰計畫，成功毀掉了備份擬態和負責傳訊的天線擬態。然而，麗塔的大腦因為多次輪迴，已逐漸異變為傳訊天線。麗塔明白，遲早銅谷也會有相同的遭遇，唯有一的方法是摧毀擬態傳輸訊號的途徑，讓輪迴不再繼續，但這勢必得犧牲兩人之一。</p>
-<p>因此，麗塔打算透過對決來決定誰能生存下去，背負著為人類繼續戰鬥的宿命。最終銅谷擊敗麗塔，也摧毀了主機擬態。由於擬態喪失了傳輸途徑，此次戰鬥之前發生的事件再沒有重來的機會。</p>
-<p>自此，銅谷接替了麗塔戰爭英雄的地位，也承擔起麗塔曾體會的孤單、無法挽救所有人的無奈、殺死唯一知己的痛苦與折磨。</p>
-<p>雖然這本小說的主軸包含很多心理描述，還很特別地在全書前後分別用銅谷和麗塔的視角敘事。例如麗塔重複了多次戰鬥，從最初試著救人到後來把一切交給命運；孤獨地戰鬥到後來碰到知己卻得互相殘殺的哀痛等。</p>
-<p>最初我是為了了解輕小說筆法才讀這本書，然而我太關注主線戰鬥和行文模式，又受到一些齣戲的角色和對話內容影響（例如日本化的美國角色形象等），所以讀的時候有點難起共鳴，於是筆記中少了很多心理層面的紀錄。</p>
-<p>然而，劇情讀起來還是挺流暢的。至於，改編版電影雖然與小說有很大的差異，但看得也很過癮。原則上，在家裡如果轉到了就會看下去（例如今天又看了一遍）。</p>
 ]]></content>
       <tags>
         <tag>sf</tag>
@@ -1327,6 +1308,25 @@
 ]]></content>
       <tags>
         <tag>life in the universe</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>All You Need Is Kill</title>
+    <url>/hiroshi-2004-all-you-need-is-kill/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>距地球四十光年外的智慧生命為了開拓生存空間，向地球投射 Terra forming Bomb，一種行星改造奈米機器。不料，它們和地球生物共生後不斷演化，形成威脅地球人類生存的「擬態」</p>
+<span id="more"></span>
+
+<p>主角銅谷啟二在聯合防衛軍服役，在初陣中意外擊破「主機擬態」而獲得生死輪迴的能力。然而，這種穿越時空的能力實為幻覺。主機擬態在被破壞後，會以速子將訊息回傳過去，以免其他擬態重蹈覆轍；而接觸主機擬態的人類則會連帶接收這些訊息，得到猶如親歷的印象。</p>
+<p>對於自己的遭遇，銅谷起初想要脫逃，卻徒勞無功，每每遭到擬態給殺害。為了找出脫離輪迴並存活下去的方法，他利用每次重生機會鍛鍊戰技，成為優秀的士兵。直到他在第 158 次戰鬥，碰到同樣受困於輪迴的戰鬥天才麗塔，事情才真相大白。原來，銅谷先前得以重置，是因為麗塔擊敗主機擬態的緣故。</p>
+<p>兩人為了生存下去共同擬定了作戰計畫，成功毀掉了備份擬態和負責傳訊的天線擬態。然而，麗塔的大腦因為多次輪迴，已逐漸異變為傳訊天線。麗塔明白，遲早銅谷也會有相同的遭遇，唯有一的方法是摧毀擬態傳輸訊號的途徑，讓輪迴不再繼續，但這勢必得犧牲兩人之一。</p>
+<p>因此，麗塔打算透過對決來決定誰能生存下去，背負著為人類繼續戰鬥的宿命。最終銅谷擊敗麗塔，也摧毀了主機擬態。由於擬態喪失了傳輸途徑，此次戰鬥之前發生的事件再沒有重來的機會。</p>
+<p>自此，銅谷接替了麗塔戰爭英雄的地位，也承擔起麗塔曾體會的孤單、無法挽救所有人的無奈、殺死唯一知己的痛苦與折磨。</p>
+<p>雖然這本小說的主軸包含很多心理描述，還很特別地在全書前後分別用銅谷和麗塔的視角敘事。例如麗塔重複了多次戰鬥，從最初試著救人到後來把一切交給命運；孤獨地戰鬥到後來碰到知己卻得互相殘殺的哀痛等。</p>
+<p>最初我是為了了解輕小說筆法才讀這本書，然而我太關注主線戰鬥和行文模式，又受到一些齣戲的角色和對話內容影響（例如日本化的美國角色形象等），所以讀的時候有點難起共鳴，於是筆記中少了很多心理層面的紀錄。</p>
+<p>然而，劇情讀起來還是挺流暢的。至於，改編版電影雖然與小說有很大的差異，但看得也很過癮。原則上，在家裡如果轉到了就會看下去（例如今天又看了一遍）。</p>
+]]></content>
+      <tags>
+        <tag>sf</tag>
       </tags>
   </entry>
   <entry>
@@ -1383,6 +1383,39 @@
 <p>這讓我回想起以前讀過的劇本寫作書，推理或懸疑小說其中一個魅力在於，它們利用同一份文本講述了兩個截然不同的故事。在這本書中，小鳩的推理成功解釋了小佐內的復仇，但是從我們讀者的角度，它和從不是個苦澀的青春故事？</p>
 <hr>
 <p>米澤穂信（2022）。夏季限定熱帶水果百匯事件（HANA譯）。尖端出版。（原著出版於 2006 年）</p>
+]]></content>
+      <tags>
+        <tag>mystery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《秋季限定栗金飩事件》</title>
+    <url>/honobu-2009-shuki-gentei-kurikinton-jiken/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>小鳩與小佐內分手後，各自接受陌生同學的告白，展開新的校園生活。小佐內的交往對象是校刊社的新生瓜野，他認為校刊社的作風保守，所以提議在校刊報導校外題材。瓜野盯上了暑假發生的綁架事件，想藉此展現自己的能力，也期望小佐內能對其刮目相看。然而，因為顧慮小佐內，社長堂島起初拒絕了瓜野的提議。不過在小佐內穿針引線下，一名不起眼的社員以公益為由說服堂島，在校刊開設編輯專欄讓社員自由發揮。</p>
+<span id="more"></span>
+
+<p>面對期待已久的機會，瓜野卻苦無寫作題材。了解瓜野的煩惱後，他的朋友冰谷提供了瓜野數份火警報導。這些火警皆於周五深夜發生，且規模有逐漸擴大的趨勢。瓜野懷疑這是一起連續縱火案件，於是著手調查火災發生的模式。他發現，嫌犯似乎是依照市內防災區劃的順序挑選做案地點，因此在編輯專欄大膽預測下一次的火警發生地點。</p>
+<p>由於瓜野屢次預測成功，所以讓原本乏人問津的校刊得到許多關注。瓜野想向小佐內炫耀自己的成就，但她卻表現得不感興趣的樣子，讓瓜野感到受到冷落。不過，小佐內雖然輕易接受告白，卻沒有怠慢這段關係。她為了顧及瓜野的自尊，所以總是背地裡幫忙瓜野，讓他得到報導的機會。因為擔心校刊社的預測會招致警方懷疑，所以小佐內一直隱諱地勸阻瓜野。</p>
+<p>然而，瓜野卻誤會小佐內的態度為冷漠，而且也不願放棄到手的熱門題材，仍然繼續追蹤縱火案，直到學生指導處下令制止。指導處的老師認為捕風捉影的報導會招致懷疑，因此下令校刊社停止報導。因此，校刊社舉行編輯會議決定於下期校刊公布他們預測縱火地點的依據，以反駁他人的懷疑並證明自己的立場。</p>
+<p>不過，學生指導部的負責人在校刊發行前調職，所以瓜野撤回原本的稿件，繼續報導縱火案的預測。這個自作主張的舉動引發社內衝突。其餘社員認為瓜野違反編輯會議的決定，還置校刊社於校規處分的風險之中。在聽了瓜野的解釋與對案件的推論後，堂島雖然不全然支持瓜野的主張，但認為在嫌犯被逮捕前，公布作案手段可能引發模仿，從而為校刊社惹來爭端。</p>
+<p>會後，堂島以準備升學為由卸任，而其他不滿瓜野作風的社員也相繼退社。於是，瓜野如願繼任校刊社社長，也招募到數名新血，決定以追捕縱火犯為社團新學期的活動方針。小佐內對瓜野的企圖不以為然，想要勸他收手，但瓜野仍一意孤行。瓜野雖然當上了社長，也讓校刊社的名聲水漲船高，他卻始終認為被小佐內冷落。瓜野與小佐內見面時，克制不住內心衝動而向她索吻。瓜野強硬的舉動讓小佐內十分不滿，於是轉而開始規畫對瓜野的報復行動。</p>
+<p>雖然堂島已經退社，不過他認為如果對嫌犯坐視不管，可能會讓校刊社陷入騎虎難下的局面，因此決定求助小鳩。小鳩這段期間則與女友仲丸過著想像中普通情侶的生活，例如周末出遊和討論時尚等。小鳩偶爾還會破例發揮他的推理能力來體貼仲丸，像是在壅擠的公車上找出即將騰出的空位等。</p>
+<p>不過，他過人的推理能力也讓他難以享受相處的樂趣，他對女友分享的奇聞感到稀鬆平常，也常為女友無法與他共享破解謎團的樂趣而抱憾。最終，仲丸同學因為不滿小鳩對她出軌心無波瀾而提出分手，終結了這段關係。</p>
+<p>在堂島求助小鳩前，小鳩已對縱火案產生興趣。他在其中一起縱火案的現場發現毀損的廂型車，那台車正好是綁架小佐內的車子。小鳩懷疑小佐內可能與此有關，於是接受了堂島的委託。聽了堂島轉述瓜野的推測後，小鳩認為他的假設不可信。小鳩查證防災規劃後，發現該資訊過時且與現今則屬不符，所以排除了嫌犯在災防體制內的假說。</p>
+<p>小鳩推測嫌犯是基於校刊報導的地點縱火，並且認為嫌犯是瓜野的密友，才能在報導乏人問津的時候，就能依據其內容犯案。在打聽到小佐內與瓜野的關係後，小鳩一度懷疑小佐內涉案。因此，他委託堂島與其它校刊社員合作，透過操弄情報來鎖定嫌犯。</p>
+<p>因為瓜野無心管理校刊的送印與發行，所以他們趁隙調整了的校刊內容，依據班級寫了不同的火點預測。於是，他們透過隔月的火警發生地點，鎖定了嫌犯所在的班級，從中打聽到涉有重嫌的冰谷，也排除了小佐內的嫌疑。在次月預期犯案的夜裡，小鳩與堂島埋伏在嫌犯預計出現的地方，準備與嫌犯正面對決。</p>
+<p>不過嫌犯卻比預期早犯案。雖然無法阻止犯案，但小鳩仍努力阻止火勢延燒。小鳩在火場碰到同樣前來幫忙的小佐內，還有隨後緩緩來遲的瓜野。小佐內看見瓜野後，隨即跑離現場，來到附近的公園。瓜野追上小佐內，並且指控她為縱火者。瓜野解釋，小佐內行跡不僅與起火點重疊，而且總是欲言又止地阻止自己的舉動。</p>
+<p>不過，小佐內反駁，瓜野的指控與證據不經推敲，而且同樣的理由也能用於懷疑瓜野。另外，瓜野也不知道，小佐內因為對瓜野索吻的舉動懷恨在心，所以刻意誤導瓜野懷疑自己。於是，小佐內放任瓜野繼續說明理由，讓他沉浸在指控他人的滿足中，直到最後才戳破他基礎不穩的推論，讓瓜野了解自己所掙得的威望，其實都有小佐內在背後操作的痕跡。小佐內嘲笑著瓜野的無能，徹底瓦解他的自尊，令其羞愧地不能自己而離去。</p>
+<p>而在縱火現場附近的堂島，也順利追上縱火者，將其移送警方處理。縱火者的身分如小鳩推論，是瓜野的好友冰谷。他原先便常為了發洩煩悶的情緒而隨機縱火，不過在聽聞瓜野的野心後，十分看不起他那卑微的願望，於是在瓜野展示縱火案的推理後，投其所好地犯案，只為了看他被友人操弄卻仍自鳴得意的模樣。</p>
+<p>小鳩與小佐內在公園重逢，談起彼此在新關係的挫敗。小佐內原想了解戀愛的感覺而接受瓜野的告白，卻因為對方不領情自己的努力而失望；小鳩雖然開心能過上正常情侶的生活，卻因為自己得出精巧推論時，沒有可以分享的對象而感到落寞。</p>
+<p>他們害怕自己自視甚高的態度，所以用小市民的名義互相約束，也同時享受彼此的包容。然而這樣的心態卻與目標違背，所以他們才在去年夏天分開。然而，經過一年，他們終於意識到，想要避免他人反感並維持良好的社交關係，其實不需要違背自己本性去扮演平凡人，他們只需要能夠彼此理解與傾訴的對象。</p>
+<p>意識到彼此為了辯護復合的合理性已經廢了過多唇舌，小佐內挖苦地說其他人只需一句告白就能解決的事，他們卻要迂迴地討論一陣子。於是，小鳩如同表白般，向小佐內說她是自己不可或缺的存在。就這樣，在言不及義與顧及自尊的語句中，兩人總算恢復關係。<br><br/><br>這集的推理比前兩集更有張力，連續縱火案的調查縱貫全書，除了校刊社的調查外，也有小鳩的調查路線，中間還故佈疑陣讓小佐內也成為嫌疑人，最後才在火場前讓各方人馬集結，一次揭發真相。我也很佩服作者安排情節的細膩，每個角色的性格與做事風格相符，也都構成犯案與破案的要素。角色在各個場景的行為都有合理動機，不會讓他們成為完成推理與謎團的機關。</p>
+<p>例如小佐內的行跡雖然與火場相符，但她的做事風格卻不該如此粗糙，所以形成作品的懸念。相反地，從書本開頭，冰谷就淡淡表現出對瓜野的不屑，而他也順利讓校刊社的預言成了一場笑話。至於瓜野的自負不僅讓他錯過小佐內的勸告，也因為這種不在乎瑣事的個性，讓小鳩等人得以借重其他社員對校刊動手腳，達到操弄情報的目的。</p>
+<p>在描述小鳩情侶生活時穿插的兩則日常推理也很有趣。有次，小鳩和仲丸出遊時，在公車上看到有人誤觸下車鈴，卻不確定是座席上何人做的。他想要為仲丸找個座位，於是開始推論座席上一老一少何者會先下車。因為兩人的神情與儀態無法區分誰會先起身，所以小鳩是從掏零錢的舉動才看出端倪。兩人都有優惠票，但是票券只在木良市生效，所以掏錢的人應該會在市外才下車，從而推理出先下車的人。</p>
+<p>另一起事件則是仲丸同學的趣談（雖然小鳩覺得一點也不有趣）。她說她有個熱愛重金屬的哥哥在出遊期間遭闖空門，卻沒有財物損失。令人訝異的是，他還在隔天碰到那名小偷。小鳩還沒聽完，就已推論出事情全貌，他想仲丸的哥哥因為粗心大意忘了關音樂，而鄰居忍受不了噪音，卻聯絡不上住戶，只好破門而入。</p>
+<p>因為我也被鄰居吵鬧過，每天也在車上期待空位，所以對這些小故事特別有共鳴，還讓人覺得也許推理另一個魅力就在於，讓人想要更加努力去觀察周邊的世界吧，起碼我自己就躍躍欲試想找到下個空位了。</p>
+<p>在這集，小鳩與小佐內的關係仍是重要的主線。在夏季篇，米澤用棉花糖比喻兩人自視甚高，卻虛偽地裝成小市民的自覺。而這集，則把他們各自尋找新交往對象的舉動描述為糖漬栗子。栗子本身帶有一定的澀味，為了去除它，有兩種做法。第一種是利用層層糖漿果覆，讓糖分滲入栗子中，直到整顆都充滿甜滋滋的口味。</p>
+<h2 id="仲丸和瓜野就是他們的糖，被兩人期待能去除自己人生中的澀味，但即使他們努力了，仍然沒達到預期的效果。他們沒辦法違背自己本性去過常人的生活，壓抑自己的喜好終究會造成反彈，所以最後他們決定複合。不過，儘管他們一直為情感的決定找理由，但實際上卻未必需要那麼多解釋，但這也是他們關係獨特且讓彼此覺得自在的地方吧。"><a href="#仲丸和瓜野就是他們的糖，被兩人期待能去除自己人生中的澀味，但即使他們努力了，仍然沒達到預期的效果。他們沒辦法違背自己本性去過常人的生活，壓抑自己的喜好終究會造成反彈，所以最後他們決定複合。不過，儘管他們一直為情感的決定找理由，但實際上卻未必需要那麼多解釋，但這也是他們關係獨特且讓彼此覺得自在的地方吧。" class="headerlink" title="仲丸和瓜野就是他們的糖，被兩人期待能去除自己人生中的澀味，但即使他們努力了，仍然沒達到預期的效果。他們沒辦法違背自己本性去過常人的生活，壓抑自己的喜好終究會造成反彈，所以最後他們決定複合。不過，儘管他們一直為情感的決定找理由，但實際上卻未必需要那麼多解釋，但這也是他們關係獨特且讓彼此覺得自在的地方吧。"></a>仲丸和瓜野就是他們的糖，被兩人期待能去除自己人生中的澀味，但即使他們努力了，仍然沒達到預期的效果。他們沒辦法違背自己本性去過常人的生活，壓抑自己的喜好終究會造成反彈，所以最後他們決定複合。不過，儘管他們一直為情感的決定找理由，但實際上卻未必需要那麼多解釋，但這也是他們關係獨特且讓彼此覺得自在的地方吧。</h2><p>米澤穗信（2022）。秋季限定栗金飩事件（上）。尖端出版（原著出版於 2009 年）<br>米澤穗信（2022）。秋季限定栗金飩事件（下）。尖端出版（原著出版於 2009 年）</p>
 ]]></content>
       <tags>
         <tag>mystery</tag>
@@ -1944,36 +1977,6 @@
       </tags>
   </entry>
   <entry>
-    <title>從奈米到光年：有趣的度量衡簡史</title>
-    <url>/lee-2020-from-nanometers-to-light-years-a-brief-history-of-measurements/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>為了認識世界和交流想法，人類發明了度量衡制度。度量衡的發展不只與經濟產業的需求密切相關，也深受政治社會環境的影響。因此，不僅各個國家有其獨特的度量衡制度，不同產業也發展出各自慣用的度量衡系統。</p>
-<p>這些系統既因為地域而異，也隨時間推進不斷演變。這本書的目的是介紹長度、面積、體積與重量等生活常見的度量衡單位，探討各個國家與產業的度量衡差異與其流變，並且探討這些差異與變化的可能成因。</p>
-<p>（李開周（2020），從奈米到光年：有趣的度量衡簡史。）</p>
-<span id="more"></span>
-
-<p>這本書的編排較為鬆散，作者沒有按照嚴格的架構來陳述各項觀察與論點。然而，書中仍有幾個貫穿全文的議題。</p>
-<p>首先，度量衡的發展源於需求。例如，幾乎每個文化都發展出以身體部位來度量長度的方法。古中國將拇指與中指展開的距離定義為尺，古埃及則以手掌和前臂的長度定義為肘（cubit），希臘和羅馬文化則以定義腳掌長為足尺（pes）。</p>
-<p>透過這些單位，人們能直觀地描述物體尺寸，便於日常的測量與溝通。相似的案例還有歐洲與中亞的商人使用角豆來測量貴金屬的重量，隨後演變為重量單位克拉（carat）；以及英國用口腔能含入的水量測量，定義小杯、傑克、品脫（pint）等容量單位。</p>
-<p>其次，單位的使用有其彈性，某些單位的定義還會因地制宜。中國使用畝來評估農地土地面積。然而，農地的價值源自作物產能。相同面積下，肥沃土地和貧脊土地的作物產量不能一概而論。因此，畝的定義還會因農地的肥沃程度而異，越是肥沃的農地，畝的面積就越小。</p>
-<p>由於土地測量的技術困難，有些農地交易甚至用產量取代面積來衡量土地價值。這些事例反映了當代人們如何因應測量與溝通的需求而調整單位的定義。</p>
-<p>另外，經濟、社會與政治因素深刻影響度量衡制度的發展。例如中國新朝時期的王莽基於儒道思想，相信度量衡的標準原器來自天界，所以採用音律來制定長度標準<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="管樂的音色取決於銅管的長度。長度愈長，音調愈低。王莽請樂師制定符合預期的音調後，再以管長作為長度的標準。">1</span></a></sup>。</p>
-<p>他認為這方法比起人為標準，更接近天意。由於樂器音調不只與其長度有關，也受材質影響，所以這種方法有明顯的缺陷。然而，這反映了政治理念如何影響度量衡制度的制定。</p>
-<p>- </p>
-<p>另一方面，政治與經濟因素或許也解釋了，中國長度與面積隨政權交替膨脹的原因（1 尺的長度從商朝到民國約從 15 公分漲到 30 公分。）。作者認為政府為了增加絲絹稅收，微幅增加單位標準原器的尺寸，在不改變表面稅率的情況下，增加實際的稅收。</p>
-<p>隨著社會發展與度量衡制度的普及，為了降低溝通與管理成本，統一度量衡標準成為必要。建立一致的度量衡制度只是第一步，確保其廣泛使用則是各國政府另一項挑戰。在測量工具不普及的情況下，人們往往使用自然物體作為參照。</p>
-<p>例如，英吋（inch）最初定義為腳拇指末節的長度，隨後英國愛德華二世則將其規定為三顆大麥麥粒首尾相連的長度。這定義利用了種子尺寸的一致性，既提供了校準工具的穩定手段，又方面人民取得，確保校準方法的普及性。</p>
-<p>之後，英國亨利六世時期也曾製造出大量度量衡原器，分發到各地行政單位，當民間出現度量衡交易的爭議時，可以向官方求助請求仲裁，藉此維護度量衡的統一與公正。</p>
-<p>在度量衡制度的歷史中，公制的發展是近代最重要的事件，它呈現了幾個重要趨勢。首先，使用更普遍的物理現象定義單位，例如長度單位最初使用地球周長為依據，後來則採用光於單位時間行近距離。</p>
-<p>測量手段也越來越抽象，不再依賴具體實物（即標準原器）來定義單位。公制單位也力求純粹，讓它們能夠衍生出其他常用單位。然而，作者認為採用公制能減少溝通成本並且有利於科學發展，但是它失去了早期度量衡單位的直觀性。</p>
-<p>度量衡制度的發展有其歷史根基，各項產業都有各自慣用的單位，像美國這樣基於英制建立起的工商業體系，全面採用公制的成本高昂，所以難以全面採用公制。</p>
-<p>書中還提出了一些值得深思的問題。如果度量衡單位是應需求而生，那為什麼會產生毫、絲、忽等極為精確的單位（1 忽 &#x3D; 0.32 微米）？作者說明，這是為了滿足官僚體系的文書需求而創造的單位，它們能確保讓稅賦額度能精確劃分到各層政府單位，達到帳面的公正與平衡。</p>
-<p>另外，不是所有單位都是十進位制。例如羅馬的長度單位採用十二進位制可能源於人體比例。如前所述，羅馬尺最初定義為腳掌長，而羅馬吋則為腳拇指長，兩者比值正好為十二，所以成為長度轉換的標準。</p>
-<p>而許多重量單位採用二進位制（或二的倍數進位）則與測量方式有關。天秤是過往最普遍的測重儀器，用它來測量時，是以砝碼二分逼近物體重量的過程。以二的倍數鑄造砝碼能提升過程的效率。</p>
-<p>雖然書中沒有詳細討論，但各文明最初發展的度量衡單位也是個有趣的問題。最初發展的度量衡單位是否因文明而異？這些體系發展的次序和多樣性又跟哪些地理、生理、文化因素相關。</p>
-<p>綜上所述，雖然《從奈米到光年》的篇幅不長，但作者還是使用許多例子幫助讀者了解陌生的單位，讓讀者能對文獻中的量化內容有具體的印象。另外，書中關於度量衡的介紹，也讓我們了解到，制度發展其實也反映了人類認識世界的管道與途徑，這是我從前讀物理課本時沒想過的觀點。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">管樂的音色取決於銅管的長度。長度愈長，音調愈低。王莽請樂師制定符合預期的音調後，再以管長作為長度的標準。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div></p>
-]]></content>
-  </entry>
-  <entry>
     <title>戲說統計</title>
     <url>/lee-2017-introduction-to-statistics-and-quantitative-analysis/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>知乎上有段軼聞可以很好地形容我讀《戲說統計》的心境：</p>
@@ -2055,6 +2058,36 @@
       <tags>
         <tag>statistics</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>從奈米到光年：有趣的度量衡簡史</title>
+    <url>/lee-2020-from-nanometers-to-light-years-a-brief-history-of-measurements/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>為了認識世界和交流想法，人類發明了度量衡制度。度量衡的發展不只與經濟產業的需求密切相關，也深受政治社會環境的影響。因此，不僅各個國家有其獨特的度量衡制度，不同產業也發展出各自慣用的度量衡系統。</p>
+<p>這些系統既因為地域而異，也隨時間推進不斷演變。這本書的目的是介紹長度、面積、體積與重量等生活常見的度量衡單位，探討各個國家與產業的度量衡差異與其流變，並且探討這些差異與變化的可能成因。</p>
+<p>（李開周（2020），從奈米到光年：有趣的度量衡簡史。）</p>
+<span id="more"></span>
+
+<p>這本書的編排較為鬆散，作者沒有按照嚴格的架構來陳述各項觀察與論點。然而，書中仍有幾個貫穿全文的議題。</p>
+<p>首先，度量衡的發展源於需求。例如，幾乎每個文化都發展出以身體部位來度量長度的方法。古中國將拇指與中指展開的距離定義為尺，古埃及則以手掌和前臂的長度定義為肘（cubit），希臘和羅馬文化則以定義腳掌長為足尺（pes）。</p>
+<p>透過這些單位，人們能直觀地描述物體尺寸，便於日常的測量與溝通。相似的案例還有歐洲與中亞的商人使用角豆來測量貴金屬的重量，隨後演變為重量單位克拉（carat）；以及英國用口腔能含入的水量測量，定義小杯、傑克、品脫（pint）等容量單位。</p>
+<p>其次，單位的使用有其彈性，某些單位的定義還會因地制宜。中國使用畝來評估農地土地面積。然而，農地的價值源自作物產能。相同面積下，肥沃土地和貧脊土地的作物產量不能一概而論。因此，畝的定義還會因農地的肥沃程度而異，越是肥沃的農地，畝的面積就越小。</p>
+<p>由於土地測量的技術困難，有些農地交易甚至用產量取代面積來衡量土地價值。這些事例反映了當代人們如何因應測量與溝通的需求而調整單位的定義。</p>
+<p>另外，經濟、社會與政治因素深刻影響度量衡制度的發展。例如中國新朝時期的王莽基於儒道思想，相信度量衡的標準原器來自天界，所以採用音律來制定長度標準<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="管樂的音色取決於銅管的長度。長度愈長，音調愈低。王莽請樂師制定符合預期的音調後，再以管長作為長度的標準。">1</span></a></sup>。</p>
+<p>他認為這方法比起人為標準，更接近天意。由於樂器音調不只與其長度有關，也受材質影響，所以這種方法有明顯的缺陷。然而，這反映了政治理念如何影響度量衡制度的制定。</p>
+<p>- </p>
+<p>另一方面，政治與經濟因素或許也解釋了，中國長度與面積隨政權交替膨脹的原因（1 尺的長度從商朝到民國約從 15 公分漲到 30 公分。）。作者認為政府為了增加絲絹稅收，微幅增加單位標準原器的尺寸，在不改變表面稅率的情況下，增加實際的稅收。</p>
+<p>隨著社會發展與度量衡制度的普及，為了降低溝通與管理成本，統一度量衡標準成為必要。建立一致的度量衡制度只是第一步，確保其廣泛使用則是各國政府另一項挑戰。在測量工具不普及的情況下，人們往往使用自然物體作為參照。</p>
+<p>例如，英吋（inch）最初定義為腳拇指末節的長度，隨後英國愛德華二世則將其規定為三顆大麥麥粒首尾相連的長度。這定義利用了種子尺寸的一致性，既提供了校準工具的穩定手段，又方面人民取得，確保校準方法的普及性。</p>
+<p>之後，英國亨利六世時期也曾製造出大量度量衡原器，分發到各地行政單位，當民間出現度量衡交易的爭議時，可以向官方求助請求仲裁，藉此維護度量衡的統一與公正。</p>
+<p>在度量衡制度的歷史中，公制的發展是近代最重要的事件，它呈現了幾個重要趨勢。首先，使用更普遍的物理現象定義單位，例如長度單位最初使用地球周長為依據，後來則採用光於單位時間行近距離。</p>
+<p>測量手段也越來越抽象，不再依賴具體實物（即標準原器）來定義單位。公制單位也力求純粹，讓它們能夠衍生出其他常用單位。然而，作者認為採用公制能減少溝通成本並且有利於科學發展，但是它失去了早期度量衡單位的直觀性。</p>
+<p>度量衡制度的發展有其歷史根基，各項產業都有各自慣用的單位，像美國這樣基於英制建立起的工商業體系，全面採用公制的成本高昂，所以難以全面採用公制。</p>
+<p>書中還提出了一些值得深思的問題。如果度量衡單位是應需求而生，那為什麼會產生毫、絲、忽等極為精確的單位（1 忽 &#x3D; 0.32 微米）？作者說明，這是為了滿足官僚體系的文書需求而創造的單位，它們能確保讓稅賦額度能精確劃分到各層政府單位，達到帳面的公正與平衡。</p>
+<p>另外，不是所有單位都是十進位制。例如羅馬的長度單位採用十二進位制可能源於人體比例。如前所述，羅馬尺最初定義為腳掌長，而羅馬吋則為腳拇指長，兩者比值正好為十二，所以成為長度轉換的標準。</p>
+<p>而許多重量單位採用二進位制（或二的倍數進位）則與測量方式有關。天秤是過往最普遍的測重儀器，用它來測量時，是以砝碼二分逼近物體重量的過程。以二的倍數鑄造砝碼能提升過程的效率。</p>
+<p>雖然書中沒有詳細討論，但各文明最初發展的度量衡單位也是個有趣的問題。最初發展的度量衡單位是否因文明而異？這些體系發展的次序和多樣性又跟哪些地理、生理、文化因素相關。</p>
+<p>綜上所述，雖然《從奈米到光年》的篇幅不長，但作者還是使用許多例子幫助讀者了解陌生的單位，讓讀者能對文獻中的量化內容有具體的印象。另外，書中關於度量衡的介紹，也讓我們了解到，制度發展其實也反映了人類認識世界的管道與途徑，這是我從前讀物理課本時沒想過的觀點。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">管樂的音色取決於銅管的長度。長度愈長，音調愈低。王莽請樂師制定符合預期的音調後，再以管長作為長度的標準。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div></p>
+]]></content>
   </entry>
   <entry>
     <title>LeetCode 筆記｜1. Two Sum</title>
@@ -2873,6 +2906,42 @@
       </tags>
   </entry>
   <entry>
+    <title>不道德教育講座</title>
+    <url>/mishima-1958-lectures-on-immoral-education/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1958年，三島由紀夫在《明星週刊》連載不道德教育講座，針對當代日本的文化、事件與風俗，提出有違常人價值觀的看法，例如「應該盡量說謊」、「要打從心底瞧不起老師」、還倡議「千萬不要遵守諾言」。</p>
+<p>據他所述，老掉牙的說教作品無趣又矯情，與其重述時下倡導的道德教育，不如談些大逆不道的誇張故事還來得有趣。畢竟，讀者在看了這些荒謬情節之後，沒有產生群起效法的念頭，反倒被激起高尚的品德也說不定。</p>
+<p>坦白講，讀過三島由紀夫其他詞藻華美、情節扭曲的小說之後，很難想像這些專欄文章出自同一人之手。《不道德教育講座》裡頭雖然有些看法引人深思，但也充滿反串、強詞奪理、偏見和誇飾的論述，簡直就像是穿越回二十世紀中葉的 PTT 八卦版鄉民。</p>
+<span id="more"></span>
+
+<p>舉例來說，三島由紀夫在此書鼓勵讀者盡早擺脫處男，畢竟沒性經驗的男生滿腦子猥褻想法，根本純潔不起來。他也鼓吹喝湯時要發出聲響干擾別人，因為這些奇怪規範是出自於盲從的社會羊群，「傲然的孤郎無須起而效尤」。</p>
+<p>在〈應該由文弱陰柔當道〉當中，他諷刺日本人表面崇尚陰柔氣質，骨子裡還是被陽剛氣概所吸引。文末說道自己現在練了一身肌肉，即使收到徵兵單也無所謂畏懼，但好家在他的年紀已經收不到兵單了。這是什麼「還好我退了」的發言啊？</p>
+<p>另一篇〈偷盜的奇妙功效〉則批評那些貪圖物質利益、手段又拙劣的小偷根本在丟盜賊的臉，鼓勵大家即使作奸犯科也要有宏大目標與卓越手段。三島由紀夫還以身作則，講了一則他巧妙偷走陌生人昂貴鋼筆的小故事，最後在那邊靠北：「呵呵，你看到這篇文章，我也不會還給你喔！」</p>
+<p>除了這些驚世駭俗的言論與觀點，這選集還可以看到表面上是要問卦或討論什麼嚴肅議題，結果只是三島由紀夫想要曬貓：</p>
+<blockquote>
+<p>我是個愛貓成癡的人。因為，貓這種傢伙實在有點自私又忘恩，還有大部分的貓都只是忘恩之徒，而不會像卑劣人類會恩將仇報。</p>
+</blockquote>
+<blockquote>
+<p>我立刻聯想到，人類最應該像貓看齊。因為再沒有比貓更冷淡、更無情、更韌性，並且絕不任由人類擺弄的動物了！牠恐怕也是最不容易被催眠成功的動物吧。因此，我也想要模仿貓，盡量讓自己變得冷淡、薄情、麻木不仁、自主獨立……。而且，只在想吃魚的時候，才願意發出撒嬌的喵喵聲。</p>
+</blockquote>
+<blockquote>
+<p>比如，有隻貓剛從廚房偷吃了一條魚，來到簷廊下曬太陽，接著若無其事地擦抹乾淨，就是「Who knows?」的最佳體現。</p>
+</blockquote>
+<p>此書選錄的文章裏頭，我最喜歡的是「應當打從心底瞧不起老師」、「應當追隨流行」和「肉體的無常」這三則對教育、流行和健身的討論。</p>
+<h2 id="應當打從心底瞧不起老師"><a href="#應當打從心底瞧不起老師" class="headerlink" title="應當打從心底瞧不起老師"></a>應當打從心底瞧不起老師</h2><p>由於尊師重道的觀念以及教師與學生間年齡、地位與知識的落差，學生面對老師時，不免產生崇敬、害怕或依靠等感受。若這層關係僅止於知識的傳授也罷，可是某些教師的控制欲可能干預了學生的價值觀與人生抉擇，蔑視了個體決定自我前途的責任與權利。</p>
+<p>老師在知識上未必全面，在情感上脫離青春期太遠，未必能設身處地體會學生的困擾。其次，決策的後果無論利弊都得由個人承受，老師作為局外人不須擔負選擇的重量，所作所為也不見得貼近學生的需求。因此，對於人生，老師的位置似乎不適合多做什麼，他們可以傳授知識和了解學生，但各自的人生還是得放手讓學生去面對。</p>
+<p>而學生這方，也不能期待老師有能力或義務理解自己。畢竟，無論大人或小孩，各年齡層皆有各自的煩惱，都需要費很多心力來解決。因此，不只不該依賴老師，還要有超越老師的鬥志才行。不管老師表現出輕視的態度還是關愛的態度也好，都可以盡情睥睨他們，只要盡可能從課堂中撈取知識油水就夠了。至於其他奇奇怪怪的刁難或干涉，可以當作往後人生的預習，畢竟這些老師可能是那些惡質成年人當中最容易對付的。</p>
+<h2 id="應當追隨流行"><a href="#應當追隨流行" class="headerlink" title="應當追隨流行"></a>應當追隨流行</h2><p>流行的事物往往被貼上膚淺、易逝和俗套等標籤，三島由紀夫在這篇討論了上流階層輕視流行的現象，並且指出流行的可貴正是這些「不去思考本質」的特性。誠然，流行的事物之所以能迅速普及，正是因為其通俗易懂而沒有深度；之所以短暫亦逝也是因為其輕佻膚淺。</p>
+<p>然而，比起引發了區域衝突甚至世界大戰的各式意識形態，這些膚淺的文化反而保留了更多人類美好的回憶片段。流行的循環性也會讓它在短暫的生命以後，以全新的樣貌出現在人們的生活中，意外地延續流行的壽命。</p>
+<h2 id="肉體的無常"><a href="#肉體的無常" class="headerlink" title="肉體的無常"></a>肉體的無常</h2><p>由於我自己也有在健身，所以很好奇三島由紀夫對健身的看法。三島由紀夫自小體格矮小且單薄，直到在三十歲後讀到健美雜誌了解到這項運動後才開始健身。從網路上可取得的寫真照看來，在那個營養和運動科學才逐漸發展，大眾健身尚不普及的年代，其實也算練得有模有樣了。</p>
+<p>曾想像「如果自己強壯起來，那麼或許……」的人，在慘澹的街燈下走回家，看著自己透過店面玻璃映出的單薄身影時，難免會懷疑自己到底在幹嘛吧？肉體總有一天會衰老、練壯了可還長同一副臉、何況現在也沒練很壯、蛋白質好貴、吃掉的東西怎麼全都變成熱逸散在大氣中……之類的。</p>
+<p>然而，這些懷疑不構成輕視自己肉體的理由。相反地，當你流著汗走回家時，應該要對自己更有自信一點，因為健壯體格短暫無常的特性，反映了人類這種生物荒謬的存在。我們只有一次人生，每分每秒每次呼吸都是絕無僅有，不管活得漂亮瀟灑還是醜陋掙扎，最終同樣要塵歸塵土歸土，隨宇宙熱寂而默然。</p>
+<p>這點跟肌肉一樣。體格是與生俱來，有的人骨架好，有的人長肉快，但所有人都需要經過刻苦訓練與飲食自律才能練出健壯的體魄。沒有人能夠永遠維持精壯，每一次臥推和深蹲都是用力活在當下的證據，都是努力延長「現在」的嘗試。</p>
+<p>因此，三島由紀夫才說「在現代社會裡，肌肉發達不過是可憐又滑稽的東西。可也因為如此，我才會對積極鍛鍊出強健的體魄不遺餘力。」</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以前是從楯之會的維基百科條目了解三島由紀夫的生平，在還沒讀過其作時，已對其人有一堆印象。直到最近被討論串的<a href="https://www.ptt.cc/bbs/Gossiping/M.1677326783.A.D04.html">留言</a>（「 20多年前看過《潮騷》，青春純愛故事，字裡行間聞得到海的味道」）打動，才開始接觸他的作品。</p>
+<p>由於我是從三島由紀夫的娛樂小說和散文作品入門，所以有機會認識這位作家別於外人給定標籤的一面。雖然不是每本書都看得懂，至少這本書我是看得蠻開心的。像讀〈應當打從心底瞧不起老師〉的時候，會想要是早點讀到就好了；但也有像〈肉體的無常〉那樣親身經歷才能體會的感動。最後要坦白，我其實也抄了一些講話很靠北的段落，但那屬於適合自娛的陰暗笑點，就不放上來了 :)</p>
+]]></content>
+  </entry>
+  <entry>
     <title>夏子的冒險</title>
     <url>/mishima-1951-natsukos-adventure/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>二十歲的松浦夏子是個言出必行的女孩，她有著一旦下定決心便不肯輕言放棄的頑固個性，七歲那年，她受夠了菠菜，她的筷子再也不曾沾過這種蔬菜；等到十五歲時，聽聞他人評論紅色不適合她，夏子便立誓不再穿紅色系的衣服，任誰來勸說也無法動搖她的決心。</p>
@@ -2952,42 +3021,6 @@
 <blockquote>
 <p>她猛然轉身，用那種充滿個性、具有某種特徵的斷定口吻說，<br>「我還是決定進修道院。」<br>三人目瞪口呆，放下茶匙。唯有三個咖啡杯冒出的熱氣，在這神秘的沉默中，像青煙一樣冉冉上升……</p>
 </blockquote>
-]]></content>
-  </entry>
-  <entry>
-    <title>不道德教育講座</title>
-    <url>/mishima-1958-lectures-on-immoral-education/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>1958年，三島由紀夫在《明星週刊》連載不道德教育講座，針對當代日本的文化、事件與風俗，提出有違常人價值觀的看法，例如「應該盡量說謊」、「要打從心底瞧不起老師」、還倡議「千萬不要遵守諾言」。</p>
-<p>據他所述，老掉牙的說教作品無趣又矯情，與其重述時下倡導的道德教育，不如談些大逆不道的誇張故事還來得有趣。畢竟，讀者在看了這些荒謬情節之後，沒有產生群起效法的念頭，反倒被激起高尚的品德也說不定。</p>
-<p>坦白講，讀過三島由紀夫其他詞藻華美、情節扭曲的小說之後，很難想像這些專欄文章出自同一人之手。《不道德教育講座》裡頭雖然有些看法引人深思，但也充滿反串、強詞奪理、偏見和誇飾的論述，簡直就像是穿越回二十世紀中葉的 PTT 八卦版鄉民。</p>
-<span id="more"></span>
-
-<p>舉例來說，三島由紀夫在此書鼓勵讀者盡早擺脫處男，畢竟沒性經驗的男生滿腦子猥褻想法，根本純潔不起來。他也鼓吹喝湯時要發出聲響干擾別人，因為這些奇怪規範是出自於盲從的社會羊群，「傲然的孤郎無須起而效尤」。</p>
-<p>在〈應該由文弱陰柔當道〉當中，他諷刺日本人表面崇尚陰柔氣質，骨子裡還是被陽剛氣概所吸引。文末說道自己現在練了一身肌肉，即使收到徵兵單也無所謂畏懼，但好家在他的年紀已經收不到兵單了。這是什麼「還好我退了」的發言啊？</p>
-<p>另一篇〈偷盜的奇妙功效〉則批評那些貪圖物質利益、手段又拙劣的小偷根本在丟盜賊的臉，鼓勵大家即使作奸犯科也要有宏大目標與卓越手段。三島由紀夫還以身作則，講了一則他巧妙偷走陌生人昂貴鋼筆的小故事，最後在那邊靠北：「呵呵，你看到這篇文章，我也不會還給你喔！」</p>
-<p>除了這些驚世駭俗的言論與觀點，這選集還可以看到表面上是要問卦或討論什麼嚴肅議題，結果只是三島由紀夫想要曬貓：</p>
-<blockquote>
-<p>我是個愛貓成癡的人。因為，貓這種傢伙實在有點自私又忘恩，還有大部分的貓都只是忘恩之徒，而不會像卑劣人類會恩將仇報。</p>
-</blockquote>
-<blockquote>
-<p>我立刻聯想到，人類最應該像貓看齊。因為再沒有比貓更冷淡、更無情、更韌性，並且絕不任由人類擺弄的動物了！牠恐怕也是最不容易被催眠成功的動物吧。因此，我也想要模仿貓，盡量讓自己變得冷淡、薄情、麻木不仁、自主獨立……。而且，只在想吃魚的時候，才願意發出撒嬌的喵喵聲。</p>
-</blockquote>
-<blockquote>
-<p>比如，有隻貓剛從廚房偷吃了一條魚，來到簷廊下曬太陽，接著若無其事地擦抹乾淨，就是「Who knows?」的最佳體現。</p>
-</blockquote>
-<p>此書選錄的文章裏頭，我最喜歡的是「應當打從心底瞧不起老師」、「應當追隨流行」和「肉體的無常」這三則對教育、流行和健身的討論。</p>
-<h2 id="應當打從心底瞧不起老師"><a href="#應當打從心底瞧不起老師" class="headerlink" title="應當打從心底瞧不起老師"></a>應當打從心底瞧不起老師</h2><p>由於尊師重道的觀念以及教師與學生間年齡、地位與知識的落差，學生面對老師時，不免產生崇敬、害怕或依靠等感受。若這層關係僅止於知識的傳授也罷，可是某些教師的控制欲可能干預了學生的價值觀與人生抉擇，蔑視了個體決定自我前途的責任與權利。</p>
-<p>老師在知識上未必全面，在情感上脫離青春期太遠，未必能設身處地體會學生的困擾。其次，決策的後果無論利弊都得由個人承受，老師作為局外人不須擔負選擇的重量，所作所為也不見得貼近學生的需求。因此，對於人生，老師的位置似乎不適合多做什麼，他們可以傳授知識和了解學生，但各自的人生還是得放手讓學生去面對。</p>
-<p>而學生這方，也不能期待老師有能力或義務理解自己。畢竟，無論大人或小孩，各年齡層皆有各自的煩惱，都需要費很多心力來解決。因此，不只不該依賴老師，還要有超越老師的鬥志才行。不管老師表現出輕視的態度還是關愛的態度也好，都可以盡情睥睨他們，只要盡可能從課堂中撈取知識油水就夠了。至於其他奇奇怪怪的刁難或干涉，可以當作往後人生的預習，畢竟這些老師可能是那些惡質成年人當中最容易對付的。</p>
-<h2 id="應當追隨流行"><a href="#應當追隨流行" class="headerlink" title="應當追隨流行"></a>應當追隨流行</h2><p>流行的事物往往被貼上膚淺、易逝和俗套等標籤，三島由紀夫在這篇討論了上流階層輕視流行的現象，並且指出流行的可貴正是這些「不去思考本質」的特性。誠然，流行的事物之所以能迅速普及，正是因為其通俗易懂而沒有深度；之所以短暫亦逝也是因為其輕佻膚淺。</p>
-<p>然而，比起引發了區域衝突甚至世界大戰的各式意識形態，這些膚淺的文化反而保留了更多人類美好的回憶片段。流行的循環性也會讓它在短暫的生命以後，以全新的樣貌出現在人們的生活中，意外地延續流行的壽命。</p>
-<h2 id="肉體的無常"><a href="#肉體的無常" class="headerlink" title="肉體的無常"></a>肉體的無常</h2><p>由於我自己也有在健身，所以很好奇三島由紀夫對健身的看法。三島由紀夫自小體格矮小且單薄，直到在三十歲後讀到健美雜誌了解到這項運動後才開始健身。從網路上可取得的寫真照看來，在那個營養和運動科學才逐漸發展，大眾健身尚不普及的年代，其實也算練得有模有樣了。</p>
-<p>曾想像「如果自己強壯起來，那麼或許……」的人，在慘澹的街燈下走回家，看著自己透過店面玻璃映出的單薄身影時，難免會懷疑自己到底在幹嘛吧？肉體總有一天會衰老、練壯了可還長同一副臉、何況現在也沒練很壯、蛋白質好貴、吃掉的東西怎麼全都變成熱逸散在大氣中……之類的。</p>
-<p>然而，這些懷疑不構成輕視自己肉體的理由。相反地，當你流著汗走回家時，應該要對自己更有自信一點，因為健壯體格短暫無常的特性，反映了人類這種生物荒謬的存在。我們只有一次人生，每分每秒每次呼吸都是絕無僅有，不管活得漂亮瀟灑還是醜陋掙扎，最終同樣要塵歸塵土歸土，隨宇宙熱寂而默然。</p>
-<p>這點跟肌肉一樣。體格是與生俱來，有的人骨架好，有的人長肉快，但所有人都需要經過刻苦訓練與飲食自律才能練出健壯的體魄。沒有人能夠永遠維持精壯，每一次臥推和深蹲都是用力活在當下的證據，都是努力延長「現在」的嘗試。</p>
-<p>因此，三島由紀夫才說「在現代社會裡，肌肉發達不過是可憐又滑稽的東西。可也因為如此，我才會對積極鍛鍊出強健的體魄不遺餘力。」</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以前是從楯之會的維基百科條目了解三島由紀夫的生平，在還沒讀過其作時，已對其人有一堆印象。直到最近被討論串的<a href="https://www.ptt.cc/bbs/Gossiping/M.1677326783.A.D04.html">留言</a>（「 20多年前看過《潮騷》，青春純愛故事，字裡行間聞得到海的味道」）打動，才開始接觸他的作品。</p>
-<p>由於我是從三島由紀夫的娛樂小說和散文作品入門，所以有機會認識這位作家別於外人給定標籤的一面。雖然不是每本書都看得懂，至少這本書我是看得蠻開心的。像讀〈應當打從心底瞧不起老師〉的時候，會想要是早點讀到就好了；但也有像〈肉體的無常〉那樣親身經歷才能體會的感動。最後要坦白，我其實也抄了一些講話很靠北的段落，但那屬於適合自娛的陰暗笑點，就不放上來了 :)</p>
 ]]></content>
   </entry>
   <entry>
@@ -4290,6 +4323,33 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>卡西尼號與行星保護</title>
+    <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>歷經20年的太空旅行，美國航太總署（NASA）的卡西尼號（Cassini）太空船今天將最後的訊號傳回地球後，高速衝撞土星，以分解蒸發的壯烈方式，結束13年的土星任務。</p>
+</blockquote>
+<p>卡西尼號是艘軌道探測船，任務結束後沒有能量脫離行星軌道，所以不能像飛掠探測器一樣（航海家 II）飛向深空。它會留在土星系統中，最終因為故障或其他緣故減速而失控墜入土星或其他衛星。</p>
+<p>然而土星的衛星中有幾個可能有生命存在（尤其是土衛六泰坦），所以主動讓卡西尼號墜入較無生命可能的土星中，以免滅菌不徹底的機體造成汙染。不過，這種壯烈的自殺已經不是第一次了，2003 年伽利略探測船也為保護木衛二歐羅巴而撞入木星濃厚的大氣層中。</p>
+<p>雖然這邊只提到墜毀階段，其實所有的太空任務都有防止生物汙染其他天體的措施，不過依照天體性質和任務類別可以分為五類。此處，我把重點聚焦在分類的依據和理由，而不是防範措施（詳細作法可以在厚厚的行星保護指導手冊中找到。）</p>
+<h2 id="第一類任務"><a href="#第一類任務" class="headerlink" title="第一類任務"></a>第一類任務</h2><p>第一類任務是飛掠、繞行或登陸月球、水星和多數小行星，這些天體沒有足夠的液態水維持生命，所以除了例行消毒外，探測船並不需特別處理。</p>
+<h2 id="第二類任務"><a href="#第二類任務" class="headerlink" title="第二類任務"></a>第二類任務</h2><p>第二類任務則涉及那些可能沒有生物，但是對於生命起源研究有重要參考價值的天體。例如：土衛六、金星、類木行星和彗星。</p>
+<p>2014年羅賽塔號登陸彗星就是第二類任務。那次任務檢測到了胺基酸、醇類等有機物，它們很可能透過彗星撞擊為早期地球帶來形成生命的必要分子。（這些有機物質可能是彗星經過星際塵埃時沾上，或是經過恆星附近起反應形成的。順道一提，首次在星際中發現胺基酸的是師大的管一政教授喔！）</p>
+<p>雖然金星現在因為失控的溫室效應已經成為高溫煉獄，但是在太陽還沒今天熾熱、溫室效應也沒失控前可能存在一段宜居的時候。另外金星大氣層中有個溫度合宜，且有硫化物補給的區間，若當初有生命誕生，也許能在此續命。相關任務有 2015 年 ESA 的金星快車（繞行任務）和先前蘇聯因大氣壓扁而早夭的登陸任務。</p>
+<p>土衛六和土星因為可能有液態水、有機物存在所以同屬二類，但是土衛六多了可棲息的表面以及大氣層中的有機反應，所以研究價值還好過土星。本次墜毀的卡西尼號曾在 2005 年釋放惠更斯探測器登陸土衛六，可惜登陸不久便失聯了，所幸有留下空降時和登陸當下的照片，大家可以找看看，我覺得看起像是乾涸的水庫……</p>
+<h2 id="第三類任務和第四類任務"><a href="#第三類任務和第四類任務" class="headerlink" title="第三類任務和第四類任務"></a>第三類任務和第四類任務</h2><p>第三類是火星和歐羅巴（木衛二）的「繞行」、「飛掠」任務，這兩天體是太陽系內最有可能找到地外生命證據（無論死活）的地方，執行第三類任務的太空船都要經過嚴密滅菌才行。</p>
+<p>火星過去可能有水流、磁場和大氣層，這些都是利於生命誕生維持的要素；即便是今日，生物也可能在岩石與冰層間的夾縫中生存。另一個誘人的證據是1984年找到的火星隕石 ALH84001，上頭有疑似細菌化石、生物代謝排遺。</p>
+<p>歐羅巴冰層下可能有液態水層，這些水層不僅和岩層接觸促進物質互動（而土衛六可能是隔絕水層），也能隔絕致命輻射保護生命體。</p>
+<p>由於這兩顆天體可居，即便沒有原生種，也擔心地球生物在上頭大肆繁殖影響後續監控，所以火星與歐羅巴的「登陸」升級為第四類任務。</p>
+<p>雖然我們猜測火星很可能有生物，可是1976年的海盜I&#x2F;II登陸任務卻沒有發現關鍵證據。因為第四類任務的預備很麻煩，所以為了往後探測任務方便，又把它分為三個子類，滅菌等級漸增：非適居區登陸（防止地球細菌汙染火星）、生命探測任務（防止地球細菌干擾實驗）、適居區登陸（防止雙向汙染）。</p>
+<h2 id="第五類任務"><a href="#第五類任務" class="headerlink" title="第五類任務"></a>第五類任務</h2><p>至於第五類則是所有回收太空船到地月系統的任務，涵蓋月球是因為它是將來重點開發區域，若受到地外生物汙染，登陸月球會升級到二三類任務，太空船多了一堆滅菌要求會讓開發變得十分不方便。前陣子 NASA 招募的行星保護官就是要專職這種任務的調查工作。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>最後提一提行星保護的規範。最早是寫在聯合國於 1967 年制定的《關於各國探索和利用包括月球和其他天體在內外層空間活動的原則條約》當中的第九條：<br>各締約國從事研究、探索外層空間（包括月球和其他天體）時，應避免使其遭受有害的污染，以及地球以外的物質，使地球環境發生不利的變化。<br>詳細指導方針則由國際科學理事會下轄的太空研究委員會負責負責。</p>
+<p>由於當時台灣還沒退出聯合國所以也簽了這條約，想看詳細內容可以去網路上查中文的手寫文本。雖然台灣至今仍沒有進行任何登陸任務，不過得知我們也曾籌畫整個宇宙開發的小小部分，仍有莫名的參與感。</p>
+]]></content>
+      <tags>
+        <tag>life in the universe</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>可能反映與嬰兒飲食相關的腸道菌相演替機制的現象</title>
     <url>/phenomena-reflecting-successional-mechanisms-of-gut-microbiota-in-infant-diet/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>人體腸道菌群建立攸關個體健康，為理解與菌群相關的致病機制並精進目前的干預治療手段，腸道微生物學應逐步從關聯分析邁向機制研究。</p>
@@ -4394,33 +4454,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>ecology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>卡西尼號與行星保護</title>
-    <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>歷經20年的太空旅行，美國航太總署（NASA）的卡西尼號（Cassini）太空船今天將最後的訊號傳回地球後，高速衝撞土星，以分解蒸發的壯烈方式，結束13年的土星任務。</p>
-</blockquote>
-<p>卡西尼號是艘軌道探測船，任務結束後沒有能量脫離行星軌道，所以不能像飛掠探測器一樣（航海家 II）飛向深空。它會留在土星系統中，最終因為故障或其他緣故減速而失控墜入土星或其他衛星。</p>
-<p>然而土星的衛星中有幾個可能有生命存在（尤其是土衛六泰坦），所以主動讓卡西尼號墜入較無生命可能的土星中，以免滅菌不徹底的機體造成汙染。不過，這種壯烈的自殺已經不是第一次了，2003 年伽利略探測船也為保護木衛二歐羅巴而撞入木星濃厚的大氣層中。</p>
-<p>雖然這邊只提到墜毀階段，其實所有的太空任務都有防止生物汙染其他天體的措施，不過依照天體性質和任務類別可以分為五類。此處，我把重點聚焦在分類的依據和理由，而不是防範措施（詳細作法可以在厚厚的行星保護指導手冊中找到。）</p>
-<h2 id="第一類任務"><a href="#第一類任務" class="headerlink" title="第一類任務"></a>第一類任務</h2><p>第一類任務是飛掠、繞行或登陸月球、水星和多數小行星，這些天體沒有足夠的液態水維持生命，所以除了例行消毒外，探測船並不需特別處理。</p>
-<h2 id="第二類任務"><a href="#第二類任務" class="headerlink" title="第二類任務"></a>第二類任務</h2><p>第二類任務則涉及那些可能沒有生物，但是對於生命起源研究有重要參考價值的天體。例如：土衛六、金星、類木行星和彗星。</p>
-<p>2014年羅賽塔號登陸彗星就是第二類任務。那次任務檢測到了胺基酸、醇類等有機物，它們很可能透過彗星撞擊為早期地球帶來形成生命的必要分子。（這些有機物質可能是彗星經過星際塵埃時沾上，或是經過恆星附近起反應形成的。順道一提，首次在星際中發現胺基酸的是師大的管一政教授喔！）</p>
-<p>雖然金星現在因為失控的溫室效應已經成為高溫煉獄，但是在太陽還沒今天熾熱、溫室效應也沒失控前可能存在一段宜居的時候。另外金星大氣層中有個溫度合宜，且有硫化物補給的區間，若當初有生命誕生，也許能在此續命。相關任務有 2015 年 ESA 的金星快車（繞行任務）和先前蘇聯因大氣壓扁而早夭的登陸任務。</p>
-<p>土衛六和土星因為可能有液態水、有機物存在所以同屬二類，但是土衛六多了可棲息的表面以及大氣層中的有機反應，所以研究價值還好過土星。本次墜毀的卡西尼號曾在 2005 年釋放惠更斯探測器登陸土衛六，可惜登陸不久便失聯了，所幸有留下空降時和登陸當下的照片，大家可以找看看，我覺得看起像是乾涸的水庫……</p>
-<h2 id="第三類任務和第四類任務"><a href="#第三類任務和第四類任務" class="headerlink" title="第三類任務和第四類任務"></a>第三類任務和第四類任務</h2><p>第三類是火星和歐羅巴（木衛二）的「繞行」、「飛掠」任務，這兩天體是太陽系內最有可能找到地外生命證據（無論死活）的地方，執行第三類任務的太空船都要經過嚴密滅菌才行。</p>
-<p>火星過去可能有水流、磁場和大氣層，這些都是利於生命誕生維持的要素；即便是今日，生物也可能在岩石與冰層間的夾縫中生存。另一個誘人的證據是1984年找到的火星隕石 ALH84001，上頭有疑似細菌化石、生物代謝排遺。</p>
-<p>歐羅巴冰層下可能有液態水層，這些水層不僅和岩層接觸促進物質互動（而土衛六可能是隔絕水層），也能隔絕致命輻射保護生命體。</p>
-<p>由於這兩顆天體可居，即便沒有原生種，也擔心地球生物在上頭大肆繁殖影響後續監控，所以火星與歐羅巴的「登陸」升級為第四類任務。</p>
-<p>雖然我們猜測火星很可能有生物，可是1976年的海盜I&#x2F;II登陸任務卻沒有發現關鍵證據。因為第四類任務的預備很麻煩，所以為了往後探測任務方便，又把它分為三個子類，滅菌等級漸增：非適居區登陸（防止地球細菌汙染火星）、生命探測任務（防止地球細菌干擾實驗）、適居區登陸（防止雙向汙染）。</p>
-<h2 id="第五類任務"><a href="#第五類任務" class="headerlink" title="第五類任務"></a>第五類任務</h2><p>至於第五類則是所有回收太空船到地月系統的任務，涵蓋月球是因為它是將來重點開發區域，若受到地外生物汙染，登陸月球會升級到二三類任務，太空船多了一堆滅菌要求會讓開發變得十分不方便。前陣子 NASA 招募的行星保護官就是要專職這種任務的調查工作。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>最後提一提行星保護的規範。最早是寫在聯合國於 1967 年制定的《關於各國探索和利用包括月球和其他天體在內外層空間活動的原則條約》當中的第九條：<br>各締約國從事研究、探索外層空間（包括月球和其他天體）時，應避免使其遭受有害的污染，以及地球以外的物質，使地球環境發生不利的變化。<br>詳細指導方針則由國際科學理事會下轄的太空研究委員會負責負責。</p>
-<p>由於當時台灣還沒退出聯合國所以也簽了這條約，想看詳細內容可以去網路上查中文的手寫文本。雖然台灣至今仍沒有進行任何登陸任務，不過得知我們也曾籌畫整個宇宙開發的小小部分，仍有莫名的參與感。</p>
-]]></content>
-      <tags>
-        <tag>life in the universe</tag>
       </tags>
   </entry>
   <entry>
@@ -5358,57 +5391,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
   </entry>
   <entry>
-    <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
-    <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
-<p>然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。</p>
-<span id="more"></span>
-
-<h1 id="必要軟體安裝與設定"><a href="#必要軟體安裝與設定" class="headerlink" title="必要軟體安裝與設定"></a>必要軟體安裝與設定</h1><p>首先，我們要完成必要軟體的安裝與設定。</p>
-<ol>
-<li>安裝 Steam 並購買 <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop simulator</a>。</li>
-<li>安裝 <a href="https://code.visualstudio.com/">VSCode</a>。雖然官方推薦的 Lua 開發環境是 Atom，但 VSCode 的功能更加強大，近幾年也比較廣泛被使用（參考 <a href="https://github.blog/2022-06-08-sunsetting-atom/">Github 停止支援 ATOM IDE 的新聞</a>）。</li>
-<li>在 VSCode 當中安裝 <a href="https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua">Tabletop Simulator Lua</a> 套件。這款套件能從遊戲儲存檔擷取 Tabletop Simulator 的 Lua 腳本，讓我們直接能在 VSCode 中開發，並享有自動補全、檔案瀏覽以及其他擴充套件的功能。</li>
-</ol>
-<h1 id="連結遊戲與編輯器"><a href="#連結遊戲與編輯器" class="headerlink" title="連結遊戲與編輯器"></a>連結遊戲與編輯器</h1><p>接著要設定遊戲與編輯器的連結</p>
-<ol>
-<li>在 Steam 中啟動 Tabletop Simulator，並開啟任意一款遊戲（步驟為：<code>Create</code>、<code>Singleplayer</code>、<code>Classic/DLC/Workshop</code>、挑選遊戲）。</li>
-<li>打開 VSCode 時，Tabletop Simulator Lua 套件會自動辨識遊戲所在的資料夾（在 Windows 預設為 <code>%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</code>），將遊戲腳本 (<code>*.lua</code>)和設置檔 (<code>.xml</code>) 從遊戲儲存檔 (<code>*.json</code>) 獨立出來，並且放置到暫存資料夾中（預設為 <code>%UserProfile%\AppData\Local\Temp\TabletopSimulator\Tabletop Simulator Lua</code>。</li>
-<li>如果套件沒有自動更新或是想要更換其他遊戲時，可以鍵入 <code>Ctrl</code>+<code>Alt</code>+<code>L</code> 更新連結。</li>
-</ol>
-<h1 id="編輯遊戲腳本"><a href="#編輯遊戲腳本" class="headerlink" title="編輯遊戲腳本"></a>編輯遊戲腳本</h1><p>現在，我們已經可以在 VSCode 當中編輯遊戲腳本了。Lua 腳本是遊戲儲存檔的一部份，而遊戲儲存檔則是一個 <code>JSON</code> 檔，記錄了啟動遊戲所需的所有元素。Tabletop Simulator Lua 的功能即是從儲存檔中擷取 Lua 腳本，並且轉換為適合閱讀與編輯的格式。</p>
-<p>編輯完成後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 儲存並重啟腳本。此時，Tabletop Simulator 會將腳本變動更新到遊戲儲存檔，讓遊戲呈現腳本所做的變動。</p>
-<p>如果希望在編輯腳本的同時能觀察遊戲畫面，有兩種方式可以達成：</p>
-<p>首先，將 Tabletop Simulator 設定為視窗模式（<code>Menu</code>、<code>Configuration</code>、<code>Graphics</code>、取消勾選 <code>Fullscreen</code>）。</p>
-<ul>
-<li>使用 Windows 視窗分割功能 （<code>Win</code> + <code>←</code>&#x2F;<code>→</code>&#x2F;<code>↑</code>），同時陳列編輯器與遊戲視窗。</li>
-<li>下載 Windows PowerToys，這是一個功能強大的 Windows 工具集，其中包含了能將遊戲視窗固定在螢幕上的功能。(<a href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top">always on top feature</a>)</li>
-</ul>
-<h1 id="建立專案資料夾"><a href="#建立專案資料夾" class="headerlink" title="建立專案資料夾"></a>建立專案資料夾</h1><p>由於無法指定 Tabletop Simulator 遊戲儲存檔的存放位置，所以想要進行版本控管或專案管理時需要一些權變措施。</p>
-<ol>
-<li>首先，建立一個新的專案資料夾，例如命名為 <code>project/</code>。專案資料夾的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br></pre></td></tr></table></figure></li>
-<li>再次開啟 Tabletop Simulator，選擇任意遊戲並儲存。遊戲會自動建立包含遊戲所有設定與資訊的 JSON 儲存檔 (<code>TS_Save_*.json</code>)，並附上一張遊戲截圖 (<code>TS_Save_*.jpg</code>)。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>由於 Tabletop Simulator 並未提供選擇遊戲儲存檔位置的選項，我們可以先將儲存檔和截圖檔案移至專案資料夾，以便之後進行版本控管。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>接下來，在 Tabletop Simulator 的資料夾內建立一個指向專案資料夾的軟連結，以確保儲存檔可以在遊戲的載入遊戲清單中被找到。由於軟連結會連結到原始檔案，因此我們可以透過軟連結對原始檔案進行修改，並將變動同步到遊戲中。（Windows 系統在 cmd 當中使用 <a href="https://learn.microsoft.com/zh-tw/windows-server/administration/windows-commands/mklink">mklink 建立軟連結</a>） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- project/ -&gt; /path/to/project/</span><br></pre></td></tr></table></figure></li>
-<li>再次開啟 VSCode 並啟動 Tabletop Simulator Lua 套件。此時 VSCode 的探索欄應該會出現 Tabletop Simulator Lua 資料夾以及由套件從遊戲儲存檔中提取出來的 Lua 腳本。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br></pre></td></tr></table></figure></li>
-<li>將專案資料夾加入 VSCode 的工作空間：選擇 <code>File</code> → <code>Add Folder to Workspace</code>，然後選擇專案資料夾。此時，探索欄的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
-<li>在專案資料夾中建立需要的檔案或資料夾，例如 <code>src/</code>（用來儲存遊戲腳本）。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br><span class="line">|- src\</span><br><span class="line">    |- script1.lua</span><br><span class="line">    |- script2.lua</span><br></pre></td></tr></table></figure></li>
-<li>接著開啟 <code>Global.-*.lua</code>，加入以下命令以指定要導入的腳本。由於套件會自動在工作空間的資料夾尋找副檔名為 <code>.ttslua</code>和<code>.lua</code> 的檔案，所以呼叫時就不需要加入副檔名了。 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script1&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script2&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>現在，已經成功設定 Tabletop Simulator 的 Lua 開發環境，也將遊戲依照專案資料夾的規劃納入版本控管，可以按照自己的習慣開發遊戲腳本了。</p>
-<p>只是要記得在修改腳本或遊戲設定後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 以同步變動到遊戲儲存檔中，也不要忘記在新增腳本時更新導入的指令。</p>
-<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
-<li><a href="https://tts-vscode.rolandostar.com/">TTS VSCode Docs</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/27">Require and Path</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/21">Best way to commit the main json file?</a></li>
-<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/20">Get&#x2F;Send LUA scripts to&#x2F;from workspace folder</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>lua</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人際的法則 — 怎麼面對他人求助？</title>
     <url>/templar-2017-the-rules-of-people/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -5492,6 +5474,122 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>communication</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境</title>
+    <url>/tabletop-simulator-lua-vscode-development-environment-building/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="tabletop-simulator-VSCode-開發環境設定"><a href="#tabletop-simulator-VSCode-開發環境設定" class="headerlink" title="tabletop simulator VSCode 開發環境設定"></a>tabletop simulator VSCode 開發環境設定</h1><p>Tabletop Simulator 是一款多人桌遊模擬器，提供強大的 Lua 腳本支援，讓玩家可以開發自訂遊戲。</p>
+<p>然而，遊戲內建的腳本編輯器比記事本還難用，所以如果想要編輯複雜的腳本，仍有必要使用外部編輯器。鑒於網路上的資源稀少，我想在本文分享一下建立開發環境的經驗和總結。</p>
+<span id="more"></span>
+
+<h1 id="必要軟體安裝與設定"><a href="#必要軟體安裝與設定" class="headerlink" title="必要軟體安裝與設定"></a>必要軟體安裝與設定</h1><p>首先，我們要完成必要軟體的安裝與設定。</p>
+<ol>
+<li>安裝 Steam 並購買 <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop simulator</a>。</li>
+<li>安裝 <a href="https://code.visualstudio.com/">VSCode</a>。雖然官方推薦的 Lua 開發環境是 Atom，但 VSCode 的功能更加強大，近幾年也比較廣泛被使用（參考 <a href="https://github.blog/2022-06-08-sunsetting-atom/">Github 停止支援 ATOM IDE 的新聞</a>）。</li>
+<li>在 VSCode 當中安裝 <a href="https://marketplace.visualstudio.com/items?itemName=rolandostar.tabletopsimulator-lua">Tabletop Simulator Lua</a> 套件。這款套件能從遊戲儲存檔擷取 Tabletop Simulator 的 Lua 腳本，讓我們直接能在 VSCode 中開發，並享有自動補全、檔案瀏覽以及其他擴充套件的功能。</li>
+</ol>
+<h1 id="連結遊戲與編輯器"><a href="#連結遊戲與編輯器" class="headerlink" title="連結遊戲與編輯器"></a>連結遊戲與編輯器</h1><p>接著要設定遊戲與編輯器的連結</p>
+<ol>
+<li>在 Steam 中啟動 Tabletop Simulator，並開啟任意一款遊戲（步驟為：<code>Create</code>、<code>Singleplayer</code>、<code>Classic/DLC/Workshop</code>、挑選遊戲）。</li>
+<li>打開 VSCode 時，Tabletop Simulator Lua 套件會自動辨識遊戲所在的資料夾（在 Windows 預設為 <code>%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</code>），將遊戲腳本 (<code>*.lua</code>)和設置檔 (<code>.xml</code>) 從遊戲儲存檔 (<code>*.json</code>) 獨立出來，並且放置到暫存資料夾中（預設為 <code>%UserProfile%\AppData\Local\Temp\TabletopSimulator\Tabletop Simulator Lua</code>。</li>
+<li>如果套件沒有自動更新或是想要更換其他遊戲時，可以鍵入 <code>Ctrl</code>+<code>Alt</code>+<code>L</code> 更新連結。</li>
+</ol>
+<h1 id="編輯遊戲腳本"><a href="#編輯遊戲腳本" class="headerlink" title="編輯遊戲腳本"></a>編輯遊戲腳本</h1><p>現在，我們已經可以在 VSCode 當中編輯遊戲腳本了。Lua 腳本是遊戲儲存檔的一部份，而遊戲儲存檔則是一個 <code>JSON</code> 檔，記錄了啟動遊戲所需的所有元素。Tabletop Simulator Lua 的功能即是從儲存檔中擷取 Lua 腳本，並且轉換為適合閱讀與編輯的格式。</p>
+<p>編輯完成後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 儲存並重啟腳本。此時，Tabletop Simulator 會將腳本變動更新到遊戲儲存檔，讓遊戲呈現腳本所做的變動。</p>
+<p>如果希望在編輯腳本的同時能觀察遊戲畫面，有兩種方式可以達成：</p>
+<p>首先，將 Tabletop Simulator 設定為視窗模式（<code>Menu</code>、<code>Configuration</code>、<code>Graphics</code>、取消勾選 <code>Fullscreen</code>）。</p>
+<ul>
+<li>使用 Windows 視窗分割功能 （<code>Win</code> + <code>←</code>&#x2F;<code>→</code>&#x2F;<code>↑</code>），同時陳列編輯器與遊戲視窗。</li>
+<li>下載 Windows PowerToys，這是一個功能強大的 Windows 工具集，其中包含了能將遊戲視窗固定在螢幕上的功能。(<a href="https://learn.microsoft.com/en-us/windows/powertoys/always-on-top">always on top feature</a>)</li>
+</ul>
+<h1 id="建立專案資料夾"><a href="#建立專案資料夾" class="headerlink" title="建立專案資料夾"></a>建立專案資料夾</h1><p>由於無法指定 Tabletop Simulator 遊戲儲存檔的存放位置，所以想要進行版本控管或專案管理時需要一些權變措施。</p>
+<ol>
+<li>首先，建立一個新的專案資料夾，例如命名為 <code>project/</code>。專案資料夾的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br></pre></td></tr></table></figure></li>
+<li>再次開啟 Tabletop Simulator，選擇任意遊戲並儲存。遊戲會自動建立包含遊戲所有設定與資訊的 JSON 儲存檔 (<code>TS_Save_*.json</code>)，並附上一張遊戲截圖 (<code>TS_Save_*.jpg</code>)。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>由於 Tabletop Simulator 並未提供選擇遊戲儲存檔位置的選項，我們可以先將儲存檔和截圖檔案移至專案資料夾，以便之後進行版本控管。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>接下來，在 Tabletop Simulator 的資料夾內建立一個指向專案資料夾的軟連結，以確保儲存檔可以在遊戲的載入遊戲清單中被找到。由於軟連結會連結到原始檔案，因此我們可以透過軟連結對原始檔案進行修改，並將變動同步到遊戲中。（Windows 系統在 cmd 當中使用 <a href="https://learn.microsoft.com/zh-tw/windows-server/administration/windows-commands/mklink">mklink 建立軟連結</a>） <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%UserProfile%\Documents\My Games\Tabletop Simulator\Saves\</span><br><span class="line">|- project/ -&gt; /path/to/project/</span><br></pre></td></tr></table></figure></li>
+<li>再次開啟 VSCode 並啟動 Tabletop Simulator Lua 套件。此時 VSCode 的探索欄應該會出現 Tabletop Simulator Lua 資料夾以及由套件從遊戲儲存檔中提取出來的 Lua 腳本。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br></pre></td></tr></table></figure></li>
+<li>將專案資料夾加入 VSCode 的工作空間：選擇 <code>File</code> → <code>Add Folder to Workspace</code>，然後選擇專案資料夾。此時，探索欄的結構會看起來像這樣： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br></pre></td></tr></table></figure></li>
+<li>在專案資料夾中建立需要的檔案或資料夾，例如 <code>src/</code>（用來儲存遊戲腳本）。 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Tabletop Simulator Lua/</span><br><span class="line">|- Global.-*.lua</span><br><span class="line">|- Global.-*.xml</span><br><span class="line"></span><br><span class="line">project/</span><br><span class="line">|- README.md</span><br><span class="line">|- .git</span><br><span class="line">|- .gitignore</span><br><span class="line">|- TS_Save_*.json</span><br><span class="line">|- TS_Save_*.jpg</span><br><span class="line">|- src\</span><br><span class="line">    |- script1.lua</span><br><span class="line">    |- script2.lua</span><br></pre></td></tr></table></figure></li>
+<li>接著開啟 <code>Global.-*.lua</code>，加入以下命令以指定要導入的腳本。由於套件會自動在工作空間的資料夾尋找副檔名為 <code>.ttslua</code>和<code>.lua</code> 的檔案，所以呼叫時就不需要加入副檔名了。 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script1&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;script/script2&quot;</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>現在，已經成功設定 Tabletop Simulator 的 Lua 開發環境，也將遊戲依照專案資料夾的規劃納入版本控管，可以按照自己的習慣開發遊戲腳本了。</p>
+<p>只是要記得在修改腳本或遊戲設定後，按下 <code>Ctrl</code> + <code>Alt</code> + <code>S</code> 以同步變動到遊戲儲存檔中，也不要忘記在新增腳本時更新導入的指令。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://tts-vscode.rolandostar.com/">TTS VSCode Docs</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/27">Require and Path</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/21">Best way to commit the main json file?</a></li>
+<li><a href="https://github.com/rolandostar/tabletopsimulator-lua-vscode/issues/20">Get&#x2F;Send LUA scripts to&#x2F;from workspace folder</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>lua</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科學的終結</title>
+    <url>/the-end-of-science-a-story/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　Ｎ大學位於港都郊區，創校已五百餘年，即便科學風潮日衰，始終維持嚴謹學風，作育無數英才。</p>
+<p>　　期中考前兩天，大學三年級的Ｓ生無精打采地坐在學生餐廳裡，一面思考難題，一面味如嚼蠟地扒著咖哩飯。瞥見同班的Ｒ生，便端著餐盤上前打招呼：「哈囉，Ｑ今天怎麼沒來上演習課？」</p>
+<p>　　「聽說已經犯感冒還熬夜準備考試，在家暈倒送醫了。」</p>
+<p>　　「他怎麼這麼堅持啊！」</p>
+<p>　　「畢竟出生地方有名的書香世家，除了校內的競爭，還有來自家庭的壓力。」</p>
+<p>　　「難怪他不顧身子，拚了命也要爭得好名次，若一時怠懈，恐怕要被後輩追過。」</p>
+<p>　　「唉，不過這時也顧不得Ｑ了，上周的作業我想半天仍找不出頭緒，待會兒怕是要開天窗囉。」Ｒ懊惱地扶著額頭，「你呢？你寫完沒？」</p>
+<p>　　「原來連你也碰壁了，虧我剛才還想請教你。」Ｓ生把餐盤放到一旁，自背包拿出厚厚一疊草稿紙，上頭寫滿方程式與註記。「已經在封閉條件下證明羅姆尼第七十三定理，但一直沒辦法將適用範圍推廣到開放空間。」他指著一條重寫過無數遍的式子。「這裡似乎要先以柱座標表示原式，再套用佛蒙特規則計算。雖然這麼做可以得出定理的原始形式，但會多出一組不能化簡的無窮級數。」</p>
+<p>　　「讓我看看，」Ｒ把Ｓ手上的卷子抽來仔細檢查。「你的算法跟課本不一樣，還蠻特別的……嗯，我懂了，這邊用柱座標不好解，以極坐標系套用萊頓公式會比較容易。」</p>
+<p>　　「天啊，還有萊頓公式？這應該是國中內容吧。」</p>
+<p>　　「起初我也沒想到這點，見到你的計算過程才靈機一動。」</p>
+<p>　　「新課題這麼重，還要回顧這麼久以前的知識，我開始覺得這輩子讀不完……算了，時間也差不多，把作業留到課後，我們走吧。」</p>
+<p>　　「你的咖哩飯還沒吃完喔。」　</p>
+<p>　　「應該是老了，吃不太下。」</p>
+<p>　　「說什麼傻話。」</p>
+<p>．　．　．</p>
+<p>　　「這次要推導伯納德定理第一千七百五十二引理，請同學務必留意它和戴森定理第九千零八十二引理的差異。」</p>
+<p> 　　「老師，這些難道無法統一成簡單和諧的系統嗎？」面對龐雜的知識內容，Ｓ生絕望地提問。</p>
+<p>　　「這問題很好，然而答案可能要令各位失望了：這些知識體系無法整合成統一理論。既然課程不趕，容我岔開正課，替同學簡介兩百多年前朗拜爾的研究，他證明科學是發散而不是收斂的。」</p>
+<p>　　「發散？」</p>
+<p>　　「很特別對吧？詳細證明留待研究所的課程說明，目前你們只需了解如今物理體系龐雜笨重，而且動輒數千則定理數萬條公式的原因為何。」</p>
+<p>　　「讓我們引用蘇格拉底的比喻以理解問題。圓形內部是已知事物，外部象徵未知事物。」老師在黑板上畫了大小不同的圓形，「相較於小圓，大圓雖然具有較多已知部分，然而它的未知部分也比較多。」</p>
+<p>　　「從前的學者在知識邊緣朝外探索，逐步擴大人類對世界的理解。然而隨著疆界擴張，將和這裏的大圓圈一樣觸及更多未知，引發新的研究課題。</p>
+<p>　　「但是知識能無限擴張下去嗎？撇除社會因素和認知界線，在前人的基礎下朗拜爾證明了理論上未知是無窮的，知識擴張也同樣無止盡。」</p>
+<p>　　「老師，可是有些科目似乎不符合這個斷言。」</p>
+<p>　　「是的，你沒注意到學校很早就裁併生物學和醫學部門嗎？關於這點學界也論戰了許久，總而言之，描述性、歷史性科學的未知部分是有限的。我們並不期待人體解剖學在維薩里後一千年還能有什麼新意，自然史也只有一種樣貌。它們的差異在於前者發展到最後可以周延未知部分，而後者的發展因技術和線索限制，只能盡可能趨近事實，但不等於事實。甚至有些科目，例如四維生物學，我們離知識全貌還很遠，但基於三維生物的限制，我們的研究只能停在這個階段。</p>
+<p>　　「然而物理學卻不是如此，朗拜爾指出物理學，精確地說是廣物理學的未知部分沒有疆界，每項成果都將觸及更多新難題。」</p>
+<p>　　「這代表我們永遠也得不到真相嗎？」</p>
+<p>　　「可以這麼說，人類的理解會越來越深，但無法抵達終點，自此研究物理將是永恆的追逐。這並非悲觀的事實，對於年輕的科學家而言，即便物理理論逐漸脫離經驗常理，甚至看似彼此矛盾，但他們不會像化學家、地理學家、生物學家一樣看到學科的黃昏。</p>
+<p>　　「這種發散性質要以複雜為代價，千萬條公式、交錯互補卻無法替代的種種力學體系。也許２１世紀的物理學家看見這樣龐雜笨重的物理學會因為美感而放棄研究，但我們的未來就在這裏頭。</p>
+<p>　　「你們大學生首要目標是努力了解現有知識的全貌，盡可能接觸人類知識的邊緣，然後在研究所中朝未知邁出小小一步，然後用盡一生作出點突破。</p>
+<p>　　「回歸課題吧！待會講解的應用是將來研究的基礎，這裏要應用高等胞物理學的定理，先記下用法，之後再好好理解原理。剛剛講到哪裡了？好，我們從第五千七百七十六引理講起……」</p>
+<p>．　．　．</p>
+<p>　　Ｓ和Ｒ兩人走在回到宿舍的路上，Ｓ回想起課堂的內容不禁感嘆：「朗拜爾真是舉世無雙的天才啊。」</p>
+<p>　　「我查完他的簡歷，沒想到主要研究在他大學期間就完成了。」</p>
+<p>　　「真不敢相信……要是我們恐怕到畢業都還做不出任何有意義的貢獻吧。」</p>
+<p>　　「不要說做出貢獻了，能不能順利畢業我看都是個問題。」</p>
+<p>　　「講什麼不吉利的話，想點樂觀的事吧，倒是說說畢業後想做什麼啊。」</p>
+<p>　　「仔細想想我們研究的東西已超出人類能把握的範圍了，兩百年來的研究到目前為止都沒有產生實質應用。上週不才報導政府又削減了科研預算嗎？其實我想著轉系和我弟弟一塊兒務農，不過現在恐怕太遲了。」</p>
+<p>　　「你想得太晦暗了吧？不提這了，我急著回房讀考古題，咱們考前見！」</p>
+<p>．　．　．</p>
+<p>　　考試當天，Ｑ生仍未出席。考後Ｓ和Ｒ決定一同到醫院探望他。</p>
+<p>　　「你不乖乖養病，還讀這麼重的書啊！」Ｓ拿起桌上的教科書瞧一瞧。</p>
+<p>　　「不過是上課影帶後面的補充資料罷了，趁在病床上不用打理生活多讀一些。咳、咳」</p>
+<p>　　「我們把上課筆記帶來了，這次考試不簡單喔，你補考可要多加油。對了，你的家人呢？」Ｒ把硬碟交給Ｑ，還調侃了她一番。</p>
+<p>　　「他們出外買點心，待會兒就回來了……啊，他們到了。讓我介紹一下吧！」Ｑ熱切地說</p>
+<p>　　「這是讀小學４６年級的曾孫、這是讀國中１２年級的孫子、這是剛升高５的女兒。」</p>
+<p>　　接著是他們不絕於耳的問候「叔叔好」、「叔公好」、「曾叔公好」</p>
+<p>　　「喔，好好好！」</p>
+<p>．　．　．</p>
+<p>　　結束拜訪後，Ｓ和Ｒ走出醫院時又閒聊一番。</p>
+<p>　　「唉，還是勸不動他那老骨頭，再這樣下去還沒踏進研究院就要先歸西囉。」</p>
+<p>　　「是啊，若不好好養生，可念也念不完。」</p>
+<p>　　「最近找到一家不錯的中醫，他們的針灸還挺有效的，要不要明天放假我們一起去？」</p>
+<p>　　「好啊好啊，這身腰酸背痛也該找人看看了。」</p>
+<p>　</p>
+]]></content>
+      <tags>
+        <tag>sf</tag>
+        <tag>story</tag>
       </tags>
   </entry>
   <entry>
@@ -5637,71 +5735,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>astrobiology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科學的終結</title>
-    <url>/the-end-of-science-a-story/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>　　Ｎ大學位於港都郊區，創校已五百餘年，即便科學風潮日衰，始終維持嚴謹學風，作育無數英才。</p>
-<p>　　期中考前兩天，大學三年級的Ｓ生無精打采地坐在學生餐廳裡，一面思考難題，一面味如嚼蠟地扒著咖哩飯。瞥見同班的Ｒ生，便端著餐盤上前打招呼：「哈囉，Ｑ今天怎麼沒來上演習課？」</p>
-<p>　　「聽說已經犯感冒還熬夜準備考試，在家暈倒送醫了。」</p>
-<p>　　「他怎麼這麼堅持啊！」</p>
-<p>　　「畢竟出生地方有名的書香世家，除了校內的競爭，還有來自家庭的壓力。」</p>
-<p>　　「難怪他不顧身子，拚了命也要爭得好名次，若一時怠懈，恐怕要被後輩追過。」</p>
-<p>　　「唉，不過這時也顧不得Ｑ了，上周的作業我想半天仍找不出頭緒，待會兒怕是要開天窗囉。」Ｒ懊惱地扶著額頭，「你呢？你寫完沒？」</p>
-<p>　　「原來連你也碰壁了，虧我剛才還想請教你。」Ｓ生把餐盤放到一旁，自背包拿出厚厚一疊草稿紙，上頭寫滿方程式與註記。「已經在封閉條件下證明羅姆尼第七十三定理，但一直沒辦法將適用範圍推廣到開放空間。」他指著一條重寫過無數遍的式子。「這裡似乎要先以柱座標表示原式，再套用佛蒙特規則計算。雖然這麼做可以得出定理的原始形式，但會多出一組不能化簡的無窮級數。」</p>
-<p>　　「讓我看看，」Ｒ把Ｓ手上的卷子抽來仔細檢查。「你的算法跟課本不一樣，還蠻特別的……嗯，我懂了，這邊用柱座標不好解，以極坐標系套用萊頓公式會比較容易。」</p>
-<p>　　「天啊，還有萊頓公式？這應該是國中內容吧。」</p>
-<p>　　「起初我也沒想到這點，見到你的計算過程才靈機一動。」</p>
-<p>　　「新課題這麼重，還要回顧這麼久以前的知識，我開始覺得這輩子讀不完……算了，時間也差不多，把作業留到課後，我們走吧。」</p>
-<p>　　「你的咖哩飯還沒吃完喔。」　</p>
-<p>　　「應該是老了，吃不太下。」</p>
-<p>　　「說什麼傻話。」</p>
-<p>．　．　．</p>
-<p>　　「這次要推導伯納德定理第一千七百五十二引理，請同學務必留意它和戴森定理第九千零八十二引理的差異。」</p>
-<p> 　　「老師，這些難道無法統一成簡單和諧的系統嗎？」面對龐雜的知識內容，Ｓ生絕望地提問。</p>
-<p>　　「這問題很好，然而答案可能要令各位失望了：這些知識體系無法整合成統一理論。既然課程不趕，容我岔開正課，替同學簡介兩百多年前朗拜爾的研究，他證明科學是發散而不是收斂的。」</p>
-<p>　　「發散？」</p>
-<p>　　「很特別對吧？詳細證明留待研究所的課程說明，目前你們只需了解如今物理體系龐雜笨重，而且動輒數千則定理數萬條公式的原因為何。」</p>
-<p>　　「讓我們引用蘇格拉底的比喻以理解問題。圓形內部是已知事物，外部象徵未知事物。」老師在黑板上畫了大小不同的圓形，「相較於小圓，大圓雖然具有較多已知部分，然而它的未知部分也比較多。」</p>
-<p>　　「從前的學者在知識邊緣朝外探索，逐步擴大人類對世界的理解。然而隨著疆界擴張，將和這裏的大圓圈一樣觸及更多未知，引發新的研究課題。</p>
-<p>　　「但是知識能無限擴張下去嗎？撇除社會因素和認知界線，在前人的基礎下朗拜爾證明了理論上未知是無窮的，知識擴張也同樣無止盡。」</p>
-<p>　　「老師，可是有些科目似乎不符合這個斷言。」</p>
-<p>　　「是的，你沒注意到學校很早就裁併生物學和醫學部門嗎？關於這點學界也論戰了許久，總而言之，描述性、歷史性科學的未知部分是有限的。我們並不期待人體解剖學在維薩里後一千年還能有什麼新意，自然史也只有一種樣貌。它們的差異在於前者發展到最後可以周延未知部分，而後者的發展因技術和線索限制，只能盡可能趨近事實，但不等於事實。甚至有些科目，例如四維生物學，我們離知識全貌還很遠，但基於三維生物的限制，我們的研究只能停在這個階段。</p>
-<p>　　「然而物理學卻不是如此，朗拜爾指出物理學，精確地說是廣物理學的未知部分沒有疆界，每項成果都將觸及更多新難題。」</p>
-<p>　　「這代表我們永遠也得不到真相嗎？」</p>
-<p>　　「可以這麼說，人類的理解會越來越深，但無法抵達終點，自此研究物理將是永恆的追逐。這並非悲觀的事實，對於年輕的科學家而言，即便物理理論逐漸脫離經驗常理，甚至看似彼此矛盾，但他們不會像化學家、地理學家、生物學家一樣看到學科的黃昏。</p>
-<p>　　「這種發散性質要以複雜為代價，千萬條公式、交錯互補卻無法替代的種種力學體系。也許２１世紀的物理學家看見這樣龐雜笨重的物理學會因為美感而放棄研究，但我們的未來就在這裏頭。</p>
-<p>　　「你們大學生首要目標是努力了解現有知識的全貌，盡可能接觸人類知識的邊緣，然後在研究所中朝未知邁出小小一步，然後用盡一生作出點突破。</p>
-<p>　　「回歸課題吧！待會講解的應用是將來研究的基礎，這裏要應用高等胞物理學的定理，先記下用法，之後再好好理解原理。剛剛講到哪裡了？好，我們從第五千七百七十六引理講起……」</p>
-<p>．　．　．</p>
-<p>　　Ｓ和Ｒ兩人走在回到宿舍的路上，Ｓ回想起課堂的內容不禁感嘆：「朗拜爾真是舉世無雙的天才啊。」</p>
-<p>　　「我查完他的簡歷，沒想到主要研究在他大學期間就完成了。」</p>
-<p>　　「真不敢相信……要是我們恐怕到畢業都還做不出任何有意義的貢獻吧。」</p>
-<p>　　「不要說做出貢獻了，能不能順利畢業我看都是個問題。」</p>
-<p>　　「講什麼不吉利的話，想點樂觀的事吧，倒是說說畢業後想做什麼啊。」</p>
-<p>　　「仔細想想我們研究的東西已超出人類能把握的範圍了，兩百年來的研究到目前為止都沒有產生實質應用。上週不才報導政府又削減了科研預算嗎？其實我想著轉系和我弟弟一塊兒務農，不過現在恐怕太遲了。」</p>
-<p>　　「你想得太晦暗了吧？不提這了，我急著回房讀考古題，咱們考前見！」</p>
-<p>．　．　．</p>
-<p>　　考試當天，Ｑ生仍未出席。考後Ｓ和Ｒ決定一同到醫院探望他。</p>
-<p>　　「你不乖乖養病，還讀這麼重的書啊！」Ｓ拿起桌上的教科書瞧一瞧。</p>
-<p>　　「不過是上課影帶後面的補充資料罷了，趁在病床上不用打理生活多讀一些。咳、咳」</p>
-<p>　　「我們把上課筆記帶來了，這次考試不簡單喔，你補考可要多加油。對了，你的家人呢？」Ｒ把硬碟交給Ｑ，還調侃了她一番。</p>
-<p>　　「他們出外買點心，待會兒就回來了……啊，他們到了。讓我介紹一下吧！」Ｑ熱切地說</p>
-<p>　　「這是讀小學４６年級的曾孫、這是讀國中１２年級的孫子、這是剛升高５的女兒。」</p>
-<p>　　接著是他們不絕於耳的問候「叔叔好」、「叔公好」、「曾叔公好」</p>
-<p>　　「喔，好好好！」</p>
-<p>．　．　．</p>
-<p>　　結束拜訪後，Ｓ和Ｒ走出醫院時又閒聊一番。</p>
-<p>　　「唉，還是勸不動他那老骨頭，再這樣下去還沒踏進研究院就要先歸西囉。」</p>
-<p>　　「是啊，若不好好養生，可念也念不完。」</p>
-<p>　　「最近找到一家不錯的中醫，他們的針灸還挺有效的，要不要明天放假我們一起去？」</p>
-<p>　　「好啊好啊，這身腰酸背痛也該找人看看了。」</p>
-<p>　</p>
-]]></content>
-      <tags>
-        <tag>sf</tag>
-        <tag>story</tag>
       </tags>
   </entry>
   <entry>
@@ -5982,6 +6015,34 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>橋下俱樂部與都市不對稱性</title>
+    <url>/underbridge-clubs-and-urban-asymmetry/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「你有去過橋下俱樂部嗎？」</p>
+<p>橋下俱樂部，是我家鄉某個村民聯絡感情的地方。俱樂部的位置在中山高某段陸橋底下，旁邊則是一條長滿雜草的臭水溝。整個空間只有一個排球場大，高度也不高，稍微伸展就能摸到因車流而震動的橋底。</p>
+<p>原本橋下沒什麼人的，好像某次有一整套家具被棄置到這邊，才吸引了沒事幹的中老年人聚到這，甚至一些被子女拋棄的老人把更多家具堆積到橋下，經營著自己真正的家。</p>
+<p>我的舅舅對於這現象有個精闢的見解，他說橋下俱樂部是沒有神的地方。橋下正好位於那邊幾個宮廟的中心，由於橋下附近的居民離廟宇都很遠，所以一旦橋下俱樂部的硬體成形後，村民都聚集到這裡來了。</p>
+<p>橋下俱樂部的興盛可能從我幼稚園開始，而衰退是什麼時候我不清楚，因為等我再次造訪橋下時，「橋下俱樂部」的塗鴉已經被抹去，先前堆積的雜物也被清空，只剩下公路工人在此小憩留下的菸蒂和飲料瓶。</p>
+<p>新店溪左右岸兩岸的橋下俱樂部呈現某種不對稱性。</p>
+<p>不對稱性的其中一層含義是某種事物比另一種多：重子不對稱性是重子的數量大與反重子，掌性不對稱是自然界的胺基酸多數左旋。而都市的不對稱性應該可以說是某種不平衡，例如區域的環境、硬體和人流組成差異等。</p>
+<span id="more"></span>
+
+<h1 id="永福橋"><a href="#永福橋" class="headerlink" title="永福橋"></a>永福橋</h1><p>永福橋左岸端是新北市永和區長春老人健康會，娛樂設施完備，例如歌舞機和桌球桌等，路過總能聽到卡啦ok和桌球乒乒乓乓的聲音。相較之下，右岸端是交通義勇警察大隊中正二中隊的中隊部，未開放給民眾使用。</p>
+<h1 id="福和橋"><a href="#福和橋" class="headerlink" title="福和橋"></a>福和橋</h1><p>福和橋左岸端光線明亮且空間寬闊，下層河階有大尺寸的象棋與棋盤為裝置藝術，棋盤周邊則有幾張石椅，幾個中年人躺在椅上睡覺。上層河階則有一溜冰場，上頭幾張聚在一起的滑輪辦公椅，反映了社交活動的蹤跡。（我覺得這些椅子就像恐龍踩在泥土上的腳印一樣，雖然不是恐龍本身，但都是某種生活的證明。假如這世界人類突然消失，那這些尋常的椅子也會是外人研究當今人類的珍貴資產吧？）目光所及有六名老人，但只有一位女性。遠方傳來的乒乓聲暗示桌球場的存在。</p>
+<p>福和橋右岸端緊鄰公館河濱公園，但空間狹窄，草坪雜亂。雖然在停留的十分鐘間有百人通過，但無人駐足，僅有剛到時即在此處休憩的是兩名自行車騎士和兩名睡覺的人。（15時00分）</p>
+<h1 id="秀朗橋"><a href="#秀朗橋" class="headerlink" title="秀朗橋"></a>秀朗橋</h1><p>秀朗橋左岸端的空間也很寬闊，一旁是溜冰場和籃球場，有許多傳統台式建築的彩繪。共有五位中年人逗留此處，其中有一位演奏家，一名自行車騎士，一名步行者，兩個在餵鴿子。地上有重型機具拖曳重物留下的刮痕，正好劃出一張空白的五線譜。（13時30分）</p>
+<p>秀朗橋右岸端和左岸端截然不同，空間狹窄且陰暗，雖然有十二人在此休息（六小孩，八女性），但多不久留。待我離去時，僅剩一人在此發呆。（14時49分）</p>
+<h1 id="陽光橋"><a href="#陽光橋" class="headerlink" title="陽光橋"></a>陽光橋</h1><p>陽光橋左岸端是近河岸的小平臺，因為陽光橋很狹窄，所以此處沒什麼遮蔭。然而，因鄰近陽光運動公園，仍有一家大小在此處閒聊嬉鬧。（13時45分）</p>
+<p>陽光橋右岸端則是很大的廣場，地面是石磚鋪成，和其他地點的水泥地很不一樣。和左岸端類似，幾乎沒有遮蔭。現場有二十人，七個小孩，大人都坐著看小孩玩耍。（14時30分？）</p>
+<h1 id="中央路橋"><a href="#中央路橋" class="headerlink" title="中央路橋"></a>中央路橋</h1><p>中央路橋左岸端在陽光運動公園往碧潭處腳踏車程十分鐘。地面跟陽光橋右岸端一樣由石磚鋪成。共有十四張石椅子，但有十七人在此休息，幸好有三個小孩，他們只坐半張椅子。（13時55分）</p>
+<p>中央路橋右岸端則是微樂山丘腳踏車躍動體驗區。場址如其名，位於新店溪畔自行車道一旁約四米到五高的小丘。現場佈置了越野腳踏車賽道（例如高低起伏、極度傾斜、蜿蜒的車道等），原本想去體驗躍動感的，但將近三十名小孩在排隊，於是打消此念頭。（14時20分）</p>
+<h1 id="碧潭大橋"><a href="#碧潭大橋" class="headerlink" title="碧潭大橋"></a>碧潭大橋</h1><p>碧潭大橋左岸端就像是宮廟旁的涼亭一樣，擺放了陳舊的桌椅。有一家庭在此處嗑瓜子，兩個中年人躺在木椅上滑手機打瞌睡。現場有五小孩，七女性。跟其他站點相比，這裡零碎的桌椅、野餐的家庭、慵懶的氣氛和低落的人群流動率更像家鄉那個被棄置的橋下俱樂部。（14時00分）</p>
+<p>碧潭大橋右岸端的附近是碧潭風景區，但沒一個人在此處逗留。周邊有一張告示牌，若不細看的話，感覺像在說這幾張石椅子是某些文物（14時14分）</p>
+]]></content>
+      <tags>
+        <tag>modernology</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROSALIND｜Translating RNA into Protein (PROT)</title>
     <url>/translating-rna-into-protein/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>轉譯RNA字串為蛋白質字串</p>
@@ -6076,34 +6137,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>橋下俱樂部與都市不對稱性</title>
-    <url>/underbridge-clubs-and-urban-asymmetry/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「你有去過橋下俱樂部嗎？」</p>
-<p>橋下俱樂部，是我家鄉某個村民聯絡感情的地方。俱樂部的位置在中山高某段陸橋底下，旁邊則是一條長滿雜草的臭水溝。整個空間只有一個排球場大，高度也不高，稍微伸展就能摸到因車流而震動的橋底。</p>
-<p>原本橋下沒什麼人的，好像某次有一整套家具被棄置到這邊，才吸引了沒事幹的中老年人聚到這，甚至一些被子女拋棄的老人把更多家具堆積到橋下，經營著自己真正的家。</p>
-<p>我的舅舅對於這現象有個精闢的見解，他說橋下俱樂部是沒有神的地方。橋下正好位於那邊幾個宮廟的中心，由於橋下附近的居民離廟宇都很遠，所以一旦橋下俱樂部的硬體成形後，村民都聚集到這裡來了。</p>
-<p>橋下俱樂部的興盛可能從我幼稚園開始，而衰退是什麼時候我不清楚，因為等我再次造訪橋下時，「橋下俱樂部」的塗鴉已經被抹去，先前堆積的雜物也被清空，只剩下公路工人在此小憩留下的菸蒂和飲料瓶。</p>
-<p>新店溪左右岸兩岸的橋下俱樂部呈現某種不對稱性。</p>
-<p>不對稱性的其中一層含義是某種事物比另一種多：重子不對稱性是重子的數量大與反重子，掌性不對稱是自然界的胺基酸多數左旋。而都市的不對稱性應該可以說是某種不平衡，例如區域的環境、硬體和人流組成差異等。</p>
-<span id="more"></span>
-
-<h1 id="永福橋"><a href="#永福橋" class="headerlink" title="永福橋"></a>永福橋</h1><p>永福橋左岸端是新北市永和區長春老人健康會，娛樂設施完備，例如歌舞機和桌球桌等，路過總能聽到卡啦ok和桌球乒乒乓乓的聲音。相較之下，右岸端是交通義勇警察大隊中正二中隊的中隊部，未開放給民眾使用。</p>
-<h1 id="福和橋"><a href="#福和橋" class="headerlink" title="福和橋"></a>福和橋</h1><p>福和橋左岸端光線明亮且空間寬闊，下層河階有大尺寸的象棋與棋盤為裝置藝術，棋盤周邊則有幾張石椅，幾個中年人躺在椅上睡覺。上層河階則有一溜冰場，上頭幾張聚在一起的滑輪辦公椅，反映了社交活動的蹤跡。（我覺得這些椅子就像恐龍踩在泥土上的腳印一樣，雖然不是恐龍本身，但都是某種生活的證明。假如這世界人類突然消失，那這些尋常的椅子也會是外人研究當今人類的珍貴資產吧？）目光所及有六名老人，但只有一位女性。遠方傳來的乒乓聲暗示桌球場的存在。</p>
-<p>福和橋右岸端緊鄰公館河濱公園，但空間狹窄，草坪雜亂。雖然在停留的十分鐘間有百人通過，但無人駐足，僅有剛到時即在此處休憩的是兩名自行車騎士和兩名睡覺的人。（15時00分）</p>
-<h1 id="秀朗橋"><a href="#秀朗橋" class="headerlink" title="秀朗橋"></a>秀朗橋</h1><p>秀朗橋左岸端的空間也很寬闊，一旁是溜冰場和籃球場，有許多傳統台式建築的彩繪。共有五位中年人逗留此處，其中有一位演奏家，一名自行車騎士，一名步行者，兩個在餵鴿子。地上有重型機具拖曳重物留下的刮痕，正好劃出一張空白的五線譜。（13時30分）</p>
-<p>秀朗橋右岸端和左岸端截然不同，空間狹窄且陰暗，雖然有十二人在此休息（六小孩，八女性），但多不久留。待我離去時，僅剩一人在此發呆。（14時49分）</p>
-<h1 id="陽光橋"><a href="#陽光橋" class="headerlink" title="陽光橋"></a>陽光橋</h1><p>陽光橋左岸端是近河岸的小平臺，因為陽光橋很狹窄，所以此處沒什麼遮蔭。然而，因鄰近陽光運動公園，仍有一家大小在此處閒聊嬉鬧。（13時45分）</p>
-<p>陽光橋右岸端則是很大的廣場，地面是石磚鋪成，和其他地點的水泥地很不一樣。和左岸端類似，幾乎沒有遮蔭。現場有二十人，七個小孩，大人都坐著看小孩玩耍。（14時30分？）</p>
-<h1 id="中央路橋"><a href="#中央路橋" class="headerlink" title="中央路橋"></a>中央路橋</h1><p>中央路橋左岸端在陽光運動公園往碧潭處腳踏車程十分鐘。地面跟陽光橋右岸端一樣由石磚鋪成。共有十四張石椅子，但有十七人在此休息，幸好有三個小孩，他們只坐半張椅子。（13時55分）</p>
-<p>中央路橋右岸端則是微樂山丘腳踏車躍動體驗區。場址如其名，位於新店溪畔自行車道一旁約四米到五高的小丘。現場佈置了越野腳踏車賽道（例如高低起伏、極度傾斜、蜿蜒的車道等），原本想去體驗躍動感的，但將近三十名小孩在排隊，於是打消此念頭。（14時20分）</p>
-<h1 id="碧潭大橋"><a href="#碧潭大橋" class="headerlink" title="碧潭大橋"></a>碧潭大橋</h1><p>碧潭大橋左岸端就像是宮廟旁的涼亭一樣，擺放了陳舊的桌椅。有一家庭在此處嗑瓜子，兩個中年人躺在木椅上滑手機打瞌睡。現場有五小孩，七女性。跟其他站點相比，這裡零碎的桌椅、野餐的家庭、慵懶的氣氛和低落的人群流動率更像家鄉那個被棄置的橋下俱樂部。（14時00分）</p>
-<p>碧潭大橋右岸端的附近是碧潭風景區，但沒一個人在此處逗留。周邊有一張告示牌，若不細看的話，感覺像在說這幾張石椅子是某些文物（14時14分）</p>
-]]></content>
-      <tags>
-        <tag>modernology</tag>
       </tags>
   </entry>
   <entry>
