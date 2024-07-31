@@ -27,7 +27,7 @@
 <meta property="og:description" content="在修改程式碼之後，開發人員會執行測試以確保軟體的各項功能運行無誤。由於測試通常以程式碼實現，所以它們也可能存在 bug。鑒於這種風險，有些人可能考慮撰寫測試的測試，試圖為軟體的品質把關。 不過，依據這個想法，測試的測試也應該被檢驗其正確性，因此需要額外的測試來支持既有的測試。以此類推，它們會衍生出無窮個測試，形成軟體測試的無限後退難題（infinite regress）。 在實務上，無窮測試顯然不">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2024-07-31T16:04:59.000Z">
-<meta property="article:modified_time" content="2024-07-31T16:06:52.172Z">
+<meta property="article:modified_time" content="2024-07-31T16:08:32.310Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta property="article:tag" content="development">
 <meta name="twitter:card" content="summary">
@@ -302,7 +302,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-08-01 00:04:59 / 修改時間：00:06:52" itemprop="dateCreated datePublished" datetime="2024-08-01T00:04:59+08:00">2024-08-01</time>
+      <time title="創建時間：2024-08-01 00:04:59 / 修改時間：00:08:32" itemprop="dateCreated datePublished" datetime="2024-08-01T00:04:59+08:00">2024-08-01</time>
     </span>
 
   
@@ -333,7 +333,7 @@
 <p>在實務上，無窮測試顯然不可行，那麼開發人員應該如何確保測試的可信度與有效性呢？</p>
 <span id="more"></span>
 
-<p>這個挑戰來自我們公司的法規管制部門（Regulatory Affairs, RA）。在生醫軟體的開發環境裡，RA 部門負責監督各團隊的作業流程，以確保產品遵循 IVD 或 LDTs 等政府規範。因此，他們特別在意軟體更新與架構異動的風險。</p>
+<p>這個挑戰來自我們公司的法規管制部門（Regulatory Affairs, RA）。在生醫軟體的開發環境裡，RA 部門負責監督各團隊的作業流程，以確保產品遵循 IVDs 或 LDTs 等政府規範。因此，他們特別在意軟體更新與架構異動的風險。</p>
 <p>當我們為了引進自動化測試而諮詢 RA 部門時，雖然他們認同這項提議立意良善，但仍不免從風險管控的立場，要求我們驗證測試手段的有效性。在會議當下，我隱約感到這方法不實際，卻提不出完整的理由說服對方。</p>
 <p>因此，我對驗證測試的方法做了一些調查。最終發現，比起撰寫測試的測試，善用其他手段更能保障測試的有效性。</p>
 <p>首先，撰寫簡單易懂的測試程式碼，讓它不證自明，就不需要額外覆核，從而終止測試的後退。另外，簡潔的程式碼也有助於辨識錯誤和手動調試。</p>
