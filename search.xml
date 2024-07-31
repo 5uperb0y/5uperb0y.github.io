@@ -1157,6 +1157,29 @@
       </tags>
   </entry>
   <entry>
+    <title>樹之歌</title>
+    <url>/haskell-2017-the-songs-of-trees/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
+<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
+<span id="more"></span>
+
+<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
+<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
+<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
+<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
+<ul>
+<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
+<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
+<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
+<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
+<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
+</ul>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>ecology</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>寫論文的糟糕和美好經驗</title>
     <url>/good-and-bad-experiences-in-journal-article-writing/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我對論文寫作的第一印象是「寫論文很難，要花很長的時間才能完成，而且從準備到發表過程中會受到大量的批判，一路過關斬將才有機會嶄露頭角」。</p>
@@ -1201,29 +1224,6 @@
 ]]></content>
       <tags>
         <tag>writing</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>樹之歌</title>
-    <url>/haskell-2017-the-songs-of-trees/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>歌，是有序的聲音；聲音，則是波動的一種形式。若沒有變動與交互作用，也就不會產生聲音。因此，聲音也是網路的一項性質。</p>
-<p>Haskell 以樹木為觀察對象，描述樹木與雨水、風、動植物、微生物等事物互動發出的聲響，揭示了看似孤立的樹，實則串聯萬物的生命史，形成龐雜的生命網路。</p>
-<span id="more"></span>
-
-<p>除了科普生態與植物學知識，Haskell 亦借題簡介有關的生態議題，探討人類應抱持何種倫理觀點，看待因開發造成的生態破壞。究竟要把人類視為自然的一部份，而連帶將汙染與滅絕視為無須干預的現象？還是劃清人類與自然的界線，強調人類維護自然的責任？</p>
-<p>Haskell 認為，前者會陷入虛無主義，後者則忽略了人的自然性。因此，真正的答案，或許得回歸生物網路之中，我們需要把自己放在自然網路的脈絡思考，而不是單用人類這物種的觀念看待自己。</p>
-<p>畢竟，塑造我們的不只是這副軀體，還有環境、共棲微生物、作物和獵物等。所有的生命過程，都是網路中的一個節點和其他節點形成持續變動的關係。透過這是腳，我們能漸漸體會何者為美，何者為值得保護的東西，什麼又代表好，從而找出人類在全球變遷中該負起何種道義責任。</p>
-<p>這本書讀起來，像帶有自然書寫風格的抒情文，用字遣詞華麗而浪漫。在此紀錄書中一些有趣的概念。</p>
-<ul>
-<li><strong>雨的語言</strong>：由於各地的空氣粒子組成不同，黏附著不同懸浮粒子的雨水也就蘊含著各自的語彙和文法。</li>
-<li><strong>植物的記憶</strong>：植物雖然不像動物以電流傳遞訊號，但也會用化學留住事件的傷痕。我想，如果延伸「疤痕是種記憶」的想法，那麼因為河流侵蝕而留下的河谷，是不是也算得上大地的記憶了？</li>
-<li><strong>歌的來源</strong>：書中提到克丘亞族相信，樹木與河流都是會唱歌的生命，族裡傳頌的歌曲都是從它們學來的。這點與《複眼人》的瓦憂瓦憂族一致！<br>瓦奧拉尼人：瓦奧拉尼人注重群體而輕視個體，個人的自主性和能力是建立於社群中。他們認為名字是關係的產物，若脫離既有社群，就得捨棄舊有的名稱。例如他們會以植物的用途或是植物與其他生物的關係來為植物命名。因此，同一種植物可能會有不同的名稱和描述，來表示植物與不同事物的關係。</li>
-<li><strong>細胞特化</strong>：細胞特化除了增進效率，也避免了細胞擁有過多發展性而癌化。</li>
-<li><strong>海洋微粒</strong>：海洋微粒會增加微生物可依附的表面積，從而改變海洋微生物群落組成。</li>
-</ul>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">David George Haskell. (2017) The songs of trees: stories from nature's great connectors. 台灣由商周翻譯並出版，《樹之歌：生物學家對宇宙萬物的哲學思索》。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>ecology</tag>
       </tags>
   </entry>
   <entry>
@@ -1300,6 +1300,36 @@
       </tags>
   </entry>
   <entry>
+    <title>「天文」生物學：數量的緣故</title>
+    <url>/history-of-astrobiology-naked-eyes/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>國中時，剛看完《星艦迷航記VIII：戰鬥巡航》的我向學校裡最接近外星生物專家的生物老師詢問是否真有外星人，他告訴我地球外還有許多星球，如果沒有其他生命也太奇怪了。</p>
+<p>如同我的生物老師所述，對於地外生命的信心有很大一部分是建立在數量上，既然宇宙已經誕生百餘億年，當中又充滿無數星系，很難想像當中不會有其他生命存在。</p>
+<p>然而宇宙的尺度也是經學界漫長掙扎才逐漸變得清晰，早在人類只能以肉眼觀察世界的時候，滿天繁星已不計其數，甚至至今我們對於宇宙中有多少顆適居行星仍沒有精確的估計。</p>
+<p>天文生物學的發展不只是事實的累積，也是世代人觀念轉變的結果。</p>
+<span id="more"></span>
+
+<h2 id="肉眼"><a href="#肉眼" class="headerlink" title="肉眼"></a>肉眼</h2><p>最初人類只能以肉眼觀察這個世界，其他的天體在天空化為一個小亮點，這些亮點的意義在不同人眼裡衍伸出不同的樣貌，這些推論與想像便成為天文生物學興起前，人們對地外生命的想像基礎。</p>
+<p>對於無法觸及的天空，德膜克利特(Democritus, 410 - 380 BC) 等原子學派 (Atomists) 哲人認為，既然原子的隨機運動組成了世間萬物，天與地應遵循相同法則，形成地球的過程沒理由不能在天外形成其他世界，是以其後繼者伊比鳩魯在給希羅多德的信 (<a href="http://www.attalus.org/old/diogenes10b.html">Letter to Herodotus</a>) 中提到，</p>
+<blockquote>
+<p>We must not believe that all worlds necessarily have one identical form.  Let us also beware of thinking that animals are derived from the infinite; for there is no one who can prove that the seeds from which animals are born, and plants, and all the other objects which we contemplate, have been brought from the exterior in such a world, and that this same world would not have been able to produce them of itself. （我們絕對不能假設各個世界有一致的樣貌，……，因為沒有人能證明形成動物、植物和我們眼前一切的種子無法在這樣的世界萌生。）</p>
+</blockquote>
+<p>伊比鳩魯的門徒 Metrodorus（400 BC） 也對地外生命的可能留下更明確的評述。</p>
+<blockquote>
+<p>It is unnatural in a large field to have only one stalk of wheat, and in the infinite universe only one living world.（無垠宇宙僅有一個育有生命的世界和沃野千里卻只長出一束麥子一樣不尋常。）</p>
+</blockquote>
+<p>相較於原子學派，亞里斯多德學派哲人認為地球是唯一的世界，所以沒有為地外生命留下空間。</p>
+<p>亞里斯多德以朝向&#x2F;背離中心的本性解釋火、水、土和空氣四種基本元素的運動現象，所以如果世界不只一個，那麼物質便喪失了明確的運動目標，維繫世界運作的基本原理將不復存在。透過這個規謬過程，四元素說結合地心說共同否定了多重世界的觀點。</p>
+<p>此外，天與地也在亞里斯多德體系中割裂。有別於四元素，天空是由以太組成。太陽、月亮還有其他五顆行星就在層層嵌套的天球上緩緩繞著地球旋轉，而原子學派眼裡可能存在繽紛世界的星斗只是鑲在最外層恆星天上閃爍的光點。</p>
+<p>同片天空不同的想像與推論，形成了不同的結論。</p>
+<p>如今我們知道，原子學派哲人的想像比較接近當今學界對世界的認知，然而這不代表他們是天文生物學還是任何現代科學的根源。囿於當時的觀察手段，無論哪派哲人的思想都沒有嚴謹事實支持，即使有許多詞彙為後世研究者共用，其中的內涵也已發生很大的變化。</p>
+<p>但另一方面，儘管只能取得有限的線索，希臘人仍試圖靠著理性與智力解釋世界，而不是將問題簡化為鬼、神、UFO 或我不知道。</p>
+<p>亞里斯多德的學說在中世紀時期被阿奎納 (St. Thomas Aquinas, 1225-1274) 納入神學體系，此後單一世界的想法持續主宰著歐洲人的世界觀。然而關於「數量」的爭議並沒有就此定論，亞里斯多德體系在哥白尼掀起科學革命後逐漸衰落，現代科學興起後更多的科技與觀察手段逐漸揭示宇宙的樣貌。</p>
+]]></content>
+      <tags>
+        <tag>life in the universe</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《春季限定草莓塔事件》</title>
     <url>/honobu-2004-shunki-gentei-ichigo-taruto-jiken/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在船戶高中新學期的開始，兩名看似普通的新生——小鳩常悟朗和小佐內由紀，默默地遵守著一個不尋常的約定。他們決定成為安分守己的小市民，度過平靜安穩的高中生活。為了促成這項目標，他們彼此承諾，在發生危險時，對方可以用自己的名義脫身；在衝動不已時，自己也要提醒對方守住約定。然而，兩人追求的平穩生活，卻受到一系列事件打斷，讓他們不得不面對各自的陰暗本性。</p>
@@ -1330,36 +1360,6 @@
 ]]></content>
       <tags>
         <tag>mystery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「天文」生物學：數量的緣故</title>
-    <url>/history-of-astrobiology-naked-eyes/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>國中時，剛看完《星艦迷航記VIII：戰鬥巡航》的我向學校裡最接近外星生物專家的生物老師詢問是否真有外星人，他告訴我地球外還有許多星球，如果沒有其他生命也太奇怪了。</p>
-<p>如同我的生物老師所述，對於地外生命的信心有很大一部分是建立在數量上，既然宇宙已經誕生百餘億年，當中又充滿無數星系，很難想像當中不會有其他生命存在。</p>
-<p>然而宇宙的尺度也是經學界漫長掙扎才逐漸變得清晰，早在人類只能以肉眼觀察世界的時候，滿天繁星已不計其數，甚至至今我們對於宇宙中有多少顆適居行星仍沒有精確的估計。</p>
-<p>天文生物學的發展不只是事實的累積，也是世代人觀念轉變的結果。</p>
-<span id="more"></span>
-
-<h2 id="肉眼"><a href="#肉眼" class="headerlink" title="肉眼"></a>肉眼</h2><p>最初人類只能以肉眼觀察這個世界，其他的天體在天空化為一個小亮點，這些亮點的意義在不同人眼裡衍伸出不同的樣貌，這些推論與想像便成為天文生物學興起前，人們對地外生命的想像基礎。</p>
-<p>對於無法觸及的天空，德膜克利特(Democritus, 410 - 380 BC) 等原子學派 (Atomists) 哲人認為，既然原子的隨機運動組成了世間萬物，天與地應遵循相同法則，形成地球的過程沒理由不能在天外形成其他世界，是以其後繼者伊比鳩魯在給希羅多德的信 (<a href="http://www.attalus.org/old/diogenes10b.html">Letter to Herodotus</a>) 中提到，</p>
-<blockquote>
-<p>We must not believe that all worlds necessarily have one identical form.  Let us also beware of thinking that animals are derived from the infinite; for there is no one who can prove that the seeds from which animals are born, and plants, and all the other objects which we contemplate, have been brought from the exterior in such a world, and that this same world would not have been able to produce them of itself. （我們絕對不能假設各個世界有一致的樣貌，……，因為沒有人能證明形成動物、植物和我們眼前一切的種子無法在這樣的世界萌生。）</p>
-</blockquote>
-<p>伊比鳩魯的門徒 Metrodorus（400 BC） 也對地外生命的可能留下更明確的評述。</p>
-<blockquote>
-<p>It is unnatural in a large field to have only one stalk of wheat, and in the infinite universe only one living world.（無垠宇宙僅有一個育有生命的世界和沃野千里卻只長出一束麥子一樣不尋常。）</p>
-</blockquote>
-<p>相較於原子學派，亞里斯多德學派哲人認為地球是唯一的世界，所以沒有為地外生命留下空間。</p>
-<p>亞里斯多德以朝向&#x2F;背離中心的本性解釋火、水、土和空氣四種基本元素的運動現象，所以如果世界不只一個，那麼物質便喪失了明確的運動目標，維繫世界運作的基本原理將不復存在。透過這個規謬過程，四元素說結合地心說共同否定了多重世界的觀點。</p>
-<p>此外，天與地也在亞里斯多德體系中割裂。有別於四元素，天空是由以太組成。太陽、月亮還有其他五顆行星就在層層嵌套的天球上緩緩繞著地球旋轉，而原子學派眼裡可能存在繽紛世界的星斗只是鑲在最外層恆星天上閃爍的光點。</p>
-<p>同片天空不同的想像與推論，形成了不同的結論。</p>
-<p>如今我們知道，原子學派哲人的想像比較接近當今學界對世界的認知，然而這不代表他們是天文生物學還是任何現代科學的根源。囿於當時的觀察手段，無論哪派哲人的思想都沒有嚴謹事實支持，即使有許多詞彙為後世研究者共用，其中的內涵也已發生很大的變化。</p>
-<p>但另一方面，儘管只能取得有限的線索，希臘人仍試圖靠著理性與智力解釋世界，而不是將問題簡化為鬼、神、UFO 或我不知道。</p>
-<p>亞里斯多德的學說在中世紀時期被阿奎納 (St. Thomas Aquinas, 1225-1274) 納入神學體系，此後單一世界的想法持續主宰著歐洲人的世界觀。然而關於「數量」的爭議並沒有就此定論，亞里斯多德體系在哥白尼掀起科學革命後逐漸衰落，現代科學興起後更多的科技與觀察手段逐漸揭示宇宙的樣貌。</p>
-]]></content>
-      <tags>
-        <tag>life in the universe</tag>
       </tags>
   </entry>
   <entry>
@@ -1653,6 +1653,33 @@
       </tags>
   </entry>
   <entry>
+    <title>軟體測試的無限後退</title>
+    <url>/infinite-regress-in-software-testing/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在修改程式碼之後，開發人員會執行測試以確保軟體的各項功能運行無誤。由於測試通常以程式碼實現，所以它們也可能存在 bug。鑒於這種風險，有些人可能考慮撰寫測試的測試，試圖為軟體的品質把關。</p>
+<p>不過，依據這個想法，測試的測試也應該被檢驗其正確性，因此需要額外的測試來支持既有的測試。以此類推，它們會衍生出無窮個測試，形成軟體測試的無限後退難題（infinite regress）。</p>
+<p>在實務上，無窮測試顯然不可行，那麼開發人員應該如何確保測試的可信度與有效性呢？</p>
+<span id="more"></span>
+<br/>
+這個挑戰來自我們公司的法規管制部門（Regulatory Affairs, RA）。在生醫軟體的開發環境裡，RA 部門負責監督各團隊的作業流程，以確保產品遵循 IVD 或 LDTs 等政府規範。因此，他們特別在意軟體更新與架構異動的風險。
+
+<p>當我們為了引進自動化測試而諮詢 RA 部門時，雖然他們認同這項提議立意良善，但仍不免從風險管控的立場，要求我們驗證測試手段的有效性。在會議當下，我隱約感到這方法不實際，卻提不出完整的理由說服對方。</p>
+<p>因此，我對驗證測試的方法做了一些調查。最終發現，比起撰寫測試的測試，善用其他手段更能保障測試的有效性。</p>
+<p>首先，撰寫簡單易懂的測試程式碼，讓它不證自明，就不需要額外覆核，從而終止測試的後退。另外，簡潔的程式碼也有助於辨識錯誤和手動調試。</p>
+<p>其次，讓軟體與測試互相支持，形成循環論證來避免無限後退。例如在測試導線開發（Test-Driven Development, TDD）裡，在設計一項功能前，會先建立對應的測試。如果功能尚未完成，卻通過其測試，就表示測試程式碼有誤。反之，如果完成功能後無法通過測試，就表示兩者之一需要修正。隨著軟體迭代，這些測試一方面保障既有的功能，另一方面也受到新增的功能挑戰，達到兩者彼此檢驗與支持的效果。</p>
+<p>最後一種觀點則涉及測試的本質。測試是除錯的手段而非證成的依據，測試通過能提供的線索有限，但測試失敗卻直接指引了修改程式碼的方向。因此，與其去證明已經通過的測試，不如提升既有測試的覆蓋度與靈敏度，增加改善軟體品質的機會。<br><br/><br>綜上所述，如果想要保障測試的可信度與有效性，我們不需要為測試撰寫測試。更有效的手段是維護簡要而精準的測試，讓軟體與測試隨著開發歷程彼此支持與改善。</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/2113601/how-do-you-solve-the-infinite-regress-problem-in-tdd">How do you solve the infinite regress problem in TDD?</a></li>
+<li><a href="https://coderefinery.nz/2019/08/15/an-adversarial-process-to-improve-your-tests/">How to Improve Your Tests by Being an Evil Coder</a></li>
+<li><a href="https://pragprog.com/titles/utj2/pragmatic-unit-testing-in-java-8-with-junit/">Pragmatic Unit Testing in Java 8 with JUnit</a></li>
+<li><a href="https://enterprisecraftsmanship.com/posts/tdd-not-tdd/">To TDD or not to TDD</a></li>
+<li><a href="https://mephilosophy.ccu.edu.tw/entry.php?entry_name=%E5%8D%A1%E7%88%BE%EF%BC%8E%E6%B3%A2%E6%9F%8F">卡爾．波柏（華文哲學百科）</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>development</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF)</title>
     <url>/introduction-to-multiverse-variant-call-format/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>假設在很久很久以後的未來，人類有能力偵測到發生在多重宇宙各時間線的事件，也有演算法來比較事件間的異同，從而彙整出能代表多數宇宙歷史的標準時間線。利用跨宇宙與跨時間線的全史資料，往後的史家能將蒐集的歷史資料與標準時間線比較，推測事件的偶然與必然，指引未來史的發展方向。</p>
@@ -1811,6 +1838,51 @@
       </tags>
   </entry>
   <entry>
+    <title>《無法成為神明的少女》</title>
+    <url>/iruma-2017-kitto-kanojo-wa-kamisama-nanka-janai/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>熱愛大海的異鄉少女八代，因為食物短缺而與家人各奔東西，不得不滯留在一個熱愛大地的部落。因為她與部落文化格格不入，所以只能自食其力。一日，部落的長老召喚八代，希望她能前往神之岩向神明求援，幫助他們對抗來自東方部族的威脅。神之岩位於部落外圍的海洋深處，據傳是部落守護神的住所。據目擊者描述，神之岩會發射光束摧毀任何靠近它的物體，所以八代深知此行必死無疑。然而，如果她拒絕這項命令，同樣會遭到其他敵視她的部族成員放逐。</p>
+<span id="more"></span>
+
+<p>因此，儘管她心知肚明長老想除己後快的企圖，仍認命地持著唯一能保護自己的石槍躍入海中。她緊靠著一頭巨蛇的身側，奮力抵抗洋流，朝神之岩前進。當神之岩感應到逼近的巨蛇，並且發出的光束擊中牠時，躲在巨蛇身後的八代幸運躲過一劫，得以趁隙游向神之岩。當她伸手觸摸它的表面時，一股強勁的力量將她吸入其中，跌落在神之岩的內部空間。</p>
+<p>神之岩的內部與八代所熟悉的原始部落截然不同，這裡由堅固的金屬打造，格局整齊劃一，還有許多用途不明的空間與裝置。因為誤觸機關，八代被電梯帶到神之岩的更深處。她在那裡撞見一名沉睡在管狀水箱中的女性。這名女性身材高大、衣著精緻，所以八代推測她就是傳聞中的「神明」</p>
+<p>於此同時，被光束激怒的海蛇折返回來，猛烈衝撞年久失修的神之岩。八代感受到劇烈震動，聽見海水不斷滲入的聲響。眼見情況緊急，八代打破水箱將女子喚醒。她們簡單交換資訊後，八代發現這名女子對現況一無所知，甚至沒有體力單獨行走，絲毫沒有神明的架式與威嚴。然而，八代仍需要女子的指示來逃生，於是揹著她來到疑似機房的區域。</p>
+<p>不過，因為電力中斷，她們無法啟動逃生門，只能強行破門而出。兩人趕在海蛇扯碎神之岩之前，撞開艙門逃出。不諳水性的女子在激流湧入後失去意識。八代試圖拉著女子的手前進，卻感到格外費力。八代心急如焚地奮力游動，一度萌生獨自逃生的念頭。不過，她最終還是放下為了自保而攜帶的石槍，雙手緊抱女子，逆著洶湧的水流游向灑滿陽光的海面。</p>
+<p>謎樣的女子被帶回部落後，被長老與其他族人奉為上賓，不僅獲得在最高級的住處，也享有美食佳餚。然而，八代對此卻不以為然。她堅信人生在世唯有自己能夠依靠，在親眼目睹女子軟弱無能的模樣後，更不相信對方是能解救部落免於外敵侵擾的神明。儘管八代對女子不感興趣，而且因為身分敏感被要求與之保持距離。可是，女子卻要求與八代見面，希望她能帶著自己參觀部落。對於成為神明嚮導一事，八代感到匪夷所思。不過，即使八代追問，也只得到女子「覺得她很可愛」這樣含糊不明（卻又莫名令人暗自欣喜）的回答。</p>
+<p>瞞著其他族人，女子溜出來與八代見面，跟著她前往部落邊境換哨。途經平原、樹林、草叢，她們細細談起那天在神之岩來不及說的話題。八代來自西方，因為糧食匱乏而與家人分散，獨自留在這個部落中。不過八代始終沒有融入部落生活，她銀色的頭髮與眾不同，對大海的熱情也不被接納。因此，八代只能自食其力，抱著隨時可能喪命的覺悟，用她的石槍在這弱肉強食的世界掙扎生存。</p>
+<p>來自水底的女子名喚芽衣。相較於八代對群體的疏離，芽衣則表現出對時空的陌生感。她在水底沉睡的時間長到一切熟悉的事物都已消逝，而今面對原始的生活，她感到無所適從。芽衣雖然身材高挑、線條優美，可是體力不佳，也欠缺在荒野生存的知識與覺悟。</p>
+<p>儘管如此，芽衣卻掌握許多關於遠古文明的先進知識。例如，從芽衣口中，八代才知道自己心心念念的大海，實際上只是一座湖泊。回程途中，她們經過這座湖泊，並且應芽衣的要求在此稍作停歇。似乎受到芽衣逐漸放鬆的心情感染，八代也放下了警惕，卸下石矛，任由自己泡在清涼的水中，和芽衣閒聊嬉戲。</p>
+<p>她們的話題從彼此的身材特徵延伸到未來的規劃。對八代而言，在部落的生活無非是為生存而不斷努力，採集、獵捕、警戒等日常活動就已經全部費盡精力。芽衣聽聞後，露出一絲失落的神情，這不禁讓八代懷疑救出對方的決定。然而，芽衣卻懇求八代別這麼想。望著芽衣故作開朗的笑容，八代感受到一種不曾在家族或部落體會過的情感，她再度想起芽衣描述的大海，第一次萌生了在單調乏味的日子外，嘗試做些什麼的渴望。</p>
+<p>不久之後，八代與族人為了採集供奉芽衣的果實，深入中央森林地區，卻在那裏遭遇兩名東方部族的成員。東方部族的身體結構與常人迥異，他們體格魁梧、肌肉發達，行進時四足並用，還能操作類似神之岩的光束武器。通常，一名東方部族人能輕易對付數個普通人，但錯綜複雜的叢林地形削弱了體格優勢。</p>
+<p>因此，雖然八代極力勸阻，卻制止不了認為機不可失的同伴。所幸，當他們發動突襲時，其中一個敵人拋下同伴逃跑，這讓八代等人充分利用人數優勢擊敗對方。八代原以為自己提著敵人首級回到部落時，會贏得族人的歡呼與致意。沒想到，前來迎接的芽衣一看到那顆頭顱就昏厥倒地。眾人連忙圍繞在芽衣身邊，無人理會奮力舉起頭顱的八代。八代放下頭顱，走近芽衣，聽到她喃喃自語某個人的名字。</p>
+<p>芽衣目睹熟人遇害之後，陷入嚴重的低潮。八代為了表達歉意——更多是出於關心（又或許還帶著一絲擔憂？），製作了一把石刃要送給芽衣。考慮到東方部族的威脅，八代希望芽衣在自己不在她身邊時，至少要有自保的能力。雖然一碰面芽衣便指責八代為殺人犯，但芽衣也自知非常情況下這些指控站不住腳，於是向八代道歉後，再次請求她的幫忙。</p>
+<p>如同八代所推論，芽衣確實與東方部族有某種關聯。她要求八代帶她前往東方部族出沒的地點，卻被八代以太過危險為由拒絕了。芽衣轉而希望八代能帶著她出去散心，揮別陰鬱的情緒。於是，八代邀請芽衣到崖上野餐。在度過一段輕鬆愉快的用餐時光後，八代表示，雖然不能讓芽衣直接接觸東方部族，但可以帶著她參觀一座位於洞窟深處，被東方部族棄置的遺址。部落周圍有不少類似的遺址，不過其它較為完整的遺址似乎仍有東方部族活動的跡象。</p>
+<p>在幽暗的洞窟中，她們扶著牆摸黑前進。八代因為擔憂芽衣的安危而出言提醒，卻引來一番調侃。八代對芽衣不以為意的態度十分不快，於是兩人陷入沉默。一路上，八代顯得心煩意亂，困惑於自己對芽衣日漸增長的在意。明明出自於關心，卻因為對方回應不如預期而動怒。八代承受不住尷尬氣氛與複雜情緒，突然擁抱了芽衣。驚訝的芽衣也在放鬆下來後回抱了八代。兩人在黑暗中感受彼此的溫度、溫柔的觸感還有髮絲輕拂帶來的微妙搔癢，逐漸化解了彼此的隔閡，繼續向洞窟深處前進。</p>
+<p>儘管被稱為遺跡，這些古老建物的形象卻與芽衣久遠的記憶吻合，使得芽衣更加疑惑自己身處何處。隨後，為了讓芽衣開心，八代帶著她到另一個洞穴，欣賞發光昆蟲佈滿岩壁的壯觀景象，宛如在地底撐起的一片星空。目睹這幕景象的芽衣，腦中湧現一個想法。在回程時，八代把自己製作的短刀交給芽衣，而芽衣則與八代約定入夜後在崖邊見面，她打算確認自己對現況的猜想。</p>
+<p>夜裡，兩人再度相聚。芽衣仰臥在地凝望星空，梳理至今目睹的種種現象，試圖推論它們與自身命運的關聯：</p>
+<p>隨著環境汙染日益嚴重，人類逐漸演化出能對抗惡劣環境的特徵。他們的壽命倍增，肌肉發達，還擁有驚人的癒合力，能輕易對抗狩獵者、天災與瘟疫的威脅。然而，儘管肉體與外觀發生了變化，他們的審美觀仍與過往一致，始終無法接受自己日漸猙獰的面目，所以嚮往著有朝一日能回歸舊人類脆弱但標緻的模樣。這個夢想被寄託在芽衣這名奇蹟似地保有舊人類樣貌的女性身上，他們建立了能橫跨星系的太空船，打算消滅其他星球的原生種，以芽衣為遺傳基礎，在當地重建舊人類的家園。</p>
+<p>然而，在目睹了被稱為遺跡的熟悉建物、不動的星座分布、還有熟悉的東方部族臉孔之後，芽衣漸漸明白，太空船恐怕從未離開過地球。太空船失事墜落後，在都市外圍撞出一個巨大的坑洞。儘管承受劇烈的衝擊，太空船的機能卻奇蹟保全，仍如計畫啟動了殖民星球的程序，反過來以光束兵器屠殺它的建造者們。等到環境改善，太空船釋出了重新培育的舊人類，他們被植入了崇拜芽衣和仇視新人類的制約，也種下了八代的部落與東方部族長年衝突的根源。</p>
+<p>芽衣唯一的好友皋月也參與了殖民計畫。在芽衣的回憶裡，她們雖然彼此親近、共享生活空間，卻難以真正分享內心感受。因為身高落差，相處時無法平視對方；因為體格懸殊，哭泣時也無法互相擁抱。皋月對芽衣的感情中，始終摻雜著羨慕與忌妒的苦澀；而芽衣對皋月乃至整個舊人類族群，也擺脫不了格格不入的疏離感。</p>
+<p>芽衣起身撒嬌，主動抱起八代，珍惜著那份未曾與友人體會過的溫暖。經過了許多匪夷所思的事情，芽衣也逐漸接受自己將在這個陌生世界生存下去，不過現在她有八代陪在身邊；而八代也能想像芽衣作伴的日子，也許能為一成不變的日常增添樂趣。她們在星空下暢談大海，天馬行空地規劃著一趟見證真正海洋的旅行，儘管兩人心中各存在一些陰霾：芽衣顧慮著可能身處敵營的皋月，八代則憂心得因東方部族與芽衣決裂。</p>
+<p>深夜時，東方部族為中央森林之仇襲來，八代立刻持槍趕赴芽衣身邊。然而，不敵對手而想向芽衣求救的逃難群眾也引來東方部族的追兵。雙方在布篷前對峙時，芽衣認出帶領東方部族的，正是自己的青梅竹馬，皋月——同時也是殺害八代最多族人的剝臉者。這一刻，時間彷彿凝固。皋月淚流滿面地凝視著芽衣、族人哭號著跪求芽衣出手協助、八代堅定不移地注視著芽衣，等待她的決定。最終，在八代鼓勵下，芽衣決定與她一起逃離村莊。他們在走投無路而奮勇抗戰的族人掩護下拔腿狂奔，擺脫追兵抵達了森林深處。</p>
+<p>至此，芽衣對八代而言，已經不再是傳聞中的神明，也非毫無關聯的外人，而是自己渴望守護的對象。而八代對芽衣而言，不僅是第一個與自己形態類似的友人，更是與她同樣難以融入群體、缺乏歸屬感的知己。她們一個有卓越的生存技巧，一個有遠古文明殘存的知識；一個著重現實，一個懷抱夢想，彼此都是在社會崩解後，獨一無二的對象。</p>
+<p>甩開部落的追兵後，東方部落的首領皋月負傷追上芽衣與八代，她們試圖溝通，卻因為語言的變化而徒勞無功。眼見衝突一觸即發，八代挾持芽衣為人質，拖著她一同逃離。八代下定決心除掉皋月，而芽衣則含淚同意。隨後，她們以芽衣為誘餌，趁皋月露出破綻時，八代一槍刺入她體內。經過一番激烈搏鬥後，她們成功了重創皋月。</p>
+<p>此時，芽衣決定親自與昔日好友告別，她示意八代停手，俯身向重傷的皋月低語，訴說著自己在這個陌生世界終於體會到前所未有的心動感覺，還有不受隔閡的真摯關係，以及不再忍受周遭世界束縛的自由。</p>
+<p>為了生存下去，為了與八代共度未來，為了親眼見證更多有趣的事情，芽衣認清自己必須學會殺戮這個殘酷的生存法則。承受著回憶與愧疚，芽衣顫抖地下刀，割下了皋月的首級。終結了跨越了時間的情誼和她們短暫的重逢。</p>
+<p>含淚與過往訣別後，芽衣與八代決定攜手踏上尋找真正大海的旅途。她們無法預知明天的模樣，也不確定接下來的遭遇。但他們約定無論面臨什麼困難，都要堅定守候在對方身邊。她們懷抱著這個或許能夠實現的願望，它指引著她們在致個曾經喪失意義的世界前進，讓她們不再迷失方向。</p>
+<br/>
+
+<p>讀這本書之前，我沒有瀏覽任何書評與介紹，所以對內容除了百合以外一無所知。讀完後，才知道除了預期的甜蜜互動以外，還有一個末日後的科幻故事。這個故事意外有趣，雖然它有許多背景設定，卻能融入情節慢慢透漏給讀者，所以讀起來並不會覺得枯燥，反而被營造出的懸疑感而吸引，想跟著角色揭開世界的秘密。</p>
+<p>至於角色的情感與互動，可能是因為我第一次讀這類小說，所以覺得寫得還蠻讓人心動的。可能呼應了故事設定，芽衣與八代肢體接觸的尺度不大，畢竟在芽衣的時代並沒有人能跟她這樣親密交流。然而，從肢體動作和心理描述，還是能感受兩人相遇、相識乃至相惜的過程。</p>
+<p>舉例來說，石槍象徵著八代獨自謀生的決心，不過逃離海底時，她卻甘願丟棄石槍以拯救虛弱的芽衣。在後續的故事，八代每次放下石槍，也都跟芽衣有關。另外，八代一直不喜歡自己的銀色頭髮，不過從一開始芽衣的開口稱讚，到最後她們能觸摸彼此的髮絲，代替自己纏繞在一起等互動，都能感受到兩人的心彼此接近。</p>
+<p>看動畫時，還能透過螢幕剪取保留畫面。可是看書時，碰到打動自己的橋段，卻沒什麼方便的手段可以保存和回顧，只好一邊抄寫一邊寫下這則故事摘要。不過，越是想保留這些內容，就越花時間在記錄，反而減少的閱讀的時間，這還真是兩難啊。</p>
+<hr>
+<p>入間人間（2018）。無法成為神明的少女（李逸凡譯）。台灣角川（原著出版於 2017 年）</p>
+]]></content>
+      <tags>
+        <tag>sf</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的職業是網路小說家：韓國人氣作家的致富寫作教室</title>
     <url>/jeong-2021-i-make-a-living-by-writing-webnovels/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -1885,51 +1957,6 @@
 ]]></content>
       <tags>
         <tag>writing</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《無法成為神明的少女》</title>
-    <url>/iruma-2017-kitto-kanojo-wa-kamisama-nanka-janai/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>熱愛大海的異鄉少女八代，因為食物短缺而與家人各奔東西，不得不滯留在一個熱愛大地的部落。因為她與部落文化格格不入，所以只能自食其力。一日，部落的長老召喚八代，希望她能前往神之岩向神明求援，幫助他們對抗來自東方部族的威脅。神之岩位於部落外圍的海洋深處，據傳是部落守護神的住所。據目擊者描述，神之岩會發射光束摧毀任何靠近它的物體，所以八代深知此行必死無疑。然而，如果她拒絕這項命令，同樣會遭到其他敵視她的部族成員放逐。</p>
-<span id="more"></span>
-
-<p>因此，儘管她心知肚明長老想除己後快的企圖，仍認命地持著唯一能保護自己的石槍躍入海中。她緊靠著一頭巨蛇的身側，奮力抵抗洋流，朝神之岩前進。當神之岩感應到逼近的巨蛇，並且發出的光束擊中牠時，躲在巨蛇身後的八代幸運躲過一劫，得以趁隙游向神之岩。當她伸手觸摸它的表面時，一股強勁的力量將她吸入其中，跌落在神之岩的內部空間。</p>
-<p>神之岩的內部與八代所熟悉的原始部落截然不同，這裡由堅固的金屬打造，格局整齊劃一，還有許多用途不明的空間與裝置。因為誤觸機關，八代被電梯帶到神之岩的更深處。她在那裡撞見一名沉睡在管狀水箱中的女性。這名女性身材高大、衣著精緻，所以八代推測她就是傳聞中的「神明」</p>
-<p>於此同時，被光束激怒的海蛇折返回來，猛烈衝撞年久失修的神之岩。八代感受到劇烈震動，聽見海水不斷滲入的聲響。眼見情況緊急，八代打破水箱將女子喚醒。她們簡單交換資訊後，八代發現這名女子對現況一無所知，甚至沒有體力單獨行走，絲毫沒有神明的架式與威嚴。然而，八代仍需要女子的指示來逃生，於是揹著她來到疑似機房的區域。</p>
-<p>不過，因為電力中斷，她們無法啟動逃生門，只能強行破門而出。兩人趕在海蛇扯碎神之岩之前，撞開艙門逃出。不諳水性的女子在激流湧入後失去意識。八代試圖拉著女子的手前進，卻感到格外費力。八代心急如焚地奮力游動，一度萌生獨自逃生的念頭。不過，她最終還是放下為了自保而攜帶的石槍，雙手緊抱女子，逆著洶湧的水流游向灑滿陽光的海面。</p>
-<p>謎樣的女子被帶回部落後，被長老與其他族人奉為上賓，不僅獲得在最高級的住處，也享有美食佳餚。然而，八代對此卻不以為然。她堅信人生在世唯有自己能夠依靠，在親眼目睹女子軟弱無能的模樣後，更不相信對方是能解救部落免於外敵侵擾的神明。儘管八代對女子不感興趣，而且因為身分敏感被要求與之保持距離。可是，女子卻要求與八代見面，希望她能帶著自己參觀部落。對於成為神明嚮導一事，八代感到匪夷所思。不過，即使八代追問，也只得到女子「覺得她很可愛」這樣含糊不明（卻又莫名令人暗自欣喜）的回答。</p>
-<p>瞞著其他族人，女子溜出來與八代見面，跟著她前往部落邊境換哨。途經平原、樹林、草叢，她們細細談起那天在神之岩來不及說的話題。八代來自西方，因為糧食匱乏而與家人分散，獨自留在這個部落中。不過八代始終沒有融入部落生活，她銀色的頭髮與眾不同，對大海的熱情也不被接納。因此，八代只能自食其力，抱著隨時可能喪命的覺悟，用她的石槍在這弱肉強食的世界掙扎生存。</p>
-<p>來自水底的女子名喚芽衣。相較於八代對群體的疏離，芽衣則表現出對時空的陌生感。她在水底沉睡的時間長到一切熟悉的事物都已消逝，而今面對原始的生活，她感到無所適從。芽衣雖然身材高挑、線條優美，可是體力不佳，也欠缺在荒野生存的知識與覺悟。</p>
-<p>儘管如此，芽衣卻掌握許多關於遠古文明的先進知識。例如，從芽衣口中，八代才知道自己心心念念的大海，實際上只是一座湖泊。回程途中，她們經過這座湖泊，並且應芽衣的要求在此稍作停歇。似乎受到芽衣逐漸放鬆的心情感染，八代也放下了警惕，卸下石矛，任由自己泡在清涼的水中，和芽衣閒聊嬉戲。</p>
-<p>她們的話題從彼此的身材特徵延伸到未來的規劃。對八代而言，在部落的生活無非是為生存而不斷努力，採集、獵捕、警戒等日常活動就已經全部費盡精力。芽衣聽聞後，露出一絲失落的神情，這不禁讓八代懷疑救出對方的決定。然而，芽衣卻懇求八代別這麼想。望著芽衣故作開朗的笑容，八代感受到一種不曾在家族或部落體會過的情感，她再度想起芽衣描述的大海，第一次萌生了在單調乏味的日子外，嘗試做些什麼的渴望。</p>
-<p>不久之後，八代與族人為了採集供奉芽衣的果實，深入中央森林地區，卻在那裏遭遇兩名東方部族的成員。東方部族的身體結構與常人迥異，他們體格魁梧、肌肉發達，行進時四足並用，還能操作類似神之岩的光束武器。通常，一名東方部族人能輕易對付數個普通人，但錯綜複雜的叢林地形削弱了體格優勢。</p>
-<p>因此，雖然八代極力勸阻，卻制止不了認為機不可失的同伴。所幸，當他們發動突襲時，其中一個敵人拋下同伴逃跑，這讓八代等人充分利用人數優勢擊敗對方。八代原以為自己提著敵人首級回到部落時，會贏得族人的歡呼與致意。沒想到，前來迎接的芽衣一看到那顆頭顱就昏厥倒地。眾人連忙圍繞在芽衣身邊，無人理會奮力舉起頭顱的八代。八代放下頭顱，走近芽衣，聽到她喃喃自語某個人的名字。</p>
-<p>芽衣目睹熟人遇害之後，陷入嚴重的低潮。八代為了表達歉意——更多是出於關心（又或許還帶著一絲擔憂？），製作了一把石刃要送給芽衣。考慮到東方部族的威脅，八代希望芽衣在自己不在她身邊時，至少要有自保的能力。雖然一碰面芽衣便指責八代為殺人犯，但芽衣也自知非常情況下這些指控站不住腳，於是向八代道歉後，再次請求她的幫忙。</p>
-<p>如同八代所推論，芽衣確實與東方部族有某種關聯。她要求八代帶她前往東方部族出沒的地點，卻被八代以太過危險為由拒絕了。芽衣轉而希望八代能帶著她出去散心，揮別陰鬱的情緒。於是，八代邀請芽衣到崖上野餐。在度過一段輕鬆愉快的用餐時光後，八代表示，雖然不能讓芽衣直接接觸東方部族，但可以帶著她參觀一座位於洞窟深處，被東方部族棄置的遺址。部落周圍有不少類似的遺址，不過其它較為完整的遺址似乎仍有東方部族活動的跡象。</p>
-<p>在幽暗的洞窟中，她們扶著牆摸黑前進。八代因為擔憂芽衣的安危而出言提醒，卻引來一番調侃。八代對芽衣不以為意的態度十分不快，於是兩人陷入沉默。一路上，八代顯得心煩意亂，困惑於自己對芽衣日漸增長的在意。明明出自於關心，卻因為對方回應不如預期而動怒。八代承受不住尷尬氣氛與複雜情緒，突然擁抱了芽衣。驚訝的芽衣也在放鬆下來後回抱了八代。兩人在黑暗中感受彼此的溫度、溫柔的觸感還有髮絲輕拂帶來的微妙搔癢，逐漸化解了彼此的隔閡，繼續向洞窟深處前進。</p>
-<p>儘管被稱為遺跡，這些古老建物的形象卻與芽衣久遠的記憶吻合，使得芽衣更加疑惑自己身處何處。隨後，為了讓芽衣開心，八代帶著她到另一個洞穴，欣賞發光昆蟲佈滿岩壁的壯觀景象，宛如在地底撐起的一片星空。目睹這幕景象的芽衣，腦中湧現一個想法。在回程時，八代把自己製作的短刀交給芽衣，而芽衣則與八代約定入夜後在崖邊見面，她打算確認自己對現況的猜想。</p>
-<p>夜裡，兩人再度相聚。芽衣仰臥在地凝望星空，梳理至今目睹的種種現象，試圖推論它們與自身命運的關聯：</p>
-<p>隨著環境汙染日益嚴重，人類逐漸演化出能對抗惡劣環境的特徵。他們的壽命倍增，肌肉發達，還擁有驚人的癒合力，能輕易對抗狩獵者、天災與瘟疫的威脅。然而，儘管肉體與外觀發生了變化，他們的審美觀仍與過往一致，始終無法接受自己日漸猙獰的面目，所以嚮往著有朝一日能回歸舊人類脆弱但標緻的模樣。這個夢想被寄託在芽衣這名奇蹟似地保有舊人類樣貌的女性身上，他們建立了能橫跨星系的太空船，打算消滅其他星球的原生種，以芽衣為遺傳基礎，在當地重建舊人類的家園。</p>
-<p>然而，在目睹了被稱為遺跡的熟悉建物、不動的星座分布、還有熟悉的東方部族臉孔之後，芽衣漸漸明白，太空船恐怕從未離開過地球。太空船失事墜落後，在都市外圍撞出一個巨大的坑洞。儘管承受劇烈的衝擊，太空船的機能卻奇蹟保全，仍如計畫啟動了殖民星球的程序，反過來以光束兵器屠殺它的建造者們。等到環境改善，太空船釋出了重新培育的舊人類，他們被植入了崇拜芽衣和仇視新人類的制約，也種下了八代的部落與東方部族長年衝突的根源。</p>
-<p>芽衣唯一的好友皋月也參與了殖民計畫。在芽衣的回憶裡，她們雖然彼此親近、共享生活空間，卻難以真正分享內心感受。因為身高落差，相處時無法平視對方；因為體格懸殊，哭泣時也無法互相擁抱。皋月對芽衣的感情中，始終摻雜著羨慕與忌妒的苦澀；而芽衣對皋月乃至整個舊人類族群，也擺脫不了格格不入的疏離感。</p>
-<p>芽衣起身撒嬌，主動抱起八代，珍惜著那份未曾與友人體會過的溫暖。經過了許多匪夷所思的事情，芽衣也逐漸接受自己將在這個陌生世界生存下去，不過現在她有八代陪在身邊；而八代也能想像芽衣作伴的日子，也許能為一成不變的日常增添樂趣。她們在星空下暢談大海，天馬行空地規劃著一趟見證真正海洋的旅行，儘管兩人心中各存在一些陰霾：芽衣顧慮著可能身處敵營的皋月，八代則憂心得因東方部族與芽衣決裂。</p>
-<p>深夜時，東方部族為中央森林之仇襲來，八代立刻持槍趕赴芽衣身邊。然而，不敵對手而想向芽衣求救的逃難群眾也引來東方部族的追兵。雙方在布篷前對峙時，芽衣認出帶領東方部族的，正是自己的青梅竹馬，皋月——同時也是殺害八代最多族人的剝臉者。這一刻，時間彷彿凝固。皋月淚流滿面地凝視著芽衣、族人哭號著跪求芽衣出手協助、八代堅定不移地注視著芽衣，等待她的決定。最終，在八代鼓勵下，芽衣決定與她一起逃離村莊。他們在走投無路而奮勇抗戰的族人掩護下拔腿狂奔，擺脫追兵抵達了森林深處。</p>
-<p>至此，芽衣對八代而言，已經不再是傳聞中的神明，也非毫無關聯的外人，而是自己渴望守護的對象。而八代對芽衣而言，不僅是第一個與自己形態類似的友人，更是與她同樣難以融入群體、缺乏歸屬感的知己。她們一個有卓越的生存技巧，一個有遠古文明殘存的知識；一個著重現實，一個懷抱夢想，彼此都是在社會崩解後，獨一無二的對象。</p>
-<p>甩開部落的追兵後，東方部落的首領皋月負傷追上芽衣與八代，她們試圖溝通，卻因為語言的變化而徒勞無功。眼見衝突一觸即發，八代挾持芽衣為人質，拖著她一同逃離。八代下定決心除掉皋月，而芽衣則含淚同意。隨後，她們以芽衣為誘餌，趁皋月露出破綻時，八代一槍刺入她體內。經過一番激烈搏鬥後，她們成功了重創皋月。</p>
-<p>此時，芽衣決定親自與昔日好友告別，她示意八代停手，俯身向重傷的皋月低語，訴說著自己在這個陌生世界終於體會到前所未有的心動感覺，還有不受隔閡的真摯關係，以及不再忍受周遭世界束縛的自由。</p>
-<p>為了生存下去，為了與八代共度未來，為了親眼見證更多有趣的事情，芽衣認清自己必須學會殺戮這個殘酷的生存法則。承受著回憶與愧疚，芽衣顫抖地下刀，割下了皋月的首級。終結了跨越了時間的情誼和她們短暫的重逢。</p>
-<p>含淚與過往訣別後，芽衣與八代決定攜手踏上尋找真正大海的旅途。她們無法預知明天的模樣，也不確定接下來的遭遇。但他們約定無論面臨什麼困難，都要堅定守候在對方身邊。她們懷抱著這個或許能夠實現的願望，它指引著她們在致個曾經喪失意義的世界前進，讓她們不再迷失方向。</p>
-<br/>
-
-<p>讀這本書之前，我沒有瀏覽任何書評與介紹，所以對內容除了百合以外一無所知。讀完後，才知道除了預期的甜蜜互動以外，還有一個末日後的科幻故事。這個故事意外有趣，雖然它有許多背景設定，卻能融入情節慢慢透漏給讀者，所以讀起來並不會覺得枯燥，反而被營造出的懸疑感而吸引，想跟著角色揭開世界的秘密。</p>
-<p>至於角色的情感與互動，可能是因為我第一次讀這類小說，所以覺得寫得還蠻讓人心動的。可能呼應了故事設定，芽衣與八代肢體接觸的尺度不大，畢竟在芽衣的時代並沒有人能跟她這樣親密交流。然而，從肢體動作和心理描述，還是能感受兩人相遇、相識乃至相惜的過程。</p>
-<p>舉例來說，石槍象徵著八代獨自謀生的決心，不過逃離海底時，她卻甘願丟棄石槍以拯救虛弱的芽衣。在後續的故事，八代每次放下石槍，也都跟芽衣有關。另外，八代一直不喜歡自己的銀色頭髮，不過從一開始芽衣的開口稱讚，到最後她們能觸摸彼此的髮絲，代替自己纏繞在一起等互動，都能感受到兩人的心彼此接近。</p>
-<p>看動畫時，還能透過螢幕剪取保留畫面。可是看書時，碰到打動自己的橋段，卻沒什麼方便的手段可以保存和回顧，只好一邊抄寫一邊寫下這則故事摘要。不過，越是想保留這些內容，就越花時間在記錄，反而減少的閱讀的時間，這還真是兩難啊。</p>
-<hr>
-<p>入間人間（2018）。無法成為神明的少女（李逸凡譯）。台灣角川（原著出版於 2017 年）</p>
-]]></content>
-      <tags>
-        <tag>sf</tag>
       </tags>
   </entry>
   <entry>
@@ -2312,88 +2339,6 @@
       </tags>
   </entry>
   <entry>
-    <title>All-Species Living Tree Project (LTP) 物種資訊的訂正和維護</title>
-    <url>/living-tree-project-database-curation/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>All-Species Living Tree Project (LTP)<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="All-Species Living Tree Project (LTP)  相關文獻，Yarza & Munoz. (2014). The all-species living tree project. *In Methods in Microbiology* (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. *Systematic and applied microbiology*, 31(4), 241-250.">1</span></a></sup> 旨在維護所有已知古菌和細菌 type strain 的 16S rRNA 基因序列，並基於這些序列，建立古菌和細菌的譜系樹。</p>
-<p>LTP 主要由四個單位參與</p>
-<ul>
-<li>LPSN 提供分類與命名資訊 (<a href="https://www.bacterio.net/">https://www.bacterio.net/</a>)</li>
-<li>ARB 支援譜系樹建立與分類 (<a href="http://www.arb-home.de/">http://www.arb-home.de/</a>)</li>
-<li>Ribocon 則負責資料庫的管理 (<a href="https://www.ribocon.com/">https://www.ribocon.com/</a>)</li>
-<li>SILVA 則提供序列資料庫、計算資源與網頁介面 (<a href="https://www.arb-silva.de/">https://www.arb-silva.de/</a>)</li>
-</ul>
-<p>（自 2020 年起，LTP 的遷出 SILVA，獨立為一個網頁：<a href="https://imedea.uib-csic.es/mmg/ltp/%EF%BC%89">https://imedea.uib-csic.es/mmg/ltp/）</a></p>
-<p>LTP 的資料常用於 16S rRNA 基因增幅序列的物種註解，而基於其收錄序列所構建的譜系樹，也能作為 Phylogenetic placement 的基礎<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. *Msystems*, 3(3), e00021-18.">2</span></a></sup>。</p>
-<p>另外，由於 LTP與 RDP training set 都只收錄了 type strain 的序列資料，所以相較於透過序列預測建立的資料庫，LTP 的序列資料較為可靠，能避免在物種註釋時，要在分類錯誤之外面臨資料庫錯誤的問題。</p>
-<p>儘管 LTP 已是人工維護且品質好的資料庫，但目前版本 ( LTP_01_2022) 的部分物種資訊仍有誤騰的狀況。在官方修正這些問題之前，資料庫的使用者得自己訂正這些錯誤。</p>
-<span id="more"></span>
-
-<h1 id="分類階層間少了分隔符"><a href="#分類階層間少了分隔符" class="headerlink" title="分類階層間少了分隔符"></a>分類階層間少了分隔符</h1><p>若使用 “;” 來分割這樣的字串，會得到較短的列表。</p>
-<blockquote>
-<p>AF251436 Ferrimicrobium acidiphilum Bacteria;ActinomycetotaAcidimicrobiia;Acidimicrobiales;Acidimicrobiaceae;Ferrimicrobium</p>
-</blockquote>
-<h1 id="分類名稱出現額外符號"><a href="#分類名稱出現額外符號" class="headerlink" title="分類名稱出現額外符號"></a>分類名稱出現額外符號</h1><p>文字前後出現空格、引號和句號等，可能會因字串不同而高估該分類階層的分類群數量，也可能在資料處理造成意外麻煩。</p>
-<h2 id="額外的雙引號"><a href="#額外的雙引號" class="headerlink" title="額外的雙引號"></a>額外的雙引號</h2><blockquote>
-<p>AY102612 Caedibacter taeniospiralis “Bacteria;Pseudomonadota;Alphaproteobacteria;Holosporales;””Caedimonadaceae””;Caedibacter </p>
-</blockquote>
-<h2 id="額外的句號"><a href="#額外的句號" class="headerlink" title="額外的句號"></a>額外的句號</h2><blockquote>
-<p>LC552068 Conexivisphaera calida Archaea;Crenarchaeota;Conexivisphaeria;Conexivisphaerales;Conexivisphaeraceae;Conexivisphaera.</p>
-</blockquote>
-<h2 id="額外的空格（位於-Hyphomonas-adhaerens-與-Bacteria-之間）"><a href="#額外的空格（位於-Hyphomonas-adhaerens-與-Bacteria-之間）" class="headerlink" title="額外的空格（位於 Hyphomonas adhaerens 與 Bacteria 之間）"></a>額外的空格（位於 Hyphomonas adhaerens 與 Bacteria 之間）</h2><blockquote>
-<p>KF863150 Hyphomonas adhaerens Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomonadales;Hyphomonadaceae;Hyphomonas Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Hyphomonadaceae;Hyphomonas</p>
-</blockquote>
-<h1 id="分類名稱間有額外的分隔符"><a href="#分類名稱間有額外的分隔符" class="headerlink" title="分類名稱間有額外的分隔符"></a>分類名稱間有額外的分隔符</h1><p>會導致該紀錄多一個分類階層 </p>
-<blockquote>
-<p>HQ223108 Thermoleophilum minutum Bacteria;Actinomycetota;;Thermoleophilia;Thermoleophilales;Thermoleophilaceae;Thermoleophilum</p>
-</blockquote>
-<h1 id="重複出現的分類名稱"><a href="#重複出現的分類名稱" class="headerlink" title="重複出現的分類名稱"></a>重複出現的分類名稱</h1><p>例如同樣的分類寫兩遍，或是整個條目寫了兩遍，會導致該紀錄增加多個分類階層</p>
-<h2 id="門名重複出現"><a href="#門名重複出現" class="headerlink" title="門名重複出現"></a>門名重複出現</h2><blockquote>
-<p>AJ288899 Bacteriovorax stolpii Bacteria;Bdellovibrionota;Bdellovibrionota;Bacteriovoracia;Bacteriovoracales;Bacteriovoracaceae;Bacteriovorax</p>
-</blockquote>
-<h2 id="整串分類名稱重複出現"><a href="#整串分類名稱重複出現" class="headerlink" title="整串分類名稱重複出現"></a>整串分類名稱重複出現</h2><blockquote>
-<p>“AF082795 Hyphomonas rosenbergii Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomonadales;Hyphomonadaceae;Hyphomonas Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Hyphomonadaceae;Hyphomonas</p>
-</blockquote>
-<h1 id="誤植分類名稱"><a href="#誤植分類名稱" class="headerlink" title="誤植分類名稱"></a>誤植分類名稱</h1><p>在此例中，屬名 Amnimonas 被誤謄為 Aminomonas（這是另一個屬）例如因為形似而寫成其他分類名、打錯字，會導致 convergent 現象（即相同子分類群卻有不同母分類群）</p>
-<h2 id="誤植-Aminomonas-→-Amnimonas"><a href="#誤植-Aminomonas-→-Amnimonas" class="headerlink" title="誤植 (Aminomonas → Amnimonas)"></a>誤植 (Aminomonas → Amnimonas)</h2><blockquote>
-<p>MF682432 Amnimonas aquatica Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Aminomonas</p>
-</blockquote>
-<h2 id="錯字-Jatrophihabitantaless→Jatrophihabitantales"><a href="#錯字-Jatrophihabitantaless→Jatrophihabitantales" class="headerlink" title="錯字 (Jatrophihabitantaless→Jatrophihabitantales)"></a>錯字 (Jatrophihabitantaless→Jatrophihabitantales)</h2><blockquote>
-<p>LC323105 Jatrophihabitans telluris Bacteria;Actinomycetota;Actinobacteria;Jatrophihabitantaless;Jatrophihabitantaceae;Jatrophihabitans</p>
-</blockquote>
-<h1 id="異名"><a href="#異名" class="headerlink" title="異名"></a>異名</h1><p>即條目間使用該分類群的不同名稱，會導致 convergent 現象（即相同子分類群卻有不同母分類群）</p>
-<h2 id="異名-1"><a href="#異名-1" class="headerlink" title="異名"></a>異名</h2><blockquote>
-<p>(Bdellovibrionia [synonym] → Oligoflexia [correct name])</p>
-</blockquote>
-<h2 id="俗名"><a href="#俗名" class="headerlink" title="俗名"></a>俗名</h2><blockquote>
-<p>(Bdellovibrionota [not validly published] → Bdellovibrionota [correct name]) HM038000 Vampirovibrio chlorellavorus Bacteria;Bdellovibrionota;Oligoflexia;Bdellovibrionales;Bdellovibrionaceae;Vampirovibrio AJ292759 Bdellovibrio bacteriovorus Bacteria;Bdellovibrionota;Bdellovibrionia;Bdellovibrionales;Bdellovibrionaceae;Bdellovibrio</p>
-</blockquote>
-<h1 id="欠缺完整分類階層"><a href="#欠缺完整分類階層" class="headerlink" title="欠缺完整分類階層"></a>欠缺完整分類階層</h1><p>比其它條目少了一個分類階層 </p>
-<blockquote>
-<p> # Lack information at Genus level (Ulvibacterium)<br> KF303137 Aestuariibaculum scopimerae Bacteria;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae</p>
-</blockquote>
-<h1 id="檢查方式以及我們的義務"><a href="#檢查方式以及我們的義務" class="headerlink" title="檢查方式以及我們的義務"></a>檢查方式以及我們的義務</h1><p>這些問題的模式紛亂，其實不容易找到有效的偵測方法，以下枚舉幾個我曾用過的策略，</p>
-<ul>
-<li>以分隔符切割字串，檢查輸出字串列表當中，長度異常的條目</li>
-<li>下載 LPSN 物種資訊，檢查未出現在 LPSN 的條目</li>
-<li>檢查出現分號、括號、空格以外的符號的條目</li>
-<li>利用這些方法檢查完畢後，就順道把自己的發現寄給他們，當作對資料庫維護團隊的感謝吧。</li>
-</ul>
-<p>最後，分享一個我原本以為是因為以下原因而產生的 typo …..</p>
-<blockquote>
-<p>VIFM01000001 Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis Bacteria;Myxococcota;Myxococcia;Myxococcales;Myxococcaceae;Myxococcus</p>
-</blockquote>
-<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_ptt.png?raw=true" alt="這難道不是因為某個老梗產生的物種名稱嗎......"></p>
-<p>拿去 Goolge 才知道，還真的有名字這麼長的生物<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. *Genome biology and evolution*, 12(12), 2289-2302.">3</span></a></sup>，長到維基百科側欄都破圖了。</p>
-<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_wiki.png?raw=true" alt="名字太長了，網頁都破圖囉。"></p>
-<p>Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis 命名自其被分離的地點，位於威爾斯安格爾西島的 Llanfair­pwll­gwyn­gyll­go­gery­chwyrn­drobwll­llan­tysilio­gogo­goch 小鎮，分離地點附近還有一間四星級飯店😮。</p>
-<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_map.png?raw=true" alt="分離地點附近有間四星級飯店"></p>
-<p>註</p>
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">All-Species Living Tree Project (LTP)  相關文獻，Yarza &amp; Munoz. (2014). The all-species living tree project. <em>In Methods in Microbiology</em> (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. <em>Systematic and applied microbiology</em>, 31(4), 241-250.<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. <em>Msystems</em>, 3(3), e00021-18.<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. <em>Genome biology and evolution</em>, 12(12), 2289-2302.<a href="#fnref:3" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
-      <tags>
-        <tag>metagenomics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>魔球</title>
     <url>/lewis-2004-moneyball/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最近進度報告剛結束，在老師指點下發現研究策略和內容有些問題，若想要準時畢業勢必受限於時間與精力。在面臨這般困境的情況下，看到魔球簡介中斗大的副標：「逆境中求勝的智慧」，讓我決定研究一下看看能得到什麼啟發。</p>
@@ -2493,6 +2438,88 @@
 <li>海倫兒朱 (2019)：弱者只能等待失敗？錯！1 個小球帶來 3 個逆境中致勝的法門。豆瓣讀書（<a href="https://book.douban.com/review/10517250/">Link</a>）</li>
 </ul>
 ]]></content>
+  </entry>
+  <entry>
+    <title>All-Species Living Tree Project (LTP) 物種資訊的訂正和維護</title>
+    <url>/living-tree-project-database-curation/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>All-Species Living Tree Project (LTP)<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="All-Species Living Tree Project (LTP)  相關文獻，Yarza & Munoz. (2014). The all-species living tree project. *In Methods in Microbiology* (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. *Systematic and applied microbiology*, 31(4), 241-250.">1</span></a></sup> 旨在維護所有已知古菌和細菌 type strain 的 16S rRNA 基因序列，並基於這些序列，建立古菌和細菌的譜系樹。</p>
+<p>LTP 主要由四個單位參與</p>
+<ul>
+<li>LPSN 提供分類與命名資訊 (<a href="https://www.bacterio.net/">https://www.bacterio.net/</a>)</li>
+<li>ARB 支援譜系樹建立與分類 (<a href="http://www.arb-home.de/">http://www.arb-home.de/</a>)</li>
+<li>Ribocon 則負責資料庫的管理 (<a href="https://www.ribocon.com/">https://www.ribocon.com/</a>)</li>
+<li>SILVA 則提供序列資料庫、計算資源與網頁介面 (<a href="https://www.arb-silva.de/">https://www.arb-silva.de/</a>)</li>
+</ul>
+<p>（自 2020 年起，LTP 的遷出 SILVA，獨立為一個網頁：<a href="https://imedea.uib-csic.es/mmg/ltp/%EF%BC%89">https://imedea.uib-csic.es/mmg/ltp/）</a></p>
+<p>LTP 的資料常用於 16S rRNA 基因增幅序列的物種註解，而基於其收錄序列所構建的譜系樹，也能作為 Phylogenetic placement 的基礎<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. *Msystems*, 3(3), e00021-18.">2</span></a></sup>。</p>
+<p>另外，由於 LTP與 RDP training set 都只收錄了 type strain 的序列資料，所以相較於透過序列預測建立的資料庫，LTP 的序列資料較為可靠，能避免在物種註釋時，要在分類錯誤之外面臨資料庫錯誤的問題。</p>
+<p>儘管 LTP 已是人工維護且品質好的資料庫，但目前版本 ( LTP_01_2022) 的部分物種資訊仍有誤騰的狀況。在官方修正這些問題之前，資料庫的使用者得自己訂正這些錯誤。</p>
+<span id="more"></span>
+
+<h1 id="分類階層間少了分隔符"><a href="#分類階層間少了分隔符" class="headerlink" title="分類階層間少了分隔符"></a>分類階層間少了分隔符</h1><p>若使用 “;” 來分割這樣的字串，會得到較短的列表。</p>
+<blockquote>
+<p>AF251436 Ferrimicrobium acidiphilum Bacteria;ActinomycetotaAcidimicrobiia;Acidimicrobiales;Acidimicrobiaceae;Ferrimicrobium</p>
+</blockquote>
+<h1 id="分類名稱出現額外符號"><a href="#分類名稱出現額外符號" class="headerlink" title="分類名稱出現額外符號"></a>分類名稱出現額外符號</h1><p>文字前後出現空格、引號和句號等，可能會因字串不同而高估該分類階層的分類群數量，也可能在資料處理造成意外麻煩。</p>
+<h2 id="額外的雙引號"><a href="#額外的雙引號" class="headerlink" title="額外的雙引號"></a>額外的雙引號</h2><blockquote>
+<p>AY102612 Caedibacter taeniospiralis “Bacteria;Pseudomonadota;Alphaproteobacteria;Holosporales;””Caedimonadaceae””;Caedibacter </p>
+</blockquote>
+<h2 id="額外的句號"><a href="#額外的句號" class="headerlink" title="額外的句號"></a>額外的句號</h2><blockquote>
+<p>LC552068 Conexivisphaera calida Archaea;Crenarchaeota;Conexivisphaeria;Conexivisphaerales;Conexivisphaeraceae;Conexivisphaera.</p>
+</blockquote>
+<h2 id="額外的空格（位於-Hyphomonas-adhaerens-與-Bacteria-之間）"><a href="#額外的空格（位於-Hyphomonas-adhaerens-與-Bacteria-之間）" class="headerlink" title="額外的空格（位於 Hyphomonas adhaerens 與 Bacteria 之間）"></a>額外的空格（位於 Hyphomonas adhaerens 與 Bacteria 之間）</h2><blockquote>
+<p>KF863150 Hyphomonas adhaerens Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomonadales;Hyphomonadaceae;Hyphomonas Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Hyphomonadaceae;Hyphomonas</p>
+</blockquote>
+<h1 id="分類名稱間有額外的分隔符"><a href="#分類名稱間有額外的分隔符" class="headerlink" title="分類名稱間有額外的分隔符"></a>分類名稱間有額外的分隔符</h1><p>會導致該紀錄多一個分類階層 </p>
+<blockquote>
+<p>HQ223108 Thermoleophilum minutum Bacteria;Actinomycetota;;Thermoleophilia;Thermoleophilales;Thermoleophilaceae;Thermoleophilum</p>
+</blockquote>
+<h1 id="重複出現的分類名稱"><a href="#重複出現的分類名稱" class="headerlink" title="重複出現的分類名稱"></a>重複出現的分類名稱</h1><p>例如同樣的分類寫兩遍，或是整個條目寫了兩遍，會導致該紀錄增加多個分類階層</p>
+<h2 id="門名重複出現"><a href="#門名重複出現" class="headerlink" title="門名重複出現"></a>門名重複出現</h2><blockquote>
+<p>AJ288899 Bacteriovorax stolpii Bacteria;Bdellovibrionota;Bdellovibrionota;Bacteriovoracia;Bacteriovoracales;Bacteriovoracaceae;Bacteriovorax</p>
+</blockquote>
+<h2 id="整串分類名稱重複出現"><a href="#整串分類名稱重複出現" class="headerlink" title="整串分類名稱重複出現"></a>整串分類名稱重複出現</h2><blockquote>
+<p>“AF082795 Hyphomonas rosenbergii Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomonadales;Hyphomonadaceae;Hyphomonas Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Hyphomonadaceae;Hyphomonas</p>
+</blockquote>
+<h1 id="誤植分類名稱"><a href="#誤植分類名稱" class="headerlink" title="誤植分類名稱"></a>誤植分類名稱</h1><p>在此例中，屬名 Amnimonas 被誤謄為 Aminomonas（這是另一個屬）例如因為形似而寫成其他分類名、打錯字，會導致 convergent 現象（即相同子分類群卻有不同母分類群）</p>
+<h2 id="誤植-Aminomonas-→-Amnimonas"><a href="#誤植-Aminomonas-→-Amnimonas" class="headerlink" title="誤植 (Aminomonas → Amnimonas)"></a>誤植 (Aminomonas → Amnimonas)</h2><blockquote>
+<p>MF682432 Amnimonas aquatica Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Aminomonas</p>
+</blockquote>
+<h2 id="錯字-Jatrophihabitantaless→Jatrophihabitantales"><a href="#錯字-Jatrophihabitantaless→Jatrophihabitantales" class="headerlink" title="錯字 (Jatrophihabitantaless→Jatrophihabitantales)"></a>錯字 (Jatrophihabitantaless→Jatrophihabitantales)</h2><blockquote>
+<p>LC323105 Jatrophihabitans telluris Bacteria;Actinomycetota;Actinobacteria;Jatrophihabitantaless;Jatrophihabitantaceae;Jatrophihabitans</p>
+</blockquote>
+<h1 id="異名"><a href="#異名" class="headerlink" title="異名"></a>異名</h1><p>即條目間使用該分類群的不同名稱，會導致 convergent 現象（即相同子分類群卻有不同母分類群）</p>
+<h2 id="異名-1"><a href="#異名-1" class="headerlink" title="異名"></a>異名</h2><blockquote>
+<p>(Bdellovibrionia [synonym] → Oligoflexia [correct name])</p>
+</blockquote>
+<h2 id="俗名"><a href="#俗名" class="headerlink" title="俗名"></a>俗名</h2><blockquote>
+<p>(Bdellovibrionota [not validly published] → Bdellovibrionota [correct name]) HM038000 Vampirovibrio chlorellavorus Bacteria;Bdellovibrionota;Oligoflexia;Bdellovibrionales;Bdellovibrionaceae;Vampirovibrio AJ292759 Bdellovibrio bacteriovorus Bacteria;Bdellovibrionota;Bdellovibrionia;Bdellovibrionales;Bdellovibrionaceae;Bdellovibrio</p>
+</blockquote>
+<h1 id="欠缺完整分類階層"><a href="#欠缺完整分類階層" class="headerlink" title="欠缺完整分類階層"></a>欠缺完整分類階層</h1><p>比其它條目少了一個分類階層 </p>
+<blockquote>
+<p> # Lack information at Genus level (Ulvibacterium)<br> KF303137 Aestuariibaculum scopimerae Bacteria;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae</p>
+</blockquote>
+<h1 id="檢查方式以及我們的義務"><a href="#檢查方式以及我們的義務" class="headerlink" title="檢查方式以及我們的義務"></a>檢查方式以及我們的義務</h1><p>這些問題的模式紛亂，其實不容易找到有效的偵測方法，以下枚舉幾個我曾用過的策略，</p>
+<ul>
+<li>以分隔符切割字串，檢查輸出字串列表當中，長度異常的條目</li>
+<li>下載 LPSN 物種資訊，檢查未出現在 LPSN 的條目</li>
+<li>檢查出現分號、括號、空格以外的符號的條目</li>
+<li>利用這些方法檢查完畢後，就順道把自己的發現寄給他們，當作對資料庫維護團隊的感謝吧。</li>
+</ul>
+<p>最後，分享一個我原本以為是因為以下原因而產生的 typo …..</p>
+<blockquote>
+<p>VIFM01000001 Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis Bacteria;Myxococcota;Myxococcia;Myxococcales;Myxococcaceae;Myxococcus</p>
+</blockquote>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_ptt.png?raw=true" alt="這難道不是因為某個老梗產生的物種名稱嗎......"></p>
+<p>拿去 Goolge 才知道，還真的有名字這麼長的生物<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. *Genome biology and evolution*, 12(12), 2289-2302.">3</span></a></sup>，長到維基百科側欄都破圖了。</p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_wiki.png?raw=true" alt="名字太長了，網頁都破圖囉。"></p>
+<p>Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis 命名自其被分離的地點，位於威爾斯安格爾西島的 Llanfair­pwll­gwyn­gyll­go­gery­chwyrn­drobwll­llan­tysilio­gogo­goch 小鎮，分離地點附近還有一間四星級飯店😮。</p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/living-tree-project-database-curation_map.png?raw=true" alt="分離地點附近有間四星級飯店"></p>
+<p>註</p>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">All-Species Living Tree Project (LTP)  相關文獻，Yarza &amp; Munoz. (2014). The all-species living tree project. <em>In Methods in Microbiology</em> (Vol. 41, pp. 45-59). Academic Press. 以及  Yarza et al. (2008). The All-Species Living Tree project: a 16S rRNA-based phylogenetic tree of all sequenced type strains. <em>Systematic and applied microbiology</em>, 31(4), 241-250.<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Phylogenetic placement 是指，依據枝節間的親緣關係，將輸入序列置放在既存譜系樹適當位置。由於有納入參考譜系樹，這方法比 de novo  building 更節省計算資源；也因為採用「插入」取代「捨棄」，也比 read mapping/recruitment 保留更多序列。參考下文以理解 phylogenetic placement 的優勢： Janssen et al. (2018). Phylogenetic placement of exact amplicon sequences improves associations with clinical information. <em>Msystems</em>, 3(3), e00021-18.<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Chambers et al. (2020). Comparative Genomics and Pan-Genomics of the Myxococcaceae, including a Description of Five Novel Species: Myxococcus eversor sp. nov., Myxococcus llanfairpwllgwyngyllgogerychwyrndrobwllllantysiliogogogochensis sp. nov., Myxococcus vastator sp. nov., Pyxidicoccus caerfyrddinensis sp. nov., and Pyxidicoccus trucidator sp. nov. <em>Genome biology and evolution</em>, 12(12), 2289-2302.<a href="#fnref:3" rev="footnote">↩</a></span></li></ol></div></div>]]></content>
+      <tags>
+        <tag>metagenomics</tag>
+      </tags>
   </entry>
   <entry>
     <title>ROSALIND｜Locating Restriction Sites (REVP)</title>
@@ -3243,30 +3270,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《美學：打開未知的美感體驗》</title>
-    <url>/nanay-2019-aesthetics-a-very-short-introduction/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這本書介紹了美學的定義，以及其與日常生活的關係。作者澄清，美學探討人們的美感體驗，而不是引發這些經驗的事物。因此，研究美學的價值在於提升我們的美感體驗。此外，他主張審美是運用注意力的獨特方式，而且深受個人經驗與文化背景影響。因此，在面對審美分歧或欣賞多元藝術時，要抱持「美學謙遜」的態度，了解彼此理解的侷限並努力化解個人與作品間的隔閡。</p>
-<span id="more"></span>
-
-<p>作者首先澄清，美學既不評論作品的優劣，也不判斷個人感受的對錯。美學研究人們如何感受美，聚焦那些我們珍視卻難以界定的美好經驗，而非引發這些經驗的事物。與藝術哲學不同，美學不探討藝術的定義以及其社會政治影響，它更著重人們體驗事物的心理與認知過程。</p>
-<p>為了深入討論，作者提出三項核心概念：美學欣賞（接觸或關注美的行為）、美感體驗（欣賞過程產生的感受）與美學批判（欣賞對象的價值判斷）。然而，並非所有感受都屬於美學範疇。例如對高處的恐懼或是撿到錢的喜悅等便難以歸類為美感體驗。</p>
-<p>值得留意的是，有些經驗與美感體驗的界線模糊。性愛、吸毒與聽搖滾樂同樣能帶來美好的感受，但它們與欣賞畫作時引發的情感有什麼不同？為了探討這個問題，作者梳理了四種傳統的美學觀點，並指出它們各自的優點與限制。</p>
-<p>美學沙龍方式（beauty-salon approach）定義美感體驗為對美的事物的體驗，它排除了性愛、吸毒與搖滾樂等既不美也非由實物引發的體驗。這個觀點強調美學批判，但忽略了美感欣賞的情境要素。作品是否為美顯然受到觀眾的偏好、心情、知識與專注力影響，建立一個評斷美的統一標準似乎不切實際。為了補救這個限制，美學沙龍方式也演變出「美感體驗是體驗到事物為美」的觀點。這個變體雖然迴避了界定美醜的困境，卻欠缺能幫助我們感受美的操作性。</p>
-<p>第二種觀點則著重在愉悅感，認為美感欣賞能帶來讓人沉浸其中的正向感受，因此它理應涵蓋性愛、毒品與搖滾樂等體驗。愉悅感觀點成功捕捉到人們在美感體驗裡的正向回饋，但它得面對區分美學與非美學愉悅的挑戰。</p>
-<p>第三種觀點將美感體驗定義為能引起特定情感的體驗，而不僅僅是愉悅感而已。這個觀點與美學沙龍方式面臨相似的挑戰，它假設美學欣賞能引發普遍一致的情感體驗，也仰賴能區分美的標準。此外，有些作品確實能引發情感共鳴，但也存在純粹仰賴感官或是抽離而寧靜的美感體驗。</p>
-<p>最後一種觀點主張美感體驗即是審美本身的體驗，強調美感欣賞的過程與其無目的性。這種觀點精確地描述了人們在美學欣賞時能自由觀察與聯想的特性，不過它忽略了某些講究目的性卻仍能帶來美感體驗的活動，像是看電影或是讀小說等能夠回應人們情感期待的藝術活動。</p>
-<p>這四種傳統觀點雖然不夠全面，但仍點出了美感體驗能引發情感、令人沉浸其中與重視過程等特質。綜合這些觀點，作者提出一種新的美學理解，他主張美感體驗源於人們運用注意力的特定方式。人類的任何經驗都來自關注，只有被注意到的事物才會進入個人經驗。注意力的運用會影響美感體驗的品質。舉例來說，閱讀小說時，我們可能會因為不合理的設定而出戲，錯過了細膩的人物刻劃；也可能因為發現巧妙的伏筆，而對作品有全新的觀感。</p>
-<p>此外，美感欣賞不只關注外在對象，也包括自身感受。以登山為例，吸引我們的不只是眼前的美景，還有登頂的期待與成就感。這種體驗建立在觀察自由的基礎上，它允許我們的注意力在不同對象間切換，發現它們之間的關係，感受作品與經驗的共鳴，從而激發驚喜與愉悅。一個被迫執行緊急任務的人，沒有選擇關注對象的權利，當下的感受也說不上是美學的了。</p>
-<p>注意力的運用也深受個人經驗影響，不同的運用方式也會產生不同的美感體驗。重複曝光效應（mere exposure effect）是指我們的審美偏好會受到反覆出現的事物影響。由於家庭、社會與文化差異，每個人會暴露於不同的事物中，造就了獨特的個人經驗與審美品味。</p>
-<p>審美品味是個人風格的體現，也形塑著自我認同。因此，對於同樣的作品產生不同看法是相當自然的現象。在歐美國家，美學批判因為認識論哲學的發展而受到重視，它的價值是創造客觀交流的基礎，但可能無助於化解審美分歧。</p>
-<p>美感體驗是極度私人的經驗。一個人即使缺乏美學批判能力，也能擁有珍貴的美感體驗。相反地，再高明的美學批判，也無法保證所有人都能獲得同樣品質的感受。因此，美學是一門規範性的學問，它不會像倫理學一樣，提出能滿足道德目標的規範。如果接受這個觀點，那麼就不存在審美的對錯問題。作者認為，更重要的是透過改善注意力的運作方式來提升美感體驗。對作品的評論要能引導觀眾的注意力，突破他們的經驗侷限，發現作品值得欣賞的地方，從而豐富他們的體驗。</p>
-<p>基於這種理解，作者提出了「美學謙遜」的概念。由於文化背景與個人經驗差異，我們很難完全站在創作者的角度去欣賞作品。因此，即使進行美學批判，也要意識到兩者之間的距離，審慎地做出判斷。儘管如此，如果能主動吸收背景資訊，可以幫助我們縮短與作品間的距離，從而提升獲得的美感體驗。這種態度適合欣賞來自不同文化或時代背景的作品，也是我們面對多元藝術的理想方式。</p>
-<p>最後，作者描述了美學與日常生活的關係。他不贊同把生活視為藝術或是以抽離的態度觀察生活。作者認為美學在生活中的作用是當我們經歷美感體驗以後，這種情感會在我們內心盤繞，暫時改變我們看待事物的方式。這種新鮮感持續一陣子後，美感體驗逐漸融入我們的習慣，影響我們的注意力，直到我們再次經歷其他的美感體驗。這種循環，構成了我們平凡卻時而被美所治癒的日常。</p>
-<hr>
-<p>本斯．納內（2022）。美學：打開未知的美感體驗（蔡宜真譯）。（原著出版於 2019 年）</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Vim｜嘗試修改 Vimium 來關閉網頁 pop-up</title>
     <url>/modify-vimium-to-label-and-close-pop-up/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>彈出視窗是以鍵盤瀏覽網頁的最大阻礙。這些視窗的內容不外乎會員邀請、推薦連結、蓋板廣告與網站公告等，是網站而定，通常沒辦法以 tab 來點擊，之前介紹的 Vimium 功能也沒辦法為這些視窗上的連結打標籤。由於彈出視窗並非廣告，所以下載 adblock 也無法阻擋之。所以往往只能乖乖移動滑鼠關閉之。</p>
@@ -3305,6 +3308,30 @@
       <tags>
         <tag>vim</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>《美學：打開未知的美感體驗》</title>
+    <url>/nanay-2019-aesthetics-a-very-short-introduction/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這本書介紹了美學的定義，以及其與日常生活的關係。作者澄清，美學探討人們的美感體驗，而不是引發這些經驗的事物。因此，研究美學的價值在於提升我們的美感體驗。此外，他主張審美是運用注意力的獨特方式，而且深受個人經驗與文化背景影響。因此，在面對審美分歧或欣賞多元藝術時，要抱持「美學謙遜」的態度，了解彼此理解的侷限並努力化解個人與作品間的隔閡。</p>
+<span id="more"></span>
+
+<p>作者首先澄清，美學既不評論作品的優劣，也不判斷個人感受的對錯。美學研究人們如何感受美，聚焦那些我們珍視卻難以界定的美好經驗，而非引發這些經驗的事物。與藝術哲學不同，美學不探討藝術的定義以及其社會政治影響，它更著重人們體驗事物的心理與認知過程。</p>
+<p>為了深入討論，作者提出三項核心概念：美學欣賞（接觸或關注美的行為）、美感體驗（欣賞過程產生的感受）與美學批判（欣賞對象的價值判斷）。然而，並非所有感受都屬於美學範疇。例如對高處的恐懼或是撿到錢的喜悅等便難以歸類為美感體驗。</p>
+<p>值得留意的是，有些經驗與美感體驗的界線模糊。性愛、吸毒與聽搖滾樂同樣能帶來美好的感受，但它們與欣賞畫作時引發的情感有什麼不同？為了探討這個問題，作者梳理了四種傳統的美學觀點，並指出它們各自的優點與限制。</p>
+<p>美學沙龍方式（beauty-salon approach）定義美感體驗為對美的事物的體驗，它排除了性愛、吸毒與搖滾樂等既不美也非由實物引發的體驗。這個觀點強調美學批判，但忽略了美感欣賞的情境要素。作品是否為美顯然受到觀眾的偏好、心情、知識與專注力影響，建立一個評斷美的統一標準似乎不切實際。為了補救這個限制，美學沙龍方式也演變出「美感體驗是體驗到事物為美」的觀點。這個變體雖然迴避了界定美醜的困境，卻欠缺能幫助我們感受美的操作性。</p>
+<p>第二種觀點則著重在愉悅感，認為美感欣賞能帶來讓人沉浸其中的正向感受，因此它理應涵蓋性愛、毒品與搖滾樂等體驗。愉悅感觀點成功捕捉到人們在美感體驗裡的正向回饋，但它得面對區分美學與非美學愉悅的挑戰。</p>
+<p>第三種觀點將美感體驗定義為能引起特定情感的體驗，而不僅僅是愉悅感而已。這個觀點與美學沙龍方式面臨相似的挑戰，它假設美學欣賞能引發普遍一致的情感體驗，也仰賴能區分美的標準。此外，有些作品確實能引發情感共鳴，但也存在純粹仰賴感官或是抽離而寧靜的美感體驗。</p>
+<p>最後一種觀點主張美感體驗即是審美本身的體驗，強調美感欣賞的過程與其無目的性。這種觀點精確地描述了人們在美學欣賞時能自由觀察與聯想的特性，不過它忽略了某些講究目的性卻仍能帶來美感體驗的活動，像是看電影或是讀小說等能夠回應人們情感期待的藝術活動。</p>
+<p>這四種傳統觀點雖然不夠全面，但仍點出了美感體驗能引發情感、令人沉浸其中與重視過程等特質。綜合這些觀點，作者提出一種新的美學理解，他主張美感體驗源於人們運用注意力的特定方式。人類的任何經驗都來自關注，只有被注意到的事物才會進入個人經驗。注意力的運用會影響美感體驗的品質。舉例來說，閱讀小說時，我們可能會因為不合理的設定而出戲，錯過了細膩的人物刻劃；也可能因為發現巧妙的伏筆，而對作品有全新的觀感。</p>
+<p>此外，美感欣賞不只關注外在對象，也包括自身感受。以登山為例，吸引我們的不只是眼前的美景，還有登頂的期待與成就感。這種體驗建立在觀察自由的基礎上，它允許我們的注意力在不同對象間切換，發現它們之間的關係，感受作品與經驗的共鳴，從而激發驚喜與愉悅。一個被迫執行緊急任務的人，沒有選擇關注對象的權利，當下的感受也說不上是美學的了。</p>
+<p>注意力的運用也深受個人經驗影響，不同的運用方式也會產生不同的美感體驗。重複曝光效應（mere exposure effect）是指我們的審美偏好會受到反覆出現的事物影響。由於家庭、社會與文化差異，每個人會暴露於不同的事物中，造就了獨特的個人經驗與審美品味。</p>
+<p>審美品味是個人風格的體現，也形塑著自我認同。因此，對於同樣的作品產生不同看法是相當自然的現象。在歐美國家，美學批判因為認識論哲學的發展而受到重視，它的價值是創造客觀交流的基礎，但可能無助於化解審美分歧。</p>
+<p>美感體驗是極度私人的經驗。一個人即使缺乏美學批判能力，也能擁有珍貴的美感體驗。相反地，再高明的美學批判，也無法保證所有人都能獲得同樣品質的感受。因此，美學是一門規範性的學問，它不會像倫理學一樣，提出能滿足道德目標的規範。如果接受這個觀點，那麼就不存在審美的對錯問題。作者認為，更重要的是透過改善注意力的運作方式來提升美感體驗。對作品的評論要能引導觀眾的注意力，突破他們的經驗侷限，發現作品值得欣賞的地方，從而豐富他們的體驗。</p>
+<p>基於這種理解，作者提出了「美學謙遜」的概念。由於文化背景與個人經驗差異，我們很難完全站在創作者的角度去欣賞作品。因此，即使進行美學批判，也要意識到兩者之間的距離，審慎地做出判斷。儘管如此，如果能主動吸收背景資訊，可以幫助我們縮短與作品間的距離，從而提升獲得的美感體驗。這種態度適合欣賞來自不同文化或時代背景的作品，也是我們面對多元藝術的理想方式。</p>
+<p>最後，作者描述了美學與日常生活的關係。他不贊同把生活視為藝術或是以抽離的態度觀察生活。作者認為美學在生活中的作用是當我們經歷美感體驗以後，這種情感會在我們內心盤繞，暫時改變我們看待事物的方式。這種新鮮感持續一陣子後，美感體驗逐漸融入我們的習慣，影響我們的注意力，直到我們再次經歷其他的美感體驗。這種循環，構成了我們平凡卻時而被美所治癒的日常。</p>
+<hr>
+<p>本斯．納內（2022）。美學：打開未知的美感體驗（蔡宜真譯）。（原著出版於 2019 年）</p>
+]]></content>
   </entry>
   <entry>
     <title>網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？</title>
@@ -4032,6 +4059,36 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>Nextflow｜背景執行 workflow 的方法</title>
+    <url>/nextflow-run-in-background/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
+<span id="more"></span>
+<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
+
+<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
+<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
+<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
+]]></content>
+      <tags>
+        <tag>nextflow</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Nextflow｜利用 `publishDir` 匯出分析檔案</title>
     <url>/nextflow-the-mode-of-publishdir/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Nextflow 透過 channel 媒介 process 間的檔案傳遞，讓輸出入檔案以軟連結集中到 process 的工作目錄。不過若想從工作目錄取出分析的最終結果，有賴 <code>publishDir</code> directive 的協助。</p>
@@ -4097,36 +4154,6 @@ echo &quot;\$title \n $PWD&quot;
 <h1 id="更動輸出名稱"><a href="#更動輸出名稱" class="headerlink" title="更動輸出名稱"></a>更動輸出名稱</h1><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">publishDir <span class="string">&quot;path/to/output&quot;</span>, <span class="attr">saveAs:</span> <span class="string">&quot;new_name&quot;</span></span><br></pre></td></tr></table></figure>
 <p>使用 <code>saveAs</code> 重新命名，可用於重新命名、依照檔名調整輸出目錄等。</p>
 <h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>Nextflow 最大的特色是以 channel 傳遞資料，process 是從前一步驟的工作目錄獲得資料，而非讀取輸出目錄的資料夾。換句話說，無論建立 output channel 還是匯出檔案到 publishDir，nextflow 都是以 process 的工作目錄為中心。由於每批次處理都會新建工作目錄，所以也確保了 process 輸出的檔案不會彼此覆寫，減少命名中間檔和管理暫存目錄的勞力（這些都由 nextflow 代勞了）。</p>
-]]></content>
-      <tags>
-        <tag>nextflow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nextflow｜背景執行 workflow 的方法</title>
-    <url>/nextflow-run-in-background/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一般而言，若想要背景執行 linux 指令，可在指令末端添加 <code>&amp;</code>，或是透過 <code>ctrl + z</code> 配合 <code>bg %n</code> 將執行中的指令挪到背景執行。然而，nextflow 腳本卻不適用這種做法（version &gt;&#x3D; 21.10.6），指令挪到背景後會陷入停止狀態。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf &amp;</span><br><span class="line">[1] 533</span><br><span class="line">Launching `workflow.nf` [sick_waddington] - revision: 123b1ec198</span><br><span class="line">[2]+  Stopped                 nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<p>一旦陷入停止狀態，會變得異常難清，要用 <code>kill %n &amp;&amp; fg</code> 才能一次清掉（參考<a href="https://gitter.im/nextflow-io/nextflow/archives/2020/09/16">論壇的討論</a>）。</p>
-<span id="more"></span>
-<h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>即使透過 <code>.sh</code> 來執行 nextflow 腳本也會遭遇相同的狀況。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># run_workflow.sh</span><br><span class="line">nextflow run workflow.nf</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./run_workflow.sh &amp;</span><br><span class="line">N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [trusting_hamilton] - revision: 936bafe285</span><br><span class="line">[1]-  Stopped                 <span class="built_in">nohup</span> nextflow run paramInput.nf</span><br><span class="line">[2]+  Stopped                 ./run_workflow.sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="解決辦法"><a href="#解決辦法" class="headerlink" title="解決辦法"></a>解決辦法</h2><p>此時，若要背景執行 nextflow 腳本，可在指令或是腳本內添加 nextflow 內建的 <code>-bg</code> 選項。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ nextflow run workflow.nf -<span class="built_in">bg</span></span><br><span class="line"> N E X T F L O W  ~  version 21.10.6</span><br><span class="line">Launching `workflow.nf` [furious_kowalevski] - revision: 936bafe285</span><br><span class="line">[8b/21d003] Submitted process &gt; sayHi</span><br><span class="line">Hi</span><br></pre></td></tr></table></figure>
-
-<p>這選項觸發的行為類似 <code>nohup</code>，能確保用戶退出 terminal 後仍能持續執行 nextflow 腳本（可參考官方<a href="https://www.nextflow.io/docs/latest/cli.html#execution-as-a-background-job">文件</a>及<a href="https://www.nextflow.io/blog/2021/5-more-tips-for-nextflow-user-on-hpc.html">部落格</a>）。</p>
-<p>除此之外，添加 <code>-bg</code> 也會輸出 <code>.nextflow.pid</code> 檔，紀錄此指令的 pid，以便用戶追蹤 nextflow 腳本的執行狀況。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ps -p &lt;pid&gt;</span><br></pre></td></tr></table></figure>
-
-<p>若隨時將指令切到前台，並且用 <code>jobs</code> 查看執行狀態，也可以在指令末端補 <code>&amp;</code>。只是這樣退出 terminal 後，nextflow 腳本也跟著結束了。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nextflow run workflow.nf -<span class="built_in">bg</span> &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
-
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>至於為什麼 nextflow 有這特性，我仍沒有頭緒。我試著比較添加 <code>-bg</code> 前後，<code>.nextflow.log</code> 和 <code>.command.run</code> 等檔案的內容，卻沒有發現相關差異。</p>
-<p>另外，雖然官方說明 <code>-bg</code> 的行為類似 <code>nohup</code>，但卻無法用 <code>nohup</code> 達到同樣效果。可能還需要對 nextflow 和 linux 有更深的理解才能解釋吧。</p>
 ]]></content>
       <tags>
         <tag>nextflow</tag>
@@ -5779,6 +5806,58 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>軟體開發文件管理的簡單數學</title>
+    <url>/the-simple-math-of-document-management-in-software-development/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>伊藤潤二在其短篇漫畫《藏書幻影》中，描述了一位因為恐懼藏書遺失而決定將家中數十萬本書籍默記在心的書迷。不料，他記住所有藏書的內容後，卻沒有留下絲毫空間給自己的回憶與判斷力，只能終日在書堆中，眼神空洞地翻閱書頁、喃喃自語。</p>
+<p>在軟體開發領域，我們同樣面臨對於遺忘的擔憂。需求分析、風險評估與架構決策等資訊，在開發過程中逐步累積，既是團隊經驗的傳承，也是產品應稽的依據。因此，各企業透過各式各樣的文件，紀錄程式碼以外稍縱即逝的寶貴思想與知識；對於醫療檢測產品，政府單位也提供了文件撰寫指引，詳細列出文件應具備的項目，以確保產品的安全性。</p>
+<p>然而，市場變化與需求異動帶來的時程壓力，也使得團隊陷入開發延宕的恐慌。長期看來，文件固然能提供產品與團隊價值，但是撰寫文件往往是吃力不討好的工作，一方面它不直接改進產品功能，另一方面撰寫文件的努力不亞於軟體開發本身。因此，在迫切需要功能實現或障礙排除時，文件往往是首先被犧牲的項目。</p>
+<p>依照我的經驗，對於如何撰寫文件的倡議，往往基於對內容的保障，未必會考量到維護齊全文件的成本。於是，團隊因為文件與開發的衝突，在棘手的情境間左右為難：要不因為害怕遺漏資訊而導致開發遲滯，又或憂懼逾期交付而造成紀錄不全。</p>
+<p>因此，在這篇文章中，我嘗試跳脫基於儲存資訊的文件框架，加入一些專案管理的觀點，來思考解決兩者衝突的策略，從而避免過時、錯誤或不全等貶損文件價值的不利因素。</p>
+<span id="more"></span>
+
+<p>無論目標是應對稽核還是與用戶&#x2F;開發者溝通，考量到文件與軟體相輔相成的作用，宜將文件視為產品的一部份，並且在規劃專案時程時，將更新文件的成本納入考慮。</p>
+<p>根據軟體的用途和文件的性質，每個軟體迭代所需更新的文件類型和數量也會有所不同。在個人主導的開源專案中，每次軟體發布可能只涉及 README.md 和 CHANGELOG.md 的修改；但若打算申請美國 FDA 的 IVD 認證，即使是簡單的功能升級，也需要維護近十份文件（例如需求、風險、設計、測試和架構等），而且這些文件的更新必須遵循法規程序，額外增加不少行政成本。</p>
+<p>如果團隊能在指定時間內順利完成軟體與文件更新，則可確保兩者內容及時；反之，則必有一方與進度脫節。為了避免文件過時，我們可以列出以下不等式：</p>
+<p>$$ n \cdot t_{doc} + T_{dev} \leq T_{iter} $$</p>
+<ul>
+<li>$t_{doc}$：更新一份文件所需要的時間</li>
+<li>$n$：軟體每次迭代需要更新的文件數量</li>
+<li>$T_{dev}$：軟體該次迭代的開發總時數</li>
+<li>$T_{iter}$：軟體迭代週期</li>
+</ul>
+<p>依據此不等式，每次軟體迭代維護文件所需的時間取決於更新的成本與頻率。假設固定迭代週期與開發時數，那麼低頻率的更新可以容忍較高的更新成本，而低成本的更新可以配合高頻率的更新。</p>
+<p>撰寫文件的成本補僅與內容相關，也涉及過程中的調查、驗收與調整的成本；若是法規文件，還涉及更多的審查、簽核和文檔管理等手續。而文件更新的頻率則取決於其精細度，內容愈是詳細且貼近軟體底層的運作，愈有可能因為局部的變動而需要更新；反之，內容愈是抽象且概括描述軟體的架構，則能承受較多次的軟體變更。</p>
+<p>我們可以依據這項關係來評估撰寫文件的尺度與範圍。以下是一個假想專案每次軟體迭代各層級物件的更新頻率：</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>API Change Frequency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Function</td>
+<td>100</td>
+</tr>
+<tr>
+<td>Class</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>假設這專案的迭代週期為 20 單位時間，開發費時 10 單位時間，每份文件更新需要 1 單位時間。那麼依據不等式，這軟體的文件最多能承受的更新頻率為 10 次。比照更新頻率表，若要避免文件過時，文件的內容最細只能寫到 Class 層級，而 function 層級就超出能力範圍外了。</p>
+<p>$$ n &#x3D; \frac{T_{iter} - T_{dev}}{t_{doc}}$$</p>
+<p>透過這方法，我們可以根據軟體與團隊的特性，調整文件內容的細緻程度，來配合軟體開發的進度。然而，若文件的抽象程度越高，也意味著犧牲了一定程度的細節。在這種情況下，若仍想保留足夠的細節供往後參考該怎麼做？</p>
+<p>原則上，文件內容是否充分取決於當下的品質與隨後的更新。首先，在開發期間透過文件指引、校稿檢查表與同儕審查等方法，可以確保文件具備必要內容並且符合團隊規範；其次，即使發現撰寫當下沒發現的錯誤，之後若能及時修正，也能補充欠缺的資訊。</p>
+<p>這意味著文件完整性與更新文件的成本呈負相關。成本愈低，則容許修改文件的頻率也愈高，文件修訂的機會越多，改善其品質的可能性也越大。換句話說，若我們想在有限的時間內，保障文件的內容及時且完整，就需要容許較高的修訂頻率。我們可以考慮改變文件撰寫的媒介或流程，來降低不等式當中的 $t_{doc}$。</p>
+<p>不過，將彼此相關的資訊記錄在不同的媒介可能會提升文件間的耦合程度。關聯文件越多，每次修改涉及的文件數也越多，這一方面可能增加忘記更新的機率，另一方面，也會增加每次更新時要盤查的文件數量，從而增加文件更新的成本。目前我尚未對此問題得出結論，不過可以考慮使用修改成本較低的索引文件來串接關聯文件，藉此降低主要文件的更新頻率，又能透過索引文件得知要修改的其他文件。</p>
+<p>綜上所述，在專案時程壓力下，團隊往往面臨軟體開發與文件撰寫的衝突。若能再考慮文件應該具備的內容之餘，考量更新文件的頻率和成本，則有機會設計出能配合開發節奏的文件，避免文件過時、錯誤與不全等風險。原則上，若能降低更新文件的成本，便能承受較多次文件更新，間接確保文件的品質與完整性；若更新文件的成本較高，可以考慮調整文件撰寫的尺度，降低更新頻率，以免文件跟不上軟體開發的進度。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>科學論文的結構與撰寫 (Zen of Scientific Writing)</title>
     <url>/the-zen-of-scientific-writing/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這學期我選修了蔡東湖老師的「科學論文的結構與撰寫」。經過三個月洗禮，雖然研究進度一籌莫展，卻對發表 SCI 論文充滿自信。</p>
@@ -5962,58 +6041,6 @@ echo &quot;\$title \n $PWD&quot;
       <tags>
         <tag>writing</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>軟體開發文件管理的簡單數學</title>
-    <url>/the-simple-math-of-document-management-in-software-development/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>伊藤潤二在其短篇漫畫《藏書幻影》中，描述了一位因為恐懼藏書遺失而決定將家中數十萬本書籍默記在心的書迷。不料，他記住所有藏書的內容後，卻沒有留下絲毫空間給自己的回憶與判斷力，只能終日在書堆中，眼神空洞地翻閱書頁、喃喃自語。</p>
-<p>在軟體開發領域，我們同樣面臨對於遺忘的擔憂。需求分析、風險評估與架構決策等資訊，在開發過程中逐步累積，既是團隊經驗的傳承，也是產品應稽的依據。因此，各企業透過各式各樣的文件，紀錄程式碼以外稍縱即逝的寶貴思想與知識；對於醫療檢測產品，政府單位也提供了文件撰寫指引，詳細列出文件應具備的項目，以確保產品的安全性。</p>
-<p>然而，市場變化與需求異動帶來的時程壓力，也使得團隊陷入開發延宕的恐慌。長期看來，文件固然能提供產品與團隊價值，但是撰寫文件往往是吃力不討好的工作，一方面它不直接改進產品功能，另一方面撰寫文件的努力不亞於軟體開發本身。因此，在迫切需要功能實現或障礙排除時，文件往往是首先被犧牲的項目。</p>
-<p>依照我的經驗，對於如何撰寫文件的倡議，往往基於對內容的保障，未必會考量到維護齊全文件的成本。於是，團隊因為文件與開發的衝突，在棘手的情境間左右為難：要不因為害怕遺漏資訊而導致開發遲滯，又或憂懼逾期交付而造成紀錄不全。</p>
-<p>因此，在這篇文章中，我嘗試跳脫基於儲存資訊的文件框架，加入一些專案管理的觀點，來思考解決兩者衝突的策略，從而避免過時、錯誤或不全等貶損文件價值的不利因素。</p>
-<span id="more"></span>
-
-<p>無論目標是應對稽核還是與用戶&#x2F;開發者溝通，考量到文件與軟體相輔相成的作用，宜將文件視為產品的一部份，並且在規劃專案時程時，將更新文件的成本納入考慮。</p>
-<p>根據軟體的用途和文件的性質，每個軟體迭代所需更新的文件類型和數量也會有所不同。在個人主導的開源專案中，每次軟體發布可能只涉及 README.md 和 CHANGELOG.md 的修改；但若打算申請美國 FDA 的 IVD 認證，即使是簡單的功能升級，也需要維護近十份文件（例如需求、風險、設計、測試和架構等），而且這些文件的更新必須遵循法規程序，額外增加不少行政成本。</p>
-<p>如果團隊能在指定時間內順利完成軟體與文件更新，則可確保兩者內容及時；反之，則必有一方與進度脫節。為了避免文件過時，我們可以列出以下不等式：</p>
-<p>$$ n \cdot t_{doc} + T_{dev} \leq T_{iter} $$</p>
-<ul>
-<li>$t_{doc}$：更新一份文件所需要的時間</li>
-<li>$n$：軟體每次迭代需要更新的文件數量</li>
-<li>$T_{dev}$：軟體該次迭代的開發總時數</li>
-<li>$T_{iter}$：軟體迭代週期</li>
-</ul>
-<p>依據此不等式，每次軟體迭代維護文件所需的時間取決於更新的成本與頻率。假設固定迭代週期與開發時數，那麼低頻率的更新可以容忍較高的更新成本，而低成本的更新可以配合高頻率的更新。</p>
-<p>撰寫文件的成本補僅與內容相關，也涉及過程中的調查、驗收與調整的成本；若是法規文件，還涉及更多的審查、簽核和文檔管理等手續。而文件更新的頻率則取決於其精細度，內容愈是詳細且貼近軟體底層的運作，愈有可能因為局部的變動而需要更新；反之，內容愈是抽象且概括描述軟體的架構，則能承受較多次的軟體變更。</p>
-<p>我們可以依據這項關係來評估撰寫文件的尺度與範圍。以下是一個假想專案每次軟體迭代各層級物件的更新頻率：</p>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>API Change Frequency</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Function</td>
-<td>100</td>
-</tr>
-<tr>
-<td>Class</td>
-<td>10</td>
-</tr>
-<tr>
-<td>Structure</td>
-<td>1</td>
-</tr>
-</tbody></table>
-<p>假設這專案的迭代週期為 20 單位時間，開發費時 10 單位時間，每份文件更新需要 1 單位時間。那麼依據不等式，這軟體的文件最多能承受的更新頻率為 10 次。比照更新頻率表，若要避免文件過時，文件的內容最細只能寫到 Class 層級，而 function 層級就超出能力範圍外了。</p>
-<p>$$ n &#x3D; \frac{T_{iter} - T_{dev}}{t_{doc}}$$</p>
-<p>透過這方法，我們可以根據軟體與團隊的特性，調整文件內容的細緻程度，來配合軟體開發的進度。然而，若文件的抽象程度越高，也意味著犧牲了一定程度的細節。在這種情況下，若仍想保留足夠的細節供往後參考該怎麼做？</p>
-<p>原則上，文件內容是否充分取決於當下的品質與隨後的更新。首先，在開發期間透過文件指引、校稿檢查表與同儕審查等方法，可以確保文件具備必要內容並且符合團隊規範；其次，即使發現撰寫當下沒發現的錯誤，之後若能及時修正，也能補充欠缺的資訊。</p>
-<p>這意味著文件完整性與更新文件的成本呈負相關。成本愈低，則容許修改文件的頻率也愈高，文件修訂的機會越多，改善其品質的可能性也越大。換句話說，若我們想在有限的時間內，保障文件的內容及時且完整，就需要容許較高的修訂頻率。我們可以考慮改變文件撰寫的媒介或流程，來降低不等式當中的 $t_{doc}$。</p>
-<p>不過，將彼此相關的資訊記錄在不同的媒介可能會提升文件間的耦合程度。關聯文件越多，每次修改涉及的文件數也越多，這一方面可能增加忘記更新的機率，另一方面，也會增加每次更新時要盤查的文件數量，從而增加文件更新的成本。目前我尚未對此問題得出結論，不過可以考慮使用修改成本較低的索引文件來串接關聯文件，藉此降低主要文件的更新頻率，又能透過索引文件得知要修改的其他文件。</p>
-<p>綜上所述，在專案時程壓力下，團隊往往面臨軟體開發與文件撰寫的衝突。若能再考慮文件應該具備的內容之餘，考量更新文件的頻率和成本，則有機會設計出能配合開發節奏的文件，避免文件過時、錯誤與不全等風險。原則上，若能降低更新文件的成本，便能承受較多次文件更新，間接確保文件的品質與完整性；若更新文件的成本較高，可以考慮調整文件撰寫的尺度，降低更新頻率，以免文件跟不上軟體開發的進度。</p>
-]]></content>
   </entry>
   <entry>
     <title>ROSALIND｜Transcribing DNA into RNA (RNA)</title>
@@ -6615,53 +6642,6 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
-    <title>凝視太陽 — 學習面對死亡也是學習自由</title>
-    <url>/yalom-2008-staring-at-the-sun/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>自我意識是人類最珍貴的特質，但伴隨著思考能力而來的，卻是對消亡的恐懼。雖然嬰兒在出生時沒有被灌輸死亡的觀念，但從季節更迭、花開花謝和親人離世等跡象中，他們也會留意到，有些東西會因某個原因「永遠消失」。</p>
-<p>隨著成長，不祥的事例逐漸累積心中。儘管一開始可能無法理解，但從大人的反應，孩童也知道這些現象不會是好事情。一旦他們意識到自己終將面臨相同的命運，孩童的生活便蒙上了死亡的陰影。</p>
-<span id="more"></span>
-
-<h1 id="凡人的傷痛"><a href="#凡人的傷痛" class="headerlink" title="凡人的傷痛"></a>凡人的傷痛</h1><p>面對兒女萌生的死亡焦慮，父母往往把孩童的注意力轉移到奇幻故事、宗教寓言或是遙遠的未來，試圖脫離這個不吉利的話題。然而這些舉動雖然能讓孩童暫時淡忘，卻沒辦法把死亡逐出他們的腦海。死亡焦慮在青少年時期會沒入潛意識中悄悄作祟，使人們做出瘋狂的舉止以在行動中證明自己的存在。</p>
-<p>不過，輕狂的歲月是短暫的。隨著出社會，人們將面臨社會壓力和成家立業的負擔，忙碌取代幼年的敷衍想像和青年的瘋狂舉止，掩蓋我們對於死亡的恐懼。</p>
-<p>不過等到退休賦閒且兒女離家時，自己也年過半百。此時，我們再沒有能擺脫死亡的手段，只能直視它步步逼近。</p>
-<h1 id="辨識死亡焦慮"><a href="#辨識死亡焦慮" class="headerlink" title="辨識死亡焦慮"></a>辨識死亡焦慮</h1><h2 id="死亡焦慮確實存在"><a href="#死亡焦慮確實存在" class="headerlink" title="死亡焦慮確實存在"></a>死亡焦慮確實存在</h2><p>受到佛洛伊德去死亡化的精神分析模式影響，死亡焦慮往往被視為其它種焦慮的替身。然而作者歐文．亞隆認為，死亡焦慮確實存在，只是因為隱匿得難以察覺，才會和其他焦慮混淆。</p>
-<p>在死亡的陰影中，人們難以享受當下的愉快。細查那些沒來由的焦慮，很可能追溯到個體對死亡的不安，如果心理治療師沒辦法辨識恐懼的根源是什麼，便無法有效改善諮商對象的狀況。</p>
-<p>所以這本書將從鑑別死亡焦慮開始，討論我們恐懼死亡的緣由，接著引用賢哲的智慧和作者的經歷，指出死亡不足懼的原因。最後提出正視死亡並緩解焦慮的可行手段，以幫助讀者度過充實的人生。</p>
-<h2 id="死亡焦慮的形式"><a href="#死亡焦慮的形式" class="headerlink" title="死亡焦慮的形式"></a>死亡焦慮的形式</h2><p>如前所述，死亡焦慮可能偽裝成不同形式。有的人陷入購物瘋狂，有的人則在晚年迷上化妝，有的人擔心自己的事業會一夕間崩解，在這些案例裡，造成焦慮的行為實際上是諮商對象擺脫死亡陰影的途徑。</p>
-<p>例如過分在意外表而一再補上濃妝的人，或許不是求偶焦慮，而是擔心在鏡面上顯露老態，讓自己意識到死亡的逼近。而對事業的擔憂，也是因為事業反映了諮商對象的存在價值，如果寄託的事物瓦解，那麼自己也不得不面對消亡的事實。</p>
-<p>另外有些人在年紀輕時不願去同學會，但在年老時又樂於出席社交場合。因為這樣的場合讓他們想起年輕歲月，在交流中彷彿又能重新擁有對於刺激生活的夢想與期待。</p>
-<h2 id="死亡焦慮怎麼現身？"><a href="#死亡焦慮怎麼現身？" class="headerlink" title="死亡焦慮怎麼現身？"></a>死亡焦慮怎麼現身？</h2><p>死亡焦慮之所以隱晦，是因為日夜笙歌的假象和案牘勞形的無暇都能讓我們暫時把注意力移到求生。然而我們賴以維持理智的人事物也有其壽命，不可能永遠隔開我們與死亡。</p>
-<p>以父母過世為例，我們的痛苦不只是因為離別的哀傷，也是因為再也沒有人能擋在我們與死亡之間，我們得獨自面對死亡的憂鬱。</p>
-<p>除了保護者離世讓人意識到自己的死亡，其他威脅到生命、意識到沒有明天、感受時間流逝、體會到老化、察覺到傾頹等人事物也會讓死亡焦慮現身。</p>
-<p>雖然死亡焦慮是令人不安的經驗，可是一旦現身，便是我們嘗試面對與疏解的機會。</p>
-<h1 id="為什麼害怕死亡？"><a href="#為什麼害怕死亡？" class="headerlink" title="為什麼害怕死亡？"></a>為什麼害怕死亡？</h1><h2 id="死亡：我們害怕自己對死亡的想像"><a href="#死亡：我們害怕自己對死亡的想像" class="headerlink" title="死亡：我們害怕自己對死亡的想像"></a>死亡：我們害怕自己對死亡的想像</h2><p>有些人害怕的是死亡本身和死後的痛苦。相信神的人擔憂最終的審判，不相信神的則害怕亡故後永遠困在不可知的黑暗。這些害怕是源於我們對死亡的想像，因此作者認為需要在觀念上轉變解決。</p>
-<p>伊比鳩魯認為死亡是阻礙享樂的主因，也是痛苦的根源。他提出三項克服死亡恐懼的觀念：首先，靈魂將滅，所以不需要害怕死後迎來的懲罰和審判。其次，自我在死亡那剎即消失，我們根本意識不到死亡，也不必憂慮屆時是否懊悔、是否孤獨與寂寞。最後，生死對稱，死後如同出生前，不必抱著特別或驚恐的眼光看待。</p>
-<p>換句話說，我們必須理解到死亡和死後本身不可懼，因為那時已經沒有我們的事了。</p>
-<h2 id="無意義：害怕死亡讓一切喪失意義"><a href="#無意義：害怕死亡讓一切喪失意義" class="headerlink" title="無意義：害怕死亡讓一切喪失意義"></a>無意義：害怕死亡讓一切喪失意義</h2><p>然而理解死亡本身不可懼，不代表能抵禦死亡為世間一切帶來的無意義感。可曾有過一種顫慄經驗？也就是在面對廣袤無垠的宇宙，感受到自己的渺小，繼而對存在的意義起了懷疑。</p>
-<p>然而意義實際上與尺度無關，也與其存在的時間無關。事物之所以有意義是因為它們令人驚艷，而不是它們很顯眼或是能否在往後重現。</p>
-<p>作者引用佛洛伊德的論述，解釋美不會因其終將消逝而失去價值，重點在於美在當下帶來的感受。我們存在的意義也是一樣，和肉體或靈魂是否永垂不朽無關，只要曾激起他人心中的波瀾，曾惠澤家人朋友乃至不相識的人，我們在世界的一切便有其意義。</p>
-<h2 id="孤獨：害怕死亡帶來的終極隔絕"><a href="#孤獨：害怕死亡帶來的終極隔絕" class="headerlink" title="孤獨：害怕死亡帶來的終極隔絕"></a>孤獨：害怕死亡帶來的終極隔絕</h2><p>孤獨有兩種，一種是人際關係上的孤立，另一種則是個人與世界的隔絕。第二種孤獨是死亡之所以讓人害怕的原因，我們自嬰兒起不斷為自己的獨立性奮鬥，想要與他人區隔，想要自主活動。但是我們又苦於死亡帶來的毀滅，所以嘗試與他人連結，這就是生與死的焦慮。</p>
-<h1 id="存在性焦慮的改善方法"><a href="#存在性焦慮的改善方法" class="headerlink" title="存在性焦慮的改善方法"></a>存在性焦慮的改善方法</h1><p>總結恐懼死亡的原因，除了死亡本身，其實可以追溯到更深層的存在性焦慮。作者建議，我們要努力過活克服無意義感，並降低人際孤獨以緩解存在性孤獨。</p>
-<h2 id="覺醒經驗：努力過活克服無意義"><a href="#覺醒經驗：努力過活克服無意義" class="headerlink" title="覺醒經驗：努力過活克服無意義"></a>覺醒經驗：努力過活克服無意義</h2><p>死亡給人立下界線，使人因理想挫敗而沮喪；我們應正視至種感覺，試著充實地活著，減少臨走前的遺憾。</p>
-<p>作者將種種讓人意識到死亡的事件稱為刺激，而個人在受到刺激後從中頓悟，從原先僅關注生理和世俗層次的日常階段，轉向留意到自身存在意義的本體階段，進而努力活下去的過程，則稱為覺醒。</p>
-<p>換言之，我們必須把意義的來源從外在事物轉向自身，以免那些短暫易逝的事物消失後，我們存在的證據也跟著不見。</p>
-<h2 id="漣漪效應：透過聯繫緩解孤獨"><a href="#漣漪效應：透過聯繫緩解孤獨" class="headerlink" title="漣漪效應：透過聯繫緩解孤獨"></a>漣漪效應：透過聯繫緩解孤獨</h2><p>古代的陪葬習俗顯漏了人們想抗拒死亡帶來的存在性孤獨——它不僅隔絕人與人的關係，還把死者徹底玻璃這個世界。因此增進與他人的關係，並真誠地陪伴能減緩死亡的寂寞，尤其是為他人帶來恩澤的漣漪效應是對此的最大安慰。</p>
-<h1 id="治療師與存在心理治療"><a href="#治療師與存在心理治療" class="headerlink" title="治療師與存在心理治療"></a>治療師與存在心理治療</h1><h2 id="察覺死亡：回憶錄"><a href="#察覺死亡：回憶錄" class="headerlink" title="察覺死亡：回憶錄"></a>察覺死亡：回憶錄</h2><p>此章呼應作者在治療過程中自我袒露的主張，主動分享它自己體認死亡的種種經歷，並且如何克服這種焦慮，寫書在某方面也是其一，它帶來的漣漪是作者最大的安慰。另一部份提到宗教和超自然論述，作者在治療中並不會刻意否定其功效，畢竟病患的福祉仍是最要緊的，可是作者自己並不依賴宗教，它認為宗教並無解決死亡焦慮，只是抹煞了死亡的事實。</p>
-<h2 id="給治療師的建言"><a href="#給治療師的建言" class="headerlink" title="給治療師的建言"></a>給治療師的建言</h2><p>作者最後想表達，精神異常其實不只是生理和匱乏等因素造成，對「存在」的疑問也可能是造成絕望的原因。治療師應注意到這方面的問題，並且在與輔導對象的關係中不知不覺引入。</p>
-<p>治療雖有理論根據，但過程卻是在與對象建立關係中進行。一段友好關係並非治療的目標，卻是確保過程順利的手段。治療師的工作並非挖掘過往種種或關切未來動向，而是從當下的關係中找尋癥結。每次治療都是人際十彥，能看出對象供述內容外的一手消息，還有他們最真實的反應。所以要留意此時此地，甚至是自己的情緒波動也要利用。</p>
-<p>雖然這些主張有違正統，但如果對療程有益的話，適時講解治療遠裡或袒露自我的以增進治療效果</p>
-<h1 id="結論與心得"><a href="#結論與心得" class="headerlink" title="結論與心得"></a>結論與心得</h1><p>海德格說：「死亡的定義是不再有任何可能。」</p>
-<p>昆德拉說：「死亡最駭人之處不是沒有未來，而是失去過去。」</p>
-<p>我想這些說法之間沒有衝突，而是每個人恐懼死亡的原因不同。我大概在七、八歲的時候意識到終將一死，那時聽著自己的心跳聲，我開始思考「萬一停下來了怎麼辦？」，然後我想像著之後的事情，逐漸感到害怕與不安。</p>
-<p>直到現在，我仍會在夜深人靜之時突然陷入恐慌。雖然說起來很可笑，但我實在是沒辦法想像一個自己不在，但仍安然運轉的世界。就好像要求一台電腦估算自己關機的速率，人要怎麼在存活的時候想像不存在的狀態？所以對我而言，活著就好像待在時間的監獄一樣，困在時間軸的一小段裡面。</p>
-<p>然而如同伊比鳩魯所述，死亡其實與當事人最沒關係，我們實際上更該關注於現世，而不是畏懼自己的想像。畢竟，有形的監牢會限制我們的自由，而無形的枷鎖也會讓我們淪為不自覺的奴隸。除了物質和虛妄的聲名，對於死亡的恐懼也約束著我們的所作所為。如果能夠學習面對死亡，那麼便沒有其他東西可以束縛我們了（生死之間就是在服人類役）。</p>
-<p>所以我希望自己能好好過日子，好好與人相處，好好養生，這樣才能降低對死亡的恐懼。無懼死亡不是魯莽送死，而是可以自由地活著。生活中不須擔驚受怕，面對崇高理想時，也能慷慨赴義。</p>
-]]></content>
-      <tags>
-        <tag>philosophy</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>人類存在的意義</title>
     <url>/wilson-2014-the-meaning-of-human-existence/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最早認識 E.O. Wilson 是讀 Stephen Gould 的書，Wilson 作為 Gould 反對的對象存在我的記憶中。隨後，我在小說《螞蟻》裡讀到致敬Wilson 所創造的角色—— 艾德蒙．威爾斯，才逐漸了解 Wilson 在螞蟻、演化和生物多樣性方面的成就。</p>
@@ -6722,6 +6702,53 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>evolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>凝視太陽 — 學習面對死亡也是學習自由</title>
+    <url>/yalom-2008-staring-at-the-sun/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>自我意識是人類最珍貴的特質，但伴隨著思考能力而來的，卻是對消亡的恐懼。雖然嬰兒在出生時沒有被灌輸死亡的觀念，但從季節更迭、花開花謝和親人離世等跡象中，他們也會留意到，有些東西會因某個原因「永遠消失」。</p>
+<p>隨著成長，不祥的事例逐漸累積心中。儘管一開始可能無法理解，但從大人的反應，孩童也知道這些現象不會是好事情。一旦他們意識到自己終將面臨相同的命運，孩童的生活便蒙上了死亡的陰影。</p>
+<span id="more"></span>
+
+<h1 id="凡人的傷痛"><a href="#凡人的傷痛" class="headerlink" title="凡人的傷痛"></a>凡人的傷痛</h1><p>面對兒女萌生的死亡焦慮，父母往往把孩童的注意力轉移到奇幻故事、宗教寓言或是遙遠的未來，試圖脫離這個不吉利的話題。然而這些舉動雖然能讓孩童暫時淡忘，卻沒辦法把死亡逐出他們的腦海。死亡焦慮在青少年時期會沒入潛意識中悄悄作祟，使人們做出瘋狂的舉止以在行動中證明自己的存在。</p>
+<p>不過，輕狂的歲月是短暫的。隨著出社會，人們將面臨社會壓力和成家立業的負擔，忙碌取代幼年的敷衍想像和青年的瘋狂舉止，掩蓋我們對於死亡的恐懼。</p>
+<p>不過等到退休賦閒且兒女離家時，自己也年過半百。此時，我們再沒有能擺脫死亡的手段，只能直視它步步逼近。</p>
+<h1 id="辨識死亡焦慮"><a href="#辨識死亡焦慮" class="headerlink" title="辨識死亡焦慮"></a>辨識死亡焦慮</h1><h2 id="死亡焦慮確實存在"><a href="#死亡焦慮確實存在" class="headerlink" title="死亡焦慮確實存在"></a>死亡焦慮確實存在</h2><p>受到佛洛伊德去死亡化的精神分析模式影響，死亡焦慮往往被視為其它種焦慮的替身。然而作者歐文．亞隆認為，死亡焦慮確實存在，只是因為隱匿得難以察覺，才會和其他焦慮混淆。</p>
+<p>在死亡的陰影中，人們難以享受當下的愉快。細查那些沒來由的焦慮，很可能追溯到個體對死亡的不安，如果心理治療師沒辦法辨識恐懼的根源是什麼，便無法有效改善諮商對象的狀況。</p>
+<p>所以這本書將從鑑別死亡焦慮開始，討論我們恐懼死亡的緣由，接著引用賢哲的智慧和作者的經歷，指出死亡不足懼的原因。最後提出正視死亡並緩解焦慮的可行手段，以幫助讀者度過充實的人生。</p>
+<h2 id="死亡焦慮的形式"><a href="#死亡焦慮的形式" class="headerlink" title="死亡焦慮的形式"></a>死亡焦慮的形式</h2><p>如前所述，死亡焦慮可能偽裝成不同形式。有的人陷入購物瘋狂，有的人則在晚年迷上化妝，有的人擔心自己的事業會一夕間崩解，在這些案例裡，造成焦慮的行為實際上是諮商對象擺脫死亡陰影的途徑。</p>
+<p>例如過分在意外表而一再補上濃妝的人，或許不是求偶焦慮，而是擔心在鏡面上顯露老態，讓自己意識到死亡的逼近。而對事業的擔憂，也是因為事業反映了諮商對象的存在價值，如果寄託的事物瓦解，那麼自己也不得不面對消亡的事實。</p>
+<p>另外有些人在年紀輕時不願去同學會，但在年老時又樂於出席社交場合。因為這樣的場合讓他們想起年輕歲月，在交流中彷彿又能重新擁有對於刺激生活的夢想與期待。</p>
+<h2 id="死亡焦慮怎麼現身？"><a href="#死亡焦慮怎麼現身？" class="headerlink" title="死亡焦慮怎麼現身？"></a>死亡焦慮怎麼現身？</h2><p>死亡焦慮之所以隱晦，是因為日夜笙歌的假象和案牘勞形的無暇都能讓我們暫時把注意力移到求生。然而我們賴以維持理智的人事物也有其壽命，不可能永遠隔開我們與死亡。</p>
+<p>以父母過世為例，我們的痛苦不只是因為離別的哀傷，也是因為再也沒有人能擋在我們與死亡之間，我們得獨自面對死亡的憂鬱。</p>
+<p>除了保護者離世讓人意識到自己的死亡，其他威脅到生命、意識到沒有明天、感受時間流逝、體會到老化、察覺到傾頹等人事物也會讓死亡焦慮現身。</p>
+<p>雖然死亡焦慮是令人不安的經驗，可是一旦現身，便是我們嘗試面對與疏解的機會。</p>
+<h1 id="為什麼害怕死亡？"><a href="#為什麼害怕死亡？" class="headerlink" title="為什麼害怕死亡？"></a>為什麼害怕死亡？</h1><h2 id="死亡：我們害怕自己對死亡的想像"><a href="#死亡：我們害怕自己對死亡的想像" class="headerlink" title="死亡：我們害怕自己對死亡的想像"></a>死亡：我們害怕自己對死亡的想像</h2><p>有些人害怕的是死亡本身和死後的痛苦。相信神的人擔憂最終的審判，不相信神的則害怕亡故後永遠困在不可知的黑暗。這些害怕是源於我們對死亡的想像，因此作者認為需要在觀念上轉變解決。</p>
+<p>伊比鳩魯認為死亡是阻礙享樂的主因，也是痛苦的根源。他提出三項克服死亡恐懼的觀念：首先，靈魂將滅，所以不需要害怕死後迎來的懲罰和審判。其次，自我在死亡那剎即消失，我們根本意識不到死亡，也不必憂慮屆時是否懊悔、是否孤獨與寂寞。最後，生死對稱，死後如同出生前，不必抱著特別或驚恐的眼光看待。</p>
+<p>換句話說，我們必須理解到死亡和死後本身不可懼，因為那時已經沒有我們的事了。</p>
+<h2 id="無意義：害怕死亡讓一切喪失意義"><a href="#無意義：害怕死亡讓一切喪失意義" class="headerlink" title="無意義：害怕死亡讓一切喪失意義"></a>無意義：害怕死亡讓一切喪失意義</h2><p>然而理解死亡本身不可懼，不代表能抵禦死亡為世間一切帶來的無意義感。可曾有過一種顫慄經驗？也就是在面對廣袤無垠的宇宙，感受到自己的渺小，繼而對存在的意義起了懷疑。</p>
+<p>然而意義實際上與尺度無關，也與其存在的時間無關。事物之所以有意義是因為它們令人驚艷，而不是它們很顯眼或是能否在往後重現。</p>
+<p>作者引用佛洛伊德的論述，解釋美不會因其終將消逝而失去價值，重點在於美在當下帶來的感受。我們存在的意義也是一樣，和肉體或靈魂是否永垂不朽無關，只要曾激起他人心中的波瀾，曾惠澤家人朋友乃至不相識的人，我們在世界的一切便有其意義。</p>
+<h2 id="孤獨：害怕死亡帶來的終極隔絕"><a href="#孤獨：害怕死亡帶來的終極隔絕" class="headerlink" title="孤獨：害怕死亡帶來的終極隔絕"></a>孤獨：害怕死亡帶來的終極隔絕</h2><p>孤獨有兩種，一種是人際關係上的孤立，另一種則是個人與世界的隔絕。第二種孤獨是死亡之所以讓人害怕的原因，我們自嬰兒起不斷為自己的獨立性奮鬥，想要與他人區隔，想要自主活動。但是我們又苦於死亡帶來的毀滅，所以嘗試與他人連結，這就是生與死的焦慮。</p>
+<h1 id="存在性焦慮的改善方法"><a href="#存在性焦慮的改善方法" class="headerlink" title="存在性焦慮的改善方法"></a>存在性焦慮的改善方法</h1><p>總結恐懼死亡的原因，除了死亡本身，其實可以追溯到更深層的存在性焦慮。作者建議，我們要努力過活克服無意義感，並降低人際孤獨以緩解存在性孤獨。</p>
+<h2 id="覺醒經驗：努力過活克服無意義"><a href="#覺醒經驗：努力過活克服無意義" class="headerlink" title="覺醒經驗：努力過活克服無意義"></a>覺醒經驗：努力過活克服無意義</h2><p>死亡給人立下界線，使人因理想挫敗而沮喪；我們應正視至種感覺，試著充實地活著，減少臨走前的遺憾。</p>
+<p>作者將種種讓人意識到死亡的事件稱為刺激，而個人在受到刺激後從中頓悟，從原先僅關注生理和世俗層次的日常階段，轉向留意到自身存在意義的本體階段，進而努力活下去的過程，則稱為覺醒。</p>
+<p>換言之，我們必須把意義的來源從外在事物轉向自身，以免那些短暫易逝的事物消失後，我們存在的證據也跟著不見。</p>
+<h2 id="漣漪效應：透過聯繫緩解孤獨"><a href="#漣漪效應：透過聯繫緩解孤獨" class="headerlink" title="漣漪效應：透過聯繫緩解孤獨"></a>漣漪效應：透過聯繫緩解孤獨</h2><p>古代的陪葬習俗顯漏了人們想抗拒死亡帶來的存在性孤獨——它不僅隔絕人與人的關係，還把死者徹底玻璃這個世界。因此增進與他人的關係，並真誠地陪伴能減緩死亡的寂寞，尤其是為他人帶來恩澤的漣漪效應是對此的最大安慰。</p>
+<h1 id="治療師與存在心理治療"><a href="#治療師與存在心理治療" class="headerlink" title="治療師與存在心理治療"></a>治療師與存在心理治療</h1><h2 id="察覺死亡：回憶錄"><a href="#察覺死亡：回憶錄" class="headerlink" title="察覺死亡：回憶錄"></a>察覺死亡：回憶錄</h2><p>此章呼應作者在治療過程中自我袒露的主張，主動分享它自己體認死亡的種種經歷，並且如何克服這種焦慮，寫書在某方面也是其一，它帶來的漣漪是作者最大的安慰。另一部份提到宗教和超自然論述，作者在治療中並不會刻意否定其功效，畢竟病患的福祉仍是最要緊的，可是作者自己並不依賴宗教，它認為宗教並無解決死亡焦慮，只是抹煞了死亡的事實。</p>
+<h2 id="給治療師的建言"><a href="#給治療師的建言" class="headerlink" title="給治療師的建言"></a>給治療師的建言</h2><p>作者最後想表達，精神異常其實不只是生理和匱乏等因素造成，對「存在」的疑問也可能是造成絕望的原因。治療師應注意到這方面的問題，並且在與輔導對象的關係中不知不覺引入。</p>
+<p>治療雖有理論根據，但過程卻是在與對象建立關係中進行。一段友好關係並非治療的目標，卻是確保過程順利的手段。治療師的工作並非挖掘過往種種或關切未來動向，而是從當下的關係中找尋癥結。每次治療都是人際十彥，能看出對象供述內容外的一手消息，還有他們最真實的反應。所以要留意此時此地，甚至是自己的情緒波動也要利用。</p>
+<p>雖然這些主張有違正統，但如果對療程有益的話，適時講解治療遠裡或袒露自我的以增進治療效果</p>
+<h1 id="結論與心得"><a href="#結論與心得" class="headerlink" title="結論與心得"></a>結論與心得</h1><p>海德格說：「死亡的定義是不再有任何可能。」</p>
+<p>昆德拉說：「死亡最駭人之處不是沒有未來，而是失去過去。」</p>
+<p>我想這些說法之間沒有衝突，而是每個人恐懼死亡的原因不同。我大概在七、八歲的時候意識到終將一死，那時聽著自己的心跳聲，我開始思考「萬一停下來了怎麼辦？」，然後我想像著之後的事情，逐漸感到害怕與不安。</p>
+<p>直到現在，我仍會在夜深人靜之時突然陷入恐慌。雖然說起來很可笑，但我實在是沒辦法想像一個自己不在，但仍安然運轉的世界。就好像要求一台電腦估算自己關機的速率，人要怎麼在存活的時候想像不存在的狀態？所以對我而言，活著就好像待在時間的監獄一樣，困在時間軸的一小段裡面。</p>
+<p>然而如同伊比鳩魯所述，死亡其實與當事人最沒關係，我們實際上更該關注於現世，而不是畏懼自己的想像。畢竟，有形的監牢會限制我們的自由，而無形的枷鎖也會讓我們淪為不自覺的奴隸。除了物質和虛妄的聲名，對於死亡的恐懼也約束著我們的所作所為。如果能夠學習面對死亡，那麼便沒有其他東西可以束縛我們了（生死之間就是在服人類役）。</p>
+<p>所以我希望自己能好好過日子，好好與人相處，好好養生，這樣才能降低對死亡的恐懼。無懼死亡不是魯莽送死，而是可以自由地活著。生活中不須擔驚受怕，面對崇高理想時，也能慷慨赴義。</p>
+]]></content>
+      <tags>
+        <tag>philosophy</tag>
       </tags>
   </entry>
   <entry>
