@@ -19,25 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="對世界豎起中指吧">
+    <meta name="description" content="最近，我們碰到一個棘手的技術問題。其他同仁反映，我們開發的變異分析工具在執行 GATK 時意外中止，並呈現以下錯誤訊息： 1The provided VCF file is malformed at approximately line number 1: Duplicate allele added to VariantContext: TA  我檢查該步驟使用的 VCF 檔，發現其中一列的 R">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/archives/2022/page/3/index.html">
+<meta property="og:title" content="Duplicate alleles in VCFs derived from tvc">
+<meta property="og:url" content="https://5uperb0y.com/duplicate-alleles-in-vcfs-derived-from-tvc/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="對世界豎起中指吧">
+<meta property="og:description" content="最近，我們碰到一個棘手的技術問題。其他同仁反映，我們開發的變異分析工具在執行 GATK 時意外中止，並呈現以下錯誤訊息： 1The provided VCF file is malformed at approximately line number 1: Duplicate allele added to VariantContext: TA  我檢查該步驟使用的 VCF 檔，發現其中一列的 R">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-08-07T14:39:18.000Z">
+<meta property="article:modified_time" content="2024-08-07T14:33:45.031Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="bioinformatics">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/archives/2022/page/3/">
+<link rel="canonical" href="https://5uperb0y.com/duplicate-alleles-in-vcfs-derived-from-tvc/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2022/page/3/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/duplicate-alleles-in-vcfs-derived-from-tvc/","path":"duplicate-alleles-in-vcfs-derived-from-tvc/","title":"Duplicate alleles in VCFs derived from tvc"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 5uperb0y's blog</title>
+<title>Duplicate alleles in VCFs derived from tvc | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -74,7 +77,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">5uperb0y's blog</h1>
+      <p class="site-title">5uperb0y's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -258,233 +261,130 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/duplicate-alleles-in-vcfs-derived-from-tvc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Duplicate alleles in VCFs derived from tvc | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Duplicate alleles in VCFs derived from tvc
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-08-07 22:39:18 / 修改時間：22:33:45" itemprop="dateCreated datePublished" datetime="2024-08-07T22:39:18+08:00">2024-08-07</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>639</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最近，我們碰到一個棘手的技術問題。其他同仁反映，我們開發的變異分析工具在執行 GATK 時意外中止，並呈現以下錯誤訊息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The provided VCF file is malformed at approximately line number 1: Duplicate allele added to VariantContext: TA</span><br></pre></td></tr></table></figure>
+
+<p>我檢查該步驟使用的 VCF 檔，發現其中一列的 REF 與 ALT 欄位內容重複，導致 GATK 報錯：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chr1	100	.	TA	GT,TA</span><br></pre></td></tr></table></figure>
+
+<p>標準的 VCF 檔只記錄實際存在的變異，不應出現 REF 和 ALT 欄位相同的狀況。即使該位置沒有變異，通常也會以點號（<code>.</code>）標記。因此，我推測問題的源頭不是分析工具本身，而是上游的 variant caller。</p>
+<span id="more"></span>
+
+<p>由於這份 VCF 檔源於 Torrent variant caller 5.18 (tvc)，所以我研究了它的說明書。tvc 允許用戶透過 hotspot VCF，自訂分析區域以及必須報告的變異。在醫療檢驗服務中，我們通常會把具有臨床價值的變異位點納入 hotspot VCF，提升 tvc 對這些變異位點的靈敏度。由於出錯的條目恰好是這些臨床位點，我推測異常行為可能跟 hotspot VCF 的內容有關。</p>
+<p>經過一系列測試，我發現這項錯誤可以在特定情境重現：</p>
+<ol>
+<li>樣本中存在 MNV (multi-nucleotide variant)，例如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chr1	100	.	TA	GT</span><br></pre></td></tr></table></figure></li>
+<li>Hotspot VCF 在相同位置存在兩個必須回報的 SNV (single nucleotide variant)，而且這兩個 SNV 的 REF 和 ALT 一致。（其中，<code>*</code> 表示任何非 “T” 鹼基）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chr1	100	.	T	G</span><br><span class="line">chr1	100	.	*	T</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>在這種情境，tvc 表現出一些令人意外的行為</p>
+<ul>
+<li>當偵測到 MNV 時，tvc 不會單獨報告 SNV，而是合併相同位置的變異。</li>
+<li>在偵測變異時，tvc 只考慮 hotspot VCF 的 POSITION 和 ALT 欄位。</li>
+</ul>
+<p>這些因素共同作用，導致 tvc 產生了以下異常結果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chr1	100	.	TA	GT,TA</span><br></pre></td></tr></table></figure>
+
+<p>在這個結果中，”GT” 是樣本原有的 MNV，而異常的 “TA” 則分別來自第二個 SNV 的 ALT（”T”），以及參考基因體上的 “A”。</p>
+<p>成功重現這個錯誤之後，我曾懷疑是否在使用 tvc 時誤植了 hotspot VCF 內容。然而，經過實際測試，我發現在最新版的 tvc 中，即使使用完整的 hotspot 也會面臨同樣問題。這表示可能有其他未考慮的因素與這個錯誤有關。</p>
+<p>總而言之，鑒於網路上關於 tvc 的資源匱乏，希望這些紀錄能幫助陷入類似問題的同行，感謝大家。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/bioinformatics/" rel="tag"># bioinformatics</a>
+          </div>
+
         
-        <span class="collection-header">很好! 目前共有 126 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-16T00:15:18+08:00"
-              content="2022-02-16">
-          02-16
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/how-to-decide-max-mismatch-when-merging-paired-end-reads/" itemprop="url">
-          <span itemprop="name">怎麼決定合併雙端序列時允許的錯配數量？</span>
-        </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/irene309-2023-summer-project-season-2/" rel="prev" title="《夏日計劃(2)》">
+                  <i class="fa fa-angle-left"></i> 《夏日計劃(2)》
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-15T20:55:53+08:00"
-              content="2022-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/difference-in-bacterial-communities-between-fecal-and-intestinal-samples/" itemprop="url">
-          <span itemprop="name">排遺與腸道樣本的細菌群落差異</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-09T22:20:13+08:00"
-              content="2022-02-09">
-          02-09
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/haskell-2017-the-songs-of-trees/" itemprop="url">
-          <span itemprop="name">樹之歌</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-04T02:22:22+08:00"
-              content="2022-02-04">
-          02-04
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/yoshiura-2008-time-of-eve/" itemprop="url">
-          <span itemprop="name">夏娃的時間</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-03T23:13:46+08:00"
-              content="2022-02-03">
-          02-03
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/schrodinger-1944-what-is-life-chapter-1/" itemprop="url">
-          <span itemprop="name">讀後感｜生命是什麼 — 鴿子為什麼那麼大？</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-03T15:55:48+08:00"
-              content="2022-02-03">
-          02-03
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/transcribing-dna-into-rna/" itemprop="url">
-          <span itemprop="name">ROSALIND｜Transcribing DNA into RNA (RNA)</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-02-03T01:02:38+08:00"
-              content="2022-02-03">
-          02-03
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/hiroshi-2004-all-you-need-is-kill/" itemprop="url">
-          <span itemprop="name">All You Need Is Kill</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-25T18:17:33+08:00"
-              content="2022-01-25">
-          01-25
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/mitalk-6-thu-2022/" itemprop="url">
-          <span itemprop="name">MiTalk 2022：在講台上</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-02T02:18:38+08:00"
-              content="2022-01-02">
-          01-02
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/templar-2017-the-rules-of-people/" itemprop="url">
-          <span itemprop="name">人際的法則 — 怎麼面對他人求助？</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-01T20:59:23+08:00"
-              content="2022-01-01">
-          01-01
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/how-i-learn-from-seminars/" itemprop="url">
-          <span itemprop="name">從碩班第一次專題課說起......</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/archives/2022/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2022/">1</a><a class="page-number" href="/archives/2022/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+
+
+
 
 </div>
   </main>
@@ -558,7 +458,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/archives/2022/page/3/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/duplicate-alleles-in-vcfs-derived-from-tvc/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>
