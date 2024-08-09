@@ -747,6 +747,38 @@
       </tags>
   </entry>
   <entry>
+    <title>ROSALIND | Enumerating k-mers Lexicographically (LEXF)</title>
+    <url>/enumerating-k-mers-lexicographically/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度為 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
+<blockquote>
+<p>Given: A permutation of at most 12 symbols defining an ordered alphabet $\mathscr{A}$ and a positive integer n (n≤4).</p>
+<p>Return: All strings of length at most n formed from $\mathscr{A}$ , ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/lexv/">https://rosalind.info/problems/lexv/</a>)</p>
+<span id="more"></span>
+<p>$\mathscr{A}$ 是一個字符序列，除了規範了可用的字符外，也定義了這些字符的字典序。像是英文字母的字典序是從 A 到 Z，所以 “AA” 會排在 “AB” 前面。這題要求從 $\mathscr{A}$ 生成指定長度的所有可能字串，並確保這些字串依照字典序排序。</p>
+<p>假設今有 $\mathscr{A}$ 為 <code>[&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]</code>，而且指定長度為 3，則生成步驟為：</p>
+<ol>
+<li>從 $\mathscr{A}$ 依序取出字符來組成字串（”A”、”B”、”C”）</li>
+<li>對於每個字符，追加 $\mathscr{A}$ 中的每个字符，生成長度為 2 的所有可能字串（”AA”、”AB”、”AC”、”BA”、”BB”、……”CC”）</li>
+<li>對於長度為 2 的字串，再度追加 $\mathscr{A}$ 中的每个字符，生成長度為 3 的所有可能字串（”AAA”、”AAB”、”AAC”、”ABA”、……”CCC”）</li>
+<li>最終將生成 $3 \times 3 \times 3 &#x3D; 27$ 個字串。</li>
+</ol>
+<p>由上述案例，我們可以歸納遞迴關係如下：</p>
+<ul>
+<li>終止條件：當 <code>k=1</code> 時，回傳 $\mathscr{A}$。</li>
+<li>遞迴關係：對於 $\mathscr{A}$ 每個字符，生成長度為 <code>k - 1</code> 的所有可能字串，再讓字符作為這些字串的前綴。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lexf</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Generate all permutations of a specified length from a given set of elements.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> elements</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            <span class="string">f&quot;<span class="subst">&#123;e&#125;</span><span class="subst">&#123;k_str&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">for</span> e <span class="keyword">in</span> elements</span><br><span class="line">            <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k - <span class="number">1</span>)</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+
+<p>最後再把結果依題目要求的格式印出來。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_results</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k):</span><br><span class="line">        <span class="built_in">print</span>(k_str)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ROSALIND｜Enumerating Gene Orders (PERM)</title>
     <url>/enumerating-gene-orders/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 的所有可能數列與其總數。</p>
@@ -798,38 +830,6 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># !!!! WRONG SOLUTION !!!!</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> = [</span><br><span class="line">            p + [e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l):</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> lperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">        ]</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
 <p>關鍵在於遞迴關係的初始狀態設定，這個 function 預期要回傳一個存儲所有可能數列的巢狀 list，但我在初始狀態的時候寫成 <code>return l</code>，導致遞迴調用 function 回傳了一個攤平的 list。於是 <code>p</code> 就成了整數，自然無法和 <code>[e]</code> 相連，讓程式無法運作。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:ewald2009"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">ewald2009.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ewald et al. (2009). Genomic rearrangements in BRCA1 and BRCA2: A literature review. Genetics and Molecular Biology, 32, 437-446.<a href="#fnref:ewald2009" rev="footnote">↩</a></span></li><li id="fn:gu2008"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">gu2008.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Gu et al. (2008). Mechanisms for human genomic rearrangements. Pathogenetics, 1, 1-17.<a href="#fnref:gu2008" rev="footnote">↩</a></span></li><li id="fn:touchman2010"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">touchman2010.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a href="https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/">https://www.nature.com/scitable/knowledge/library/comparative-genomics-13239404/</a><a href="#fnref:touchman2010" rev="footnote">↩</a></span></li></ol></div></div></p>
-]]></content>
-      <tags>
-        <tag>rosalind</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROSALIND | Enumerating k-mers Lexicographically (LEXF)</title>
-    <url>/enumerating-k-mers-lexicographically/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定字符序列 $\mathscr{A}$，求由這些字符組成且長度為 k 的所有字串。這些字串須依照 $\mathscr{A}$ 字典序排列。</p>
-<blockquote>
-<p>Given: A permutation of at most 12 symbols defining an ordered alphabet $\mathscr{A}$ and a positive integer n (n≤4).</p>
-<p>Return: All strings of length at most n formed from $\mathscr{A}$ , ordered lexicographically. (Note: As in “Enumerating k-mers Lexicographically”, alphabet order is based on the order in which the symbols are given.)</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/lexv/">https://rosalind.info/problems/lexv/</a>)</p>
-<span id="more"></span>
-<p>$\mathscr{A}$ 是一個字符序列，除了規範了可用的字符外，也定義了這些字符的字典序。像是英文字母的字典序是從 A 到 Z，所以 “AA” 會排在 “AB” 前面。這題要求從 $\mathscr{A}$ 生成指定長度的所有可能字串，並確保這些字串依照字典序排序。</p>
-<p>假設今有 $\mathscr{A}$ 為 <code>[&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]</code>，而且指定長度為 3，則生成步驟為：</p>
-<ol>
-<li>從 $\mathscr{A}$ 依序取出字符來組成字串（”A”、”B”、”C”）</li>
-<li>對於每個字符，追加 $\mathscr{A}$ 中的每个字符，生成長度為 2 的所有可能字串（”AA”、”AB”、”AC”、”BA”、”BB”、……”CC”）</li>
-<li>對於長度為 2 的字串，再度追加 $\mathscr{A}$ 中的每个字符，生成長度為 3 的所有可能字串（”AAA”、”AAB”、”AAC”、”ABA”、……”CCC”）</li>
-<li>最終將生成 $3 \times 3 \times 3 &#x3D; 27$ 個字串。</li>
-</ol>
-<p>由上述案例，我們可以歸納遞迴關係如下：</p>
-<ul>
-<li>終止條件：當 <code>k=1</code> 時，回傳 $\mathscr{A}$。</li>
-<li>遞迴關係：對於 $\mathscr{A}$ 每個字符，生成長度為 <code>k - 1</code> 的所有可能字串，再讓字符作為這些字串的前綴。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lexf</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Generate all permutations of a specified length from a given set of elements.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> elements</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            <span class="string">f&quot;<span class="subst">&#123;e&#125;</span><span class="subst">&#123;k_str&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">for</span> e <span class="keyword">in</span> elements</span><br><span class="line">            <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k - <span class="number">1</span>)</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
-
-<p>最後再把結果依題目要求的格式印出來。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">print_results</span>(<span class="params">elements, k</span>):</span><br><span class="line">    <span class="keyword">for</span> k_str <span class="keyword">in</span> lexf(elements, k):</span><br><span class="line">        <span class="built_in">print</span>(k_str)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>rosalind</tag>
@@ -1925,14 +1925,51 @@
 <p>除了陳晞，政府也試圖阻止諸神黃昏。他們指派處刑者秋天刺殺又夏，期望能犧牲「時間」來阻止災難發生。得知此消息，浩瑜立即連絡又夏。考量陳晞的身體狀況，浩瑜懇求又夏再次倒轉時間，以在政府採取行動前，找到治療陳晞和避免末日的方法。</p>
 <p>儘管又夏訝異自己願意為陳晞付出如此之多，仍然同意將時間倒轉到高中前的暑假。彷彿出於對將死之人的憐憫，又夏向陳晞提出交往的要求，給對方一個讓自己心動的機會。然而，陳晞卻無法坦然接受，向又夏坦白前一個時空的回憶，可是又夏僅能像個旁觀者一樣安慰她。</p>
 <p>於此同時，浩瑜和秋天也計畫背叛政府。他們打算捏造處刑的場景，瞞騙政府與霍德爾。為此，他們請求又夏和陳晞援助。然而，政府早已察覺這個陰謀，派遣特務包圍浩瑜一行人。陳晞發動能力阻止政府的特務，卻因魔力過度而倒下。</p>
-<p>此時，命運之神再度現身。又夏懇求祂挽救陳晞性命，然而命運之神卻無能為力。儘管不明白自己確切的感情，又夏仍自願奉獻魔力，犧牲自己讓陳晞恢復意識。見識又夏的決心後，命運之神也隨之自盡，化為世界樹。至此，時間已經消逝，命運也已安息，陳晞頓悟這是解決諸神黃昏的另一種途徑。她舉槍射殺了隨後現身眼前的烏德爾，讓千古的恩怨畫下句點。</p>
+<p>此時，命運之神再度現身。又夏懇求祂挽救陳晞性命，然而命運之神卻無能為力。儘管不明白自己確切的感情，又夏仍自願奉獻魔力，犧牲自己讓陳晞恢復意識。見識又夏的決心後，命運之神也隨之自盡，化為世界樹。至此，時間已經消逝，命運也已安息，陳晞頓悟這是解決諸神黃昏的另一種途徑。她舉槍射殺了隨後現身眼前的霍德爾，讓千古的恩怨畫下句點。</p>
 <p>陳晞與又夏重逢耗費了近三十年光陰，不過對方卻為守護陳晞而犧牲性命。浩瑜相信這不是最圓滿的結局，於是提議再度回到過去。而在一旁目睹一切的秋天則決定要追隨浩瑜，不願放棄自己的感情。</p>
 <br/>
 
 <p>這集投入大量篇幅推進主線，解釋又夏和陳晞遇襲的原因。如果用 galgame 常見分類，這個結局或許可以歸類為 normal end 吧。陳晞在政府機構裡被馴化成冷血的劊子手，心儀對象又夏又喪失記憶。如果不動用能力，陳晞或許尚存一線生機。然而，作為光明之神的轉世者，陳晞是唯一有能力阻止諸神黃昏的人。而且，如果她不出手，最終政府也會殺害又夏。</p>
-<p>肩負又夏的承諾與世界的命運，本就不善社交的陳晞試圖像前一個時空的又夏一樣主動，卻適得其反，始終沒有打動又夏。最令人扼腕的是，陳晞幾乎犧牲了一切，結果又夏最終選擇相信她。明明聲稱還沒愛上自己，為何最後要出手相助？如果又夏更加絕情，陳晞或許能更坦然接受命運。可是故事的最後，又夏才希望陳晞「努力讓我愛上妳」，卻沒等到陳晞打動自己的心，就為她犧牲性命😭。</p>
+<p>肩負又夏的承諾與世界的命運，本就不善社交的陳晞試圖像前一個時空的又夏一樣主動，卻適得其反，始終沒有打動又夏。最令人扼腕的是，陳晞幾乎犧牲了一切，結果又夏最終選擇相信她。明明聲稱還沒愛上自己，為何最後要出手相助？如果又夏更加絕情，陳晞或許能更坦然接受命運。可是故事的最後，又夏才希望陳晞「努力讓我愛上妳」，卻沒等到陳晞打動自己的心，就為她犧牲性命。</p>
+<p>這集第二喜歡的場景是浩瑜跟秋天去夜市玩，然後秋天幫浩瑜贏得了一隻兩棲類娃娃。第一喜歡是後來浩瑜要求又夏倒轉時空時，千交代萬交代又夏不要弄丟她這個夏天的回憶。笑了，這不是很懂ㄇ。</p>
 <hr>
 <p>Irene309（2023）。夏日計劃(2)。台灣角川。</p>
+]]></content>
+      <tags>
+        <tag>sf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《夏日計劃(3)》</title>
+    <url>/irene309-2024-summer-project-season-3/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>《夏日計劃》的完結篇為眾神的恩怨畫下句點。陳晞、浩瑜與秋天再度回到過去。這一次，陳晞將魔力歸還世界之樹，捨棄作為巴德爾轉世者的身份，期望能以此終結與霍德爾的宿仇。</p>
+<span id="more"></span>
+
+<p>除了交代主線劇情，這集也用了許多篇幅解釋角色的動機，使劇情的銜接更合理。例如，秋天跟隨浩瑜回到過去，除了對感情因素外，也有現實的考量。秋天擔任處刑者的第一項任務是處決自己的雙親。秋天在故事中表現得率性樂天，可是此事仍成為她餘生的遺憾。她已經為又夏背叛政府，勢必難逃事後清算。因此，回到過去不僅給自己重來的機會，也能避免政府的懲處。秋天也深知浩瑜必隨陳晞而去。如果秋天執意留下，也只剩她獨自一人。回到過去不一定能改善現狀，卻能爭取更多與浩瑜相處的時光，或許能拉近彼此的距離。</p>
+<p>不過，浩瑜依舊回絕秋天的告白。一方面，浩瑜認為自己仍然依戀陳晞，另一方面，她不認為秋天能從這段關係中獲得幸福。浩瑜的父親既無能又酗酒，為了獲得政府補助，他主動將浩瑜送到機構管訓，導致她度過不幸的童年。或許是因為擁有預知能力，相較於其他角色，浩瑜對於命運深信不疑，也對不平等的待遇表現得逆來順受。</p>
+<p>相較於自己的福祉，浩瑜更在乎他人的幸福。在其它時空，陳晞和秋天都曾為浩瑜的境遇動下殺機。浩瑜不希望他們因此鑄下大錯，她尤其擔心一直喜歡著自己的秋天。在浩瑜預見的未來中，秋天每一次都因殺害浩瑜的父親而被處死。因此，浩瑜一再拒絕秋天，希望與其保持距離能避免悲劇發生。</p>
+<p>陳晞因為讓渡魔法而失去記憶，所以依靠浩瑜促成她與又夏的重逢。在這個時空，浩瑜與又夏成為摯友。由於這份交情，浩瑜順利說服又夏吞下世界樹的果實，取回前一時空的記憶。重獲記憶的又夏仍保持初衷，她想要保護孤兒院，改善無能力者的處境。另一方面，又夏也想起陳晞，想起她說：「一起改變世界。」，想起她們在上個時空一起相處的點點滴滴。儘管否認自己的渴望發自喜歡，又夏仍期盼見到陳晞並且和她共度日常。</p>
+<p>即使陳晞不再擁有魔力，她善解人意的個性以及想改變世界的熱情卻始終如一。陳晞的家境優渥，雙親都是著名的魔法使，兩人發明的魔力機械大幅改善人類生活品質。目睹無能力者的悲慘處境，陳晞認為自己獲得不應得的關注與待遇。她期望能擺脫雙親的名聲，靠自己達成目標；也想化解社會的不平等，不辜負她擁有的優越條件。</p>
+<p>又夏與陳晞在高中入學考試當天相遇。陳晞誤以為又夏需要幫忙而搭話，卻被對方的容貌吸引。她好奇對方如何得知自己的名字，也很好奇對方為何面露惆悵、欲言又止。</p>
+<p>此時，在校園另一角落的浩瑜與秋天，感受到又夏與陳晞相遇引發的魔力波動。至此，浩瑜也完成了她來到這個時空的任務，心中卻不免感到遺憾。她深知陳晞即使失去記憶也不會喜歡上她。在陳晞與又夏重逢後，只剩下自己還被困在原生家庭與政府機構的壓迫中。</p>
+<p>面對秋天毫不隱瞞的好感，浩瑜的內心感到十分矛盾。秋天是現在身邊唯一的熟人，與她相處也不用刻意掩飾。然而，浩瑜不希望秋天因為自己而受傷。她不在乎自己，只希望朋友平安。儘管預知能力為浩瑜帶來不幸，她相信同樣的能力可以促成他人幸福。在預知孤兒院被縱火之後，浩瑜以幫忙整理房間為由支離又夏，想要避免她因為目睹火警而失控。</p>
+<p>於是，又夏直到火警發生後才回到孤兒院。在現場，她碰到前來幫忙的陳晞。又夏想起陳晞的記憶不會受時空倒退影響，所以請她幫忙疏散孤兒院院生。時間倒轉後，陳晞提議使用魔力管理裝置緩慢釋放時間魔法，讓孤兒院建物的時間停滯以避免火災。</p>
+<p>為此，兩人再度來到陳晞的家中。不過在完整裝置設定後，陳晞卻發現自己希望又夏能夠留下。陳晞對又夏感興趣，想要與她相處，理解她的哀愁，分擔她受過的惡意。於是，她們再度同居，一起吃早餐、睡覺、出門上班、十指緊扣、親吻額頭、討論喜歡的定義、試探彼此的心意。</p>
+<p>她們各自下定決心。陳晞想要改善社會，她一方面認為自己擁有得太多，想要反抗自己的出身；另一方面，則想為又夏做點什麼，讓那張漂亮的臉蛋綻放笑容。又夏想要實現陳晞的願望，她不想辜負陳晞、浩瑜與秋天為自己的付出，也想認真回應陳晞的好感。</p>
+<p>在浩瑜提議下，又夏在高中成立了疑難雜症處理社，期望能從周圍開始改變世界。陳晞雖然加入弓道社，但也作為兼任社員協助又夏解決來自學生五花八門的難題。另外，陳晞也動用關係，說服爸媽成立了無能力者學校，培養他們一技之長。</p>
+<p>在參與弓道社活動時，陳晞喚起了其他時空的部分記憶。浩瑜和又夏向她解釋其他時空的事情，她們表示在陳晞主動放棄魔法之後，黑暗也隨之消失，從而化解巴德爾與霍德爾的恩怨。浩瑜表示，如果一切順利，這將是他們尋找已久的歸宿。</p>
+<p>一切看似一切好轉之時，他們接到魔法機構的委託：以浩瑜與秋天脫離機構條件，治療垂死的部長；相反地，若任務失敗，又夏將被徵收。陳晞一行人推論機構有不可告人的祕密，才會在擁有充足醫療資源的情況下，求助同樣需要隱瞞身分的又夏。果不其然，他們抵達現場，發現眼前瀕死的部長竟是奧丁之弟洛基。</p>
+<p>在又夏發動時間魔法，回溯洛基的軀體時，過往的記憶湧入陳晞腦中，讓她明白一切真相：洛基因為沒能獲得世界樹的能量，挑播巴德爾和霍德爾兄弟。霍德爾因為忌妒巴德爾受人愛戴而將其殺害。祂們的母親弗麗嘉震怒之下懲處洛基，引發了諸神黃昏。眾神在戰爭中死去，形成無數個平行時空。</p>
+<p>在所有的時空裡，洛基都一再煽動霍德爾殺害巴德爾以及不斷礙事的「時間」。得知又夏和自己的分離全是洛基促成的鬧劇，陳晞衝動地想殺了洛基，但被又夏勸阻。然而，陳晞看出契約的破綻，在洛基痊癒後才擊斃祂。</p>
+<p>失去部長後，魔法管制機構瓦解。浩瑜與秋天順利離開機構，但也失去經濟來源。因此，她們兩人共租套房並且到點心店打工。雖然她們關係密切，但浩瑜仍然堅稱自己沒有和秋天交往。又夏發動魔力後再次消失，所以浩瑜繼任疑難雜症處理社的負責人，維持社團的經營。由於失去又夏的保護，孤兒院還是付之一炬，但是因為無能力者學校蒸蒸日上，院生也有了新的去處。陳晞還是思念又夏，在她們約定的那天，她帶著一束花來到命運之神化為的世界樹下，與即使跨越了數個時空也想再次見面的女孩重逢。</p>
+<br/> 
+
+<p>故事總算在第三集迎來 True End。在 Galgame 或 RPG 遊戲中，如果玩家只顧著走主線，通常會錯過影響角色性格與決策的事件，導致劇情走向 Bad&#x2F;Normal End。想要達成 True End 不外乎要參與角色的成長背景與一些哩哩叩叩的支線（然後每個支線都要做出正確的選擇）。</p>
+<p>這一集，讀起來的氛圍也很像這種設計。前兩集（對應遊戲的第一、第二周目）培養角色好感度，並且通關多數的主線任務。最後一集反而少了很多解謎的情節，主要篇幅是在圓滿角色的形象。不管是陳晞想要改變世界的動機，或是浩瑜拒絕秋天的心理，都在這集有詳細的解釋。在最後也是用計對抗幕後黑手洛基，而不是經歷一場魔法大戰。</p>
+<p>這集最喜歡的是浩瑜初吻的場景。在成功喚起又夏的記憶後，浩瑜與秋天的任務也告一段落。秋天希望浩瑜能更關注她，但浩瑜卻堅持不肯，認為對方不會因此而開心。可是，雖然說著不要，但她還是接受秋天的 kiss 了。這種淒美ㄉ關係真是令人疼惜。最後浩瑜與秋天一起逃離機構、一起租屋、一起打工賺錢，雖然浩瑜否認正在交往，不過我覺得可以，有遺憾的兩人彼此陪伴也沒有不好啊。</p>
+<p>（另外，浩瑜以前的宿舍位於 27 樓，這數字跟作者的新作有關嗎？）</p>
+<hr>
+<p>Irene309（2024）。夏日計劃(3)。台灣角川。</p>
 ]]></content>
       <tags>
         <tag>sf</tag>
@@ -1978,36 +2015,6 @@
 <p>看動畫時，還能透過螢幕剪取保留畫面。可是看書時，碰到打動自己的橋段，卻沒什麼方便的手段可以保存和回顧，只好一邊抄寫一邊寫下這則故事摘要。不過，越是想保留這些內容，就越花時間在記錄，反而減少的閱讀的時間，這還真是兩難啊。</p>
 <hr>
 <p>入間人間（2018）。無法成為神明的少女（李逸凡譯）。台灣角川（原著出版於 2017 年）</p>
-]]></content>
-      <tags>
-        <tag>sf</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>攻殼機動隊 STAND ALONE COMPLEX</title>
-    <url>/kenji-2002-ghost-in-the-shell-stand-alone-complex/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這部由主線──笑臉男事件和支線──電子腦、義體普及引發新型社會問題組成。</p>
-<p>主線外的小故事可以獨立看，不影響通篇劇情理解。但是支線是以公安九課的各幹部為主角(還有思考機器人，塔奇克馬)，只聚焦笑面男事件就會錯失了解個別配角的機會。例如每次調查幾乎都是佗古薩上陣，笑面男的突破線索幾乎由這個有家庭沒義體化的new comer給找出來。</p>
-<p>不過我覺得笑面男事件結尾有點不過癮，反派顯得不夠力。前頭醞釀的巨大陰謀在夕陽西下的最後一集平淡結束，讓前一集被激起的情緒無處宣洩。</p>
-<span id="more"></span>
-
-<h1 id="電子腦和義體"><a href="#電子腦和義體" class="headerlink" title="電子腦和義體"></a>電子腦和義體</h1><p>本作最重要的設定為電子腦和義體：電子腦是把意識和網路、程式連結起來的設備。義體簡單如義肢、義眼用以取代或強化原有器官，複雜的可以直接作為意識的載體。</p>
-<p>依照電子腦的連結對象又可分為三種情形：硬體、軟體、其他人腦(在能把意識資訊化的世界觀裡，自我意識要算廣義的軟體了)，每個情形出現異常、矛盾或是和社會價值衝突就成為個小故事的題材。</p>
-<p>電腦有各種存取資料的結構搭配不同的演算法以解決問題。人腦雖然沒有堆疊、佇列或樹來保留學習記憶和本能，處理問題卻比電腦有創意多了。</p>
-<p>像 26 集「公安九課 再臨」最後面笑臉男和少佐講一堆名言時，課長把電子腦和連結到外部資料庫以聽懂他們的對話。要及時理解對話，就要對那些名言佳句有印象。</p>
-<p>印象，也就是記憶。當電子腦和資料庫連結架起，且讀取資料的時間能和人們讀取回憶一樣快時，就會產生有印象的錯覺。但假若資料庫沒辦法像人腦那樣存取，那讀取的速度就會受限於資料庫本身設計，這樣的連結頂多是不用手指划的智慧型手機。</p>
-<p>可是每個人記憶的模式不一樣，資料庫是為通用的查詢所設計，所以連結的同時也得對資料進行處理。也許是那瞬間將資料庫依序放進電子腦，再依照個人特質進行儲存。或者，因應電子腦的出現，個人資料庫和個人網站一樣跟著普及起來。畢竟前述方法仍要花時間在預先分類資料。</p>
-<h1 id="義體與本體感覺"><a href="#義體與本體感覺" class="headerlink" title="義體與本體感覺"></a>義體與本體感覺</h1><p>而第11集「在若林的森林」提到的電子腦自閉症，是電子腦和硬體連結不協調進一步到病症的例子。</p>
-<p>器官移植要解決免疫系統在生理上的排他，義體又是比器官移植更劇烈的變化還須克服心理上的排他。雖然組成身體的分子每分每秒都在代換，但是結構不變我還是能認得自己。但像是換肢手術的例子，就算免疫系統接納了捐贈者的器官，受贈者心理上仍須花時間適應。</p>
-<p>義體更是把腦以外全換為人造器官，面臨的心靈衝擊又更大，輕者只是感知遲鈍地像醉酒，重者產生自閉症、甚至變植物人完全無法協調。像少佐很小的時候就全身義體化，要隨成長更換義體，每次都要對更大的身體重新適應（難怪叫ghost in shell , 隨成長更換的外骨骼）</p>
-<p>另外比較小的問題就是電子腦和武器做連結若不能達成人機一體的同步率，會造成使用者的不便(例如 15 集「機器們的時間」裡面的新型狙擊裝置)</p>
-<h1 id="電子腦與自我意識"><a href="#電子腦與自我意識" class="headerlink" title="電子腦與自我意識"></a>電子腦與自我意識</h1><p>除了高同步率(即操作、讀取的效率)，電子腦也得內建系統避免人與人的界線因電子腦間的連結而消弭。畢竟讀取別人的腦和讀取自己的腦一樣便捷，還能認得出我是誰嗎？</p>
-<p>像第 18 集「暗殺二重奏」 連結上父親記憶的兒子在舉止上越來越像父親，甚至在兒子身上產生父親的人格。第 21 集「丟棄的軌跡」巴特錯把佗古薩重傷的時的情緒當成自己的情緒變得暴躁起來。</p>
-<p>電子腦發明前，人的意識被肉身包覆，要彼此影響只能靠有限的五官(語言、行為)，雖然意念轉換成過程有可能造成誤會，但也保護了個體的獨立性：只能用嘴巴說服、用行為證明、用金錢誘惑……只能從外在下手，而且一個人即便行為舉止受制於人，仍能保有自我思考這最後的自由。</p>
-<p>一旦原始的防壁敞開，意識就有被人操作的危險(笑臉男就常控制別人意識幫她代言)，所以也就有個人防壁的產生。</p>
-<p>然而，也有不設防壁的例子，讓別人不需迂迴地經過文字、圖畫、影像、聲音來理解自己的概念，例如 15 集「機器們的時間」把自己電子腦開放的導演，讓與之連結的人沉迷於其腦海裡的電影構想而無法自拔。</p>
-<h1 id="義體、電子腦與社會"><a href="#義體、電子腦與社會" class="headerlink" title="義體、電子腦與社會"></a>義體、電子腦與社會</h1><p>至於價值觀、宗教的反對電子腦化，貧富不均導致義體分配不均……都是些老問題，癥結點往往不是出在科技本身。</p>
-<p>像是宗教和價值觀的反對是個人理念，貧富不均則是社會體制的問題，就算沒有電子腦換成別的發明都會持續存在。</p>
 ]]></content>
       <tags>
         <tag>sf</tag>
@@ -2088,6 +2095,36 @@
 ]]></content>
       <tags>
         <tag>writing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>攻殼機動隊 STAND ALONE COMPLEX</title>
+    <url>/kenji-2002-ghost-in-the-shell-stand-alone-complex/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這部由主線──笑臉男事件和支線──電子腦、義體普及引發新型社會問題組成。</p>
+<p>主線外的小故事可以獨立看，不影響通篇劇情理解。但是支線是以公安九課的各幹部為主角(還有思考機器人，塔奇克馬)，只聚焦笑面男事件就會錯失了解個別配角的機會。例如每次調查幾乎都是佗古薩上陣，笑面男的突破線索幾乎由這個有家庭沒義體化的new comer給找出來。</p>
+<p>不過我覺得笑面男事件結尾有點不過癮，反派顯得不夠力。前頭醞釀的巨大陰謀在夕陽西下的最後一集平淡結束，讓前一集被激起的情緒無處宣洩。</p>
+<span id="more"></span>
+
+<h1 id="電子腦和義體"><a href="#電子腦和義體" class="headerlink" title="電子腦和義體"></a>電子腦和義體</h1><p>本作最重要的設定為電子腦和義體：電子腦是把意識和網路、程式連結起來的設備。義體簡單如義肢、義眼用以取代或強化原有器官，複雜的可以直接作為意識的載體。</p>
+<p>依照電子腦的連結對象又可分為三種情形：硬體、軟體、其他人腦(在能把意識資訊化的世界觀裡，自我意識要算廣義的軟體了)，每個情形出現異常、矛盾或是和社會價值衝突就成為個小故事的題材。</p>
+<p>電腦有各種存取資料的結構搭配不同的演算法以解決問題。人腦雖然沒有堆疊、佇列或樹來保留學習記憶和本能，處理問題卻比電腦有創意多了。</p>
+<p>像 26 集「公安九課 再臨」最後面笑臉男和少佐講一堆名言時，課長把電子腦和連結到外部資料庫以聽懂他們的對話。要及時理解對話，就要對那些名言佳句有印象。</p>
+<p>印象，也就是記憶。當電子腦和資料庫連結架起，且讀取資料的時間能和人們讀取回憶一樣快時，就會產生有印象的錯覺。但假若資料庫沒辦法像人腦那樣存取，那讀取的速度就會受限於資料庫本身設計，這樣的連結頂多是不用手指划的智慧型手機。</p>
+<p>可是每個人記憶的模式不一樣，資料庫是為通用的查詢所設計，所以連結的同時也得對資料進行處理。也許是那瞬間將資料庫依序放進電子腦，再依照個人特質進行儲存。或者，因應電子腦的出現，個人資料庫和個人網站一樣跟著普及起來。畢竟前述方法仍要花時間在預先分類資料。</p>
+<h1 id="義體與本體感覺"><a href="#義體與本體感覺" class="headerlink" title="義體與本體感覺"></a>義體與本體感覺</h1><p>而第11集「在若林的森林」提到的電子腦自閉症，是電子腦和硬體連結不協調進一步到病症的例子。</p>
+<p>器官移植要解決免疫系統在生理上的排他，義體又是比器官移植更劇烈的變化還須克服心理上的排他。雖然組成身體的分子每分每秒都在代換，但是結構不變我還是能認得自己。但像是換肢手術的例子，就算免疫系統接納了捐贈者的器官，受贈者心理上仍須花時間適應。</p>
+<p>義體更是把腦以外全換為人造器官，面臨的心靈衝擊又更大，輕者只是感知遲鈍地像醉酒，重者產生自閉症、甚至變植物人完全無法協調。像少佐很小的時候就全身義體化，要隨成長更換義體，每次都要對更大的身體重新適應（難怪叫ghost in shell , 隨成長更換的外骨骼）</p>
+<p>另外比較小的問題就是電子腦和武器做連結若不能達成人機一體的同步率，會造成使用者的不便(例如 15 集「機器們的時間」裡面的新型狙擊裝置)</p>
+<h1 id="電子腦與自我意識"><a href="#電子腦與自我意識" class="headerlink" title="電子腦與自我意識"></a>電子腦與自我意識</h1><p>除了高同步率(即操作、讀取的效率)，電子腦也得內建系統避免人與人的界線因電子腦間的連結而消弭。畢竟讀取別人的腦和讀取自己的腦一樣便捷，還能認得出我是誰嗎？</p>
+<p>像第 18 集「暗殺二重奏」 連結上父親記憶的兒子在舉止上越來越像父親，甚至在兒子身上產生父親的人格。第 21 集「丟棄的軌跡」巴特錯把佗古薩重傷的時的情緒當成自己的情緒變得暴躁起來。</p>
+<p>電子腦發明前，人的意識被肉身包覆，要彼此影響只能靠有限的五官(語言、行為)，雖然意念轉換成過程有可能造成誤會，但也保護了個體的獨立性：只能用嘴巴說服、用行為證明、用金錢誘惑……只能從外在下手，而且一個人即便行為舉止受制於人，仍能保有自我思考這最後的自由。</p>
+<p>一旦原始的防壁敞開，意識就有被人操作的危險(笑臉男就常控制別人意識幫她代言)，所以也就有個人防壁的產生。</p>
+<p>然而，也有不設防壁的例子，讓別人不需迂迴地經過文字、圖畫、影像、聲音來理解自己的概念，例如 15 集「機器們的時間」把自己電子腦開放的導演，讓與之連結的人沉迷於其腦海裡的電影構想而無法自拔。</p>
+<h1 id="義體、電子腦與社會"><a href="#義體、電子腦與社會" class="headerlink" title="義體、電子腦與社會"></a>義體、電子腦與社會</h1><p>至於價值觀、宗教的反對電子腦化，貧富不均導致義體分配不均……都是些老問題，癥結點往往不是出在科技本身。</p>
+<p>像是宗教和價值觀的反對是個人理念，貧富不均則是社會體制的問題，就算沒有電子腦換成別的發明都會持續存在。</p>
+]]></content>
+      <tags>
+        <tag>sf</tag>
       </tags>
   </entry>
   <entry>
@@ -4475,6 +4512,33 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>卡西尼號與行星保護</title>
+    <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
+<p>歷經20年的太空旅行，美國航太總署（NASA）的卡西尼號（Cassini）太空船今天將最後的訊號傳回地球後，高速衝撞土星，以分解蒸發的壯烈方式，結束13年的土星任務。</p>
+</blockquote>
+<p>卡西尼號是艘軌道探測船，任務結束後沒有能量脫離行星軌道，所以不能像飛掠探測器一樣（航海家 II）飛向深空。它會留在土星系統中，最終因為故障或其他緣故減速而失控墜入土星或其他衛星。</p>
+<p>然而土星的衛星中有幾個可能有生命存在（尤其是土衛六泰坦），所以主動讓卡西尼號墜入較無生命可能的土星中，以免滅菌不徹底的機體造成汙染。不過，這種壯烈的自殺已經不是第一次了，2003 年伽利略探測船也為保護木衛二歐羅巴而撞入木星濃厚的大氣層中。</p>
+<p>雖然這邊只提到墜毀階段，其實所有的太空任務都有防止生物汙染其他天體的措施，不過依照天體性質和任務類別可以分為五類。此處，我把重點聚焦在分類的依據和理由，而不是防範措施（詳細作法可以在厚厚的行星保護指導手冊中找到。）</p>
+<h2 id="第一類任務"><a href="#第一類任務" class="headerlink" title="第一類任務"></a>第一類任務</h2><p>第一類任務是飛掠、繞行或登陸月球、水星和多數小行星，這些天體沒有足夠的液態水維持生命，所以除了例行消毒外，探測船並不需特別處理。</p>
+<h2 id="第二類任務"><a href="#第二類任務" class="headerlink" title="第二類任務"></a>第二類任務</h2><p>第二類任務則涉及那些可能沒有生物，但是對於生命起源研究有重要參考價值的天體。例如：土衛六、金星、類木行星和彗星。</p>
+<p>2014年羅賽塔號登陸彗星就是第二類任務。那次任務檢測到了胺基酸、醇類等有機物，它們很可能透過彗星撞擊為早期地球帶來形成生命的必要分子。（這些有機物質可能是彗星經過星際塵埃時沾上，或是經過恆星附近起反應形成的。順道一提，首次在星際中發現胺基酸的是師大的管一政教授喔！）</p>
+<p>雖然金星現在因為失控的溫室效應已經成為高溫煉獄，但是在太陽還沒今天熾熱、溫室效應也沒失控前可能存在一段宜居的時候。另外金星大氣層中有個溫度合宜，且有硫化物補給的區間，若當初有生命誕生，也許能在此續命。相關任務有 2015 年 ESA 的金星快車（繞行任務）和先前蘇聯因大氣壓扁而早夭的登陸任務。</p>
+<p>土衛六和土星因為可能有液態水、有機物存在所以同屬二類，但是土衛六多了可棲息的表面以及大氣層中的有機反應，所以研究價值還好過土星。本次墜毀的卡西尼號曾在 2005 年釋放惠更斯探測器登陸土衛六，可惜登陸不久便失聯了，所幸有留下空降時和登陸當下的照片，大家可以找看看，我覺得看起像是乾涸的水庫……</p>
+<h2 id="第三類任務和第四類任務"><a href="#第三類任務和第四類任務" class="headerlink" title="第三類任務和第四類任務"></a>第三類任務和第四類任務</h2><p>第三類是火星和歐羅巴（木衛二）的「繞行」、「飛掠」任務，這兩天體是太陽系內最有可能找到地外生命證據（無論死活）的地方，執行第三類任務的太空船都要經過嚴密滅菌才行。</p>
+<p>火星過去可能有水流、磁場和大氣層，這些都是利於生命誕生維持的要素；即便是今日，生物也可能在岩石與冰層間的夾縫中生存。另一個誘人的證據是1984年找到的火星隕石 ALH84001，上頭有疑似細菌化石、生物代謝排遺。</p>
+<p>歐羅巴冰層下可能有液態水層，這些水層不僅和岩層接觸促進物質互動（而土衛六可能是隔絕水層），也能隔絕致命輻射保護生命體。</p>
+<p>由於這兩顆天體可居，即便沒有原生種，也擔心地球生物在上頭大肆繁殖影響後續監控，所以火星與歐羅巴的「登陸」升級為第四類任務。</p>
+<p>雖然我們猜測火星很可能有生物，可是1976年的海盜I&#x2F;II登陸任務卻沒有發現關鍵證據。因為第四類任務的預備很麻煩，所以為了往後探測任務方便，又把它分為三個子類，滅菌等級漸增：非適居區登陸（防止地球細菌汙染火星）、生命探測任務（防止地球細菌干擾實驗）、適居區登陸（防止雙向汙染）。</p>
+<h2 id="第五類任務"><a href="#第五類任務" class="headerlink" title="第五類任務"></a>第五類任務</h2><p>至於第五類則是所有回收太空船到地月系統的任務，涵蓋月球是因為它是將來重點開發區域，若受到地外生物汙染，登陸月球會升級到二三類任務，太空船多了一堆滅菌要求會讓開發變得十分不方便。前陣子 NASA 招募的行星保護官就是要專職這種任務的調查工作。</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>最後提一提行星保護的規範。最早是寫在聯合國於 1967 年制定的《關於各國探索和利用包括月球和其他天體在內外層空間活動的原則條約》當中的第九條：<br>各締約國從事研究、探索外層空間（包括月球和其他天體）時，應避免使其遭受有害的污染，以及地球以外的物質，使地球環境發生不利的變化。<br>詳細指導方針則由國際科學理事會下轄的太空研究委員會負責負責。</p>
+<p>由於當時台灣還沒退出聯合國所以也簽了這條約，想看詳細內容可以去網路上查中文的手寫文本。雖然台灣至今仍沒有進行任何登陸任務，不過得知我們也曾籌畫整個宇宙開發的小小部分，仍有莫名的參與感。</p>
+]]></content>
+      <tags>
+        <tag>life in the universe</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>可能反映與嬰兒飲食相關的腸道菌相演替機制的現象</title>
     <url>/phenomena-reflecting-successional-mechanisms-of-gut-microbiota-in-infant-diet/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>人體腸道菌群建立攸關個體健康，為理解與菌群相關的致病機制並精進目前的干預治療手段，腸道微生物學應逐步從關聯分析邁向機制研究。</p>
@@ -4579,33 +4643,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>ecology</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>卡西尼號與行星保護</title>
-    <url>/planetary-protection-rules-and-the-end-of-cassini-probe/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
-<p>歷經20年的太空旅行，美國航太總署（NASA）的卡西尼號（Cassini）太空船今天將最後的訊號傳回地球後，高速衝撞土星，以分解蒸發的壯烈方式，結束13年的土星任務。</p>
-</blockquote>
-<p>卡西尼號是艘軌道探測船，任務結束後沒有能量脫離行星軌道，所以不能像飛掠探測器一樣（航海家 II）飛向深空。它會留在土星系統中，最終因為故障或其他緣故減速而失控墜入土星或其他衛星。</p>
-<p>然而土星的衛星中有幾個可能有生命存在（尤其是土衛六泰坦），所以主動讓卡西尼號墜入較無生命可能的土星中，以免滅菌不徹底的機體造成汙染。不過，這種壯烈的自殺已經不是第一次了，2003 年伽利略探測船也為保護木衛二歐羅巴而撞入木星濃厚的大氣層中。</p>
-<p>雖然這邊只提到墜毀階段，其實所有的太空任務都有防止生物汙染其他天體的措施，不過依照天體性質和任務類別可以分為五類。此處，我把重點聚焦在分類的依據和理由，而不是防範措施（詳細作法可以在厚厚的行星保護指導手冊中找到。）</p>
-<h2 id="第一類任務"><a href="#第一類任務" class="headerlink" title="第一類任務"></a>第一類任務</h2><p>第一類任務是飛掠、繞行或登陸月球、水星和多數小行星，這些天體沒有足夠的液態水維持生命，所以除了例行消毒外，探測船並不需特別處理。</p>
-<h2 id="第二類任務"><a href="#第二類任務" class="headerlink" title="第二類任務"></a>第二類任務</h2><p>第二類任務則涉及那些可能沒有生物，但是對於生命起源研究有重要參考價值的天體。例如：土衛六、金星、類木行星和彗星。</p>
-<p>2014年羅賽塔號登陸彗星就是第二類任務。那次任務檢測到了胺基酸、醇類等有機物，它們很可能透過彗星撞擊為早期地球帶來形成生命的必要分子。（這些有機物質可能是彗星經過星際塵埃時沾上，或是經過恆星附近起反應形成的。順道一提，首次在星際中發現胺基酸的是師大的管一政教授喔！）</p>
-<p>雖然金星現在因為失控的溫室效應已經成為高溫煉獄，但是在太陽還沒今天熾熱、溫室效應也沒失控前可能存在一段宜居的時候。另外金星大氣層中有個溫度合宜，且有硫化物補給的區間，若當初有生命誕生，也許能在此續命。相關任務有 2015 年 ESA 的金星快車（繞行任務）和先前蘇聯因大氣壓扁而早夭的登陸任務。</p>
-<p>土衛六和土星因為可能有液態水、有機物存在所以同屬二類，但是土衛六多了可棲息的表面以及大氣層中的有機反應，所以研究價值還好過土星。本次墜毀的卡西尼號曾在 2005 年釋放惠更斯探測器登陸土衛六，可惜登陸不久便失聯了，所幸有留下空降時和登陸當下的照片，大家可以找看看，我覺得看起像是乾涸的水庫……</p>
-<h2 id="第三類任務和第四類任務"><a href="#第三類任務和第四類任務" class="headerlink" title="第三類任務和第四類任務"></a>第三類任務和第四類任務</h2><p>第三類是火星和歐羅巴（木衛二）的「繞行」、「飛掠」任務，這兩天體是太陽系內最有可能找到地外生命證據（無論死活）的地方，執行第三類任務的太空船都要經過嚴密滅菌才行。</p>
-<p>火星過去可能有水流、磁場和大氣層，這些都是利於生命誕生維持的要素；即便是今日，生物也可能在岩石與冰層間的夾縫中生存。另一個誘人的證據是1984年找到的火星隕石 ALH84001，上頭有疑似細菌化石、生物代謝排遺。</p>
-<p>歐羅巴冰層下可能有液態水層，這些水層不僅和岩層接觸促進物質互動（而土衛六可能是隔絕水層），也能隔絕致命輻射保護生命體。</p>
-<p>由於這兩顆天體可居，即便沒有原生種，也擔心地球生物在上頭大肆繁殖影響後續監控，所以火星與歐羅巴的「登陸」升級為第四類任務。</p>
-<p>雖然我們猜測火星很可能有生物，可是1976年的海盜I&#x2F;II登陸任務卻沒有發現關鍵證據。因為第四類任務的預備很麻煩，所以為了往後探測任務方便，又把它分為三個子類，滅菌等級漸增：非適居區登陸（防止地球細菌汙染火星）、生命探測任務（防止地球細菌干擾實驗）、適居區登陸（防止雙向汙染）。</p>
-<h2 id="第五類任務"><a href="#第五類任務" class="headerlink" title="第五類任務"></a>第五類任務</h2><p>至於第五類則是所有回收太空船到地月系統的任務，涵蓋月球是因為它是將來重點開發區域，若受到地外生物汙染，登陸月球會升級到二三類任務，太空船多了一堆滅菌要求會讓開發變得十分不方便。前陣子 NASA 招募的行星保護官就是要專職這種任務的調查工作。</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>最後提一提行星保護的規範。最早是寫在聯合國於 1967 年制定的《關於各國探索和利用包括月球和其他天體在內外層空間活動的原則條約》當中的第九條：<br>各締約國從事研究、探索外層空間（包括月球和其他天體）時，應避免使其遭受有害的污染，以及地球以外的物質，使地球環境發生不利的變化。<br>詳細指導方針則由國際科學理事會下轄的太空研究委員會負責負責。</p>
-<p>由於當時台灣還沒退出聯合國所以也簽了這條約，想看詳細內容可以去網路上查中文的手寫文本。雖然台灣至今仍沒有進行任何登陸任務，不過得知我們也曾籌畫整個宇宙開發的小小部分，仍有莫名的參與感。</p>
-]]></content>
-      <tags>
-        <tag>life in the universe</tag>
       </tags>
   </entry>
   <entry>
@@ -4749,6 +4786,70 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
   </entry>
   <entry>
+    <title>ROSALIND｜Reversal Distance (REAR)</title>
+    <url>/reversal-distance/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 5 對長度為 10 的數列，計算將各對數列互相轉換所需的最少反轉次數。</p>
+<blockquote>
+<p>A reversal of a permutation creates a new permutation by inverting some interval of the permutation; (5,2,3,1,4) , (5,3,4,1,2) , and (4,1,2,3,5) are all reversals of (5,3,2,1,4) . The reversal distance between two permutations π and σ , written drev(π,σ) , is the minimum number of reversals required to transform π into σ (this assumes that π and σ have the same length).</p>
+<p>Given: A collection of at most 5 pairs of permutations, all of which have length 10.</p>
+<p>Return: The reversal distance between each permutation pair.</p>
+</blockquote>
+<p>(<a href="https://rosalind.info/problems/rear/">https://rosalind.info/problems/rear/</a>)</p>
+<span id="more"></span>
+
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>染色體特定片段前後翻轉的現象稱為 inversion，它是基因體重排最常見的形式。計算兩條染色體透過 inversion 互相轉換所需的最少次數，可視同求解兩數列之間的反轉距離（reversal distance）。</p>
+<p>假設我們有一個起始數列和一個目標數列。若兩數列完全相同，則反轉距離為 0，不須進行任何反轉操作。但如果兩者不一致，可先列出起始數列經過一次反轉後可能產生的所有數列，再檢查目標數列是否出現在新生成的數列中。</p>
+<p>如果找到目標數列，就回報所需的反轉次數；如果沒找到，就列出這些數列再次返喘後可能產生的所有數列。</p>
+<p>重複上述過程，列出經過 n 次反轉後可能產生的所有數列，並且檢查目標數列是否出現其中，直到找到目標數列或窮盡所有可能為止。</p>
+<p>為了實現這個算法，首先需要一個副程式，用於列出一個數列經過一次反轉後可能產生的所有數列。簡言之，在數列上任選兩個位置，用 <code>[::-1]</code> 反轉居於其間的子數列，再連結反轉數列與剩餘數列。</p>
+<p>這些數列可以儲存在 list、tuple、或 set 等資料型別中。我選擇使用 set 是因為它能自動排除重複的數列，減少多餘的比較。其次，與 list 和 tuple 相比，判斷一個元素是否在 set 之中只需要常數時間，能減少比較的時間成本。最後，set 支援交集、聯集和差集等操作，在比較數列集合時有比較多彈性。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">swap</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Generate all possible subsequences of a tuple by reversing segments.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        l (tuple): Input tuple, e.g., (1, 2).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        set: Set of tuples with reversed segments, e.g., &#123;(1, 2), (2, 1)&#125;.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        l[:i] + l[i:j][::-<span class="number">1</span>] + l[j:]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(l) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(j)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>除此之外，計算反轉距離還需要以下三項資訊：</p>
+<ul>
+<li>curr：記錄準備與目標數列比較的數列集合</li>
+<li>visited：記錄已經檢查過的數列集合</li>
+<li>dist：記錄當前的反轉次數</li>
+</ul>
+<p>具體的流程和程式碼如下：</p>
+<ol>
+<li>檢查目標數列是否出現在 curr 中。若有找到目標數列，則回報當前的反轉次數  dist。</li>
+<li>若沒有找到，則依序反轉 curr 中每個數列，但要排除掉已經檢查過的數列visited。</li>
+<li>將新生成的反轉數列納入已檢查過的數列集合 visited，以免重複比較。</li>
+<li>將所有可能的反轉結果更新到 curr，以便下一輪比較。同時，將當前反轉次數 dist 的值加 1。</li>
+<li>更新完畢後，回到步驟 1. 繼續搜索，直到找出目標數列（回傳 dist），或是檢查過所有可能性仍未找到目標數列（回傳 -1）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rev_dist</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate the minimum number of reversals required to transform tuple s1 to tuple s2.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        s1 (tuple): Starting tuple.</span></span><br><span class="line"><span class="string">        s2 (tuple): Target tuple.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        int: Minimum number of swaps required, or -1 if transformation is not possible.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    curr, visited = &#123;s1&#125;, &#123;s1&#125;</span><br><span class="line">    dist = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> curr:</span><br><span class="line">        <span class="keyword">if</span> s2 <span class="keyword">in</span> curr:</span><br><span class="line">            <span class="keyword">return</span> dist</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            next_step = <span class="built_in">set</span>()</span><br><span class="line">            <span class="keyword">for</span> e <span class="keyword">in</span> curr:</span><br><span class="line">                next_step.update(swap(e).difference(visited))</span><br><span class="line">                visited.update(next_step)</span><br><span class="line">            curr = next_step</span><br><span class="line">            dist = dist + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><p>這題的觀念其實不難理解，但真正的挑戰在於計算效率。隨著數列長度和反轉次數增加，算法的時間複雜度會呈指數增長。依照題目要求的數列長度測試，我的電腦大約只能處理到 4-5 次反轉，再多的反轉次數就無法在合理的時間內算出來。</p>
+<p>想要評估計算反轉距離的成本可以考慮以下三個因素：比較成本（$c$, Cost）、可能的數列數量（$n$, Number）、檢查的深度（$d$, Depth or Distance），即 $cn^d$。為了提升計算效率，可以從這三項因素著手。</p>
+<ul>
+<li>降低每次比較的成本，例如以 set 取代 list。</li>
+<li>降低可能的數列數量，例如排除已檢查過的數列或是只生成有用的數列等。</li>
+<li>降低檢查深度，例如同時從數列的前端和後端開始檢查。</li>
+</ul>
+<p>這些方式都能提升計算效率，但適用的情境不盡相同。如果數列長度很短，可能的反轉結果會比較少，反轉距離也不長，那麼關鍵就在於降低每次比較的成本。反之，如果像這題一樣需要處理較長的數列，那麼重點就轉移到了控制可能的數列數量和檢查深度上。</p>
+<p>雖然排除已檢查過的數列能起到一定作用，但問題在於反轉距離還是太長了，相較於指數增長的待檢查數列，重複數列的數量顯得微不足道。</p>
+<p>另一種策略是在生成可能的反轉數列時，只生成有機會轉換為目標數列的數列。這方法若能有效降低 $n$ 值，便能容忍更長的反轉距離以及比較數列的長度。</p>
+<p>然而，這想法雖然理想，但它的困難在於不容易找到正確的篩選規則來判斷一個數列是否有可能轉換為目標數列。即使找到一項不錯的規則，但也很難保證這規則不會遺漏某西可能性，導致它雖然能在有限時間內回應，卻未必是最優解。</p>
+<p>最後一種手段則相對值觀，就是分別從數列的前後端開始搜索，這樣可以將檢查的深度減半。如題目要求，對於長度為 10 的數列，即使窮舉，最多經過 9 次反轉便能轉會為任意數列。</p>
+<p>如前所述，反轉距離大於 4 - 5 次就達到當前計算能力的極限，從兩端同時搜索，正好能將檢查深度控制在極限以內。</p>
+<p>雙向排查的程式碼如下所示。為了降低主程式的複雜度，我新增了副程式 get_next_steps，用於生成數列集合的每個元素在經過一次反轉後可能產生的所有數列。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_next_steps</span>(<span class="params">curr, visited</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Generates next steps by swapping elements in `curr`, excluding those in `visited`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        curr (set): Current states.</span></span><br><span class="line"><span class="string">        visited (set): States to exclude.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        set: Next possible states.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    next_steps = <span class="built_in">set</span>()</span><br><span class="line">    <span class="keyword">for</span> e <span class="keyword">in</span> curr:</span><br><span class="line">        next_steps.update(swap(e).difference(visited))</span><br><span class="line">    <span class="keyword">return</span> next_steps</span><br></pre></td></tr></table></figure>
+
+<p>其餘部分則與只從一端開始檢查的方式相似，只是要有兩組 curr 和 visited 分別存儲從前後端檢查數列的資訊。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rev_dist</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    f_curr, f_visited, b_curr, b_visited = &#123;s1&#125;, &#123;s1&#125;, &#123;s2&#125;, &#123;s2&#125;</span><br><span class="line">    dist = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> f_curr <span class="keyword">and</span> b_curr:</span><br><span class="line">        <span class="keyword">if</span> f_curr.intersection(b_curr):</span><br><span class="line">            <span class="keyword">return</span> dist</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            dist = dist + <span class="number">1</span></span><br><span class="line">            f_curr = get_next_steps(f_curr, f_visited)</span><br><span class="line">            f_visited.update(f_curr)</span><br><span class="line">        <span class="keyword">if</span> b_curr.intersection(f_curr):</span><br><span class="line">            <span class="keyword">return</span> dist</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            dist = dist + <span class="number">1</span></span><br><span class="line">            b_curr = get_next_steps(b_curr, b_visited)</span><br><span class="line">            b_visited.update(b_curr)</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="其它解法"><a href="#其它解法" class="headerlink" title="其它解法"></a>其它解法</h1><p>說點題外話，這題算得上 Rosalind 平台的東巴了，我想半天解不出來，看了討論區才知道原來有那麼多人也覺得出題方在整人。儘管題目提示 “Don’t be afraid to try an ugly solution.”，但真想用暴力法解題，是絕對沒辦法在規定時間內通過測試的。</p>
+<p>以下是我找到的另一種基於雙向搜索的解法，雖然它沒有處理起始數列與目標數列無法互相轉換的狀況，但整體想法卻清晰易懂。這方法首先將輸入的數列轉換為 set 以利比較，接著判斷兩者是否有交集。如果有，則直接回傳當前的反轉距離；反之，則為每個數列集合中的元素生成所有可能的數列，再判斷新生成的數列集合彼此是否交集。如果仍沒有交集，就遞迴呼叫這個副程式，持續搜索下一層，直到找到交集為止。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rev_dist</span>(<span class="params">s1, s2, dist=<span class="number">0</span></span>):</span><br><span class="line">   s1 = &#123;s1&#125; <span class="keyword">if</span> <span class="built_in">isinstance</span>(s, <span class="built_in">tuple</span>) <span class="keyword">else</span> s1</span><br><span class="line">   s2 = &#123;s2&#125; <span class="keyword">if</span> <span class="built_in">isinstance</span>(t, <span class="built_in">tuple</span>) <span class="keyword">else</span> s2</span><br><span class="line">   <span class="keyword">if</span> s1.intersection(s2):</span><br><span class="line">        <span class="keyword">return</span> dist</span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">        next_s1 = &#123; swap_e <span class="keyword">for</span> e <span class="keyword">in</span> s1 <span class="keyword">for</span> swap_e <span class="keyword">in</span> swap(s1) &#125;</span><br><span class="line">        next_s2 = &#123; swap_e <span class="keyword">for</span> e <span class="keyword">in</span> s2 <span class="keyword">for</span> swap_e <span class="keyword">in</span> swap(s2) &#125;</span><br><span class="line">        <span class="keyword">if</span> s1.intersection(next_s1) <span class="keyword">or</span> s2.intersection(next_s1):</span><br><span class="line">            <span class="keyword">return</span> dist + <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> next_s1.intersection(next_s2):</span><br><span class="line">            <span class="keyword">return</span> dist + <span class="number">2</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> rev_dist(next_s1, next_s2, dist + <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>rosalind</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>從期望的結果反推現在要採取的行動</title>
     <url>/reverse-engineering-actions-from-desired-outcomes/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><blockquote>
@@ -4813,70 +4914,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>career</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ROSALIND｜Reversal Distance (REAR)</title>
-    <url>/reversal-distance/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定 5 對長度為 10 的數列，計算將各對數列互相轉換所需的最少反轉次數。</p>
-<blockquote>
-<p>A reversal of a permutation creates a new permutation by inverting some interval of the permutation; (5,2,3,1,4) , (5,3,4,1,2) , and (4,1,2,3,5) are all reversals of (5,3,2,1,4) . The reversal distance between two permutations π and σ , written drev(π,σ) , is the minimum number of reversals required to transform π into σ (this assumes that π and σ have the same length).</p>
-<p>Given: A collection of at most 5 pairs of permutations, all of which have length 10.</p>
-<p>Return: The reversal distance between each permutation pair.</p>
-</blockquote>
-<p>(<a href="https://rosalind.info/problems/rear/">https://rosalind.info/problems/rear/</a>)</p>
-<span id="more"></span>
-
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>染色體特定片段前後翻轉的現象稱為 inversion，它是基因體重排最常見的形式。計算兩條染色體透過 inversion 互相轉換所需的最少次數，可視同求解兩數列之間的反轉距離（reversal distance）。</p>
-<p>假設我們有一個起始數列和一個目標數列。若兩數列完全相同，則反轉距離為 0，不須進行任何反轉操作。但如果兩者不一致，可先列出起始數列經過一次反轉後可能產生的所有數列，再檢查目標數列是否出現在新生成的數列中。</p>
-<p>如果找到目標數列，就回報所需的反轉次數；如果沒找到，就列出這些數列再次返喘後可能產生的所有數列。</p>
-<p>重複上述過程，列出經過 n 次反轉後可能產生的所有數列，並且檢查目標數列是否出現其中，直到找到目標數列或窮盡所有可能為止。</p>
-<p>為了實現這個算法，首先需要一個副程式，用於列出一個數列經過一次反轉後可能產生的所有數列。簡言之，在數列上任選兩個位置，用 <code>[::-1]</code> 反轉居於其間的子數列，再連結反轉數列與剩餘數列。</p>
-<p>這些數列可以儲存在 list、tuple、或 set 等資料型別中。我選擇使用 set 是因為它能自動排除重複的數列，減少多餘的比較。其次，與 list 和 tuple 相比，判斷一個元素是否在 set 之中只需要常數時間，能減少比較的時間成本。最後，set 支援交集、聯集和差集等操作，在比較數列集合時有比較多彈性。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">swap</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Generate all possible subsequences of a tuple by reversing segments.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        l (tuple): Input tuple, e.g., (1, 2).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        set: Set of tuples with reversed segments, e.g., &#123;(1, 2), (2, 1)&#125;.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        l[:i] + l[i:j][::-<span class="number">1</span>] + l[j:]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(l) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(j)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>除此之外，計算反轉距離還需要以下三項資訊：</p>
-<ul>
-<li>curr：記錄準備與目標數列比較的數列集合</li>
-<li>visited：記錄已經檢查過的數列集合</li>
-<li>dist：記錄當前的反轉次數</li>
-</ul>
-<p>具體的流程和程式碼如下：</p>
-<ol>
-<li>檢查目標數列是否出現在 curr 中。若有找到目標數列，則回報當前的反轉次數  dist。</li>
-<li>若沒有找到，則依序反轉 curr 中每個數列，但要排除掉已經檢查過的數列visited。</li>
-<li>將新生成的反轉數列納入已檢查過的數列集合 visited，以免重複比較。</li>
-<li>將所有可能的反轉結果更新到 curr，以便下一輪比較。同時，將當前反轉次數 dist 的值加 1。</li>
-<li>更新完畢後，回到步驟 1. 繼續搜索，直到找出目標數列（回傳 dist），或是檢查過所有可能性仍未找到目標數列（回傳 -1）</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rev_dist</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate the minimum number of reversals required to transform tuple s1 to tuple s2.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        s1 (tuple): Starting tuple.</span></span><br><span class="line"><span class="string">        s2 (tuple): Target tuple.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        int: Minimum number of swaps required, or -1 if transformation is not possible.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    curr, visited = &#123;s1&#125;, &#123;s1&#125;</span><br><span class="line">    dist = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> curr:</span><br><span class="line">        <span class="keyword">if</span> s2 <span class="keyword">in</span> curr:</span><br><span class="line">            <span class="keyword">return</span> dist</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            next_step = <span class="built_in">set</span>()</span><br><span class="line">            <span class="keyword">for</span> e <span class="keyword">in</span> curr:</span><br><span class="line">                next_step.update(swap(e).difference(visited))</span><br><span class="line">                visited.update(next_step)</span><br><span class="line">            curr = next_step</span><br><span class="line">            dist = dist + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><p>這題的觀念其實不難理解，但真正的挑戰在於計算效率。隨著數列長度和反轉次數增加，算法的時間複雜度會呈指數增長。依照題目要求的數列長度測試，我的電腦大約只能處理到 4-5 次反轉，再多的反轉次數就無法在合理的時間內算出來。</p>
-<p>想要評估計算反轉距離的成本可以考慮以下三個因素：比較成本（$c$, Cost）、可能的數列數量（$n$, Number）、檢查的深度（$d$, Depth or Distance），即 $cn^d$。為了提升計算效率，可以從這三項因素著手。</p>
-<ul>
-<li>降低每次比較的成本，例如以 set 取代 list。</li>
-<li>降低可能的數列數量，例如排除已檢查過的數列或是只生成有用的數列等。</li>
-<li>降低檢查深度，例如同時從數列的前端和後端開始檢查。</li>
-</ul>
-<p>這些方式都能提升計算效率，但適用的情境不盡相同。如果數列長度很短，可能的反轉結果會比較少，反轉距離也不長，那麼關鍵就在於降低每次比較的成本。反之，如果像這題一樣需要處理較長的數列，那麼重點就轉移到了控制可能的數列數量和檢查深度上。</p>
-<p>雖然排除已檢查過的數列能起到一定作用，但問題在於反轉距離還是太長了，相較於指數增長的待檢查數列，重複數列的數量顯得微不足道。</p>
-<p>另一種策略是在生成可能的反轉數列時，只生成有機會轉換為目標數列的數列。這方法若能有效降低 $n$ 值，便能容忍更長的反轉距離以及比較數列的長度。</p>
-<p>然而，這想法雖然理想，但它的困難在於不容易找到正確的篩選規則來判斷一個數列是否有可能轉換為目標數列。即使找到一項不錯的規則，但也很難保證這規則不會遺漏某西可能性，導致它雖然能在有限時間內回應，卻未必是最優解。</p>
-<p>最後一種手段則相對值觀，就是分別從數列的前後端開始搜索，這樣可以將檢查的深度減半。如題目要求，對於長度為 10 的數列，即使窮舉，最多經過 9 次反轉便能轉會為任意數列。</p>
-<p>如前所述，反轉距離大於 4 - 5 次就達到當前計算能力的極限，從兩端同時搜索，正好能將檢查深度控制在極限以內。</p>
-<p>雙向排查的程式碼如下所示。為了降低主程式的複雜度，我新增了副程式 get_next_steps，用於生成數列集合的每個元素在經過一次反轉後可能產生的所有數列。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_next_steps</span>(<span class="params">curr, visited</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Generates next steps by swapping elements in `curr`, excluding those in `visited`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        curr (set): Current states.</span></span><br><span class="line"><span class="string">        visited (set): States to exclude.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        set: Next possible states.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    next_steps = <span class="built_in">set</span>()</span><br><span class="line">    <span class="keyword">for</span> e <span class="keyword">in</span> curr:</span><br><span class="line">        next_steps.update(swap(e).difference(visited))</span><br><span class="line">    <span class="keyword">return</span> next_steps</span><br></pre></td></tr></table></figure>
-
-<p>其餘部分則與只從一端開始檢查的方式相似，只是要有兩組 curr 和 visited 分別存儲從前後端檢查數列的資訊。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rev_dist</span>(<span class="params">s1, s2</span>):</span><br><span class="line">    f_curr, f_visited, b_curr, b_visited = &#123;s1&#125;, &#123;s1&#125;, &#123;s2&#125;, &#123;s2&#125;</span><br><span class="line">    dist = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> f_curr <span class="keyword">and</span> b_curr:</span><br><span class="line">        <span class="keyword">if</span> f_curr.intersection(b_curr):</span><br><span class="line">            <span class="keyword">return</span> dist</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            dist = dist + <span class="number">1</span></span><br><span class="line">            f_curr = get_next_steps(f_curr, f_visited)</span><br><span class="line">            f_visited.update(f_curr)</span><br><span class="line">        <span class="keyword">if</span> b_curr.intersection(f_curr):</span><br><span class="line">            <span class="keyword">return</span> dist</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            dist = dist + <span class="number">1</span></span><br><span class="line">            b_curr = get_next_steps(b_curr, b_visited)</span><br><span class="line">            b_visited.update(b_curr)</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="其它解法"><a href="#其它解法" class="headerlink" title="其它解法"></a>其它解法</h1><p>說點題外話，這題算得上 Rosalind 平台的東巴了，我想半天解不出來，看了討論區才知道原來有那麼多人也覺得出題方在整人。儘管題目提示 “Don’t be afraid to try an ugly solution.”，但真想用暴力法解題，是絕對沒辦法在規定時間內通過測試的。</p>
-<p>以下是我找到的另一種基於雙向搜索的解法，雖然它沒有處理起始數列與目標數列無法互相轉換的狀況，但整體想法卻清晰易懂。這方法首先將輸入的數列轉換為 set 以利比較，接著判斷兩者是否有交集。如果有，則直接回傳當前的反轉距離；反之，則為每個數列集合中的元素生成所有可能的數列，再判斷新生成的數列集合彼此是否交集。如果仍沒有交集，就遞迴呼叫這個副程式，持續搜索下一層，直到找到交集為止。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">rev_dist</span>(<span class="params">s1, s2, dist=<span class="number">0</span></span>):</span><br><span class="line">   s1 = &#123;s1&#125; <span class="keyword">if</span> <span class="built_in">isinstance</span>(s, <span class="built_in">tuple</span>) <span class="keyword">else</span> s1</span><br><span class="line">   s2 = &#123;s2&#125; <span class="keyword">if</span> <span class="built_in">isinstance</span>(t, <span class="built_in">tuple</span>) <span class="keyword">else</span> s2</span><br><span class="line">   <span class="keyword">if</span> s1.intersection(s2):</span><br><span class="line">        <span class="keyword">return</span> dist</span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">        next_s1 = &#123; swap_e <span class="keyword">for</span> e <span class="keyword">in</span> s1 <span class="keyword">for</span> swap_e <span class="keyword">in</span> swap(s1) &#125;</span><br><span class="line">        next_s2 = &#123; swap_e <span class="keyword">for</span> e <span class="keyword">in</span> s2 <span class="keyword">for</span> swap_e <span class="keyword">in</span> swap(s2) &#125;</span><br><span class="line">        <span class="keyword">if</span> s1.intersection(next_s1) <span class="keyword">or</span> s2.intersection(next_s1):</span><br><span class="line">            <span class="keyword">return</span> dist + <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> next_s1.intersection(next_s2):</span><br><span class="line">            <span class="keyword">return</span> dist + <span class="number">2</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> rev_dist(next_s1, next_s2, dist + <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>rosalind</tag>
       </tags>
   </entry>
   <entry>
@@ -6726,6 +6763,23 @@ echo &quot;\$title \n $PWD&quot;
       </tags>
   </entry>
   <entry>
+    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
+    <url>/why-should-we-watch-bangdream-its-my-go/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
+<span id="more"></span>
+<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
+<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
+<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
+<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
+<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
+<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
+<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
+]]></content>
+      <tags>
+        <tag>acgn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>人類存在的意義</title>
     <url>/wilson-2014-the-meaning-of-human-existence/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最早認識 E.O. Wilson 是讀 Stephen Gould 的書，Wilson 作為 Gould 反對的對象存在我的記憶中。隨後，我在小說《螞蟻》裡讀到致敬Wilson 所創造的角色—— 艾德蒙．威爾斯，才逐漸了解 Wilson 在螞蟻、演化和生物多樣性方面的成就。</p>
@@ -6786,23 +6840,6 @@ echo &quot;\$title \n $PWD&quot;
 ]]></content>
       <tags>
         <tag>evolution</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>「It&#39;s MyGo!!!!!」太好看了八😭</title>
-    <url>/why-should-we-watch-bangdream-its-my-go/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>「It’s MyGo!!!!!」太好看了八😭😭😭，這部和「放學後的昴星團」一樣，是應取代雅量與鄭伯克段於鄢，納入國民義務教育的作品。</p>
-<span id="more"></span>
-<p>動畫標題的含義是「迷路的孩子」，講述一個樂團解散後，曾經的成員與愛慕虛榮的轉學生在組織新樂團時，發生種種得面對各自過往創傷的故事。</p>
-<p>在卡牌動畫裡，沒有什麼爭端是「決鬥」不能解決的；在超級機器人的世界觀，最終的命運往往要靠「合體」來決定；至於在樂團作品，上了台，「音樂」就是對一切的回應。</p>
-<p>儘管「It’s MyGo!!!!!」靠音樂的感染力掩飾掉部分生硬的情節轉折。我覺得這部作品仍然可貴的理由在於，編劇並沒有因為主題是迷茫，就為了推動情節而向觀眾許諾一個有解的宇宙。</p>
-<p>到了故事尾聲，角色的目標與方向不見得較開始時清晰明朗，反而還有更多不甘、愧疚、困惑與說不清的苦楚。</p>
-<p>苦、茫與惑這些字眼從甲骨文保留到當代未曾消失，就像現實中冰會融、雨會下一樣自然，繞了一大圈仍回到原點的事情也屢見不鮮。</p>
-<p>然而，如同動畫專輯封面所呈現，角色歷經了這麼多，雖然雨還在下，但他們已曉得撐傘。即使在熱力學主宰的世界裡，「冰塊融化後，還是會有像水一樣留下的東西」，也因為存在摩擦，邁向原點的曲折路上依然能發（不可見）光發熱。</p>
-<p>在動畫第十集插曲MV的最後畫面，新成立樂團的五位成員在舞台上的站位，對應著團名的首字母，也象徵著仙后座的形象。找齊仙后座的五顆星，便能在茫茫星河之中，找到指引著方向的北極星。</p>
-]]></content>
-      <tags>
-        <tag>acgn</tag>
       </tags>
   </entry>
   <entry>
