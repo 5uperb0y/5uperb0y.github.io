@@ -1,5 +1,5 @@
 ---
-title: Vim｜Vimium，學習 Vim 的新途徑
+title: Vimium，學習 Vim 的新途徑
 date: 2022-12-31 01:06:11
 tags: vim
 categories:

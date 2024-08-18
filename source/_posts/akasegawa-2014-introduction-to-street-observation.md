@@ -118,3 +118,7 @@ categories:
 - [台北路上觀察學會 TSOC](https://www.slideshare.net/taipeitsoc/20150426-47725440)
 - 洪瑞琴 (2017)：〈[「台南路上觀察團」為保留81歲台南魚市場發聲](https://news.ltn.com.tw/news/life/breakingnews/2051945)〉。自由時報
 - [路上觀察學入門試閱+路上觀察手冊](https://www.facebook.com/flaneur.culture.lab/photos?tab=album&album_id=10152087002937913)
+
+---
+
+ 赤瀨川原平, 藤森照信, 南伸坊 （2014）。路上觀察學入門（嚴可婷、黃碧君、林皎碧譯）。行人。（原著出版於 1986 年）

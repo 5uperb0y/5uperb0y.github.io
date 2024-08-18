@@ -1,5 +1,5 @@
 ---
-title: VSCode｜ Failed to parse remote port from server output
+title: 'VSCode: Failed to parse remote port from server output'
 date: 2023-01-07 14:20:08
 tags: vscode 
 categories:

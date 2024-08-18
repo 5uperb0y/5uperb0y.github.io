@@ -1,5 +1,5 @@
 ---
-title: Vim｜VSCodeVim 常用設定
+title: VSCodeVim 常用設定
 date: 2022-12-28 22:09:40
 tags: [vim, vscode]
 categories:

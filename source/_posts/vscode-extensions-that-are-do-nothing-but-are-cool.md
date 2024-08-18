@@ -1,5 +1,5 @@
 ---
-title: VScode｜無助於開發，但有助於身心的套件
+title: 無助於開發，但有助於身心的 VSCode 套件
 date: 2023-01-20 16:43:08
 tags: vscode
 categories:

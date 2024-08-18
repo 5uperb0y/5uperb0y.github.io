@@ -1,5 +1,5 @@
 ---
-title: VSCode｜常用快捷鍵與個人設置
+title: VSCode 常用快捷鍵與個人設置
 date: 2023-01-08 02:20:58
 tags: vscode 
 categories: 

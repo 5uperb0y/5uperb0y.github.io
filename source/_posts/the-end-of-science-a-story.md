@@ -1,7 +1,7 @@
 ---
 title: 科學的終結
 date: 2018-03-15 13:07:24
-tags: sf, story
+tags: [sf, story]
 categories:
 ---
 
