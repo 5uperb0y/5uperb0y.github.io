@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。  Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format. Return: A longest common subsequence of s and t. (If more than one solution e">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ROSALIND｜Finding a Shared Spliced Motif (LCSQ)">
+<meta property="og:url" content="https://5uperb0y.com/finding-a-shared-spliced-motif/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。  Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format. Return: A longest common subsequence of s and t. (If more than one solution e">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-07-14T15:03:26.000Z">
+<meta property="article:modified_time" content="2024-07-14T15:03:04.000Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/finding-a-shared-spliced-motif/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/finding-a-shared-spliced-motif/","path":"finding-a-shared-spliced-motif/","title":"ROSALIND｜Finding a Shared Spliced Motif (LCSQ)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ROSALIND｜Finding a Shared Spliced Motif (LCSQ) | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">137</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Python 實作</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-16T21:40:32+08:00">
+        10/16
+      </time>
+      <a href="/isukari-2016-yokohama-eki-sf/" title="《橫濱車站sf》">《橫濱車站sf》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">
+        10/15
+      </time>
+      <a href="/what-is-a-fasta-index-file/" title="Fasta index file (.fai) 是什麼？">Fasta index file (.fai) 是什麼？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-14T18:47:53+08:00">
+        10/14
+      </time>
+      <a href="/how-to-create-bwa-alt-files/" title="怎麼準備 bwa 所需的 .alt 檔？">怎麼準備 bwa 所需的 .alt 檔？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-27T20:54:03+08:00">
+        08/27
+      </time>
+      <a href="/asakura-2021-karenankayori-watashi-no-hogaiidesho/" title="《與其喜歡他，不如選我吧？》">《與其喜歡他，不如選我吧？》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-26T22:39:51+08:00">
+        08/26
+      </time>
+      <a href="/mikami-2020-yuri-ni-hasamareteru-onnatte-tsumidesuka/" title="《被百合夾擊的女子有罪嗎？》">《被百合夾擊的女子有罪嗎？》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-shared-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-11</time>
+        <br>
+      ROSALIND | Finding a Shared Motif (LCSM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-spliced-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-07-06</time>
+        <br>
+      ROSALIND｜Finding a Spliced Motif (SSEQ)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-motif-in-dna/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-09</time>
+        <br>
+      ROSALIND | Finding a Motif in DNA (SUBS)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rna-splicing/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-30</time>
+        <br>
+      ROSALIND｜RNA Splicing (SPLC)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-03</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/finding-a-shared-spliced-motif/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Finding a Shared Spliced Motif (LCSQ) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Finding a Shared Spliced Motif (LCSQ)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-07-14 23:03:26 / 修改時間：23:03:04" itemprop="dateCreated datePublished" datetime="2024-07-14T23:03:26+08:00">2024-07-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。</p>
+<blockquote>
+<p>Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format.</p>
+<p>Return: A longest common subsequence of s and t. (If more than one solution exists, you may return any one.)</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/lcsq/">https://rosalind.info/problems/lcsq/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>在實際的基因體研究中，我們可能需要比對多條 DNA 序列，來找出重複出現的 motif 序列。這題要求找出兩條序列最長的共同子序列，它代表了被 introns 分隔的最長 mofif。</p>
+<p>較長的序列通常涵蓋更多功能基因，但也因此更容易受到突變和基因重排的影響。如果一段涉及多種功能的長序列能在物種的基因體長期保存，沒有因為演化過程中的偶發事件而被打斷或消失，就暗示著這段序列可能與該物種的核心功能有關。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>這題是最長共同子序列（LCS, longest common subsequnce）問題的變體，我推薦閱讀<a target="_blank" rel="noopener" href="https://web.ntnu.edu.tw/~algo/Subsequence2.html">演算法筆記</a>的介紹，它清楚解釋了 LCS 的核心觀念與不同解題方法，也有程式實作可供參考。這裡我會依據自己的理解，重述其中一種基於動態規劃的解題方法。</p>
+<p>假設有兩個序列 $S$ 與 $T$，它們的最長共同子序列記為 $LCS(S, T)$。如果單獨考慮兩序列的最後一個元素，可以將 $S$ 與 $T$ 重新表示為 $S &#x3D; S_{sub} + s$ 和 $T &#x3D; T_{sub} + t$。</p>
+<p>那麼根據最後一個元素的狀況，我們可以得出以下關係：</p>
+<ul>
+<li>如果 $s &#x3D; t$，那麼這兩個元素都可以納入 $LCS(S, T)$，即 $LCS(S, T) &#x3D; LCS(S_{sub}, T_{sub}) + s$。</li>
+<li>如果 $s \neq t$，表示不需要檢查完整的序列即可找到 $LCS(S, T)$，<ul>
+<li>$LCS(S, T)$ 不包含 $s$ 或 $t$，即 $LCS(S, T) &#x3D; LongerOne(LCS(S_{sub}, T), LCS(S, T_{sub}))$</li>
+<li>$LCS(S, T)$ 不包含 $s$ 與 $t$，即 $LCS(S, T) &#x3D; LCS(S_{sub}, T_{sub})$</li>
+</ul>
+</li>
+</ul>
+<p>因為 $LCS(S_{sub}, T_{sub})$ 小於等於 $LCS(S_{sub}, T)$ 和 $LCS(S, T_{sub})$，所以這些關係可以化簡為：</p>
+<p>$$ LCS(S, T)&#x3D;<br>\begin{cases}<br>LCS(S_{sub}, T_{sub}) + s &amp; when &amp; s &#x3D; t\<br>LongerOne(LCS(S_{sub}, T), LCS(S, T_{sub})) &amp; when &amp; s\neq t <br>\end{cases}<br>$$</p>
+<p>這個關係式表明，兩序列的 LCS 可以從各自子序列的 LCS 推論出來，這構成了應用動態規劃的基礎。</p>
+<p>我們可以使用一個二維陣列來記錄 $S$ 和 $T$ 所有子序列的 LCS，再逐一檢視各個子序列的最後一個元素，參考前述關係式填滿這個陣列。最終，陣列右下角的元素就是題目要求的最常共同子序列。</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>動態規劃的實作通常包含三個步驟：定義資料結構、釐清子結構間的關係，確認初始值<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="我覺得動態規劃難在看得懂但是想不到。不過別人花了一輩子研究才想出來的演算法，要我們在周末下午憑空刻出來也是強人所難。因此，我覺得適度原諒遲鈍的自己也是很值得鼓勵的行為喔。順道一提，我蠻喜歡這篇關於動態規劃的文章，推薦給大家:) [动态规划很难？DP连刷40道题，我总结出了这些套路](https://github.com/iamshuaidi/algo-basic/blob/master/%E5%AD%A6%E7%AE%97%E6%B3%95/%E5%AD%A6%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BE%88%E9%9A%BE%EF%BC%9FDP%E8%BF%9E%E5%88%B740%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BA%86%E8%BF%99%E4%BA%9B%E5%A5%97%E8%B7%AF.md)">1</span></a></sup>。考量這題要求找出 DNA 序列的最長共同子序列（為了方便討論，此處字串視為廣義的序列），我選擇以巢狀 list 來模擬二維陣列。每個元素代表對應的 DNA 子序列的最長共同子序列。</p>
+<p>這樣方法雖然需要額外的儲存空間，但我覺得比較直觀易懂，因為它需要不額外的步驟來回溯最長共同子序列的內容。</p>
+<p>以下實作需要注意幾點：</p>
+<ul>
+<li>二維矩陣的長與寬都要比兩條 DNA 序列的長度各多 1，因為它儲存的是 <code>S[:index]</code> 的最長共同子序列</li>
+<li>兩條 DNA 序列最短的子序列是空序列，所以它們的初始值是一個空字串。</li>
+<li>填表時依照前述的關係式來進行，這裡用了 <code>max(a, b, key=len)</code> 來簡化程式碼。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">lcsq</span>(<span class="params">S, T</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Calculate and return the longest common subsequence (LCS) of two strings S and T.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        S, T (str): The two input DNA strings.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Return:</span></span><br><span class="line"><span class="string">        str: A longest common subsequence of s1 and t.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># lcs denotes the longest subsequence of all s1&#x27;s and s2&#x27;s substring</span></span><br><span class="line">    lcs = [</span><br><span class="line">        [<span class="string">&quot;&quot;</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>)</span><br><span class="line">        ]</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S)):</span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(T)):</span><br><span class="line">            <span class="keyword">if</span> S[s] == T[t]:</span><br><span class="line">                lcs[s + <span class="number">1</span>][t + <span class="number">1</span>] = lcs[s][t] + S[s]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                lcs[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="built_in">max</span>(lcs[s + <span class="number">1</span>][t], lcs[s][t + <span class="number">1</span>], key=<span class="built_in">len</span>)</span><br><span class="line">    <span class="keyword">return</span> lcs[-<span class="number">1</span>][-<span class="number">1</span>]</span><br></pre></td></tr></table></figure><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">我覺得動態規劃難在看得懂但是想不到。不過別人花了一輩子研究才想出來的演算法，要我們在周末下午憑空刻出來也是強人所難。因此，我覺得適度原諒遲鈍的自己也是很值得鼓勵的行為喔。順道一提，我蠻喜歡這篇關於動態規劃的文章，推薦給大家:) <a target="_blank" rel="noopener" href="https://github.com/iamshuaidi/algo-basic/blob/master/%E5%AD%A6%E7%AE%97%E6%B3%95/%E5%AD%A6%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%BE%88%E9%9A%BE%EF%BC%9FDP%E8%BF%9E%E5%88%B740%E9%81%93%E9%A2%98%EF%BC%8C%E6%88%91%E6%80%BB%E7%BB%93%E5%87%BA%E4%BA%86%E8%BF%99%E4%BA%9B%E5%A5%97%E8%B7%AF.md">动态规划很难？DP连刷40道题，我总结出了这些套路</a><a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/honobu-2004-shunki-gentei-ichigo-taruto-jiken/" rel="prev" title="《春季限定草莓塔事件》">
+                  <i class="fa fa-angle-left"></i> 《春季限定草莓塔事件》
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/iruma-2017-kitto-kanojo-wa-kamisama-nanka-janai/" rel="next" title="《無法成為神明的少女》">
+                  《無法成為神明的少女》 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/finding-a-shared-spliced-motif/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

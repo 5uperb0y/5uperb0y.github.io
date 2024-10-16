@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在 Nextflow 的框架，channel 媒介了 process 間的資料傳遞。雖然資料進出 channel 遵循先進先出 (first-in, first out, FIFO) 原則，但隨後 nextflow 會平行處理這些資料，所以 process 釋出資料的順序取決於執行速率，而不是原先輸入的順序（見下例）。 12345678910111213141516&#x2F;&#x2F; demoEmitOrder">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Nextflow｜如何為輸入的資料建立辨識碼">
+<meta property="og:url" content="https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="在 Nextflow 的框架，channel 媒介了 process 間的資料傳遞。雖然資料進出 channel 遵循先進先出 (first-in, first out, FIFO) 原則，但隨後 nextflow 會平行處理這些資料，所以 process 釋出資料的順序取決於執行速率，而不是原先輸入的順序（見下例）。 12345678910111213141516&#x2F;&#x2F; demoEmitOrder">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/5uperb0y/blog-media/blob/main/combine-data-into-a-tuple-with-key_transpose.png?raw=true">
+<meta property="article:published_time" content="2023-01-09T15:50:16.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:35:16.000Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="nextflow">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/5uperb0y/blog-media/blob/main/combine-data-into-a-tuple-with-key_transpose.png?raw=true">
+
+
+<link rel="canonical" href="https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/","path":"nextflow-combine-data-into-a-tuple-with-key/","title":"Nextflow｜如何為輸入的資料建立辨識碼"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Nextflow｜如何為輸入的資料建立辨識碼 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">137</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%96%E5%82%99%E6%B8%AC%E8%A9%A6%E8%B3%87%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">準備測試資料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%8F%E9%81%8E-nextflow-operator"><span class="nav-number">2.</span> <span class="nav-text">透過 nextflow operator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%8F%E9%81%8E-bash-in-process"><span class="nav-number">3.</span> <span class="nav-text">透過 bash in process</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%8F%E9%81%8E-channel-factory-%E9%99%90%E5%AE%9A%E6%88%90%E5%B0%8D%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">透過 channel factory (限定成對資料)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E5%90%88-channel-operator-%E5%92%8C-groovy-closure"><span class="nav-number">5.</span> <span class="nav-text">結合 channel operator 和 groovy closure</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%8E%E9%BA%BC%E8%AE%80%E5%8F%96%E8%B3%87%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">怎麼讀取資料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">7.</span> <span class="nav-text">結論</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-16T21:40:32+08:00">
+        10/16
+      </time>
+      <a href="/isukari-2016-yokohama-eki-sf/" title="《橫濱車站sf》">《橫濱車站sf》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">
+        10/15
+      </time>
+      <a href="/what-is-a-fasta-index-file/" title="Fasta index file (.fai) 是什麼？">Fasta index file (.fai) 是什麼？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-14T18:47:53+08:00">
+        10/14
+      </time>
+      <a href="/how-to-create-bwa-alt-files/" title="怎麼準備 bwa 所需的 .alt 檔？">怎麼準備 bwa 所需的 .alt 檔？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-27T20:54:03+08:00">
+        08/27
+      </time>
+      <a href="/asakura-2021-karenankayori-watashi-no-hogaiidesho/" title="《與其喜歡他，不如選我吧？》">《與其喜歡他，不如選我吧？》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-26T22:39:51+08:00">
+        08/26
+      </time>
+      <a href="/mikami-2020-yuri-ni-hasamareteru-onnatte-tsumidesuka/" title="《被百合夾擊的女子有罪嗎？》">《被百合夾擊的女子有罪嗎？》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-input-with-an-empty-channel/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-27</time>
+        <br>
+      Nextflow｜輸入 empty channel 會發生什麼事？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-escape-characters/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-10</time>
+        <br>
+      Nextflow｜程式碼區塊的跳脫符號 (escape characters)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-how-data-is-passed-between-processes-through-channels/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-05</time>
+        <br>
+      Nextflow｜資料是怎麼在 Process 間傳遞？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-the-mode-of-publishdir/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-14</time>
+        <br>
+      Nextflow｜利用 `publishDir` 匯出分析檔案
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-run-in-background/" rel="bookmark">
+        <time class="popular-posts-time">2022-11-30</time>
+        <br>
+      Nextflow｜背景執行 workflow 的方法
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Nextflow｜如何為輸入的資料建立辨識碼 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Nextflow｜如何為輸入的資料建立辨識碼
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-01-09 23:50:16" itemprop="dateCreated datePublished" datetime="2023-01-09T23:50:16+08:00">2023-01-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:35:16" itemprop="dateModified" datetime="2024-06-09T22:35:16+08:00">2024-06-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在 Nextflow 的框架，channel 媒介了 process 間的資料傳遞。雖然資料進出 channel 遵循先進先出 (first-in, first out, FIFO) 原則，但隨後 nextflow 會平行處理這些資料，所以 process 釋出資料的順序取決於執行速率，而不是原先輸入的順序（見下例）。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demoEmitOrder.nf</span></span><br><span class="line">process A &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        val num</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;$&#123;num&#125;&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">workflow &#123;</span><br><span class="line">    nums = channel.of(<span class="string">&quot;1&quot;</span>, <span class="string">&quot;2&quot;</span>, <span class="string">&quot;3&quot;</span>)</span><br><span class="line">    nums.view()</span><br><span class="line">    A(nums).view() </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run demoEmitOrder.nf</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">1</span><br><span class="line"></span><br><span class="line">3</span><br><span class="line"></span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<p>Nextflow 這項特性使得輸入彼此相依的資料時要格外留意，因為可能在定序產物品管時，發生不同樣本的順逆序列（例如：a_r1.fa 與 b_r2.fa 合併）的狀況；又或是使用 GATK 這類需要參考基因體的工具時，無法為 <code>.fasta</code> 找到對應 <code>.dict</code> 和 <code>.fai</code> 檔的情形。</p>
+<p>因此，本文將介紹如何將想要一起輸入的檔案以及其辨識碼組合成 tuple （例如：<code>[&quot;ID&quot;, &quot;ID_r1.fastq&quot;, &quot;ID_r2.fastq&quot;]</code>），確保成對資料同進同出，還能透過辨識碼與其它資料合併。</p>
+<span id="more"></span>
+
+<h1 id="準備測試資料"><a href="#準備測試資料" class="headerlink" title="準備測試資料"></a>準備測試資料</h1><p>首先建立雙端定序產物與人體基因體序列的測試資料，用以示範成對資料和多筆資料各自要如何組合成 tuple。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> data</span><br><span class="line">$ <span class="built_in">touch</span> data/&#123;a..c&#125;_r&#123;1,2&#125;.fq           <span class="comment"># 示範成對資料</span></span><br><span class="line">$ <span class="built_in">touch</span> data/&#123;a..c&#125;.&#123;fasta,dict,fai&#125;    <span class="comment"># 示範多筆資料</span></span><br></pre></td></tr></table></figure>
+
+<p>接著，在 nextflow script (<code>*.nf</code>) 定義這些資料以建立 input channel。此處這麼做是為了簡便，但其實也可以將資料路徑寫到 JSON 檔，在執行 nextflow script 時，透過 <code>-c</code> 或 <code>-params-file</code> 讀入。要留意的是，欲組合在一起的資料於 nextflow 變項的順序要一致，</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">inDir = <span class="string">&quot;/path/to/data&quot;</span></span><br><span class="line">id = [<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>]</span><br><span class="line">fq1 = [<span class="string">&quot;$inDir/a_r1.fq&quot;</span>, <span class="string">&quot;$inDir/b_r1.fq&quot;</span>, <span class="string">&quot;$inDir/c_r1.fq&quot;</span>]</span><br><span class="line">fq2 = [<span class="string">&quot;$inDir/a_r2.fq&quot;</span>, <span class="string">&quot;$inDir/b_r2.fq&quot;</span>, <span class="string">&quot;$inDir/c_r2.fq&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+<h1 id="透過-nextflow-operator"><a href="#透過-nextflow-operator" class="headerlink" title="透過 nextflow operator"></a>透過 nextflow operator</h1><p>假設已經把辨識碼與輸入資料定義成前一節的形式，而且要組合在一起的資料於 nextflow 各變項內的順序也相同，那麼可以先建立包含全數資料的 tuple，再使用 <code>transpose</code> operator 轉置。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">workflow &#123;</span><br><span class="line">    channel.of([id, fq1, fq2]).transpose()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/combine-data-into-a-tuple-with-key_transpose.png?raw=true" alt="`transpose` 能轉置 channel 的組成。"></p>
+<p>由於 channel 遵循 FIFO 原則，所以使用 <code>view()</code> 瀏覽結果時，確認資料釋出與輸入順序一致。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[a, /path/to/data/a_r1.fq, /path/to/data/a_r2.fq]</span><br><span class="line">[b, /path/to/data/b_r1.fq, /path/to/data/b_r2.fq]</span><br><span class="line">[c, /path/to/data/c_r1.fq, /path/to/data/c_r2.fq]</span><br></pre></td></tr></table></figure>
+<h1 id="透過-bash-in-process"><a href="#透過-bash-in-process" class="headerlink" title="透過 bash in process"></a>透過 bash in process</h1><p>假設辨識碼為檔名的一部份，那麼也可以用 bash script 擷取字串，並在 output channel 將擷取到的辨識碼與輸入的資料組合成 <code>tuple</code>。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">process addID &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        path fq1</span><br><span class="line">        path fq2</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        tuple env(id), path(fq1), path(fq2)</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        id=\$(basename -s _r1.fq $&#123;fq1&#125;)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">workflow &#123;</span><br><span class="line">    addID(channel.fromPath(fq1), channel.fromPath(fq2))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由於經 process 處理，資料釋出順序已偏離輸入順序，紀錄的路徑也轉移到 process 的工作目錄了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[a, /path/to/work/c2/3169d4c100067150f54629d968b7fb/a_r1.fq, /path/to/work/c2/3169d4c100067150f54629d968b7fb/a_r2.fq]  </span><br><span class="line">[c, /path/to/work/2a/f8e10f5efe89d9c99d5814f5c7a151/c_r1.fq, /path/to/work/2a/f8e10f5efe89d9c99d5814f5c7a151/c_r2.fq]  </span><br><span class="line">[b, /path/to/work/9b/b8295d80236b0871e5a197845b0ec1/b_r1.fq, /path/to/work/9b/b8295d80236b0871e5a197845b0ec1/b_r2.fq]  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="透過-channel-factory-限定成對資料"><a href="#透過-channel-factory-限定成對資料" class="headerlink" title="透過 channel factory (限定成對資料)"></a>透過 channel factory (限定成對資料)</h1><p>如果辨識碼是檔名的一部份，而且資料又如雙端定序產物兩兩一組，那麼也可以使用 <code>fromFilePairs</code> 建立 <code>tuple</code>。簡言之，nextflow 會搜尋指定目錄下含有成對詞綴的檔案（此例為 <code>_r1.fq</code> 與 <code>_r2.fq</code>），擷取詞綴前的字串，將成對資料組合成帶有辨識碼的 <code>tuple</code>。</p>
+<p>預設是組合成 <code>[&quot;id&quot;, [&quot;path 1&quot;, &quot;path 2&quot;]]</code> 形式，所以此處使用 <code>flat:true</code> 攤平巢狀結構。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">workflow &#123;</span><br><span class="line">    channel.fromFilePairs(<span class="string">&quot;$inDir/*_r&#123;1,2&#125;.fq&quot;</span>, <span class="attr">flat:</span><span class="literal">true</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[a, /path/to/data/a_r1.fq, /path/to/data/a_r2.fq]</span><br><span class="line">[b, /path/to/data/b_r1.fq, /path/to/data/b_r2.fq]</span><br><span class="line">[c, /path/to/data/c_r1.fq, /path/to/data/c_r2.fq]</span><br></pre></td></tr></table></figure>
+<h1 id="結合-channel-operator-和-groovy-closure"><a href="#結合-channel-operator-和-groovy-closure" class="headerlink" title="結合 channel operator 和 groovy closure"></a>結合 channel operator 和 groovy closure</h1><p><code>fromFilePairs</code> 僅適用成對資料，若是多筆資料則要組合 nextflow operator 和 groovy closure 來完成。</p>
+<ol>
+<li>以 <code>fromPath</code> 建立 channel 時，搜尋不同詞綴的檔案</li>
+<li>以 groovy <em>getBaseName</em> 擷取檔名，再用 nextflow <code>map</code> 將檔名與檔案路徑組合成 tuple（例如：<code>a.fasta</code>→<code>［&quot;a&quot;, &quot;a.fasta&quot;]</code>）</li>
+<li>以 <code>groupTuple</code> 組合含有相同辨識碼的 tuple（例如：<code>[&quot;a&quot;, &quot;a.fasta&quot;]</code> 與 <code>[&quot;a&quot;, &quot;a.dict&quot;]</code> 組合成 <code>[&quot;a&quot;, [&quot;a.fasta&quot;, &quot;a.dict&quot;]]</code>）</li>
+<li>以 <code>map</code> 配合 groovy <em>flatten</em> 攤開巢狀 <code>tuple</code></li>
+</ol>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">workflow &#123;</span><br><span class="line">    channel.fromPath([<span class="string">&quot;$inDir/*.dict&quot;</span>, <span class="string">&quot;$inDir/*.fasta&quot;</span>, <span class="string">&quot;$inDir/*.fai&quot;</span>])</span><br><span class="line">        .map&#123;it -&gt; tuple(it.getBaseName(), it)&#125;</span><br><span class="line">        .groupTuple()</span><br><span class="line">        .map&#123;it -&gt; it.flatten()&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此處假設檔名等同辨識碼，若辨識碼是檔名的子字串或其它組合，那就要參考 groovy 的字串處理方式。這裡使用 groovy 是為了要在 nextflow script 完成任務，若不限此條件，那也可以新增 process，改用熟悉的腳本語言來處理字串（參考 bash script 的方法）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[a, /path/to/data/a.fasta, /path/to/data/a.dict, /path/to/data/a.fai]</span><br><span class="line">[b, /path/to/data/b.fasta, /path/to/data/b.dict, /path/to/data/b.fai]</span><br><span class="line">[c, /path/to/data/c.fasta, /path/to/data/c.dict, /path/to/data/c.fai]</span><br></pre></td></tr></table></figure>
+
+<h1 id="怎麼讀取資料"><a href="#怎麼讀取資料" class="headerlink" title="怎麼讀取資料"></a>怎麼讀取資料</h1><p>前述建立的 <code>tuple</code> 可用以下方式讀入 process，也可以用 <code>join</code> 組合，確保成對或多筆資料能夠在 process 同進同出。</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">process readInput &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        tuple val(id), path(fq1), path(fq2)</span><br><span class="line">        tuple val(id), path(fasta), path(dict), path(fai)</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;$&#123;id&#125;, $&#123;fq1&#125;, $&#123;fq2&#125;&quot;</span></span><br><span class="line"><span class="string">    echo &quot;$&#123;id&#125;, $&#123;fasta&#125;, $&#123;dict&#125;, $&#123;fai&#125;&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>最後使用一張表總結將資料組合為 <code>tuple</code> 的方法。</p>
+<table>
+<thead>
+<tr>
+<th>比較項目</th>
+<th>operator</th>
+<th>bash in process</th>
+<th>fromFilePairs</th>
+<th>operator &amp; closure</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>檔案數</td>
+<td>不限</td>
+<td>不限</td>
+<td>兩筆</td>
+<td>不限</td>
+</tr>
+<tr>
+<td>定義</td>
+<td>需定義檔案路徑</td>
+<td>需定義檔案路徑</td>
+<td>檔案存放路徑</td>
+<td>檔案存放路徑</td>
+</tr>
+<tr>
+<td>釋出順序</td>
+<td>輸入順序</td>
+<td>完成順序</td>
+<td>輸入順序</td>
+<td>輸入順序</td>
+</tr>
+<tr>
+<td>檔案位置</td>
+<td>輸入路徑</td>
+<td>工作目錄</td>
+<td>輸入路徑</td>
+<td>輸入路徑</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/nextflow/" rel="tag"># nextflow</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/vscode-useful-shortcuts-and-their-settings/" rel="prev" title="VSCode 常用快捷鍵與個人設置">
+                  <i class="fa fa-angle-left"></i> VSCode 常用快捷鍵與個人設置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/nextflow-the-mode-of-publishdir/" rel="next" title="Nextflow｜利用 `publishDir` 匯出分析檔案">
+                  Nextflow｜利用 `publishDir` 匯出分析檔案 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

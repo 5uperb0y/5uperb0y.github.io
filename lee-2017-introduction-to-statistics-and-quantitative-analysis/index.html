@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="知乎上有段軼聞可以很好地形容我讀《戲說統計》的心境：  以前上新東方時候聽老師講的，說以前老俞還講課的時候，特別陶醉，做完題對答案，就問“有沒有人哪道題不懂啊？”要是有人提問題的話，老俞總是深情地看一眼題目，然後放下手中的教案，說：“同學們啊，這道題讓我想起了當初創業時候的的一件事，balabalabala”短短幾分鐘的就能把全班人講的如痴如醉，然後來一句“好的，大家還有哪道題不懂嗎？（阿冰，知乎">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="戲說統計">
+<meta property="og:url" content="https://5uperb0y.com/lee-2017-introduction-to-statistics-and-quantitative-analysis/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="知乎上有段軼聞可以很好地形容我讀《戲說統計》的心境：  以前上新東方時候聽老師講的，說以前老俞還講課的時候，特別陶醉，做完題對答案，就問“有沒有人哪道題不懂啊？”要是有人提問題的話，老俞總是深情地看一眼題目，然後放下手中的教案，說：“同學們啊，這道題讓我想起了當初創業時候的的一件事，balabalabala”短短幾分鐘的就能把全班人講的如痴如醉，然後來一句“好的，大家還有哪道題不懂嗎？（阿冰，知乎">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-11-28T05:17:18.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:21:34.000Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="statistics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/lee-2017-introduction-to-statistics-and-quantitative-analysis/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/lee-2017-introduction-to-statistics-and-quantitative-analysis/","path":"lee-2017-introduction-to-statistics-and-quantitative-analysis/","title":"戲說統計"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>戲說統計 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">137</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-16T21:40:32+08:00">
+        10/16
+      </time>
+      <a href="/isukari-2016-yokohama-eki-sf/" title="《橫濱車站sf》">《橫濱車站sf》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">
+        10/15
+      </time>
+      <a href="/what-is-a-fasta-index-file/" title="Fasta index file (.fai) 是什麼？">Fasta index file (.fai) 是什麼？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-14T18:47:53+08:00">
+        10/14
+      </time>
+      <a href="/how-to-create-bwa-alt-files/" title="怎麼準備 bwa 所需的 .alt 檔？">怎麼準備 bwa 所需的 .alt 檔？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-27T20:54:03+08:00">
+        08/27
+      </time>
+      <a href="/asakura-2021-karenankayori-watashi-no-hogaiidesho/" title="《與其喜歡他，不如選我吧？》">《與其喜歡他，不如選我吧？》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-26T22:39:51+08:00">
+        08/26
+      </time>
+      <a href="/mikami-2020-yuri-ni-hasamareteru-onnatte-tsumidesuka/" title="《被百合夾擊的女子有罪嗎？》">《被百合夾擊的女子有罪嗎？》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/lee-2017-introduction-to-statistics-and-quantitative-analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="戲說統計 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          戲說統計
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-11-28 13:17:18" itemprop="dateCreated datePublished" datetime="2020-11-28T13:17:18+08:00">2020-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:21:34" itemprop="dateModified" datetime="2024-06-09T22:21:34+08:00">2024-06-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>知乎上有段軼聞可以很好地形容我讀《戲說統計》的心境：</p>
+<blockquote>
+<p>以前上新東方時候聽老師講的，說以前老俞還講課的時候，特別陶醉，做完題對答案，就問“有沒有人哪道題不懂啊？”要是有人提問題的話，老俞總是深情地看一眼題目，然後放下手中的教案，說：“同學們啊，這道題讓我想起了當初創業時候的的一件事，balabalabala”短短幾分鐘的就能把全班人講的如痴如醉，然後來一句“好的，大家還有哪道題不懂嗎？（阿冰，知乎）</p>
+</blockquote>
+<span id="more"></span>
+
+<p>讀《戲說統計》是因為我很喜歡李連江老師的另一本書。教讀者怎麼走入和走好學術這條路的書有很多，例如讀《別鬧了，費曼先生》可以立志，讀《你和你的研究》讓人不忘摘星，讀《研究生完全求生手冊》則能學習踏實做事。</p>
+<p>然而李老師的《在學術界謀生存》卻教讀者在了解自己是個平凡人後，怎麼面對期望落差，怎麼處理生涯焦慮，怎麼不負自己的使命與期待。因此，得知他還有一本既講統計也談學術生涯的著作時，便到圖書館借來看。</p>
+<p>在經驗分享方面，《戲說統計》的立論與《在學術界謀生存》一致，皆勸勉讀者在看清事實後仍保持積極，追求自我的價值與肯定，例如：</p>
+<blockquote>
+<p>人生的智慧在於準確判斷自己，欣然接納自己。(144)</p>
+</blockquote>
+<blockquote>
+<p>設立現實的目標，才能建立自信。(287)</p>
+</blockquote>
+<blockquote>
+<p>看過，看不懂，很好！好在哪裡？好在創造了機會。看不懂，讓人不快，不憤不啟。(292)</p>
+</blockquote>
+<p>這些原則跟我讀了一些書、問了一些人而且親自碰一次壁後體會的想法一樣：多做事，少幹話；爭取機會，別找藉口；把握現在，不要懊悔過去；用指標衡量進展，但不要用指標定義自我價值。</p>
+<p>至於描述統計的內容，對學過統計學的讀者而言可能較淺。作者用了許多篇幅討論詞彙的含意，也試圖澄清專有名詞的命名邏輯。例如 variable 應譯為變量還是變項？而 variable 的三層意義，即事實與反事實之別（因果推論）、個體屬性的日新月異（縱向研究）、屬性的因人而異（橫斷研究），為什麼攸關研究設計？</p>
+<p>這些立論初學者讀來可能恍然大悟，但要應用於實務難題時恐怕無從發揮；而有經驗者讀來或許覺得有趣，但可能會發出「早點知道這種理解方法」的喟嘆，畢竟自己已度過瓶頸，如今不需要這樣的輔助才能理解抽象概念。</p>
+<p>此外，書中多以比喻取代公式推導來解釋統計觀念，但能否理解作者的比喻與推理則見仁見智。例如作者雖然很用心講解樣本分布、抽樣分布和誤差分布的關係，但對這些觀念已經有定見的人來說，比喻與借代反而有可能阻礙讀者理解作者想傳達的意義。</p>
+<p>總結對《戲說統計》的看法，我會說這本書是很私人的著作，是作者盡到傳承與坦率之義務的著作。</p>
+<p>李老師（即作者）曾寫道：「最有效的誤導方法就是培養學術明星，製造學術天才，甚至奇才」，也在這本書提到「學者要盡到承傳的天職，對學生坦誠自己求學的辛苦是本分 (012)」。《戲說統計》記錄了李老師學習統計時遭遇的難點和克服這些困難的方式，未經歷這些困難的讀者可能覺得行文囉嗦，但有共鳴的讀者或會感到助益匪淺。</p>
+<p>畢竟讀者很多元，一本著作有這樣兩極的評價也不是什麼問題。我覺得教育講究感同身受，即使是再簡單的問題，若有一位搞不懂的學生，便需要一位能讓學生搞懂的老師。假設不存在這樣的老師，那位學生自己搞懂以後能指導曾跟他一樣迷惘的學生，不也是一樁美事嗎？</p>
+<p>書中還有一些有意思的句子摘錄如下：</p>
+<blockquote>
+<p>我認為教師的功勞不是教知識，而是鼓舞學生。知識可以教，但要靠學生自己刻苦研究才能學到；能力不能教，只能靠學生自己鍛鍊提高。學生學知識，長本領，出成就，都靠學生自己。教師起什麼作用呢？教師的責任主要是影響學生。用什麼影響？就是以書本上的知識為手段，幫助學生樹立自己的學習目標，激發學生的創造精神，鼓勵學生艱苦努力，幫助學生認識自己的潛力，促使學生把自己的潛力發揮出來。（代序，車銘洲）</p>
+</blockquote>
+<blockquote>
+<p>教師的主要功勞就是給學生偉大的刺激，偉大的鼓舞。教師要在課堂上把學生的學習精神、奮鬥精神鼓舞起來，教師的作用就是刺激和鼓舞，用敲鑼打鼓的方法振奮學生，讓學生努力。（代序，車銘洲）</p>
+</blockquote>
+<blockquote>
+<p>… 學生造就老師。老師的成就有學生的貢獻，不是教師自己本來就那麼優秀。必須有優秀的學生，教師才能進步，這是我堅信不疑的。（代序，車銘洲）</p>
+</blockquote>
+<blockquote>
+<p>教師刺激學生，學生就會跟教師研討，有研討，就能出成就。老師的智慧是學生敲出來的，學生很優秀，總是敲打教師，教師就進步了。（代序，車銘洲）</p>
+</blockquote>
+<blockquote>
+<p>在方法論中，術語歸根結蒂是「約定」。約定俗成，遊戲能玩下去，溝通有效，誤會不深，就沒有必要更改術語。(008)</p>
+</blockquote>
+<blockquote>
+<p>不怕了，就是學會了；敢用了，就是學通了；用對了，就是學精了。(011)</p>
+</blockquote>
+<blockquote>
+<p>琢磨怎樣化繁為簡，化平淡為有趣，化有趣為智慧，也是教書的樂趣。(012)</p>
+</blockquote>
+<blockquote>
+<p>英國哲學家奧斯丁說，通常情況下，我們需要的不是被告知，而是被提醒。方法論的主要作用就是提醒我們注意思維的漏洞與陷阱，(027)</p>
+</blockquote>
+<blockquote>
+<p>常是相對的，變是絕對的。常是異常，無常是常。常往往是希望的目標，不是研究對象。希望常，是因為害怕變；提倡常，是因為現實中有不可阻擋的變。所以，「天不變，道亦不變」是個訴諸虛幻奢望的討好建議，不是基於事實研究的明智建言。話說回來，因為變是常態，也因為變很難把握，所以保守是明智，求變是進取。(027)</p>
+</blockquote>
+<blockquote>
+<p>對人生來說，日新月異之變是唯一能直接觀察的變。人生之所以難，之所以有趣，歸根結蒂是因為人能意識到這兩種變化，試圖打通這兩種變化。我們看到種種因人而異之變，自然會想到自己日新月異之變。問題在於，這兩者之間，只在很有限的程度上相通，而且我們很難準確知道到底在什麼程度上、在哪個方面相通。(037)</p>
+</blockquote>
+<blockquote>
+<p>人生的智慧與藝術，關鍵就是在正確的時候採納適當的價值觀。人生不能沒有希望，希望來自相信因人而異之變與日新月異之變相通；然而有希望必然有失望，失望來自二者經常並不相通。(037)</p>
+</blockquote>
+<blockquote>
+<p>人生的關鍵是發現和發揚正態分布對自己有利的屬性，躲避和弭補正態分布對自己不利的屬性。 (139)</p>
+</blockquote>
+<blockquote>
+<p>… 最難判斷的就是我們的相對位置，而平均值和標準差可以幫我們確定自己的相對位置。在這個意義上，我們關注平均值和標準差，就是希望知道自己在這個世界上的位置，也是希望改變我們的地位。人生的苦悶在於，無論我們做什麼，都既糾結於平均值，也糾結於標準差。(141)</p>
+</blockquote>
+<blockquote>
+<p>年輕時要努力奮鬥，因為自己的位置是不確定的，自己的潛力是未知的。但是一定要注意，人生的舞台有很多，人的能力有多面，千萬不要覺得人生只有一條路。你在這一條路上可能平平，在另一條路上卻可能優秀。一方面要堅韌不拔，另一方面要靈活機動，才能找到你最擅長做的事。(145)</p>
+</blockquote>
+<blockquote>
+<p>研究生是學者最畏懼的讀者，他們會跟老師說，你把數據庫給我，我重複做一遍，跟你學。(185)</p>
+</blockquote>
+<blockquote>
+<p>無論學什麼，都分兩個功夫：一個是投入時間學，另一個是用心琢磨怎麼學。又投入時間學，又用心想，就會慢慢找出一個適合自己的方法。哪一天你找到適合自己的方法了，你就學會了。(262)</p>
+</blockquote>
+<p>[^*] 李連江 (2017)《戲說統計：文科生的量化方法》，中國政法大學出版社。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/statistics/" rel="tag"># statistics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/succession-of-infant-gut-microbiota-literature-memos/" rel="prev" title="新生兒腸道微生物演替的文獻筆記">
+                  <i class="fa fa-angle-left"></i> 新生兒腸道微生物演替的文獻筆記
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/hideaki-1988-gunbuster-and-Kazuya-2004-diebuster/" rel="next" title="勇往直前 1 & 2">
+                  勇往直前 1 & 2 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/lee-2017-introduction-to-statistics-and-quantitative-analysis/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

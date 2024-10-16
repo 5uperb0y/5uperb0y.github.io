@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="有些指令很常用，但使用頻率不見得高到能讓人既起來。那麼，除了使用記事本以外，還有什麼方法能有效管理這些指令呢？ 本文總結一些管理指令的經驗和訣竅，並且介紹好用的開源工具供參考。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="如何管理常用的 Command Line 指令？">
+<meta property="og:url" content="https://5uperb0y.com/how-to-manage-commands/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="有些指令很常用，但使用頻率不見得高到能讓人既起來。那麼，除了使用記事本以外，還有什麼方法能有效管理這些指令呢？ 本文總結一些管理指令的經驗和訣竅，並且介紹好用的開源工具供參考。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://imgs.xkcd.com/comics/tar_2x.png">
+<meta property="article:published_time" content="2024-04-16T14:52:58.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:20:46.000Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgs.xkcd.com/comics/tar_2x.png">
+
+
+<link rel="canonical" href="https://5uperb0y.com/how-to-manage-commands/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/how-to-manage-commands/","path":"how-to-manage-commands/","title":"如何管理常用的 Command Line 指令？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>如何管理常用的 Command Line 指令？ | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">137</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E9%BA%BC%E7%AE%A1%E7%90%86%E5%B8%B8%E7%94%A8%E4%BD%86%E4%B8%8D%E8%A6%8B%E5%BE%97%E8%83%BD%E8%A8%98%E8%B5%B7%E4%BE%86%E7%9A%84%E6%8C%87%E4%BB%A4%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">怎麼管理常用但不見得能記起來的指令？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E5%A5%BD%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">有哪些好用的工具？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%87%AA%E5%B7%B1%E5%AF%AB%E4%B8%80%E5%A5%97%E6%8C%87%E4%BB%A4%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">如何自己寫一套指令管理工具？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AB%96%EF%BC%9A%E5%8D%B3%E4%BD%BF%E6%9C%89-AI%EF%BC%8C"><span class="nav-number">4.</span> <span class="nav-text">結論：即使有 AI，</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-16T21:40:32+08:00">
+        10/16
+      </time>
+      <a href="/isukari-2016-yokohama-eki-sf/" title="《橫濱車站sf》">《橫濱車站sf》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">
+        10/15
+      </time>
+      <a href="/what-is-a-fasta-index-file/" title="Fasta index file (.fai) 是什麼？">Fasta index file (.fai) 是什麼？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-14T18:47:53+08:00">
+        10/14
+      </time>
+      <a href="/how-to-create-bwa-alt-files/" title="怎麼準備 bwa 所需的 .alt 檔？">怎麼準備 bwa 所需的 .alt 檔？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-27T20:54:03+08:00">
+        08/27
+      </time>
+      <a href="/asakura-2021-karenankayori-watashi-no-hogaiidesho/" title="《與其喜歡他，不如選我吧？》">《與其喜歡他，不如選我吧？》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-26T22:39:51+08:00">
+        08/26
+      </time>
+      <a href="/mikami-2020-yuri-ni-hasamareteru-onnatte-tsumidesuka/" title="《被百合夾擊的女子有罪嗎？》">《被百合夾擊的女子有罪嗎？》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/manage-your-writing-corpus-with-vs-code-user-snippets/" rel="bookmark">
+        <time class="popular-posts-time">2024-07-18</time>
+        <br>
+      運用 VSCode snippets 管理並活用個人寫作語料庫
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/how-to-manage-commands/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="如何管理常用的 Command Line 指令？ | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何管理常用的 Command Line 指令？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-04-16 22:52:58" itemprop="dateCreated datePublished" datetime="2024-04-16T22:52:58+08:00">2024-04-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:20:46" itemprop="dateModified" datetime="2024-06-09T22:20:46+08:00">2024-06-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img data-src="https://imgs.xkcd.com/comics/tar_2x.png" alt="xkcd:tar (https://imgs.xkcd.com/comics/tar.png)"></p>
+<p>有些指令很常用，但使用頻率不見得高到能讓人既起來。那麼，除了使用記事本以外，還有什麼方法能有效管理這些指令呢？</p>
+<p>本文總結一些管理指令的經驗和訣竅，並且介紹好用的開源工具供參考。</p>
+<span id="more"></span>
+
+<h2 id="怎麼管理常用但不見得能記起來的指令？"><a href="#怎麼管理常用但不見得能記起來的指令？" class="headerlink" title="怎麼管理常用但不見得能記起來的指令？"></a>怎麼管理常用但不見得能記起來的指令？</h2><p>在初學程式的時候，我除了用 word，還會用紙本筆記紀錄程式碼和常用指令。這些紀錄就擺在我的電腦桌面和電腦桌面上，以便不時參閱。雖然有時會忘記指令放在電腦還是筆記本上，可是當時的內容不多，所以也沒特別感到困擾。大學畢業後，因為微軟的校園授權過期，我索性把所有筆記都搬遷到 Goolge Doc。由於 Google Doc 能是雲端應用程式，所以可以讓文件跨裝置讀取與保管，讓我能統一管理寫作、報告還是程式碼指令等多媒體文件。</p>
+<p>除了文書編輯軟體，我也曾跟上筆記軟體的風潮，試著用 Evernote 和 Notion 等工具。這些軟體把筆記篇幅劃分為更小的單位，加入標籤、資料夾或是資料庫系統，提升了管理筆記的彈性；而它們通常也支持多媒體輸入，也內建全域搜尋系統，改善了許多維護與使用筆記的體驗。</p>
+<p>筆記軟體、文書編輯軟體或紙本筆記本在紀錄筆記上各有千秋，不過據我的使用經驗，它們在管理指令上有共通的問題：查閱指令離使用指令的距離太遠了。讓我們以按鍵數量來衡量查閱與使用的距離，假設要解壓縮一份 <code>tar.gz</code> 檔，前述幾種方法要按上幾次鍵？打開瀏覽器&#x2F;軟體&#x2F;文件、啟動搜尋、鍵入關鍵字、複製指令、打開終端機、貼上指令，扣除搜索的成本，最少也要六次以上。</p>
+<p>這聽起來很像個人 kimochi 的問題，不過如果你的職業正好是個厭世的軟體工程師，那麼想點辦法稍稍拯救一下上班的心情也是個好主意吧？屏除開發或維護的流暢性，若能確保筆記與應用場合貼近，也有助於即時更新筆記的內容。</p>
+<p>綜合以上提及的因素，指令的良好管理方式至少具有統一管理、跨平臺存儲、貼近使用場合等特性，才能提升用戶維護與使用的流暢性。以 Command Line 指令為例，筆記最直觀的存放位置是伺服器或電腦本身，讓他們能透過 Github 備份與版本控管。由於幾乎沒有多媒體需求，使用 markdown 語法紀錄的純文本能兼具可讀性與標籤的功能性，還可在各平台讀取。此外，command line 的搜尋系統普遍比文書與筆記軟體強大，也降低了分類、標籤和重新排序的成本。</p>
+<p>最後，還需要一些程式來銜接筆記與應用的落差，例如將搜尋到的指令直接貼到 command line，就不需要重複複製貼上。</p>
+<h2 id="有哪些好用的工具？"><a href="#有哪些好用的工具？" class="headerlink" title="有哪些好用的工具？"></a>有哪些好用的工具？</h2><p>只要在 Github 主題搜尋 <code>snippet</code> 或 <code>oneliner</code> 便能找到許多指令管理工具可以參考。以下幾款都支援指令速查與調用，而 <code>navi</code> 和 <code>pet</code> 甚至能引導用戶交互式輸入指令所需的參數。以刪除特定的 Docker image 為例，<code>navi</code> 可以做到用快捷鍵搜尋刪除 image 的指令，再用快捷鍵搜尋 image 的名稱，自動回填到刪除指令的參數位置。</p>
+<p>這些工具都允許用戶依照其規範的格式增補指令，有些還內建的指令庫，彙整了像是 <a target="_blank" rel="noopener" href="https://github.com/tldr-pages/tldr">tldr</a> 這樣被開源社群維護的簡明指令手冊。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/yuki-yano/zsh-fzf-snippet">zsh-fzf-snippet</a>：基於 fzf 且適用於 zsh 的輕量級指令管理工具，支援指令速查與執行。核心功能只含一支腳本以及紀錄指令的設置檔。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/babarot/easy-oneliner">easy-oneliner</a>：同樣基於 fzf 且適用於 zsh 的輕量級指令管理工具，只是指令的記錄格式與 <code>zsh-fzf-snippet</code> 不同。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/denisidoro/navi">navi</a>：基於 Python 語言的指令管理工具，彙整了 Github 著名的指令庫，除了指令速查與執行的功能外，也會交互式引導用戶輸入指令的參數。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/knqyf263/pet">pet</a>：基於 Go 語言的指令管理工具，定位與 <code>navi</code> 類似，同樣具有指令速查與交互式參數輸入功能。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/chubin/cheat.sh">cheat.sh</a>：彙整了 Github 著名的指令庫，只支援指令速查。有線上版本，所以不需要安裝也能使用。</li>
+</ul>
+<h2 id="如何自己寫一套指令管理工具？"><a href="#如何自己寫一套指令管理工具？" class="headerlink" title="如何自己寫一套指令管理工具？"></a>如何自己寫一套指令管理工具？</h2><p>由於這些工具的原理單純，所以如果對它們的使用方式與格式規範不滿意，DIY 一套適合自己業務需求的輕量級工具也是可行。觀察前述幾項工具之後，我們可歸納出實踐指令速查功能需要的部件，</p>
+<ul>
+<li>儲存格式：儲存指令的格式和語法，理想上要能滿足用戶瀏覽與程式編譯的需求。</li>
+<li>搜尋介面：搜尋指令與自動補全的介面，包含搜尋、瀏覽與預覽功能。</li>
+<li>指令輸出：選中指令後的反應，例如執行、印出或是啟動其他程式等。</li>
+</ul>
+<p>以我模仿 <code>zsh-fzf-snippet</code> 的 <a target="_blank" rel="noopener" href="https://github.com/5uperb0y/fzf-oneliner-manager">fzf-oneliner-manager</a> 為例。我採用習慣的 markdown 來記錄指令，標題 (<code>#</code>)紀錄摘要，程式碼區塊(<code>``</code>)紀錄指令，無標記段落則作為補充說明。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Print line number X of a file</span><br><span class="line">`head -n &lt;num&gt; &lt;file&gt; | tail -n 1`</span><br><span class="line">https://www.linuxquestions.org/questions/programming-9/print-line-number-x-of-a-file-in-shell-273849/</span><br><span class="line"></span><br><span class="line"># Remove duplicate lines from a file </span><br><span class="line">`awk &#x27;!seen[$0]++&#x27; &lt;file&gt;`</span><br><span class="line">https://linux.cn/article-6881-1.html</span><br></pre></td></tr></table></figure>
+
+<p>我採用模糊搜索工具 <a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf">fzf</a> 來製作搜尋指令的介面。fzf 能依照部分匹配來搜索文字，所以能免除用正則表達式搜尋字串的負擔。除此之外，也提供了一套方便的介面供用戶搜尋和瀏覽文字檔。</p>
+<p>當使用快捷鍵觸發指令速查時，<code>fzf-oneliner-manager</code> 會將指令文件整理成 TSV 檔，其中每一列都包含一條指令的標題、指令內容與補充說明，然後分別陳列標題與補充說明給用戶，讓他們能透過關鍵字或是方向鍵瀏覽要調用的指令。</p>
+<p>一旦指令被選中，指令內容會被截取出來，黏貼到用戶的 command Line 上，只要再按下確認，即可觸發這條指令。這項功能有賴 bash 的 <code>bind -x</code> 指令與 <code>READLINE_LINE</code>&#x2F;<code>READLINE_POINT</code> 變項。</p>
+<p><code>bind -x</code> 能重新映射按鍵以觸發指定的腳本或副程式，此處我把 <code>Ctrl + A</code> 設定成啟動指令速查的快捷鍵。<code>READLINE_LINE</code> 是啟動 <code>bind -x</code> 時，command Line 的內容；而 <code>READLINE_POINT</code> 則是游標所處的位置。換句話說，只要將選中的指令取代既有的 <code>READLINE_LINE</code>，並且把游標挪到指令字串的末端，便能在完成速查後將指令貼到 Command line 上。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">READLINE_LINE=<span class="string">&quot;<span class="variable">$&#123;selected&#125;</span>&quot;</span>			<span class="comment"># 用選中的指令替換 command line 既有的內容</span></span><br><span class="line">READLINE_POINT=<span class="string">&quot;<span class="variable">$&#123;#READLINE_LINE&#125;</span>&quot;</span>	<span class="comment"># 移動游標到指令字串的末端</span></span><br></pre></td></tr></table></figure>
+
+<p>因此，有了這樣的工具，管理指令的日子看起來就像這樣：</p>
+<ol>
+<li>「那個解壓縮的指令好像叫 tar 蝦米碗糕的？」，啟動速查。</li>
+<li>找到指令，按下確認執行並解決問題。</li>
+<li>沒找到指令，上網 Google 或是求救 chatgpt。</li>
+<li>把查到的指令補充到指令文件內以便往後搜索。</li>
+<li>無聊時可以打開指令文件緬懷自己的青春，「啊啦啊啦，我小時候可是用 word 紀錄管理 server 的程式碼呢！」。</li>
+</ol>
+<h2 id="結論：即使有-AI，"><a href="#結論：即使有-AI，" class="headerlink" title="結論：即使有 AI，"></a>結論：即使有 AI，</h2><p>不過現在 chatgpt 或 bing AI 那麼方便，指令速查工具還有用嗎？</p>
+<p>我覺得兩者的定位不大一樣。雖然當今生成式 AI 的功能已相當全面，卻仍無法免除溝通的成本。對於陌生議題，獨自構思方法可能比實際解決問題費時，所以上網搜尋、求助他人或是詢問 AI 等借重既有經驗的方法都能縮短整體工時。</p>
+<p>然而，隨著用戶熟悉方法，溝通成本便成為額外的負擔。呼應文首那幅四格漫畫，為了解壓縮一份 <code>tar.gz</code> 檔，你要先打關鍵字、按下搜索、點選網頁、複製&#x2F;貼上、執行，若你用 chatgpt，還得等他做些寒暄和反應的時間。在這種情況下，速查工具能做為很好的捷徑，方便用戶迅速取得常用指令，保持工作的流暢性。</p>
+<p>這也是為什麼我覺得用戶要自己維護指令集，因為這樣內容才會符合每個人各自的頻率、需求和合適的搜索關鍵字。當然，等到哪天勞工不用為系統管理或是NGS分析，AI 能自動自發把事情做完的未來時，那又另當別論。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/seager-2021-the-smallest-lights-in-the-universe-a-memoir/" rel="prev" title="尋找太陽系外的行星：天文學家莎拉．西格的愛與探索">
+                  <i class="fa fa-angle-left"></i> 尋找太陽系外的行星：天文學家莎拉．西格的愛與探索
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/the-simple-math-of-document-management-in-software-development/" rel="next" title="軟體開發文件管理的簡單數學">
+                  軟體開發文件管理的簡單數學 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/how-to-manage-commands/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

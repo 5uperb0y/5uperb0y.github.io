@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="給定一條以 FASTA 儲存的 DNA 序列，求長度介於 4 到 12 之間的反向迴文（reverse palindrome）的起始位置與長度。  A DNA string is a reverse palindrome if it is equal to its reverse complement. For instance, GCATGC is a reverse palindrome be">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ROSALIND｜Locating Restriction Sites (REVP)">
+<meta property="og:url" content="https://5uperb0y.com/locating-restriction-sites/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="給定一條以 FASTA 儲存的 DNA 序列，求長度介於 4 到 12 之間的反向迴文（reverse palindrome）的起始位置與長度。  A DNA string is a reverse palindrome if it is equal to its reverse complement. For instance, GCATGC is a reverse palindrome be">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/DNA_palindrome.svg/1280px-DNA_palindrome.svg.png">
+<meta property="article:published_time" content="2024-06-18T15:23:46.000Z">
+<meta property="article:modified_time" content="2024-06-18T15:23:32.000Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/DNA_palindrome.svg/1280px-DNA_palindrome.svg.png">
+
+
+<link rel="canonical" href="https://5uperb0y.com/locating-restriction-sites/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/locating-restriction-sites/","path":"locating-restriction-sites/","title":"ROSALIND｜Locating Restriction Sites (REVP)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ROSALIND｜Locating Restriction Sites (REVP) | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">137</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">python 實作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AA%AE%E8%88%89%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">窮舉法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%BF%83%E6%93%B4%E5%B1%95%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">中心擴展法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manacher-%E6%BC%94%E7%AE%97%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">Manacher 演算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%8E%E8%AB%96%EF%BC%9A%E7%82%BA%E4%BB%80%E9%BA%BC-Manacher-%E6%BC%94%E7%AE%97%E6%B3%95%E5%A5%BD%E5%83%8F%E6%B2%92%E5%BF%AB%E5%BE%88%E5%A4%9A%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">討論：為什麼 Manacher 演算法好像沒快很多？</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-16T21:40:32+08:00">
+        10/16
+      </time>
+      <a href="/isukari-2016-yokohama-eki-sf/" title="《橫濱車站sf》">《橫濱車站sf》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">
+        10/15
+      </time>
+      <a href="/what-is-a-fasta-index-file/" title="Fasta index file (.fai) 是什麼？">Fasta index file (.fai) 是什麼？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-14T18:47:53+08:00">
+        10/14
+      </time>
+      <a href="/how-to-create-bwa-alt-files/" title="怎麼準備 bwa 所需的 .alt 檔？">怎麼準備 bwa 所需的 .alt 檔？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-27T20:54:03+08:00">
+        08/27
+      </time>
+      <a href="/asakura-2021-karenankayori-watashi-no-hogaiidesho/" title="《與其喜歡他，不如選我吧？》">《與其喜歡他，不如選我吧？》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-26T22:39:51+08:00">
+        08/26
+      </time>
+      <a href="/mikami-2020-yuri-ni-hasamareteru-onnatte-tsumidesuka/" title="《被百合夾擊的女子有罪嗎？》">《被百合夾擊的女子有罪嗎？》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/leetcode-153-find-minimum-in-rotated-sorted-array/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-13</time>
+        <br>
+      LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/locating-restriction-sites/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Locating Restriction Sites (REVP) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Locating Restriction Sites (REVP)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-06-18 23:23:46 / 修改時間：23:23:32" itemprop="dateCreated datePublished" datetime="2024-06-18T23:23:46+08:00">2024-06-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一條以 FASTA 儲存的 DNA 序列，求長度介於 4 到 12 之間的反向迴文（reverse palindrome）的起始位置與長度。</p>
+<blockquote>
+<p>A DNA string is a reverse palindrome if it is equal to its reverse complement. For instance, GCATGC is a reverse palindrome because its reverse complement is GCATGC. See Figure 2.</p>
+<p>Given: A DNA string of length at most 1 kbp in FASTA format.</p>
+<p>Return: The position and length of every reverse palindrome in the string having length between 4 and 12. You may return these pairs in any order.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/revp/">https://rosalind.info/problems/revp/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>限制酶（restriction enzyme）是一種存在於細菌中的酵素，它能夠識別並切割特定的 DNA 序列。這些酵素是細菌免疫系統的一環，主要的功能是抵禦外源 DNA 的威脅，例如噬菌體（bacterial phage）或是質體（plasmid）等。</p>
+<p>限制酶的發現可追溯到 1950 年代 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Loenen et al. (2014). Highlights of the DNA cutters: a short history of the restriction enzymes. Nucleic acids research, 42(1), 3-19.
+">1</span></a></sup>。當時，Luria 和 Human 發現，有些噬菌體感染新宿主的能力會受到前宿主的影響，而且這種影響是可逆的，不依賴基因突變。這一現象後來被證明是因為宿主細菌的限制酶切割了噬菌體的核酸，從而「限制」了它們的感染能力。</p>
+<p>細菌和外源 DNA 都可能成為限制酶的作用對象，而細菌和噬菌體也各自演化出能對抗限制酶的機制。細菌能透過甲基化酶，修飾限制酶識別位置的核苷酸，讓自身的 DNA 免受傷害。限制酶與甲基化酶組成了細菌的限制與修飾系統，兩者的平衡影響著細菌基因體的穩定性<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Shaw et al. (2023). Restriction-modification systems have shaped the evolution and distribution of plasmids across bacteria. Nucleic acids research, 51(13), 6806-6818.
+">2</span></a></sup>。另一方面，在部分細菌和病毒基因體中，限制酶識別序列的出現頻率偏低，這可能是一種適應性的演化，能減少 DNA 被限制酶切割的機率<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Rusinov et al. (2018). Avoidance of recognition sites of restriction-modification systems is a widespread but not universal anti-restriction strategy of prokaryotic viruses. BMC genomics, 19, 1-11.
+">3</span></a></sup><sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Rusinov et al. (2015). Lifespan of restriction-modification systems critically affects avoidance of their recognition sites in host genomes. BMC genomics, 16, 1-15.">4</span></a></sup>。</p>
+<p>限制酶切割後可能留下黏性端（Sticky end），這些黏性端能讓不同來源 DNA 片段互相配對，如果使用 DNA 接合酶連接比次，就能達成重組基因的目的。</p>
+<p>不同類型的限制酶識別和切割 DNA 的模式與反應條件不同。其中，II 型限制酶的識別和切割位置相近，這種切割的精準性與可預測性，使其在生物科技上有廣泛的應用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Sticky End</span><br><span class="line">5&#x27;-...A   TAT...-3&#x27;</span><br><span class="line">3&#x27;-...TAT   A...-5&#x27;</span><br><span class="line"></span><br><span class="line"># Blunt End</span><br><span class="line">5&#x27;-...AT   AT...-3&#x27;</span><br><span class="line">3&#x27;-...TA   TA...-5&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>其次，由於個體間基因體的微小差異，若這些差異恰好出現在限制酶辨識位置，那麼使用相同的限制酶切割 DNA 時，會產生長度不同的片段。</p>
+<p>這些 DNA 片段能透過電泳技術分離，提供基因體比較的資訊，這使得限制酶也成為物種鑑定、遺傳變異分析、鑑識科學等的工具 <sup id="fnref:5"><a href="#fn:5" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Di Felice et al. (2019). Restriction enzymes and their use in molecular biology: An overview. Journal of biosciences, 44(2), 38.">5</span></a></sup>。</p>
+<p>在基因體學，反向迴文（reverse palindom）是指一段 DNA 序列與其反向互補序列一致。許多 II 型限制酶會識別基因體上這種迴文序列。</p>
+<p>儘管不是所有限制酶都是如此，不過迴文序列的對稱性讓它能夠與同一股 DNA 序列的其它部分配對，形成可能有利於酵素作用的特殊結構，例如髮夾（hairpin）結構等。</p>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/DNA_palindrome.svg/1280px-DNA_palindrome.svg.png" alt="DNA palindromes"><br>（圖片源自：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Palindromic_sequence%EF%BC%89">https://en.wikipedia.org/wiki/Palindromic_sequence）</a></p>
+<p>其次，迴文序列表示，酵素能透過相同序列來辨識相同位置。這有助於限制酶單體聚集在鄰近位置而形成更有效率的雙聯體，同時切斷兩股序列，造成難以修補的傷害。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5&#x27;-...ATAT...-3&#x27;</span><br><span class="line">3&#x27;-...TATA...-5&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>反之，如果限制酶辨識的不是迴文序列，那麼兩股 DNA 的識別位置可能相距很遠，這不僅降低切割的效率。即使順利切割，也可能形成較長的黏性端，使其更容易被連接酶修復。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5&#x27;-GAGA......-3&#x27;</span><br><span class="line">3&#x27;-......AGAG-5&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>若想了解限制酶偏好迴文序列的解釋，可參考以下幾個討論串：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://biology.stackexchange.com/questions/9913/why-do-type-ii-restriction-endonucleases-cleave-at-palindromic-sequences">Why do Type II Restriction Endonucleases cleave at palindromic sequences?</a></li>
+<li><a target="_blank" rel="noopener" href="https://biology.stackexchange.com/questions/81626/why-are-restriction-sites-palindromic-in-nature">Why are restriction sites palindromic in nature?</a></li>
+<li><a target="_blank" rel="noopener" href="https://biology.stackexchange.com/questions/1167/why-do-restriction-enzymes-tend-to-have-an-even-number-of-bases-in-their-recogni">Why do restriction enzymes tend to have an even number of bases in their recognition site?</a></li>
+</ul>
+<p>綜上所述，雖然不是所有限制酶都辨識迴文序列 <sup id="fnref:6"><a href="#fn:6" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="https://en.wikipedia.org/wiki/List_of_restriction_enzyme_cutting_sites">6</span></a></sup>，但迴文序列對於限制酶而言，似乎有一些結構上的優勢。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>嚴格來說，這道題其實不是找出限制酶的位置，畢竟限制酶是透過實驗決定的。題目的要求是尋找長度介於 4 - 12 之間的反向迴文序列，這是 II 型限制酶識別位置的常見長度。我們可以先設計出能找出所有反向迴文序列的方式，再移除超出範圍的序列即可滿足題目要求。</p>
+<p>窮舉法是解決這個問題最直觀的方式，也就是逐一生成 DNA 所有子字串，判斷它們是否為反向迴文。生成子字串的過程需要 $O(n^2)$ 的時間複雜度，加上判斷反向迴文所需的 $O(n)$，共計 $O(n^3)$。因此，窮舉法雖然直觀而且全面，可是效率不高。</p>
+<p>然而，依據迴文的對稱特性，我們其實沒有必要檢查所有的子字串。迴文字串兩側的字符必然完全對應且相等。因此，如果一個字串不是迴文，那麼從相同中心往兩側延長的字串也必然不是迴文。</p>
+<table>
+<thead>
+<tr>
+<th>座標</th>
+<th>子字串</th>
+<th>反向迴文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>s[i-1:j-1]</code></td>
+<td><code>...11...</code></td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>s[i:j]</code></td>
+<td><code>..2110..</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>s[i-1:j+1]</code></td>
+<td><code>.321103.</code></td>
+<td>否</td>
+</tr>
+</tbody></table>
+<p>（為了方便，這一節暫時使用一般的迴文定義來解說演算法）</p>
+<p>基於這項特性，中心擴展法（middle expansion method）應運而生。這個方法逐一檢查每個位置，將其視為潛在的迴文中心。接著，從中心往兩側擴展，直到兩側的字符不再對稱相等。</p>
+<p>擴展過程中得到的子字串，就是以該位置為中心的迴文。由於這過程需要遍歷所有字符兩次，所以它的時間複雜度為$O(n^2)$。</p>
+<p>1975 年，Manacher 演算法的發現進一步提升了搜尋迴文的效率。這個算法仍以中心擴展法為核心，但利用迴文的對稱特性，避免巢狀迴文的重複計算，使得時間複雜度降至 $O(n)$。</p>
+<p>具體來說，在使用中心擴展法時，如果檢查點位於已知迴文 $S$ 內，就能透過 $S$ 的中心找到與檢查點的對稱點。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   |-迴文字串-|</span><br><span class="line">...ooooo.ooooo...</span><br><span class="line">     |  |  └ 檢查點</span><br><span class="line">     |  └ 迴文中心</span><br><span class="line">     └ 對稱點</span><br></pre></td></tr></table></figure>
+
+<p>根據迴文的特性，中心兩側字符必然彼此對應且相等。因此，如果左側存在迴文字串，那麼右側對應片段也會有完全相同的迴文字串。</p>
+<p>假設檢查點與對稱點分別是迴文 $s$ 和 $s’$ 的中心，那麼根據它們的長度，可能存在兩種狀況。</p>
+<p>第一，對稱點迴文 $s’$ 完全被 $S$ 覆蓋。根據兩側對稱特性，$s’$ 與 $s$ 的組成和長度完全一致，所以可以透過對稱點來確認檢查點的迴文資訊。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...xoooooooo.oooooooox...</span><br><span class="line">    |&lt;-s&#x27;&gt;|   |&lt;-s-&gt;| </span><br><span class="line">   |&lt;-------S-------&gt;|</span><br></pre></td></tr></table></figure>
+
+<p>第二，對稱點迴文只有部分在 $S$ 內。這表示不能完全依賴對稱點來確認檢查點的迴文資訊，因為 $s’$ 有部分擴展到 $S$ 的邊界外。</p>
+<p>此時，仍要回歸中心擴展法，但這次是從 $S$ 的邊界開始檢查，確認 $s$ 能否繼續延伸並形成新的迴文。如果 $s$ 能繼續延伸，形成更長的迴文，那麼它就會成為新的 $S$，能用來確認其後檢查點的迴文資訊。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...ooooooo.oooooox...</span><br><span class="line">   |&lt;-s&#x27;&gt;|  &lt;-s-&gt;</span><br><span class="line">    |&lt;----S----&gt;|</span><br></pre></td></tr></table></figure>
+
+<p>這種作法確保了尋找迴文時，只在必要的情形使用中心擴展，其餘情形都可以透過儲存的資訊取得結果。查詢迴文資訊為常數時間，而且中心擴展始於 $S$ 的邊界，而非從頭開始。</p>
+<p>即使沒有對應的迴文資訊，這方法仍持續延伸並記錄各位置的迴文資訊。因此，它才能避免重複計算，達到 $O(n)$ 的時間複雜度。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>改進</th>
+<th>時間複雜度</th>
+<th>空間複雜度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>窮舉法（brute force）</td>
+<td></td>
+<td>$O(n^3)$</td>
+<td>$O(1)$</td>
+</tr>
+<tr>
+<td>中心擴展法（middle expansion）</td>
+<td>跳過不可能形成迴文的字串</td>
+<td>$O(n^2)$</td>
+<td>$O(1)$</td>
+</tr>
+<tr>
+<td>Manacher 法（Manacher’s algorithm）</td>
+<td>只在必要時使用中心擴展法</td>
+<td>$O(n)$</td>
+<td>$O(n)$</td>
+</tr>
+</tbody></table>
+<h1 id="python-實作"><a href="#python-實作" class="headerlink" title="python 實作"></a>python 實作</h1><p>如前所述，根據基因體學的定義，迴文序列與其反向互補序列一致。為了讓程式碼易讀，我新增了 <code>complement</code> function 來生成 DNA 的互補序列。這意味著如果字串 <code>dna</code> 是迴文，那麼它應該滿足 <code>dna == complement(dna)[::-1]</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">complement</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Complementing a DNA sequence.&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> dna.translate(<span class="built_in">str</span>.maketrans(<span class="string">&quot;ATCG&quot;</span>, <span class="string">&quot;TAGC&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<p>考慮到反向迴文的定義，只有偶數長度的 DNA 序列才能形成完全一致的反向互補序列。因此這裡我們只尋找偶數長度的迴文。</p>
+<h2 id="窮舉法"><a href="#窮舉法" class="headerlink" title="窮舉法"></a>窮舉法</h2><p>窮舉法的步驟是列出 DNA 序列的所有子序列，同時確認它們是否滿足反向迴文。根據題目要求，DNA 序列的位置由 1 開始計數，所以在記錄迴文起始位置時，需要額外加 1 以滿足要求。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">revp_bf</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Find a list of all palindromes&#x27; positions and their length, in the DNA</span></span><br><span class="line"><span class="string">    sequence using brute force.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA string composed of nucleotides (&quot;A&quot;, &quot;T&quot;, &quot;C&quot;, &quot;G&quot;).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        list: A list of tuple, recording the position and length of every</span></span><br><span class="line"><span class="string">              reverse palindrome, like [(&lt;position&gt;, &lt;length&gt;)]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        (i + <span class="number">1</span>, j - i)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(dna) + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(j)</span><br><span class="line">        <span class="keyword">if</span> dna[i:j] == complement(dna[i:j])[::-<span class="number">1</span>]</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+<h2 id="中心擴展法"><a href="#中心擴展法" class="headerlink" title="中心擴展法"></a>中心擴展法</h2><p>應用中心擴展法時，我們要逐一檢查序列各個位置，將其視為潛在的迴文中心點 <code>mid</code>，再從中心往兩側檢查序列的對稱互補性。</p>
+<p>在這個題目的條件下，DNA 迴文的長度必為偶數，所以 <code>mid</code> 不是特定字符的位置，而是字符間隙的位置。</p>
+<p>其次，DNA 首尾兩個位置無法作為中心點，所以 <code>mid</code> 的數值介於 1 到 <code>len(dna) - 1</code>之間。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DNA   A T C G A G G A G</span><br><span class="line">Pos  0 1 2 3 4 5 6 7 8 9 </span><br><span class="line">      mid-&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>span</code> 則是從 <code>mid</code> 向兩側擴展的距離（或說潛在迴文的半徑）。因為這個距離不會超出 DNA 序列的邊界，所以 <code>span</code> 它的最大值取決於 <code>mid</code> 到 DNA 序列兩端的最短距離。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DNA   A T C G A G G A G</span><br><span class="line">Pos  0 1 2 3 4 5 6 7 8 9 </span><br><span class="line">Span |&lt;---------&gt;|</span><br><span class="line">          mid</span><br></pre></td></tr></table></figure>
+
+<p>在每個 <code>mid</code> 對應的 <code>span</code> 值域內，我們逐步增加 <code>span</code> 的長度，再依次檢查擴展範圍內的 DNA 序列是否滿足迴文（即左側與右側的核苷酸對稱互補）。</p>
+<p>如果兩側核苷酸彼此互補，則記錄它的起始位置和長度，並且持續擴展 <code>span</code>；兩者不匹配，則中斷當前 <code>mid</code> 的擴展，轉向下一個中心點，直到所有位置都檢查過為止。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">revp_me</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Find a list of all palindromes&#x27; positions and their length, in the DNA</span></span><br><span class="line"><span class="string">    sequence using middle expansion approach.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA string composed of nucleotides (&quot;A&quot;, &quot;T&quot;, &quot;C&quot;, &quot;G&quot;).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        list: A list of tuple, recording the position and length of every</span></span><br><span class="line"><span class="string">              reverse palindrome, like [(&lt;position&gt;, &lt;length&gt;)]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    palindromes = []</span><br><span class="line">    <span class="keyword">for</span> mid <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(dna)):</span><br><span class="line">        <span class="keyword">for</span> span <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">min</span>(mid, <span class="built_in">len</span>(dna) - mid) + <span class="number">1</span>):</span><br><span class="line">            left_nt = dna[mid - span]</span><br><span class="line">            right_nt = dna[mid - <span class="number">1</span> + span]</span><br><span class="line">            <span class="keyword">if</span> left_nt == complement(right_nt):</span><br><span class="line">                palindromes.append((mid - span + <span class="number">1</span>, span * <span class="number">2</span>))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> palindromes</span><br></pre></td></tr></table></figure>
+
+<h2 id="Manacher-演算法"><a href="#Manacher-演算法" class="headerlink" title="Manacher 演算法"></a>Manacher 演算法</h2><p>Manacher 演算法最初是設計來尋找最長的迴文字串。不過，如果知道每個中心點的最長迴文字串，其實也能重建出以同樣位置為中心，只是長度較短的迴文字串。因此，這個方法只需一些調整就能用來解這這題。</p>
+<p>另外，迴文中心在偶數長度字串位於兩字符間，而在奇數長度字串則位於特定字符上。為了解決這項分歧，原始的 Manacher 演算法會在字符間安插特殊符號（例如 <code>#</code>，<code>abc</code> -&gt; <code>#a#b#c#</code>），將任何字串統一為奇數長度的形式。</p>
+<p>對於這題，由於已知所有迴文長度都為偶數，所以可以省略插入特殊符號的步驟，直接處理原始的 DNA 序列。</p>
+<p>為了讓程式碼的結構更清晰，我把中心擴展法的功能獨立到 <code>extend</code> function。這個 function 負責從指定的中心點開始，向兩側擴展來檢查序列的對稱互補性。<code>extend</code> function 允許用戶從已知的迴文邊界開始擴展，減少了重複檢查的狀況。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">extend</span>(<span class="params">dna, mid, start_span=<span class="number">1</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Extend the palindrome from the middle point to the maximum span.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA string composed of nucleotides (&quot;A&quot;, &quot;T&quot;, &quot;C&quot;, &quot;G&quot;).</span></span><br><span class="line"><span class="string">        mid (int): Index of the middle point from which to check symmetry.</span></span><br><span class="line"><span class="string">        start_span (int): Initial distance from the middle to start checking.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        int: Maximum span where the sequence remains a palindrome.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    max_span = start_span</span><br><span class="line">    <span class="keyword">for</span> span <span class="keyword">in</span> <span class="built_in">range</span>(start_span, <span class="built_in">min</span>(mid, <span class="built_in">len</span>(dna) - mid) + <span class="number">1</span>):</span><br><span class="line">        left_nt = dna[mid - span]</span><br><span class="line">        right_nt = dna[mid - <span class="number">1</span> + span]</span><br><span class="line">        <span class="keyword">if</span> left_nt == complement(right_nt):</span><br><span class="line">            max_span = span</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> max_span</span><br></pre></td></tr></table></figure>
+<p>Manacher 演算法的核心是利用已知的迴文資訊來避免重複檢查，它需要額外的空間來記錄以下三項資訊：</p>
+<ul>
+<li><code>max_spans</code> 儲存字串各個中心點的最大迴文半徑。它們的數值預設為 -1，表示該位置未經檢查。隨著檢查進度，相應位置的數值會逐步更新。</li>
+<li><code>right</code> 是最靠近 DNA 序列右端的已知迴文的右邊界位置。我們可以透過它來判斷檢查點是否位於已知的迴文內，從而利用已知的迴文資訊。</li>
+<li><code>center</code> 是 <code>right</code> 對應迴文的中心位置。它能幫助我們找到檢查點的對稱點位置。</li>
+</ul>
+<p>Manacher 演算法的計算流程與中心擴展法相似，仍須依序檢查 DNA 序列各個位置。不過在這基礎上，還要額外判斷當前位置是否位於某個已知的迴文內。</p>
+<p>假設當前的檢查點 <code>mid</code> 小於 <code>right</code>，表示我們有機會利用已知的回文資訊。此時，要先找到檢查點在較大迴文中的對稱點 <code>mirror</code>。</p>
+<p>如果對稱點的最大迴文半徑小於 <code>right - mid</code>，表示以對稱點為中心的迴文完全被較大的迴文覆蓋。因此，檢查點的迴文半徑就等於對稱點的迴文半徑。</p>
+<p>如果對稱點的最大迴文半徑大於 <code>right - mid</code>，表示較大的迴文沒有完全覆蓋對稱點的迴文，所以檢查點的迴文半徑最多只能延伸到 <code>right</code> 的位置。</p>
+<p>反之，如果 <code>mid</code> 在 <code>right</code> 之外，表示沒有任何可參考的資訊，所以檢查點的迴文半徑設定為 0，意味著得從頭開始進行中心擴展。</p>
+<p>在判斷了 <code>mid</code> 與 <code>right</code> 的關係後，就能從已知的迴文半徑開始執行中心擴展，避免重複檢查已經擴展過的片段。擴展結束後，需要判斷擴展後的迴文半徑是否超出 <code>right</code>。若是，則要更新 <code>right</code> 與 <code>center</code> 的值。</p>
+<p>最後，從 <code>max_span</code> 可以得到所有位置的最大迴文半徑，進而依據這些資訊還原其他較短迴文的位置和長度。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">revp_manacher</span>(<span class="params">dna</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Find a list of all palindromes&#x27; positions and their length, in the DNA</span></span><br><span class="line"><span class="string">    sequence using the Manacher&#x27;s algorithm.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        dna (str): A DNA string composed of nucleotides (&quot;A&quot;, &quot;T&quot;, &quot;C&quot;, &quot;G&quot;).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">        list: A list of tuple, recording the position and length of every</span></span><br><span class="line"><span class="string">              reverse palindrome, like [(&lt;position&gt;, &lt;length&gt;)]</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    max_spans = [-<span class="number">1</span>] * <span class="built_in">len</span>(dna)</span><br><span class="line">    right = center = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> mid <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(dna)):</span><br><span class="line">        <span class="keyword">if</span> mid &lt; right:</span><br><span class="line">            mirror = <span class="number">2</span> * center - mid</span><br><span class="line">            max_spans[mid] = <span class="built_in">min</span>(max_spans[mirror], right - mid)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            max_spans[mid] = <span class="number">0</span></span><br><span class="line">        max_spans[mid] = extend(dna, mid, max_spans[mid])</span><br><span class="line">        <span class="keyword">if</span> max_spans[mid] + mid &gt; right:</span><br><span class="line">            right = max_spans[mid] + mid</span><br><span class="line">            center = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">return</span> [</span><br><span class="line">        (idx - span + <span class="number">1</span>, span * <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">for</span> idx, max_span <span class="keyword">in</span> <span class="built_in">enumerate</span>(max_spans)</span><br><span class="line">        <span class="keyword">for</span> span <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_span + <span class="number">1</span>)</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+<h1 id="討論：為什麼-Manacher-演算法好像沒快很多？"><a href="#討論：為什麼-Manacher-演算法好像沒快很多？" class="headerlink" title="討論：為什麼 Manacher 演算法好像沒快很多？"></a>討論：為什麼 Manacher 演算法好像沒快很多？</h1><p>為了檢查寫出來的 function 是否實現了 Manacher 演算法，所以我也使用題目提供的範例數據，比較了不同窮舉法、中心擴展法和 Manacher 法的計算效率。</p>
+<p>窮舉法顯然是三者最慢的，不過為什麼 Manacher 法（$O(n)$）好像沒有比中心擴展法（$O(n^2)$）快？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Using DNA sequnce TCAATGCATGCGGGTCTATATGCAT * 100</span><br><span class="line">Timing revp_bf:</span><br><span class="line">5.213197014000002</span><br><span class="line">Timing revp_me:</span><br><span class="line">0.0027632010000502305</span><br><span class="line">Timing revp_manacher:</span><br><span class="line">0.004045999999959804</span><br></pre></td></tr></table></figure>
+
+<p>雖然我有添加一些程式碼來重建所有長度的迴文序列，但這些應該不至於拖累太多吧？後來回想起來，時間複雜度是基於最差情況的計算，題目提供的示範數據可能無法區分不同算法的效率差異。</p>
+<p>II 型限制酶的長度多半在 4 到 12 之間。由於示範數據是依據這項觀察所設計，所以其中的迴文序列彼此嵌套或重疊的狀況也比較少。因此，即使使用 Manacher 演算法，多數片段仍要依賴中心擴展法。這導致 Manacher 演算法和中心擴展法在這個案例的效率相似。</p>
+<p>為了驗證這個假說，我用 ATAT 組成的序列進行測試，因為它在所有位置都能形成迴文。而結果也如預期，對於多重嵌套的迴文結構，Manacher 演算法展現了它應有的效能。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Using DNA sequnce ATAT * 100</span><br><span class="line">Timing revp_bf:</span><br><span class="line">0.06110990399997718</span><br><span class="line">Timing revp_me:</span><br><span class="line">0.018740201000014167</span><br><span class="line">Timing revp_manacher:</span><br><span class="line">0.004075799999952778</span><br></pre></td></tr></table></figure>
+
+<p>測試的程式碼可參考我的 <a target="_blank" rel="noopener" href="https://github.com/5uperb0y/rosalind/blob/main/code/revp/performance.py">Github</a>。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Loenen et al. (2014). Highlights of the DNA cutters: a short history of the restriction enzymes. Nucleic acids research, 42(1), 3-19.<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Shaw et al. (2023). Restriction-modification systems have shaped the evolution and distribution of plasmids across bacteria. Nucleic acids research, 51(13), 6806-6818.<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Rusinov et al. (2018). Avoidance of recognition sites of restriction-modification systems is a widespread but not universal anti-restriction strategy of prokaryotic viruses. BMC genomics, 19, 1-11.<a href="#fnref:3" rev="footnote">↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Rusinov et al. (2015). Lifespan of restriction-modification systems critically affects avoidance of their recognition sites in host genomes. BMC genomics, 16, 1-15.<a href="#fnref:4" rev="footnote">↩</a></span></li><li id="fn:5"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">5.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Di Felice et al. (2019). Restriction enzymes and their use in molecular biology: An overview. Journal of biosciences, 44(2), 38.<a href="#fnref:5" rev="footnote">↩</a></span></li><li id="fn:6"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">6.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_restriction_enzyme_cutting_sites">https://en.wikipedia.org/wiki/List_of_restriction_enzyme_cutting_sites</a><a href="#fnref:6" rev="footnote">↩</a></span></li></ol></div></div></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/gailman-2002-coraline/" rel="prev" title="第十四道門 Coraline">
+                  <i class="fa fa-angle-left"></i> 第十四道門 Coraline
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/underbridge-clubs-and-urban-asymmetry/" rel="next" title="橋下俱樂部與都市不對稱性">
+                  橋下俱樂部與都市不對稱性 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/locating-restriction-sites/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

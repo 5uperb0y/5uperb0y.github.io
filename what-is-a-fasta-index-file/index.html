@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="使用參考基因體進行分析時，如果沒有提供對應的 Fasta index 檔 (.fai)，很有可能跳出以下這類錯誤訊息： 1234# HaplotypeCallerERROR MESSAGE: Fasta index file ref.fasta.fai for reference ref.fasta does not exist.# freebayesunable to find FASTA in">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Fasta index file (.fai) 是什麼？">
+<meta property="og:url" content="https://5uperb0y.com/what-is-a-fasta-index-file/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="使用參考基因體進行分析時，如果沒有提供對應的 Fasta index 檔 (.fai)，很有可能跳出以下這類錯誤訊息： 1234# HaplotypeCallerERROR MESSAGE: Fasta index file ref.fasta.fai for reference ref.fasta does not exist.# freebayesunable to find FASTA in">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-10-15T13:21:21.000Z">
+<meta property="article:modified_time" content="2024-10-15T12:21:50.841Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="bioinformatics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/what-is-a-fasta-index-file/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/what-is-a-fasta-index-file/","path":"what-is-a-fasta-index-file/","title":"Fasta index file (.fai) 是什麼？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Fasta index file (.fai) 是什麼？ | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">137</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fasta-index-file"><span class="nav-number">1.</span> <span class="nav-text">Fasta index file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#samtools-faidx"><span class="nav-number">2.</span> <span class="nav-text">samtools faidx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C%EF%BC%9A%E6%A8%A1%E4%BB%BF-bedtools-getfasta"><span class="nav-number">3.</span> <span class="nav-text">Python 實作：模仿 bedtools getfasta</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-16T21:40:32+08:00">
+        10/16
+      </time>
+      <a href="/isukari-2016-yokohama-eki-sf/" title="《橫濱車站sf》">《橫濱車站sf》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">
+        10/15
+      </time>
+      <a href="/what-is-a-fasta-index-file/" title="Fasta index file (.fai) 是什麼？">Fasta index file (.fai) 是什麼？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-14T18:47:53+08:00">
+        10/14
+      </time>
+      <a href="/how-to-create-bwa-alt-files/" title="怎麼準備 bwa 所需的 .alt 檔？">怎麼準備 bwa 所需的 .alt 檔？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-27T20:54:03+08:00">
+        08/27
+      </time>
+      <a href="/asakura-2021-karenankayori-watashi-no-hogaiidesho/" title="《與其喜歡他，不如選我吧？》">《與其喜歡他，不如選我吧？》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-26T22:39:51+08:00">
+        08/26
+      </time>
+      <a href="/mikami-2020-yuri-ni-hasamareteru-onnatte-tsumidesuka/" title="《被百合夾擊的女子有罪嗎？》">《被百合夾擊的女子有罪嗎？》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/nextflow-combine-data-into-a-tuple-with-key/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-09</time>
+        <br>
+      Nextflow｜如何為輸入的資料建立辨識碼
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/edit-distance/" rel="bookmark">
+        <time class="popular-posts-time">2024-07-20</time>
+        <br>
+      ROSALIND｜Edit Distance (EDIT)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-shared-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-11</time>
+        <br>
+      ROSALIND | Finding a Shared Motif (LCSM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-shared-spliced-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-07-14</time>
+        <br>
+      ROSALIND｜Finding a Shared Spliced Motif (LCSQ)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rna-splicing/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-30</time>
+        <br>
+      ROSALIND｜RNA Splicing (SPLC)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/what-is-a-fasta-index-file/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Fasta index file (.fai) 是什麼？ | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Fasta index file (.fai) 是什麼？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-10-15 21:21:21 / 修改時間：20:21:50" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">2024-10-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>使用參考基因體進行分析時，如果沒有提供對應的 Fasta index 檔 (<em>.fai</em>)，很有可能跳出以下這類錯誤訊息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># HaplotypeCaller</span><br><span class="line">ERROR MESSAGE: Fasta index file ref.fasta.fai for reference ref.fasta does not exist.</span><br><span class="line"># freebayes</span><br><span class="line">unable to find FASTA index entry for &#x27;1&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>這個 <em>.fai</em> 究竟是什麼？為什麼許多分析需要它？</p>
+<span id="more"></span>
+
+<h1 id="Fasta-index-file"><a href="#Fasta-index-file" class="headerlink" title="Fasta index file"></a>Fasta index file</h1><p><em>.fai</em> 是 Fasta 的索引，記錄了各序列的位置，能提升軟體擷取子序列的效率。假設我們想從一萬條 DNA 序列取出位於中間的鹼基。在沒有索引檔的情況下，每一次都得從第一個鹼基讀取，直到抵達指定位置後再回報結果（循序存取，sequential access）。循序存取的效率取決於 DNA　長度，因此其時間複雜度為 $O(n)$。</p>
+<p>不過，如果事先掃描整個 Fasta 並建立索引檔，便能依據索引檔直接取用目標子序列，達到 $O(1)$ 的時間複雜度（隨機存取，random access）</p>
+<h1 id="samtools-faidx"><a href="#samtools-faidx" class="headerlink" title="samtools faidx"></a>samtools faidx</h1><p><a target="_blank" rel="noopener" href="https://www.htslib.org/doc/faidx.html">samtools faidx</a> 可用於建立參考基因體的索引檔。使用時應確保 Fasta 每條序列等長（除了最後一列）。輸出檔名預設為原 Fasta 檔名加上 <em>.fai</em> 後綴。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samtools faidx ref.fa</span><br></pre></td></tr></table></figure>
+
+<p>以此指令建立的 <em>.fai</em> 共有五欄，</p>
+<ul>
+<li>NAME：序列名稱，即 “&gt;” 之後的字串</li>
+<li>LENGTH：序列的鹼基總數</li>
+<li>OFFSET：由 0 開始計算，序列第一個鹼基為 FASTA 檔第幾個字符（含換行符）</li>
+<li>LINEBASES：每一列的鹼基總數</li>
+<li>LINEWIDTH：每一列的字符總數（含換行符）</li>
+</ul>
+<p>舉例來說，如果換行符為 “\n”，那麼序列 s1 的總長為 10 鹼基，始於第 4 個字符，每一列有 5 鹼基、6 字符。</p>
+<p><strong>example.fasta</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;s1</span><br><span class="line">AAAAA</span><br><span class="line">CCCCC</span><br></pre></td></tr></table></figure>
+
+<p><strong>example.fasta.fai</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#NAME   LENGTH   OFFSET  LINEBASES LINEWIDTH （實際不存在此列）</span><br><span class="line">s1      10       4       5         6</span><br></pre></td></tr></table></figure>
+
+<p>獨到這裡，可能有人會問為什麼 OFFSET 是 4 而不是 1？這是因為，OFFSET 是序列第一個鹼基在整個檔案的位置，而非它在序列中的座標。因此，計算位置時連序列的名稱都要一起計算。從 0 開始計算，序列 s1 的一個鹼基正好位於第 4 個字符，所以 OFFSET 才會等於 4。</p>
+<h1 id="Python-實作：模仿-bedtools-getfasta"><a href="#Python-實作：模仿-bedtools-getfasta" class="headerlink" title="Python 實作：模仿 bedtools getfasta"></a>Python 實作：模仿 bedtools getfasta</h1><p><a target="_blank" rel="noopener" href="https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html">bedtools getfasta</a> 的功能是依據 BED 檔從 Fasta 檔擷取子字串。BED 檔是紀錄區域的格式，普遍含有染色體、起始位置、終止位置和辨識碼四個欄位。比較需要留意的是，BED 檔的位置是從 0 開始計算，和 GTF 之類的格式不同。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> ref.fa</span><br><span class="line">&gt;chr1</span><br><span class="line">AAAAAAAACCCCCCCCCCCCCGCTACTGGGGGGGGGGGGGGGGGG</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> test.bed</span><br><span class="line">chr1 5 10 myseq</span><br><span class="line"></span><br><span class="line">$ bedtools getfasta -<span class="keyword">fi</span> ref.fa -bed test.bed -tab</span><br><span class="line">chr1 5 10 AAACC</span><br></pre></td></tr></table></figure>
+
+<p>以下使用 python 模仿 bedtools getfasta，利用 <em>.fai</em> 計算子序列在 Fasta 檔的位置，再透過 f.seek() 實踐隨機存取（參考<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/51801213/complexity-of-f-seek-in-python">Complexity of f.seek() in Python</a>）。簡言之，我首先讀取 BED 檔各列，存為 list 備用。*.fai* 則存為 dict，以 name 為 key，其它為 value，這樣就能依照 name 找到座標資訊。</p>
+<p>每次讀進 BED 一個區域的 start 和 end，再用以下關係式找出該區域在 Fasta 檔的位置。</p>
+<ul>
+<li>目標區域在 Fasta 的起始位置 &#x3D; offset + linewidth * (start &#x2F;&#x2F; linebases) + start % linebases</li>
+<li>目標區域在 Fasta 的終點位置 &#x3D; 子序列的起始位置 + region_length + end &#x2F;&#x2F; linebases</li>
+</ul>
+<p>實際執行時，先用 f.seek() 跳到起始位置，再用 f.read 讀到終點位置，刪除中間的換行符號，便能獲得目標區域的子序列了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">read_bed</span>(<span class="params">path</span>):</span><br><span class="line">    bed = []</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">            chrom, start, end, name, *_ = line.strip().split()</span><br><span class="line">            bed.append([chrom, <span class="built_in">int</span>(start), <span class="built_in">int</span>(end)])</span><br><span class="line">    <span class="keyword">return</span> bed</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_fai</span>(<span class="params">path</span>):</span><br><span class="line">    fai = &#123;&#125;</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">            name, length, offset, linebases, linewidth = line.strip().split()</span><br><span class="line">            fai[name] = [<span class="built_in">int</span>(length), <span class="built_in">int</span>(offset), <span class="built_in">int</span>(linebases), <span class="built_in">int</span>(linewidth)]</span><br><span class="line">    <span class="keyword">return</span> fai</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_fasta</span>(<span class="params">fa_path, fai_path, bed_path</span>):</span><br><span class="line">    bed = read_bed(bed_path)</span><br><span class="line">    fai = read_fai(fai_path)</span><br><span class="line">    results = []</span><br><span class="line">    <span class="keyword">for</span> chrom, start, end <span class="keyword">in</span> bed:</span><br><span class="line">        length, offset, linewidth, linebases = fai[chrom]</span><br><span class="line">        region_length = end - start</span><br><span class="line">        region_start = offset + linewidth * (start // linebases) + start % linebases</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(fa_path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.seek(region_start)</span><br><span class="line">            substring = f.read(region_length + end // linebases).replace(<span class="string">&quot;\n&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">            results.append([chrom, start, end, substring])</span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line">            </span><br><span class="line">get_fasta(<span class="string">&quot;ref.fa&quot;</span>, <span class="string">&quot;ref.fa.fai&quot;</span>, <span class="string">&quot;test.bed&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>最後附上 samtools 使用手冊和國外論壇的簡介供參考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.htslib.org/doc/faidx.html">samtools faidx</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.biostars.org/p/98885/#98966">what is in the fasta.fai</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.biostars.org/p/1495/">Can You Please Tell Me Where I Find Information About .Fai File Format?</a></li>
+<li></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/bioinformatics/" rel="tag"># bioinformatics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/how-to-create-bwa-alt-files/" rel="prev" title="怎麼準備 bwa 所需的 .alt 檔？">
+                  <i class="fa fa-angle-left"></i> 怎麼準備 bwa 所需的 .alt 檔？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/isukari-2016-yokohama-eki-sf/" rel="next" title="《橫濱車站sf》">
+                  《橫濱車站sf》 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/what-is-a-fasta-index-file/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

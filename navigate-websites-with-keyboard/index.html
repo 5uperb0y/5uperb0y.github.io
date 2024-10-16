@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="為什麼想以鍵盤瀏覽網頁？滑鼠是為簡化繁瑣的鍵入指令而生，也與圖形介面的發展相輔相成。因此，當代網頁本來就適合以滑鼠瀏覽，純靠瀏覽器有限的快捷鍵反倒綁手綁腳。 然而，有時擁有自己的風格比起事情做的有效率還重要。本文就是我對於「用鍵盤瀏覽網頁」這項風格的探索與總結。  Style over Substance. It doesn’t matter how well you do something,">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？">
+<meta property="og:url" content="https://5uperb0y.com/navigate-websites-with-keyboard/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="為什麼想以鍵盤瀏覽網頁？滑鼠是為簡化繁瑣的鍵入指令而生，也與圖形介面的發展相輔相成。因此，當代網頁本來就適合以滑鼠瀏覽，純靠瀏覽器有限的快捷鍵反倒綁手綁腳。 然而，有時擁有自己的風格比起事情做的有效率還重要。本文就是我對於「用鍵盤瀏覽網頁」這項風格的探索與總結。  Style over Substance. It doesn’t matter how well you do something,">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true">
+<meta property="article:published_time" content="2022-12-24T13:09:24.000Z">
+<meta property="article:modified_time" content="2024-06-09T14:29:10.000Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true">
+
+
+<link rel="canonical" href="https://5uperb0y.com/navigate-websites-with-keyboard/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/navigate-websites-with-keyboard/","path":"navigate-websites-with-keyboard/","title":"網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？ | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">137</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%8C%E8%A6%BA%E5%BE%97%E9%85%B7%E3%80%8D%E7%9A%84%E5%AD%B8%E7%BF%92%E6%88%90%E6%9C%AC%E6%9C%89%E5%A4%9A%E9%AB%98%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">「覺得酷」的學習成本有多高？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9A%A2%E9%81%8A-Google-search"><span class="nav-number">2.</span> <span class="nav-text">暢遊 Google search</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%8F%E9%81%8E%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E%E6%9F%A5%E6%89%BE%E9%97%9C%E9%8D%B5%E5%AD%97%EF%BC%9F"><span class="nav-number">2.1.</span> <span class="nav-text">如何透過搜尋引擎查找關鍵字？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%96%8B%E5%95%9F%E7%89%B9%E5%AE%9A%E9%80%A3%E7%B5%90%EF%BC%9F"><span class="nav-number">2.2.</span> <span class="nav-text">如何開啟特定連結？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%88%91%E9%82%84%E6%B2%92%E6%89%BE%E5%88%B0%E6%BB%BF%E6%84%8F%E7%9A%84%E7%B5%90%E6%9E%9C%EF%BC%8C%E8%A6%81%E6%80%8E%E9%BA%BC%E5%89%8D%E5%BE%80%E4%B8%8B%E4%B8%80%E9%A0%81%EF%BC%9F"><span class="nav-number">2.3.</span> <span class="nav-text">如果我還沒找到滿意的結果，要怎麼前往下一頁？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E7%80%8F%E8%A6%BD%E5%99%A8%E5%88%86%E9%A0%81%EF%BC%9F"><span class="nav-number">2.4.</span> <span class="nav-text">如何管理瀏覽器分頁？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%96%8B%E5%95%9F%E8%88%87%E9%97%9C%E9%96%89%E5%88%86%E9%A0%81"><span class="nav-number">2.4.1.</span> <span class="nav-text">開啟與關閉分頁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8F%9B%E8%88%87%E7%A7%BB%E5%8B%95%E5%88%86%E9%A0%81"><span class="nav-number">2.4.2.</span> <span class="nav-text">切換與移動分頁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E6%88%96%E9%96%8B%E5%95%9F%E6%9B%BE%E7%80%8F%E8%A6%BD%E7%9A%84%E7%B6%B2%E9%A0%81"><span class="nav-number">2.4.3.</span> <span class="nav-text">搜索或開啟曾瀏覽的網頁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%AE%A1%E7%90%86%E7%80%8F%E8%A6%BD%E5%99%A8%E8%A6%96%E7%AA%97%EF%BC%9F"><span class="nav-number">2.5.</span> <span class="nav-text">如何管理瀏覽器視窗？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%8D%B5%E7%B5%84%E5%90%88%E6%8A%80"><span class="nav-number">3.</span> <span class="nav-text">快捷鍵組合技</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E9%80%8F%E9%81%8E-Google-%E6%90%9C%E5%B0%8B%E3%80%8D"><span class="nav-number">3.1.</span> <span class="nav-text">「透過 Google 搜尋」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E5%A5%BD%E6%89%8B%E6%B0%A3%E3%80%8D"><span class="nav-number">3.2.</span> <span class="nav-text">「好手氣」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E5%9C%A8%E7%84%A1%E7%97%95%E8%A6%96%E7%AA%97%E4%B8%AD%E9%96%8B%E5%95%9F%E9%80%A3%E7%B5%90%E3%80%8D"><span class="nav-number">3.3.</span> <span class="nav-text">「在無痕視窗中開啟連結」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%80%8C%E5%8F%A6%E5%AD%98%E7%82%BA%E5%9C%96%E7%89%87%E3%80%8D"><span class="nav-number">3.4.</span> <span class="nav-text">「另存為圖片」</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%96%E6%9B%B3%E7%95%B6%E5%89%8D%E5%88%86%E9%A0%81%E7%82%BA%E7%8D%A8%E7%AB%8B%E8%A6%96%E7%AA%97"><span class="nav-number">3.5.</span> <span class="nav-text">拖曳當前分頁為獨立視窗</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E5%8F%96%E5%B7%A7%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%B4%E9%81%BF%E9%BB%9E%E6%93%8A%E9%80%A3%E7%B5%90%E7%9A%84%E9%9A%9C%E7%A4%99%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">以取巧的方式迴避點擊連結的障礙？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%9B%B4%E9%81%94%E7%89%B9%E5%AE%9A%E9%80%A3%E7%B5%90%EF%BC%9F"><span class="nav-number">4.1.</span> <span class="nav-text">如何直達特定連結？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%89%8D%E5%BE%80%E4%B8%8B%E4%B8%80%E9%A0%81%EF%BC%9F"><span class="nav-number">4.2.</span> <span class="nav-text">如何前往下一頁？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A4%87%E8%A3%BD%E6%96%87%E5%AD%97%EF%BC%9F"><span class="nav-number">4.3.</span> <span class="nav-text">如何複製文字？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Vimium-%E8%A7%A3%E6%94%BE%E9%8D%B5%E7%9B%A4%E7%9A%84%E6%BD%9B%E8%83%BD"><span class="nav-number">5.</span> <span class="nav-text">使用 Vimium 解放鍵盤的潛能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC-Vim-%E7%9A%84%E5%8A%9F%E8%83%BD%E6%94%B9%E5%96%84%E9%8D%B5%E7%9B%A4%E7%80%8F%E8%A6%BD%E9%AB%94%E9%A9%97%EF%BC%9F"><span class="nav-number">5.1.</span> <span class="nav-text">為什麼 Vim 的功能改善鍵盤瀏覽體驗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vimium-%E8%A7%A3%E6%B1%BA%E4%BA%86%E9%8D%B5%E7%9B%A4%E9%96%8B%E5%95%9F%E9%80%A3%E7%B5%90%E7%9A%84%E9%BA%BB%E7%85%A9"><span class="nav-number">5.2.</span> <span class="nav-text">Vimium 解決了鍵盤開啟連結的麻煩</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">6.</span> <span class="nav-text">結論</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-16T21:40:32+08:00">
+        10/16
+      </time>
+      <a href="/isukari-2016-yokohama-eki-sf/" title="《橫濱車站sf》">《橫濱車站sf》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">
+        10/15
+      </time>
+      <a href="/what-is-a-fasta-index-file/" title="Fasta index file (.fai) 是什麼？">Fasta index file (.fai) 是什麼？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-14T18:47:53+08:00">
+        10/14
+      </time>
+      <a href="/how-to-create-bwa-alt-files/" title="怎麼準備 bwa 所需的 .alt 檔？">怎麼準備 bwa 所需的 .alt 檔？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-27T20:54:03+08:00">
+        08/27
+      </time>
+      <a href="/asakura-2021-karenankayori-watashi-no-hogaiidesho/" title="《與其喜歡他，不如選我吧？》">《與其喜歡他，不如選我吧？》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-08-26T22:39:51+08:00">
+        08/26
+      </time>
+      <a href="/mikami-2020-yuri-ni-hasamareteru-onnatte-tsumidesuka/" title="《被百合夾擊的女子有罪嗎？》">《被百合夾擊的女子有罪嗎？》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/start-learning-vim-from-vimium/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-31</time>
+        <br>
+      Vimium，學習 Vim 的新途徑
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/modify-vimium-to-label-and-close-pop-up/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-22</time>
+        <br>
+      Vim｜嘗試修改 Vimium 來關閉網頁 pop-up
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-common-settings-for-vscodevim/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-28</time>
+        <br>
+      VSCodeVim 常用設定
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/navigate-websites-with-keyboard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？ | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2022-12-24 21:09:24" itemprop="dateCreated datePublished" datetime="2022-12-24T21:09:24+08:00">2022-12-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-06-09 22:29:10" itemprop="dateModified" datetime="2024-06-09T22:29:10+08:00">2024-06-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>為什麼想以鍵盤瀏覽網頁？滑鼠是為簡化繁瑣的鍵入指令而生，也與圖形介面的發展相輔相成。因此，當代網頁本來就適合以滑鼠瀏覽，純靠瀏覽器有限的快捷鍵反倒綁手綁腳。</p>
+<p>然而，有時擁有自己的風格比起事情做的有效率還重要。本文就是我對於「用鍵盤瀏覽網頁」這項風格的探索與總結。</p>
+<blockquote>
+<p>Style over Substance. It doesn’t matter how well you do something, as long as you look good doing it. （格調重於成效，只要你作風有形，事情幹得怎麼樣並不要緊。） </p>
+<p style="text-align:right" > The core rulebook for Cyberpunk 2020 </p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="「覺得酷」的學習成本有多高？"><a href="#「覺得酷」的學習成本有多高？" class="headerlink" title="「覺得酷」的學習成本有多高？"></a>「覺得酷」的學習成本有多高？</h1><p>就我的使用經驗，是否要用鍵盤瀏覽網頁是風格問題而不是效率問題。因為瀏覽網頁不像編輯文件一樣要頻繁移動游標，點擊和拖曳等行為的頻率也較低，所以沒那麼講究要降低手部位移的幅度。畢竟，有時網頁看一半，漱杯飲料或嗑片餅乾的移動幅度，都比單手改持滑鼠的移動幅度還要大。</p>
+<p>儘管如此，我認為除了營造風格以外，善用快捷鍵能減少滑鼠在精密操作時的磨耗感，例如開啟狹窄的右鍵選單、滾動長頁面或點擊尺寸很小的按鈕，這些瑣碎操作不見得會影響瀏覽網頁的效率，但會大幅降低查找資料的心情（對，就是 kimochi 問題）。</p>
+<p>更重要的是，體驗鍵盤瀏覽網頁的成本極低，只要學會以下三組快捷鍵，就能流暢地逛平常習慣的網頁了。本文也將以這三組快捷鍵為主軸，簡介如何利用 Windows 系統、Chrome 瀏覽器與 Vimium 套件的快捷鍵，以鍵盤瀏覽網頁。</p>
+<ol>
+<li>設定開啟瀏覽器的快捷鍵</li>
+<li>學會開分頁(<code>Ctrl</code> + <code>T</code>)、關分頁 (<code>Ctrl</code> + <code>W</code>)、切換分頁 (<code>Ctrl</code> + <code>Tab</code>)</li>
+<li>安裝 Vimium 或其他 Vim-like 瀏覽器套件</li>
+<li>學會用 Vim-like 套件的功能點擊連結 (<code>f</code> + <code>&lt;index&gt;</code>)</li>
+</ol>
+<p>既然要用鍵盤瀏覽網頁，那首要的目標自然是透過鍵盤開啟瀏覽器。然而，Chrome 與 Windows 雖然有不少快捷鍵，卻似乎沒有能開啟瀏覽器的快捷鍵。幸好，Windows 支援用戶為檔案或程式建立捷徑 (Shortcut) 和設定快捷鍵 (Shortcut key)，所以能在需要時快速開啟檔案或程式，不必再移動到它們（或其捷徑）的所在目錄。</p>
+<p>瀏覽器的捷徑可從執行檔自行建立（<strong>chrome.exe - Shortcut</strong>），或是使用安裝時自動建立的捷徑（ <strong>Google Chrome</strong>）。建立瀏覽器的捷徑之後，便能為其設定快捷鍵。</p>
+<ol>
+<li>右鍵點擊「捷徑」</li>
+<li>點選「內容 (Properties)」</li>
+<li>點選「快捷鍵」</li>
+<li>按下自訂快捷鍵，例如 <code>Ctrl</code> + <code>Alt</code> + <code>C</code></li>
+<li>點選「確定」套用設定</li>
+</ol>
+<h1 id="暢遊-Google-search"><a href="#暢遊-Google-search" class="headerlink" title="暢遊 Google search"></a>暢遊 Google search</h1><p>Chrome 完整的快捷鍵列表可參考<a target="_blank" rel="noopener" href="https://support.google.com/chrome/answer/157179?hl=zh-Hant&co=GENIE.Platform=Desktop">google 說明</a>。以下我嘗試從用戶角度，說明有哪些常用快捷鍵值得留意，而這些快捷鍵又有哪些使用的情境。</p>
+<h2 id="如何透過搜尋引擎查找關鍵字？"><a href="#如何透過搜尋引擎查找關鍵字？" class="headerlink" title="如何透過搜尋引擎查找關鍵字？"></a>如何透過搜尋引擎查找關鍵字？</h2><p>假設今天想查詢某項資訊，可考慮以下三種方式來輸入關鍵字，再點擊 <code>Enter</code> 執行搜索：</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>開啟新分頁並移至新分頁的網址列</strong></td>
+<td><code>Ctrl</code> + <code>T</code></td>
+</tr>
+<tr>
+<td>移至網址列</td>
+<td><code>Alt</code> + <code>D</code> or <code>Ctrl</code> + <code>L</code> or <code>F6</code></td>
+</tr>
+<tr>
+<td>於網址列搜尋 Google</td>
+<td><code>Ctrl</code> + <code>E</code> or <code>Ctrl</code> + <code>K</code></td>
+</tr>
+</tbody></table>
+<p>由於以上方法皆透過網址列搜尋關鍵字，一旦網頁跳轉到搜索結果，該列便會轉變為網址。此時若想修正錯字或更改關鍵字，可以使用 <code>/</code> 切換到 Google search box，在該位置編輯關鍵字，就不用重新輸入一遍或編輯藏在長串網址當中的關鍵字。</p>
+<p>跳轉到搜索結果後，便能使用以下快捷鍵滑動或跳動網頁，尋找自己需要的資訊。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>連續滑動網頁</td>
+<td><code>↑</code> and <code>↓</code></td>
+</tr>
+<tr>
+<td>向下跳數列</td>
+<td><code>Space</code> or <code>PageDown</code></td>
+</tr>
+<tr>
+<td>向上跳數列</td>
+<td><code>Shift</code> + <code>Space</code> or <code>PageUp</code></td>
+</tr>
+<tr>
+<td>移動至網頁最上端</td>
+<td><code>Home</code></td>
+</tr>
+<tr>
+<td>移動至網頁最底端</td>
+<td><code>End</code></td>
+</tr>
+</tbody></table>
+<h2 id="如何開啟特定連結？"><a href="#如何開啟特定連結？" class="headerlink" title="如何開啟特定連結？"></a>如何開啟特定連結？</h2><p>假如你已找到感興趣的結果，接下來得移動游標到連結位置才能開啟。Chrome 預設以 <code>Tab</code> 和　<code>Shift + Tab</code> 在連結間切換。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移動至下一個連結</td>
+<td><code>Tab</code></td>
+</tr>
+<tr>
+<td>移動至上一個連結</td>
+<td><code>Shift</code> + <code>Tab</code></td>
+</tr>
+</tbody></table>
+<p>另一種方式是啟用無障礙設定裡的「使用文字游標瀏覽頁面」。在這模式裡，用戶能以 <code>←</code>、<code>↑</code>、<code>↓</code>、<code>→</code> 操作文字游標，讓網頁能像文檔一樣瀏覽。</p>
+<ol>
+<li><code>Alt</code> + <code>E</code> ，開啟瀏覽器設定選單</li>
+<li><code>S</code>，選取「設定」</li>
+<li><code>/</code>，進入搜索框</li>
+<li>查詢「無障礙設定」</li>
+<li>使用 <code>Tab</code> 移動到游標瀏覽功能開關</li>
+<li><code>Enter</code>，開啟或關閉功能</li>
+</ol>
+<p><em>(或是以 <code>F7</code>快速切換文字游標瀏覽模式。記得關掉提醒通知，往後啟用模式才不用一再確認。）</em></p>
+<p>當游標移動到連結位置，即可使用以下快捷鍵，決定要於哪個分頁開啟連結。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>於當前分頁開啟連結</td>
+<td><code>Enter</code></td>
+</tr>
+<tr>
+<td><strong>於新分頁開啟連結</strong></td>
+<td><code>Ctrl</code> + <code>Enter</code></td>
+</tr>
+<tr>
+<td>於新分頁開啟連結並移至新分頁</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>Enter</code></td>
+</tr>
+<tr>
+<td>於新視窗開啟連結並移至新視窗</td>
+<td><code>Shift</code> + <code>Enter</code></td>
+</tr>
+</tbody></table>
+<h2 id="如果我還沒找到滿意的結果，要怎麼前往下一頁？"><a href="#如果我還沒找到滿意的結果，要怎麼前往下一頁？" class="headerlink" title="如果我還沒找到滿意的結果，要怎麼前往下一頁？"></a>如果我還沒找到滿意的結果，要怎麼前往下一頁？</h2><p>很遺憾的，目前 Chrome 或 Google Search <strong>沒有直達下一頁的快捷鍵</strong>，只能持續押著 <code>Tab</code> 直到頁面底部。那使用 <code>Shift</code> + <code>Tab</code> 從頁面底部開始找起呢？可行，但不見得比較快，因為頁面底部除了「下一頁」與「上一頁」按鈕外，還有隱私權、服務條款、活動紀錄與地理位置等連結要通過。</p>
+<p>開啟連結是使用鍵盤瀏覽網頁的最大障礙，因為用戶必須先滑動視窗找到對應的連結，再移動游標通過一樣內容到該連結的位置。換句話說，用戶至少要跑兩次迴圈才能找到並打開連結。</p>
+<p>既然如此，那為什麼不一開始就使用 <code>Tab</code> 來逛網頁呢？其實可以，但非常惱人。</p>
+<p>首先，游標移動不若視窗滑動迅速。其次，連結在網頁上的順序未必與游標移動的順序一致，使得用戶無法預期瀏覽的方向。以 Google search 為例，一則搜尋條目在視覺上的結構為頁庫存檔選項、翻譯選項與連結文字。然而，游標移動的順序卻是連結文字、頁庫存檔選項、翻譯選項，導致需要連續按三次 <code>Tab</code> 才能移動到下一個連結。</p>
+<blockquote>
+<p><a href="https://5uperb0y.com/">https://5uperb0y.com</a> ▼ 翻譯這個網頁<br>5uperb0y’s blog</p>
+</blockquote>
+<p>第三，不是每個網頁都會醒目標示游標的位置，以至於用戶不僅無法確認游標移動的順序，還可能找不到游標的位置。就拿我這個網站為例，可以試試使用 <code>Tab</code> 來找到任一文章的連結，我相信按了十幾下可能都還沒辦法確認游標位置，所以也很難開啟特定連結。</p>
+<p>在本文其他節，我會介紹能迴避這些問題的取巧手段和擴充套件。但在此處，我們先假設所有搜索都能在第一頁找到答案，並繼續了解如何透過快捷鍵管理分頁與視窗。</p>
+<h2 id="如何管理瀏覽器分頁？"><a href="#如何管理瀏覽器分頁？" class="headerlink" title="如何管理瀏覽器分頁？"></a>如何管理瀏覽器分頁？</h2><p>如今我們已經會使用快捷鍵搜尋和瀏覽網頁，然而隨著點擊而累積的分頁又該如何管理呢？雖然列出了許多選項，但我常用的僅有粗體標示者。</p>
+<h3 id="開啟與關閉分頁"><a href="#開啟與關閉分頁" class="headerlink" title="開啟與關閉分頁"></a>開啟與關閉分頁</h3><table>
+<thead>
+<tr>
+<th>行為</th>
+<th>shortcut</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>開啟新分頁並移至新分頁</td>
+<td><code>Ctrl</code> + <code>T</code></td>
+</tr>
+<tr>
+<td><strong>關閉當前分頁</strong></td>
+<td><code>Ctrl</code> + <code>W</code> or <code>Ctrl</code> + <code>F4</code></td>
+</tr>
+<tr>
+<td>依關閉順序，重新開啟已關閉之分頁</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>T</code></td>
+</tr>
+</tbody></table>
+<h3 id="切換與移動分頁"><a href="#切換與移動分頁" class="headerlink" title="切換與移動分頁"></a>切換與移動分頁</h3><table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>移至指定分頁</td>
+<td><code>Ctrl</code> + <code>[1-8]</code></td>
+</tr>
+<tr>
+<td>移至最後分頁</td>
+<td><code>Ctrl</code> + <code>9</code></td>
+</tr>
+<tr>
+<td><strong>移至下一分頁</strong></td>
+<td><code>Ctrl</code> + <code>PageDown</code> or <code>Ctrl</code> + <code>Tab</code></td>
+</tr>
+<tr>
+<td>移至上一分頁</td>
+<td><code>Ctrl</code> + <code>PageUp</code> or <code>Ctrl</code> + <code>Shift</code> + <code>Tab</code></td>
+</tr>
+<tr>
+<td>後挪分頁順序</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>PageDown</code></td>
+</tr>
+<tr>
+<td>前挪分頁順序</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>PageUp</code></td>
+</tr>
+<tr>
+<td>挪動分頁為獨立視窗</td>
+<td><code>Shift</code> + <code>W</code></td>
+</tr>
+</tbody></table>
+<h3 id="搜索或開啟曾瀏覽的網頁"><a href="#搜索或開啟曾瀏覽的網頁" class="headerlink" title="搜索或開啟曾瀏覽的網頁"></a>搜索或開啟曾瀏覽的網頁</h3><table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>上一頁</strong></td>
+<td><code>Alt</code> + <code>←</code></td>
+</tr>
+<tr>
+<td>下一頁</td>
+<td><code>Alt</code> + <code>→</code></td>
+</tr>
+<tr>
+<td>開啟搜尋歷史</td>
+<td><code>Ctrl</code> + <code>H</code></td>
+</tr>
+</tbody></table>
+<h2 id="如何管理瀏覽器視窗？"><a href="#如何管理瀏覽器視窗？" class="headerlink" title="如何管理瀏覽器視窗？"></a>如何管理瀏覽器視窗？</h2><p>除了分頁，Chrome 亦支援以快捷鍵開啟視窗或調整視窗大小。不過這些快捷鍵我也不常用到，頂多會用無痕視窗查詢特殊關鍵字或測試 SEO 和網頁有沒有問題。值得留意的是，<code>ALT</code> + <code>Space</code> 是開啟視窗右鍵選單的快捷鍵，所以縮小或放大都有提示，不須記憶。</p>
+<table>
+<thead>
+<tr>
+<th>行為</th>
+<th>快捷鍵</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>開新視窗</td>
+<td><code>Ctrl</code> + <code>N</code></td>
+<td>寫作時參照文件</td>
+</tr>
+<tr>
+<td>開新無痕視窗</td>
+<td><code>Ctrl</code> + <code>Shift</code> + <code>N</code></td>
+<td>查詢關鍵字、測試網頁</td>
+</tr>
+<tr>
+<td>將當前視窗縮至最小</td>
+<td><code>ALT</code> + <code>Space</code>, then <code>N</code></td>
+<td>操作桌面的檔案或軟體</td>
+</tr>
+<tr>
+<td>將當前視窗開至最大</td>
+<td><code>ALT</code> + <code>Space</code>, then <code>X</code></td>
+<td>很少用</td>
+</tr>
+</tbody></table>
+<p>相較於 Chrome，Windows 提供了更多調整視窗尺寸的途徑。因此有助於在寫程式或編輯文件時，雙開文件並分配視窗在螢幕上的位置，以便邊參閱資料邊修改文件。下圖是視窗間的關係，點擊 <code>Win</code> 與下圖的方向鍵，即可在不同形式的視窗間切換。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">           上半視窗（點選 ↓ 會回到原始視窗）</span><br><span class="line">              ↑</span><br><span class="line">左半視窗 ←  最大視窗 → 右半視窗</span><br><span class="line">              ⇅</span><br><span class="line">左半視窗 ⇆ 原始視窗 ⇆ 右半視窗</span><br><span class="line">              ⇅</span><br><span class="line">           最小視窗          </span><br></pre></td></tr></table></figure>
+
+<p>至於要在視窗間切換或取回縮小的視窗，可以使用 <code>Alt</code> + <code>Tab</code> 進入選單，再配合方向鍵選取。</p>
+<h1 id="快捷鍵組合技"><a href="#快捷鍵組合技" class="headerlink" title="快捷鍵組合技"></a>快捷鍵組合技</h1><p>前一節介紹了 Chrome 內建的快捷鍵，但諸如好手氣、右鍵搜索、於無痕視窗開啟等功能都沒有對應的快捷鍵。因此，這一節要介紹如何組合基本的快捷鍵，實踐這些方便功能。</p>
+<h2 id="「透過-Google-搜尋」"><a href="#「透過-Google-搜尋」" class="headerlink" title="「透過 Google 搜尋」"></a>「透過 Google 搜尋」</h2><p><strong>方法一：透過「開新分頁」</strong></p>
+<ol>
+<li>標示 (highlight) 欲搜索的字串</li>
+<li><code>Ctrl</code> + <code>C</code>，複製字串</li>
+<li><code>Ctrl</code> + <code>T</code>，開啟並移動游標至新分頁的網址列</li>
+<li><code>Ctrl</code> + <code>V</code>，貼上字串至網址列</li>
+<li><code>Enter</code>，執行搜尋</li>
+</ol>
+<p>若要在同一分頁搜尋，可以使用 <code>Ctrl</code> + <code>E</code>&#x2F;<code>K</code>&#x2F;<code>L</code> 取代 <code>Ctrl</code> + <code>T</code>。</p>
+<p><strong>方法二：透過「右鍵選單」</strong><br>若使用 windows 電腦，可使用選單鍵開啟右鍵選單，執行相關功能。</p>
+<ol>
+<li>標示欲搜索的字串</li>
+<li><code>☰</code>，透過選單鍵(menu key)開啟選單</li>
+<li><code>S</code>，執行「透過 Google 搜尋」</li>
+</ol>
+<h2 id="「好手氣」"><a href="#「好手氣」" class="headerlink" title="「好手氣」"></a>「好手氣」</h2><p>Google search 首頁有個好手氣的按鈕，能直接進入第一個搜尋的網頁。我們可以使用 Google search 的無障礙連結來達到類似目的。</p>
+<ol>
+<li>輸入搜尋內容</li>
+<li><code>Tab</code>，開啟無障礙輔助提示，此時應該會停在「跳至主內容」</li>
+<li><code>Enter</code>，確認跳至「主內容」，通常會直接將游標移動到第一個連結</li>
+<li><code>Enter</code>，進入第一個連結</li>
+</ol>
+<p>由於 Google 有時會在第一則搜尋條目前安插精選摘要、廣告或是錯字提醒的窗格，所以這招並非總是見效。儘管如此，仍比遍歷 Google search 的功能窗格更為便捷。</p>
+<h2 id="「在無痕視窗中開啟連結」"><a href="#「在無痕視窗中開啟連結」" class="headerlink" title="「在無痕視窗中開啟連結」"></a>「在無痕視窗中開啟連結」</h2><p>Chrome 介紹了各種開啟連結的方式，唯獨不支援在無痕視窗開啟連結的方式，所以此處同樣要利用選單鍵的來開啟右鍵選單。</p>
+<ol>
+<li>移動游標至連結</li>
+<li><code>☰</code>，透過選單鍵開啟選單</li>
+<li><code>G</code>，執行「在無痕視窗中開啟連結」</li>
+</ol>
+<h2 id="「另存為圖片」"><a href="#「另存為圖片」" class="headerlink" title="「另存為圖片」"></a>「另存為圖片」</h2><p><strong>方法一：透過「另存網頁」</strong></p>
+<ol>
+<li>移動游標至圖片</li>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>Enter</code>，開啟圖片於新分頁並切換至新分頁</li>
+<li><code>Ctrl</code> + <code>S</code>，另存新檔</li>
+<li>選取存儲目錄並存放圖片</li>
+</ol>
+<p><strong>方法二：透過「右鍵選單」</strong></p>
+<ol>
+<li>移動游標至圖片</li>
+<li><code>☰</code>，透過選單鍵開啟選單</li>
+<li><code>V</code>，執行「另存為圖片」</li>
+<li>選取存儲目錄並存放圖片</li>
+</ol>
+<h2 id="拖曳當前分頁為獨立視窗"><a href="#拖曳當前分頁為獨立視窗" class="headerlink" title="拖曳當前分頁為獨立視窗"></a>拖曳當前分頁為獨立視窗</h2><p>Chrome 沒有相關的快捷鍵，不過我們可以透過「於新視窗開啟分頁」的快捷鍵來模擬。然而與滑鼠拖曳最大的差別在於，重啟後不會保留已填入的資料，也不會刪除舊的分頁。</p>
+<ol>
+<li><code>Ctrl</code> + <code>L</code> (or <code>Alt</code> + <code>D</code>)，移至網址列</li>
+<li><code>Shift</code> + <code>Enter</code>，於新視窗開啟連結</li>
+</ol>
+<h1 id="以取巧的方式迴避點擊連結的障礙？"><a href="#以取巧的方式迴避點擊連結的障礙？" class="headerlink" title="以取巧的方式迴避點擊連結的障礙？"></a>以取巧的方式迴避點擊連結的障礙？</h1><p>本文前半部曾提到，點擊連結是用鍵盤瀏覽網頁最大的困難。在這一節，我嘗試用瀏覽器搜尋功能（<code>Ctrl</code>+<code>F</code>）可以迅速跳轉位置的特性，解決游標移動效率不彰的問題。</p>
+<h2 id="如何直達特定連結？"><a href="#如何直達特定連結？" class="headerlink" title="如何直達特定連結？"></a>如何直達特定連結？</h2><p>直達特定連結有以下五個步驟：</p>
+<ol>
+<li>辨識：目視想要開啟的連結</li>
+<li>編碼：觀察連結文字或網址，從中挑選獨一無二的子字串作為頁內搜尋的關鍵字。</li>
+<li>搜尋：<code>Ctrl</code>+<code>F</code>，搜尋關鍵字以找到連結位置</li>
+<li>跳轉：若選對關鍵字，游標會直接移動到連結。若否，則使用 <code>Enter</code> 和 <code>Shift</code> + <code>Enter</code>前後查詢連結</li>
+<li>開啟：<code>Enter</code>，開啟連結（若想要在新分頁開啟連結，可以先　<code>Esc</code> 退出，再執行開分頁搜索的行為）</li>
+</ol>
+<p>為連結編碼（或說選用關鍵字）時，可挑選網域的子字串。由於網域通常會採用較獨特的名稱，所以較不容易與其它連結衝突，能避免查詢時無法一步到位。此外，Google search 會將來自相同網站的相似內容以巢狀結構編排，不會讓單一網站的內容佔滿搜尋結果。這項特性讓頁內搜索時不會一次出現很多結果，同樣提升了搜尋的精準度。</p>
+<h2 id="如何前往下一頁？"><a href="#如何前往下一頁？" class="headerlink" title="如何前往下一頁？"></a>如何前往下一頁？</h2><p>頁內搜索的訣竅同樣能運用於前往下一頁。Google search 最下方的結果分頁有兩個潛在標的，第一個是「下一頁」本身，這個詞彙相當獨特，所以搜尋時不容易被結果條目干擾。然而它的長度較長（若以注音輸入法要按九個按鈕），所以可能要先複製字串或是用<a target="_blank" rel="noopener" href="https://key.chtouch.com/cv.aspx?p=3120">window使用者造詞</a>將這些代表「下一頁」的關鍵字存為快捷鍵，減少輸入時間。（使用者造詞可以降低到只要按四個按鈕）</p>
+<ol>
+<li><code>Ctrl</code> + <code>F</code>，搜尋 <code>下一頁</code></li>
+<li><code>Ctrl</code> + <code>Enter</code></li>
+</ol>
+<p>第二個搜索標的則是表示頁數的數字，原則上這些數字會是整個頁面最後一個數字，所以我們可以從頁面底部反向搜索這些數字來直達連結。只是 Chrome 的最後一列可能顯示用戶地址資訊，其中郵遞區號會影響查詢。目前，我還沒找到關閉這些訊息顯示的方法。</p>
+<ol>
+<li><code>Ctrl</code>+ <code>F</code>，搜尋任意數字</li>
+<li><code>Shift</code> + <code>Enter</code>，往回找到最後一個搜尋結果，最差要往回查兩次才能越過郵遞區號到達頁面數字</li>
+<li><code>Ctrl</code> + <code>Enter</code>，開啟下一頁</li>
+</ol>
+<p>由於不是每個網頁都有前往下一頁的對應按鈕，所以 Chrome 沒有下一頁的關鍵字也蠻合理的。不過我猜這項特性也跟搜尋引擎的理念有關。假設在關鍵字正確的情況下，Google Search 總是能推薦最佳的內容。那麼，只要用戶下對關鍵字，就能從第一個連結取得想要的結果。</p>
+<p>若第一頁沒出現想要的結果，表示下錯關鍵字或議題太冷門，再怎麼瀏覽都很難找到想要的資訊。因此，基於對搜尋演算法的信任，下一頁的需求其實不高，這項缺陷算是變相鼓勵用戶改善搜索的效率而非瀏覽的效率。</p>
+<h2 id="如何複製文字？"><a href="#如何複製文字？" class="headerlink" title="如何複製文字？"></a>如何複製文字？</h2><p>較費時的做法是啟用文字游標瀏覽模式，再移動游標至目標文句，再使用 <code>Shift</code> + 方向鍵選取並複製。搜尋快捷鍵則能節省游標移動的時間，</p>
+<ol>
+<li><code>Ctrl</code> + <code>F</code>，搜尋目標文句</li>
+<li><code>Esc</code>，脫離頁內搜尋窗格</li>
+<li><code>Shift</code> + 方向鍵，選取要複製的文句</li>
+<li><code>Ctrl</code> + <code>V</code>，複製</li>
+</ol>
+<p>如果要複製的文字篇幅較長，這方法甚至會比滑鼠來得有效且可靠，因為使用滑鼠選取時，要同時壓著鼠鍵並滑過狹長的文字區域，這過程有如遊玩電流急急棒一樣。相較之下，使用上下鍵卻可以一次複製一整列，還不用擔心手滑取消掉選取的區域。但如果目標文句較短的話，輸入搜尋關鍵字的時間都足以重新打字一遍了，這方法便顯得沒什麼效率。</p>
+<h1 id="使用-Vimium-解放鍵盤的潛能"><a href="#使用-Vimium-解放鍵盤的潛能" class="headerlink" title="使用 Vimium 解放鍵盤的潛能"></a>使用 Vimium 解放鍵盤的潛能</h1><p><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb">Vimium</a> 是 Chrome 的擴充套件，借鑒了 Vim 編輯器的操作邏輯與鍵位設置，大幅改善了在 Chrome 的鍵盤瀏覽體驗。</p>
+<h2 id="為什麼-Vim-的功能改善鍵盤瀏覽體驗？"><a href="#為什麼-Vim-的功能改善鍵盤瀏覽體驗？" class="headerlink" title="為什麼 Vim 的功能改善鍵盤瀏覽體驗？"></a>為什麼 Vim 的功能改善鍵盤瀏覽體驗？</h2><p>從鍵盤輸入電腦的訊號不外乎指令（例如開分頁、複製、下一頁)和文字（例如中文、英文與符號），由於指令數量遠大於按鈕的數量，若要確保鍵盤尺寸在雙手便於敲擊的範圍，勢必得存在兼具兩種定位的按鈕。而專為鍵盤設計的 Vim 與 Windows 與 Chrome 等仰賴鍵鼠相輔者的差異正體現在讓電腦區分鍵入訊號的方式。</p>
+<p>鍵鼠相輔的圖形介面保留了文字鍵的獨立性，讓滑鼠與功能選單取代部分指令（例如游標移動），而且只有在一併輸入 <code>Ctrl</code>、<code>Alt</code>、<code>Home</code> 等特殊控制鍵時，這些文字鍵才會發揮指令的功能。然而，這些特殊控制鍵分布於鍵盤兩側，編輯複雜文件時，雙手往往要在滑鼠、文字鍵區與控制鍵等區域間來回移動。</p>
+<p>與之相對，Vim 則透過切換模式來區分鍵入訊號。文字鍵在 Insert 模式用於輸入內容，在 Normal 模式則用於下達指令，所以無論要鍵入指令還是文字，所有操作都圍繞在 f 與 j 那列按鍵 (home row)，降低了操作時雙手位移的幅度。</p>
+<p>但是，Vim 的這些特性為什麼可以改善用鍵盤瀏覽網頁的體驗？</p>
+<p>Vim 的 Normal 模式有許多便於移動與跳轉指標的指令，這些有用的指令在鍵鼠系統裡多被滑鼠取代，導致鍵盤不足以支持瀏覽網頁的需求。然而，除了輸入關鍵字外，瀏覽網頁時其實少有編輯文字的需求，也就沒有下達指令與輸入文字的衝突。這種情況可以類比為 Vim 的 Normal 模式，如果能透過 vimium 之類的套件，移植 Vim 好用的指令到這些閒置的文字鍵，便能充分發會鍵盤的潛能。</p>
+<h2 id="Vimium-解決了鍵盤開啟連結的麻煩"><a href="#Vimium-解決了鍵盤開啟連結的麻煩" class="headerlink" title="Vimium 解決了鍵盤開啟連結的麻煩"></a>Vimium 解決了鍵盤開啟連結的麻煩</h2><p>雖然 Vimium 還有許多功能（這些功能可透過輸入 <code>?</code> 查詢），但我覺得在改善瀏覽網頁方面，快速開啟連結是最方便也最重要的功能。</p>
+<p>若使用 Chrome 內建的快捷鍵，必須透過遍歷或是搜尋來找到連結。當網站連結編排不友善時，遍歷的時間會延長非常多。相較之下，Vimium 引進了 Vim Easymotion 功能，用戶只要鍵入 <code>f</code>，Vimium 便會自動為連結標記關鍵字，只要輸入關鍵字就能直接開啟標註的連結。</p>
+<p><img data-src="https://github.com/5uperb0y/blog-media/blob/main/start-learning-vim-from-vimium_easymotion.png?raw=true" alt="按下 `f` 即可自動標註連結，再按下標註的字母即可開啟連結。由於每個連結至多標註兩個字母，所以視窗內的連結都可以在輸入三個鍵以內開啟。"></p>
+<p>學會以 Vimium 開啟連結，再配合 Windows 與 Chrome 內建直觀的快捷鍵，其實就足以查資料、逛論壇或是到社群平台串門子了。若對於效率有要求，還可以再讀 Vimium 的說明，學習以 home row 為核心的鍵盤操作。</p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>網頁瀏覽是少量文字編輯，加上大量查詢、瀏覽、點擊與切換等指令的循環。鍵鼠系統已能流暢地瀏覽網頁，所以是否要單用鍵盤瀏覽網頁是風格問題，我對此議題的總結如下，</p>
+<ul>
+<li><strong>格調重於成效</strong>：「社會組織是一部大型機器，每個人都是維繫機器運作必要的鏍絲釘。」雖然必要，但無可避免被取代。有時小小的不一樣，可以讓自己多少脫離被束縛與異化的感受。</li>
+<li><strong>搜索取代遍歷</strong>：鍵盤操作較不直覺，但很精準，行為可以直接反映想法，不用經過滑鼠拖曳或是<code>Tab</code>切換的過程。</li>
+<li><strong>自訂創造風格</strong>：按鍵數量有限，但可透過模式切換、特殊控制鍵、輸入順序、指令組合等方式來擴充可容納的指令。儘管擁有選項，卻不存在預設值，若想使用鍵盤就得思考和選擇，決定什麼才適合現今的自己。</li>
+</ul>
+<p>在實務上，只要學習 Vimium 的快搜鍵 <code>f</code> 加上瀏覽器內建按鍵（例如方向鍵），就可以應對網頁瀏覽的多數需求了。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/tools/" rel="tag"># tools</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/leetcode-724-find-pivot-index/" rel="prev" title="LeetCode 筆記｜724. Find Pivot Index">
+                  <i class="fa fa-angle-left"></i> LeetCode 筆記｜724. Find Pivot Index
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/nextflow-input-with-an-empty-channel/" rel="next" title="Nextflow｜輸入 empty channel 會發生什麼事？">
+                  Nextflow｜輸入 empty channel 會發生什麼事？ <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/navigate-websites-with-keyboard/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
