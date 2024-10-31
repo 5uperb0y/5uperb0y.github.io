@@ -19,28 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda e">
+    <meta name="description" content="羽衣、帆乃夏和由貴離開京都回到家之後，便著手研究夜未提供的文獻和紀錄。她們從中推論，若能取得保存在東京魔術師總部的最高權杖，由貴將能發揮百分之百的魔力，擁有對抗巨型屍人的力量。驅車前往東京的路上，她們討論起災變的元兇，羽衣認為眾多證據皆指向帆乃夏的姊姊春香策畫了召喚屍人的儀式。由於帆乃夏不相信姊姊有引發災變的動機，所以反感羽衣的指控。不過更讓帆乃夏焦躁不安的是，如果最敬愛的姊姊是讓世人陷入不幸的元">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Nextflow｜資料是怎麼在 Process 間傳遞？">
-<meta property="og:url" content="https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/index.html">
+<meta property="og:title" content="《明日的世界將會星光燦爛 3 》">
+<meta property="og:url" content="https://5uperb0y.com/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda e">
+<meta property="og:description" content="羽衣、帆乃夏和由貴離開京都回到家之後，便著手研究夜未提供的文獻和紀錄。她們從中推論，若能取得保存在東京魔術師總部的最高權杖，由貴將能發揮百分之百的魔力，擁有對抗巨型屍人的力量。驅車前往東京的路上，她們討論起災變的元兇，羽衣認為眾多證據皆指向帆乃夏的姊姊春香策畫了召喚屍人的儀式。由於帆乃夏不相信姊姊有引發災變的動機，所以反感羽衣的指控。不過更讓帆乃夏焦躁不安的是，如果最敬愛的姊姊是讓世人陷入不幸的元">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-01-05T12:58:15.000Z">
-<meta property="article:modified_time" content="2024-06-09T14:35:26.000Z">
+<meta property="article:published_time" content="2024-10-31T08:01:09.000Z">
+<meta property="article:modified_time" content="2024-10-31T08:01:20.252Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="nextflow">
+<meta property="article:tag" content="sf">
+<meta property="article:tag" content="yuri">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/">
+<link rel="canonical" href="https://5uperb0y.com/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/","path":"nextflow-how-data-is-passed-between-processes-through-channels/","title":"Nextflow｜資料是怎麼在 Process 間傳遞？"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/","path":"tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/","title":"《明日的世界將會星光燦爛 3 》"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Nextflow｜資料是怎麼在 Process 間傳遞？ | 5uperb0y's blog</title>
+<title>《明日的世界將會星光燦爛 3 》 | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -255,51 +256,6 @@
       </div>
     </div>
         <div class="pjax">
-        <div class="sidebar-inner sidebar-post-related">
-          <div class="animated">
-              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
-    相關文章
-  </div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-input-with-an-empty-channel/" rel="bookmark">
-        <time class="popular-posts-time">2022-12-27</time>
-        <br>
-      Nextflow｜輸入 empty channel 會發生什麼事？
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-the-mode-of-publishdir/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-14</time>
-        <br>
-      Nextflow｜利用 `publishDir` 匯出分析檔案
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-combine-data-into-a-tuple-with-key/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-09</time>
-        <br>
-      Nextflow｜如何為輸入的資料建立辨識碼
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-escape-characters/" rel="bookmark">
-        <time class="popular-posts-time">2022-11-10</time>
-        <br>
-      Nextflow｜程式碼區塊的跳脫符號 (escape characters)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-run-in-background/" rel="bookmark">
-        <time class="popular-posts-time">2022-11-30</time>
-        <br>
-      Nextflow｜背景執行 workflow 的方法
-      </a>
-    </li>
-  </ul>
-
-          </div>
-        </div>
         </div>
   </aside>
 
@@ -317,7 +273,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -330,12 +286,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Nextflow｜資料是怎麼在 Process 間傳遞？ | 5uperb0y's blog">
+      <meta itemprop="name" content="《明日的世界將會星光燦爛 3 》 | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Nextflow｜資料是怎麼在 Process 間傳遞？
+          《明日的世界將會星光燦爛 3 》
         </h1>
 
         <div class="post-meta-container">
@@ -345,15 +301,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2023-01-05 20:58:15" itemprop="dateCreated datePublished" datetime="2023-01-05T20:58:15+08:00">2023-01-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-06-09 22:35:26" itemprop="dateModified" datetime="2024-06-09T22:35:26+08:00">2024-06-09</time>
+      <time title="創建時間：2024-10-31 16:01:09 / 修改時間：16:01:20" itemprop="dateCreated datePublished" datetime="2024-10-31T16:01:09+08:00">2024-10-31</time>
     </span>
 
   
@@ -365,24 +315,37 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Process 是 nextflow 管理分析流程的基本單位，可包含能在 linux shell 執行的程式碼（例如 linux command, python code）、腳本（例如自訂的 hello-world.sh）與軟體（例如 GATK 或 FastQC）。 Process 之間彼此獨立，各有各的工作目錄，也可以分別設定其執行環境（例如 docker container 或 conda environment）。</p>
-<p>Channel 則媒介了 process 間的資料交流，若不透過 channels 串接，process 間的檔案或變項無法共享。舉凡字串、數值、檔案路徑乃至標準輸出等，皆有對應的 qualifier 讓 nextflow 知道怎麼處理得自於 channel 的各式資料。</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>羽衣、帆乃夏和由貴離開京都回到家之後，便著手研究夜未提供的文獻和紀錄。她們從中推論，若能取得保存在東京魔術師總部的最高權杖，由貴將能發揮百分之百的魔力，擁有對抗巨型屍人的力量。驅車前往東京的路上，她們討論起災變的元兇，羽衣認為眾多證據皆指向帆乃夏的姊姊春香策畫了召喚屍人的儀式。由於帆乃夏不相信姊姊有引發災變的動機，所以反感羽衣的指控。不過更讓帆乃夏焦躁不安的是，如果最敬愛的姊姊是讓世人陷入不幸的元凶，那麼帆乃夏該如何走下一步？</p>
 <span id="more"></span>
-<p>在以下案例，我在 process A 定義了兩條字串，並透過不同途徑傳遞給 process B。</p>
-<p>首先，string 1 被寫入檔案 (<code>str.txt</code>)，再以 path qualifier 告訴 Nextflow，把檔案路徑用軟連結 (symbolic link) 掛到 process B 的工作目錄。至於 string 2 則被定義為變項 (strAsEnv, a bash variable)，再以 env qualifier 告訴 nextflow 把變項寫到 process A 工作目錄內的 <code>.command.env</code>。</p>
-<p>接著，分別以 strInFile 及 strAsEnv 命名由 process A 輸出 channel，傳遞給 process B 印出。</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 提供 process B 所需的字串</span></span><br><span class="line">process A &#123;</span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        path <span class="string">&quot;str.txt&quot;</span>, <span class="attr">emit:</span> strInFile</span><br><span class="line">        env strAsEnv, <span class="attr">emit:</span> strAsEnv</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        echo &quot;string 1&quot; &gt; &quot;str.txt&quot;</span></span><br><span class="line"><span class="string">        strAsEnv=&quot;string 2&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 印出 process A 提供的字串</span></span><br><span class="line">process B &#123;</span><br><span class="line">    <span class="symbol">input:</span></span><br><span class="line">        path strInFile</span><br><span class="line">        val strAsEnv </span><br><span class="line">    <span class="symbol">output:</span></span><br><span class="line">        stdout</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        echo &quot;\$(cat $&#123;strInFile&#125;) is retrieved from a file passed by a queue channel&quot;</span></span><br><span class="line"><span class="string">        echo &quot;$&#123;strAsEnv&#125; is retrieved from a environment variable passed by a value channel&quot;</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 執行 process A &amp; B</span></span><br><span class="line">workflow &#123;</span><br><span class="line">    A()</span><br><span class="line">    B(A.out.strInFile, A.out.strAsEnv).view()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ nextflow run demoChannel.nf </span><br><span class="line">Launching `demoChannel.nf` [compassionate_shannon] - revision: 319cfe997a</span><br><span class="line">executor &gt;  <span class="built_in">local</span> (2)</span><br><span class="line">[f3/e5a365] process &gt; A [100%] 1 of 1 ✔</span><br><span class="line">[b0/f79f8e] process &gt; B [100%] 1 of 1 ✔</span><br><span class="line">string 1 is retrieved from a file passed by a queue channel</span><br><span class="line">string 2 is retrieved from a environment variable passed by a value channel</span><br></pre></td></tr></table></figure>
-<p>各 process 的工作目錄預設建立在執行路徑下的<code>work</code>，直接觀察工作目錄內的暫存檔有助於了解 path 與 env 兩種資料傳遞方式的差異<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="此處只列舉 process A 和 B 工作目錄內檔名或型別有別的檔案">1</span></a></sup>。</p>
-<p>在 process A 的工作目錄 ([f3&#x2F;e5a365]) 裡，除了輸出的 str.txt，還有 <code>.command.env</code>。Nextflow 在執行時會將所有用 env qualifier 標記的變項定義式（即　<code>var=value</code> 這種格式）寫入 <code>.command.env</code>，以利隨後可輸出到其它 process。（可查看 <code>.command.sh</code> 查看寫入變項定義式的程式碼）</p>
-<p>目前，只有 bash 變項才能透過 env qualifier 輸出，其它語言的變項只能透過某些方式存成檔案輸出（例如 R 的 RDS 檔）。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /work/f3/e5a365e3bb7b645cf4e13cf15eb235</span><br><span class="line">$ <span class="built_in">ls</span> -al</span><br><span class="line">-rw-r--r-- 1 user group   18 Jan  5 22:26 .command.env      <span class="comment"># environment variables of process A</span></span><br><span class="line">-rw-r--r-- 1 user group  146 Jan  5 22:26 .command.sh       <span class="comment"># commands to execute process A</span></span><br><span class="line">-rw-r--r-- 1 user group    9 Jan  5 22:26 str.txt           <span class="comment"># output of process A</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> .command.env</span><br><span class="line">strAsEnv=string 2</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> .command.sh　 <span class="comment"># nextflow 執行 process 的腳本，只擷取跟 `.command.env` 相關的部分</span></span><br><span class="line"><span class="comment"># capture process environment</span></span><br><span class="line"><span class="built_in">set</span> +u</span><br><span class="line"><span class="built_in">echo</span> strAsEnv=<span class="variable">$&#123;strAsEnv[@]&#125;</span> &gt; .command.env</span><br></pre></td></tr></table></figure>
+<p>離開東京前，夜未除了提供由貴她們生存物資，還準備了許多文獻與行政紀錄。當中除了魔術師發展史以外，還包含了由貴父親在內的執業紀錄，以及災變發生後一段時間蒐集的網路資料。從執業紀錄得知，由貴的父親南戶數多最初負責維護世界各地的結界，直到妻子病倒之後才開始使用魔術治療疾病。紀錄中反覆提及「鑰杖」這項工具，它似乎有不同的層級。數多在治療重症病患時，曾經動用最高層級的鑰杖。</p>
+<p>這便是由貴需要魔杖施法的主因。由貴的祖先索斯蓋特是法力高強的魔術師，他與惡魔的交易差點毀滅世界，所以引來眾多仇家。索斯蓋特一路逃到日本，接受以魔杖封鎖自己能力的條件。受當時的魔術師，即陰陽師，組織庇護。只有在必要時刻，才會透過鑰杖解除魔力封鎖。換句話說，由貴的手杖不是媒介，而是限制裝置。一旦取得保存於東京魔術師總部的最高權杖，將能發揮由貴最強的魔力。</p>
+<p>帆乃夏的雙親曾求診數多以治療春香的絕症。據帆乃夏所述，姊姊在病癒後似乎愛上了數多。由貴曾兩度透過屍人與春香交流，感受到她對自己無端的惡意。當時，春香還透漏她利用帆乃夏將由貴誘出數多的保護範圍。這些資訊暗示春香與災變的關聯。數多對這場災變顯然知情，甚至預期自己可能因為阻止元凶而犧牲。然而，如果春香是兇手，那她可能曾和數多交手，那為什麼還表現得一無所知，甚至大費周章誘導帆乃夏和由貴來打聽數多的蹤跡？</p>
+<p>除了兇手的身分，她們對於引發災變的手段也有許多疑惑。羽衣和夜未相信，屍人是惡魔奪取靈魂的途徑。惡魔以開啟魔術權限為代價，讓凡人代為執行活祭，在儀式現場創造屍人的源頭──真祖。真祖在失去靈魂的屍體附魔，讓它們能遵從特定行為模式移動、追擊和殺戮。附魔的屍體殺害其它人類並奪取其靈魂後，便會施法於空蕩蕩的軀殼，創造出新的屍人。</p>
+<p>換句話說，真祖的屍人跟羽衣的魔像類似，只是前者是附魔的屍體，後者是附魔的岩石。魔術只能用於無意識體，即使是數多也只能在患者昏迷或麻醉狀況施術。綜合這些資訊可以推論，如果被屍人攻擊後仍保留意識，很可能不會被同化。其次，擊敗真祖有可能解除屍人上的魔術，使其恢復為普通的遺體。最後，解決真祖就能解決屍便，她們未必要對抗最初的交易者，尤其目前這場災難的元兇很可能是帆乃夏敬愛的姊姊。</p>
+<p>事實上，歷史上最後一筆惡魔交易的紀錄在十九世紀的英國，一名女子被轉換為真祖。當時為了阻止屍人擴散而焚毀全村，導致五百人罹難，只有提出交易的魔術師倖存。由於很久沒有紀錄，她們不清楚事件兇手再度與惡魔聯繫的手段。</p>
+<p>另外，這次屍變似乎在世界各地同時迸發，她們懷疑兇手在各地同時舉行獻祭的可行性。仔細檢視網路論壇的貼文後，帆乃夏首先發現爆發屍人的地點與國際太空站的移動軌跡一致，鄰近地點爆發的時間間隔也與太空站的速率吻合。此時，由貴想起來曾在巨型屍人出現前目睹火流星，又在屍人核心發現含有複合材質的金屬碎片。災變前一周，美國發射了火箭與太空站對接。那段時間，帆乃夏一家逗留在休士頓，春香也曾短暫與一名自稱是太空人的男子來往。</p>
+<p>串聯這些線索可推論，春香勸服邂逅的男子在太空站執行儀式，所以屍變才會迅速地沿著太空站移動軌跡擴散。倘若這項假說為真，她們得摧毀太空站內的真祖才能解決屍變，但該怎麼摧毀位於太空的目標？</p>
+<p>這也表示帆乃夏必須做出抉擇，是要與親愛的姊姊為敵？還是背棄她同樣珍視的由貴？帆乃夏抗拒羽衣過度推論的原因，除了不願面對兩難處境，也是她不相信姊姊有摧毀世界的動機。姊姊是帆乃夏最重視、最憧憬、最虧欠、最喜歡的對象，是不斷變動的環境中唯一穩定而令人安心的存在。姊姊既溫柔又強大，照顧她、愛護她、為她解決無法克服的困難，這樣的姊姊怎麼可能會做出毀滅世界的事？</p>
+<p>種種跡象都支持春香是事件的兇手，讓帆乃夏陷入深沉的掙扎。如果這世界只剩下她們姊妹，帆乃夏一定會選擇袒護姊姊。不過，帆乃夏身邊還有由貴、羽衣、夜未以及京都和橫賀濱潛在的倖存者。帆乃夏經過特訓終於拉近了與由貴的力量差距，卻仍舊糾結對姊姊的感情會不會傷害到由貴。雖然由貴表現得很害羞，帆乃夏仍察覺到她對自己的好感。這讓帆乃夏比先前更害怕將由貴視為姊姊不在時的替代品。</p>
+<p>由貴與姊姊的衝突無法避免，讓帆乃夏十分焦急。在前往東京尋找最高權杖的路途上，她們寄宿溫泉旅館。夜裡，帆乃夏偷偷跟著因為害羞而打算獨自泡湯的由貴。眼見由貴仍不願袒露相見，帆乃夏從背後靠近由貴，緊貼彼此的肌膚，化解兩人間的隔閡。由貴很訝異帆乃夏今夜如此主動積極，但追根究柢也是源於不安。帆乃夏的強硬與焦躁裡有明顯的不安，她急著讓兩人感情更親近，更獨一無二。如此一來，她才能在必要的時候，果斷做出決定。</p>
+<p>春香沿路設下拒馬並差遣屍人追擊，迫使由貴一行人落入位於澀谷的陷阱。春香打算將由貴圍困在設有監視器的十字路口，逼迫數多出面營救。她隨後現身在由貴一行人面前表示，東京魔術師協毀已被摧毀，要求帆乃夏跟自己走，她相信帆乃夏一定還依戀著自己。帆乃夏聽到姊姊的邀請確實動搖了，不過仍在盤算能雙贏的方法。帆乃夏離開前悄聲向由貴保證，她絕對不會讓由貴受傷。由貴自知不敵春香，所以也支持帆乃夏的決定。雖然由貴有些猶疑，可是這也是唯一能保證帆乃夏安全的方法。</p>
+<p>春香帶著帆乃夏來到鄰近大樓的屋頂，解釋了帆乃夏所有的疑惑。春香被診斷出絕症時，雙親便視其為將死之人，盡量滿足她所有要求。那天起，春香抱著一分一秒都不能浪費的態度過活。帆乃夏一家反覆搬家也是為了配合春香的願望，讓她能充分體驗不同活動和學習各種技藝。對自己生命不抱期待的春香而言，爸爸、媽媽還有祖母都只是完成目標的工具，只有帆乃夏不一樣。</p>
+<p>春香視帆乃夏為分身，即使死後也會代替自己體驗世界，所以把希望寄託在妹妹身上去疼愛她。儘管春香的病後來痊癒，還是保留這份憐愛的情感。春香單戀著數多，她認為這名寂寞的鰥夫，大概只有已經死過一次的自己才有本領陪伴他。不過數多只在乎自己的女兒由貴。被拒絕後，春香認為如果能與數多擁有相同的立場，或許能讓他回心轉意。她千方百計打聽到與惡魔交易的方式，不惜建立毀滅世界的計畫，也想要取得強大的魔力。</p>
+<p>至此，帆乃夏終於了解姊姊出色的理由，還有摧毀世界的動機。雖然帆乃夏不認為自己能說服她，卻感到欣慰與寬心，因為眼前的還是那個令她喜歡的姊姊。春香並不是受人洗腦，而是為了極端自私的動機摧毀了世界。這股強烈的情感，就跟帆乃夏自幼感受到的關照與愛護如出一轍。帆乃夏明白姊姊的行為無法寬恕，而且也無從贖罪。不過，帆乃夏至少能阻止姊姊殺害倖存的人，所以決定刺殺姊姊後自殺謝罪。</p>
+<p>帆乃夏假借詢問春香手上的魔杖靠近她，趁其不意開槍。不過，春香的從魔屍人擋下了子彈。眼見帆乃夏背叛自己，春香也乾脆地拋棄與妹妹的情誼，操控擊發的子彈回擊。帆乃夏自高樓墜落，被羽衣及時遣派從魔白黑接住。由貴在前掩護正在幫帆乃夏止血的羽衣，春香現身在她們上空，聚集了大量屍人和汽車殘骸，打算一舉壓碎三名倖存者。由貴凝聚起周遭空氣形成護頓，吃力地和下沉的巨物對抗。</p>
+<p>情急之下，由貴頓悟了操控光的魔術，她凝聚周遭能量形成強力的光球發射出去。由於春香被巨物擋住視線，無法及時反操控襲來的能量球，遂被打穿身體，凝聚的物體也隨之崩落四散。但是出乎眾人意料的是，春香似乎仍活著。此時，春香棄置的魔杖發出數多的聲音。那聲音自稱是由貴父親殘留在法器上的靈魂，他操控從魔佩拉追上逃跑的春香。</p>
+<p>原來，春香和數多早在災變後兩周的一場對決中同歸於盡。強力的衝擊讓她失去部分記憶，讓意識附魔在屍體上。當數多透漏，那場對決滿足了他某些遺憾後。得知自己已死的春香，感到滿足地舉起帆乃夏掉落的手槍自盡。春香在靈魂逗留處碰見彌留的帆乃夏，讓她回到自己的軀體上以免成為屍人，獨自前往地獄贖罪。</p>
+<p>最終，由貴成功救活帆乃夏。在安頓一陣子後，她們算準國際太空站越過日本的時間，發動最強力的魔法摧毀之，解決了屍人的危機。平安夜那天早上，夜未來訪，羽衣哭著迎接她。由貴恍恍惚惚醒來，睡眼惺忪地看著搖動自己肩膀的帆乃夏，向她詢問發生了什麼事。</p>
+<p>帆乃夏笑著跟由貴說：「明天已經到來了。」意識到世界終於恢復平常，由貴卻不感到惋惜，因為她終於可以和帆乃夏，還有旅途認識的其他人，擺脫停滯的日常，一起迎向明天，一起為重視的人帶來歡笑。</p>
+<p>「早安。」由貴說，湊向帆乃夏靠近的臉，讓兩人的距離歸零，感受彼此皮膜的濕氣與溫暖的鼻息。</p>
+</br>
 
-<p>而在 process B 的工作目錄可留意到 str.txt 的資料型別為 <code>l</code> (link)，檔案名稱也標示了來源。值得留意的是，如果使用 <code>cat</code> 或 <code>cp</code> 等指令通常不會有什麼問題，但如果用 <code>ls</code> 顯示檔案大小時，要注意預設顯示的是軟連結的大小，而非原檔的大小。相似的狀況也可能發生在使用 <code>find</code> 搜尋時，因為限制了搜索標的為檔案而意外地排除軟連結的情形。 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/work/b0/f79f8e550a4e1af11e2b03af8b4aa4$ <span class="built_in">ls</span> -al</span><br><span class="line">lrw-r--r-- 1 user group   62 Jan  5 22:26 str.txt -&gt; /work/f3/e5a365e3bb7b645cf4e13cf15eb235/str.txt</span><br></pre></td></tr></table></figure>
-
-<p>綜上所述，要怎麼利用 channel 傳遞資料端視資料型別而異。無論想傳遞表格、文檔還是變項，都可以將其寫入檔案，再以 path qualifier 讓 nextflow 依據檔案路徑在下游 process 的工作目錄建立軟連結。若想傳遞的是 bash 變項，那還可以使用 env qualifier 將變項定義式記錄在當前 process 的工作目錄供後續取用。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">此處只列舉 process A 和 B 工作目錄內檔名或型別有別的檔案<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div></p>
+<p>終於寫完《明日的世界將會星光燦爛》系列的筆記了。這部作品的主線和感情線都是逐漸升級的線性結構，跟純粹的末日或戀愛作品相比，欠缺多重衝突和曲折。不過，作者肯定對故事結構下過功夫。</p>
+<p>這系列每一集都有明確的目的。第一集鋪陳世界觀，也讓由貴在最後克服自卑，主動接近帆乃夏；第二集逐步透漏線索，解決帆乃夏這邊的顧慮；第三集則解開謎底，讓由貴支持帆乃夏克服兩難局面。由貴與帆乃夏的距離也從並肩而坐、牽手、擁抱、親臉頰，直到最後一幕才接吻。而且，不管災難線還是感情線都有好好收尾，把埋設的伏筆解完。</p>
+<p>我又特別喜歡科幻故事，所以整體的閱讀體驗都很不錯。另外一定要補充的是，畫師的圖超級可愛，已經設定成閱讀器的封面了。</p>
+<hr>
+<p>司（2024）。明日的世界將會星光燦爛 3（林其磊譯）。青文出版。（原著出版於 2019 年）</p>
 
     </div>
 
@@ -392,21 +355,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/nextflow/" rel="tag"># nextflow</a>
+              <a href="/tags/sf/" rel="tag"># sf</a>
+              <a href="/tags/yuri/" rel="tag"># yuri</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/start-learning-vim-from-vimium/" rel="prev" title="Vimium，學習 Vim 的新途徑">
-                  <i class="fa fa-angle-left"></i> Vimium，學習 Vim 的新途徑
+                <a href="/nextflow-manage-input-with-json/" rel="prev" title="Nextflow｜讀取儲存於 JSON 的輸入資料">
+                  <i class="fa fa-angle-left"></i> Nextflow｜讀取儲存於 JSON 的輸入資料
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/vscode-remote-ssh-connection-not-working-after-update/" rel="next" title="VSCode: Failed to parse remote port from server output">
-                  VSCode: Failed to parse remote port from server output <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -482,7 +443,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/nextflow-how-data-is-passed-between-processes-through-channels/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>
