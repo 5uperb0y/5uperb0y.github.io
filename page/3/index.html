@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">145</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">147</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -259,6 +259,172 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/duplicate-alleles-in-vcfs-derived-from-tvc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/duplicate-alleles-in-vcfs-derived-from-tvc/" class="post-title-link" itemprop="url">Duplicate alleles in VCFs derived from tvc</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-08-07 22:39:18 / 修改時間：22:33:46" itemprop="dateCreated datePublished" datetime="2024-08-07T22:39:18+08:00">2024-08-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>最近，我們碰到一個棘手的技術問題。其他同仁反映，我們開發的變異分析工具在執行 GATK 時意外中止，並呈現以下錯誤訊息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The provided VCF file is malformed at approximately line number 1: Duplicate allele added to VariantContext: TA</span><br></pre></td></tr></table></figure>
+
+<p>我檢查該步驟使用的 VCF 檔，發現其中一列的 REF 與 ALT 欄位內容重複，導致 GATK 報錯：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chr1	100	.	TA	GT,TA</span><br></pre></td></tr></table></figure>
+
+<p>標準的 VCF 檔只記錄實際存在的變異，不應出現 REF 和 ALT 欄位相同的狀況。即使該位置沒有變異，通常也會以點號（<code>.</code>）標記。因此，我推測問題的源頭不是分析工具本身，而是上游的 variant caller。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/duplicate-alleles-in-vcfs-derived-from-tvc/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/irene309-2023-summer-project-season-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/irene309-2023-summer-project-season-2/" class="post-title-link" itemprop="url">《夏日計劃(2)》</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-08-06 22:13:33" itemprop="dateCreated datePublished" datetime="2024-08-06T22:13:33+08:00">2024-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-08-25 13:41:56" itemprop="dateModified" datetime="2024-08-25T13:41:56+08:00">2024-08-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>為了再次見到又夏，陳晞費時多年打造了一台時光機。然而重逢後，陳晞發現又夏喪失了與她相處的所有回憶。儘管想重新追求對方，身患重病的陳晞深知自己來日無多。因此，陳晞決定全力阻止迫在眉睫的「諸神黃昏」，只為留給又夏一個安穩的未來。於此同時，單戀陳晞的浩瑜也隨她回到過去，竭力尋找能拯救世界又可以挽救陳晞性命的方法。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/irene309-2023-summer-project-season-2/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -880,165 +1046,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/iruma-2017-kitto-kanojo-wa-kamisama-nanka-janai/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/finding-a-shared-spliced-motif/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/finding-a-shared-spliced-motif/" class="post-title-link" itemprop="url">ROSALIND｜Finding a Shared Spliced Motif (LCSQ)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-07-14 23:03:26 / 修改時間：23:03:04" itemprop="dateCreated datePublished" datetime="2024-07-14T23:03:26+08:00">2024-07-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>給定兩條以 FASTA 格式儲存的 DNA 序列，求兩序列最長的共同子序列。</p>
-<blockquote>
-<p>Given: Two DNA strings s and t (each having length at most 1 kbp) in FASTA format.</p>
-<p>Return: A longest common subsequence of s and t. (If more than one solution exists, you may return any one.)</p>
-</blockquote>
-<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/lcsq/">https://rosalind.info/problems/lcsq/</a>)</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/finding-a-shared-spliced-motif/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/honobu-2004-shunki-gentei-ichigo-taruto-jiken/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/honobu-2004-shunki-gentei-ichigo-taruto-jiken/" class="post-title-link" itemprop="url">《春季限定草莓塔事件》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-07-14 17:37:15 / 修改時間：17:36:38" itemprop="dateCreated datePublished" datetime="2024-07-14T17:37:15+08:00">2024-07-14</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>在船戶高中新學期的開始，兩名看似普通的新生——小鳩常悟朗和小佐內由紀，默默地遵守著一個不尋常的約定。他們決定成為安分守己的小市民，度過平靜安穩的高中生活。為了促成這項目標，他們彼此承諾，在發生危險時，對方可以用自己的名義脫身；在衝動不已時，自己也要提醒對方守住約定。然而，兩人追求的平穩生活，卻受到一系列事件打斷，讓他們不得不面對各自的陰暗本性。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/honobu-2004-shunki-gentei-ichigo-taruto-jiken/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
