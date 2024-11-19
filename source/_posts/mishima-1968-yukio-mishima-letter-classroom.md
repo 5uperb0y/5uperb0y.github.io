@@ -1,5 +1,5 @@
 ---
-title: 三島由紀夫書信教室
+title: 《三島由紀夫書信教室》
 date: 2024-04-09 22:29:28
 tags: 
 categories:

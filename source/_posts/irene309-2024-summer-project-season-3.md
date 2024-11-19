@@ -1,7 +1,7 @@
 ---
 title: 《夏日計劃(3)》
 date: 2024-08-10 02:17:59
-tags: sf
+tags: [sf, yuri]
 categories:
 ---
 
