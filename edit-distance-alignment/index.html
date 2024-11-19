@@ -19,28 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="使用參考基因體進行分析時，如果沒有提供對應的 Fasta index 檔 (.fai)，很有可能跳出以下這類錯誤訊息： 1234# HaplotypeCallerERROR MESSAGE: Fasta index file ref.fasta.fai for reference ref.fasta does not exist.# freebayesunable to find FASTA in">
+    <meta name="description" content="比對兩蛋白質字串，計算其最小編輯距離，並以橫槓表示間隔呈現比對結果。  Given: Two protein strings s and t in FASTA format (with each string having length at most 1000 aa). Return: The edit distance dE(s,t) followed by two augmented str">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Fasta index file (.fai) 是什麼？">
-<meta property="og:url" content="https://5uperb0y.com/what-is-a-fasta-index-file/index.html">
+<meta property="og:title" content="ROSALIND｜Edit Distance Alignment (EDTA)">
+<meta property="og:url" content="https://5uperb0y.com/edit-distance-alignment/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="使用參考基因體進行分析時，如果沒有提供對應的 Fasta index 檔 (.fai)，很有可能跳出以下這類錯誤訊息： 1234# HaplotypeCallerERROR MESSAGE: Fasta index file ref.fasta.fai for reference ref.fasta does not exist.# freebayesunable to find FASTA in">
+<meta property="og:description" content="比對兩蛋白質字串，計算其最小編輯距離，並以橫槓表示間隔呈現比對結果。  Given: Two protein strings s and t in FASTA format (with each string having length at most 1000 aa). Return: The edit distance dE(s,t) followed by two augmented str">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-10-15T13:21:21.000Z">
-<meta property="article:modified_time" content="2024-10-15T12:21:50.841Z">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/3/33/Zinc-finger-dot-plot.png">
+<meta property="article:published_time" content="2024-11-19T14:09:11.000Z">
+<meta property="article:modified_time" content="2024-11-19T14:13:35.021Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="bioinformatics">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/3/33/Zinc-finger-dot-plot.png">
 
 
-<link rel="canonical" href="https://5uperb0y.com/what-is-a-fasta-index-file/">
+<link rel="canonical" href="https://5uperb0y.com/edit-distance-alignment/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/what-is-a-fasta-index-file/","path":"what-is-a-fasta-index-file/","title":"Fasta index file (.fai) 是什麼？"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/edit-distance-alignment/","path":"edit-distance-alignment/","title":"ROSALIND｜Edit Distance Alignment (EDTA)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Fasta index file (.fai) 是什麼？ | 5uperb0y's blog</title>
+<title>ROSALIND｜Edit Distance Alignment (EDTA) | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -143,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fasta-index-file"><span class="nav-number">1.</span> <span class="nav-text">Fasta index file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#samtools-faidx"><span class="nav-number">2.</span> <span class="nav-text">samtools faidx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C%EF%BC%9A%E6%A8%A1%E4%BB%BF-bedtools-getfasta"><span class="nav-number">3.</span> <span class="nav-text">Python 實作：模仿 bedtools getfasta</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Python 實作</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -263,13 +265,6 @@
   </div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/nextflow-combine-data-into-a-tuple-with-key/" rel="bookmark">
-        <time class="popular-posts-time">2023-01-09</time>
-        <br>
-      Nextflow｜如何為輸入的資料建立辨識碼
-      </a>
-    </li>
-    <li class="popular-posts-item">
       <a class="popular-posts-link" href="/edit-distance/" rel="bookmark">
         <time class="popular-posts-time">2024-07-20</time>
         <br>
@@ -277,24 +272,17 @@
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/finding-a-shared-motif/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-11</time>
+      <a class="popular-posts-link" href="/counting-point-mutations/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-04</time>
         <br>
-      ROSALIND | Finding a Shared Motif (LCSM)
+      ROSALIND｜Counting Point Mutations (HAMM)
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/finding-a-shared-spliced-motif/" rel="bookmark">
-        <time class="popular-posts-time">2024-07-14</time>
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-03</time>
         <br>
-      ROSALIND｜Finding a Shared Spliced Motif (LCSQ)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/rna-splicing/" rel="bookmark">
-        <time class="popular-posts-time">2024-06-30</time>
-        <br>
-      ROSALIND｜RNA Splicing (SPLC)
+      ROSALIND｜Transcribing DNA into RNA (RNA)
       </a>
     </li>
   </ul>
@@ -318,7 +306,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/what-is-a-fasta-index-file/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/edit-distance-alignment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -331,12 +319,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Fasta index file (.fai) 是什麼？ | 5uperb0y's blog">
+      <meta itemprop="name" content="ROSALIND｜Edit Distance Alignment (EDTA) | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Fasta index file (.fai) 是什麼？
+          ROSALIND｜Edit Distance Alignment (EDTA)
         </h1>
 
         <div class="post-meta-container">
@@ -348,7 +336,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2024-10-15 21:21:21 / 修改時間：20:21:50" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">2024-10-15</time>
+      <time title="創建時間：2024-11-19 22:09:11 / 修改時間：22:13:35" itemprop="dateCreated datePublished" datetime="2024-11-19T22:09:11+08:00">2024-11-19</time>
     </span>
 
   
@@ -360,52 +348,36 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>使用參考基因體進行分析時，如果沒有提供對應的 Fasta index 檔 (<em>.fai</em>)，很有可能跳出以下這類錯誤訊息：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># HaplotypeCaller</span><br><span class="line">ERROR MESSAGE: Fasta index file ref.fasta.fai for reference ref.fasta does not exist.</span><br><span class="line"># freebayes</span><br><span class="line">unable to find FASTA index entry for &#x27;1&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>這個 <em>.fai</em> 究竟是什麼？為什麼許多分析需要它？</p>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>比對兩蛋白質字串，計算其最小編輯距離，並以橫槓表示間隔呈現比對結果。</p>
+<blockquote>
+<p>Given: Two protein strings s and t in FASTA format (with each string having length at most 1000 aa).</p>
+<p>Return: The edit distance dE(s,t) followed by two augmented strings s′ and t′ representing an optimal alignment of s and t.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/edta/">https://rosalind.info/problems/edta/</a>)</p>
 <span id="more"></span>
 
-<h1 id="Fasta-index-file"><a href="#Fasta-index-file" class="headerlink" title="Fasta index file"></a>Fasta index file</h1><p><em>.fai</em> 是 Fasta 的索引，記錄了各序列的位置，能提升軟體擷取子序列的效率。假設我們想從一萬條 DNA 序列取出位於中間的鹼基。在沒有索引檔的情況下，每一次都得從第一個鹼基讀取，直到抵達指定位置後再回報結果（循序存取，sequential access）。循序存取的效率取決於 DNA　長度，因此其時間複雜度為 $O(n)$。</p>
-<p>不過，如果事先掃描整個 Fasta 並建立索引檔，便能依據索引檔直接取用目標子序列，達到 $O(1)$ 的時間複雜度（隨機存取，random access）</p>
-<h1 id="samtools-faidx"><a href="#samtools-faidx" class="headerlink" title="samtools faidx"></a>samtools faidx</h1><p><a target="_blank" rel="noopener" href="https://www.htslib.org/doc/faidx.html">samtools faidx</a> 可用於建立參考基因體的索引檔。使用時應確保 Fasta 每條序列等長（除了最後一列）。輸出檔名預設為原 Fasta 檔名加上 <em>.fai</em> 後綴。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">samtools faidx ref.fa</span><br></pre></td></tr></table></figure>
+<h2 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h2><p>在生物資訊學中，字串比對 (alignment) 的目的是確定兩條字串的字符間有意義的對應關係。字符的關係（例如匹配、替換、插入與刪除）反映了基因突變或定序錯誤等現象，透過比對蛋白質或核酸序列，能識別兩序列相似的片段，從而推論生物的功能、結構和演化關係。比對的結果通常以矩陣、圖示或字串形式呈現，以便研究人員比較各區域的異同。舉例來說，兩條蛋白質序列可表示為以下形式，其中 “-“ 表示間隔 (gap)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ref:  PRETT-</span><br><span class="line">read: PR-TTY</span><br></pre></td></tr></table></figure>
 
-<p>以此指令建立的 <em>.fai</em> 共有五欄，</p>
+<p>BAM 檔則以更簡約的 CIGAR 格式呈現，以下文字表示輸入序列與參考序列相比，依序有「2bp 匹配、1bp 刪除、2bp 匹配、1bp 插入」。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2M1D2M1I</span><br></pre></td></tr></table></figure>
+
+<p>長序列的比對則能以 Dotplot 則能呈現，例如：</p>
+<p><img data-src="https://upload.wikimedia.org/wikipedia/commons/3/33/Zinc-finger-dot-plot.png"><br>(以 dotplot 呈現兩條 DNA 序列各片段的相似性。圖&#x2F;wikipedia)</p>
+<p>序列比對的方法可以依據其範圍分為全域比對 (global alignment) 和局部比對 (local alignment)。全域比對確認整段序列的關係，強調整體的相似性；局部比對則尋找彼此對應的子序列，只著重序列間相似的片段。因此，全域比對適合比較長度相近且序列相似的同源序列，局部比對則能應用在序列歧異或長度有很大落差的序列。</p>
+<p>一對序列可能存在多種比對方式，各自的差異可用編輯距離 (edit distance or Levenshtein distance) 衡量。編輯距離是一字串經過系列編輯操作轉變為另一字串的最少操作次數，這些操作包含替換、刪除與插入。生物體內各類突變的發生機率並不相同，計算編輯距離時也需要依據採用的演化模型對不同編輯操作進行加權，以吻合我們對這些分子生物機制的理解和假設。<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/BLOSUM">BLOSUM</a> 便依據資料庫內不同胺基酸互相轉換的比率，訂立各類替換事件的加權分數。</p>
+<h2 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h2><p>這題要求計算兩條蛋白質序列的編輯距離，並以字串呈現全域比對的結果。先前我曾介紹如何用<a href="https://5uperb0y.com/edit-distance/">動態規劃計算編輯距離</a>。簡言之，這方法一次只考慮一個字符，判斷轉換當前兩條子序列所需的最簡操作來計算編輯距離。接著，比對下一個字符，並重複此過程直到算出完整序列的編輯距離。為了避免重複計算，這方法會記錄子序列間的編輯距離。</p>
+<p>這方法在計算編輯距離的同時，也完成了序列比對。因此，我們只要像記錄編輯距離一樣，保留每次選擇的操作（例如插入、刪除或替換），最後就能據此重建比對結果。</p>
+<h2 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h2><p>為了重建比對結果，我擴充了原先計算編輯距離的<a target="_blank" rel="noopener" href="https://github.com/5uperb0y/rosalind/blob/main/code/edit/edit.py">程式碼</a>，新增了每一步的編輯操作紀錄。首先建立兩個用雙層嵌套 list 來模擬的表格：<code>dists</code> 記錄 <code>S</code> 和 <code>T</code> 各子字串的最小編輯距離，<code>edits</code> 則記錄對應的操作（”0”：匹配&#x2F;替換，”1”：插入，”2”：刪除）。假設 <code>S</code> 是參考序列，<code>T</code> 是對應序列。那麼，「刪除」表示 <code>S</code> 長度增長，而 <code>T</code> 長度不變，對應 <code>dists[s + 1][t]</code>；「插入」表示 <code>T</code> 長度增長，而 <code>S</code> 長度不變，對應 <code>dists[s][t + 1]</code>。</p>
+<p>因此，初始化表格的時候，<code>edits[s][0]</code> 全為 2（刪除），<code>edits[0][t]</code> 全為 1（插入）。</p>
+<p>計算完編輯距離後，可以參照 <code>edits</code> 從表格最右下角的位置 <code>edits[len(S)][len(T)]</code> 開始，依照編輯操作重建比對結果。我使用 <code>x</code> 和 <code>y</code> 追蹤當前的位置，並依據 <code>edits[x][y]</code> 的值決定下一步操作：</p>
 <ul>
-<li>NAME：序列名稱，即 “&gt;” 之後的字串</li>
-<li>LENGTH：序列的鹼基總數</li>
-<li>OFFSET：由 0 開始計算，序列第一個鹼基為 FASTA 檔第幾個字符（含換行符）</li>
-<li>LINEBASES：每一列的鹼基總數</li>
-<li>LINEWIDTH：每一列的字符總數（含換行符）</li>
+<li><code>edit[x][y] == 0</code> 表示「匹配&#x2F;替換」，<code>S[x]</code> 對應 <code>T[y]</code>，接著比對 <code>S[x - 1]</code> 和 <code>T[y - 1]</code>。</li>
+<li><code>edit[x][y] == 1</code> 表示「插入」，”-“ 對應 <code>T[y]</code>，接著比對 <code>S[x - 1]</code> 和 <code>T[y]</code>。</li>
+<li><code>edit[x][y] == 2</code> 表示「刪除」，<code>S[x]</code> 對應 “-“，接續比對 <code>S[x]</code> 和 <code>T[y - 1]</code>。</li>
 </ul>
-<p>舉例來說，如果換行符為 “\n”，那麼序列 s1 的總長為 10 鹼基，始於第 4 個字符，每一列有 5 鹼基、6 字符。</p>
-<p><strong>example.fasta</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;s1</span><br><span class="line">AAAAA</span><br><span class="line">CCCCC</span><br></pre></td></tr></table></figure>
-
-<p><strong>example.fasta.fai</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#NAME   LENGTH   OFFSET  LINEBASES LINEWIDTH （實際不存在此列）</span><br><span class="line">s1      10       4       5         6</span><br></pre></td></tr></table></figure>
-
-<p>獨到這裡，可能有人會問為什麼 OFFSET 是 4 而不是 1？這是因為，OFFSET 是序列第一個鹼基在整個檔案的位置，而非它在序列中的座標。因此，計算位置時連序列的名稱都要一起計算。從 0 開始計算，序列 s1 的一個鹼基正好位於第 4 個字符，所以 OFFSET 才會等於 4。</p>
-<h1 id="Python-實作：模仿-bedtools-getfasta"><a href="#Python-實作：模仿-bedtools-getfasta" class="headerlink" title="Python 實作：模仿 bedtools getfasta"></a>Python 實作：模仿 bedtools getfasta</h1><p><a target="_blank" rel="noopener" href="https://bedtools.readthedocs.io/en/latest/content/tools/getfasta.html">bedtools getfasta</a> 的功能是依據 BED 檔從 Fasta 檔擷取子字串。BED 檔是紀錄區域的格式，普遍含有染色體、起始位置、終止位置和辨識碼四個欄位。比較需要留意的是，BED 檔的位置是從 0 開始計算，和 GTF 之類的格式不同。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cat</span> ref.fa</span><br><span class="line">&gt;chr1</span><br><span class="line">AAAAAAAACCCCCCCCCCCCCGCTACTGGGGGGGGGGGGGGGGGG</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cat</span> test.bed</span><br><span class="line">chr1 5 10 myseq</span><br><span class="line"></span><br><span class="line">$ bedtools getfasta -<span class="keyword">fi</span> ref.fa -bed test.bed -tab</span><br><span class="line">chr1 5 10 AAACC</span><br></pre></td></tr></table></figure>
-
-<p>以下使用 python 模仿 bedtools getfasta，利用 <em>.fai</em> 計算子序列在 Fasta 檔的位置，再透過 f.seek() 實踐隨機存取（參考<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/51801213/complexity-of-f-seek-in-python">Complexity of f.seek() in Python</a>）。簡言之，我首先讀取 BED 檔各列，存為 list 備用。*.fai* 則存為 dict，以 name 為 key，其它為 value，這樣就能依照 name 找到座標資訊。</p>
-<p>每次讀進 BED 一個區域的 start 和 end，再用以下關係式找出該區域在 Fasta 檔的位置。</p>
-<ul>
-<li>目標區域在 Fasta 的起始位置 &#x3D; offset + linewidth * (start &#x2F;&#x2F; linebases) + start % linebases</li>
-<li>目標區域在 Fasta 的終點位置 &#x3D; 子序列的起始位置 + region_length + end &#x2F;&#x2F; linebases</li>
-</ul>
-<p>實際執行時，先用 f.seek() 跳到起始位置，再用 f.read 讀到終點位置，刪除中間的換行符號，便能獲得目標區域的子序列了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">read_bed</span>(<span class="params">path</span>):</span><br><span class="line">    bed = []</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">            chrom, start, end, name, *_ = line.strip().split()</span><br><span class="line">            bed.append([chrom, <span class="built_in">int</span>(start), <span class="built_in">int</span>(end)])</span><br><span class="line">    <span class="keyword">return</span> bed</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_fai</span>(<span class="params">path</span>):</span><br><span class="line">    fai = &#123;&#125;</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> file:</span><br><span class="line">            name, length, offset, linebases, linewidth = line.strip().split()</span><br><span class="line">            fai[name] = [<span class="built_in">int</span>(length), <span class="built_in">int</span>(offset), <span class="built_in">int</span>(linebases), <span class="built_in">int</span>(linewidth)]</span><br><span class="line">    <span class="keyword">return</span> fai</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_fasta</span>(<span class="params">fa_path, fai_path, bed_path</span>):</span><br><span class="line">    bed = read_bed(bed_path)</span><br><span class="line">    fai = read_fai(fai_path)</span><br><span class="line">    results = []</span><br><span class="line">    <span class="keyword">for</span> chrom, start, end <span class="keyword">in</span> bed:</span><br><span class="line">        length, offset, linewidth, linebases = fai[chrom]</span><br><span class="line">        region_length = end - start</span><br><span class="line">        region_start = offset + linewidth * (start // linebases) + start % linebases</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(fa_path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.seek(region_start)</span><br><span class="line">            substring = f.read(region_length + end // linebases).replace(<span class="string">&quot;\n&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">            results.append([chrom, start, end, substring])</span><br><span class="line">    <span class="keyword">return</span> results</span><br><span class="line">            </span><br><span class="line">get_fasta(<span class="string">&quot;ref.fa&quot;</span>, <span class="string">&quot;ref.fa.fai&quot;</span>, <span class="string">&quot;test.bed&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>最後附上 samtools 使用手冊和國外論壇的簡介供參考：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.htslib.org/doc/faidx.html">samtools faidx</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.biostars.org/p/98885/#98966">what is in the fasta.fai</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.biostars.org/p/1495/">Can You Please Tell Me Where I Find Information About .Fai File Format?</a></li>
-<li></li>
-</ul>
+<p>為了簡化重建流程，我把下一個要比對的位置記錄在 <code>moves = [(1, 1), (0, 1), (1, 0)]</code>，依序為「匹配&#x2F;替換」、「插入」和「刪除」，所以我能用 <code>edits[x][y]</code> 的值來取得對應操作，並用來更新 x 和 y 的位置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">align</span>(<span class="params">S, T</span>):</span><br><span class="line">	dists = [ [<span class="number">0</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>) ]</span><br><span class="line">	edits = [ [-<span class="number">1</span>] * (<span class="built_in">len</span>(T) + <span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S) + <span class="number">1</span>) ] <span class="comment"># 0: match, 1: insertion, 2: deletion</span></span><br><span class="line">	<span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(S) + <span class="number">1</span>):</span><br><span class="line">		dists[s][<span class="number">0</span>] = s</span><br><span class="line">		edits[s][<span class="number">0</span>] = <span class="number">2</span></span><br><span class="line">	<span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(T) + <span class="number">1</span>):</span><br><span class="line">		dists[<span class="number">0</span>][t] = t</span><br><span class="line">		edits[<span class="number">0</span>][t] = <span class="number">1</span></span><br><span class="line">	<span class="comment"># Fill DP tables</span></span><br><span class="line">	<span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(S)):</span><br><span class="line">		<span class="keyword">for</span> t <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(T)):</span><br><span class="line">			<span class="keyword">if</span> S[s] == T[t]:</span><br><span class="line">				dists[s + <span class="number">1</span>][t + <span class="number">1</span>] = dists[s][t]</span><br><span class="line">				edits[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="number">0</span></span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				choices = [dists[s][t], dists[s + <span class="number">1</span>][t], dists[s][t + <span class="number">1</span>]]</span><br><span class="line">				dists[s + <span class="number">1</span>][t + <span class="number">1</span>] = <span class="built_in">min</span>(choices) + <span class="number">1</span></span><br><span class="line">				edits[s + <span class="number">1</span>][t + <span class="number">1</span>] = choices.index(<span class="built_in">min</span>(choices))</span><br><span class="line">	<span class="comment"># Reconstruct aligned sequences</span></span><br><span class="line">	aln_s, aln_t = <span class="string">&quot;&quot;</span>, <span class="string">&quot;&quot;</span></span><br><span class="line">	x, y = <span class="built_in">len</span>(S), <span class="built_in">len</span>(T)</span><br><span class="line">	moves = [(<span class="number">1</span>, <span class="number">1</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">0</span>)] <span class="comment"># [match, insertion, deletion]</span></span><br><span class="line">	<span class="keyword">while</span> edits[x][y] &gt;= <span class="number">0</span>:</span><br><span class="line">		move_x, move_y = moves[edits[x][y]]</span><br><span class="line">		aln_s = (S[x - <span class="number">1</span>] <span class="keyword">if</span> move_x <span class="keyword">else</span> <span class="string">&quot;-&quot;</span>) + aln_s</span><br><span class="line">		aln_t = (T[y - <span class="number">1</span>] <span class="keyword">if</span> move_y <span class="keyword">else</span> <span class="string">&quot;-&quot;</span>) + aln_t</span><br><span class="line">		x, y = x - move_x, y - move_y</span><br><span class="line">	<span class="keyword">return</span>([<span class="built_in">str</span>(dists[-<span class="number">1</span>][-<span class="number">1</span>]), aln_s, aln_t])</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -415,21 +387,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/bioinformatics/" rel="tag"># bioinformatics</a>
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/how-to-create-bwa-alt-files/" rel="prev" title="怎麼準備 bwa 所需的 .alt 檔？">
-                  <i class="fa fa-angle-left"></i> 怎麼準備 bwa 所需的 .alt 檔？
+                <a href="/the-hitchhikers-guide-to-benchmarking-small-variant-calling-with-happy/" rel="prev" title="如何使用 hap.py 評估小片段變異分析的效度？">
+                  <i class="fa fa-angle-left"></i> 如何使用 hap.py 評估小片段變異分析的效度？
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/isukari-2016-yokohama-eki-sf/" rel="next" title="《橫濱車站sf》">
-                  《橫濱車站sf》 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -505,7 +474,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/what-is-a-fasta-index-file/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/edit-distance-alignment/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>
