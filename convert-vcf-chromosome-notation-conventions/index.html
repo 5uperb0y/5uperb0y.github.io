@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="VCF 檔中的 ##contig&#x3D;&lt;ID&#x3D;*,lenth&#x3D;*&gt; 記錄了參考基因體所有染色體的名稱和長度等資訊，而 CHROM 欄位則標示變異所在的染色體。目前，染色體名稱有 UCSC （chr + 染色體編號，例如：chr1和 chrX）和 Ensembl （沒有前綴，僅有染色體編碼，例如：1 和 X）兩種慣例。執行分析時， 如果輸入的 VCF 檔和對應的參考資料採用相異命名慣例，往往">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="轉換 VCF 檔染色體命名慣例">
+<meta property="og:url" content="https://5uperb0y.com/convert-vcf-chromosome-notation-conventions/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="VCF 檔中的 ##contig&#x3D;&lt;ID&#x3D;*,lenth&#x3D;*&gt; 記錄了參考基因體所有染色體的名稱和長度等資訊，而 CHROM 欄位則標示變異所在的染色體。目前，染色體名稱有 UCSC （chr + 染色體編號，例如：chr1和 chrX）和 Ensembl （沒有前綴，僅有染色體編碼，例如：1 和 X）兩種慣例。執行分析時， 如果輸入的 VCF 檔和對應的參考資料採用相異命名慣例，往往">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-11-20T11:13:57.000Z">
+<meta property="article:modified_time" content="2024-11-20T11:14:55.224Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="bioinformatics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/convert-vcf-chromosome-notation-conventions/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/convert-vcf-chromosome-notation-conventions/","path":"convert-vcf-chromosome-notation-conventions/","title":"轉換 VCF 檔染色體命名慣例"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>轉換 VCF 檔染色體命名慣例 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">32</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">150</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%B3%87%E6%96%99%EF%BC%9A%E5%88%86%E5%88%A5%E6%8E%A1%E7%94%A8-UCSC-%E5%92%8C-Ensembl-%E6%85%A3%E4%BE%8B%E7%9A%84-VCF-%E6%AA%94"><span class="nav-number">1.</span> <span class="nav-text">範例資料：分別採用 UCSC 和 Ensembl 慣例的 VCF 檔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-sed-%E8%BD%89%E6%8F%9B%E6%9F%93%E8%89%B2%E9%AB%94%E5%91%BD%E5%90%8D%E6%85%A3%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">使用 sed 轉換染色體命名慣例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UCSC-Ensembl"><span class="nav-number">2.1.</span> <span class="nav-text">UCSC -&gt; Ensembl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensembl-UCSC"><span class="nav-number">2.2.</span> <span class="nav-text">Ensembl -&gt; UCSC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-bcftools-%E8%BD%89%E6%8F%9B%E6%9F%93%E8%89%B2%E9%AB%94%E5%91%BD%E5%90%8D%E6%85%A3%E4%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">使用 bcftools 轉換染色體命名慣例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UCSC-Ensembl-1"><span class="nav-number">3.1.</span> <span class="nav-text">UCSC -&gt; Ensembl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensembl-UCSC-1"><span class="nav-number">3.2.</span> <span class="nav-text">Ensembl -&gt; UCSC</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%8B%BF%E5%88%B0%E7%9A%84%E6%98%AF%E5%A3%93%E7%B8%AE%E9%81%8E%E7%9A%84-VCF-%E6%AA%94"><span class="nav-number">4.</span> <span class="nav-text">如果你拿到的是壓縮過的 VCF 檔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E8%B3%87%E8%A8%8A"><span class="nav-number">5.</span> <span class="nav-text">延伸資訊</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-20T19:13:57+08:00">
+        11/20
+      </time>
+      <a href="/convert-vcf-chromosome-notation-conventions/" title="轉換 VCF 檔染色體命名慣例">轉換 VCF 檔染色體命名慣例</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-19T22:09:11+08:00">
+        11/19
+      </time>
+      <a href="/edit-distance-alignment/" title="ROSALIND｜Edit Distance Alignment (EDTA)">ROSALIND｜Edit Distance Alignment (EDTA)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-05T21:30:51+08:00">
+        11/05
+      </time>
+      <a href="/the-hitchhikers-guide-to-benchmarking-small-variant-calling-with-happy/" title="如何使用 hap.py 評估小片段變異分析的效度？">如何使用 hap.py 評估小片段變異分析的效度？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-04T22:17:26+08:00">
+        11/04
+      </time>
+      <a href="/wu-2021-the-vertical-society-of-good-girls/" title="《美好少女的垂直社會》">《美好少女的垂直社會》</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-31T16:01:09+08:00">
+        10/31
+      </time>
+      <a href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/" title="《明日的世界將會星光燦爛 3 》">《明日的世界將會星光燦爛 3 》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/how-to-create-bwa-alt-files/" rel="bookmark">
+        <time class="popular-posts-time">2024-10-14</time>
+        <br>
+      怎麼準備 bwa 所需的 .alt 檔？
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/convert-vcf-chromosome-notation-conventions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="轉換 VCF 檔染色體命名慣例 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          轉換 VCF 檔染色體命名慣例
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-11-20 19:13:57 / 修改時間：19:14:55" itemprop="dateCreated datePublished" datetime="2024-11-20T19:13:57+08:00">2024-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>VCF 檔中的 <code>##contig=&lt;ID=*,lenth=*&gt;</code> 記錄了參考基因體所有染色體的名稱和長度等資訊，而 <code>CHROM</code> 欄位則標示變異所在的染色體。目前，染色體名稱有 UCSC （<code>chr</code> + 染色體編號，例如：<code>chr1</code>和 <code>chrX</code>）和 Ensembl （沒有前綴，僅有染色體編碼，例如：<code>1</code> 和 <code>X</code>）兩種慣例。執行分析時， 如果輸入的 VCF 檔和對應的參考資料採用相異命名慣例，往往會導致分析結果失真。</p>
+<p>舉例來說，GIAB 提供的 VCF 檔是評估變異分析常用的資料。這些 VCF 檔採用 Ensembl 慣例，如果拿 UCSC 慣例的 VCF 檔和它們比較，程式會以為沒有找到這些變異。因此，執行分析時，常常要調整染色體名稱，確保分析結果正確。</p>
+<p>本文簡介使用 linux sed 和 bcftools 轉換 VCF 檔染色體命名慣例的方式。</p>
+<span id="more"></span>
+
+<h1 id="範例資料：分別採用-UCSC-和-Ensembl-慣例的-VCF-檔"><a href="#範例資料：分別採用-UCSC-和-Ensembl-慣例的-VCF-檔" class="headerlink" title="範例資料：分別採用 UCSC 和 Ensembl 慣例的 VCF 檔"></a>範例資料：分別採用 UCSC 和 Ensembl 慣例的 VCF 檔</h1><p><code>ucsc.vcf</code>，UCSC 慣例會在染色體名稱加上 <code>chr</code> 前綴，粒線體基因則命名為 <code>chrM</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">##fileformat=VCFv4.2</span><br><span class="line">##contig=&lt;ID=chr1&gt;</span><br><span class="line">##contig=&lt;ID=chrM&gt;</span><br><span class="line">#CHROM    POS    ID    REF    ALT    QUAL    FILTER    INFO    FORMAT    test</span><br><span class="line">chr1    100    .    T    C    100    PASS    .    .    .</span><br><span class="line">chrM    100    .    T    C    100    PASS    .    .    .</span><br></pre></td></tr></table></figure>
+
+<p><code>ensembl.vcf</code>，Ensembl 慣例只標記染色體名稱，粒線體基因則命名為 <code>MT</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">##fileformat=VCFv4.2</span><br><span class="line">##contig=&lt;ID=1&gt;</span><br><span class="line">##contig=&lt;ID=MT&gt;</span><br><span class="line">#CHROM    POS    ID    REF    ALT    QUAL    FILTER    INFO    FORMAT    test</span><br><span class="line">1    100    .    T    C    100    PASS    .    .    .</span><br><span class="line">MT    100    .    T    C    100    PASS    .    .    .</span><br></pre></td></tr></table></figure>
+
+<p>除了 <code>CHROM</code>，轉換慣例時也要一併異動 <code>##contig=&lt;ID=*</code> 的格式。許多軟體（例如 GATK）會檢查兩者是否相符，如果 <code>##contig=&lt;ID=*&gt;</code> 含有 <code>CHROM</code> 不存在的染色體（反之亦然）就會報錯。</p>
+<h1 id="使用-sed-轉換染色體命名慣例"><a href="#使用-sed-轉換染色體命名慣例" class="headerlink" title="使用 sed 轉換染色體命名慣例"></a>使用 <code>sed</code> 轉換染色體命名慣例</h1><p>我們可以使用 <code>sed</code> 添加或是刪除 <code>chr</code> 來轉換命名慣例。使用時要注意替換字串的順序和模式。舉例來說，從 UCSC 轉換為 Ensembl 慣例時，如果先把 VCF 檔內所有的 <code>chr</code> 移除，那麼調整粒線體基因名稱時要把 <code>M</code> 改成 <code>MT</code>。然而，<code>M</code> 可能配對到太多字符，所以需要新增其它判斷的根據。</p>
+<h2 id="UCSC-Ensembl"><a href="#UCSC-Ensembl" class="headerlink" title="UCSC -&gt; Ensembl"></a>UCSC -&gt; Ensembl</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat ucsc.vcf |\</span><br><span class="line">sed &#x27;</span><br><span class="line">  s/##contig=&lt;ID=chrM/##contig=MT/;</span><br><span class="line">  s/^chrM/MT/;</span><br><span class="line">  s/^chr//;</span><br><span class="line">  s/##contig=&lt;ID=chr/##contig=&lt;ID=/&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Ensembl-UCSC"><a href="#Ensembl-UCSC" class="headerlink" title="Ensembl -&gt; UCSC"></a>Ensembl -&gt; UCSC</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat ensembl.vcf |\</span><br><span class="line">sed &#x27;s/^\([0-9XYM]\)/chr\1/;</span><br><span class="line">  s/^chrMT/chrM/;</span><br><span class="line">  s/^##contig=&lt;ID=/##contig=&lt;ID=chr/;</span><br><span class="line">  s/^##contig=&lt;ID=chrMT/##contig=&lt;ID=chrM/&#x27; </span><br></pre></td></tr></table></figure>
+<h1 id="使用-bcftools-轉換染色體命名慣例"><a href="#使用-bcftools-轉換染色體命名慣例" class="headerlink" title="使用 bcftools 轉換染色體命名慣例"></a>使用 <code>bcftools</code> 轉換染色體命名慣例</h1><p><code>bcftools annotate</code> 會依據用戶提供的命名格式辭典，同時更新 <code>##contig=&lt;ID=*&gt;</code> 和 <code>CHROM</code> 的紀錄。例如：</p>
+<p><code>ucsc_to_ensembl.tsv</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chr1    1</span><br><span class="line">chrM    MT</span><br></pre></td></tr></table></figure>
+
+<p>以及</p>
+<p><code>ensembl_to_ucsc.tsv</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1    chr1</span><br><span class="line">MT    chrM</span><br></pre></td></tr></table></figure>
+
+<h2 id="UCSC-Ensembl-1"><a href="#UCSC-Ensembl-1" class="headerlink" title="UCSC -&gt; Ensembl"></a>UCSC -&gt; Ensembl</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcftools annotate --rename-chrs ucsc_to_ensembl.tsv ucsc.vcf</span><br></pre></td></tr></table></figure>
+<h2 id="Ensembl-UCSC-1"><a href="#Ensembl-UCSC-1" class="headerlink" title="Ensembl -&gt; UCSC"></a>Ensembl -&gt; UCSC</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bcftools annotate --rename-chrs ensembl_to_ucsc.tsv ensembl.vcf</span><br></pre></td></tr></table></figure>
+
+<h1 id="如果你拿到的是壓縮過的-VCF-檔"><a href="#如果你拿到的是壓縮過的-VCF-檔" class="headerlink" title="如果你拿到的是壓縮過的 VCF 檔"></a>如果你拿到的是壓縮過的 VCF 檔</h1><p>前述案例都是處理未壓縮的 VCF 檔，但實務上為了節省空間和時間都會事先壓縮 VCF 檔為 <code>vcf.gz</code>，並且用索引檔加速後續的資料處理。</p>
+<p>調整 <code>vcf.gz</code> 的染色體命名慣例的步驟為解壓縮、調整格式、壓縮和索引，程式碼範例如下，記得把 <code>&lt;commands&gt;</code> 部分替換成對應的 <code>sed</code> 指令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 解壓縮 vcf.gz 以執行資料處理，隨後再壓縮</span></span><br><span class="line">zcat &lt;input.vcf.gz&gt; |\</span><br><span class="line">&lt;commands&gt; |\</span><br><span class="line">bcftools -o &lt;output.vcf.gz&gt; -O z</span><br><span class="line"><span class="comment"># 為更新後的 vcf.gz 建立索引檔</span></span><br><span class="line">bcftools index -t &lt;output.vcf.gz&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>bcftools annotate</code> 可以直接處理並輸出壓縮的 VCF 檔，但最後還是要自行建立索引檔：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># UCSC to Ensembl</span></span><br><span class="line">bcftools annotate --rename-chrs ucsc_to_ensembl.tsv ucsc.vcf.gz -O z -o ensembl.vcf.gz</span><br><span class="line">bcftools index -t ensembl.vcf.gz <span class="comment"># 會產出 ensembl.vcf.gz.tbi</span></span><br><span class="line"><span class="comment"># Ensembl to UCSC</span></span><br><span class="line">bcftools annotate --rename-chrs ensembl_to_ucsc.tsv ensembl.vcf.gz -O z -o ucsc.vcf.gz</span><br><span class="line">bcftools index -t ucsc.vcf.gz <span class="comment"># 會產出 ucsc.vcf.gz.tbi</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="延伸資訊"><a href="#延伸資訊" class="headerlink" title="延伸資訊"></a>延伸資訊</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.biostars.org/p/98582/">VCF files: Change Chromosome Notation</a>：Biostar 上的討論了用 awk、sed、bcftools 等轉換染色體命名慣例的途徑。</li>
+<li><a target="_blank" rel="noopener" href="https://genome.ucsc.edu/FAQ/FAQgenes.html#ens">What are Ensembl and GENCODE and is there a difference?</a>：UCSC 的網站介紹了他們和 Ensembl 的染色體命名慣例差異。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/bioinformatics/" rel="tag"># bioinformatics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/edit-distance-alignment/" rel="prev" title="ROSALIND｜Edit Distance Alignment (EDTA)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Edit Distance Alignment (EDTA)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/convert-vcf-chromosome-notation-conventions/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

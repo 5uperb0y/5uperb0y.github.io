@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">148</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">32</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">150</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -181,6 +181,15 @@
     
     
     <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-20T19:13:57+08:00">
+        11/20
+      </time>
+      <a href="/convert-vcf-chromosome-notation-conventions/" title="轉換 VCF 檔染色體命名慣例">轉換 VCF 檔染色體命名慣例</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
       <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-19T22:09:11+08:00">
         11/19
       </time>
@@ -212,15 +221,6 @@
         10/31
       </time>
       <a href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/" title="《明日的世界將會星光燦爛 3 》">《明日的世界將會星光燦爛 3 》</a>
-      <br>
-      <br>
-    </li>
-    
-    <li class='pull-left' style="white-space:normal; text-align:left" >
-      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-10-28T22:26:31+08:00">
-        10/28
-      </time>
-      <a href="/nextflow-manage-input-with-json/" title="Nextflow｜讀取儲存於 JSON 的輸入資料">Nextflow｜讀取儲存於 JSON 的輸入資料</a>
       <br>
       <br>
     </li>
@@ -259,6 +259,85 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/convert-vcf-chromosome-notation-conventions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/convert-vcf-chromosome-notation-conventions/" class="post-title-link" itemprop="url">轉換 VCF 檔染色體命名慣例</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-11-20 19:13:57 / 修改時間：19:14:55" itemprop="dateCreated datePublished" datetime="2024-11-20T19:13:57+08:00">2024-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>VCF 檔中的 <code>##contig=&lt;ID=*,lenth=*&gt;</code> 記錄了參考基因體所有染色體的名稱和長度等資訊，而 <code>CHROM</code> 欄位則標示變異所在的染色體。目前，染色體名稱有 UCSC （<code>chr</code> + 染色體編號，例如：<code>chr1</code>和 <code>chrX</code>）和 Ensembl （沒有前綴，僅有染色體編碼，例如：<code>1</code> 和 <code>X</code>）兩種慣例。執行分析時， 如果輸入的 VCF 檔和對應的參考資料採用相異命名慣例，往往會導致分析結果失真。</p>
+<p>舉例來說，GIAB 提供的 VCF 檔是評估變異分析常用的資料。這些 VCF 檔採用 Ensembl 慣例，如果拿 UCSC 慣例的 VCF 檔和它們比較，程式會以為沒有找到這些變異。因此，執行分析時，常常要調整染色體名稱，確保分析結果正確。</p>
+<p>本文簡介使用 linux sed 和 bcftools 轉換 VCF 檔染色體命名慣例的方式。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/convert-vcf-chromosome-notation-conventions/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -947,86 +1026,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/isukari-2016-yokohama-eki-sf/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/what-is-a-fasta-index-file/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/what-is-a-fasta-index-file/" class="post-title-link" itemprop="url">Fasta index file (.fai) 是什麼？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-10-15 21:21:21 / 修改時間：20:21:50" itemprop="dateCreated datePublished" datetime="2024-10-15T21:21:21+08:00">2024-10-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>使用參考基因體進行分析時，如果沒有提供對應的 Fasta index 檔 (<em>.fai</em>)，很有可能跳出以下這類錯誤訊息：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># HaplotypeCaller</span><br><span class="line">ERROR MESSAGE: Fasta index file ref.fasta.fai for reference ref.fasta does not exist.</span><br><span class="line"># freebayes</span><br><span class="line">unable to find FASTA index entry for &#x27;1&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>這個 <em>.fai</em> 究竟是什麼？為什麼許多分析需要它？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/what-is-a-fasta-index-file/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>
