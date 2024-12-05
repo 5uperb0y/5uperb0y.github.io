@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="基因體結構會影響變異分析的效度。舉例來說，在 homopolymer 或是 segmental duplicate 區域，依賴 PCR 的 Indel 分析準確性往往低於其他區域 1。因此，若能針對基因體不同區域個別評估效度，將有助於了解技術或流程的限制，進而提升效度分析的鑑別度。 為此，GIAB (Genome in a Bottle consortium) 維護了一系列 BED 檔，記錄基因體">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="如何使用 hap.py stratification？">
+<meta property="og:url" content="https://5uperb0y.com/using-happy-stratification-for-benchmarking-small-variants/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="基因體結構會影響變異分析的效度。舉例來說，在 homopolymer 或是 segmental duplicate 區域，依賴 PCR 的 Indel 分析準確性往往低於其他區域 1。因此，若能針對基因體不同區域個別評估效度，將有助於了解技術或流程的限制，進而提升效度分析的鑑別度。 為此，GIAB (Genome in a Bottle consortium) 維護了一系列 BED 檔，記錄基因體">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-12-05T12:16:22.000Z">
+<meta property="article:modified_time" content="2024-12-05T12:19:10.064Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="bioinformatics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/using-happy-stratification-for-benchmarking-small-variants/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/using-happy-stratification-for-benchmarking-small-variants/","path":"using-happy-stratification-for-benchmarking-small-variants/","title":"如何使用 hap.py stratification？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>如何使用 hap.py stratification？ | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">32</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">151</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Confident-regions-%E5%92%8C-stratification-regions-%E6%9C%89%E4%BB%80%E9%BA%BC%E5%B7%AE%E7%95%B0%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">Confident regions 和 stratification regions 有什麼差異？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%B9%E6%AC%A1%E5%9F%B7%E8%A1%8C"><span class="nav-number">3.</span> <span class="nav-text">批次執行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GIAB-genome-stratifications"><span class="nav-number">4.</span> <span class="nav-text">GIAB genome stratifications</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-05T20:16:22+08:00">
+        12/05
+      </time>
+      <a href="/using-happy-stratification-for-benchmarking-small-variants/" title="如何使用 hap.py stratification？">如何使用 hap.py stratification？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-20T19:13:57+08:00">
+        11/20
+      </time>
+      <a href="/convert-vcf-chromosome-notation-conventions/" title="轉換 VCF 檔染色體命名慣例">轉換 VCF 檔染色體命名慣例</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-19T22:09:11+08:00">
+        11/19
+      </time>
+      <a href="/edit-distance-alignment/" title="ROSALIND｜Edit Distance Alignment (EDTA)">ROSALIND｜Edit Distance Alignment (EDTA)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-05T21:30:51+08:00">
+        11/05
+      </time>
+      <a href="/the-hitchhikers-guide-to-benchmarking-small-variant-calling-with-happy/" title="如何使用 hap.py 評估小片段變異分析的效度？">如何使用 hap.py 評估小片段變異分析的效度？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-04T22:17:26+08:00">
+        11/04
+      </time>
+      <a href="/wu-2021-the-vertical-society-of-good-girls/" title="《美好少女的垂直社會》">《美好少女的垂直社會》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/the-hitchhikers-guide-to-benchmarking-small-variant-calling-with-happy/" rel="bookmark">
+        <time class="popular-posts-time">2024-11-05</time>
+        <br>
+      如何使用 hap.py 評估小片段變異分析的效度？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-04</time>
+        <br>
+      DADA2 execution halted (Error in table: attempt to make a table with >= 2^31 elements)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rna-splicing/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-30</time>
+        <br>
+      ROSALIND｜RNA Splicing (SPLC)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/what-is-a-fasta-index-file/" rel="bookmark">
+        <time class="popular-posts-time">2024-10-15</time>
+        <br>
+      Fasta index file (.fai) 是什麼？
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/using-happy-stratification-for-benchmarking-small-variants/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="如何使用 hap.py stratification？ | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何使用 hap.py stratification？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-12-05 20:16:22 / 修改時間：20:19:10" itemprop="dateCreated datePublished" datetime="2024-12-05T20:16:22+08:00">2024-12-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>基因體結構會影響變異分析的效度。舉例來說，在 homopolymer 或是 segmental duplicate 區域，依賴 PCR 的 Indel 分析準確性往往低於其他區域 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Olson et al. (2022). PrecisionFDA Truth Challenge V2: Calling variants from short and long reads in difficult-to-map regions. Cell genomics, 2(5).
+">1</span></a></sup>。因此，若能針對基因體不同區域個別評估效度，將有助於了解技術或流程的限制，進而提升效度分析的鑑別度。</p>
+<p>為此，GIAB (Genome in a Bottle consortium) 維護了一系列 BED 檔，記錄基因體上的功能性區域、重複性區域以及高度多樣性區域等。用戶可以使用 <code>hap.py</code> 等工具，配合這些 BED 檔來評估其分析流程在各個區域的表現。</p>
+<span id="more"></span>
+
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>要分區呈現效度分析結果，首先得準備一份 BED 檔。這個檔案每一列都記錄一個基因體區域，四個欄位分別表示染色體名稱 (chrom)、起始位置 (start)<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="BED 檔的座標是從 0 開始計算。">3</span></a></sup>、結束位置 (end) 以及區域名稱 (name)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chr1    90 110 intron</span><br><span class="line">chr1    290 310 exon</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在執行 <code>hap.py</code> 時，需要添加 <code>--stratification-region &lt;tag&gt;:&lt;bed&gt;</code> 選項來讀取 BED 檔。其中 <code>&lt;bed&gt;</code> 是指 BED 檔的存放路徑，<code>&lt;tag&gt;</code> 則用於標示這些區域的分類，例如我們可以用 functional_regions 來代表 intron 和 exon 兩類區域。範例的指令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hap.py truth.vcf query.vcf\</span><br><span class="line">    -o output_prefix\</span><br><span class="line">    -r reference.fa\</span><br><span class="line">    --stratification-region functional_regions:input.bed</span><br></pre></td></tr></table></figure>
+
+<p>分析結果會記錄在 <code>*extended.csv</code>，用戶可以依據 “Subset” 欄位來篩選想關注的區域。”Subset” 的格式為 <code>&lt;tag&gt;_&lt;name&gt;</code>，結合了分類標籤與區域名稱。</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Subset</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SNP</td>
+<td>functional_regions</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>functional_regions_intron</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>functional_regions_exon</td>
+</tr>
+</tbody></table>
+<p>如果提供的 BED 檔沒有標記區域名稱，那麼整份檔案會被視為相同區域，”Subset” 將只會顯示 <code>&lt;tag&gt;</code>。</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Subset</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SNP</td>
+<td>functional_regions</td>
+</tr>
+</tbody></table>
+<h1 id="Confident-regions-和-stratification-regions-有什麼差異？"><a href="#Confident-regions-和-stratification-regions-有什麼差異？" class="headerlink" title="Confident regions 和 stratification regions 有什麼差異？"></a>Confident regions 和 stratification regions 有什麼差異？</h1><p>Confident regions 和 stratification regions 的用途與定位不同。</p>
+<p>Confident regions 用於界定可靠的分析範圍。由於定序與分析技術限制，即使經過嚴格品管與專家審查，仍無法確保某些區域發現的變異是否可靠。因此，GIAB 在建立 benchmark VCF 時，基於先驗知識排除了高度重複或含有結構變異的片段，定義出所謂的 high confident regions。</p>
+<p>用戶可以透過 <code>-f/--false-positives &lt;bed&gt;</code> 指定這些區域，來限縮效度分析的範圍，唯有位在這些區域的變異會納入比較。</p>
+<p>Stratification regions 則反映了比較的對象。用戶可以透過 <code>--stratification-region &lt;tag&gt;:&lt;bed&gt;</code> 呈現不同區域的效度分析結果。</p>
+<p>換句話說，<code>-f/--false-positives</code> 影響資料篩選，<code>--stratification-regions</code> 則影響結果呈現。當同時指定這兩個選項時，<code>hap.py</code> 會先挑出 confident regions 內的變異來計算效度指標，再根據 stratification regions 呈現各區域的分析結果。</p>
+<p>值得留意的是，即使 stratification regions 和 cofident regions 沒有交集，最終結果仍會完整呈現 stratification regions 所有區域的效度指標值。</p>
+<p>舉例來說，假設我們以兩個內容相同的 VCF 檔作為 <code>truth.vcf</code> 和 <code>query.vcf</code>，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chr1	100	var1	A	C	1000	PASS	.	GT	0/1</span><br><span class="line">chr1	300	var2	T	G	1000	PASS	.	GT	0/1</span><br></pre></td></tr></table></figure>
+
+<p>同時也定義了涵蓋這些變異的 Stratification regions。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chr1    90 110 intron</span><br><span class="line">chr1    290 310 exon</span><br></pre></td></tr></table></figure>
+
+<p>如果 confident regions 介於一號染色體第 50 到 250 個鹼基之間，那麼 var2（以及 exon）不在 confident region 範圍內，所以不會納入效度計算。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chr1    50 250  </span><br></pre></td></tr></table></figure>
+
+<p>然而，<code>hap.py</code> 仍會完整呈現所有 stratification regions 的效度統計量。</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Subset</th>
+<th>TRUTH.TOTAL</th>
+<th>TRUTH.TP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SNP</td>
+<td>functional_regions</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>functional_regions_intron</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>functional_regions_exon</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<h1 id="批次執行"><a href="#批次執行" class="headerlink" title="批次執行"></a>批次執行</h1><p><code>hap.py</code> 也支援批次分析，用戶需要準備一個 TSV 檔，在第一欄標註 <code>&lt;tag&gt;</code>，並在第二欄提供 <code>&lt;bed&gt;</code> 對應路徑。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">functional_regions  functional_regions_regions.bed</span><br><span class="line">mappability mappability_regions.bed</span><br></pre></td></tr></table></figure>
+
+<p>接著執行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hap.py truth.vcf query.vcf\</span><br><span class="line">    -o output_prefix\</span><br><span class="line">    -r reference.fa\</span><br><span class="line">    --stratification stratification.tsv</span><br></pre></td></tr></table></figure>
+
+<p>便能獲得以下分析結果。<code>&lt;tag&gt;</code> 的用途在批次分析時更為明顯，它能幫助用戶區別基因區域的分類。</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Subset</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SNP</td>
+<td>functional_regions</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>functional_regions_intron</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>functional_regions_exon</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>mappability</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>mappability_easy</td>
+</tr>
+<tr>
+<td>SNP</td>
+<td>mappability_hard</td>
+</tr>
+</tbody></table>
+<p>如同單一 BED 檔的分析，如果沒有標註區域名稱，那麼整個 BED 檔案都會視為同樣區域。</p>
+<h1 id="GIAB-genome-stratifications"><a href="#GIAB-genome-stratifications" class="headerlink" title="GIAB genome stratifications"></a>GIAB genome stratifications</h1><p>GIAB 提供多種 <a target="_blank" rel="noopener" href="https://github.com/genome-in-a-bottle/genome-stratifications">BED 檔</a>，涵蓋了低複雜度、XY染色體、GC比例較高等性質不同的區域，這些都是現有技術較難準確分析的地方。</p>
+<p>GIAB 也合併前述區域為 Union BED 檔，只分為 difficult 和 non-difficult 兩類，能較直觀地評估分析流程在具挑戰性區域的表現。</p>
+<p>用戶能從 <a target="_blank" rel="noopener" href="https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/genome-stratifications/">GIAB 的資料庫</a> 下載對應版本與參考基因體的 BED 檔案，再從 Github 取得<a target="_blank" rel="noopener" href="https://github.com/genome-in-a-bottle/genome-stratifications">批次分析的 TSV 檔</a>。</p>
+<p>由於這些 BED 檔較大，建議挑選必要的內容下載，自己編輯批次檔來執行較為便利。<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Olson et al. (2022). PrecisionFDA Truth Challenge V2: Calling variants from short and long reads in difficult-to-map regions. Cell genomics, 2(5).<a href="#fnref:1" rev="footnote">↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Dwarshuis et al. (2024). The GIAB genomic stratifications resource for human reference genomes. Nature Communications, 15(1), 9029.<a href="#fnref:2" rev="footnote">↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">BED 檔的座標是從 0 開始計算。<a href="#fnref:3" rev="footnote">↩</a></span></li></ol></div></div></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/bioinformatics/" rel="tag"># bioinformatics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/convert-vcf-chromosome-notation-conventions/" rel="prev" title="轉換 VCF 檔染色體命名慣例">
+                  <i class="fa fa-angle-left"></i> 轉換 VCF 檔染色體命名慣例
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/using-happy-stratification-for-benchmarking-small-variants/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
