@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">32</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">151</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">32</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">152</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -470,7 +470,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-06-09 22:20:58" itemprop="dateModified" datetime="2024-06-09T22:20:58+08:00">2024-06-09</time>
+      <time title="修改時間：2024-12-14 21:54:52" itemprop="dateModified" datetime="2024-12-14T21:54:52+08:00">2024-12-14</time>
     </span>
 
   
@@ -1033,7 +1033,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/modify-vimium-to-label-and-close-pop-up/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/enable-bopomofo-to-automatically-switch-when-typing-english/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1051,7 +1051,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/modify-vimium-to-label-and-close-pop-up/" class="post-title-link" itemprop="url">嘗試修改 Vimium 來關閉網頁 pop-up</a>
+          <a href="/enable-bopomofo-to-automatically-switch-when-typing-english/" class="post-title-link" itemprop="url">讓新注音在輸入英文字時自動切換輸入法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1062,14 +1062,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2023-01-22 20:54:05" itemprop="dateCreated datePublished" datetime="2023-01-22T20:54:05+08:00">2023-01-22</time>
+      <time title="創建時間：2023-01-29 15:22:25" itemprop="dateCreated datePublished" datetime="2023-01-29T15:22:25+08:00">2023-01-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-11-19 22:28:50" itemprop="dateModified" datetime="2024-11-19T22:28:50+08:00">2024-11-19</time>
+      <time title="修改時間：2024-12-14 21:41:31" itemprop="dateModified" datetime="2024-12-14T21:41:31+08:00">2024-12-14</time>
     </span>
 
   
@@ -1082,12 +1082,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>彈出視窗是以鍵盤瀏覽網頁的最大阻礙。這些視窗的內容不外乎會員邀請、推薦連結、蓋板廣告與網站公告等，是網站而定，通常沒辦法以 tab 來點擊，之前介紹的 Vimium 功能也沒辦法為這些視窗上的連結打標籤。由於彈出視窗並非廣告，所以下載 adblock 也無法阻擋之。所以往往只能乖乖移動滑鼠關閉之。</p>
-<p>因為這些彈出視窗設計有別於html 內建的元素，所以有些更糟糕的案例是連關閉按鈕都沒有顯示在頁面上，強迫使用這點開網頁才能關閉之。</p>
-<p>在得知 Vimium 點擊連結的方便之後，我嘗試修改 Vimium 的程式碼，讓他可以為原先沒辦法點擊的連結標註標籤</p>
+          <p>編輯中文文件時，為了輸入英文術語或是標記符號得頻繁點選 Shift 切換輸入法。是否有方法能減輕切換輸入法的麻煩，提升新注音輸入法的使用體驗？</p>
+<p>除了頻繁按 Shift 這行為本身以外，另一個麻煩是忘記切回輸入法會增加刪字的負擔。因此，減輕切換輸入法負擔的方向有幾個：降低切換輸入法的頻率、減少忘記切換輸入法的困難、降低切換輸入法的負擔。</p>
+<p>在這篇文章中，我將介紹目前有哪些解決問題的途徑或專案，讓新注音自動切換輸入法有哪些潛在困難，以及我自己的嘗試。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/modify-vimium-to-label-and-close-pop-up/#more" rel="contents">
+              <a class="btn" href="/enable-bopomofo-to-automatically-switch-when-typing-english/#more" rel="contents">
                 閱讀全文 &raquo;
               </a>
             </div>

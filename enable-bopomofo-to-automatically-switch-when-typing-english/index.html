@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="編輯中文文件時，為了輸入英文術語或是標記符號得頻繁點選 Shift 切換輸入法。是否有方法能減輕切換輸入法的麻煩，提升新注音輸入法的使用體驗？ 除了頻繁按 Shift 這行為本身以外，另一個麻煩是忘記切回輸入法會增加刪字的負擔。因此，減輕切換輸入法負擔的方向有幾個：降低切換輸入法的頻率、減少忘記切換輸入法的困難、降低切換輸入法的負擔。 在這篇文章中，我將介紹目前有哪些解決問題的途徑或專案，讓新注音">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="讓新注音在輸入英文字時自動切換輸入法">
+<meta property="og:url" content="https://5uperb0y.com/enable-bopomofo-to-automatically-switch-when-typing-english/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="編輯中文文件時，為了輸入英文術語或是標記符號得頻繁點選 Shift 切換輸入法。是否有方法能減輕切換輸入法的麻煩，提升新注音輸入法的使用體驗？ 除了頻繁按 Shift 這行為本身以外，另一個麻煩是忘記切回輸入法會增加刪字的負擔。因此，減輕切換輸入法負擔的方向有幾個：降低切換輸入法的頻率、減少忘記切換輸入法的困難、降低切換輸入法的負擔。 在這篇文章中，我將介紹目前有哪些解決問題的途徑或專案，讓新注音">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://raw.githubusercontent.com/yfzhao20/Ultra-IME-for-VSCode/main/images/IME.gif">
+<meta property="og:image" content="https://github.com/5uperb0y/bopomofo-ahk/blob/feature-auto-change-key-seqs-to-alphanumeric-chars/media/auto-zh-to-eng.gif?raw=true">
+<meta property="article:published_time" content="2023-01-29T07:22:25.000Z">
+<meta property="article:modified_time" content="2024-12-14T13:41:31.828Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/yfzhao20/Ultra-IME-for-VSCode/main/images/IME.gif">
+
+
+<link rel="canonical" href="https://5uperb0y.com/enable-bopomofo-to-automatically-switch-when-typing-english/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/enable-bopomofo-to-automatically-switch-when-typing-english/","path":"enable-bopomofo-to-automatically-switch-when-typing-english/","title":"讓新注音在輸入英文字時自動切換輸入法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>讓新注音在輸入英文字時自動切換輸入法 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">32</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">152</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E6%B3%A8%E9%9F%B3%E5%85%A7%E5%BB%BA%E7%9A%84%E6%99%BA%E6%85%A7%E5%88%87%E6%8F%9B"><span class="nav-number">1.</span> <span class="nav-text">新注音內建的智慧切換</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#voidism-%E7%9A%84%E8%87%AA%E5%8B%95%E5%88%87%E6%8F%9B%E8%BC%B8%E5%85%A5%E6%B3%95%E7%A8%8B%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">voidism 的自動切換輸入法程式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E6%98%A0%E5%B0%84%E5%BF%AB%E6%8D%B7%E9%8D%B5"><span class="nav-number">3.</span> <span class="nav-text">重新映射快捷鍵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%80%E5%9F%9F%E8%BE%A8%E8%AD%98%E8%BC%B8%E5%85%A5%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">區域辨識輸入法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E9%9F%B3%E8%AA%BF%E9%8D%B5%E5%8D%80%E5%88%86%E4%B8%AD%E8%8B%B1%E6%96%87%E8%BC%B8%E5%85%A5"><span class="nav-number">5.</span> <span class="nav-text">以音調鍵區分中英文輸入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E6%A1%88"><span class="nav-number">6.</span> <span class="nav-text">結案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E8%B3%87%E6%96%99"><span class="nav-number">7.</span> <span class="nav-text">延伸資料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-05T20:16:22+08:00">
+        12/05
+      </time>
+      <a href="/using-happy-stratification-for-benchmarking-small-variants/" title="如何使用 hap.py stratification？">如何使用 hap.py stratification？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-20T19:13:57+08:00">
+        11/20
+      </time>
+      <a href="/convert-vcf-chromosome-notation-conventions/" title="轉換 VCF 檔染色體命名慣例">轉換 VCF 檔染色體命名慣例</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-19T22:09:11+08:00">
+        11/19
+      </time>
+      <a href="/edit-distance-alignment/" title="ROSALIND｜Edit Distance Alignment (EDTA)">ROSALIND｜Edit Distance Alignment (EDTA)</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-05T21:30:51+08:00">
+        11/05
+      </time>
+      <a href="/the-hitchhikers-guide-to-benchmarking-small-variant-calling-with-happy/" title="如何使用 hap.py 評估小片段變異分析的效度？">如何使用 hap.py 評估小片段變異分析的效度？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-04T22:17:26+08:00">
+        11/04
+      </time>
+      <a href="/wu-2021-the-vertical-society-of-good-girls/" title="《美好少女的垂直社會》">《美好少女的垂直社會》</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-common-settings-for-vscodevim/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-28</time>
+        <br>
+      VSCodeVim 常用設定
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/navigate-websites-with-keyboard/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-24</time>
+        <br>
+      網際牛仔與無障礙空間（上）：如何以鍵盤瀏覽網頁？
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/enable-bopomofo-to-automatically-switch-when-typing-english/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="讓新注音在輸入英文字時自動切換輸入法 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          讓新注音在輸入英文字時自動切換輸入法
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2023-01-29 15:22:25" itemprop="dateCreated datePublished" datetime="2023-01-29T15:22:25+08:00">2023-01-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-14 21:41:31" itemprop="dateModified" datetime="2024-12-14T21:41:31+08:00">2024-12-14</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>編輯中文文件時，為了輸入英文術語或是標記符號得頻繁點選 Shift 切換輸入法。是否有方法能減輕切換輸入法的麻煩，提升新注音輸入法的使用體驗？</p>
+<p>除了頻繁按 Shift 這行為本身以外，另一個麻煩是忘記切回輸入法會增加刪字的負擔。因此，減輕切換輸入法負擔的方向有幾個：降低切換輸入法的頻率、減少忘記切換輸入法的困難、降低切換輸入法的負擔。</p>
+<p>在這篇文章中，我將介紹目前有哪些解決問題的途徑或專案，讓新注音自動切換輸入法有哪些潛在困難，以及我自己的嘗試。</p>
+<span id="more"></span>
+
+<h1 id="新注音內建的智慧切換"><a href="#新注音內建的智慧切換" class="headerlink" title="新注音內建的智慧切換"></a>新注音內建的智慧切換</h1><p>最理想的情況是讓輸入法的切換由電腦代勞，在 win11 系統其實內建了智慧切換功能，它的原理是判斷鍵入字串的內容與順序，假設輸入的注音字串無法對應到任何中文字，則會自動印出輸入的英文字串。（好比說，若輸入ㄇㄇㄇㄇ，因為中文沒有這種字彙組合，輸入法便會印出 aaaa）</p>
+<p>然而，即使是中文母語使用者，也常發生打錯字或打錯聲母韻母順序的狀況。在預設條件下，ime 會擋住錯誤的指令，也會自動排序聲母與韻母的位置。在開啟智慧切換功能後，輸入法會變得相當敏感，稍有錯字便會被判定為英文字串並印出。</p>
+<p>換句話說，這項功能僅有限地降低切換輸入法的頻率，卻大幅限制了用戶輸入中文的方式，還徒增不少<a target="_blank" rel="noopener" href="https://answers.microsoft.com/zh-hant/windows/forum/all/windows-10/cda818ad-1081-4165-89cd-6d43349c4b9a">刪字的負擔</a>。</p>
+<h1 id="voidism-的自動切換輸入法程式"><a href="#voidism-的自動切換輸入法程式" class="headerlink" title="voidism 的自動切換輸入法程式"></a>voidism 的自動切換輸入法程式</h1><p>鑒於新注音內建方案的缺陷，voidism 開發的<a target="_blank" rel="noopener" href="https://github.com/voidism/Input_Method_auto-Modifier">自動切換輸入法程式</a> 則是採取另一項策略。這套軟體只有在鍵入內容吻合英文字庫收錄的字串時，才會將內容轉為英文字串輸出，因此維持了注音輸入的容錯率，又能達到自動切換輸入法的效果。</p>
+<p>另一方面，這工具也能自動轉換符合中文字的注音字串，所以即使點選Shift後忘記切回中文輸入法，也不會面臨一長串令人崩潰的字串要刪除。</p>
+<p>讀了程式的字庫後了解，voidism 這套軟體有兩組字庫，其一是得自 linux 系統的完整單字庫，另一部分是長度為三個字元的短字串字庫，紀錄了所有無法轉換為中文的英文字串。第二種方法的好處在於不須無止盡地擴充字庫大小，只是因為部分英文字串與與中文字的注音字串重碼，例如up與一ㄢ的按鍵相同，而過短的介係詞或縮寫無法支援。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="另一個使用上較不便的地方是需要手動更改輸入法判斷的位置依據，但 win11 已經有 api 可以調用，所以可能讓這套工具更加完善。">1</span></a></sup></p>
+<h1 id="重新映射快捷鍵"><a href="#重新映射快捷鍵" class="headerlink" title="重新映射快捷鍵"></a>重新映射快捷鍵</h1><p>由於是否輸入英文取決於用戶，因此另一種策略是不動用輸入法本身的判斷，而是減輕用戶切換輸入法的負擔。例如google 拼音中文輸入法就有類似的功能，分別用空白鍵和 Enter 作為英文和中文的輸出訊號，因為輸入英文通常伴隨空白鍵，而輸入中文則伴隨選字的 Enter。</p>
+<p>這方法看似與純靠 Shift 一樣都需要頻繁按按鍵，但因為與語言和原先的操作習慣相符，所以能減輕使用的負擔，也因為由用戶自行判斷中英文輸入，可以簡化很多程式判斷或字庫建立的功能。</p>
+<p>然而，這套做法在注音輸入窒礙難行的原因是，注音需要輸入音調，而空白鍵既作為音調又作為空格，以至於無法靠空白鍵判斷是否要輸入英文還是中文。若改用其他鍵，那效果就不會有在空白鍵那麼自然了。</p>
+<h1 id="區域辨識輸入法"><a href="#區域辨識輸入法" class="headerlink" title="區域辨識輸入法"></a>區域辨識輸入法</h1><p>假設英文字的使用範圍相當明確，例如 latex 或 markdown 的程式碼片段或數學公式列，這些區域一定只有英文與符號，所以也能辨識這些區域來轉換輸入法。例如 YF-Zhao 開發的<a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=yfzhao.Shift-im-for-math">Shift-IM-for-Math</a>即專為頻繁的數學公式輸入設計，當套件識別段落中的<code>$$</code>（數學式標記符號）時會自動切換輸入法。</p>
+<p><img data-src="https://raw.githubusercontent.com/yfzhao20/Ultra-IME-for-VSCode/main/images/IME.gif"></p>
+<p>這功能對於具特殊標記的場合相當友善，但不易應對中英混雜的狀況。</p>
+<h1 id="以音調鍵區分中英文輸入"><a href="#以音調鍵區分中英文輸入" class="headerlink" title="以音調鍵區分中英文輸入"></a>以音調鍵區分中英文輸入</h1><p>另外一種想法則是，利用音調鍵區分中英文輸入，舉例來說，「早(yl3)安(0 )，吃(t )飽(1l3)沒(ao6)，中文字對應的注音字串必定以音調鍵作結，所以可以透過音調鍵的有無區分當前輸入的是中文還是英文。 這方法不用建立字庫，但因為聲調鍵與數字和空白鍵重疊，所以應用範圍僅限於英文字母。</p>
+<p>我嘗試也實作了能自動切換輸入法的工具。網址位於，<a target="_blank" rel="noopener" href="https://github.com/5uperb0y/bopomofo-ahk%EF%BC%8C%E5%9B%A0%E7%82%BA%E7%9B%AE%E5%89%8D%E5%8A%9F%E8%83%BD%E9%83%BD%E9%82%84%E5%9C%A8%E9%96%8B%E7%99%BC%E4%B8%AD%EF%BC%8C%E6%89%80%E4%BB%A5%E5%90%84%E9%A0%85%E5%8A%9F%E8%83%BD%E4%BB%8D%E4%B8%8D%E5%A4%AA%E7%A9%A9%E5%AE%9A%E3%80%82">https://github.com/5uperb0y/bopomofo-ahk，因為目前功能都還在開發中，所以各項功能仍不太穩定。</a></p>
+<p>我使用的工具是 autohotkey v2，因為主程式小，環境依賴也比較單純，匯出的檔案可以直接包成可執行檔。</p>
+<p><img data-src="https://github.com/5uperb0y/bopomofo-ahk/blob/feature-auto-change-key-seqs-to-alphanumeric-chars/media/auto-zh-to-eng.gif?raw=true" alt="目前僅支援中英間隔輸入，而且需要用戶使用 Enter 鍵確認中文或英文輸入完成">  </p>
+<p>想法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> while key &amp; len &lt; 4:</span><br><span class="line">    string = string + key</span><br><span class="line">if tones in string:</span><br><span class="line">    print string in chinese character</span><br><span class="line">else:</span><br><span class="line">    print string in english words</span><br></pre></td></tr></table></figure>
+
+<p>這算法有幾個重要的環節需要判斷，首先要確認當下用戶正在打字，而且正在使用新注音輸入法的中文模式。</p>
+<p>接著，紀錄每次輸入的按鍵，由於注音字串最長四個字元，所以用四個字元一循環判斷當前輸入的單字，假設碰到聲調符號，則匯出中文字；假設四個字元都沒有輸出聲調符號，則判定為英文字。由於部分英文單字較短，所以添加 Enter 作為 break，讓用戶自行判斷現在輸入的是英文字。</p>
+<p>這規則雖然免去建立字庫的工作，但因為音調鍵分別與空白鍵和數字鍵重疊，所以採用這策略時，只能打英文字母，不能打數字。不然就得建立新的規則去判斷何時適用轉換規則。</p>
+<p>另一個困難是，如何判定當前正在打字視窗的輸入法狀態？windows 的 api 在這方面的支援很混亂，雖然現今輸入法宣稱改用 tsf 架構，但仍能使用傳統 ime 的 api 呼叫。</p>
+<p>有時甚至無法在打字視窗呼叫之，目前我找到的一段程式碼還不是很穩定。先前也有使用螢幕截圖，判斷輸入法位置的圖樣來判斷是否為指定輸入法，然而每個作業環境都不一樣，每次調整設定都要更新設置。</p>
+<p>另一個問題是空白鍵，空白鍵既為注音的音調鍵、中英文共通的空格鍵，對於一些單字要怎麼判斷是在進行分隔符，還是還是判斷聲調仍是個大問題。</p>
+<h1 id="結案"><a href="#結案" class="headerlink" title="結案"></a>結案</h1><p>輸入法相關開發經調查還真小眾，算是少數 stakeoverflow 找不到令人滿意見解的題材，許多開發者的努力都是在精進中英文切換的困擾、符號輸入的便捷性、智慧選字或建立辭庫的方案。</p>
+<p>在我執行這個專案後過了一年左右，華碩推出他們的 <a target="_blank" rel="noopener" href="https://www.asus.com/tw/content/smartinput/">中英混合輸入法</a>，使用體驗比本文提及的方式都良好，軟體也更加穩定。</p>
+<p>然而，提及的限制仍然存在。空白鍵的多重定位還是讓開發者頭痛，所以華碩他們也是讓用戶按 Enter 決定是否要終止英文輸入，畢竟這是最吻合中文輸入時習慣的方式。另一方面，軟體很難得知你是打錯字還是真的想拼寫英文，所以打字速度飆起來的時候，輸入次序就會干擾混合輸入法的判斷</p>
+<p>也許中文本身的特性就跟現代電腦開發有些不一樣，我很期待 ai 輸入法能帶我們走到何處。如果往後存在一個在我們反應過來之前，替用戶做決定的輸入方式應該不意外。</p>
+<h1 id="延伸資料"><a href="#延伸資料" class="headerlink" title="延伸資料"></a>延伸資料</h1><ul>
+<li><a target="_blank" rel="noopener" href="http://songwh.top/2018/10/13/%E7%A5%9E%E5%99%A8AutoHoteKey%E5%B8%AE%E5%8A%A9%E6%88%91%E4%BB%AC%E5%9C%A8MarkDown%E7%BC%96%E8%BE%91%E4%B8%AD%E6%96%87%E5%86%85%E5%AE%B9%E5%BF%AB%E4%B9%90%E5%9C%B0%E8%BE%93%E5%85%A5%E8%8B%B1%E6%96%87%E6%A0%87%E7%82%B9/">神器AutoHotKey帮助我们在MarkDown编辑中文内容快乐地输入英文标点</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26927822">如何解决用markdown写中文文章时需要不断切换中英文输入法的问题？</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/327882045">汉字输入法还能更进一步吗？</a><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">另一個使用上較不便的地方是需要手動更改輸入法判斷的位置依據，但 win11 已經有 api 可以調用，所以可能讓這套工具更加完善。<a href="#fnref:1" rev="footnote">↩</a></span></li></ol></div></div></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/modify-vimium-to-label-and-close-pop-up/" rel="prev" title="嘗試修改 Vimium 來關閉網頁 pop-up">
+                  <i class="fa fa-angle-left"></i> 嘗試修改 Vimium 來關閉網頁 pop-up
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/nextflow-change-path-to-work-directory/" rel="next" title="Nextflow｜調整工作目錄的路徑">
+                  Nextflow｜調整工作目錄的路徑 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/enable-bopomofo-to-automatically-switch-when-typing-english/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
