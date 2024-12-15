@@ -19,25 +19,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="對世界豎起中指吧">
+    <meta name="description" content="在微生物增幅子分析當中，DADA2 是常用於校正 illumina 定序錯誤的軟體。在使用這軟體前，需要移除和裁切低品質的定序產物，確保資料在可校正的範圍之內。對於讀長 300 bp 的 illumina 雙端定序產物而言，可以選擇的參數非常多。目前參數的選擇往往依據經驗或是直接套用預設值，但是所以我想設計一種，能依據資料特性來選擇最佳參數的方法，改善分析過程的解釋性和把握度。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/archives/2024/page/8/index.html">
+<meta property="og:title" content="最佳化 DADA2 的定序資料品質控管參數">
+<meta property="og:url" content="https://5uperb0y.com/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="對世界豎起中指吧">
+<meta property="og:description" content="在微生物增幅子分析當中，DADA2 是常用於校正 illumina 定序錯誤的軟體。在使用這軟體前，需要移除和裁切低品質的定序產物，確保資料在可校正的範圍之內。對於讀長 300 bp 的 illumina 雙端定序產物而言，可以選擇的參數非常多。目前參數的選擇往往依據經驗或是直接套用預設值，但是所以我想設計一種，能依據資料特性來選擇最佳參數的方法，改善分析過程的解釋性和把握度。">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/amplified-and-overlapped-regions.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/demo.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/select-parameters-using-the-elbow-method.png">
+<meta property="article:published_time" content="2024-12-14T13:35:09.000Z">
+<meta property="article:modified_time" content="2024-12-15T07:39:39.856Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="bioinformatics">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/amplified-and-overlapped-regions.png">
 
 
-<link rel="canonical" href="https://5uperb0y.com/archives/2024/page/8/">
+<link rel="canonical" href="https://5uperb0y.com/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2024/page/8/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/","path":"optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/","title":"最佳化 DADA2 的定序資料品質控管參數"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 5uperb0y's blog</title>
+<title>最佳化 DADA2 的定序資料品質控管參數 | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -74,7 +81,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">5uperb0y's blog</h1>
+      <p class="site-title">5uperb0y's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -252,159 +259,136 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-04</time>
+        <br>
+      DADA2 execution halted (Error in table: attempt to make a table with >= 2^31 elements)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="最佳化 DADA2 的定序資料品質控管參數 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          最佳化 DADA2 的定序資料品質控管參數
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-12-14 21:35:09" itemprop="dateCreated datePublished" datetime="2024-12-14T21:35:09+08:00">2024-12-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2024-12-15 15:39:39" itemprop="dateModified" datetime="2024-12-15T15:39:39+08:00">2024-12-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在微生物增幅子分析當中，DADA2 是常用於校正 illumina 定序錯誤的軟體。在使用這軟體前，需要移除和裁切低品質的定序產物，確保資料在可校正的範圍之內。對於讀長 300 bp 的 illumina 雙端定序產物而言，可以選擇的參數非常多。目前參數的選擇往往依據經驗或是直接套用預設值，但是所以我想設計一種，能依據資料特性來選擇最佳參數的方法，改善分析過程的解釋性和把握度。</p>
+<span id="more"></span>
+
+<p>我設想的方法是 FIGARO (Weinstein et al. 2019.) 的延伸，大方向是先依照定序產物和校正演算法的特性，限縮可能的選項，再依照研究需求來排序不同參數的優劣。</p>
+<p>品質控管的目標是盡可能保障定序產物的品質，又能保留足夠讀數的序列量，這在講究數據代表性的微生物生態研究相當重要。由於 illumina 定序的品質會隨長度遞減，而且序列的品質分數會在 DADA2 校正後遺失，所以冗長的序列對後續資料處理沒有幫助。</p>
+<p>因此，可以把裁切方式限縮到足以保證兩股序列能順利合併的最小長度即可。關於合併雙端定序產物所需的最小長度，可參考 Edgar 的見解：<a target="_blank" rel="noopener" href="https://www.drive5.com/usearch/manual/long_v4.html">Long overlaps are not needed, so 2x250 can do better than V4</a>）。另一方面，雙端定序產物也要保持長度一致才能輸入 DADA2 演算法，以免推論 ASVs 的標準不一致。因此，裁切序列的方式只有有限的組合，其關係為：裁切方式 &#x3D; 增幅區域長 + 重疊區域長 – 序列讀長。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/amplified-and-overlapped-regions.png"></p>
+<p>因為僅存的一股無法在後續步驟順利合併，所以通過篩選的序列數取決於兩股序列中品質較差的那一股。對於任意品質篩選標準，我們都能預期存在一組能保留最多序列的裁切方式。</p>
+<p>下圖的橫軸是兩股序列裁切後的長度，縱軸則是通過特定品質篩選標準的序列數。通過標準的序列數隨長度遞減，兩條關係線的交叉處即是在該標準下最佳的長度裁切方式。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/demo.png"></p>
+<p>最後，將不同參數組合的通過率和篩選標準作圖，便能得出兩者的關係。可以發現，序列通過率的增幅會隨標準放寬遞減。我認為，合適的參數能在確保定序品質的情況下，保留更多的序列。所以，可以選擇序列通過率增幅的極值，作為選擇參數的依據。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/select-parameters-using-the-elbow-method.png"></p>
+<p>以圖右的示範資料為例，這表示在這方法推薦的參數組合下，能確保序列品質錯誤率在兩個 bp 以下，又能保留九成五以上的序列。</p>
+<p>執行此算法的程式碼可參考我的 Github <a target="_blank" rel="noopener" href="https://github.com/5uperb0y/optimize_dada2_qc">optimize_dada2_qc</a>。當初因為急用，所以沒有改善這支腳本的命令列使用體驗。另外，一開始我是用全部序列當作最佳化參數的資料，但這樣容易受到樣本深度不均的問題影響。因此，除了改善程式碼的使用體驗以外，也能新增抽樣功能，增加執行速度並且排除一些偏誤。又或是增設一些閾值，讓對於最低樣本深度有要求的用戶能夠決定自己願意犧牲多少品質來換取保留的序列數。</p>
+<p>最後提及此方法跟 FIGARO 的設計差異。FIGARO 要求用戶指定篩選序列的標準，我的策略則是以保留的序列數來決定篩選和裁切方式。因此，用戶只要決定雙端定序產物的重疊區域長度，不用煩惱怎麼設定品質篩選的閾值。</p>
+<hr>
+<p>Weinstein et al. (2019). FIGARO: An efficient and objective tool for optimizing microbiome rRNA gene trimming parameters. BioRxiv, 610394.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/bioinformatics/" rel="tag"># bioinformatics</a>
+          </div>
+
         
-        <span class="collection-header">非常好! 目前共有 156 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2024<span class="collection-year-count">76</span></span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-01-14T19:50:43+08:00"
-              content="2024-01-14">
-          01-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/the-door-into-astrobiology/" itemprop="url">
-            <span itemprop="name">The Door into Astrobiology | 天文生物學入門資源</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/using-happy-stratification-for-benchmarking-small-variants/" rel="prev" title="如何使用 hap.py stratification？">
+                  <i class="fa fa-angle-left"></i> 如何使用 hap.py stratification？
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-01-11T21:04:22+08:00"
-              content="2024-01-11">
-          01-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/nextflow-extract-docstring-from-a-module/" itemprop="url">
-            <span itemprop="name">Nextflow｜模仿 docstring 來註解 process and workflow</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-01-08T22:10:02+08:00"
-              content="2024-01-08">
-          01-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/nextflow-improve-user-experience-on-cli/" itemprop="url">
-            <span itemprop="name">Nextflow｜如何改善用戶的命令列使用體驗</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-01-06T14:05:34+08:00"
-              content="2024-01-06">
-          01-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/introduction-to-multiverse-variant-call-format/" itemprop="url">
-            <span itemprop="name">多重宇宙異變事件儲存格式 (Multiverse Variant Call Format, mVCF)</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-01-03T21:06:25+08:00"
-              content="2024-01-03">
-          01-03
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/mayer-2023-the-art-of-clean-code-80-20-principle/" itemprop="url">
-            <span itemprop="name">假如事物遵循 80/20 法則，對我們的決策與行動有什麼影響？</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-01-02T20:47:12+08:00"
-              content="2024-01-02">
-          01-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/hexo-cannot-get-slash-error/" itemprop="url">
-            <span itemprop="name">hexo 部屬後網頁報錯 "cannot get /"</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/archives/2024/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2024/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2024/page/7/">7</a><span class="page-number current">8</span>
-  </nav>
+
+
+
 
 </div>
   </main>
@@ -470,7 +454,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/archives/2024/page/8/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>

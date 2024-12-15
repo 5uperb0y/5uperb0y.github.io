@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/</loc>
+    
+    <lastmod>2024-12-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/error-in-using-alpha-function-within-microbiome-r-library/</loc>
     
     <lastmod>2024-12-15</lastmod>
@@ -1440,14 +1449,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/modernology/</loc>
+    <loc>https://5uperb0y.com/tags/development/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/development/</loc>
+    <loc>https://5uperb0y.com/tags/modernology/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1461,21 +1470,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/linux/</loc>
-    <lastmod>2024-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/tags/sf/</loc>
-    <lastmod>2024-12-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/tags/life-in-the-universe/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1489,14 +1484,21 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/what-is-life/</loc>
+    <loc>https://5uperb0y.com/tags/linux/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/bioinformatics/</loc>
+    <loc>https://5uperb0y.com/tags/life-in-the-universe/</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/what-is-life/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1510,7 +1512,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/microbiota/</loc>
+    <loc>https://5uperb0y.com/tags/bioinformatics/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1524,7 +1526,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/ecology/</loc>
+    <loc>https://5uperb0y.com/tags/microbiota/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1532,6 +1534,13 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/metagenoimcs/</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/ecology/</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
