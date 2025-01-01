@@ -19,25 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="對世界豎起中指吧">
+    <meta name="description" content="先前製作 Tabletop simulator 的 MOD 時，累積了一些電子桌遊自動化的想法。Tabletop simulator （以下簡稱 TTS）提供了近似真實桌面的環境，允許玩家建立紙牌、公仔、token等桌遊配件。TTS 也設計了抽牌、堆疊、擲骰、彈射等與配件互動的行為，因此從經典的撲克牌、疊疊樂、到銀河彈彈樂等利用不同互動機制的桌遊都能在TTS 內重現。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/archives/2024/10/index.html">
+<meta property="og:title" content="桌遊自動化操作仍要考慮玩家的回饋感">
+<meta property="og:url" content="https://5uperb0y.com/automating-board-games-must-consider-feedback/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="對世界豎起中指吧">
+<meta property="og:description" content="先前製作 Tabletop simulator 的 MOD 時，累積了一些電子桌遊自動化的想法。Tabletop simulator （以下簡稱 TTS）提供了近似真實桌面的環境，允許玩家建立紙牌、公仔、token等桌遊配件。TTS 也設計了抽牌、堆疊、擲骰、彈射等與配件互動的行為，因此從經典的撲克牌、疊疊樂、到銀河彈彈樂等利用不同互動機制的桌遊都能在TTS 內重現。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2024-01-01T12:39:14.000Z">
+<meta property="article:modified_time" content="2025-01-01T07:37:41.030Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/archives/2024/10/">
+<link rel="canonical" href="https://5uperb0y.com/automating-board-games-must-consider-feedback/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2024/10/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/automating-board-games-must-consider-feedback/","path":"automating-board-games-must-consider-feedback/","title":"桌遊自動化操作仍要考慮玩家的回饋感"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 5uperb0y's blog</title>
+<title>桌遊自動化操作仍要考慮玩家的回饋感 | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -74,7 +76,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">5uperb0y's blog</h1>
+      <p class="site-title">5uperb0y's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -252,216 +254,129 @@
       </div>
     </div>
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/tabletop-simulator-lua-vscode-development-environment-building/" rel="bookmark">
+        <time class="popular-posts-time">2023-07-22</time>
+        <br>
+      在 Window 上使用 VSCode 建立 Tabletop simulator 的 Lua 腳本開發環境
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/automating-board-games-must-consider-feedback/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="桌遊自動化操作仍要考慮玩家的回饋感 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          桌遊自動化操作仍要考慮玩家的回饋感
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2024-01-01 20:39:14" itemprop="dateCreated datePublished" datetime="2024-01-01T20:39:14+08:00">2024-01-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-01-01 15:37:41" itemprop="dateModified" datetime="2025-01-01T15:37:41+08:00">2025-01-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>先前製作 Tabletop simulator 的 MOD 時，累積了一些電子桌遊自動化的想法。Tabletop simulator （以下簡稱 TTS）提供了近似真實桌面的環境，允許玩家建立紙牌、公仔、token等桌遊配件。TTS 也設計了抽牌、堆疊、擲骰、彈射等與配件互動的行為，因此從經典的撲克牌、疊疊樂、到銀河彈彈樂等利用不同互動機制的桌遊都能在TTS 內重現。</p>
+<span id="more"></span>
+
+<p>TTS 這類電子桌遊很大的優勢在於能節省收納空間，還能遠端遊玩。以線上桌油平台 BGA 為例，在疫情期間實體桌遊店面臨嚴重考驗，但線上桌遊平台 BGA卻要為暴漲的人流傷腦筋。此外，隨著玩家年齡成長，彼此聚少離多，電子桌遊也是讓遊戲能在這種生活形態下存續的其中一種模式。</p>
+<p>除了遠端遊玩，電子桌遊相較於實體桌遊還有一項長處是能保存遊戲物件的配置。有玩過戰棋或是構築式卡牌遊戲的讀者應該可以想像，在進場廝殺之前，需要費一段時間分類token和排列物件，等到打完遊戲，又要花時間重新分類和收納。而且如果是較長的 RPG 遊戲，若中途打到一半，要重新佈局就相當困難了。</p>
+<p>然而，電子桌遊也不是沒有壞處，除了無法取代面對面互動的體驗以外，由於使用鍵鼠或觸控操作，即使內鍵許多快捷鍵和便民措施，電子桌遊仍無法達到實體桌遊在遊玩時的流暢感，也不容易重現觸摸物件時帶來的回饋與體驗。也因為視野被侷限在四方形的螢幕中，玩家行為或許不那麼明顯，導致玩家間或是玩家與行為間的抽離感。</p>
+<p>透過分析這些現象，當我們在開發電子桌遊的MOD時，很明顯無法取代面對面的感覺，因此開發電子桌遊的自動化時，重心便在於怎麼去加強流暢度、回饋感以及提示，讓玩家遊玩過程中不那麼卡頓，更能投入遊戲之中。</p>
+<p>儘管直接持牌相當容易，但如果透過滑鼠與遊戲內的物件互動，就會隔一層媒介，影響操作的精準度。此外，螢幕視線也會影響操作。因此，電子桌遊自動化的核心是減少拖曳的負擔，提升遊玩時的流暢感並降低出錯的機率，即使是不得不拖曳的地方，也可能需要使用磁吸點來輔助擺放位置。這點可以在著名線上桌遊平台看到，基本上所有操作都是以點擊取代拖曳與擺放，即使是矮人礦坑或是卡卡頌等等自由擴張地圖的遊戲，也會將板塊擺放的區塊侷限在特定幾點，畢竟拖曳不夠精準。</p>
+<p>以陣營桌遊 bang 或說我之前製作的風聲來說，從開局到後續出牌都有許多拖曳的機會，那麼可以自動化的機會就有佈局、回合、出牌、效果、切換等。不過，自動化不代表行為會在玩家看不見的地方完成，速度有時不是開發遊戲時最重要的特徵。好比說我有寫一個功能，是直接指定起始玩家。但少了提示和詢問等過程，玩家不一定會知道發生什麼事。又好比說，抽出指定陣營牌、洗牌、發送給玩家、放到玩家指定區域、啟動效果等等行為，其實用電腦只要0.1秒就能完成。但是，這給玩家的感覺是一頭霧水。</p>
+<p>總而言之，自動化仍要考慮到玩家的回饋感。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
         
-        <span class="collection-header">非常好! 目前共有 158 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2024<span class="collection-year-count">78</span></span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-31T16:01:09+08:00"
-              content="2024-10-31">
-          10-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/" itemprop="url">
-            <span itemprop="name">《明日的世界將會星光燦爛 3 》</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/why-should-we-watch-bangdream-its-my-go/" rel="prev" title="「It's MyGo!!!!!」太好看了八😭">
+                  <i class="fa fa-angle-left"></i> 「It's MyGo!!!!!」太好看了八😭
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/hexo-cannot-get-slash-error/" rel="next" title="hexo 部屬後網頁報錯 "cannot get /"">
+                  hexo 部屬後網頁報錯 "cannot get /" <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-28T22:26:31+08:00"
-              content="2024-10-28">
-          10-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/nextflow-manage-input-with-json/" itemprop="url">
-            <span itemprop="name">Nextflow｜讀取儲存於 JSON 的輸入資料</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-27T16:45:49+08:00"
-              content="2024-10-27">
-          10-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-2/" itemprop="url">
-            <span itemprop="name">《明日的世界將會星光燦爛 2 》</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-26T16:44:44+08:00"
-              content="2024-10-26">
-          10-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-1/" itemprop="url">
-            <span itemprop="name">《明日的世界將會星光燦爛 1 》</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-22T20:59:11+08:00"
-              content="2024-10-22">
-          10-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/chen-2023-sea-you-there-and-us/" itemprop="url">
-            <span itemprop="name">《貓與海的彼端》</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-16T21:40:32+08:00"
-              content="2024-10-16">
-          10-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/isukari-2016-yokohama-eki-sf/" itemprop="url">
-            <span itemprop="name">《橫濱車站sf》</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-15T21:21:21+08:00"
-              content="2024-10-15">
-          10-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/what-is-a-fasta-index-file/" itemprop="url">
-            <span itemprop="name">Fasta index file (.fai) 是什麼？</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-14T18:47:53+08:00"
-              content="2024-10-14">
-          10-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/how-to-create-bwa-alt-files/" itemprop="url">
-            <span itemprop="name">怎麼準備 bwa 所需的 .alt 檔？</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2024-10-10T22:37:24+08:00"
-              content="2024-10-10">
-          10-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/lfr-2024-afternoon-flight/" itemprop="url">
-            <span itemprop="name">午後飛行</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
@@ -527,7 +442,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/archives/2024/10/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/automating-board-games-must-consider-feedback/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>
