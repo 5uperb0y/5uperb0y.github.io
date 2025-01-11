@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="儘管藉由培養技術能深入探討微生物的種類、型態及功能，但其缺點包含：（1）操作繁複導致無法檢驗大量樣本，（2）研究範圍限於可培養的微生物，（3）無法觀察微生物於環境中的表現。所以為了全面研究微生物的生態系統，仍有必要仰賴基於核酸的微生物研究技術。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="OTU 與物種註釋">
+<meta property="og:url" content="https://5uperb0y.com/otu-and-species-annotation/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="儘管藉由培養技術能深入探討微生物的種類、型態及功能，但其缺點包含：（1）操作繁複導致無法檢驗大量樣本，（2）研究範圍限於可培養的微生物，（3）無法觀察微生物於環境中的表現。所以為了全面研究微生物的生態系統，仍有必要仰賴基於核酸的微生物研究技術。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2019-02-21T03:47:19.000Z">
+<meta property="article:modified_time" content="2025-01-11T14:16:10.912Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="metagenomics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/otu-and-species-annotation/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/otu-and-species-annotation/","path":"otu-and-species-annotation/","title":"OTU 與物種註釋"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>OTU 與物種註釋 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">33</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">162</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%99%E8%AD%98%E5%9F%BA%E5%9B%A0%EF%BC%88Marker-genes%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">標識基因（Marker genes）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E8%AD%98%E5%9F%BA%E5%9B%A0%E7%9A%84%E5%88%86%E6%9E%90%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.</span> <span class="nav-text">標識基因的分析流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E8%AD%98%E5%9F%BA%E5%9B%A0%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">標識基因的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16s-rRNA-genes-%E7%9A%84%E7%B5%90%E6%A7%8B"><span class="nav-number">1.3.</span> <span class="nav-text">16s rRNA genes 的結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E8%AD%98%E5%9F%BA%E5%9B%A0%E5%88%86%E6%9E%90%E7%9A%84%E7%BC%BA%E9%BB%9E"><span class="nav-number">1.4.</span> <span class="nav-text">標識基因分析的缺點</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%88%86%E9%A1%9E%E5%96%AE%E4%BD%8D%EF%BC%88-Operational-taxonomic-units%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">操作分類單位（ Operational taxonomic units）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OTU-%E7%9A%84%E5%AE%9A%E7%BE%A9"><span class="nav-number">2.1.</span> <span class="nav-text">OTU 的定義</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OTU-%E8%88%87%E7%89%A9%E7%A8%AE%E7%9A%84%E9%97%9C%E4%BF%82"><span class="nav-number">2.2.</span> <span class="nav-text">OTU 與物種的關係</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OTU-%E7%9A%84%E7%89%A9%E7%A8%AE%E6%B3%A8%E9%87%8B"><span class="nav-number">2.3.</span> <span class="nav-text">OTU 的物種注釋</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%BE%A4%E7%9A%84%E7%94%A8%E6%84%8F"><span class="nav-number">2.4.</span> <span class="nav-text">分群的用意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-OTU-%E7%9A%84%E6%BC%94%E7%AE%97%E6%B3%95%EF%BC%88%E4%BB%A5-UCLUST-%E7%82%BA%E4%BE%8B%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">建立 OTU 的演算法（以 UCLUST 為例）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%BB%E8%A7%A3%E7%89%A9%E7%A8%AE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">註解物種的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#de-novo"><span class="nav-number">4.1.</span> <span class="nav-text">de novo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#closed-reference"><span class="nav-number">4.2.</span> <span class="nav-text">closed-reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open-reference"><span class="nav-number">4.3.</span> <span class="nav-text">open-reference</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2025-01-01T20:39:14+08:00">
+        01/01
+      </time>
+      <a href="/automating-board-games-must-consider-feedback/" title="桌遊自動化操作仍要考慮玩家的回饋感">桌遊自動化操作仍要考慮玩家的回饋感</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-15T16:06:48+08:00">
+        12/15
+      </time>
+      <a href="/valid-ranges-of-hidden-state-prediction-in-phylogenetic-analysis/" title="如何界定細菌性狀預測演算法的有效範圍？">如何界定細菌性狀預測演算法的有效範圍？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-14T21:35:09+08:00">
+        12/14
+      </time>
+      <a href="/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/" title="最佳化 DADA2 的定序資料品質控管參數">最佳化 DADA2 的定序資料品質控管參數</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-05T20:16:22+08:00">
+        12/05
+      </time>
+      <a href="/using-happy-stratification-for-benchmarking-small-variants/" title="如何使用 hap.py stratification？">如何使用 hap.py stratification？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-11-20T19:13:57+08:00">
+        11/20
+      </time>
+      <a href="/convert-vcf-chromosome-notation-conventions/" title="轉換 VCF 檔染色體命名慣例">轉換 VCF 檔染色體命名慣例</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/otu-and-species-annotation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="OTU 與物種註釋 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OTU 與物種註釋
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2019-02-21 11:47:19" itemprop="dateCreated datePublished" datetime="2019-02-21T11:47:19+08:00">2019-02-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-01-11 22:16:10" itemprop="dateModified" datetime="2025-01-11T22:16:10+08:00">2025-01-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>儘管藉由培養技術能深入探討微生物的種類、型態及功能，但其缺點包含：（1）操作繁複導致無法檢驗大量樣本，（2）研究範圍限於可培養的微生物，（3）無法觀察微生物於環境中的表現。所以為了全面研究微生物的生態系統，仍有必要仰賴基於核酸的微生物研究技術。</p>
+<span id="more"></span>
+
+<p>基於核酸的技術不直接觀察細胞，而是蒐集樣本中來自不同細胞的基因，再藉由 DNA 或 RNA 帶有的資訊研究微生物群集的性質。因此基於核酸的技術能迴避培養學的困難，直接獲得大量的樣本資訊。研究者可以利用標誌基因鑑別物種，繼而從序列數量推論族群規模，評估物種數或物種均勻度等特性，或是以資料庫註解其他基因片段，探討樣本中的微生物可能表現的功能。</p>
+<p>依照核酸的種類與範圍，基於核酸的技術還可再分為標識基因分析（Marker genes analysis）、總基因體分析（Whole metagenome analysis）、轉錄體分析（Transcriptome analysis），本文要說明的是標識基因分析的原理。</p>
+<ul>
+<li><strong>標識基因分析</strong>：利用引子（primer）擴增樣本中能鑑別物種的標識基因，藉此分離出樣本中的目標生物，排除宿主或環境裡其他核酸的汙染，獲得微生物群集的物種組成資訊。由於僅蒐集片段基因，所以標識基因分析的成本最低，但其表現會受引子的種類、PCR 擴增程度以及標識基因的類別影響。</li>
+<li><strong>總基因體分析</strong>：直接定序樣本中所有的 DNA，因此能避免 PCR 偏誤。全總基因體分析的成本較高，但能得知微生物帶有的功能基因以及更細緻的物種分類資訊。</li>
+<li><strong>轉錄體分析</strong>：全總基因體分析可得知微生物可能帶有的功能，轉錄體分析則能透過定序 mRNA 得知微生物實際表現的功能，進而區分環境中的細菌殘骸、休眠細菌以及活躍細菌。但相對地，轉錄體分析的操作困難度以及定序成本為三者最高。</li>
+</ul>
+<h1 id="標識基因（Marker-genes）"><a href="#標識基因（Marker-genes）" class="headerlink" title="標識基因（Marker genes）"></a>標識基因（Marker genes）</h1><h2 id="標識基因的分析流程"><a href="#標識基因的分析流程" class="headerlink" title="標識基因的分析流程"></a>標識基因的分析流程</h2><p>在定序與品質控管完成後，會將標識基因依照彼此的相似程度分成許多組別，這些組別即為 Operational taxonomic unit（OTU，操作分類單位）。接著以各 OTU 中數量最多的序列為代表，對照Silva、Green Genes 以及 RDP 等物種資料庫以獲得該序列的分類資訊，最後生成包含各 OTU 數量以及物種注釋的 OTU 表，OTU 表是之後多樣性分析或排序分析的基礎。</p>
+<h2 id="標識基因的特性"><a href="#標識基因的特性" class="headerlink" title="標識基因的特性"></a>標識基因的特性</h2><p>良好的標識基因通常具有以下特性。</p>
+<ul>
+<li>普遍出現在特定分類階層的生物裡，因此既能辨識同階層以下所有生物，也得以排除無關生物。</li>
+<li>在多數物種的基因體內數量一致，因此能準確估計樣本中的個體數量。</li>
+<li>具有高度保守的序列片段，能作為 PCR 擴增時的引子標的。</li>
+<li>具有高度變異的序列片段，能作為區分物種的依據。</li>
+<li>不同物種的變異區段相似度能反映物種的親緣關係。</li>
+<li>序列長度適中，足以區分物種但不需耗費太大的定序成本。</li>
+<li>有相應的參考序列資料庫得以註解分類資訊。</li>
+</ul>
+<p>不同的物種適用不同的標識基因，微生物裡以 16s rRNA 基因為大宗。</p>
+<h2 id="16s-rRNA-genes-的結構"><a href="#16s-rRNA-genes-的結構" class="headerlink" title="16s rRNA genes 的結構"></a>16s rRNA genes 的結構</h2><p>16s rRNA genes 是細菌的小單元核醣體 RAN 基因，符合標識基因的條件，因此廣泛應用在微生物學研究當中。16s rRNA genes 的長度約 1.5 kb，共有十個保守區（conserved regions）與九個變異區（variable regions）間隔排列 。保守區用以從樣本中篩選出細菌，變異區用以區分菌種，所以微生物標識基因分析用的序列總是涵蓋這兩個片段。</p>
+<p>原則上定序的 16s rRNA genes 序列越長，涵蓋的變異區越多，分類物種就越精確。然而隨著定序長度上升，組裝的難度提升，次世代定序的品質也會跟著下降，所以需要更多的讀數確保定序結果正確，導致成本上升。因此微生物研究中較常看到依照一兩個變異區辨別物種的案例。</p>
+<p>由於不同物種的基因在各變異區突變的頻率不一，所以選擇不同的變異區會有不同的分類結果。例如若某屬於 V3-V4 突變頻率較低，則選定 V3-V4 作為分類依據便比較不容易區分屬內各種。因此比較不同實驗的結果時應留意變異區的差異。</p>
+<h2 id="標識基因分析的缺點"><a href="#標識基因分析的缺點" class="headerlink" title="標識基因分析的缺點"></a>標識基因分析的缺點</h2><p>雖然依據標識基因分類物種的成本較全基因體定序低，然而標誌基因的分類解析度僅能到屬或種，而且也忽略了物種帶有的功能基因。</p>
+<p>16s rRNA genes 是細菌中普遍存在的核心基因，代表著物種與物種之間的親緣關係。可是細菌會因頻繁的水平基因移轉而附帶多樣的功能基因，這些基因影響細菌實際上能適應的環境。如此一來，同一種細菌裡可能存在多個品系，彼此的 16s rRNA genes 序列相似，但附帶的功能基因相異，各自棲息在不同的環境，因此僅利用標識基因便無法充分表達細菌在環境中的功能特性和實際生態棲位。</p>
+<p>此外，因為無法區分標識基因屬於死亡的細菌還是活著的細菌，而且分析的前置步驟是以引子擴增樣本中的標識基因，引子的專一程度和 PCR 的擴增效率不同都會影響結果序列的多寡，所以標識基因分析難以反映環境中活躍的微生物數量。</p>
+<h1 id="操作分類單位（-Operational-taxonomic-units）"><a href="#操作分類單位（-Operational-taxonomic-units）" class="headerlink" title="操作分類單位（ Operational taxonomic units）"></a>操作分類單位（ Operational taxonomic units）</h1><h2 id="OTU-的定義"><a href="#OTU-的定義" class="headerlink" title="OTU 的定義"></a>OTU 的定義</h2><p>擴增而得的序列雖然源於樣本內的微生物，但在註解其分類資訊前，無法得知序列隸屬哪些物種。為了方便討論未註解的序列，所以依照特定的標準（例如序列相似度），將序列分門別類，並且命名為 OTU1、OTU2、OTU3、……。</p>
+<h2 id="OTU-與物種的關係"><a href="#OTU-與物種的關係" class="headerlink" title="OTU 與物種的關係"></a>OTU 與物種的關係</h2><p>物種是依照個體的型態及分子特徵區分的概念，而 OTU 則是單就序列相似度設定的概念，因此兩者之間並非一一對應關係。如果同一物種的序列相似度低於分類 OTU 的標準，則不同的 OTU 可能隸屬同一物種；如果多物種的序列相似度高於分類 OTU 的標準，則相異物種將併入同一 OTU。</p>
+<h2 id="OTU-的物種注釋"><a href="#OTU-的物種注釋" class="headerlink" title="OTU 的物種注釋"></a>OTU 的物種注釋</h2><p>樣本序列在去除嵌合體以後，依照序列彼此的相似度（de novo clustering）或與參考序列的相似度（reference clustering）分為數群，每一群皆為一個 OTU。接著自 OTU 中選取比例最多的序列作為 OTU 的代表序列，再對照物種資料庫獲得該 OTU 的分類資訊，沒有資料的 OTU 則維持原名。簡言之，序列分群成 OTU，再註解為物種。</p>
+<h2 id="分群的用意"><a href="#分群的用意" class="headerlink" title="分群的用意"></a>分群的用意</h2><p>由於物種遺傳多樣性、實驗的偏誤以及運算量龐大，所以才要先以相似度定義 OTU ，以排除干擾並反映真實的物種分類。<br>不過OTU與物種的關係會隨相似度的標準而異，如果標準訂得過高，會忽略物種間的親緣關係；如果標準訂得過低，會無法反映物種間的差異。然而同樣的標準對於不同的生物有不同的效果，單一標準可能無法應對，因此亦有無須分群注釋物種的方法。例如 DADA2 即事先排除品質不佳的序列，再直接注釋序列。</p>
+<h1 id="建立-OTU-的演算法（以-UCLUST-為例）"><a href="#建立-OTU-的演算法（以-UCLUST-為例）" class="headerlink" title="建立 OTU 的演算法（以 UCLUST 為例）"></a>建立 OTU 的演算法（以 UCLUST 為例）</h1><ol>
+<li>依照數量排序序列</li>
+<li>以第一條序列作為 OTU1 的中心</li>
+<li>比較第二條序列與第一條序列的相似性，若符合分群標準則納入 OTU1 中，反之則以第二條序列為中心建立 OTU2</li>
+<li>持續比對新序列與任意 OTU 的中心，反覆納入既有 OTU 或建立新的 OTU</li>
+<li>若新序列與多個中心的相似度皆達標準，則納入相似度較高者</li>
+</ol>
+<p>此演算法的缺點有：（1）序列納入 OTU 的順序會影響結果，（2）沒有比較所有序列，所以同一 OTU 內彼此未必是最相似的序列。</p>
+<h1 id="註解物種的方法"><a href="#註解物種的方法" class="headerlink" title="註解物種的方法"></a>註解物種的方法</h1><h2 id="de-novo"><a href="#de-novo" class="headerlink" title="de novo"></a>de novo</h2><p>僅依照序列間的相似度分群並定義 OTU，不須已知的參考序列，適用於有許多未知物種的環境。然而分群方法影響物種注釋，所以難以比較不同實驗結果。</p>
+<h2 id="closed-reference"><a href="#closed-reference" class="headerlink" title="closed-reference"></a>closed-reference</h2><p>合併與參考序列相似的序列，在註解物種的同時也將序列分群，迴避了 de novo 方法在分群時出現的誤差，而且不同實驗結果可以相互比較。然而物種註解程度受限於分類的理解，若沒有參考序列就無法得知該序列的分類資訊。</p>
+<h2 id="open-reference"><a href="#open-reference" class="headerlink" title="open-reference"></a>open-reference</h2><p>先以 closed-reference 註解序列，再依 de novo 對沒有參考序列資料的序列劃分為不同的 OTU，改進了 closed-reference 的缺點，但是也喪失了部分的資料可比性。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/metagenomics/" rel="tag"># metagenomics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/the-purpose-of-developing-diversity-metrics/" rel="prev" title="發展多樣性指標的用意">
+                  <i class="fa fa-angle-left"></i> 發展多樣性指標的用意
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/5uperb0y-2019-hipster-karaoke/" rel="next" title="Hipster Karaoke">
+                  Hipster Karaoke <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/otu-and-species-annotation/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
