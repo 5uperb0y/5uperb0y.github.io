@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="去年玩完《拔作島 1 &amp; 2》之後，深深體會視覺小說的魅力，陸續又玩了《心跳文學部》、《沙耶之歌》、《你和她和她的戀愛。》、《享受這間餐廳吧》、《Highway Blossoms》和《為主人獻上聖羅的甜蜜侍奉》，跟著主人翁們走過驚悚的、純情的、甜蜜的、熱血的、惆悵的故事。 沒錯，我把玩過而且大力推薦的作品都列出來了。以前一直覺得只是頻頻按 Enter 到底有什麼好玩的？實際體驗才明白，視覺">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="視覺小說、電玩展、Ren&#39;Py GUI 客製化雜談">
+<meta property="og:url" content="https://5uperb0y.com/customize-renpy-gui-random-thoughts-and-notes/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="去年玩完《拔作島 1 &amp; 2》之後，深深體會視覺小說的魅力，陸續又玩了《心跳文學部》、《沙耶之歌》、《你和她和她的戀愛。》、《享受這間餐廳吧》、《Highway Blossoms》和《為主人獻上聖羅的甜蜜侍奉》，跟著主人翁們走過驚悚的、純情的、甜蜜的、熱血的、惆悵的故事。 沒錯，我把玩過而且大力推薦的作品都列出來了。以前一直覺得只是頻頻按 Enter 到底有什麼好玩的？實際體驗才明白，視覺">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-02-12T12:52:01.000Z">
+<meta property="article:modified_time" content="2025-02-12T12:52:15.324Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="renpy">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/customize-renpy-gui-random-thoughts-and-notes/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/customize-renpy-gui-random-thoughts-and-notes/","path":"customize-renpy-gui-random-thoughts-and-notes/","title":"視覺小說、電玩展、Ren'Py GUI 客製化雜談"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>視覺小說、電玩展、Ren'Py GUI 客製化雜談 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">163</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A6%96%E8%A6%BA%E5%B0%8F%E8%AA%AA%EF%BC%8Cgood%EF%BC%81"><span class="nav-number">1.</span> <span class="nav-text">視覺小說，good！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#G8-%E9%9B%BB%E7%8E%A9%E5%B1%95%EF%BC%8C%E8%B6%85%E8%AE%9A%EF%BC%81"><span class="nav-number">2.</span> <span class="nav-text">G8 電玩展，超讚！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A6%96%E8%A6%BA%E5%B0%8F%E8%AA%AA%EF%BC%8C%E6%83%B3%E5%81%9A%EF%BC%81"><span class="nav-number">3.</span> <span class="nav-text">視覺小說，想做！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ren%E2%80%99Py%EF%BC%8C%E7%82%BA%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">Ren’Py，為什麼？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8-Ren%E2%80%99Py-%E8%A6%81%E6%87%82%E5%BE%88%E5%A4%9A%E7%A8%8B%E5%BC%8F%E5%97%8E%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">用 Ren’Py 要懂很多程式嗎？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%88%91%E6%83%B3%E8%A6%81%E5%81%9A%E9%80%99%E5%80%8B%E5%92%8C%E9%82%A3%E5%80%8B%EF%BC%8C%E8%A6%81%E5%8E%BB%E5%93%AA%E8%A3%A1%E6%89%BE%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">我想要做這個和那個，要去哪裡找方法？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ren%E2%80%99Py-GUI-%E9%96%8B%E7%99%BC%E5%B7%A5%E5%85%B7%EF%BC%9A%E5%90%91%E9%87%8F%E5%9C%96%E8%BB%9F%E9%AB%94-%E7%A8%8B%E5%BC%8F%E7%A2%BC%E7%B7%A8%E8%BC%AF%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">Ren’Py GUI 開發工具：向量圖軟體 + 程式碼編輯器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%9C%BC%E4%BB%A4%E4%BA%BA%E6%9A%88%E9%A0%AD%E8%BD%89%E5%90%91%E7%9A%84-Ren%E2%80%99Py-%E8%85%B3%E6%9C%AC"><span class="nav-number">8.</span> <span class="nav-text">第一眼令人暈頭轉向的 Ren’Py 腳本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%83%8F%E6%98%AF%E6%89%8B%E6%8B%89%E5%9D%8F%E4%B8%80%E6%A8%A3%E2%80%A6%E2%80%A6"><span class="nav-number">9.</span> <span class="nav-text">像是手拉坏一樣……</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%B0%E7%8F%BE%E5%9C%A8%E9%82%84%E6%98%AF%E8%A6%BA%E5%BE%97%E5%A5%BD%E7%8E%A9"><span class="nav-number">10.</span> <span class="nav-text">到現在還是覺得好玩</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2025-02-12T20:52:01+08:00">
+        02/12
+      </time>
+      <a href="/customize-renpy-gui-random-thoughts-and-notes/" title="視覺小說、電玩展、Ren'Py GUI 客製化雜談">視覺小說、電玩展、Ren'Py GUI 客製化雜談</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2025-01-01T20:39:14+08:00">
+        01/01
+      </time>
+      <a href="/automating-board-games-must-consider-feedback/" title="桌遊自動化操作仍要考慮玩家的回饋感">桌遊自動化操作仍要考慮玩家的回饋感</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-15T16:06:48+08:00">
+        12/15
+      </time>
+      <a href="/valid-ranges-of-hidden-state-prediction-in-phylogenetic-analysis/" title="如何界定細菌性狀預測演算法的有效範圍？">如何界定細菌性狀預測演算法的有效範圍？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-14T21:35:09+08:00">
+        12/14
+      </time>
+      <a href="/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/" title="最佳化 DADA2 的定序資料品質控管參數">最佳化 DADA2 的定序資料品質控管參數</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-05T20:16:22+08:00">
+        12/05
+      </time>
+      <a href="/using-happy-stratification-for-benchmarking-small-variants/" title="如何使用 hap.py stratification？">如何使用 hap.py stratification？</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/vscode-remote-ssh-connection-not-working-after-update/" rel="bookmark">
+        <time class="popular-posts-time">2023-01-07</time>
+        <br>
+      VSCode: Failed to parse remote port from server output
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/customize-renpy-gui-random-thoughts-and-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="視覺小說、電玩展、Ren'Py GUI 客製化雜談 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          視覺小說、電玩展、Ren'Py GUI 客製化雜談
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-02-12 20:52:01 / 修改時間：20:52:15" itemprop="dateCreated datePublished" datetime="2025-02-12T20:52:01+08:00">2025-02-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>去年玩完《拔作島 1 &amp; 2》之後，深深體會視覺小說的魅力，陸續又玩了《心跳文學部》、《沙耶之歌》、《你和她和她的戀愛。》、《享受這間餐廳吧》、《Highway Blossoms》和《為主人獻上聖羅的甜蜜侍奉》，跟著主人翁們走過驚悚的、純情的、甜蜜的、熱血的、惆悵的故事。</p>
+<p>沒錯，我把玩過而且大力推薦的作品都列出來了。以前一直覺得只是頻頻按 Enter 到底有什麼好玩的？實際體驗才明白，視覺小說帶來的情感衝擊其實不輸其他媒體。</p>
+<span id="more"></span>
+
+<h1 id="視覺小說，good！"><a href="#視覺小說，good！" class="headerlink" title="視覺小說，good！"></a>視覺小說，good！</h1><p>與純文字小說相比，視覺小說加入人物立繪、鏡頭動畫、背景音樂與場景圖片等吸引玩家的多媒體要素，降低了理解抽象劇情或世界觀的門檻。相較於電影或短篇動畫，視覺小說有更多的篇幅來描述人物關係與鋪陳劇情起伏，所以玩家也會花更長的時間沉浸在故事當中，讓創作者想表達的內容在心中發酵與沉澱。</p>
+<p>視覺小說也含有輕度的遊戲成分，玩家有機會透過選項來決定劇情走向和人物關係，將玩家與故事連結的更緊密。即使只是按著 Enter，也能增加玩家的參與感，玩家與遊戲角色的權力不對等關係也成了某些後設遊戲的主軸。</p>
+<p>另外，很多時候我們是因為工作繁忙而沒心思玩遊戲，不是真的沒有時間娛樂。視覺小說不像動作或策略遊戲那麼費神，又能提供不錯的觀劇體驗，算是電玩倦怠症時期也能享受的輕度參與遊戲。</p>
+<p>既然如此，為什麼不直接看動畫或追劇呢？我覺得關鍵在於開發成本，視覺小說的開發成本介於小說和影劇之間，多元的市場與開發族群帶來了多樣的題材。這些作品多數沒有改編成其他媒體，是專屬於視覺小說的故事。此外，多重結局的遊戲有時會設計「真結局」，玩家要走遍其它故事線達成特定目的才能解鎖真結局，這種苦盡甘來的感受也是視覺小說特有的體驗。</p>
+<h1 id="G8-電玩展，超讚！"><a href="#G8-電玩展，超讚！" class="headerlink" title="G8 電玩展，超讚！"></a>G8 電玩展，超讚！</h1><p>入坑視覺小說之後，還跑了兩天的 G8 電玩展。G8 是玩家體驗非常友好的電玩展。為了鼓勵試玩，G8 本身也設計成一場集換式遊戲，只要到攤位試玩或參與活動，就能取得稀有程度不一的大會小卡，上頭繪製了各組開發團隊的遊戲代表人物。官方攤位有販售專門的集卡冊，所以除了想要試玩的玩家，也能看到專注在活動本身的參與者，抱著集卡冊在展期在各攤位奔波。</p>
+<p>除了搶先體驗未上市或是待開發的遊戲，展覽中也有機會與開發團隊交流，了解他們的靈感來源還有設計理念等遊戲背後的故事。說到這，我非常喜歡 R18 遊戲區的《不思議の精霊の休憩時間》（<a target="_blank" rel="noopener" href="https://ci-en.dlsite.com/creator/20777">Ci-en 連結</a>）。</p>
+<p>這款遊戲仍在開發中，故事背景是主角與精靈因故困在房間裡，陌生的兩人要熟悉彼此建立信任，合作設法離開房間。遊戲機制結合了觸摸養成和密室解謎，但因篇幅限制，遊戲試玩版著重於觸摸養成的部分。</p>
+<p>我第一眼便被海報上的精靈給吸引，試玩時也覺得遊戲有抓到摸摸遊戲的精隨。許多養成遊戲會把愛慕對象的好感程度標示清楚，讓玩家能立即得到行動的回饋。但是，真實世界沒有進度條洩漏對方的感受，在該推進關係時，也沒有框線或色彩來告訴我們什麼是正確的行動。</p>
+<p>這款遊戲沒有把關係互動簡化成像是美工刀片上一段一段的刻度，或是百分位呈現的阿拉伯數字。開發者打算以遊戲角色的表情和肢體語言來暗示玩家，這表示他們不只要能精確描繪人物在不同情境的反應，還要能用 3D 模型做出來。遊玩過程模擬了忐忑不安的感覺，對方的界線是什麼？行動的後果是什麼？太急躁了嗎？太被動了嗎？對方在想什麼？跟我想的一樣嗎？我們並不知道，但也是遊戲的醍醐味，就像是黑白妹或陽光下的真實那樣，建立了曖昧不明的氣氛，讓玩家不只是在操作，而是試探與冒險。</p>
+<h1 id="視覺小說，想做！"><a href="#視覺小說，想做！" class="headerlink" title="視覺小說，想做！"></a>視覺小說，想做！</h1><p>有一款《誰是中之人》我也覺得蠻有趣的。文字類的遊戲需要劇情鋪陳，我很好奇開發者要怎麼讓路過的玩家在短短的幾分鐘內體驗遊戲的精華。試玩之後才知道，原來開發者特地製作了試玩版遊戲，濃縮了劇情的主要懸念，讓玩家在十分鐘內可以摸到主要遊戲機制、故事背景、主要角色以及故事第一個衝突。當時還試玩了很多遊戲，不過遊玩體驗仍記在心裡還沒機會寫下來。</p>
+<p>電玩展隔天，我一早到沒人的辦公室在座位上吃早餐，盯著還沒啟動的螢幕裡自己模模糊糊的影像，突然好想要表達些什麼，想試試做個視覺小說把故事說完。那種感覺就像看完《驀然回首》後，想在無聊的會議裡用故事填滿筆記本；就像看完《佐賀偶像是傳奇》，意識到自己從來沒說過不想當偶像；就像讀完《強風吹拂》（的書封簡介），即使是出門買飯，也要把跑鞋的鞋帶綁緊，感受心跳片刻大於一百三十次跳動，喘得無法唱出完整一首歌的速度。</p>
+<p>原本打算過年期間做個五分鐘的試玩版，不過光是遊戲的 GUI 就花了一周摸索，範例影片連結為：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=t_h9_zuHQqE%E3%80%82%E6%88%91%E5%B7%B2%E7%B6%93%E6%83%B3%E5%A5%BD%E9%81%8A%E6%88%B2%E7%9A%84%E6%A0%B8%E5%BF%83%E6%A9%9F%E5%88%B6%E4%BA%86%EF%BC%8C%E6%8E%A5%E4%B8%8B%E4%BE%86%E8%A6%81%E6%85%A2%E6%85%A2%E5%AF%AB%E5%8A%87%E6%9C%AC%EF%BC%8C%E4%BB%A5%E5%8F%8A%E7%B3%BB%E7%B5%B1%E6%80%A7%E5%AD%B8%E7%BF%92%E5%83%8F%E6%98%AF%E8%BD%89%E5%A0%B4%E3%80%81%E5%8B%95%E7%95%AB%E6%88%96%E6%98%AF%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E7%AD%89%E6%8A%80%E8%A1%93%E3%80%82%E5%9B%A0%E7%82%BA%E6%88%91%E4%B8%8D%E6%9C%83%E7%95%AB%E7%95%AB%EF%BC%8C%E6%89%80%E4%BB%A5%E4%BA%BA%E7%89%A9%E7%AB%8B%E7%B9%AA%E5%92%8C%E8%83%8C%E6%99%AF%E9%83%BD%E5%85%88%E7%94%A8%E5%85%8D%E8%B2%BB%E7%B4%A0%E6%9D%90%E4%BB%A3%E6%9B%BF%EF%BC%8C">https://www.youtube.com/watch?v=t_h9_zuHQqE。我已經想好遊戲的核心機制了，接下來要慢慢寫劇本，以及系統性學習像是轉場、動畫或是分支管理等技術。因為我不會畫畫，所以人物立繪和背景都先用免費素材代替，</a></p>
+<h1 id="Ren’Py，為什麼？"><a href="#Ren’Py，為什麼？" class="headerlink" title="Ren’Py，為什麼？"></a>Ren’Py，為什麼？</h1><p>先不論通用遊戲引擎，為什麼我在多種視覺小說引擎裡選了 Ren’Py？（參考 <a target="_blank" rel="noopener" href="https://wningningw.blogspot.com/2021/07/Visual-Novel-Engine.html">NingNing 的簡介</a>），</p>
+<p>理由其實很單純，因為工作常用到 Python，所以抱著「做想做的事又能精進專業」的心態挑選了 Ren’Py。在這之後查到《心跳文學部》和《Highway Blossoms》等玩過的遊戲也是用 Ren’Py 製作，表示 Ren’Py 在歐美是普及且有商業實例的遊戲引擎，社群也還有很多資源可供參考，就沒再考慮其它工具了。</p>
+<h1 id="用-Ren’Py-要懂很多程式嗎？"><a href="#用-Ren’Py-要懂很多程式嗎？" class="headerlink" title="用 Ren’Py 要懂很多程式嗎？"></a>用 Ren’Py 要懂很多程式嗎？</h1><p>Ren’Py 雖然提供視覺小說常用的介面和功能，但都得透過程式碼來調用。不過，如果只打算使用預設 GUI 而且不講究動畫效果的話，對照官方教學依樣畫葫蘆便能完成一部作品了。</p>
+<p>不過，如果想要自訂 GUI，或是實現複雜的遊戲機制（像是背包、規則判定等），有軟體開發經驗會很有幫助。首先，遊戲視覺元素的概念與寫前端相似，都是透過不同物件的組合來創造布局，並藉由調整物件的屬性來營造風格。另外，專案管理經驗有助於開發者拆分功能和設定規格，而程式碼、素材和劇本等多媒體元素也能透過版本控管來追蹤開發歷程。</p>
+<p>Python 的知識則能用來撰寫開發輔助工具（例如計算立繪位置）、創造遊戲機制（例如內建的桌遊或是背包系統）、改善數值管理（例如以物件導向來封裝人物相關的屬性與常用方法。）</p>
+<p>不過，懂程式語言只是加快上手的速度和能力的上限，多數的 Ren’Py 操作仰賴其自訂的語法，像是物件的移動與轉換就有專屬的 Animation and Transformation Language。因此，無論之前是否接觸過程式語言，每個人學習 Ren’Py 的起點都很相似，仍需花時間研究官方文件、網路論壇和部落格文章，了解有哪些手段可以達成自己想要的效果，再透過實作熟練這些工具。</p>
+<h1 id="我想要做這個和那個，要去哪裡找方法？"><a href="#我想要做這個和那個，要去哪裡找方法？" class="headerlink" title="我想要做這個和那個，要去哪裡找方法？"></a>我想要做這個和那個，要去哪裡找方法？</h1><p>目前（2025 年 2 月）免費版的生成式 AI 對 Ren’Py 開發的表現沒有很好。近期不少 AI 開始支援搜尋功能，或許能改善資料不足而產生幻覺的狀況。即使沒有 AI 或可學習的對象，也可以從各大論壇、討論群組和影片網站尋找資源，以下是我製作 GUI 的時候曾查閱過的網站，它們的內容都蠻值得參考。</p>
+<ul>
+<li>[歡迎來到Ren’Py的參考文件](<a target="_blank" rel="noopener" href="https://doc.renpy.cn/zh-TW/%EF%BC%9A%E9%80%99%E6%98%AF">https://doc.renpy.cn/zh-TW/：這是</a> Ren’Py 的官方文件，內容及時且完整，範圍涵蓋新手入門與進階語法講解。詳細讀完並實作「起步」章節，可以了解 Ren’Py 作為視覺小說引擎的特色，還有調整 GUI 的方法。</li>
+<li><a target="_blank" rel="noopener" href="https://wningningw.blogspot.com/">Space Of NingNing</a> &amp; <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PL3P8JVrtQ92aUVROFwYXb5hX5KP0kDGUE">Renpy 自製遊戲教學</a>：詳盡的繁體中文教學，可以學習特殊選單與動態效果的製作方式。網站提供文字、影片以及免費 GUI 等資源，若加入會員可以解鎖進階教學和程式碼。</li>
+<li><a target="_blank" rel="noopener" href="https://www.renpy.cn/thread-284-1-1.html">Ren’Py引擎从入门到放弃</a>：從做中學的</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=CjJ2R22U11Q&list=PLJgbnTkC4bkCj2_8ZUg1o4CafLcRH0rAX">Elaine (Emp)</a>：英文講解的影片，能學習客製 GUI 的方法。</li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLKdE0Vv4UA5-dqJLpDkPt5CLQzc6hJ-uh">Ren’Py from beginner to advanced</a>：英文講解的系列影片，配合程式碼與遊戲畫面重新詮釋官方文件。</li>
+<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/628485868">黑凤梨BlackPineappl</a>：中文講解的系列影片，能夠看到客製 GUI 的完整製作過程，也有附 Github 連結和素材包供練習。</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19y4y1e7UV/?spm_id_from=333.337.search-card.all.click&vd_source=0ffe689c847aca9ad017ab1fd2a11468">四小时速成Renpy】python也要谈恋爱</a>：中文講解的影片，沒看過，但是點閱率蠻高的。</li>
+</ul>
+<p>（雖然列了不少學習資源，下載完 Ren’Py 還是太興奮了，連說明書都沒讀就急著嘗試遊戲引擎，這個按鈕按一按、那個旋鈕轉一轉，直到遊戲整個當機跑不動，才發現自己調偏了很多設定，費了一番心力才讓遊戲重新跑起來。）</p>
+<p>除了讀文件，碰到問題可以先查一下有沒有人貼文求助。通常碰到的問題前人都曾碰過，可以在 <a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/">Lemma Soft Forums</a>、Reddit、Youtube 和 Bilibili 之類的地方找到相關問答，刪刪改改之後再套用在自己的專案上。不過，使用程式碼的時候要格外留意版本差異，有些回答已經過時了，可能不適用當今版本的 Ren’Py。</p>
+<p>總而言之，我覺得 Ren’Py 的英文資源還算多，很多效果都做得出來，不太有那種開發冷門系統的絕望感。</p>
+<h1 id="Ren’Py-GUI-開發工具：向量圖軟體-程式碼編輯器"><a href="#Ren’Py-GUI-開發工具：向量圖軟體-程式碼編輯器" class="headerlink" title="Ren’Py GUI 開發工具：向量圖軟體 + 程式碼編輯器"></a>Ren’Py GUI 開發工具：向量圖軟體 + 程式碼編輯器</h1><p>Ren’Py 會幫忙準備 GUI 的基本素材，並且把遊戲腳本編譯為可以運行的軟體。它本身沒有供開發者編輯程式碼或繪製 GUI 的功能。官方推薦的程式碼編輯器是 Atom，不過你可以使用任何習慣的工具，像是 VSCode 之類的。VSCode 是非常流行的程式碼編輯器，它的基本佈局是由側邊的檔案管理欄和中央的文件編輯區組成。</p>
+<p>檔案管理欄能進行文件與圖片的增、刪、查、改等操作，還支援全域搜尋功能，可以套用正則表達式來查詢與批次更改文字。文件編輯區則是撰寫程式碼的主要區域，如果下載 Ren’Py Language extension 的話，它會幫忙補全程式碼、提示語法錯誤，以及標註程式碼顏色讓畫面更悅目。</p>
+<p>VSCode 是免費又多功能的編輯器，還有許多擴充套件能自訂開發環境，所以我很推薦大家試試看。另外，VSCode 也支援 Markdown 語法，讓你能用純文本達到簡易的排版效果，不需要為了寫劇本或筆記另尋文書軟體。VSCode 可以做到許多筆記軟體的功能，關於在 VSCode 寫作可參考<a target="_blank" rel="noopener" href="https://sspai.com/post/66883">我是如何在VS Code 上完成写作的</a>。</p>
+<p>GUI 的 “G” 是 “Graph” 的縮寫，自製 Ren’Py GUI 表示要替換預設的遊戲介面。因此，除了程式編輯器以外，還要準備繪圖軟體來設計視覺元素。</p>
+<p>Ren’Py 預設 GUI 就包含 80 張圖片，這些視覺元素包含按鈕、游標、對話框、滑桿、背景、文字等，在調整屬性與布局後，構成了遊戲頁面上可互動或能提供資訊的元素。因此，營造舒適視覺體驗所需的時間不亞於撰寫程式的時間。</p>
+<p>我用的軟體是 Inkscape，它是免費且持續更新的向量圖繪圖軟體。以前我用 PPT 畫了很多示意圖，但是校園授權過期後，我只好使用開源的 Inkscape 替代。相較於 PPT，Inkscape 的繪圖功能更強大也更複雜，最初我連直角三角形都畫不出來。練習一周以後，漸漸熟悉繪圖軟體的常用功能和快捷鍵，也體認到繪圖軟體那些複雜功能有其必要，尤其是在視覺元素繁多的情境下，需要更有層次且量化的管理和繪製方式。</p>
+<p>綜上所述，除了熟悉 Ren’Py 程式框架以外，也要熟練繪圖軟體的操作，才能提升製作 GUI 的效率。</p>
+<h1 id="第一眼令人暈頭轉向的-Ren’Py-腳本"><a href="#第一眼令人暈頭轉向的-Ren’Py-腳本" class="headerlink" title="第一眼令人暈頭轉向的 Ren’Py 腳本"></a>第一眼令人暈頭轉向的 Ren’Py 腳本</h1><p>Ren’Py 專案的 <code>game/</code> 資料夾存放了運行遊戲所需的程式碼和圖檔。如果一開始不知道要修改哪段程式碼才能達到想要的視覺效果，可以閱讀閱讀官方的<a target="_blank" rel="noopener" href="https://doc.renpy.cn/zh-TW/quickstart.html">快速入門</a>和<a target="_blank" rel="noopener" href="https://doc.renpy.cn/zh-TW/gui.html">GUI(圖形用戶介面)訂製化指導</a>。前者以製作一款簡易視覺小說來展示 Renpy 的功能，後者則依照自訂 GUI 的程度，逐一介紹要如何調整遊戲的視覺元素。</p>
+<p>遊戲的場景與對話存放在 <code>script.rpy</code>，GUI 的視覺元素則分散在 <code>option.rpy</code>、<code>gui.rpy</code> 和 <code>screen.rpy</code>。</p>
+<ul>
+<li><code>option.rpy</code> 是通用於各場景的設定，例如遊戲標題、視窗文字與軟體圖示等。</li>
+<li><code>gui.rpy</code> 是視覺元素的屬性，例如文字的字體、大小和顏色，或是圖片的邊框、拉伸和位置等。</li>
+<li><code>screen.rpy</code> 是視覺元素的布局，即文字、按鈕和圖片在頁面中的排列和隸屬關係。開發者可以在此定義玩家與視覺元素互動的模式，例如點擊後彈出選項讓玩家確認等。</li>
+</ul>
+<p>最基礎的 GUI 客製是編輯 <code>option.rpy</code> 來設定遊戲標題和視窗文字等資訊。其次則是透過 <code>gui.rpy</code> 來調整對話框、滑桿、按鈕的圖示，或是對話文字的字體與尺寸。進階則是重組 <code>screen.rpy</code>，改變物件間的距離和擺設方式，以滿足個人的設計需求。</p>
+<p>Ren’Py 定義了按鈕、框、文字、圖像等基礎的視覺元素，也支援以副程式來設定玩家與這些元素的互動方式（例如點擊和拖曳等）。因此，開發者無視既有的框架，依照自己對功能的理解來重構遊戲頁面，像是這款 <a target="_blank" rel="noopener" href="https://store.steampowered.com/app/2876050/_Pet_Street_Story/">宠物街金鱼姬 Pet Street Story</a> 雖然也用 Ren’Py 引擎開發，但是遊戲內容已經看不出視覺小說框架的痕跡。</p>
+<p>Ren’Py 是以修改難度與變更幅度來組織 GUI 程式碼，所以同個視覺元素的程式碼可能散布在程式碼的不同地方。這種策略能讓開發者修改屬性，又不會影響既有的框架。不過，如果目的是完全客製 GUI，零散的程式碼會造成維護困難。舉例來說，修改程式碼時可能會忘記更新位於另一個檔案中相關的屬性，或是在程式報錯時需要追蹤數個檔案才能判斷錯誤來源。</p>
+<p>鑒於客製化 GUI 的需求，便有開發者提出像是 <a target="_blank" rel="noopener" href="https://feniksdev.itch.io/easy-renpy-gui">easy-renpy-gui</a> 的框架。這套 GUI 依照頁面的種類把 <code>screen.rpy</code> 拆分為 <code>main_page.rpy</code>、<code>game_page.rpy</code>、<code>history.rpy</code> 等獨立腳本，讓開發者一目瞭然遊戲的視覺元素對應到哪段程式。另一方面，<code>gui.rpy</code> 的各項參數也被合併的前述腳本之中，集中視覺元素的屬性和布局，避免修改程式碼時要顧及多支腳本的狀況。</p>
+<p>不過使用這套 GUI 前要考慮幾個因素。首先 easy-renpy-gui 最後更新時間是一年前，不見得與現在的 Ren’Py 版本相容。另外，它只支援一種比例的畫面，若有其他比例畫面的需求，便得自行調整各頁面的視覺元素屬性。再三，easy-renpy-gui 把多數 <code>gui.*</code> 為名稱的變項都移除了，取而代之的是把數值直接填寫在定義視覺元素的程式碼區段，套用後就不能用預設方式調整 GUI 了。</p>
+<p>最後，如果想出售自製的 GUI 還要考慮其他用戶的習慣。easy-renpy-gui 屬於官方文件的高階 GUI 自訂，所以不熟悉 Ren’Py 語法的用戶會重度依賴出售者的服務與支援。</p>
+<h1 id="像是手拉坏一樣……"><a href="#像是手拉坏一樣……" class="headerlink" title="像是手拉坏一樣……"></a>像是手拉坏一樣……</h1><p>話是這麼講，製作 GUI 的時候，我還是把預設腳本拆得面目全非，刪除了所有（目前）用不到的視覺元素和設定，再依照個人習慣建立新的腳本。過程可說一團亂，例如我原本寫了人物左右搖擺的動畫，結果位置沒調好，立繪會邊搖邊往上方移動，最後只剩下半身在畫面上抽搐。</p>
+<p>我一開始畫完一張圖便迫不及待放到遊戲裡，卻被擺放位置的過程搞瘋。雖然可以使用 <code>xpos</code> 和 <code>ypos</code> 指定視覺元素的位置，但是該元素如果隸屬於其它 Ren’Py 物件（例如<code>vbox</code> 或是 <code>frame</code>），座標就會以後者的物件（而非原始的遊戲頁面）為準。這導致圖片繪製好以後，還要邊編譯遊戲邊查看效果，才能把按鈕之類的東西放到正確位置上。</p>
+<p>如果重新來過，我一定會先照官方文件一步一步認識 GUI 各項視覺元素以及其對應的程式碼。一次專注只一個頁面，了解程式碼異動對畫面的影響。就像學開車一樣，一開始對車子很陌生，不知道車子的長寬，不了解油門深淺跟速度的關聯，連轉彎要打多少方向盤都沒有概念。這時如果慢慢開，比較有機會觀察每個操作對移動軌跡和速率的影響。</p>
+<p>有幾個小技巧可以幫助這個探索過程：</p>
+<ul>
+<li><p>如果想要知道畫面某個視覺元素的名稱或屬性，可以將游標移動到該物件，然後按 <code>shift</code> + <code>i</code> 開啟檢閱器。這個頁面會顯示該物件的名稱、屬性、程式碼位置以及與其它物件的關係。這在學習 GUI 和程式碼的時候很好用，查著查著就自然記起來了。</p>
+</li>
+<li><p><code>shift</code> + <code>d</code> 可以開啟開發者選單中的「圖片座標揀選器」，它能幫你複製點擊位置或是框選區域的座標。假如物件放到畫面的位置不如預期，可以用這個工具取得座標來微調。只不過，如果有大量物件要調整，那還是先在繪圖軟體裡排版好，再開始寫程式會比較順。</p>
+</li>
+<li><p>開發者選單裡面有個「互動總監」，它會在遊戲執行時一併秀出對應的程式碼。在程式出錯的時候，這工具能幫助開發者逐步檢查錯誤是出現在哪個腳本的哪一行。如果有在遊戲裡用 Python 變項儲存好感度或背包等資料，也可以開啟「變數觀察器」來確認這些資料有沒有順利更新。</p>
+</li>
+<li><p>卡關的時候，可以上 itch.io 或 github 找別人的程式碼來讀，看看他們怎麼完成炫泡的 GUI 效果。如果不知道要怎麼查資料，現在很多 AI 工具支援網路搜尋功能，可以請 AI 幫忙提供關鍵字和彙整結果。</p>
+</li>
+</ul>
+<h1 id="到現在還是覺得好玩"><a href="#到現在還是覺得好玩" class="headerlink" title="到現在還是覺得好玩"></a>到現在還是覺得好玩</h1><p>大GuyJo4醬，之前讀《戲說統計》時，有個心態我覺得不錯：找得到資源，可以當自己會了；還記得從哪裡複製，就當學通了。真的碰到 Bug 或維護上不得不懂得時候，再去找文件把相關知識補起來，也已經算是學有所成了。我才剛開始，雖然做得很慢，目前都覺得蠻好玩的，祝大家開發順利。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/renpy/" rel="tag"># renpy</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/automating-board-games-must-consider-feedback/" rel="prev" title="桌遊自動化操作仍要考慮玩家的回饋感">
+                  <i class="fa fa-angle-left"></i> 桌遊自動化操作仍要考慮玩家的回饋感
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/customize-renpy-gui-random-thoughts-and-notes/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
