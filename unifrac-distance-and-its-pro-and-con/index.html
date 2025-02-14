@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文簡介 UniFrac 的意義與計算方式，並以其他文獻補充 Robert Edgar 對 UniFrac 的評論。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="UniFrac distance 的優缺點是什麼？">
+<meta property="og:url" content="https://5uperb0y.com/unifrac-distance-and-its-pro-and-con/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="本文簡介 UniFrac 的意義與計算方式，並以其他文獻補充 Robert Edgar 對 UniFrac 的評論。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/unifrac-distance-and-its-pro-and-con/unweighted-unifrac-distance.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/unifrac-distance-and-its-pro-and-con/weighted-unifrac-distance.png">
+<meta property="article:published_time" content="2020-02-05T14:02:22.000Z">
+<meta property="article:modified_time" content="2025-02-14T16:12:56.065Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="metagenomics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/unifrac-distance-and-its-pro-and-con/unweighted-unifrac-distance.png">
+
+
+<link rel="canonical" href="https://5uperb0y.com/unifrac-distance-and-its-pro-and-con/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/unifrac-distance-and-its-pro-and-con/","path":"unifrac-distance-and-its-pro-and-con/","title":"UniFrac distance 的優缺點是什麼？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>UniFrac distance 的優缺點是什麼？ | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">166</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UniFrac-distance-%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">UniFrac distance 是什麼？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UniFrac-%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">UniFrac 簡介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unweighted-UniFrac"><span class="nav-number">1.2.</span> <span class="nav-text">Unweighted UniFrac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Weighted-UniFrac"><span class="nav-number">1.3.</span> <span class="nav-text">Weighted UniFrac</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UniFrac-distance-%E6%9C%89%E4%BB%80%E9%BA%BC%E5%89%8D%E6%8F%90%E8%88%87%E5%90%AB%E7%BE%A9%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">UniFrac distance 有什麼前提與含義？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UniFrac-%E7%9A%84%E5%89%8D%E6%8F%90%E6%98%AF-16S-rRNA-%E5%BA%8F%E5%88%97%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%88%87%E5%BE%AE%E7%94%9F%E7%89%A9%E7%9A%84%E7%94%9F%E6%85%8B%E6%A3%B2%E4%BD%8D%E7%9B%B8%E9%97%9C"><span class="nav-number">2.1.</span> <span class="nav-text">UniFrac 的前提是 16S rRNA 序列相似度與微生物的生態棲位相關</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E8%80%8C%EF%BC%8CUniFrac-%E7%9A%84%E5%89%8D%E6%8F%90%E4%B8%8D%E7%9B%A1%E5%90%88%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">然而，UniFrac 的前提不盡合理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A4%E5%A4%96%EF%BC%8CUniFrac-%E7%9A%84%E8%A1%8D%E4%BC%B8%E6%84%8F%E7%BE%A9%E6%A8%A1%E7%B3%8A"><span class="nav-number">2.3.</span> <span class="nav-text">此外，UniFrac 的衍伸意義模糊</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-UniFrac-%E5%B0%8D%E5%88%86%E6%9E%90%E7%B5%90%E6%9E%9C%E6%9C%89%E4%BD%95%E5%BD%B1%E9%9F%BF%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">使用 UniFrac 對分析結果有何影響？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%9A%84%E5%A4%9A%E6%A8%A3%E6%80%A7%E6%8C%87%E6%A8%99%E8%B3%A6%E4%BA%88%E5%BA%8F%E5%88%97%E4%B8%8D%E5%90%8C%E6%AC%8A%E9%87%8D"><span class="nav-number">3.1.</span> <span class="nav-text">不同的多樣性指標賦予序列不同權重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UniFrac-%E8%83%BD%E7%B7%A9%E8%A1%9D%E6%8A%80%E8%A1%93%E8%AA%A4%E5%B7%AE%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="nav-number">3.2.</span> <span class="nav-text">UniFrac 能緩衝技術誤差的影響</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UniFrac-distance-%E6%9C%83%E5%A3%93%E4%BD%8E%E7%B5%84%E9%96%93%E5%B7%AE%E7%95%B0"><span class="nav-number">3.3.</span> <span class="nav-text">UniFrac distance 會壓低組間差異</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UniFrac-%E7%9A%84%E5%84%AA%E7%BC%BA%E9%BB%9E%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">UniFrac 的優缺點是什麼？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">參考資料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%9C%E5%85%85"><span class="nav-number">6.</span> <span class="nav-text">補充</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2025-02-12T20:52:01+08:00">
+        02/12
+      </time>
+      <a href="/customize-renpy-gui-random-thoughts-and-notes/" title="視覺小說、電玩展、Ren'Py GUI 客製化雜談">視覺小說、電玩展、Ren'Py GUI 客製化雜談</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2025-01-01T20:39:14+08:00">
+        01/01
+      </time>
+      <a href="/automating-board-games-must-consider-feedback/" title="桌遊自動化操作仍要考慮玩家的回饋感">桌遊自動化操作仍要考慮玩家的回饋感</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-15T16:06:48+08:00">
+        12/15
+      </time>
+      <a href="/valid-ranges-of-hidden-state-prediction-in-phylogenetic-analysis/" title="如何界定細菌性狀預測演算法的有效範圍？">如何界定細菌性狀預測演算法的有效範圍？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-14T21:35:09+08:00">
+        12/14
+      </time>
+      <a href="/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/" title="最佳化 DADA2 的定序資料品質控管參數">最佳化 DADA2 的定序資料品質控管參數</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-05T20:16:22+08:00">
+        12/05
+      </time>
+      <a href="/using-happy-stratification-for-benchmarking-small-variants/" title="如何使用 hap.py stratification？">如何使用 hap.py stratification？</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/difference-in-bacterial-communities-between-fecal-and-intestinal-samples/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-15</time>
+        <br>
+      排遺與腸道樣本的細菌群落差異
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-point-mutations/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-04</time>
+        <br>
+      ROSALIND｜Counting Point Mutations (HAMM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/edit-distance/" rel="bookmark">
+        <time class="popular-posts-time">2024-07-20</time>
+        <br>
+      ROSALIND｜Edit Distance (EDIT)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/unifrac-distance-and-its-pro-and-con/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="UniFrac distance 的優缺點是什麼？ | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UniFrac distance 的優缺點是什麼？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-02-05 22:02:22" itemprop="dateCreated datePublished" datetime="2020-02-05T22:02:22+08:00">2020-02-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-02-15 00:12:56" itemprop="dateModified" datetime="2025-02-15T00:12:56+08:00">2025-02-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>本文簡介 UniFrac 的意義與計算方式，並以其他文獻補充 Robert Edgar 對 UniFrac 的<a target="_blank" rel="noopener" href="https://drive5.com/usearch/manual/unifrac_comments.html">評論</a>。</p>
+<span id="more"></span>
+<h1 id="UniFrac-distance-是什麼？"><a href="#UniFrac-distance-是什麼？" class="headerlink" title="UniFrac distance 是什麼？"></a>UniFrac distance 是什麼？</h1><h2 id="UniFrac-簡介"><a href="#UniFrac-簡介" class="headerlink" title="UniFrac 簡介"></a>UniFrac 簡介</h2><p>UniFrac (Unique Fraction distance) 是基於系統發生距離的 β 多樣性指標，群集間各族群的系統發生距離愈遠，表示兩群集的差異愈大， β 多樣性也愈高。UniFrac 得用以計算不同環境的微生物相差異，或是觀察干擾前後的轉變。  </p>
+<p>由於度量 UniFrac 的單位是標的基因序列（例如：16S rRNA 變異區），所以能迴避微生物模糊的物種概念。此外，序列差異與微生物的表徵有關。因此，相較於對不同序列等量齊觀的分類基礎指標 (taxon-based metrics)，採計序列歧異度的 UniFrac 能充分利用每個鹼基的資訊。  </p>
+<h2 id="Unweighted-UniFrac"><a href="#Unweighted-UniFrac" class="headerlink" title="Unweighted UniFrac"></a>Unweighted UniFrac</h2><p>依據採計族群規模與否，UniFrac distance 可分為 unweighted UniFrac（不採計）和 weighted UniFrac（採計）。unweighted UniFrac 可直觀地理解為，系統發生樹被單一群集獨佔的比率。獨占枝長的比率愈多，表示兩群集成員的親緣關係愈遠，群集間的差異也愈大。  </p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/unifrac-distance-and-its-pro-and-con/unweighted-unifrac-distance.png"></p>
+<p>unweighted UniFrac 的計算可簡化為：(1) 標註系統發生樹上各枝所屬群集，(2) 計算獨佔枝長和總枝長的比值。</p>
+<h2 id="Weighted-UniFrac"><a href="#Weighted-UniFrac" class="headerlink" title="Weighted UniFrac"></a>Weighted UniFrac</h2><p>然而，優勢物種和稀有物種在生態學上的含義不同，如果某共享枝底下兩群集的成員比例懸殊，或許要採計族群規模以發現群集間的定量差異。因此 weighted UniFrac 依照兩群集成員的相對數量差異，量化每條枝的獨佔程度。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/unifrac-distance-and-its-pro-and-con/weighted-unifrac-distance.png"></p>
+<p>幾何圖形的數量代表物種於該樣本的族群規模。雖然紅方塊和綠圈圈的群集組成不同，但兩者的 unweighted UniFrac 為零。但細查後發現，紅方塊在系統發生樹左側的比例較高，而綠圈圈在右側的比例較。加總各枝對 β 多樣性的貢獻得出兩者的 weighted UniFrac 為 0.11。</p>
+<h1 id="UniFrac-distance-有什麼前提與含義？"><a href="#UniFrac-distance-有什麼前提與含義？" class="headerlink" title="UniFrac distance 有什麼前提與含義？"></a>UniFrac distance 有什麼前提與含義？</h1><h2 id="UniFrac-的前提是-16S-rRNA-序列相似度與微生物的生態棲位相關"><a href="#UniFrac-的前提是-16S-rRNA-序列相似度與微生物的生態棲位相關" class="headerlink" title="UniFrac 的前提是 16S rRNA 序列相似度與微生物的生態棲位相關"></a>UniFrac 的前提是 16S rRNA 序列相似度與微生物的生態棲位相關</h2><p>處於相異環境的族群會受不同的選擇壓力而逐漸分歧。環境差異愈大，族群間隔閡愈深，累積的遺傳差異也愈多。依此假設，兩族群在系統發生樹上的距離，反映了它們的生態棲位差距。  </p>
+<p>在 UniFrac 這類歧異度指標當中 (divergence-based metric)，群集差異由其中的族群相異程度而定。群集成員的生態棲位差異愈大，則群集間的 β 多樣性也愈高。基於用 16S rRNA 重建的系統發生樹，UniFrac 的數值意味著不同微生物群集的適應性特徵差異。  </p>
+<h2 id="然而，UniFrac-的前提不盡合理"><a href="#然而，UniFrac-的前提不盡合理" class="headerlink" title="然而，UniFrac 的前提不盡合理"></a>然而，UniFrac 的前提不盡合理</h2><p>然而，16S rRNA 之所以被選為分類鑑定的基因，正是因為它是核醣體的部件，攸關個體存續，所以在演化中的改變幅度較小。因此，16S rRNA 應該與微生物在特定環境的適存度較無關聯。  </p>
+<p>其次，頻繁的水平基因移轉使得微生物除了不可或缺的核心基因體 (core genome) 外，還附帶功能多樣的基因體 (accessory genome)。這些附帶基因體的組成多變且易受環境影響，所以即使某物種具有相同的核心基因體，也可能因為具有不同的附帶基因體，而表現出迥然不同的特性。  </p>
+<p>鑒於核心基因 的穩定性和水平基因移轉的多變性，以 16S rRNA 建立的系統發生樹能否忠實反映微生物的生態棲位便很可議了。  </p>
+<h2 id="此外，UniFrac-的衍伸意義模糊"><a href="#此外，UniFrac-的衍伸意義模糊" class="headerlink" title="此外，UniFrac 的衍伸意義模糊"></a>此外，UniFrac 的衍伸意義模糊</h2><p>因此 UniFrac 其實只反映了群集在 16S rRNA 以及與其密切相關之基因的差異，無法將解釋推廣到包含水平基因移轉在內的其餘基因體。儘管 Lozupone &amp; Rob Knight (2008) （UniFrac 開發者）主張，UniFrac 提供的資訊仍多過只基於分類而不考慮序列相似度的指標。  </p>
+<p>但究竟有多少基因與 16S rRNA 連鎖，使用者的推論能衍伸到什麼程度，也不是單從 UniFrac 可以得知。因此，即使 UniFrac 是量化的 β 多樣性指標，其延伸含義的解釋空間仍然很模糊。  </p>
+<h1 id="使用-UniFrac-對分析結果有何影響？"><a href="#使用-UniFrac-對分析結果有何影響？" class="headerlink" title="使用 UniFrac 對分析結果有何影響？"></a>使用 UniFrac 對分析結果有何影響？</h1><h2 id="不同的多樣性指標賦予序列不同權重"><a href="#不同的多樣性指標賦予序列不同權重" class="headerlink" title="不同的多樣性指標賦予序列不同權重"></a>不同的多樣性指標賦予序列不同權重</h2><p>若不論生態學意義，其實各項多樣性指標都用了不同手段來壓低偽序列的影響。以採用定量資料的指標為例，由於樣本內的稀有序列往往是建庫或定序時引入的偽序列，所以這些指標賦予稀有序列較低的權重，以免偽序列誇大多樣性的估計值。  </p>
+<p>除了數量，核酸序列亦是判斷偽序列的依據。在品質較好的資料裡，偽序列往往與正確序列只有幾個鹼基差異。然而，若使用 Jaccard distance 或 Bray-Curtis dissmilarity 等以分類為基礎的 β 多樣性指標，會把微量差異視為獨立序列，以致於深受資料品質影響。  </p>
+<h2 id="UniFrac-能緩衝技術誤差的影響"><a href="#UniFrac-能緩衝技術誤差的影響" class="headerlink" title="UniFrac 能緩衝技術誤差的影響"></a>UniFrac 能緩衝技術誤差的影響</h2><p>相較之下，UniFrac distance 採計序列的差異。相似序列對 β 多樣性的貢獻少，歧異序列對 β 多樣性的貢獻大，所以較能容忍定序過程中引進的誤判，或是雙端定序合併時造成的長度不一。因此，當研究迥異的環境微生物，或是僅有低品質的資料時，UniFrac 能緩衝干擾與技術誤差的影響。  </p>
+<h2 id="UniFrac-distance-會壓低組間差異"><a href="#UniFrac-distance-會壓低組間差異" class="headerlink" title="UniFrac distance 會壓低組間差異"></a>UniFrac distance 會壓低組間差異</h2><p>不過，前述特性也降低了 UniFrac 的靈敏度。當 (1) 環境差異不大，選擇壓力沒有體現在微生物的基因體，或是 (2) 資料品質優良，建庫和定序誤差的衝擊微弱時，UniFrac 這樣保守的策略會降低發現組間差異的機會。  </p>
+<h1 id="UniFrac-的優缺點是什麼？"><a href="#UniFrac-的優缺點是什麼？" class="headerlink" title="UniFrac 的優缺點是什麼？"></a>UniFrac 的優缺點是什麼？</h1><p>綜上所述，UniFrac 的優點是能充分利用標的基因的資訊，推論群集間各族群的生態棲位差異。此外，由於UniFrac 的數值依序列相似度加權，所以能緩衝技術誤差的影響。然而 UniFrac 的衍伸含義模糊，而且靈敏度較低，所以 Edgar 建議以直觀的 Bray-Curtis dissimilarity 取代 UniFrac。  </p>
+<p>可是 Bray-Curtis dissimilarity 雖然容易理解，它卻屬於非度量指標 (non-metric)，也深受採樣不均影響。是以，各項指標皆有其優劣和適用條件，不同的指標能反映群集的不同特性，得協助我們了解研究對象的全貌。  </p>
+<p>何況實際研究時，往往無法在事前得知哪些方法有效，而是測試不同指標後才找到值得關注的現象。所以我認為，在欠缺研究脈絡的情況下執著於特定指標，是放棄發現新關聯的機會。  </p>
+<p>比起選擇方法，我相信更重要的是詮釋（如前所述，方法沒得挑，總是有什麼都拿來試試看）。其實在 Edgar 的文章也不斷強調，要區分指標數值和其衍伸含義。在標的基因分析裡，各項指標依據的不是微生物群、不是細菌、甚至不是核酸本身，而是定序後獲得的鹼基序列。  </p>
+<p>無論是物種觀念、親緣關係還是代謝功能分析，都是基於理論由序列推論出生物含義。隨著嵌套的假設增加，指標含義也愈趨複雜，以至於結果難以詮釋、容易誤解或不易檢驗。  </p>
+<p>因此，即便想使用 UniFrac 這類涵蓋系統發生資訊的指標，也要從最直觀的指標著手，才有衡量複雜指標的基線。掌握最底層的序列含義後，才不至於把推論建立在虛妄的根基。  </p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/betadiversity-otu-picking-vs-non-otu-picking-dada2/1888/5">Betadiversity OTU picking vs. non OTU picking (DADA2)</a>. <em>Qiime2 forum</em>. (Accessed Feb 5, 2020)  </li>
+<li>C. Lozupone and R. Knight. (2005) <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/16332807-unifrac-a-new-phylogenetic-method-for-comparing-microbial-communities/">UniFrac: a New Phylogenetic Method for Comparing Microbial Communities</a>. <em>Appl Environ Microbiol</em>.  </li>
+<li>C. Lozupone and R. Knight. (2008) <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/18435746-species-divergence-and-the-measurement-of-microbial-diversity/">Species Divergence and the Measurement of Microbial Diversity</a>. <em>FEMS Microbiol Rev</em>.  </li>
+<li>J. Prosser et al. (2007) <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/17435792-the-role-of-ecological-theory-in-microbial-ecology/?from_term=The+role+of+ecological+theory+in+microbial+ecology&from_filter=ds1.y_1">The role of ecological theory in microbial ecology</a>. <em>Nat Rev Microbiol</em>.  </li>
+<li><a target="_blank" rel="noopener" href="https://drive5.com/usearch/manual/unifrac_comments.html">Why use UniFrac?</a> <em>Uearch</em>. (Accessed Feb 2, 2020)  </li>
+<li><a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/does-it-make-sense-to-use-weighted-unifrac-distances-for-16s-data/12768/2">Does it make sense to use weighted unifrac distances for 16s data?</a> <em>Qiime2 forum</em>. (Accessed Feb 2, 2020)</li>
+</ul>
+<h1 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h1><p>本文對於 UniFrac 的解釋和理論背景參考指標發明者的論文:</p>
+<ol>
+<li>C. Lozupone and R. Knight. (2005) UniFrac: a New Phylogenetic Method for Comparing Microbial Communities. Appl Environ Microbiol.</li>
+<li>C. Lozupone and R. Knight. (2008) Species Divergence and the Measurement of Microbial Diversity. FEMS Microbiol Rev.</li>
+</ol>
+<p>本文關於 UniFrac 前提有疑慮且靈敏度不足的解釋延伸自 Edgar 的評論：<br>Why use UniFrac? (<a target="_blank" rel="noopener" href="https://drive5.com/usearch/manual/unifrac_comments.html">https://drive5.com/usearch/manual/unifrac_comments.html</a>)</p>
+<p>核心基因體 (core genome) 和附帶基因體 (accessory genome) 之別：<br>J. Prosser et al. (2007) The role of ecological theory in microbial ecology. Nat Rev Microbiol.</p>
+<p>至於為什麼 UniFrac 屬於 phylogenetic analysis 可參考：</p>
+<ol>
+<li>Does it make sense to use weighted unifrac distances for 16s data? (<a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/does-it-make-sense-to-use-weighted-unifrac-distances-for-16s-data/12768/2">https://forum.qiime2.org/t/does-it-make-sense-to-use-weighted-unifrac-distances-for-16s-data/12768/2</a>)</li>
+<li>Betadiversity OTU picking vs. non OTU picking (DADA2) (<a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/does-it-make-sense-to-use-weighted-unifrac-distances-for-16s-data/12768/2">https://forum.qiime2.org/t/does-it-make-sense-to-use-weighted-unifrac-distances-for-16s-data/12768/2</a>)</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/metagenomics/" rel="tag"># metagenomics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/nishi-2015-junior-baseball-coaching-book/" rel="prev" title="《少棒的基礎》">
+                  <i class="fa fa-angle-left"></i> 《少棒的基礎》
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/yang-2019-principles-of-biological-regulation/" rel="next" title="生物調控原理的上課筆記">
+                  生物調控原理的上課筆記 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/unifrac-distance-and-its-pro-and-con/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

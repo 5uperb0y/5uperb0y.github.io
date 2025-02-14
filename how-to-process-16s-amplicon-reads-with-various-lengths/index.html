@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在標識基因分析中，會以引子 (primer) 鎖定目標基因兩端的保守區，以截獲其中可提供分類資訊的變異區。例如由 Caporaso et al (2012) 設計，常用於研究人體腸道微生物的 515F&#x2F;806R 引子，便能擴增 16S rRNA 的 V4 變異區，獲得長度約為 253 bp 的序列（順向擴增起點座標 - 逆向擴增起點座標 +1 - 順向引子長度 - 逆向引子長度 (806">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="怎麼處理 16S rRNA 標的基因分析中長度不一的序列？">
+<meta property="og:url" content="https://5uperb0y.com/how-to-process-16s-amplicon-reads-with-various-lengths/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="在標識基因分析中，會以引子 (primer) 鎖定目標基因兩端的保守區，以截獲其中可提供分類資訊的變異區。例如由 Caporaso et al (2012) 設計，常用於研究人體腸道微生物的 515F&#x2F;806R 引子，便能擴增 16S rRNA 的 V4 變異區，獲得長度約為 253 bp 的序列（順向擴增起點座標 - 逆向擴增起點座標 +1 - 順向引子長度 - 逆向引子長度 (806">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/how-to-process-16s-amplicon-reads-with-various-lengths/length-distribution-of-amplicons-reads-within-diabimmune-datasets.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/how-to-process-16s-amplicon-reads-with-various-lengths/in-silico-amplification-of-the-16s-v4-region.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/how-to-process-16s-amplicon-reads-with-various-lengths/sequences-with-variable-lengths-due-to-pcr-artifacts.png">
+<meta property="article:published_time" content="2020-04-27T14:40:18.000Z">
+<meta property="article:modified_time" content="2025-02-14T16:14:34.078Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="metagenomics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/how-to-process-16s-amplicon-reads-with-various-lengths/length-distribution-of-amplicons-reads-within-diabimmune-datasets.png">
+
+
+<link rel="canonical" href="https://5uperb0y.com/how-to-process-16s-amplicon-reads-with-various-lengths/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/how-to-process-16s-amplicon-reads-with-various-lengths/","path":"how-to-process-16s-amplicon-reads-with-various-lengths/","title":"怎麼處理 16S rRNA 標的基因分析中長度不一的序列？"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>怎麼處理 16S rRNA 標的基因分析中長度不一的序列？ | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">166</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%AA%E4%BA%9B%E5%8E%9F%E5%9B%A0%E6%9C%83%E5%B0%8E%E8%87%B4%E6%93%B4%E5%A2%9E%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%B7%E5%BA%A6%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">哪些原因會導致擴增序列的長度不同？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%8A%E7%95%B0%E5%8D%80%E7%9A%84%E9%95%B7%E5%BA%A6%E8%AE%8A%E7%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">變異區的長度變異</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E5%BA%AB%E6%88%96%E5%AE%9A%E5%BA%8F%E9%81%8E%E7%A8%8B%E4%B8%AD%E7%94%A2%E7%94%9F%E7%9A%84%E5%81%BD%E5%BA%8F%E5%88%97"><span class="nav-number">1.2.</span> <span class="nav-text">建庫或定序過程中產生的偽序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E8%99%95%E7%90%86%E9%80%A0%E6%88%90%E7%9A%84%E9%95%B7%E5%BA%A6%E5%B7%AE%E7%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">資料處理造成的長度差異</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E8%99%95%E7%90%86%E9%95%B7%E5%BA%A6%E4%B8%8D%E4%B8%80%E7%9A%84%E5%BA%8F%E5%88%97%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">為什麼要處理長度不一的序列？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E9%95%B7%E5%BA%A6%E4%B8%8D%E4%B8%80%E6%98%AF%E6%80%8E%E6%A8%A3%E7%9A%84%E5%95%8F%E9%A1%8C%EF%BC%9F"><span class="nav-number">2.1.</span> <span class="nav-text">序列長度不一是怎樣的問題？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%80%E5%88%86%E5%85%B7%E6%9C%89%E7%94%9F%E7%89%A9%E6%84%8F%E7%BE%A9%E7%9A%84%E6%AD%A3%E7%A2%BA%E5%BA%8F%E5%88%97%E3%80%81%E5%81%BD%E5%BA%8F%E5%88%97%E5%92%8C%E6%B1%99%E6%9F%93%E5%BA%8F%E5%88%97"><span class="nav-number">2.2.</span> <span class="nav-text">區分具有生物意義的正確序列、偽序列和汙染序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%A0%E5%AE%9A%E6%AF%94%E8%BC%83%E5%9F%BA%E7%A4%8E%E4%BB%A5%E6%AD%A3%E7%A2%BA%E8%A8%88%E7%AE%97%E5%BA%8F%E5%88%97%E7%9A%84%E6%95%B8%E9%87%8F"><span class="nav-number">2.3.</span> <span class="nav-text">奠定比較基礎以正確計算序列的數量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%A6%E5%90%88%E8%81%9A%E9%A1%9E%E6%88%96%E9%99%8D%E5%99%AA%E5%B7%A5%E5%85%B7%E7%9A%84%E8%A6%81%E6%B1%82"><span class="nav-number">2.4.</span> <span class="nav-text">符合聚類或降噪工具的要求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%89%E4%BB%80%E9%BA%BC%E6%89%8B%E6%AE%B5%E5%8F%AF%E4%BB%A5%E8%99%95%E7%90%86%E9%95%B7%E5%BA%A6%E4%B8%8D%E4%B8%80%E7%9A%84%E5%BA%8F%E5%88%97%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">有什麼手段可以處理長度不一的序列？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E8%99%95%E7%90%86"><span class="nav-number">3.1.</span> <span class="nav-text">不處理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%B7%E5%BA%A6%E8%A3%81%E5%88%87"><span class="nav-number">3.2.</span> <span class="nav-text">長度裁切</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%B7%E5%BA%A6%E7%AF%A9%E9%81%B8"><span class="nav-number">3.3.</span> <span class="nav-text">長度篩選</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B3%87%E6%96%99%E5%BA%AB%E6%AF%94%E5%B0%8D%E7%AF%A9%E9%81%B8"><span class="nav-number">3.4.</span> <span class="nav-text">資料庫比對篩選</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%8E%E9%BA%BC%E6%B1%BA%E5%AE%9A%E8%99%95%E7%90%86%E5%BA%8F%E5%88%97%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">怎麼決定處理序列的方式？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%90%88%E4%BD%B5%E9%9B%99%E7%AB%AF%E5%BA%8F%E5%88%97%E7%9A%84%E6%99%82%E6%A9%9F%E7%82%BA%E4%BD%95%E8%80%85%EF%BC%9F"><span class="nav-number">4.1.</span> <span class="nav-text">1. 合併雙端序列的時機為何者？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E7%9A%84%E8%BB%9F%E9%AB%94%E6%98%AF%E5%90%A6%E8%A6%81%E6%B1%82%E8%BC%B8%E5%85%A5%E5%BA%8F%E5%88%97%E7%9A%84%E9%95%B7%E5%BA%A6%E4%B8%80%E8%87%B4%EF%BC%9F"><span class="nav-number">4.2.</span> <span class="nav-text">2. 使用的軟體是否要求輸入序列的長度一致？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%A0%94%E7%A9%B6%E9%87%8D%E9%BB%9E%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">4.3.</span> <span class="nav-text">3. 研究重點是什麼？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%95%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">4.4.</span> <span class="nav-text">處理方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">5.</span> <span class="nav-text">結論</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E9%96%B1%E8%AE%80"><span class="nav-number">6.</span> <span class="nav-text">延伸閱讀</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<div class="links-of-blogroll motion-element links-of-blogroll-block">
+<div class="links-of-blogroll-title">
+    <!-- 設定你要的fa fa icon-->
+    <i class="fa fa-history fa-" aria-hidden="true"></i>
+    近期文章
+</div>
+<ul class="links-of-blogroll-list">
+    <!---->
+    
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2025-02-12T20:52:01+08:00">
+        02/12
+      </time>
+      <a href="/customize-renpy-gui-random-thoughts-and-notes/" title="視覺小說、電玩展、Ren'Py GUI 客製化雜談">視覺小說、電玩展、Ren'Py GUI 客製化雜談</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2025-01-01T20:39:14+08:00">
+        01/01
+      </time>
+      <a href="/automating-board-games-must-consider-feedback/" title="桌遊自動化操作仍要考慮玩家的回饋感">桌遊自動化操作仍要考慮玩家的回饋感</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-15T16:06:48+08:00">
+        12/15
+      </time>
+      <a href="/valid-ranges-of-hidden-state-prediction-in-phylogenetic-analysis/" title="如何界定細菌性狀預測演算法的有效範圍？">如何界定細菌性狀預測演算法的有效範圍？</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-14T21:35:09+08:00">
+        12/14
+      </time>
+      <a href="/optimize-dada2-trimming-and-filtering-parameters-for-illumina-amplicons/" title="最佳化 DADA2 的定序資料品質控管參數">最佳化 DADA2 的定序資料品質控管參數</a>
+      <br>
+      <br>
+    </li>
+    
+    <li class='pull-left' style="white-space:normal; text-align:left" >
+      <time title="創建時間" itemprop="dateCreated datePublished" datetime="2024-12-05T20:16:22+08:00">
+        12/05
+      </time>
+      <a href="/using-happy-stratification-for-benchmarking-small-variants/" title="如何使用 hap.py stratification？">如何使用 hap.py stratification？</a>
+      <br>
+      <br>
+    </li>
+    
+</ul>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://www.facebook.com/3minBioPhysics/" title="https:&#x2F;&#x2F;www.facebook.com&#x2F;3minBioPhysics&#x2F;" rel="noopener" target="_blank">三分鐘生物物理</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yongfu.name/" title="https:&#x2F;&#x2F;yongfu.name&#x2F;" rel="noopener" target="_blank">Yongfu's Blog</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://wcw0310.github.io/" title="https:&#x2F;&#x2F;wcw0310.github.io&#x2F;" rel="noopener" target="_blank">Hi I'm WCW!</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/dada2-execution-halted-error-in-table-attempt-to-make-a-table-with-2-31-elements/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-04</time>
+        <br>
+      DADA2 execution halted (Error in table: attempt to make a table with >= 2^31 elements)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/how-to-process-16s-amplicon-reads-with-various-lengths/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="怎麼處理 16S rRNA 標的基因分析中長度不一的序列？ | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          怎麼處理 16S rRNA 標的基因分析中長度不一的序列？
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2020-04-27 22:40:18" itemprop="dateCreated datePublished" datetime="2020-04-27T22:40:18+08:00">2020-04-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-02-15 00:14:34" itemprop="dateModified" datetime="2025-02-15T00:14:34+08:00">2025-02-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>在標識基因分析中，會以引子 (primer) 鎖定目標基因兩端的保守區，以截獲其中可提供分類資訊的變異區。例如由 Caporaso et al (2012) 設計，常用於研究人體腸道微生物的 515F&#x2F;806R 引子，便能擴增 16S rRNA 的 V4 變異區，獲得長度約為 253 bp 的序列（順向擴增起點座標 - 逆向擴增起點座標 +1 - 順向引子長度 - 逆向引子長度 (806 - 515 + 1 - 19 -20 &#x3D; 253 bp) ）。</p>
+<p>僅憑印象判斷，可能會以為16S rRNA V4 區域兩端的保守區間距變化不大，所以引子擴增出的序列應具有相似長度，但實際上並非如此。下圖為 DIABIMMUNE 計畫，嬰兒腸道微生物 16S rRNA V4 區域的擴增結果。雖然多數的序列集中在 253 bp，但周圍仍有長度從 37 bp 到 258 bp 的序列。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/how-to-process-16s-amplicon-reads-with-various-lengths/length-distribution-of-amplicons-reads-within-diabimmune-datasets.png"></p>
+<p>（這張圖中呈現的資料已經事先經過許多處理，所以不是原始資料的長度分布。但我想以此圖說明，即使是從保守區擴增出來的片段，也不會只有一種長度。）</p>
+<p>這些長度不一的序列可能是具有生物含義的正確序列，也可能是定序和建庫過程中產生的偽序列，亦或是資料處理時引進的誤差。由於長度不一有許多成因，所以資料處理的方式也因成因而異。</p>
+<span id="more"></span>
+
+<p>此外，不同的標的基因分析流程對於序列有不同的要求，所以處理這些序列的方式也因研究議題和採用的工具而異。例如，使用 Deblur（將序列降噪為 ASVs 的工具）和 UPARSE（將序列聚類為 OTUs 的工具）等要求輸入序列長度一致的演算法時，便得在資料前處理階段統一裁切樣本中的序列；但使用 DADA2（另一種將序列降噪為 ASVs 的工具）則可省略此步。</p>
+<p>然而，無論採取何種方法，由於多數序列的長度集中在特定範圍，序列長度在 16S rRNA 分析中可以作為判斷序列可信度的依據，透過移除極端長度者能排除偽序列或汙染序列的影響。</p>
+<h1 id="哪些原因會導致擴增序列的長度不同？"><a href="#哪些原因會導致擴增序列的長度不同？" class="headerlink" title="哪些原因會導致擴增序列的長度不同？"></a>哪些原因會導致擴增序列的長度不同？</h1><h2 id="變異區的長度變異"><a href="#變異區的長度變異" class="headerlink" title="變異區的長度變異"></a>變異區的長度變異</h2><p>即使 16S rRNA 因為組成組成穩定而被選為分析物種親緣關係的標的基因，仍有可能因為插入、刪除或重複等遺傳變異，導致變異區出現長度變異，以至於擴增序列的長度不一。由於這些長度不一的序列屬於微生物的基因體，所以得設法在資料處理中保留。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/how-to-process-16s-amplicon-reads-with-various-lengths/in-silico-amplification-of-the-16s-v4-region.png"></p>
+<p>（此圖是以 515F&#x2F;806R 引子在 SILVA 資料庫模擬 PCR 擴增 V4 區域的結果，多數微生物的 V4 區域為 253 bp，但長度分布很廣泛。由此得知，雖然在前文曾提到可以用長度篩選潛在的偽序列，但序列長度實際上不是正確序列的絕對指標。）</p>
+<h2 id="建庫或定序過程中產生的偽序列"><a href="#建庫或定序過程中產生的偽序列" class="headerlink" title="建庫或定序過程中產生的偽序列"></a>建庫或定序過程中產生的偽序列</h2><p>如果長度不一的序列皆屬樣本微生物的基因體，那麼長度便不是資料處理時最大的問題。然而，建庫和定序過程中有許多機會引進偽序列，例如引子因脫靶而擴增到非目標區域，或是順逆向引子配對成二聚體，又或在擴增階段因故中斷而形成的嵌合體等，這些偽序列的長度往往與目標基因的長度不同。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/how-to-process-16s-amplicon-reads-with-various-lengths/sequences-with-variable-lengths-due-to-pcr-artifacts.png"></p>
+<p>（建庫或定序過程中產生的偽序列）</p>
+<p>此外，定序過程也可能產生長度不同的偽序列。以 454 焦磷酸定序法為例，由於仰賴螢光強度來判斷鹼基添加的數量，當序列中出現連續鹼基時，儀器誤判的機率便會提升，導致插入或刪除的錯誤 (homopolymer misreads)。所以即使擴增同樣區域，也可能得出長度不一的序列。</p>
+<h2 id="資料處理造成的長度差異"><a href="#資料處理造成的長度差異" class="headerlink" title="資料處理造成的長度差異"></a>資料處理造成的長度差異</h2><p>對於 illumina 旗下採用雙端定序的儀器而言，定序錯誤多源於誤判鹼基的種類，而不是誤判鹼基的數量，所以可以避免定序造成的長度差異。然而，合併雙端定序結果時，也可能因為順逆向序列重合處太短或是鹼基種類單調，導致合併方式錯誤，以至於結果的長度不符預期。</p>
+<p>其次，由於 illumina 定序儀器的品質隨長度遞減，若要執行品質裁切，則會在裁切低品質的片段後留下長度不一的序列。</p>
+<h1 id="為什麼要處理長度不一的序列？"><a href="#為什麼要處理長度不一的序列？" class="headerlink" title="為什麼要處理長度不一的序列？"></a>為什麼要處理長度不一的序列？</h1><h2 id="序列長度不一是怎樣的問題？"><a href="#序列長度不一是怎樣的問題？" class="headerlink" title="序列長度不一是怎樣的問題？"></a>序列長度不一是怎樣的問題？</h2><p>處理定序資料的最終目的，是取得具有生物含義且能為分析工具所用的正確序列。序列的長度與數量、鹼基的定序品質和比例，皆為 FastQC 等品質查驗軟體常用的統計量，它們反映了樣本序列的不同特性，但本身並沒有正確與錯誤之分。</p>
+<p>以 16S rRNA 分析為例，由於各變異區的長度變異不大，所以資料處理時會特別警戒極端長度的序列，以免偽序列膨脹了多樣性的估計值。然而長度變異常見於 18S&#x2F;ITS rRNA，所以長度不一的序列可能不是問題。</p>
+<p>因此，長度不一致的序列是怎樣的問題，端視解讀數據的假設與方法而定。</p>
+<h2 id="區分具有生物意義的正確序列、偽序列和汙染序列"><a href="#區分具有生物意義的正確序列、偽序列和汙染序列" class="headerlink" title="區分具有生物意義的正確序列、偽序列和汙染序列"></a>區分具有生物意義的正確序列、偽序列和汙染序列</h2><p>由於 16S rRNA 各變異區的長度變異不大，所以長度可以作為檢驗資料合理性的指標。極端長度的序列可能是建庫和定序過程引入的偽序列，或是未知來源的汙染序列。</p>
+<p>以我目前在處理的 V4 變異區擴增定序資料為例，我發現其中一份樣本有五成序列的長度只有其他序列長的一半。比對核酸資料庫得知，這些序列很多都不屬於 16S rRNA 基因，隨後也在這些序列上發現用於其他建庫方式的 Nextera transposase sequences。</p>
+<p>綜合這些線索，我猜測這份樣本受到其他文庫的汙染。由於長度差異很大，所以可以用明確的閾值篩選。然而16S rRNA 各變異區仍存在長度變異，所以長度並不是判斷序列真偽的最佳指標， 需要其他證據佐證才能判斷。</p>
+<h2 id="奠定比較基礎以正確計算序列的數量"><a href="#奠定比較基礎以正確計算序列的數量" class="headerlink" title="奠定比較基礎以正確計算序列的數量"></a>奠定比較基礎以正確計算序列的數量</h2><p>在標識基因分析中，會將序列聚類為 OTUs 或降噪為 ASVs，以校正定序時產生的誤差。而構建 OTUs&#x2F;ASVs 的前提是 (1) 序列擴增自基因體的相同位置，(2) 正確序列的數量大於出錯序列的數量。如此一來，聚類或降噪演算法才有一致的比較基礎，得以從序列的數量推論其真偽。</p>
+<p>然而，長度問題不利於計算序列數量和確認序列來源。假設有甲和乙兩條僅有一個鹼基差異的序列，此時有四種計算序列數量的策略。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ATCGATCGATCGC</span><br><span class="line">ATCGATCGATCG</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p><strong>假設甲和乙源於不同物種的基因體，個別計算甲與乙的數量</strong>：雙端定序能確保源於相同變異區的序列有相同長度，所以得假設長度不一的序列源於不同的基因體。然而在單端定序中，源於相同區域的序列可能因品質裁切而得出長度不一的序列，導致此舉的假設不成立，亦即把相同的序列分到不同的 OTUs&#x2F;ASVs。</p>
+</li>
+<li><p><strong>假設甲為乙的母序列，把乙的數量歸於甲</strong>：由於甲末端的鹼基沒有其它序列佐證，而乙末端遺失的序列是否與甲一致也未知。此舉意味著基於兩不可靠的資訊，得出參雜雜訊的序列。</p>
+</li>
+<li><p><strong>假設乙為甲的子序列，把甲的數量歸於乙</strong>：由於甲和乙前段的序列一致，可以互相印證。此舉意味著捨棄甲末端的資訊，以獲得較短但較可靠的序列。</p>
+</li>
+<li><p><strong>切除最後一個鹼基，泯除甲乙之別</strong>：策略 (1) 其實是將長度納為分類依據，所以能更精細地分類序列。然而，長度不一的序列往往會獨立出來聚類 OTUs ，導致不同 OTUs 生成標準不一致（部分序列依照長度聚類，部分序列依照鹼基差異聚類）。為了統一分類的標準，必須將序列裁至一定長度。雖然意義不同，但策略 (4) 的效果與策略 (3) 相似。</p>
+</li>
+</ol>
+<p>除了策略 (2) 明顯不合理以外，其它策略都各有優劣。然而，無論何種方法都沒有辦法完全解決此問題，因為這是使用局部基因體來區分物種的限制。</p>
+<h2 id="符合聚類或降噪工具的要求"><a href="#符合聚類或降噪工具的要求" class="headerlink" title="符合聚類或降噪工具的要求"></a>符合聚類或降噪工具的要求</h2><p>另外，因為處理序列的手段受限於現存的工具，所以除了品質控管和取得生物含意的序列以外，處理長度不一的序列也是為了滿足聚類或降噪工具的要求，例如 QIIME2 內的 Deblur 即要求輸入長度一致的序列。（當然這些要求也有各自的理論背景，需要閱讀原始文獻才能得知）</p>
+<h1 id="有什麼手段可以處理長度不一的序列？"><a href="#有什麼手段可以處理長度不一的序列？" class="headerlink" title="有什麼手段可以處理長度不一的序列？"></a>有什麼手段可以處理長度不一的序列？</h1><h2 id="不處理"><a href="#不處理" class="headerlink" title="不處理"></a>不處理</h2><p>假設樣本中沒有任何偽序列，為了保留所有具生物含義的序列，可以選擇不處理長度不一的序列。然而如之前的討論，無論是建庫或定序過程都可能引入偽序列，而且有些軟體（例如 Deblur）要求輸入的序列長度一致，因此通常得處理長度不一的序列。</p>
+<h2 id="長度裁切"><a href="#長度裁切" class="headerlink" title="長度裁切"></a>長度裁切</h2><p>由於單端定序往往產生長度不一的序列，必須經過裁切才能確保各序列源於標的基因上相同的起始點。而在雙端定序中，合併後的序列始於順向引子，終於逆向引子，所以能確保序列源於相同變異區，因此長度裁切反而是為了符合軟體的輸入格式要求或統一聚類的標準。</p>
+<h2 id="長度篩選"><a href="#長度篩選" class="headerlink" title="長度篩選"></a>長度篩選</h2><p>長度篩選的重點是把偽序列或汙染序列從樣本中移除。以 16S V4 區域為例，由於這段區域的長度變異不大，所以極端長或極端短的序列很有可能是建庫擴成中引進的偽序列。但是貿然地把理論長度以外的序列全部刪除，會喪失部分序列並引入長度偏誤（參考變異區的長度分布圖）。因此，初次處理的時候可以先保留，再根據隨後的分析結果調整策略。</p>
+<h2 id="資料庫比對篩選"><a href="#資料庫比對篩選" class="headerlink" title="資料庫比對篩選"></a>資料庫比對篩選</h2><p>由於最終的目標是取得變異區的擴增序列，所以可以透過註解序列，了解其是否具有生物意義來篩選偽序列。例如刪除相似度和 16S rRNA 基因低於閾值，或是無法註解到特定分類階層的序列。</p>
+<h1 id="怎麼決定處理序列的方式？"><a href="#怎麼決定處理序列的方式？" class="headerlink" title="怎麼決定處理序列的方式？"></a>怎麼決定處理序列的方式？</h1><h2 id="1-合併雙端序列的時機為何者？"><a href="#1-合併雙端序列的時機為何者？" class="headerlink" title="1. 合併雙端序列的時機為何者？"></a>1. 合併雙端序列的時機為何者？</h2><ol>
+<li><p>聚類&#x2F;降噪前合併雙端序列，見「問題 2」</p>
+</li>
+<li><p>聚類&#x2F;降噪後合併雙端序列（或僅使用單端序列，此時長度變異未必有生物含意），見「處理方式 A」</p>
+</li>
+</ol>
+<h2 id="2-使用的軟體是否要求輸入序列的長度一致？"><a href="#2-使用的軟體是否要求輸入序列的長度一致？" class="headerlink" title="2. 使用的軟體是否要求輸入序列的長度一致？"></a>2. 使用的軟體是否要求輸入序列的長度一致？</h2><ol>
+<li><p>是，見「處理方式 B」</p>
+</li>
+<li><p>否，見「問題 3」</p>
+</li>
+</ol>
+<h2 id="3-研究重點是什麼？"><a href="#3-研究重點是什麼？" class="headerlink" title="3. 研究重點是什麼？"></a>3. 研究重點是什麼？</h2><ol>
+<li><p>強調差異表達分析，犧牲聚類標準的一致性，見「處理方式 C」</p>
+</li>
+<li><p>強調多樣性分析，犧牲分類精準度，見「處理方式 B」</p>
+</li>
+</ol>
+<h2 id="處理方式"><a href="#處理方式" class="headerlink" title="處理方式"></a>處理方式</h2><ul>
+<li><p><strong>處理方式 A</strong>：考量定序品質和合併雙端序列所需的重合長度，各將順逆股裁成一致長度（兩股長度不必一致）。合併雙端序列後依照擴增區域的預期長度分布，移除可能的嵌合體和偽序列（例：DADA2）。</p>
+</li>
+<li><p><strong>處理方式 B</strong>：首先使用引子在資料庫中模擬擴增反應取得標區域的長度分布，並據此移除可能的嵌合體和偽序列，接著移除長度短於閾值的序列，裁切長度長於閾值的序列（例：Deblur）。</p>
+</li>
+<li><p><strong>處理方式 C</strong>：不裁切序列，但仍依照擴增區域的預期長度分布，移除可能的嵌合體和偽序列。</p>
+</li>
+</ul>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>在 16S rRNA 標的基因分析中，處理長度不一的序列是為了取得具有生物含意的正確序列並確立比較的基礎。處理長度變異的手段取決於合併雙端序列的時機、聚類&#x2F;降噪軟體的要求以及研究的重點。至於長度裁切或篩選的參數設定則沒有絕對標準，必須檢視研究目的並根據結果不斷調整，以下是我的策略：</p>
+<ol>
+<li><p>取得標的基因的長度分布，這可以透過模擬擴增或是直接合併雙端序列得知。</p>
+</li>
+<li><p>依照長度分布決定一組寬鬆的長度篩選標準</p>
+</li>
+<li><p>參照核酸資料庫，判斷長度異常的序列是否具有生物含意，再據此調整篩選標準</p>
+</li>
+<li><p>參考稀釋曲線，檢查長度裁切是否太過寬鬆，誇大了樣本多樣性，導致曲線無法飽和（即樣本代表性不足）</p>
+</li>
+<li><p>參考多樣性分析結果，檢查長度裁切是否太過嚴格&#x2F;寬鬆，以至於結果差異甚微&#x2F;變異過大。</p>
+</li>
+</ol>
+<h1 id="延伸閱讀"><a href="#延伸閱讀" class="headerlink" title="延伸閱讀"></a>延伸閱讀</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/analyzing-variable-length-joined-paired-end-reads-with-deblur/3993/3">Analyzing variable length joined paired-end reads with Deblur</a>. Qiime2 forum. </li>
+<li><a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/can-we-use-extracted-reference-reads-to-calculate-expected-amplicon-sizes/11038">Can we use extracted reference reads to calculate expected amplicon sizes?</a> Qiime2 forum.   </li>
+<li><a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/comparison-of-dada2-with-deblur/3503/9">Comparison of DADA2 with Deblur</a>. Qiime2 forum. </li>
+<li><a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/dada-and-deblur-cutoffs-and-comparison/6018">Dada and Deblur, cutoffs and comparison</a>. Qiime2 forum.</li>
+<li><a target="_blank" rel="noopener" href="https://www.drive5.com/usearch/manual/global_trimming_and_abundance.html">Defining unique sequence abundances</a>. Usearch</li>
+<li><a target="_blank" rel="noopener" href="https://www.drive5.com/usearch/manual/merge_length_range.html">Filtering artifacts by a merge length range</a>. Usearch.</li>
+<li><a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/yet-another-question-regarding-otu-clustering/8525/7">Yet another question regarding OTU clustering</a>. Qiime2 forum.</li>
+<li><a target="_blank" rel="noopener" href="https://www.drive5.com/usearch/manual/pipe_readprep_trim.html">Read preparation: length trimming</a>. usearch</li>
+<li><a target="_blank" rel="noopener" href="https://forum.qiime2.org/t/to-cluster-or-not-to-cluster/10022/6">To cluster or not to cluster?</a> Qiime2 forum.</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/metagenomics/" rel="tag"># metagenomics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/error-in-using-alpha-function-within-microbiome-r-library/" rel="prev" title="Error in alpha(pseq, index = "all") : unused argument (index = "all")">
+                  <i class="fa fa-angle-left"></i> Error in alpha(pseq, index = "all") : unused argument (index = "all")
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/ool-santa-fe-life/" rel="next" title="OoL Santa Fe｜生命的特例與通性">
+                  OoL Santa Fe｜生命的特例與通性 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/sidebar.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/how-to-process-16s-amplicon-reads-with-various-lengths/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
