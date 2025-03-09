@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://5uperb0y.com/error-in-using-alpha-function-within-microbiome-r-library/</loc>
+    <loc>https://5uperb0y.com/the-hitchhikers-guide-to-benchmarking-structural-variant-calling/</loc>
     
     <lastmod>2025-03-09</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/the-hitchhikers-guide-to-benchmarking-structural-variant-calling/</loc>
+    <loc>https://5uperb0y.com/error-in-using-alpha-function-within-microbiome-r-library/</loc>
     
     <lastmod>2025-03-09</lastmod>
     
@@ -1573,13 +1573,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/yuri/</loc>
-    <lastmod>2025-03-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/tags/development/</loc>
     <lastmod>2025-03-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -1587,7 +1580,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/sf/</loc>
+    <loc>https://5uperb0y.com/tags/yuri/</loc>
     <lastmod>2025-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1595,6 +1588,13 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/astrobiology/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/sf/</loc>
     <lastmod>2025-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1615,6 +1615,13 @@
   </url>
   
   <url>
+    <loc>https://5uperb0y.com/tags/what-is-life/</loc>
+    <lastmod>2025-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/tags/rosalind/</loc>
     <lastmod>2025-03-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -1629,7 +1636,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/what-is-life/</loc>
+    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
     <lastmod>2025-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1637,13 +1644,6 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/renpy/</loc>
-    <lastmod>2025-03-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
     <lastmod>2025-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
