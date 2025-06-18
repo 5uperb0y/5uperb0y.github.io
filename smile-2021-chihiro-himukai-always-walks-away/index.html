@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。  A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negat">
+    <meta name="description" content="這款是我還沒入坑視覺小說時，看價格便宜就塞進購物車的作品。因為中途注意力被其他遊戲吸引，直到近期才有時間補完。故事的開端是高中時互有好感的男女主角在出社會後重逢，在女主角提議下成為床伴，互相依偎度過下班後寂寞的夜晚。 雖然 R18 場景佔了遊玩動機的很大一部份，實際看劇情時反而更在意主角間的互動。另外，不知道是不是因為在周日玩的關係，故事裡描述上班族辛酸的橋段，我都特別有共鳴。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)">
-<meta property="og:url" content="https://5uperb0y.com/enumerating-oriented-gene-orderings/index.html">
+<meta property="og:title" content="《日向千尋的工作總是做不久》">
+<meta property="og:url" content="https://5uperb0y.com/smile-2021-chihiro-himukai-always-walks-away/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。  A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negat">
+<meta property="og:description" content="這款是我還沒入坑視覺小說時，看價格便宜就塞進購物車的作品。因為中途注意力被其他遊戲吸引，直到近期才有時間補完。故事的開端是高中時互有好感的男女主角在出社會後重逢，在女主角提議下成為床伴，互相依偎度過下班後寂寞的夜晚。 雖然 R18 場景佔了遊玩動機的很大一部份，實際看劇情時反而更在意主角間的互動。另外，不知道是不是因為在周日玩的關係，故事裡描述上班族辛酸的橋段，我都特別有共鳴。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-05-06T06:45:59.000Z">
-<meta property="article:modified_time" content="2024-06-09T14:16:38.000Z">
+<meta property="article:published_time" content="2025-06-18T15:04:49.000Z">
+<meta property="article:modified_time" content="2025-06-18T15:14:38.356Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
-<meta property="article:tag" content="rosalind">
+<meta property="article:tag" content="acgn">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/enumerating-oriented-gene-orderings/">
+<link rel="canonical" href="https://5uperb0y.com/smile-2021-chihiro-himukai-always-walks-away/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/enumerating-oriented-gene-orderings/","path":"enumerating-oriented-gene-orderings/","title":"ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/smile-2021-chihiro-himukai-always-walks-away/","path":"smile-2021-chihiro-himukai-always-walks-away/","title":"《日向千尋的工作總是做不久》"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>ROSALIND｜Enumerating Oriented Gene Orderings (SIGN) | 5uperb0y's blog</title>
+<title>《日向千尋的工作總是做不久》 | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -130,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -143,7 +143,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9F%A5%E8%AD%98%E9%BB%9E"><span class="nav-number">1.</span> <span class="nav-text">知識點</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">題解</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -256,51 +255,6 @@
       </div>
     </div>
         <div class="pjax">
-        <div class="sidebar-inner sidebar-post-related">
-          <div class="animated">
-              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
-    相關文章
-  </div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/enumerating-gene-orders/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-05</time>
-        <br>
-      ROSALIND｜Enumerating Gene Orders (PERM)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/longest-increasing-subsequence/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-14</time>
-        <br>
-      ROSALIND | Longest Increasing Subsequence (LGIS)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/ordering-strings-of-varying-length-lexicographically/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-08</time>
-        <br>
-      ROSALIND | Ordering Strings of Varying Length Lexicographically (LEXV)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/enumerating-k-mers-lexicographically/" rel="bookmark">
-        <time class="popular-posts-time">2024-05-07</time>
-        <br>
-      ROSALIND | Enumerating k-mers Lexicographically (LEXF)
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/reversal-distance/" rel="bookmark">
-        <time class="popular-posts-time">2024-06-03</time>
-        <br>
-      ROSALIND｜Reversal Distance (REAR)
-      </a>
-    </li>
-  </ul>
-
-          </div>
-        </div>
         </div>
   </aside>
 
@@ -318,7 +272,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/enumerating-oriented-gene-orderings/">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/smile-2021-chihiro-himukai-always-walks-away/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -331,12 +285,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="ROSALIND｜Enumerating Oriented Gene Orderings (SIGN) | 5uperb0y's blog">
+      <meta itemprop="name" content="《日向千尋的工作總是做不久》 | 5uperb0y's blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)
+          《日向千尋的工作總是做不久》
         </h1>
 
         <div class="post-meta-container">
@@ -346,15 +300,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2024-05-06 14:45:59" itemprop="dateCreated datePublished" datetime="2024-05-06T14:45:59+08:00">2024-05-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-06-09 22:16:38" itemprop="dateModified" datetime="2024-06-09T22:16:38+08:00">2024-06-09</time>
+      <time title="創建時間：2025-06-18 23:04:49 / 修改時間：23:14:38" itemprop="dateCreated datePublished" datetime="2025-06-18T23:04:49+08:00">2025-06-18</time>
     </span>
 
   
@@ -366,24 +314,35 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定一正整數 n，求包含數字 1 到 n 與 -1 到 -n 的所有可能數列與其總數。</p>
-<blockquote>
-<p>A signed permutation of length n is some ordering of the positive integers {1,2,…,n} in which each integer is then provided with either a positive or negative sign (for the sake of simplicity, we omit the positive sign). For example, π&#x3D;(5,−3,−2,1,4) is a signed permutation of length 5</p>
-<p>Given: A positive integer n≤6</p>
-<p>Return: The total number of signed permutations of length n, followed by a list of all such permutations (you may list the signed permutations in any order).</p>
-</blockquote>
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>這款是我還沒入坑視覺小說時，看價格便宜就塞進購物車的作品。因為中途注意力被其他遊戲吸引，直到近期才有時間補完。故事的開端是高中時互有好感的男女主角在出社會後重逢，在女主角提議下成為床伴，互相依偎度過下班後寂寞的夜晚。</p>
+<p>雖然 R18 場景佔了遊玩動機的很大一部份，實際看劇情時反而更在意主角間的互動。另外，不知道是不是因為在周日玩的關係，故事裡描述上班族辛酸的橋段，我都特別有共鳴。</p>
 <span id="more"></span>
 
-<h1 id="知識點"><a href="#知識點" class="headerlink" title="知識點"></a>知識點</h1><p>Synteny blocks 是相異物種因為基因體重排而分離的同源片段。在 <a href="https://5uperb0y.com/enumerating-gene-orders/">Enumerating Gene Orders</a> 當中介紹了以數列排列模擬 synteny blocks 重排的想法，我們可以額外考慮 blocks 的方向性來改善模型的精細度。DNA 雖然由兩股去氧核酸構成，但轉錄僅發生在其中一股。</p>
-<p>由於 synteny blocks 在演化過程中除了易位，也可能發生轉置，顛倒基因的排列和方向性，改變轉錄與基因調控等行為，從而影響個體的表徵。例如，Factor VIII Intron 22 的轉置便是血友病A的成因之一。</p>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><p>這題的解法近似<a href="https://5uperb0y.com/enumerating-gene-orders/">數列的排列</a>，只是透過正負號來表示 synteny blocks 的方向。因為要考慮正負符號，所以需要兩個調整。</p>
-<ol>
-<li>遞迴的 base case 要回傳數字與其相反數。例如輸入數列 <code>[1]</code>，要回傳 <code>[[1], [-1]]</code>。</li>
-<li>在把數字放回排列後的數列時，也要分別加入數字和其相反數。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">slperm</span>(<span class="params">l</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;permutations of a numberic list, including -/+ of each number.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(l) == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> [[l[<span class="number">0</span>]], [-l[<span class="number">0</span>]]]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> [</span><br><span class="line">            p + [sign_e]</span><br><span class="line">            <span class="keyword">for</span> i, e <span class="keyword">in</span> <span class="built_in">enumerate</span>(l)</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> slperm(l[:i] + l[i+<span class="number">1</span>:])</span><br><span class="line">            <span class="keyword">for</span> sign_e <span class="keyword">in</span> [e, -e]</span><br><span class="line">        ]</span><br></pre></td></tr></table></figure>
+<p>故事的女主角是日向千尋。她的性格敏感，能察覺他人細微的情緒波動；她的責任心強，所以無法對不合理的事坐視不管。這樣的她難以適應職場環境，所以工作總是做不久。</p>
+<p>千尋對自己的評價是，她好像有一種逃避癖，雖然表面上因看不慣主管的惡劣態度而辭職，實際上卻是在逃避某種自己也說不出的事情。</p>
+<p>這回是她出社會後第十二次辭職，在最後一天工作日，她遇見了高中時非常要好，但在畢業後卻不曾聯絡的男主角。男主角出席專案順利落幕的慶功宴，卻在席上頻頻受主管揶揄他的處子身分。</p>
+<p>千尋對此反感卻沒表示什麼，直到下班後碰到準備等車回家的男主角，在一段閒聊與回憶之後才吐露心聲。千尋覺得男主角這樣實在窩囊，所以邀請男主角到她家：</p>
+<blockquote>
+<p>我不能接受你只是因為是個處男就被那樣嘲笑。乾脆就讓我來幫你脫處，這樣你明天就可以挺起胸膛去上班了。</p>
+</blockquote>
+<p>男主角接受邀請，兩人也發展了一夜情。男主角心想既然彼此已發生親密關係，自己又蠻喜歡對方的，何不提議交往，但千尋卻回絕了，她說：「先跟你說清楚，別以為一起睡過一次就能對我擺出男朋友的架子。再見！」</p>
+<p>於是，兩人的故事就此展開。</p>
+<p>關於男女主角戀情描寫的部分，我覺得<a target="_blank" rel="noopener" href="https://www.pttweb.cc/bbs/H-GAME/M.1624366338.A.893">PTT網友的描寫</a>很到位。我想著墨的是千尋的成長。</p>
+<p>遊戲一開始有輸入男主角姓名的介面，在過程中也多半是以男主角的視角遊玩，但是故事真正的主角其實是千尋。故事開始時，千尋已察覺到自己總在逃避。即使外人認為她是因為價值觀不合而離職，千尋還是知道那只是保護自己的理由。</p>
+<p>她與男主角在慶功宴上意外相遇，又在下班後再度碰面。如果千尋在此時畏縮，那故事便結束了。然而，她卻用撒嬌的方式留住男主角，讓日常被打破，進入故事的時間。</p>
+<p>她與男主角做愛，看起來兩情相悅，卻回絕男主角的交往提議。她很重視與男主角的關係，也依賴這樣的關係才能積極度過明日，但她還是逃避了。</p>
+<p>隨著故事進行，從男主角的回憶裡，玩家逐漸了解千尋非常容易將他人的情緒是為自己的責任。父母吵架時，千尋會想要居中協調，保護雙親的關係以及年幼的妹妹。同學因為文化祭而衝突時，千尋也想要攬起責任，確保班級的和諧。</p>
+<p>然而，他人的情緒不可控，千尋也無可避免被影響，導致她在任何需要交際的環境裡都感到痛苦。偏偏千尋熱心付出的性格，讓她求職時偏向服務業，使境況更加難熬。</p>
+<p>早在高中時期，男主角便看出千尋的性格弱點，鼓勵她「其實妳沒有自己想像那麼重要」，這句話聽起來很刺耳，好像在貶低一個人的存在。不過對於總是把別人的話放在心裡的千尋而言，反倒是種解脫。</p>
+<p>這段互動也是兩人互有好感的開始，男主角欣賞千尋的積極和貼心，而千尋則感激男主角的鼓勵。這也是為什麼故事開頭的荒誕場景會成立，兩人早就彼此喜歡，只是因為沒有踏出那一步，才會錯過許多年，直到重逢後才延續了當年關係。</p>
+<p>隨著故事進行，在男主角的陪伴與開導下，千尋才不再恐懼，漸漸能向男主角提出要求，說她需要愛，需要陪伴。不過，性格本來就不容易一夕之間改變，在她與男主角交往初期，甚至還會同事關係而用她與男主角交往一事來調節職場氣氛。故事最後是用男主角過勞暈倒來化解這個矛盾，讓千尋重新定位人事物的重要性排序，而不會因為顧及他人而處處妥協。</p>
+<p>閒聊一下視覺小說這樣的媒介吧，這裡只記錄了關於千尋的成長，但故事其實還安排了很多兩人互動的搞笑或曖昧場景。</p>
+<p>像是一開始千尋拉住男主角的場景，兩人聊到後來快要沒話說，所以男主角打算搭末班車離開。這時，千尋露出一點點慌張的表情跟他說：「那個，我們再聊一下啦。」</p>
+<p>重新遊玩或錄製短片是一種選項，不過我更期待能用自己的話重現這樣的橋段，留下獨特的遊玩體驗。</p>
+<p>最後忍不住吐槽，故事裡面的 R18 場景都發生在下班，甚至加班後的午夜。我有時候只是因為塞車所以通勤時間增加二十分鐘，回到家骨頭和心智都快散了。千尋和男主角凌晨一點恩恩愛愛之後，隔天還能爬起來煮菜上班，該說愛真的太厲害了嗎😂。</p>
+<hr>
+<p>Smile（2021）。日向千尋的工作總是做不久。Shiravune</p>
 
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:lakich1993"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">lakich1993.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Lakich et al. (1993). Inversions disrupting the factor VIII gene are a common cause of severe haemophilia A. Nature genetics, 5(3), 236-241.<a href="#fnref:lakich1993" rev="footnote">↩</a></span></li></ol></div></div>
     </div>
 
     
@@ -392,21 +351,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+              <a href="/tags/acgn/" rel="tag"># acgn</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/enumerating-gene-orders/" rel="prev" title="ROSALIND｜Enumerating Gene Orders (PERM)">
-                  <i class="fa fa-angle-left"></i> ROSALIND｜Enumerating Gene Orders (PERM)
+                <a href="/sawako-2018-kinyobi-no-honya-san-fuyu-no-vanilla-ice/" rel="prev" title="《星期五的書店：冬天的香草冰淇淋》">
+                  <i class="fa fa-angle-left"></i> 《星期五的書店：冬天的香草冰淇淋》
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/enumerating-k-mers-lexicographically/" rel="next" title="ROSALIND | Enumerating k-mers Lexicographically (LEXF)">
-                  ROSALIND | Enumerating k-mers Lexicographically (LEXF) <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -482,7 +438,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/enumerating-oriented-gene-orderings/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/smile-2021-chihiro-himukai-always-walks-away/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 
 </body>
