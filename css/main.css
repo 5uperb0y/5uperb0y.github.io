@@ -1253,7 +1253,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffb588;
+    background: #0a2d4b;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2815,4 +2815,12 @@ header.header {
   .comments {
     padding: 10px 12px;
   }
+}
+.post-body ul {
+  list-style-type: disc;
+  margin-left: 1.5em;
+  padding-left: 0;
+}
+.post-body p {
+  margin-bottom: 1em;
 }

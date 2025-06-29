@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/about/index.html</loc>
+    
+    <lastmod>2025-06-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/the-simple-math-of-document-management-in-software-development/</loc>
     
     <lastmod>2025-06-29</lastmod>
@@ -57,15 +66,6 @@
   
   <url>
     <loc>https://5uperb0y.com/edit-distance/</loc>
-    
-    <lastmod>2025-06-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://5uperb0y.com/about/index.html</loc>
     
     <lastmod>2025-06-29</lastmod>
     
@@ -1613,7 +1613,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/index.html</loc>
+    <loc>https://5uperb0y.com/categories/index.html</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -1622,7 +1622,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/index.html</loc>
+    <loc>https://5uperb0y.com/tags/index.html</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -1668,14 +1668,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/astrobiology/</loc>
+    <loc>https://5uperb0y.com/tags/sf/</loc>
     <lastmod>2025-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/sf/</loc>
+    <loc>https://5uperb0y.com/tags/astrobiology/</loc>
     <lastmod>2025-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1717,13 +1717,6 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/microbiota/</loc>
-    <lastmod>2025-06-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://5uperb0y.com/tags/renpy/</loc>
     <lastmod>2025-06-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -1732,6 +1725,13 @@
   
   <url>
     <loc>https://5uperb0y.com/tags/metagenomics/</loc>
+    <lastmod>2025-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/tags/microbiota/</loc>
     <lastmod>2025-06-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
