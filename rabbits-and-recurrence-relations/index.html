@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="假設兔子需一個月性成熟，，性成熟後每對兔子每個月必繁殖 k 對子代，且不因任何因素死亡，則求 n 月後的兔子對數。  Given: Positive integers n≤40 and k≤5. Return: The total number of rabbit pairs that will be present after n months, if we begin with 1 pair">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ROSALIND｜Rabbits and Recurrence Relations (FIB)">
+<meta property="og:url" content="https://5uperb0y.com/rabbits-and-recurrence-relations/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="假設兔子需一個月性成熟，，性成熟後每對兔子每個月必繁殖 k 對子代，且不因任何因素死亡，則求 n 月後的兔子對數。  Given: Positive integers n≤40 and k≤5. Return: The total number of rabbit pairs that will be present after n months, if we begin with 1 pair">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-07-23T15:05:59.000Z">
+<meta property="article:modified_time" content="2025-07-23T15:04:40.018Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/rabbits-and-recurrence-relations/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/rabbits-and-recurrence-relations/","path":"rabbits-and-recurrence-relations/","title":"ROSALIND｜Rabbits and Recurrence Relations (FIB)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ROSALIND｜Rabbits and Recurrence Relations (FIB) | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/rabbits-and-recurrence-relations/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">186</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">程式實作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.1.</span> <span class="nav-text">Python 實作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.2.</span> <span class="nav-text">R 實作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.3.</span> <span class="nav-text">bash 實作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A4%87%E9%9B%9C%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">4.</span> <span class="nav-text">複雜度分析</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/bad-interpreter-no-such-file-or-directory/" rel="bookmark">
+        <time class="popular-posts-time">2020-02-19</time>
+        <br>
+      bad interpreter: No such file or directory
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-dna-nucleotides/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-01</time>
+        <br>
+      ROSALIND｜Counting DNA Nucleotides (DNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/enumerating-oriented-gene-orderings/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-06</time>
+        <br>
+      ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-03</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/leetcode-1-two-sum/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-15</time>
+        <br>
+      LeetCode 筆記｜1. Two Sum
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/rabbits-and-recurrence-relations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Rabbits and Recurrence Relations (FIB) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Rabbits and Recurrence Relations (FIB)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-07-23 23:05:59 / 修改時間：23:04:40" itemprop="dateCreated datePublished" datetime="2025-07-23T23:05:59+08:00">2025-07-23</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>假設兔子需一個月性成熟，，性成熟後每對兔子每個月必繁殖 k 對子代，且不因任何因素死亡，則求 n 月後的兔子對數。</p>
+<blockquote>
+<p>Given: Positive integers n≤40 and k≤5.</p>
+<p>Return: The total number of rabbit pairs that will be present after n months, if we begin with 1 pair and in each generation, every pair of reproduction-age rabbits produces a litter of k rabbit pairs (instead of only 1 pair).</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/fib/">https://rosalind.info/problems/fib/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><ul>
+<li>Sequence: 數列為項目的集合</li>
+<li>recurrence relation: 數列的後項可為前項所定義</li>
+<li>Fibonacci sequence: 費氏數列乃首項與次項為 1 ，第 n 項為 n - 1 項及 n - 2 項之和的遞迴數列</li>
+</ul>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>除了透過歸納既有數列的歸納遞迴關係以外，亦可利用符號輔助思考思考。首先，令 $F_n$ 為第 n 個月的兔子數，$R_n$ 為第 n 個月成熟的兔子數，$r_n$ 為第 n 個月未成熟的兔子數。則<br>$$ F_n &#x3D; R_n + r_n \tag{1}$$<br>是以第 n 個月成熟的兔子數可表示為<br>$$ R_n &#x3D; R_{n−1} + r_{n−1} &#x3D; F_{n-1} \tag{2}$$<br>又因每一世代可生產 $k$ 對兔子，所以第 n 個月未成熟的兔子數為<br>$$ r_n &#x3D; k⋅R_{n−1} \tag{3}$$<br>結合式子 (1)、 (2) 及 (3) 可得<br>$$ Fn &#x3D; R_{n−1} + r_{n−1} + k⋅R_{n−1} \tag{4}$$<br>由於<br>$$ R_{n−1} &#x3D; F_{n−2} \tag{5}$$<br>$$ F_{n−1} &#x3D; R_{n−1} + r_{n−1} \tag{6}$$<br>因此<br>$$ F_n &#x3D; F_{n−1} + k⋅F_{n−2} \tag{7}$$</p>
+<p>利用 python、R 或 bash 以遞迴方法求費氏數列的形式類似，只是要留意各自的 function 定義方法。</p>
+<h1 id="程式實作"><a href="#程式實作" class="headerlink" title="程式實作"></a>程式實作</h1><h2 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n, k</span>):</span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> fib(n - <span class="number">1</span>, k) + fib(n - <span class="number">2</span>, k) * k</span><br></pre></td></tr></table></figure>
+
+<h2 id="R-實作"><a href="#R-實作" class="headerlink" title="R 實作"></a>R 實作</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fib <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>n <span class="punctuation">,</span> k<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="keyword">if</span> <span class="punctuation">(</span>n <span class="operator">&lt;=</span> <span class="number">2</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="built_in">return</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">)</span></span><br><span class="line">  <span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="built_in">return</span><span class="punctuation">(</span>fib<span class="punctuation">(</span>n <span class="operator">-</span> <span class="number">1</span><span class="punctuation">,</span> k<span class="punctuation">)</span> <span class="operator">+</span> fib<span class="punctuation">(</span>n <span class="operator">-</span> <span class="number">2</span><span class="punctuation">,</span> k<span class="punctuation">)</span> <span class="operator">*</span> k<span class="punctuation">)</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="bash-實作"><a href="#bash-實作" class="headerlink" title="bash 實作"></a>bash 實作</h2><p>bash 的四則運算寫法可參考 <a target="_blank" rel="noopener" href="http://mirror.sars.tw/Bash_Shell_by_ols3/c860.html">Shell 設計入門：算術運算</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">fib</span></span> () &#123;</span><br><span class="line">    n=<span class="variable">$1</span></span><br><span class="line">    k=<span class="variable">$2</span></span><br><span class="line">    <span class="keyword">if</span> [[ <span class="variable">$n</span> -le 2 ]]</span><br><span class="line">    <span class="keyword">then</span></span><br><span class="line">         <span class="built_in">echo</span> 1</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">         <span class="built_in">echo</span> $[$(fib $[n-1] <span class="variable">$k</span>) + $[$(fib $[n-2] <span class="variable">$k</span>) * <span class="variable">$k</span>]]</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="複雜度分析"><a href="#複雜度分析" class="headerlink" title="複雜度分析"></a>複雜度分析</h1><p>雖然遞迴法的邏輯清晰，但以此法求費氏數列第 n 項的效率甚差。為了計算 $F_n$，得計算 $F_{n-1}$ 和 $F_{n-2}$，而求 $F_{n-1}$ 又需計算 $F_{n-2}$ 和 $F_{n-3}$，其中 $F_{n-2}$ 重複計算了兩次，而重複計算的次數又隨 n 值增加。簡言之，由於每項數列皆衍伸出額外兩項的計算，求解費氏數列的第 n 項需要近 2^n 步驟，所以時間複雜度為 O(2^n)。詳細解說可參考：<a target="_blank" rel="noopener" href="https://medium.com/appworks-school/%E5%88%9D%E5%AD%B8%E8%80%85%E5%AD%B8%E6%BC%94%E7%AE%97%E6%B3%95-%E5%BE%9E%E8%B2%BB%E6%B0%8F%E6%95%B8%E5%88%97%E8%AA%8D%E8%AD%98%E4%BD%95%E8%AC%82%E9%81%9E%E8%BF%B4-dea15d2808a3">初學者學演算法｜從費氏數列認識何謂遞迴</a></p>
+<p>相較之下，使用迴圈可以 O(n) 求費氏數列第 n 項（下為 python 程式碼）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">FibLoop</span>(<span class="params">n, k</span>):</span><br><span class="line">    s = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">    i = <span class="number">2</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; n:</span><br><span class="line">        s.append(s[i - <span class="number">1</span>] + s[i - <span class="number">2</span>] * k)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> s[n - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> FibLoop(<span class="number">5</span>, <span class="number">3</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/heatmaps-or-stacked-bar-charts-for-bacterial-community-composition/" rel="prev" title="要用熱圖還是堆疊柱狀圖呈現樣本的細菌群落組成？">
+                  <i class="fa fa-angle-left"></i> 要用熱圖還是堆疊柱狀圖呈現樣本的細菌群落組成？
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
