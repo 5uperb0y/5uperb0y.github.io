@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://5uperb0y.com/mendels-first-law/</loc>
+    <loc>https://5uperb0y.com/wright-2019-how-to-be-an-anticapitalist-in-the-twenty-first-century/</loc>
     
     <lastmod>2025-07-24</lastmod>
     
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://5uperb0y.com/mortal-fibonacci-rabbits/</loc>
+    
+    <lastmod>2025-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://5uperb0y.com/mendels-first-law/</loc>
     
     <lastmod>2025-07-24</lastmod>
     
@@ -1703,7 +1712,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/index.html</loc>
+    <loc>https://5uperb0y.com/tags/index.html</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -1712,7 +1721,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/index.html</loc>
+    <loc>https://5uperb0y.com/categories/index.html</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -1793,14 +1802,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/rosalind/</loc>
+    <loc>https://5uperb0y.com/tags/bioinformatics/</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/bioinformatics/</loc>
+    <loc>https://5uperb0y.com/tags/rosalind/</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1814,14 +1823,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/microbiota/</loc>
+    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
+    <loc>https://5uperb0y.com/tags/microbiota/</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
