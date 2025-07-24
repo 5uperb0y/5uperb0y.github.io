@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="假設兔子性成熟需一個月，性成熟後每對兔子每個月必繁殖一對子代，若兔子的壽命為 m 月，求第 n 月兔子對數。  Given: Positive integers n≤100 and m≤20. Return: The total number of pairs of rabbits that will remain after the n-th month if all rabbits live">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Mortal Fibonacci Rabbits (FIBD)">
+<meta property="og:url" content="https://5uperb0y.com/mortal-fibonacci-rabbits/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="假設兔子性成熟需一個月，性成熟後每對兔子每個月必繁殖一對子代，若兔子的壽命為 m 月，求第 n 月兔子對數。  Given: Positive integers n≤100 and m≤20. Return: The total number of pairs of rabbits that will remain after the n-th month if all rabbits live">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-07-24T12:18:11.000Z">
+<meta property="article:modified_time" content="2025-07-24T12:23:42.434Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/mortal-fibonacci-rabbits/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/mortal-fibonacci-rabbits/","path":"mortal-fibonacci-rabbits/","title":"Mortal Fibonacci Rabbits (FIBD)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mortal Fibonacci Rabbits (FIBD) | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/mortal-fibonacci-rabbits/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">187</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">解題思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">程式實作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.1.</span> <span class="nav-text">Python 實作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.2.</span> <span class="nav-text">R 實作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%8E%E8%AB%96"><span class="nav-number">4.</span> <span class="nav-text">討論</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%9A%84%E8%A7%A3%E9%A1%8C%E6%96%B9%E5%BC%8F"><span class="nav-number">4.1.</span> <span class="nav-text">其他的解題方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%95%B8%E8%A8%88%E7%AE%97%E6%99%82%E9%81%AD%E9%81%87%E7%9A%84%E6%B5%AE%E9%BB%9E%E6%95%B8%E8%AA%A4%E5%B7%AE"><span class="nav-number">4.2.</span> <span class="nav-text">大數計算時遭遇的浮點數誤差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-gmp-package"><span class="nav-number">4.3.</span> <span class="nav-text">R: gmp package</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rabbits-and-recurrence-relations/" rel="bookmark">
+        <time class="popular-posts-time">2025-07-23</time>
+        <br>
+      ROSALIND｜Rabbits and Recurrence Relations (FIB)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/edit-distance-alignment/" rel="bookmark">
+        <time class="popular-posts-time">2024-11-19</time>
+        <br>
+      ROSALIND｜Edit Distance Alignment (EDTA)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/mortal-fibonacci-rabbits/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Mortal Fibonacci Rabbits (FIBD) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mortal Fibonacci Rabbits (FIBD)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-07-24 20:18:11 / 修改時間：20:23:42" itemprop="dateCreated datePublished" datetime="2025-07-24T20:18:11+08:00">2025-07-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>假設兔子性成熟需一個月，性成熟後每對兔子每個月必繁殖一對子代，若兔子的壽命為 m 月，求第 n 月兔子對數。</p>
+<blockquote>
+<p>Given: Positive integers n≤100 and m≤20.</p>
+<p>Return: The total number of pairs of rabbits that will remain after the n-th month if all rabbits live for m months.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/fibd/">https://rosalind.info/problems/fibd/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>此處模仿先前克服 <a target="_blank" rel="noopener" href="https://summer-inequality.blogspot.com/2021/03/rabbits-and-recurrence-relations-id-fib.html">Rabbits and Recurrence Relations (ID: FIB)</a> 的推理方式來解題 [1]。令 $F_{n}$ 為第 n 個月的兔子總數數，$R_{n}$ 與 $r_{n}$ 分別為第 n 個月成熟和未成熟的兔子數。則</p>
+<p>$$ F_{n} &#x3D; R_{n} + r_{n} \tag{1} $$ </p>
+<p>其中第 n 個月的子代數取決於第 n - 1 個月的成熟兔子數，所以</p>
+<p>$$ r_{n} &#x3D; R_{n-1} \tag{2} $$</p>
+<p>假設 n &gt; m + 1，則 $R_{n}$ 則是第 n - 1 個月的成熟兔子數加上未成熟兔子數，再扣掉陽壽已盡的兔子數。其中，第 n 個月時，陽壽已盡的兔子數即為第 n - m 個月的未成熟兔子數。</p>
+<p>$$ R_{n} &#x3D; R_{n-1} + r_{n-1} - r_{n - m} \tag{3}$$</p>
+<p>將 (2) 和 (3) 代入 (1)，可得</p>
+<p>$$\begin{aligned}<br>F_{n} &amp;&#x3D; R_{n-1} + r_{n-1} - r_{n-m} +  R_{n-1} \<br>&amp;&#x3D; F_{n-1} - r_{n-m} + R_{n-1} \tag{4} \<br>\end{aligned}$$</p>
+<p>由於 (3)，$R_{n-1}$ 可表示為</p>
+<p>$$R_{n-1} &#x3D; R_{n-2} + r_{n-2} - r_{n - m - 1} \tag{5} $$</p>
+<p>因此，(4) 可轉換為</p>
+<p>$$\begin{aligned}<br>F_{n} &amp;&#x3D; F_{n-1} - r_{n-m} + R_{n-1}  \<br>&amp;&#x3D; F_{n-1} - r_{n-m}  + R_{n-2} + r_{n-2} - r_{n - m - 1} \<br>&amp;&#x3D; F_{n-1} + R_{n-2} + r_{n-2} - r_{n-m} - r_{n - m - 1} \<br>&amp;&#x3D; F_{n-1} + F_{n-2} - (r_{n-m} + r_{n - m - 1}) \tag{6}<br>\end{aligned}$$</p>
+<p>由於 (2)，$r_{n-m}$ 可表示為 $R_{n-m-1}$，因此</p>
+<p>$$\begin{aligned}<br>F_{n} &amp;&#x3D; F_{n-1} + F_{n-2} - (R_{n-m-1} + r_{n - m - 1}) \<br>&amp;&#x3D; F_{n-1} + F_{n-2} - F_{n-m-1} \tag{7}<br>\end{aligned}$$</p>
+<p>即第 n 月兔子對數為第 n - 1 和 n - 2 月兔子數之和，扣掉第 n - m - 1 個月的兔子數。</p>
+<p>前述推導的是 n &gt; m + 1 的狀況，而 n &lt; m + 1 （沒有兔子死掉，等同一般的費氏數列）和 n &#x3D; m + 1（最初的兔子死掉）的狀況如下：</p>
+<p>$$F_{n}&#x3D;<br>\begin{cases}<br>F_{n-1} + F_{n-2}&amp; \text{, if n &lt; m + 1}\<br>F_{n-1} + F_{n-2} - 1&amp; \text{, if n &#x3D; m + 1}<br>\end{cases}$$</p>
+<h1 id="解題思路"><a href="#解題思路" class="headerlink" title="解題思路"></a>解題思路</h1><p>處理實際案例時，隨著 $n$ 增加，$F_{n}$ 的數值也會增加。當輸入數值的位數超過儲存數值的位元限制，便無法保留所有位數的資訊。在此情況下，任何計算都會遺漏位數，導致浮點數誤差 [2]。</p>
+<p>Python 會自動處理大數運算碰到的浮點數誤差，但 R 要額外動用 gmp package（用於大數運算的套件）[3]，將原生的數據類型轉換為gmp定義的數據類型，才能避免同樣的問題。</p>
+<h1 id="程式實作"><a href="#程式實作" class="headerlink" title="程式實作"></a>程式實作</h1><h2 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h2><p>由於 Python 計數從 0 開始，所以條件判斷的比較對象為 m 而非 m + 1。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">fibd</span> (n, m):</span><br><span class="line">    fn = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n):</span><br><span class="line">        <span class="keyword">if</span> i &lt; m:</span><br><span class="line">            tmp = <span class="number">0</span></span><br><span class="line">        <span class="keyword">elif</span> i == m:</span><br><span class="line">            tmp = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            tmp = fn[i - m - <span class="number">1</span>]</span><br><span class="line">        fn.append(fn[i - <span class="number">1</span>] + fn[i - <span class="number">2</span>] - tmp)</span><br><span class="line">    <span class="keyword">return</span> fn[-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="R-實作"><a href="#R-實作" class="headerlink" title="R 實作"></a>R 實作</h2><p>R 的計數則從 1 開始，所以依照前一節的推論寫條件判斷即可。為了避免浮點數誤差，所有參與計算的數值皆須先用 as.bigz() 傳換為 bigz 類型。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>gmp<span class="punctuation">)</span></span><br><span class="line">fibd <span class="operator">&lt;-</span> <span class="keyword">function</span> <span class="punctuation">(</span>n<span class="punctuation">,</span> m<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  fn <span class="operator">&lt;-</span> as.bigz<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">  <span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">3</span><span class="operator">:</span>n<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="punctuation">(</span>i <span class="operator">&lt;=</span> m<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">      tmp <span class="operator">&lt;-</span> as.bigz<span class="punctuation">(</span><span class="number">0</span><span class="punctuation">)</span></span><br><span class="line">    <span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="keyword">if</span> <span class="punctuation">(</span>i <span class="operator">==</span> m <span class="operator">+</span> <span class="number">1</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">      tmp <span class="operator">&lt;-</span> as.bigz<span class="punctuation">(</span><span class="number">1</span><span class="punctuation">)</span></span><br><span class="line">    <span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="punctuation">&#123;</span></span><br><span class="line">      tmp <span class="operator">&lt;-</span> fn<span class="punctuation">[</span>i <span class="operator">-</span> m <span class="operator">-</span> <span class="number">1</span><span class="punctuation">]</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">    fn <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span>fn<span class="punctuation">,</span> fn<span class="punctuation">[</span>i <span class="operator">-</span> <span class="number">1</span><span class="punctuation">]</span> <span class="operator">+</span> fn<span class="punctuation">[</span>i <span class="operator">-</span> <span class="number">2</span><span class="punctuation">]</span> <span class="operator">-</span> tmp<span class="punctuation">)</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  <span class="built_in">return</span><span class="punctuation">(</span>fn<span class="punctuation">[</span>n<span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="討論"><a href="#討論" class="headerlink" title="討論"></a>討論</h1><h2 id="其他的解題方式"><a href="#其他的解題方式" class="headerlink" title="其他的解題方式"></a>其他的解題方式</h2><p>除了以代數運算來推論各個月兔子對數的關係以外，另一種策略是先追蹤全數兔子的年齡，再統計當前仍存活的兔子數量。<br>在以下的範例中，abeliangrape 以 list 儲存各年齡的兔子對數。其中，list 的序號對應年齡，而 list 的長度則反映最大壽命。即 list 的首項儲存 0 歲的兔子對數（子代對數）、次項儲存 1 歲的兔子對數、……以此類推。</p>
+<p>因為兔子在成熟後每個月都會繁殖一對子代，所以下個月的子代對數即為這個月所有成熟兔子的年齡和。這個概念對應到迴圈中的 <code>[sum(ages[1:])]</code>，即透過<code>[1:]</code> 排除未成熟的兔子。 而下個月的成熟兔子對數則為這個月的兔子對數，扣掉下個月壽命已盡的兔子對數。這個概念對應到迴圈中的 <code>ages[:-1]</code>，即透過 <code>[:-1]</code> 排除下個月將死亡的兔子。</p>
+<p>最後加總各年齡的兔子對數，即取得當前的兔子總數。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># by Rosalind user: abeliangrape (https://rosalind.info/users/abeliangrape/)</span><br><span class="line">def fib(n,k=1):</span><br><span class="line">  ages = [1] + [0]*(k-1)</span><br><span class="line">  for i in xrange(n-1):</span><br><span class="line">    ages = [sum(ages[1:])] + ages[:-1]</span><br><span class="line">  return sum(ages)</span><br></pre></td></tr></table></figure>
+
+<h2 id="大數計算時遭遇的浮點數誤差"><a href="#大數計算時遭遇的浮點數誤差" class="headerlink" title="大數計算時遭遇的浮點數誤差"></a>大數計算時遭遇的浮點數誤差</h2><p>浮點數誤差 (floating point number) 是指數值超出浮點數位元限制所致的資訊喪失。在 R 語言中，numeric 類別以雙精度浮點數 (double, double precision floating point numbers) 儲存數值，因此無論儲存或運算，numberic 類別皆無法保證第 16 位以後的數值精確。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; 11111111111111111</span><br><span class="line">[1] 11111111111111112</span><br><span class="line">&gt; 11111111111111111 + 11111111111111111</span><br><span class="line">[1] 22222222222222224</span><br></pre></td></tr></table></figure>
+
+<p>然而，浮點數誤差是欲以有限位元表示實數的必然限制，並非 R 或 Python 特有的狀況。目前，通用的 IEEE 754 分別定義了以 32 bit (單精度浮點數) 和 64 bit (雙精度浮點數) 儲存實數的規範，詳細介紹可參考<a target="_blank" rel="noopener" href="https://medium.com/starbugs/see-why-floating-point-error-can-not-be-avoided-from-ieee-754-809720b32175">從 IEEE 754 標準來看為什麼浮點誤差是無法避免的</a> 及 <a target="_blank" rel="noopener" href="https://davidhsu666.com/archives/ieee-754/">浮點數誤差IEEE-754</a>。</p>
+<p>以單精度浮點數為例，在儲存數值前，實數要先轉換為二進位制，再正規化為$\pm 1.mmmmm\times 2^e$形式。IEEE 754 將 32 bit 劃分為符號 (sign)、指數 (exponent) 和尾數 (mantissa) 區段，每個區段都儲存正規化形式的一部分。</p>
+<ul>
+<li>符號 (sign)：佔 1 bit，對應數值的正負號($\pm$)</li>
+<li>指數 (exponent)：佔 8 bit，對應正規化後的指數 ($e$)，此指數須以超127格式轉換為二進位制。</li>
+<li>尾數 (mantissa)：佔 23 bit，對應正規化後的小數 ($mmmmm$)</li>
+</ul>
+<p>由於位元數有限，凡位數大於浮點數儲存限制的數值皆無法完整保存。此時，除了與誤差共存或完全使用十進位計算以外，也可使用位元數較多的雙精度浮點數。雙精度浮點數有 64 bit，其中指數佔 11 bit，尾數佔 52 bit，能更精確地表達數值。</p>
+<p>不過，儘管雙精度浮點數原則上能表示 $2^{64}$ 種數值，但為了劃分符號、指數和尾數，實際上的有效位數僅有 52 個。 52 位數有 $2^{52}$ 種可能，換算為十進位得 4,503,599,627,370,496，共 16 位數。這解釋了為什麼 R 語言的 numeric 只能確保數值前 16 位的精確。</p>
+<p>除了大數值以外，具有無限小數的其他數值，浮點數也只能以近似值表示，例如，</p>
+<ul>
+<li>無限循環小數：$\frac{1}{7}$ $&#x3D;0.\overline{142857}$</li>
+<li>無理數（無限不循環小數）：$\pi$、$\sqrt{3}$、$e$</li>
+<li>轉換為二進位制後成為無限小數的數值：0.1、2.3、8.9</li>
+</ul>
+<p>關於浮點數誤差，還可參考以下文章：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/9508518/why-are-these-numbers-not-equal">Why are these numbers not equal?</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/588004/is-floating-point-math-broken/588014#588014">Is floating point math broken?</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">What Every Computer Scientist Should Know About Floating-Point Arithmetic</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.python.org/zh-tw/3/tutorial/floatingpoint.html">浮點數運算：問題與限制</a></li>
+</ul>
+<h2 id="R-gmp-package"><a href="#R-gmp-package" class="headerlink" title="R: gmp package"></a>R: gmp package</h2><p>Python 內建大數運算的功能，但 R 需要載入 <strong>gmp</strong> 套件來克服大數運算引發的浮點數誤差。R 原生的數據類型經轉換為 <strong>gmp</strong> 物件後，即可照常以二元運算子或function操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">as.bigz(num) # 整數</span><br><span class="line">as.bigq(num) # 有理數</span><br></pre></td></tr></table></figure>
+<p>須留意的是，此套件只保證 <strong>gmp</strong> 物件的精確性。若轉換前數值已超出浮點數儲存範圍，需要先將數字以 character 形式輸入，以免在轉換格式前便損失精確性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># input with numeric object</span><br><span class="line">&gt; as.bigz(11111111111111111)</span><br><span class="line">Big Integer (&#x27;bigz&#x27;) :</span><br><span class="line">[1] 11111111111111112</span><br><span class="line"></span><br><span class="line"># input with character object</span><br><span class="line">&gt; as.bigz(&quot;11111111111111111&quot;)</span><br><span class="line">Big Integer (&#x27;bigz&#x27;) :</span><br><span class="line">[1] 11111111111111111</span><br></pre></td></tr></table></figure>
+<p>關於 <strong>gmp</strong> 的介紹和操作，可參考 <a target="_blank" rel="noopener" href="https://www.r-bloggers.com/2019/08/really-large-numbers-in-r/">really large numbers in r</a> 和 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/23600569/r-wrong-arithmetic-for-big-numbers">R: wrong arithmetic for big numbers</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/rabbits-and-recurrence-relations/" rel="prev" title="ROSALIND｜Rabbits and Recurrence Relations (FIB)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Rabbits and Recurrence Relations (FIB)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
