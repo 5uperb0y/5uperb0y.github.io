@@ -19,24 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="對世界豎起中指吧">
+    <meta name="description" content="給定同型顯性合子、異型合子、同型隱性合子的數量，求隨機配對後子代呈現顯性表徵的機率  Given: Three positive integers k, m, and n, representing a population containing k+m+n organisms: k individuals are homozygous dominant for a factor, m are h">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="5uperb0y&#39;s blog">
-<meta property="og:url" content="https://5uperb0y.com/archives/2020/03/index.html">
+<meta property="og:title" content="Mendel&#39;s First Law (IPRB)">
+<meta property="og:url" content="https://5uperb0y.com/mendels-first-law/index.html">
 <meta property="og:site_name" content="5uperb0y&#39;s blog">
-<meta property="og:description" content="對世界豎起中指吧">
+<meta property="og:description" content="給定同型顯性合子、異型合子、同型隱性合子的數量，求隨機配對後子代呈現顯性表徵的機率  Given: Three positive integers k, m, and n, representing a population containing k+m+n organisms: k individuals are homozygous dominant for a factor, m are h">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-07-24T14:33:11.000Z">
+<meta property="article:modified_time" content="2025-07-24T13:47:32.148Z">
 <meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://5uperb0y.com/archives/2020/03/">
+<link rel="canonical" href="https://5uperb0y.com/mendels-first-law/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"archives/2020/03/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/mendels-first-law/","path":"mendels-first-law/","title":"Mendel's First Law (IPRB)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>歸檔 | 5uperb0y's blog</title>
+<title>Mendel's First Law (IPRB) | 5uperb0y's blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -73,12 +76,12 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js" defer></script>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/archives/2020/03/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/mendels-first-law/"}</script>
   <script src="/js/third-party/quicklink.js" defer></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
      crossorigin="anonymous"></script>
@@ -105,7 +108,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">5uperb0y's blog</h1>
+      <p class="site-title">5uperb0y's blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -158,7 +161,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -171,6 +174,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Python 實作</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -207,56 +211,145 @@
 
     
         <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/enumerating-oriented-gene-orderings/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-06</time>
+        <br>
+      ROSALIND｜Enumerating Oriented Gene Orderings (SIGN)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
         </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/mendels-first-law/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Mendel&#39;s First Law (IPRB) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mendel's First Law (IPRB)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-07-24 22:33:11 / 修改時間：21:47:32" itemprop="dateCreated datePublished" datetime="2025-07-24T22:33:11+08:00">2025-07-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定同型顯性合子、異型合子、同型隱性合子的數量，求隨機配對後子代呈現顯性表徵的機率</p>
+<blockquote>
+<p>Given: Three positive integers k, m, and n, representing a population containing k+m+n organisms: k individuals are homozygous dominant for a factor, m are heterozygous, and n are homozygous recessive.</p>
+<p>Return: The probability that two randomly selected mating organisms will produce an individual possessing a dominant allele (and thus displaying the dominant phenotype). Assume that any two organisms can mate.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/iprb/">https://rosalind.info/problems/iprb/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><ul>
+<li>factors（遺傳因子）：在孟德爾的假設中，個體的性狀透過遺傳因子傳遞。遺傳因子於個體中成對存在並且於繁衍時分離（the law of seqgregation）。分離的遺傳因子會與交配對象的遺傳因子配對而組成子代的遺傳因子，即子代會從親代各自繼承一個遺傳因子。</li>
+<li>homozygous（同型合子的）：決定某性狀的一對遺傳因子相同</li>
+<li>heterozygous（異型合子的）：決定某性狀的一對遺傳因子相異</li>
+<li>dominant（顯性）：該遺傳因子決定之性狀可在異型合子個體表現</li>
+<li>recessive（隱性）：該遺傳因子決定之性狀只在同型合子個體才會表現</li>
+<li>phenotype（表現型）：個體的性狀類別</li>
+<li>genotype（基因型）：個體的遺傳因子類別</li>
+</ul>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>子代呈現顯性表徵的機率為「1 - 子代呈現隱性表徵的機率」，</p>
+<p>$$ P_{dom} &#x3D; 1 - P_{rec}$$</p>
+<p>而子代呈現隱性表徵有三種情形，</p>
+<ul>
+<li>$P_{nn}$: homozygous recessive 個體彼此配對，子代 100% 呈隱性表徵</li>
+<li>$P_{mm}$: heterozygous 個體彼此配對，子代 25% 呈隱性表徵</li>
+<li>$P_{mn}$: heterozygous 個體與 homozygous recessive 個體配對，子代 50% 呈隱性表徵</li>
+</ul>
+<p>子代屬於這三種情形的機率為「各類親代彼此配對的機率×隱性子代的比率」，即<br>$$N &#x3D; k + m + n$$</p>
+<p>$$P_{nn} &#x3D; \frac{n(n-1)}{N(N-1)} * 100%$$</p>
+<p>$$P_{mm} &#x3D;  \frac{m(m-1)}{N(N-1)} * 25%$$</p>
+<p>$$P_{mn} &#x3D;  \frac{nm}{N(N-1)} * 2 * 50% &#x3D; nm&#x2F;N(N-1)$$</p>
+<p>$$P_{rec} &#x3D; P_{nn} + P_{mm} + P_{mn}$$</p>
+<p>$$P_{dom} &#x3D; 1 - \frac{n(n-1) +  0.25m(m-1) + nm)}{N(N-1)}$$</p>
+<h1 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h1><p>這題是單純的機率問題，僅用到 python 的四則運算。唯二要留意的是，要記得配對是從全數個體任意取二，個體總數會隨抽取下降；其次，heterozygous 個體與 homozygous recessive 個體配對有兩種可能，要計算進去。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">iprb</span>(<span class="params">k, m, n</span>):</span><br><span class="line">        N = <span class="built_in">float</span>(k + m + n)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> - ( n*(n-<span class="number">1</span>) + n*m + <span class="number">0.25</span>*m*(m-<span class="number">1</span>) )/( N*(N-<span class="number">1</span>) )</span><br><span class="line"><span class="built_in">print</span> iprb(<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
         
-        <span class="collection-header">非常好! 目前共有 188 篇文章。 繼續努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2020<span class="collection-year-count">13</span></span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-03-04T11:31:59+08:00"
-              content="2020-03-04">
-          03-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/error-in-using-alpha-function-within-microbiome-r-library/" itemprop="url">
-            <span itemprop="name">Error in alpha(pseq, index = "all") : unused argument (index = "all")</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/mortal-fibonacci-rabbits/" rel="prev" title="Mortal Fibonacci Rabbits (FIBD)">
+                  <i class="fa fa-angle-left"></i> Mortal Fibonacci Rabbits (FIBD)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>

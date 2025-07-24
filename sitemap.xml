@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/mendels-first-law/</loc>
+    
+    <lastmod>2025-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/mortal-fibonacci-rabbits/</loc>
     
     <lastmod>2025-07-24</lastmod>
@@ -1694,7 +1703,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/index.html</loc>
+    <loc>https://5uperb0y.com/categories/index.html</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -1703,7 +1712,7 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/categories/index.html</loc>
+    <loc>https://5uperb0y.com/tags/index.html</loc>
     
     <lastmod>2024-01-01</lastmod>
     
@@ -1805,14 +1814,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
+    <loc>https://5uperb0y.com/tags/microbiota/</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/microbiota/</loc>
+    <loc>https://5uperb0y.com/tags/metagenomics/</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1861,14 +1870,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/history/</loc>
+    <loc>https://5uperb0y.com/tags/life/</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/life/</loc>
+    <loc>https://5uperb0y.com/tags/history/</loc>
     <lastmod>2025-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
