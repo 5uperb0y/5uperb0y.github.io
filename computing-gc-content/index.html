@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="給定至多含 10 條 DNA 序列之 fasta 檔，求 GC 比最高者及其 GC 比。  Given: At most 10 DNA strings in FASTA format (of length at most 1 kbp each). Return: The ID of the string having the highest GC-content, followed by the">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ROSALIND｜Computing GC Content (GC)">
+<meta property="og:url" content="https://5uperb0y.com/computing-gc-content/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="給定至多含 10 條 DNA 序列之 fasta 檔，求 GC 比最高者及其 GC 比。  Given: At most 10 DNA strings in FASTA format (of length at most 1 kbp each). Return: The ID of the string having the highest GC-content, followed by the">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-07-25T12:41:56.000Z">
+<meta property="article:modified_time" content="2025-07-25T12:22:22.139Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/computing-gc-content/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/computing-gc-content/","path":"computing-gc-content/","title":"ROSALIND｜Computing GC Content (GC)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ROSALIND｜Computing GC Content (GC) | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/computing-gc-content/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">191</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GC-content"><span class="nav-number">1.1.</span> <span class="nav-text">GC-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FASTA-format"><span class="nav-number">1.2.</span> <span class="nav-text">FASTA format</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">程式實作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.1.</span> <span class="nav-text">Python 實作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-%E5%AF%A6%E4%BD%9C"><span class="nav-number">3.2.</span> <span class="nav-text">R 實作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E6%96%87%E7%8D%BB"><span class="nav-number">4.</span> <span class="nav-text">參考文獻</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/what-is-a-fasta-index-file/" rel="bookmark">
+        <time class="popular-posts-time">2024-10-15</time>
+        <br>
+      Fasta index file (.fai) 是什麼？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/transcribing-dna-into-rna/" rel="bookmark">
+        <time class="popular-posts-time">2022-02-03</time>
+        <br>
+      ROSALIND｜Transcribing DNA into RNA (RNA)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/edit-distance/" rel="bookmark">
+        <time class="popular-posts-time">2024-07-20</time>
+        <br>
+      ROSALIND｜Edit Distance (EDIT)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/finding-a-shared-motif/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-11</time>
+        <br>
+      ROSALIND | Finding a Shared Motif (LCSM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-dna-nucleotides/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-01</time>
+        <br>
+      ROSALIND｜Counting DNA Nucleotides (DNA)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/computing-gc-content/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Computing GC Content (GC) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Computing GC Content (GC)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-07-25 20:41:56 / 修改時間：20:22:22" itemprop="dateCreated datePublished" datetime="2025-07-25T20:41:56+08:00">2025-07-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定至多含 10 條 DNA 序列之 fasta 檔，求 GC 比最高者及其 GC 比。</p>
+<blockquote>
+<p>Given: At most 10 DNA strings in FASTA format (of length at most 1 kbp each).</p>
+<p>Return: The ID of the string having the highest GC-content, followed by the GC-content of that string. Rosalind allows for a default error of 0.001 in all decimal answers unless otherwise stated; please see the note on absolute error below.</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><h2 id="GC-content"><a href="#GC-content" class="headerlink" title="GC-content"></a>GC-content</h2><p>GC-content 是核酸中，Guanine（鳥糞嘌呤）和 Cytosine（胞嘧啶）的占比。由於鹼基層疊和氫鍵數量等因素， A-T 配對不若 G-C 配對穩定 [1]。因此，GC-content 可以粗略地反映核酸的穩定性並且應用於以下場合，</p>
+<ul>
+<li>分子演化學：由於 (1) 鹼基突變為彼此的機率不一 (Substitution Biases)，而且 (2) GC-content 與序列的穩定性有關，序列的 GC-content 可能反映了該物種演化的資訊。</li>
+<li>評估樣本汙染：依照經驗法則，同一物種的基因序列之 GC-content 呈鐘形分布 [2]，若定序資料中 GC-content 呈多峰分布，可能意味著樣本中含有其他物種的序列汙染，或是存在某些大量表現的基因影響了分布。</li>
+<li>預測黏合溫度（annealing temperature）：黏合溫度是 P１CR 時能讓 primer 與目標序列黏合的溫度。 由於 primer 與標的序列配對的穩定度越高，黏合溫度也越高，所以 GC-content 可作為推估黏合溫度的參數。</li>
+</ul>
+<h2 id="FASTA-format"><a href="#FASTA-format" class="headerlink" title="FASTA format"></a>FASTA format</h2><p>FASTA format 用於紀錄核酸或胜肽的序列。在 FASTA format 中，一條序列的紀錄包含 (1) 以 “&gt;” 起頭的描述列，紀錄序列的名稱、辨識碼或來源等資訊。(2) 由鹼基或胺基酸字符組成的序列字串（鹼基和胺基酸字符的 IUPAC 命名，可參考<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Nucleic_acid_notation">維基百科的簡介</a>）。</p>
+<p>典型的 FASTA format 如下，由於每列的字串長度依慣例不超過 80 個字元（這可能跟方便在終端介面閱讀有關），資料處理時要留意較長的序列往往被換行符分隔。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; OTU1</span><br><span class="line">ATCGATCGATCGATCGATCAGATATATGATGATAGATCCCCATGATAGATCGATCGATCGATCGATCAGATATATGATGA</span><br><span class="line">ATCGACGT</span><br><span class="line">&gt; OTU2</span><br><span class="line">ATCGATCGGGCGATCGATCAGATATATGACGCGAAATCCCCATGATAG</span><br></pre></td></tr></table></figure>
+
+<p>以 FASTA format 儲存的文字檔案常有 .fa、.fna、.fasta 等副檔名。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>此題可分為三個部分：讀取 fasta 檔案、計算 GC 比、求 GC 比最高的序列，對應的資料處技巧分別為字串擷取、字符統計和取極值。其中，讀取 fasta 檔用於任何需要處理序列的步驟，例如篩選 OTUs&#x2F;ASVs 或註解分類資訊。由於 fasta 檔案的描述列以 “&gt;” 開頭，可藉由 “&gt;” 符號擷取序列編號及描述，再拼接夾在描述列之間的字串，以取得完整的序列。</p>
+<p>取得字串後，可應用 Counting 所學的技術，計算序列當中 G 和 C 的數量之和，再除以序列的長度（即鹼基總數）即可獲得 GC 比。最後透過連續的比較，取得 GC 比最大的序列及其 GC 比。</p>
+<h1 id="程式實作"><a href="#程式實作" class="headerlink" title="程式實作"></a>程式實作</h1><h2 id="Python-實作"><a href="#Python-實作" class="headerlink" title="Python 實作"></a>Python 實作</h2><p>在 python 中可用 count() 計算序列中 G 和 C 的數量，再用 len 統計序列長度。隨後計算 GC 比例時要留意，在 python 2 當中，若除數與被除數皆為整數，除法運算子 “&#x2F;“ 預設會無條件捨去結果的小數（即把結果視同整數）。</p>
+<p>因此，若要取得含小數的近似解，需先將除數與被除數其一轉變為浮點數再計算。不過除法的這項特性已在 python 3 更動，若使用 “&#x2F;“ 會回傳具浮點數的近似解，而使用 “&#x2F;&#x2F;“ 才會獲得無條件捨去小數的結果。至於求餘數或長除法等其他除法功能，可參考 <a target="_blank" rel="noopener" href="https://zoejoyuliao.medium.com/%E6%AF%94%E8%BC%83-python-%E7%9A%84-%E8%88%87-divmod-9f71786c0d33">比較 Python 與除法相關的運算子與函式 – &#x2F;、&#x2F;&#x2F;、% 與 divmod</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">gc</span>(<span class="params">seq</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">100</span> * <span class="built_in">float</span>(seq.count(<span class="string">&quot;G&quot;</span>) + seq.count(<span class="string">&quot;C&quot;</span>)) / <span class="built_in">len</span>(seq)</span><br></pre></td></tr></table></figure>
+
+<p>dictionary 的 key 和 value 可用於記錄序列的名稱和字串 。首先以 open() 開啟 fasta 檔案，接著建立空的 dictionary，再一列一列讀取 fasta 檔案的內容。接著，凡是碰到以 “&gt;” 開頭者，即擷取 “&gt;” 與 “\n”（換行號）之間的字串作為序列辨識碼。由於鹼基字串位於 fasta 檔以 “&gt;” 開頭的描述列之間，所以合併讀取到下一個 “&gt;” 之前的內容，即可獲得該序列的鹼基字串。</p>
+<p>此處用到的 funtion 分別為，</p>
+<ul>
+<li>startswith(str)：判斷字串是否以指定字符串為首，此處用於判斷讀取的列是否為描述列</li>
+<li>lstrip(str)：從字串左側移除指定字符串，此處用於移除描述列的 “&gt;” 符號</li>
+<li>replace(old, new): 以 new（新字符串）取代字串中的 old（舊字符串），此處用於移除 “\n”</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Input the path to fasta file</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_fasta</span> (path):</span><br><span class="line">    f = <span class="built_in">open</span>(path,  <span class="string">&quot;r&quot;</span>)</span><br><span class="line">    seqs = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="keyword">if</span> line.startswith(<span class="string">&quot;&gt;&quot;</span>):</span><br><span class="line">            ID = line.lstrip(<span class="string">&quot;&gt;&quot;</span>).replace(<span class="string">&quot;\n&quot;</span>, <span class="string">&quot;&quot;</span>)</span><br><span class="line">            seqs[ID] = <span class="string">&quot;&quot;</span> </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            seqs[ID] = seqs[ID] + line.replace(<span class="string">&quot;\n&quot;</span>, <span class="string">&quot;&quot;</span>)       </span><br><span class="line">    <span class="keyword">return</span> seqs</span><br></pre></td></tr></table></figure>
+
+<p>求 GC 比最大值的方法是先假設最大的 GC 比為 0，接著比較各序列的 GC 比是否大於假設的最大 GC 比。若是，則更新假設；若否，則維持假設。一旦所有序列的 GC 比都比較過，即可獲得此檔案的最大 GC 比。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">seqs = read_fasta(<span class="string">&quot;seqs.fasta&quot;</span>)</span><br><span class="line">maxGC = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> seqs:</span><br><span class="line">    <span class="keyword">if</span> maxGC &lt; gc(seqs[s]):</span><br><span class="line">        ID = s</span><br><span class="line">        maxGC = gc(seqs[s])     </span><br><span class="line"><span class="built_in">print</span> ID</span><br><span class="line"><span class="built_in">print</span> maxGC</span><br></pre></td></tr></table></figure>
+
+<h2 id="R-實作"><a href="#R-實作" class="headerlink" title="R 實作"></a>R 實作</h2><p>R 有其獨特的向量式運算，亦即諸如四則運算或字符查找等 function 可直接套用在向量的每個項目。由於向量運算的效率往往高於迴圈，所以此處擷取 seqinr 套件的 read.fasta() 的程式碼（seqinr 是專門用於處理序列資料的套件），嘗試以向量式運算求出 GC 比最大的序列。</p>
+<p>首先，以 readLines() 讀取 fasta 檔案的所有內容並存為字串向量。接著，使用 grep() 搜尋以 “&gt;” 開頭的描述列之索引號，並以 gsub 移除 “&gt;” 取回序列辨識碼。最後利用 paste() 連接位於描述列的索引號之間的鹼基字串。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">read_fasta <span class="operator">&lt;-</span> <span class="keyword">function</span> <span class="punctuation">(</span>path<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  lines <span class="operator">&lt;-</span> readLines<span class="punctuation">(</span>path<span class="punctuation">)</span></span><br><span class="line">  ind <span class="operator">&lt;-</span> grep<span class="punctuation">(</span><span class="string">&quot;&gt;&quot;</span><span class="punctuation">,</span> lines<span class="punctuation">)</span></span><br><span class="line">  start <span class="operator">&lt;-</span> ind <span class="operator">+</span> <span class="number">1</span></span><br><span class="line">  end <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="punctuation">(</span>ind <span class="operator">-</span> <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">[</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="built_in">length</span><span class="punctuation">(</span>lines<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">  seqs <span class="operator">&lt;-</span> lapply<span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="built_in">length</span><span class="punctuation">(</span>ind<span class="punctuation">)</span><span class="punctuation">,</span> <span class="keyword">function</span><span class="punctuation">(</span>i<span class="punctuation">)</span> paste<span class="punctuation">(</span>lines<span class="punctuation">[</span>start<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="operator">:</span>end<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">]</span><span class="punctuation">,</span> collapse <span class="operator">=</span> <span class="string">&quot;&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">  <span class="built_in">names</span><span class="punctuation">(</span>seqs<span class="punctuation">)</span> <span class="operator">&lt;-</span> gsub<span class="punctuation">(</span><span class="string">&quot;&gt;&quot;</span><span class="punctuation">,</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span> lines<span class="punctuation">[</span>ind<span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line">  <span class="built_in">return</span><span class="punctuation">(</span>seqs<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>而計算 GC 比方面，我則模仿 python 的 count()，建立了計算字串中給定字符出現頻率的 function。簡言之，透過 gregexpr() 識別給定字符在字串中出現的位置，再計算回傳位置的總數得出字符出現頻率。</p>
+<p>由於 gregexpr() 以 list() 回傳結果，所以要以 lengths() 而非 length() 計算回傳值的長度。若要使用 length()，需要以 unlist() 把 list 型式的回傳結果轉變為向量再計算。</p>
+<ul>
+<li>length: 計算向量長度</li>
+<li>lengths: 計算 list 中，每個元素的長度</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">count <span class="operator">&lt;-</span> <span class="keyword">function</span> <span class="punctuation">(</span>str<span class="punctuation">,</span> char<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="built_in">return</span><span class="punctuation">(</span>lengths<span class="punctuation">(</span>gregexpr<span class="punctuation">(</span>char<span class="punctuation">,</span> str<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">  <span class="comment"># alternative</span></span><br><span class="line">  <span class="comment"># return(length(unlist(gregexpr(char, str))))</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">count_GC <span class="operator">&lt;-</span> <span class="keyword">function</span> <span class="punctuation">(</span>seq<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="built_in">return</span><span class="punctuation">(</span><span class="number">100</span> <span class="operator">*</span> <span class="punctuation">(</span>count<span class="punctuation">(</span>seq<span class="punctuation">,</span> <span class="string">&quot;G&quot;</span><span class="punctuation">)</span> <span class="operator">+</span> count<span class="punctuation">(</span>seq<span class="punctuation">,</span> <span class="string">&quot;C&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">/</span> nchar<span class="punctuation">(</span>seq<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>最後計算不同序列的 GC 比，以 which.max() 找出 GC 比最大者的索引值取出答案。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">seqs <span class="operator">&lt;-</span> read_fasta<span class="punctuation">(</span><span class="string">&quot;./test.fasta&quot;</span><span class="punctuation">)</span></span><br><span class="line">GC <span class="operator">&lt;-</span> lapply<span class="punctuation">(</span>seqs<span class="punctuation">,</span> count_GC<span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span>GC<span class="punctuation">[</span>which.max<span class="punctuation">(</span>GC<span class="punctuation">)</span><span class="punctuation">]</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="參考文獻"><a href="#參考文獻" class="headerlink" title="參考文獻"></a>參考文獻</h1><ol>
+<li><p>Yakovchuk et al. (2006). Base-stacking and base-pairing contributions into thermal stability of the DNA double helix. Nucleic acids research, 34(2), 564-574.</p>
+</li>
+<li><p>Romiguier et al. (2010). Contrasting GC-content dynamics across 33 mammalian genomes: relationship with life-history traits and chromosome sizes. Genome research, 20(8), 1001-1009.</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/le-guin-1975-the-winds-twelve-quarters/" rel="prev" title="《風的十二個方位：娥蘇拉．勒瑰恩短篇小說選》">
+                  <i class="fa fa-angle-left"></i> 《風的十二個方位：娥蘇拉．勒瑰恩短篇小說選》
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
