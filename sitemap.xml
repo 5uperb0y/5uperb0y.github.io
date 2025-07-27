@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://5uperb0y.com/majority-element/</loc>
+    
+    <lastmod>2025-07-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://5uperb0y.com/binary-search/</loc>
     
     <lastmod>2025-07-27</lastmod>
@@ -1850,14 +1859,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/writing/</loc>
+    <loc>https://5uperb0y.com/tags/ecology/</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/ecology/</loc>
+    <loc>https://5uperb0y.com/tags/writing/</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1934,14 +1943,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/origins-of-life/</loc>
+    <loc>https://5uperb0y.com/tags/zatsugaku/</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/zatsugaku/</loc>
+    <loc>https://5uperb0y.com/tags/origins-of-life/</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1955,14 +1964,14 @@
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/vim/</loc>
+    <loc>https://5uperb0y.com/tags/acgn/</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://5uperb0y.com/tags/acgn/</loc>
+    <loc>https://5uperb0y.com/tags/vim/</loc>
     <lastmod>2025-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
