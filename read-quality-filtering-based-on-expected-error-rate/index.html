@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Robert Edgar 是 UPARSE 和 UNOISE 等演算法的發明人，也是 Usearch 軟體的開發者，他的網站介紹了標識基因分析的重要概念。本文統整 Edgar 討論序列品質篩選的文章，介紹品質篩選方法和原則。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="定序產物的預期錯誤數與品質篩選">
+<meta property="og:url" content="https://5uperb0y.com/read-quality-filtering-based-on-expected-error-rate/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="Robert Edgar 是 UPARSE 和 UNOISE 等演算法的發明人，也是 Usearch 軟體的開發者，他的網站介紹了標識基因分析的重要概念。本文統整 Edgar 討論序列品質篩選的文章，介紹品質篩選方法和原則。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/read-quality-filtering-based-on-expected-error-rate/read-quality-filtering-based-on-expected-error-rate_1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/read-quality-filtering-based-on-expected-error-rate/read-quality-filtering-based-on-expected-error-rate_2.png">
+<meta property="article:published_time" content="2025-08-09T02:52:36.000Z">
+<meta property="article:modified_time" content="2025-08-09T07:17:23.394Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/read-quality-filtering-based-on-expected-error-rate/read-quality-filtering-based-on-expected-error-rate_1.png">
+
+
+<link rel="canonical" href="https://5uperb0y.com/read-quality-filtering-based-on-expected-error-rate/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/read-quality-filtering-based-on-expected-error-rate/","path":"read-quality-filtering-based-on-expected-error-rate/","title":"定序產物的預期錯誤數與品質篩選"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>定序產物的預期錯誤數與品質篩選 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/read-quality-filtering-based-on-expected-error-rate/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">206</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%93%81%E8%B3%AA%E7%AF%A9%E9%81%B8%E7%9A%84%E7%9B%AE%E7%9A%84%E6%98%AF%E7%A7%BB%E9%99%A4%E7%84%A1%E6%B3%95%E6%A0%A1%E6%AD%A3%E7%9A%84%E5%81%BD%E5%BA%8F%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">品質篩選的目的是移除無法校正的偽序列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E5%93%81%E8%B3%AA%E5%88%86%E6%95%B8%E7%AF%A9%E9%81%B8%E5%81%BD%E5%BA%8F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text">利用品質分數篩選偽序列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%81%E8%B3%AA%E5%88%86%E6%95%B8%E4%BB%A3%E8%A1%A8%E5%AE%9A%E5%BA%8F%E7%B5%90%E6%9E%9C%E5%87%BA%E9%8C%AF%E7%9A%84%E6%A9%9F%E7%8E%87"><span class="nav-number">2.1.</span> <span class="nav-text">品質分數代表定序結果出錯的機率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E5%9D%87%E5%93%81%E8%B3%AA%E5%88%86%E6%95%B8%E4%B8%8D%E7%AD%89%E5%90%8C%E9%8C%AF%E8%AA%A4%E7%9A%84%E9%B9%BC%E5%9F%BA%E6%95%B8%E9%87%8F"><span class="nav-number">2.2.</span> <span class="nav-text">平均品質分數不等同錯誤的鹼基數量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%8C%AF%E8%AA%A4%E9%B9%BC%E5%9F%BA%E6%95%B8%E9%87%8F%E7%9A%84%E6%9C%9F%E6%9C%9B%E5%80%BC%E8%BC%83%E7%9B%B4%E8%A7%80"><span class="nav-number">2.3.</span> <span class="nav-text">錯誤鹼基數量的期望值較直觀</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%9D%E5%93%81%E8%B3%AA%E5%88%86%E6%95%B8%E7%AF%A9%E9%81%B8%E7%9A%84%E9%99%90%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">依品質分數篩選的限制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%90%86%E8%AB%96%E8%A8%88%E7%AE%97%E5%BE%80%E5%BE%80%E4%BD%8E%E4%BC%B0%E5%BA%8F%E5%88%97%E7%9A%84%E9%8C%AF%E8%AA%A4"><span class="nav-number">3.1.</span> <span class="nav-text">理論計算往往低估序列的錯誤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%A1%E6%B3%95%E6%94%B9%E5%96%84%E5%85%B6%E4%BB%96%E5%9B%A0%E7%B4%A0%E9%80%A0%E6%88%90%E7%9A%84%E8%AA%A4%E5%B7%AE"><span class="nav-number">3.2.</span> <span class="nav-text">無法改善其他因素造成的誤差</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%96%BC%E5%BA%8F%E5%88%97%E5%87%BA%E7%8F%BE%E7%9A%84%E9%A0%BB%E7%8E%87%E7%AF%A9%E9%81%B8"><span class="nav-number">4.</span> <span class="nav-text">基於序列出現的頻率篩選</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%BA%8F%E9%8C%AF%E8%AA%A4%E7%94%A2%E7%94%9F%E7%9A%84%E5%81%BD%E5%BA%8F%E5%88%97%E6%98%AF-singletons"><span class="nav-number">4.1.</span> <span class="nav-text">定序錯誤產生的偽序列是 singletons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8D%A8%E7%89%B9%E5%BA%8F%E5%88%97%E5%BE%80%E5%BE%80%E6%98%AF%E5%81%BD%E5%BA%8F%E5%88%97"><span class="nav-number">4.2.</span> <span class="nav-text">獨特序列往往是偽序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%95%B8-Singletons-%E6%98%AF%E5%81%BD%E5%BA%8F%E5%88%97"><span class="nav-number">4.3.</span> <span class="nav-text">多數 Singletons 是偽序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4-singletons-%E5%88%A9%E5%A4%A7%E6%96%BC%E5%BC%8A"><span class="nav-number">4.4.</span> <span class="nav-text">移除 singletons 利大於弊</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A8%AD%E5%AE%9A%E5%93%81%E8%B3%AA%E9%81%8E%E6%BF%BE%E7%9A%84%E5%8F%83%E6%95%B8%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">如何設定品質過濾的參數？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">6.</span> <span class="nav-text">結論</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><span class="nav-number">7.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/why-illumina-read-quality-drops-at-ends/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-05</time>
+        <br>
+      為什麼 Illumina 平台的定序品質在序列前端和末端較差？
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/read-quality-filtering-based-on-expected-error-rate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="定序產物的預期錯誤數與品質篩選 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          定序產物的預期錯誤數與品質篩選
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-08-09 10:52:36 / 修改時間：15:17:23" itemprop="dateCreated datePublished" datetime="2025-08-09T10:52:36+08:00">2025-08-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Robert Edgar 是 UPARSE 和 UNOISE 等演算法的發明人，也是 Usearch 軟體的開發者，<a target="_blank" rel="noopener" href="https://www.drive5.com/usearch/manual/topics.html">他的網站</a>介紹了標識基因分析的重要概念。本文統整 Edgar 討論序列品質篩選的文章，介紹品質篩選方法和原則。</p>
+<span id="more"></span>
+
+<h1 id="品質篩選的目的是移除無法校正的偽序列"><a href="#品質篩選的目的是移除無法校正的偽序列" class="headerlink" title="品質篩選的目的是移除無法校正的偽序列"></a>品質篩選的目的是移除無法校正的偽序列</h1><p>Illumina 和 Roche 454 定序儀皆採邊合成編定序，並偵測添加鹼基發出的螢光訊號來辨識鹼基種類。假如螢光訊號因某些原因變得模糊，儀器便無法準確讀取定序結果，導致定序品質低落。</p>
+<p>以 Illumina 為例，隨著定序時間增加，聚合酶降解和反應速率差會導致待測序列的延長速率不同調，以致於相同定序簇 (sequencing cluster) 的鹼基發出不同螢光，使定序的正確率下降。</p>
+<p>由於標識基因分析仰賴局部的 16S rRNA 基因以辨識物種（例如 V4 變異區，長約 250 bp），定序錯誤產生的偽序列會混淆正確序列，誇大樣本內真實存在的序列種類數。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/read-quality-filtering-based-on-expected-error-rate/read-quality-filtering-based-on-expected-error-rate_1.png"><br>（每個圓圈代表一種序列，圓圈大小則是該序列的讀數，圓圈間距代表序列相似度。定序錯誤產生的偽序列可能源於與之相似而且數量豐富的其他序列。）</p>
+<p>假如定序的品質很好，可以預期偽序列的數量稀少而且其與真實序列僅有少量差異。此時，採聚類 (clustering) 或是降噪 (denoising) 等方法，能將偽序列合併到或復原為真實序列。</p>
+<p>然而，一旦偽序列過多 ( A ) 或是錯誤太嚴重 ( B )，兩種方法皆無法校正定序錯誤導致的偽序列，只能移除低品質序列，以免影響往後的分析。</p>
+<h1 id="利用品質分數篩選偽序列"><a href="#利用品質分數篩選偽序列" class="headerlink" title="利用品質分數篩選偽序列"></a>利用品質分數篩選偽序列</h1><h2 id="品質分數代表定序結果出錯的機率"><a href="#品質分數代表定序結果出錯的機率" class="headerlink" title="品質分數代表定序結果出錯的機率"></a>品質分數代表定序結果出錯的機率</h2><p>序列的品質可以用品質分數 ( quality score, Q ) 評估，不同儀器的品質分數含意不同。在 Illumina 定序平台裡，品質分數是定序儀誤判鹼基種類的機率。品質分數與錯誤率 ( error probability, P ) 的關係為 Q &#x3D; -10 log( P )，值閾從 2( P &#x3D; 63 %) 到 40 ( P &#x3D; 0.01 %)。</p>
+<p>Trimmomatic、Cutadapt 和 BBduk 等工具皆能依據平均品質分數篩選低品質序列，例如移除平均品質分數低於 15 (P &#x3D; 3 %) 的序列，以免使用 97 % 相似度聚類 OTUs 時，誤認這些序列為新的 OTUs。</p>
+<h2 id="平均品質分數不等同錯誤的鹼基數量"><a href="#平均品質分數不等同錯誤的鹼基數量" class="headerlink" title="平均品質分數不等同錯誤的鹼基數量"></a>平均品質分數不等同錯誤的鹼基數量</h2><p>然而，平均品質分數較佳的序列可能因為鹼基錯誤率分布不均，反倒有較多誤判的鹼基（下表）。假設定序錯誤為隨機獨立事件，則長 150 bp 錯誤率為 0.0032 的序列預期出現 150 × 0.0032 &#x3D;  0.48 個錯誤鹼基；而表中另一序列則預期出現 ( 140 × 0.00032 ) + ( 10 × 0.63 ) &#x3D; 6.3 個錯誤鹼基。</p>
+<table>
+<thead>
+<tr>
+<th>Q scores in read</th>
+<th>Average Q</th>
+<th>Expected number of errors</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>140 × Q35 + 10 × Q2</td>
+<td>33 (P&#x3D;0.0005)</td>
+<td>6.4 (P &#x3D; 0.043)</td>
+</tr>
+<tr>
+<td>100 × Q25</td>
+<td>25 (P &#x3D; 0.0032)</td>
+<td>0.5 (P &#x3D; 0.0033)</td>
+</tr>
+</tbody></table>
+<p>（adapted from Robert Edgar, Calculating average Q (Phred) scores is a bad idea）</p>
+<p>因此，儘管被許多工具採用，平均品質分數不是評估序列品質的洽當指標。</p>
+<h2 id="錯誤鹼基數量的期望值較直觀"><a href="#錯誤鹼基數量的期望值較直觀" class="headerlink" title="錯誤鹼基數量的期望值較直觀"></a>錯誤鹼基數量的期望值較直觀</h2><p>相較於平均品質分數，直接估計誤判的鹼基數量較直觀。在品質分數可靠的情況下，可以從個別鹼基的品質分數推算一序列的錯誤鹼基數量期望值 (expected errors, E) ，其定義為所有鹼基的品質分數和。</p>
+<p>例如一批鹼基品質分數皆為 10 ( P &#x3D; 10 % ) 且長 250 bp 的序列，平均每條會有 250 × 0.1 &#x3D; 25 個鹼基被定序儀器誤判。相較之下，品質分數皆為 30 ( P &#x3D; 0.1 %) 者，平均只有 250  × 0.001 &#x3D; 0.25 個錯誤鹼基，表示序列幾乎不會出錯。</p>
+<p>是以，錯誤鹼基數愈多，序列品質愈差；錯誤鹼基數愈少，序列品質愈佳。選定可容忍的鹼基錯誤數以後 ( maximum number of expected errors, E_max)，移除 E &gt; E_max 的序列即可確保剩餘序列的品質。</p>
+<p>目前，DADA2、Vsearch、Usearch pipeline 皆能依據錯誤鹼基數量的期望值，篩選低品質的序列。</p>
+<h1 id="依品質分數篩選的限制"><a href="#依品質分數篩選的限制" class="headerlink" title="依品質分數篩選的限制"></a>依品質分數篩選的限制</h1><h2 id="理論計算往往低估序列的錯誤"><a href="#理論計算往往低估序列的錯誤" class="headerlink" title="理論計算往往低估序列的錯誤"></a>理論計算往往低估序列的錯誤</h2><p>由於使用聚類或降噪等方法能校正部分的定序錯誤，原則上 E_max 可以設定得較寬鬆。然而，計算鹼基錯誤數的前提是 (1) 定序錯誤為隨機獨立事件，(2) 品質分數忠實反映儀器誤判機率，但這些假設往往與實際情況不符，所以會設定較嚴格的標準確保資料的真確性（例如 E_max  &#x3D; 1，沒有錯誤）</p>
+<h2 id="無法改善其他因素造成的誤差"><a href="#無法改善其他因素造成的誤差" class="headerlink" title="無法改善其他因素造成的誤差"></a>無法改善其他因素造成的誤差</h2><p>此外，由於品質分數僅估計定序儀器誤判的機率，定序前引進的誤差沒辦法透過篩選低品質序列改善。以構建定序文庫的過程為例，引子 (primer) 脫靶產生的嵌合體 (chimera) 或非目標序列皆獨立於定序，所以樣本內的這些錯誤不會反映在品質分數，得藉由移除低頻率序列改善。</p>
+<h1 id="基於序列出現的頻率篩選"><a href="#基於序列出現的頻率篩選" class="headerlink" title="基於序列出現的頻率篩選"></a>基於序列出現的頻率篩選</h1><h2 id="定序錯誤產生的偽序列是-singletons"><a href="#定序錯誤產生的偽序列是-singletons" class="headerlink" title="定序錯誤產生的偽序列是 singletons"></a>定序錯誤產生的偽序列是 singletons</h2><p>Singletons 是樣本中僅出現一次的序列，所以 singletons 都是獨特序列 (unique seqeunces) 。假設定序錯誤是隨機獨立事件，那麼便不容易在相同序列、相同位置發生相同的鹼基置換，所以定序錯誤產生的偽序列往往是 singletons（此處的前提是有足夠的定序品質）。</p>
+<h2 id="獨特序列往往是偽序列"><a href="#獨特序列往往是偽序列" class="headerlink" title="獨特序列往往是偽序列"></a>獨特序列往往是偽序列</h2><p>假設有一條長 250 bp 的序列，其鹼基品質分數皆為 30（P &#x3D; 0.1 %，正確率 99.9 %），經 PCR 和定序後得 100 條序列：</p>
+<ul>
+<li>一條序列出錯的機率 &#x3D; 1 - 所有鹼基皆正確的機率 &#x3D;1 - ( 0.999 ) ^ 250 &#x3D; 0.22</li>
+<li>錯誤序列的數量期望值 &#x3D; 序列數 * 序列出錯機率 &#x3D; 100 × 0.22 &#x3D; 22</li>
+<li>獨特序列的種類數 &#x3D; 1（正確序列，n &#x3D; 78） + 22（偽序列，n &#x3D; 1 × 22）&#x3D; 23 種</li>
+<li>獨特序列的錯誤率 &#x3D; 22（偽序列種類數） &#x2F; 23（獨特序列種類）&#x3D; 96 %</li>
+</ul>
+<p>綜上所述，即使個別鹼基的判讀率達 99.9 %，仍然只有 78 % 的序列正確，而得出的獨特序列有 96 % 不可靠。</p>
+<h2 id="多數-Singletons-是偽序列"><a href="#多數-Singletons-是偽序列" class="headerlink" title="多數 Singletons 是偽序列"></a>多數 Singletons 是偽序列</h2><p>由於 singletons 是獨特序列，而多數獨特序列屬於偽序列，所以 singletons 往往也是偽序列。在品質篩選後移除 singletons 能有效降低樣本內的偽序列。除了定序錯誤，移除 singletons 也能多少排除罕見但會影響 OTUs 或 ASVs 數量的偽序列（例如嵌合體或定序文庫汙染）。</p>
+<h2 id="移除-singletons-利大於弊"><a href="#移除-singletons-利大於弊" class="headerlink" title="移除 singletons 利大於弊"></a>移除 singletons 利大於弊</h2><p>雖然樣本裡部分 singletons 是（或近似）正確序列，移除 singletons 可能損失有用的資訊，但移除 singletons 能大幅增加特異度，僅微幅降低靈敏度。</p>
+<p>這是因為多數的 singletons 是偽序列，而且實際比例應大於理論估算。其次，假如定序品質優良，定序錯誤產生 singletons 數量應遠低於與正確序列的數量，刪除這些 singletons 不會損害偵測到正確序列的機會。</p>
+<p><img data-src="https://raw.githubusercontent.com/5uperb0y/blog-media/refs/heads/main/read-quality-filtering-based-on-expected-error-rate/read-quality-filtering-based-on-expected-error-rate_2.png"><br>（”If most bases are good, most unique sequences are bad, because good reads are all alike, but every bad read is bad in its own way.”）</p>
+<p>但如果樣本中含有大量真實的 singletons (loner tags) 呢？這可能表示沒有充分採集環境微生物的基因，得重新檢視樣本的收集與製備流程。（想像箱子裡有多顆色球。假如抽了一萬次卻只得到紅球，可以推測箱子裡的球應該沒幾種顏色；假如不斷抽到不同顏色的球，即 singletons，那應該會猜箱子裡還有別種顏色的球）</p>
+<h1 id="如何設定品質過濾的參數？"><a href="#如何設定品質過濾的參數？" class="headerlink" title="如何設定品質過濾的參數？"></a>如何設定品質過濾的參數？</h1><p>除了序列的品質和數量，雙端序列合併後的長度也能作為篩選低品質序列的依據。例如 16S rRNA 基因 V4 變異區長約 250 bp，如果合併後的序列長度偏離太多，代表引子可能接錯地方或是折疊為二級結構。剔除長度在意料外的序列可以移除這類偽序列。</p>
+<p>品質過濾是資料量和資料品質的取捨，嚴格篩選序列會減少可用的資訊，但放寬標準又會增加樣本內的偽序列。由於定序條件差異，序列品質篩選方式應視研究目的調整，不能一味使用預設標準。</p>
+<p>在品質篩選前，可以先檢查鹼基錯誤的位置和數量分布，預估品質篩選結果的最佳&#x2F;最差狀況，再利用此資訊得到初步結果。接著依照初步結果不斷試誤，逐漸從上下限逼近最佳解。或是用模擬資料判斷品質篩選的影響。</p>
+<p>由於雙端序列合併時能校正重疊處的鹼基品質分數，而且長度差異也會影響錯誤鹼基數的期望值，所以品質分數篩選得在雙端序列合併、長度裁減&#x2F;篩選之後才能執行。因此，合理的序列品質篩選步驟為：雙端定序合併 → 長度裁剪&#x2F;篩選 → 品質分數&#x2F;錯誤鹼基數篩選 → 序列出現頻率篩選。</p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>序列品質篩選是為了移除無法校正的偽序列，依據序列的長度、錯誤鹼基數和序列出現頻率能剔除不同種類的錯誤。然而品質篩選是品質（特異度）和數量（靈敏度）的取捨，應視後續分析要求，反覆試誤以找出適當的標準。</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.drive5.com/usearch/manual/avgq.html">Calculating average Q (Phred) scores is a bad idea</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.drive5.com/usearch/manual/exp_errs.html">Expected errors predicted by Phred (Q) scores</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.drive5.com/usearch/manual/singletons.html">Discarding singletons</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/why-illumina-read-quality-drops-at-ends/" rel="prev" title="為什麼 Illumina 平台的定序品質在序列前端和末端較差？">
+                  <i class="fa fa-angle-left"></i> 為什麼 Illumina 平台的定序品質在序列前端和末端較差？
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

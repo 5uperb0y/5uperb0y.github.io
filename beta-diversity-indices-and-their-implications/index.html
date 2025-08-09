@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="此文是我以前學習計量生態學的筆記，雖然後來對多樣性指標有新的見解，但一直沒有更新。如果想要獲得較全面而且詳實的中文介紹，我很推薦去看看 CSGChang 的網站：生物多樣性的估計量整理（中）：β 多樣性">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="β 多樣性（beta diversity）的含意與指標">
+<meta property="og:url" content="https://5uperb0y.com/beta-diversity-indices-and-their-implications/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="此文是我以前學習計量生態學的筆記，雖然後來對多樣性指標有新的見解，但一直沒有更新。如果想要獲得較全面而且詳實的中文介紹，我很推薦去看看 CSGChang 的網站：生物多樣性的估計量整理（中）：β 多樣性">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-05-18T10:23:45.000Z">
+<meta property="article:modified_time" content="2025-08-09T05:06:24.389Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/beta-diversity-indices-and-their-implications/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/beta-diversity-indices-and-their-implications/","path":"beta-diversity-indices-and-their-implications/","title":"β 多樣性（beta diversity）的含意與指標"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>β 多樣性（beta diversity）的含意與指標 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/beta-diversity-indices-and-their-implications/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">206</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%CE%B2-%E5%A4%9A%E6%A8%A3%E6%80%A7%E7%9A%84%E5%90%AB%E6%84%8F"><span class="nav-number">1.</span> <span class="nav-text">β 多樣性的含意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%CE%B2-%E5%A4%9A%E6%A8%A3%E6%80%A7%E6%8C%87%E6%A8%99%E7%9A%84%E9%A1%9E%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">β 多樣性指標的類型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E7%9B%B8%E4%BC%BC%E6%80%A7%EF%BC%88similarity%EF%BC%89-vs-%E5%BA%A6%E9%87%8F%E5%B7%AE%E7%95%B0%E6%80%A7%EF%BC%88dissimilarity%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">度量相似性（similarity） vs　度量差異性（dissimilarity）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%9D%E9%9B%A2%E9%A1%9E%E6%AF%94%EF%BC%88-distance%EF%BC%89-vs-%E5%88%86%E7%95%B0%E9%A1%9E%E6%AF%94%EF%BC%88differentiation%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">距離類比（ distance） vs　分異類比（differentiation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%9A%E6%80%A7%E8%B3%87%E6%96%99%EF%BC%88incidant-data%EF%BC%89-vs-%E4%BD%BF%E7%94%A8%E5%AE%9A%E9%87%8F%E8%B3%87%E6%96%99%EF%BC%88abundant-data-%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">使用定性資料（incidant data） vs　使用定量資料（abundant data ）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%96%BC%E7%8D%A8%E7%AB%8B-OTU-vs-%E5%9F%BA%E6%96%BC%E7%B3%BB%E7%B5%B1%E7%99%BC%E7%94%9F%E6%A8%B9%EF%BC%88with-phylogenetic-trees%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">基於獨立 OTU　 vs 　基於系統發生樹（with phylogenetic trees）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-%CE%B2-%E5%A4%9A%E6%A8%A3%E6%80%A7%E6%8C%87%E6%A8%99"><span class="nav-number">3.</span> <span class="nav-text">常用的 β 多樣性指標</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jaccard-index-Sorensen%E2%80%93Dice-coefficient"><span class="nav-number">3.1.</span> <span class="nav-text">Jaccard index &amp; Sørensen–Dice coefficient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bray%E2%80%93Curtis-similarity"><span class="nav-number">3.2.</span> <span class="nav-text">Bray–Curtis similarity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UniFrac"><span class="nav-number">3.3.</span> <span class="nav-text">UniFrac</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/unifrac-distance-and-its-pro-and-con/" rel="bookmark">
+        <time class="popular-posts-time">2020-02-05</time>
+        <br>
+      UniFrac distance 的優缺點是什麼？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/counting-point-mutations/" rel="bookmark">
+        <time class="popular-posts-time">2024-05-04</time>
+        <br>
+      ROSALIND｜Counting Point Mutations (HAMM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/edit-distance/" rel="bookmark">
+        <time class="popular-posts-time">2024-07-20</time>
+        <br>
+      ROSALIND｜Edit Distance (EDIT)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/beta-diversity-indices-and-their-implications/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="β 多樣性（beta diversity）的含意與指標 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          β 多樣性（beta diversity）的含意與指標
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2025-05-18 18:23:45" itemprop="dateCreated datePublished" datetime="2025-05-18T18:23:45+08:00">2025-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-08-09 13:06:24" itemprop="dateModified" datetime="2025-08-09T13:06:24+08:00">2025-08-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>此文是我以前學習計量生態學的筆記，雖然後來對多樣性指標有新的見解，但一直沒有更新。如果想要獲得較全面而且詳實的中文介紹，我很推薦去看看 CSGChang 的網站：<a target="_blank" rel="noopener" href="https://hackmd.io/@CSGChang/betaBiodiversityEstimators">生物多樣性的估計量整理（中）：β 多樣性</a></p>
+<span id="more"></span>
+
+<h1 id="β-多樣性的含意"><a href="#β-多樣性的含意" class="headerlink" title="β 多樣性的含意"></a>β 多樣性的含意</h1><p>α 多樣性是群集內的物種歧異程度，而 β 多樣性則是群集間的物種歧異程度。β 多樣性常用於描述群集在不同環境或干擾前後的差異，群集隨時間或其他環境因子的梯度變化，或是檢驗樣本間的重複性。由於微生物研究涉及很多樣本和物種，在計算樣本間的 β 多樣性後，通常會以 PCA、PCoA、NMDS 等排序方法進一步分析並繪圖呈現以利理解。這些研究項目意在釐清外在因素對群集結構的影響，所以良好的指標有助於研究者從觀察中發現模式，繼而提出假說並檢驗之。</p>
+<p>儘管可以利用不同群集的 α 多樣性差異作為 β 多樣性指標，但此指標無法忠實呈現群集間的組成差異。以兩個由不同物種組成的群集為例，假設兩者的 richness 和 evenness 一致，此時 α 多樣性的差異為 0 ，這結果只能表示兩個群集的物種數和物種的均勻程度相同，無法區別兩群集的物種類型或是親緣關係。因此，過往的研究者已針對不同的特徵和研究需求發展出多種 β 多樣性指標。</p>
+<p>良好的 β 多樣性指標要能直觀地反映群集的組成差異，儘管相異指標側重的群集特徵各異，對於同筆資料也許有不同的詮釋，可是這些指標至少要能呈現理想的測試資料的差異。例如在兩相等的群集（物種類型、數量、均勻皆同）的任一者添加新個體必然會擴大兩者組成差異，若指標能通過這樣測試，代表該指標具有 monotonicity 特性。另一項特性 density invariance 表示指標只與物種的相對數量有關，不因群集規模而異，故能泛用不同尺度的環境中。</p>
+<h1 id="β-多樣性指標的類型"><a href="#β-多樣性指標的類型" class="headerlink" title="β 多樣性指標的類型"></a>β 多樣性指標的類型</h1><p>微生物研究中常用的 Jaccard similarity、Bray-Curtis distance 以及 Unweighted UniFrac distrance等 β 多樣性指標是為了度量群集差異或相似程度而發展出的人為概念，因此指標的應用場合、前提條件以及數值詮釋，會因研究者觀察的角度和定義差異的方式而有所不同。常見的分野包含：</p>
+<h2 id="度量相似性（similarity）-vs-度量差異性（dissimilarity）"><a href="#度量相似性（similarity）-vs-度量差異性（dissimilarity）" class="headerlink" title="度量相似性（similarity） vs　度量差異性（dissimilarity）"></a>度量相似性（similarity） vs　度量差異性（dissimilarity）</h2><p>在生態學研究中，研究者有時關注的是群集間的差異性，例如叢林的物種隨時間的變化或是農藥對的田野生物的影響；另一方面，研究者也關注群集間的相似性，例如同種棲地的群集是否類似以及遷移後的群集和原始群集是否有關。所以依照研究的生態現象，研究者各自發展出 β 多樣性的相似性指標與差異性指標：相似性指標的數值愈大，相似性愈高；差異性指標的數值愈大，差異性愈高，兩者是一體兩面的觀念。</p>
+<h2 id="距離類比（-distance）-vs-分異類比（differentiation）"><a href="#距離類比（-distance）-vs-分異類比（differentiation）" class="headerlink" title="距離類比（ distance） vs　分異類比（differentiation）"></a>距離類比（ distance） vs　分異類比（differentiation）</h2><p>不同的指標以不同的概念描述差異。距離指標把群集的差異類比為點與點的空間隔閡，差異越大，間隔越長；分異指標則把群集的差異類比為集合間重疊的元素，差異越大，重疊得越少。距離指標遵循三角不等式，分異指標不必遵循三角不等式，但也無法在平面上展示樣本點之間的分異程度。距離指標侷限於兩群集，分異指標則適用於任意數量的群集。藉由計算群集間距的平均值或是各群集到中心的平均值，距離概念得拓展到描述多群集的差異。</p>
+<h2 id="使用定性資料（incidant-data）-vs-使用定量資料（abundant-data-）"><a href="#使用定性資料（incidant-data）-vs-使用定量資料（abundant-data-）" class="headerlink" title="使用定性資料（incidant data） vs　使用定量資料（abundant data ）"></a>使用定性資料（incidant data） vs　使用定量資料（abundant data ）</h2><p>因為定性資料僅紀錄樣本中是否出現特定物種，沒有該物種的數量資訊，所以基於定性資料的 β 多樣性指標能應用於界定個體困難或計算數量不易的生物，例如微生物、蜂群以及透過根莖葉延伸的植物。</p>
+<p>儘管定性資料較定量資料容易蒐集，在母體物種數龐大或是稀有物種數多的時候，定性資料指標往往會因樣本數不足而導致很大的誤差，這些誤差仍得仰賴定量資料才能修正。此外，族群規模攸關種內調節、種間互動以及對環境的影響等生態現象，然而高低豐度的物種在定性資料指標中的權重一致，忽略了族群規模的影響。</p>
+<p>因此，除非定量資料不可靠（例如定序誤差嚴重）或母體的物種組成變化劇烈（例如環境複雜或干擾嚴重），在物種組成變動不大但各物種數量劇變的情況下（例如環境穩定或干擾微弱），基於定量資料的 β 多樣性指標較能呈現出群集的差異。</p>
+<h2 id="基於獨立-OTU-vs-基於系統發生樹（with-phylogenetic-trees）"><a href="#基於獨立-OTU-vs-基於系統發生樹（with-phylogenetic-trees）" class="headerlink" title="基於獨立 OTU　 vs 　基於系統發生樹（with phylogenetic trees）"></a>基於獨立 OTU　 vs 　基於系統發生樹（with phylogenetic trees）</h2><p>為了研究樣本中無法培養的微生物，需要定序微生物細胞內能區分物種的標誌基因（例如16s rRNA 基因），再依照這段基因的相似程度（95 - 99%，常見為 97%），先將樣本中的序列分為許多組別，這些組別即為Operational taxonomic unit（OTU，操作分類單位），接著以各 OTU 中數量最多的序列為代表，對照資料庫以得知該 OTU 的物種資訊。</p>
+<p>基於獨立 OTU 的指標假設 OTU 間沒有任何親緣關係，當指標的數值相同時，代表兩群集的物種組成和相對數量一致。然而實際上不同 OTU 的序列仍有程度不一的相似性，所以這類指標一方面會高估親緣關係相近之群集間的 β 多樣性，有助於發現相似環境的不同群集或干擾前後的同一群集的差異。另一方面則會低估親緣關係較遠之群集間的相似性，因此較不適合用於展示群集間的相似性。</p>
+<p>至於基於系統發生樹的指標則考量了不同 OTU 的親緣關係，亦即兩群集若由相似物種組成，群集間的相似度較高，β 多樣性愈低。由於親緣關係相近的物種通常具有相似的生態棲位，因此考量了物種間親緣關係的指標較能反映群集差異的生物意義，比基於獨立 OTU 的指標適合展示群集間的相似性。</p>
+<h1 id="常用的-β-多樣性指標"><a href="#常用的-β-多樣性指標" class="headerlink" title="常用的 β 多樣性指標"></a>常用的 β 多樣性指標</h1><h2 id="Jaccard-index-Sorensen–Dice-coefficient"><a href="#Jaccard-index-Sorensen–Dice-coefficient" class="headerlink" title="Jaccard index &amp; Sørensen–Dice coefficient"></a>Jaccard index &amp; Sørensen–Dice coefficient</h2><p>$$Jaccard\ index:\quad \frac{S_{12}}{S_1+S_2-S_{12}}$$</p>
+<p>$$Sørensen–Dice\ coefficient:\quad \frac{2S_{12}}{S_1+S_2}$$</p>
+<ul>
+<li>$S_1$：群集 1 的物種數</li>
+<li>$S_2$：群集 2 的物種數</li>
+<li>$S_{12}$：群集 1 和群集 2 共有的物種數</li>
+</ul>
+<p>量度 β 多樣性的基本方法就是比較兩群集共有物種的數量，共有物種數量愈多，兩群集的相似性愈高。Jaccard index 計算兩群集物種交集和聯集的比值，Sørensen–Dice coefficient 則是共有物種數與兩群集平均物種數的比值，皆只需定性資料。雖然此處以兩群集為例，Jaccard index 和 Sørensen–Dice coefficient 都能推廣成計算多群集的 β 多樣性指標。</p>
+<h2 id="Bray–Curtis-similarity"><a href="#Bray–Curtis-similarity" class="headerlink" title="Bray–Curtis similarity"></a>Bray–Curtis similarity</h2><p>$$S_{BC}&#x3D;\frac{2\sum_{i&#x3D;1}^Smin(M_{i1},M_{i2})}{\sum_{i&#x3D;1}^S(M_{i1}+M_{i2})}&#x3D;1-\frac{\sum_{i&#x3D;1}^S|M_{i1}-M_{i2}|}{\sum_{i&#x3D;1}^S(M_{i1}+M_{i2})}$$</p>
+<ul>
+<li>$S$：兩群集合併後的物種數</li>
+<li>$M_{i1}$：第 i 種物種在群集 1 的數量</li>
+<li>$M_{i2}$：第 i 種物種在群集 2 的數量</li>
+<li>$min(M_{i1},M_{i2})$：兩群集第 i 個物種共有的個體數。</li>
+<li>$\sum_{i&#x3D;1}^Smin(M_{i1},M_{i2})$：兩群集各物種共有的個體數之和</li>
+<li>$\sum_{i&#x3D;1}^S(M_{i1}+M_{i2})$：兩群集合併後的個體總數</li>
+</ul>
+<p>Bray-Curtis similarity 是 Sørensen–Dice coefficient 的延伸，其含義為物種共有的個體數與兩群集規模平均的比值，不僅考量物種組成也採計了各物種的數量。當兩群集各自的物種分布皆完全均勻的時候，Bray-Curtis dissimilarity 可簡化為 Sørensen index，所以Bray-Curtis dissimilarity 又稱為 quantitative Sørensen index。</p>
+<p>此指標的數值介於 0 與 1 ，數值愈大，兩群集愈相似。數值為 1 時，代表兩群集物種數、組成及均勻度完全一致；數值為 0 時，有兩種情形：（1）兩群集沒有共同物種，因此公式的分子為 0 。（2）兩群集規模差距相當大，導致指標的分母極大，分子極小。</p>
+<p>這個現象代表 Bray-Curtis similarity 的意義與群集的絕對數量相關，不符合前述的 density invariance ，難以反映群集真實的相似性。假設自母體採集兩大小不同但物種組成和均勻度一致的樣本，原則上取自同一母體的樣本應有較高的相似度，但 Bray-Curtis similarity 卻會因樣本大小不同而得出較低的相似度，差距越極端，相似度愈低。這種情況在實際研究中特別嚴重，因為群集的絕對數量與採樣的周延程度有關，一旦兩群集的採樣程度不同，Bray-Curtis similarity 就難以跨尺度比較。因此 Bray-Curtis similarity 適用於樣本覆蓋率已知，並標準化的資料中。</p>
+<p>當用於衡量差異性的時候，可以將Bray-Curtis similarity 改寫為 Bray-Curtis dissimilarity</p>
+<p>$$S_{BC}&#x3D;1-\frac{2\sum_{i&#x3D;1}^Smin(M_{i1},M_{i2})}{\sum_{i&#x3D;1}^S(M_{i1}+M_{i2})}&#x3D;\frac{\sum_{i&#x3D;1}^S|M_{i1}-M_{i2}|}{\sum_{i&#x3D;1}^S(M_{i1}+M_{i2})}$$</p>
+<p>此為微生物研究中較常看到的形式，指標數值愈大，群集間差異也愈大。</p>
+<h2 id="UniFrac"><a href="#UniFrac" class="headerlink" title="UniFrac"></a>UniFrac</h2><p>UniFrac 的全名為 Unique Fraction，即特定群集在系統發生樹上獨佔節點的比率，獨佔的比率愈高，群集間的重疊愈少，β 多樣性也愈高。由於公式中計入了系統發生樹上的枝長，因此UniFrac 是評估群集間物種親緣關係的多樣性指標。而 UniFrac 又根據是否採計族群規模分為沒採計的 unweighted UniFrac distance 和有採計的 weighted UniFrac distance</p>
+<p>計算多樣本間的 unweighted UniFrac distance 的流程是：</p>
+<p>$$U_{uw}&#x3D; \frac{\sum_{i&#x3D;1}^{N} l_i | A_i - B_i |} {\sum_{i&#x3D;1}^{N} l_i \max(A_i, B_i)}&#x3D;\frac{unique}{observed}$$</p>
+<ul>
+<li>$unique$：系統發生樹上僅含有於兩群集之一的枝長和</li>
+<li>$observed$：系統發生樹的總枝長</li>
+<li>$N$：系統發生樹的節點數</li>
+<li>$l_i$：第 i 節點與母節點的距離</li>
+<li>$A_i$：第 i 節點含有源於樣本 A 的物種則數值為 1 ，反之為 0</li>
+<li>$B_i$：第 i 節點含有源於樣本 B 的物種則數值為 1 ，反之為 0</li>
+</ul>
+<p>詳細介紹可參考我另一篇文章（<a href="https://5uperb0y.com/unifrac-distance-and-its-pro-and-con/">UniFrac distance 的優缺點是什麼？</a>），簡言之</p>
+<ol>
+<li>以全部樣本的OTU建立一株系統發生樹（建樹方法由研究者自訂）</li>
+<li>標記 OTU 的樣本來源，每個 OTU 可能有多個樣本來源</li>
+<li>由於 UniFrac distance 是兩樣本的關係，因此先忽略不含欲比較的樣本之外的OTU</li>
+<li>計算僅含有一樣本來源的枝長和</li>
+<li>計算總枝長</li>
+<li>計算 4. 和 5. 的比值即為兩樣本的 unweighted UniFrac distance</li>
+<li>重複計算不同樣本的 unweighted UniFrac distance 得出樣本與樣本之間的 unweighted UniFrac matric</li>
+</ol>
+<p>計算 weighted UniFrac distance 的流程一致，但會考量物種相對數量：</p>
+<p>$$U_w&#x3D;\frac{\sum_i^nb_i\times|\frac{A_i}{A_T}-\frac{B_i}{B_T}|}{\sum_j^SL_j}$$</p>
+<ul>
+<li>$N$：系統發生樹上的節點數</li>
+<li>$b_i$：第 i 節點與母節點的距離</li>
+<li>$A_i$：樣本 A 中隸屬第 i 節點的個體數</li>
+<li>$A_T$：樣本 A 的群集規模</li>
+<li>$B_i$：樣本 B 中隸屬第 i 節點的個體數</li>
+<li>$B_T$：樣本 B 的群集規模</li>
+<li>$S$：系統發生樹中含有的物種數</li>
+<li>$L_j$：系統發生樹從根到第 j 物種所在節點的長度</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/sawako-2016-kinyobi-no-honya-san/" rel="prev" title="《星期五的書店》">
+                  <i class="fa fa-angle-left"></i> 《星期五的書店》
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/sawako-2017-kinyobi-no-honya-san-natsu-to-saida/" rel="next" title="《星期五的書店：夏天與汽水》">
+                  《星期五的書店：夏天與汽水》 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
