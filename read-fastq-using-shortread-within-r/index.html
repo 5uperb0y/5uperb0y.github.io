@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="R 的 ShortRead 套件用於處理高通量定序產出的 FASTQ 檔，其功能包含讀寫 FASTQ 檔、計算序列統計量、裁切與篩選低品質序列等。目前，ShortRead 被保留在 Bioconductor ，並由開發團隊持續更新與維護。 在 R 視窗中，輸入以下指令即可安裝此套件。 1234&gt;if (!require(&quot;BiocManager&quot;, quietly &#x3D; T">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="使用 R 語言的 ShortRead 套件讀取 FASTQ 檔">
+<meta property="og:url" content="https://5uperb0y.com/read-fastq-using-shortread-within-r/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="R 的 ShortRead 套件用於處理高通量定序產出的 FASTQ 檔，其功能包含讀寫 FASTQ 檔、計算序列統計量、裁切與篩選低品質序列等。目前，ShortRead 被保留在 Bioconductor ，並由開發團隊持續更新與維護。 在 R 視窗中，輸入以下指令即可安裝此套件。 1234&gt;if (!require(&quot;BiocManager&quot;, quietly &#x3D; T">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-08-06T12:17:51.000Z">
+<meta property="article:modified_time" content="2025-08-09T12:14:26.419Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/read-fastq-using-shortread-within-r/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/read-fastq-using-shortread-within-r/","path":"read-fastq-using-shortread-within-r/","title":"使用 R 語言的 ShortRead 套件讀取 FASTQ 檔"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用 R 語言的 ShortRead 套件讀取 FASTQ 檔 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/read-fastq-using-shortread-within-r/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">210</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FASTQ-%E6%A0%BC%E5%BC%8F%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">FASTQ 格式簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%80%E5%8F%96-fastq-%E6%AA%94%E6%A1%88"><span class="nav-number">2.</span> <span class="nav-text">讀取 fastq 檔案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AA%A2%E8%A6%96%E5%BA%8F%E5%88%97%E7%9A%84%E6%A8%99%E8%AD%98%E7%A2%BC%E3%80%81%E9%B9%BC%E5%9F%BA%E7%A8%AE%E9%A1%9E%E8%88%87%E5%93%81%E8%B3%AA%E5%88%86%E6%95%B8"><span class="nav-number">3.</span> <span class="nav-text">檢視序列的標識碼、鹼基種類與品質分數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%80%8F%E8%A6%BD%E6%A8%99%E8%AD%98%E7%A2%BC"><span class="nav-number">3.1.</span> <span class="nav-text">瀏覽標識碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%80%8F%E8%A6%BD%E5%BA%8F%E5%88%97"><span class="nav-number">3.2.</span> <span class="nav-text">瀏覽序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%80%8F%E8%A6%BD%E5%93%81%E8%B3%AA%E5%88%86%E6%95%B8"><span class="nav-number">3.3.</span> <span class="nav-text">瀏覽品質分數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E5%BE%97%E5%AE%9A%E5%BA%8F%E5%93%81%E8%B3%AA%E6%8C%87%E6%A8%99"><span class="nav-number">3.4.</span> <span class="nav-text">取得定序品質指標</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%B6%E4%BC%B8%E8%A8%88%E7%AE%97"><span class="nav-number">3.5.</span> <span class="nav-text">延伸計算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%B5%90"><span class="nav-number">4.</span> <span class="nav-text">小結</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/why-illumina-read-quality-drops-at-ends/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-05</time>
+        <br>
+      為什麼 Illumina 平台的定序品質在序列前端和末端較差？
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/read-quality-filtering-based-on-expected-error-rate/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-09</time>
+        <br>
+      定序產物的預期錯誤數與品質篩選
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/translating-rna-into-protein/" rel="bookmark">
+        <time class="popular-posts-time">2024-06-09</time>
+        <br>
+      ROSALIND｜Translating RNA into Protein (PROT)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/read-fasta-with-r/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-03</time>
+        <br>
+      R 讀寫 FASTA 檔
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/read-fastq-using-shortread-within-r/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="使用 R 語言的 ShortRead 套件讀取 FASTQ 檔 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 R 語言的 ShortRead 套件讀取 FASTQ 檔
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2025-08-06 20:17:51" itemprop="dateCreated datePublished" datetime="2025-08-06T20:17:51+08:00">2025-08-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-08-09 20:14:26" itemprop="dateModified" datetime="2025-08-09T20:14:26+08:00">2025-08-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>R 的 <em>ShortRead</em> 套件用於處理高通量定序產出的 FASTQ 檔，其功能包含讀寫 FASTQ 檔、計算序列統計量、裁切與篩選低品質序列等。目前，<em>ShortRead</em> 被保留在 <a target="_blank" rel="noopener" href="https://bioconductor.org/packages/release/bioc/html/ShortRead.html">Bioconductor</a> ，並由開發團隊持續更新與維護。</p>
+<p>在 R 視窗中，輸入以下指令即可安裝此套件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;if (!require(&quot;BiocManager&quot;, quietly = TRUE))</span><br><span class="line">    install.packages(&quot;BiocManager&quot;)</span><br><span class="line"></span><br><span class="line">BiocManager::install(&quot;ShortRead&quot;)</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h1 id="FASTQ-格式簡介"><a href="#FASTQ-格式簡介" class="headerlink" title="FASTQ 格式簡介"></a>FASTQ 格式簡介</h1><p>FASTQ 格式以四列字串記錄每一條核酸的辨識碼、序列及定序品質。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;@A77AV140207:1:1101:10732:16139/1  \\ sequence identifier</span><br><span class="line">AACGTAGGTCACAAGCGTTGTCCGGAATTACTG   \\ raw sequence letters</span><br><span class="line">+ 				    \\ optional description</span><br><span class="line">?ABBBFFBF5B4BBG4AEEGGB5BEE1=1&lt;E@1   \\ quality code</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>sequence identifier</strong>：首列以 <code>@</code> 起頭，藉此區分每條核酸的紀錄。這一列通常會記錄序列的標識碼、定序儀器代碼、核酸在定序晶片的位置、barcode等資訊，不同定序平台有不同的格式。值得留意的是，在雙端定序的結果中，順向序列會在首列的最後標註 <code>1</code>，逆向序列則會標註 <code>2</code>。</p>
+</li>
+<li><p><strong>raw sequence letters</strong>：次列則核酸各位置的鹼基種類，即 A、T、C、G、N（N 表示不明），所以此列長度等同定序讀長。</p>
+</li>
+<li><p><strong>optional description</strong>：<code>+</code> 號列，無含義。（雖然維基百科介紹說，這列可添加額外資訊，但目前還沒看過這樣標示的當案）</p>
+</li>
+<li><p><strong>quality code</strong>：與第二列一一對應，反映定序品質的ASCII字符。</p>
+</li>
+</ul>
+<p>序列的定序品質可以用 error probability（定序儀器誤判鹼基種類的機率）評估，error probability 愈低則定序的品質越高，即兩者呈負相關。</p>
+<p>為了便於理解和檢視，error probability 需經數值轉換和 ASCII 編碼，才會成為 FASTQ 檔內的 quality code，所以 FASTQ 格式的第四列才會存在各種符號。</p>
+<p>簡言之，error probability (P) 會先轉變為整數形式且與品質正相關的 quality value (Q)。雖然曾出現許多種轉換方式，但目前最通用方式為 phred quality score，即</p>
+<p>$$Q &#x3D; -10 log_{10}{P}$$<br>$$P&#x3D; 10^{-\frac{Q}{10}}$$​</p>
+<p>接著，為了方便存儲，quality value 會再依 ASCII 規範編碼成單一字符。編碼方式則依照定序平台和其版本而異，所以平台間的 quality value 範圍也各不相同，可參考：<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/FASTQ_format%E3%80%82">https://en.wikipedia.org/wiki/FASTQ_format。</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">S - Sanger        Phred+33,  raw reads typically (0, 40)</span><br><span class="line">X - Solexa        Solexa+64, raw reads typically (-5, 40)</span><br><span class="line">I - Illumina 1.3+ Phred+64,  raw reads typically (0, 40)</span><br><span class="line">J - Illumina 1.5+ Phred+64,  raw reads typically (3, 41)</span><br><span class="line">    with 0=unused, 1=unused, 2=Read Segment Quality Control Indicator (bold) </span><br><span class="line">    (Note: See discussion above).</span><br><span class="line">L - Illumina 1.8+ Phred+33,  raw reads typically (0, 41)</span><br><span class="line">N - Nanopore      Phred+33,  Duplex reads typically (0, 50)</span><br><span class="line">E - ElemBio AVITI Phred+33,  raw reads typically (0, 55)</span><br><span class="line">P - PacBio        Phred+33,  HiFi reads typically (0, 93)</span><br></pre></td></tr></table></figure>
+
+<p>綜上所述，error probability 與 quality code 之間的關係為</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;  error probability (float) </span><br><span class="line">→ quality value      (int) 		</span><br><span class="line">→ quality code 	     (character)</span><br></pre></td></tr></table></figure>
+
+<h1 id="讀取-fastq-檔案"><a href="#讀取-fastq-檔案" class="headerlink" title="讀取 fastq 檔案"></a>讀取 fastq 檔案</h1><p>使用 <code>readFastq</code> 即可讀取 FASTQ 並存為 <em>ShortRead</em> 物件。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span><span class="operator">&gt;</span> library<span class="punctuation">(</span>ShortRead<span class="punctuation">)</span></span><br><span class="line"><span class="operator">&gt;</span> rfq <span class="operator">&lt;-</span> readFastq<span class="punctuation">(</span><span class="string">&quot;./data/G64589_R1_001.fastq&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="operator">&gt;</span> rfq</span><br><span class="line"><span class="built_in">class</span><span class="operator">:</span> ShortReadQ</span><br><span class="line"><span class="built_in">length</span><span class="operator">:</span> <span class="number">13510</span> reads; width<span class="operator">:</span> <span class="number">175</span> cycles <span class="punctuation">\</span><span class="punctuation">\</span> <span class="built_in">length</span> 是序列數，width 是序列長</span><br></pre></td></tr></table></figure>
+
+<p>也可以借助檔名的共同模式，一次讀取多個 FASTQ 檔。然而，這項操作會合併所有檔案的序列，所以無法追溯各自源於哪個檔案。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> rfqs <span class="operator">&lt;-</span> readFastq<span class="punctuation">(</span><span class="string">&quot;./data/&quot;</span><span class="punctuation">,</span> pattern <span class="operator">=</span> <span class="string">&quot;_001.fastq&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="operator">&gt;</span> rfqs</span><br><span class="line"><span class="built_in">class</span><span class="operator">:</span> ShortReadQ</span><br><span class="line"><span class="built_in">length</span><span class="operator">:</span> <span class="number">51508</span> reads; width<span class="operator">:</span> <span class="number">175</span> cycles</span><br></pre></td></tr></table></figure>
+
+<h1 id="檢視序列的標識碼、鹼基種類與品質分數"><a href="#檢視序列的標識碼、鹼基種類與品質分數" class="headerlink" title="檢視序列的標識碼、鹼基種類與品質分數"></a>檢視序列的標識碼、鹼基種類與品質分數</h1><p><em>ShortReadQ</em> 物件包含 <code>@id</code>、 <code>@sread</code> 和 <code>@qulity</code>，分別對應 FASTQ 格式的ID、sequence letters 與 quality code。</p>
+<h2 id="瀏覽標識碼"><a href="#瀏覽標識碼" class="headerlink" title="瀏覽標識碼"></a>瀏覽標識碼</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> rfq<span class="operator">@</span>id<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">2</span><span class="punctuation">]</span>	<span class="punctuation">\</span><span class="punctuation">\</span> or id<span class="punctuation">(</span>rfq<span class="punctuation">)</span><span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line">BStringSet object of <span class="built_in">length</span> <span class="number">2</span><span class="operator">:</span></span><br><span class="line">    width seq</span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>    <span class="number">32</span> A77AV140207<span class="operator">:</span><span class="number">1</span><span class="operator">:</span><span class="number">1101</span><span class="operator">:</span><span class="number">10732</span><span class="operator">:</span><span class="number">16139</span><span class="operator">/</span><span class="number">1</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span>    <span class="number">32</span> A77AV140207<span class="operator">:</span><span class="number">1</span><span class="operator">:</span><span class="number">1101</span><span class="operator">:</span><span class="number">10743</span><span class="operator">:</span><span class="number">16162</span><span class="operator">/</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p><code>id(rfq)</code>這寫法有時會和其他套件的 function 衝突，這時要改寫為 <code>ShortRead::id(rfq)</code>才能順利運作。  </p>
+<h2 id="瀏覽序列"><a href="#瀏覽序列" class="headerlink" title="瀏覽序列"></a>瀏覽序列</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> rfq<span class="operator">@</span>sread<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">2</span><span class="punctuation">]</span> <span class="punctuation">\</span><span class="punctuation">\</span> or sread<span class="punctuation">(</span>rfq<span class="punctuation">)</span><span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line">DNAStringSet object of <span class="built_in">length</span> <span class="number">2</span><span class="operator">:</span></span><br><span class="line">    width seq</span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>   <span class="number">175</span> AACGTAG...GATAC</span><br><span class="line"><span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span>   <span class="number">175</span> AACGTAG...ATATG</span><br></pre></td></tr></table></figure>
+
+<h2 id="瀏覽品質分數"><a href="#瀏覽品質分數" class="headerlink" title="瀏覽品質分數"></a>瀏覽品質分數</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> rfq<span class="operator">@</span>quality<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">2</span><span class="punctuation">]</span> <span class="punctuation">\</span><span class="punctuation">\</span> or quality<span class="punctuation">(</span>rfq<span class="punctuation">)</span><span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">2</span><span class="punctuation">]</span></span><br><span class="line"><span class="built_in">class</span><span class="operator">:</span> FastqQuality</span><br><span class="line">quality<span class="operator">:</span></span><br><span class="line">BStringSet object of <span class="built_in">length</span> <span class="number">2</span><span class="operator">:</span></span><br><span class="line">    width seq</span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">]</span>   <span class="number">175</span> <span class="operator">?</span>ABBBFF...<span class="comment">#####</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">2</span><span class="punctuation">]</span>   <span class="number">175</span> AAAAACF...<span class="comment">#####</span></span><br></pre></td></tr></table></figure>
+
+<p>查閱每個 ASCII 記號對應的品質分數</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> encoding<span class="punctuation">(</span>quality<span class="punctuation">(</span>rfq<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">15</span><span class="punctuation">]</span></span><br><span class="line"> <span class="operator">!</span>  <span class="string">&quot;  #  $  %  &amp;  &#x27;  (  )  *  +  ,  -  .  / </span></span><br><span class="line"><span class="string"> 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="取得定序品質指標"><a href="#取得定序品質指標" class="headerlink" title="取得定序品質指標"></a>取得定序品質指標</h2><p>將 FastQuality class 的物件轉換為 quality value matrix。其中，row 為序列， column 則是序列上各鹼基的位置，每一元素都記錄了序列各鹼基的 quality value。  </p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span><span class="comment"># transform FastqQuality class into matrix</span></span><br><span class="line"><span class="operator">&gt;</span> rfq_to_matrix <span class="operator">&lt;-</span> <span class="keyword">function</span> <span class="punctuation">(</span>rfq<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">	<span class="built_in">return</span><span class="punctuation">(</span>as<span class="punctuation">(</span>quality<span class="punctuation">(</span>rfq<span class="punctuation">)</span><span class="punctuation">,</span> <span class="string">&quot;matrix&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"><span class="operator">&gt;</span> Qval <span class="operator">&lt;-</span> rfq_to_matrix<span class="punctuation">(</span>rfq<span class="punctuation">)</span></span><br><span class="line"><span class="operator">&gt;</span> Qval<span class="punctuation">[</span><span class="number">1</span><span class="operator">:</span><span class="number">5</span><span class="punctuation">,</span> <span class="number">1</span><span class="operator">:</span><span class="number">5</span><span class="punctuation">]</span></span><br><span class="line">     <span class="punctuation">[</span><span class="punctuation">,</span><span class="number">1</span><span class="punctuation">]</span> <span class="punctuation">[</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">]</span> <span class="punctuation">[</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">]</span> <span class="punctuation">[</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">]</span> <span class="punctuation">[</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">1</span><span class="punctuation">,</span><span class="punctuation">]</span>   <span class="number">30</span>   <span class="number">32</span>   <span class="number">33</span>   <span class="number">33</span>   <span class="number">33</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">2</span><span class="punctuation">,</span><span class="punctuation">]</span>   <span class="number">32</span>   <span class="number">32</span>   <span class="number">32</span>   <span class="number">32</span>   <span class="number">32</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">3</span><span class="punctuation">,</span><span class="punctuation">]</span>   <span class="number">32</span>   <span class="number">32</span>   <span class="number">32</span>   <span class="number">32</span>   <span class="number">32</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">4</span><span class="punctuation">,</span><span class="punctuation">]</span>   <span class="number">32</span>   <span class="number">32</span>   <span class="number">33</span>   <span class="number">33</span>   <span class="number">33</span></span><br><span class="line"><span class="punctuation">[</span><span class="number">5</span><span class="punctuation">,</span><span class="punctuation">]</span>   <span class="number">34</span>   <span class="number">34</span>   <span class="number">34</span>   <span class="number">34</span>   <span class="number">34</span></span><br></pre></td></tr></table></figure>
+
+<p>由於 quality value matrix 不含序列 ID，所以要手動添加</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span>row.names<span class="punctuation">(</span>Qval<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">as.character</span><span class="punctuation">(</span>rfq<span class="operator">@</span>id<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="延伸計算"><a href="#延伸計算" class="headerlink" title="延伸計算"></a>延伸計算</h2><p>Quality value，依照 Phred score 關係式回推 error probability。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span><span class="comment"># Transform phred score into error probability</span></span><br><span class="line">errProb <span class="operator">&lt;-</span> 10<span class="operator">^</span><span class="operator">-</span><span class="punctuation">(</span>Qval<span class="operator">/</span><span class="number">10</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>接著加總各列的定序錯誤率，可獲得各序列的 <a href="https://5uperb0y.com/read-quality-filtering-based-on-expected-error-rate/">expected errors（錯誤鹼基數量期望值）</a></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span><span class="comment"># Calculate expected errors for each read</span></span><br><span class="line">ee <span class="operator">&lt;-</span> rowSums<span class="punctuation">(</span>errProb<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>最後使用內建的資料選取方式，移除低品質序列。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span><span class="comment"># Discard read with expected errors above 5</span></span><br><span class="line"><span class="operator">&gt;</span> ee<span class="punctuation">[</span>ee <span class="operator">&lt;=</span> <span class="number">5</span><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;# 讀取 FASTQ 為 ShortRead 物件</span><br><span class="line">rfq &lt;- readFastq(path)</span><br><span class="line"># 轉換 ShortRead 物件為 quality value matrix</span><br><span class="line">Qval &lt;- as(quality(rfq), &quot;matrix&quot;)</span><br><span class="line"># 轉換 Phred score 為 error probability</span><br><span class="line">errProb &lt;- 10^-(Qval/10)</span><br><span class="line"># 計算 expected errors</span><br><span class="line">ee &lt;- rowSums(errProb)</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/why-illumina-read-quality-drops-at-ends/" rel="prev" title="為什麼 Illumina 平台的定序品質在序列前端和末端較差？">
+                  <i class="fa fa-angle-left"></i> 為什麼 Illumina 平台的定序品質在序列前端和末端較差？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/visualizing-three-continuous-variables-using-gradient-maps/" rel="next" title="以梯度圖呈現三項連續變項的差異">
+                  以梯度圖呈現三項連續變項的差異 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
