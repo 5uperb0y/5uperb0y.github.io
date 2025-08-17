@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="給定長度為 n 的整數數列，將其轉置為二元最大堆 (binary max heap)。  Given: A positive integer $n \leq 10^5$ and array $A[1..n]$ of integers from $-10^5$ to $10^5$. Return: A permuted array $A$ satisfying the binary max heap">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ROSALIND｜Building a Heap (hea)">
+<meta property="og:url" content="https://5uperb0y.com/building-a-heap/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="給定長度為 n 的整數數列，將其轉置為二元最大堆 (binary max heap)。  Given: A positive integer $n \leq 10^5$ and array $A[1..n]$ of integers from $-10^5$ to $10^5$. Return: A permuted array $A$ satisfying the binary max heap">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://web.ntnu.edu.tw/~algo/BinaryTree2.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Heap_add_step1.svg/300px-Heap_add_step1.svg.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Heap_add_step2.svg/300px-Heap_add_step2.svg.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Heap_add_step3.svg/300px-Heap_add_step3.svg.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heap_remove_step2.svg/300px-Heap_remove_step2.svg.png">
+<meta property="article:published_time" content="2025-08-13T15:11:29.000Z">
+<meta property="article:modified_time" content="2025-08-17T12:00:29.892Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://web.ntnu.edu.tw/~algo/BinaryTree2.png">
+
+
+<link rel="canonical" href="https://5uperb0y.com/building-a-heap/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/building-a-heap/","path":"building-a-heap/","title":"ROSALIND｜Building a Heap (hea)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ROSALIND｜Building a Heap (hea) | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/building-a-heap/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">35</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">215</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AD%98"><span class="nav-number">1.</span> <span class="nav-text">背景知識</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E9%A1%8C%E8%A7%80%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">解題觀念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#William%E2%80%99s-method"><span class="nav-number">2.1.</span> <span class="nav-text">William’s method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Floyd%E2%80%99s-method"><span class="nav-number">2.2.</span> <span class="nav-text">Floyd’s method</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/heap-sort/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-15</time>
+        <br>
+      ROSALIND｜Heap Sort (HS)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rosalind-2sum/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-01</time>
+        <br>
+      ROSALIND｜2SUM (2SUM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/merge-sort/" rel="bookmark">
+        <time class="popular-posts-time">2025-07-30</time>
+        <br>
+      ROSALIND｜Merge Sort (MS)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/merge-two-sorted-arrays/" rel="bookmark">
+        <time class="popular-posts-time">2025-07-29</time>
+        <br>
+      ROSALIND｜Merge Two Sorted Arrays (MER)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rosalind-3sum/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-02</time>
+        <br>
+      ROSALIND｜3SUM (3SUM)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/building-a-heap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜Building a Heap (hea) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜Building a Heap (hea)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2025-08-13 23:11:29" itemprop="dateCreated datePublished" datetime="2025-08-13T23:11:29+08:00">2025-08-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-08-17 20:00:29" itemprop="dateModified" datetime="2025-08-17T20:00:29+08:00">2025-08-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>給定長度為 n 的整數數列，將其轉置為二元最大堆 (binary max heap)。</p>
+<blockquote>
+<p>Given: A positive integer $n \leq 10^5$ and array $A[1..n]$ of integers from $-10^5$ to $10^5$.</p>
+<p>Return: A permuted array $A$ satisfying the binary max heap property: for any $2 \leq i \leq n$, $A[\lfloor i&#x2F;2 \rfloor] \geq A[i]$.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/hea/">https://rosalind.info/problems/hea/</a>)</p>
+<span id="more"></span>
+
+<h1 id="背景知識"><a href="#背景知識" class="headerlink" title="背景知識"></a>背景知識</h1><p>樹 (tree) 是由節點 (node) 連結而成的階層式資料結構，其形態與自然界的樹木相仿，由單一節點延伸數條分支，當中不存在環狀結構。樹的每個節點能延伸出多個子節點 (child node)，但只能源於一個親節點 (parent node)，來自相同親節點者互為平輩 (siblings)。沒有親節點者稱為根 (root)，沒有子節點者則為葉 (leaf)，由根走向特定節點所經歷的節點數即為該節點所在的層數 (level) 或深度 (depth)。</p>
+<p>二元樹 (binary tree) 是各節點最多有兩個子節點的樹，可以明確定義出樹的輪廓（即層數、節點數等特性）。因此，相較於其它種樹，二元樹具有次序性，會因為節點的排列順序而異。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  P          P</span><br><span class="line"> / \   !=   / \</span><br><span class="line">L   R      R   L</span><br></pre></td></tr></table></figure>
+
+<p>二元樹依照子節點的填滿程度和順序可分為以下幾類，</p>
+<ul>
+<li>完滿二元樹 (full binary tree)：除了葉節點，各節點皆恰好有兩個子節點的二元樹。</li>
+<li>完美二元樹 (pefect binary tree)：所有葉節點皆位於同一層的完滿二元樹。</li>
+<li>完全二元樹 (complete binary tree)：除了最底層，其餘層皆填滿；最底層的節點由左至右連續排列沒有空隙。</li>
+</ul>
+<p><img data-src="https://web.ntnu.edu.tw/~algo/BinaryTree2.png"><br>（二元樹的種類。圖&#x2F;演算法筆記）</p>
+<p>完全二元樹的節點能由左至右、由上至下填入一維陣列中。假設陣列的索引從 0 開始，則任意節點 X 在陣列中的位置 $i$ 可表示為：</p>
+<p>$$2^L - 1 + n$$</p>
+<p>其中，$L$ 為節點 X 所在的層數（由 0 開始計數，根節點為第 0 層），$n$ 為節點 X 在該層的順序（由左至右從 0 開始計數）。舉例來說，下圖的節點 5 位於第 2 層，是該層第 2 個節點，因此位置為 $2^2 - 1 + 2 &#x3D; 5$</p>
+<p>這個公式的原理是，節點在陣列中的位置相當於前面所有層的節點總數，加上節點在該層的次序。對於第 $L$ 層的節點，在它之前的節點總數為 $2^0 + 2^1 + 2^2 + … + 2^{L-1}$，此級數可化約為 $2^L - 1$，再加上節點在當前層的位置 $n$，即可得出前述公式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># tree view</span><br><span class="line">     0        lv 0 (#nodes: 2^0)</span><br><span class="line">    / \ </span><br><span class="line">  1     2     lv 1 (#nodes: 2^1)</span><br><span class="line"> / \   / \</span><br><span class="line">3   4 5   6   lv 2 (#nodes: 2^2)</span><br><span class="line"></span><br><span class="line"># array view</span><br><span class="line">[ 0   1   2   3   4   5   6  ]</span><br><span class="line"> └─┘ └─────┘ └──────────────┘</span><br><span class="line"> lv0   lv1         lv2</span><br></pre></td></tr></table></figure>
+<p>基於陣列的表示法，可以進一步推導與 X 相連之其它節點的位置公式。</p>
+<ul>
+<li>親節點：$\lfloor (i-1)&#x2F;2 \rfloor$</li>
+<li>左子節點：$2i + 1$</li>
+<li>右子節點：$2i + 2$</li>
+</ul>
+<p>這裡以右子節點的推導為例說明這些公式的來歷。考慮位於第 $L$ 層第 $n$ 個節點 X，它的右子節點會在下一層 $L+1$。因為每個節點都有兩個子節點，所以右子節點在第 $L+1$ 層的位置，相當於節點 X 之前所有節點產生的子節點總數，再加上節點 X 本身的左子節點，即 $2n + 1 &#x3D; 2 (n + 1) - 1$。因為位置從 0 開始計數，所以這個數值正好等於右子節點在 $L+1$ 層的位置。</p>
+<ul>
+<li>右子節點之前所有層的節點總數：$2^{L + 1} - 1$</li>
+<li>右子節點在當層的順序：$2 (n + 1) - 1$</li>
+</ul>
+<p>兩者之和為右子節點的位置：</p>
+<p>$$2^{L + 1} - 1 + 2 (n + 1) - 1 &#x3D; 2 (2^L + n - 1) + 2 &#x3D; 2i + 1$$</p>
+<p>基於同樣的推導方式，位於右子節點旁邊的左子節點位置為 $2i + 1 &#x3D; 2i + 2 - 1$，而親節點的位置則可透過將子節點的位置除以二並無條件捨去來取得 $\lfloor (2i + 2)&#x2F;2 \rfloor &#x3D; i$。</p>
+<h1 id="解題觀念"><a href="#解題觀念" class="headerlink" title="解題觀念"></a>解題觀念</h1><p>此題要求我們將整數數列轉換為 binary max heap。Heap（堆）是特殊的完全二元樹，它的親子節點具有一致的次序關係。舉例來說，max heap 的親節點恆大於子節點，heap 的最大值位於根節點。反之，min heap 的親節點恆小於親節點，根節點存放 heap 的最小值。</p>
+<p>構建 heap 有 William’s method 和 Floyd’s method 兩種截然不同的策略。前者從無到有逐步建立，後者則將既有的樹重新整理。</p>
+<h2 id="William’s-method"><a href="#William’s-method" class="headerlink" title="William’s method"></a>William’s method</h2><p>William’s method 可能是當中較為直觀的作法，它從一個空的完全二元樹開始，逐一添加新的節點，直到建立完整的 heap。</p>
+<p>為了確保這棵完全二元樹滿足 heap 的特性，新的節點一開始會放置在樹的最後一個位置，然後與其親節點比較。若新節點大於親節點，兩者互換位置。重複這個過程，直到新節點攀升到它正確的位置上，亦即它的大小正好介於自己的親節點與子節點之間。每個新節點至多向上攀升 $log n$ 層，共有 n 個節點要添加，兩者相乘為 $O(nlog n)$ 的時間複雜度。</p>
+<table>
+<thead>
+<tr>
+<th>在樹的最末端添加新節點</th>
+<th>比較新節點與親節點</th>
+<th>向上移動到正確位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Heap_add_step1.svg/300px-Heap_add_step1.svg.png"></td>
+<td><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Heap_add_step2.svg/300px-Heap_add_step2.svg.png"></td>
+<td><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Heap_add_step3.svg/300px-Heap_add_step3.svg.png"></td>
+</tr>
+</tbody></table>
+<p>（以 Williams’ method 構建 heap。圖&#x2F;維基百科）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hea</span>(<span class="params">l</span>):</span><br><span class="line">    heap = [] <span class="comment"># 準備一個空的完全二元樹</span></span><br><span class="line">    <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(l):</span><br><span class="line">        heap.append(num) <span class="comment"># 添加新節點到樹的最後一個位置</span></span><br><span class="line">        parent = (i - <span class="number">1</span>) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> heap[i] &gt; heap[parent]: <span class="comment"># 比較新節點與親節點</span></span><br><span class="line">            heap[i], heap[parent] = heap[parent], heap[i]</span><br><span class="line">            i = parent <span class="comment"># 更新新節點當前位置</span></span><br><span class="line">            parent = (i - <span class="number">1</span>) // <span class="number">2</span> <span class="comment"># 下一個要比較的親節點</span></span><br><span class="line">    <span class="keyword">return</span> heap</span><br></pre></td></tr></table></figure>
+
+<p>親節點與其中一側的子節點交換並不會影響另一側子樹的結構。以下圖為例，5 為親節點，1 是左子節點，X 則是新加入的右子節點。如果 X &gt; 5，兩者互換不會影響左子節點與 X 的關係，因為 1 本來就比 5 小，也自然會比 X 更小。這就是為什麼添加新節點並一路更新其位置的時候，不會破壞其它子樹的 heap 特性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  5</span><br><span class="line"> / \</span><br><span class="line">1   X </span><br></pre></td></tr></table></figure>
+
+<h2 id="Floyd’s-method"><a href="#Floyd’s-method" class="headerlink" title="Floyd’s method"></a>Floyd’s method</h2><p>Floyd’s method 則是將任意完全二元樹整理成 heap，不需要額外的儲存空間。這方法從最後一個非葉節點開始，假如這個節點小於它的子節點，則兩者互換位置，再從新位置持續向下調整，直到節點落到正確的位置上。重複著個過程，直到所有非葉節點都調整過後，即完成 heap 整理。</p>
+<p>這個過程與 William’s method 相反，親節點是由上往下一路沉降到它應該存在的地方，每一次交換位置都不會影響另一側子樹的結構。被交換一側的子樹可能暫時違反 heap 的性質，但是持續向下更新的過程會將其調整回來。這也是為什麼 Floyd’s method 要從最後一個非葉節點開始處理，這樣才能確保當前節點的左右子節點都滿足 heap 性質。<br><img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heap_remove_step2.svg/300px-Heap_remove_step2.svg.png"></p>
+<p>（以 Floyd’s method 構建 heap。圖&#x2F;維基百科）<br>如果一開始就從根節點更新，只有途經的節點會滿足 heap 的順序，其它節點則無法保證。舉例來說，從下圖的根節點 3 開始，會沿著左側子樹 3 -&gt; 5 -&gt; 4 的路徑更新位置，無法顧及右側的狀況，所以還得回頭檢查。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     3</span><br><span class="line">   /   \</span><br><span class="line">  5     1</span><br><span class="line"> / \   / \</span><br><span class="line">0   4 2   6 </span><br></pre></td></tr></table></figure>
+
+<p>Floyd’s method 的時間複雜度為 $O(n)$，詳情參考維基百科 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Binary_heap">binary heap</a>。簡言之，最差的情況就是要把一棵 min heap 轉置成 max heap。底層節點多，但是沉降的距離短；頂層的沉降距離長，但是節點少。兩相抵銷之後，最終效率會比 William’s method 還要高。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sift_down</span>(<span class="params">l, i</span>):</span><br><span class="line">    n = <span class="built_in">len</span>(l)</span><br><span class="line">    <span class="comment"># 確認親節點、左子節點、右子節點何者最大</span></span><br><span class="line">    candidates = [idx <span class="keyword">for</span> idx <span class="keyword">in</span> [i, <span class="number">2</span> * i + <span class="number">1</span>, <span class="number">2</span> * i + <span class="number">2</span>] <span class="keyword">if</span> idx &lt; n]</span><br><span class="line">    largest = <span class="built_in">max</span>(candidates, key=<span class="keyword">lambda</span> idx: l[idx])</span><br><span class="line">    <span class="keyword">if</span> largest != i:</span><br><span class="line">        <span class="comment"># 向下更新親節點的位置</span></span><br><span class="line">        l[i], l[largest] = l[largest], l[i]</span><br><span class="line">        <span class="keyword">return</span> sift_down(l, largest)</span><br><span class="line">    <span class="keyword">return</span> l</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hea</span>(<span class="params">l</span>):</span><br><span class="line">  <span class="comment"># 檢查所有的非葉節點</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(l) // <span class="number">2</span>, -<span class="number">1</span>, -<span class="number">1</span>):</span><br><span class="line">      l = sift_down(l, i)</span><br><span class="line">      <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/dark-one-2021-saimin-gakushu-secret-desire/" rel="prev" title="《催眠學習 —Secret Desire—》">
+                  <i class="fa fa-angle-left"></i> 《催眠學習 —Secret Desire—》
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/heap-sort/" rel="next" title="ROSALIND｜Heap Sort (HS)">
+                  ROSALIND｜Heap Sort (HS) <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
