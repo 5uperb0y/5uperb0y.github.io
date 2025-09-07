@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="重新排列一個長度為 n 的數列為三個部分，使得各部分的數字分別小於、等於、大於原數列的首位數字。  Given: A positive integer $n \leq 10^5$ and an array $A[1..n]$ of integers from $-10^5$ to $10^5$. Return: An array $B[1..n]$ such that it is a permut">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="ROSALIND｜3-Way Partition (PAR3)">
+<meta property="og:url" content="https://5uperb0y.com/3-way-partition/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="重新排列一個長度為 n 的數列為三個部分，使得各部分的數字分別小於、等於、大於原數列的首位數字。  Given: A positive integer $n \leq 10^5$ and an array $A[1..n]$ of integers from $-10^5$ to $10^5$. Return: An array $B[1..n]$ such that it is a permut">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-08-25T13:37:41.000Z">
+<meta property="article:modified_time" content="2025-09-06T10:30:53.058Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="rosalind">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://5uperb0y.com/3-way-partition/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/3-way-partition/","path":"3-way-partition/","title":"ROSALIND｜3-Way Partition (PAR3)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ROSALIND｜3-Way Partition (PAR3) | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/3-way-partition/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">35</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">222</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    相關文章
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/leetcode-153-find-minimum-in-rotated-sorted-array/" rel="bookmark">
+        <time class="popular-posts-time">2022-12-13</time>
+        <br>
+      LeetCode 筆記｜153. Find Minimum in Rotated Sorted Array
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/binary-search/" rel="bookmark">
+        <time class="popular-posts-time">2025-07-27</time>
+        <br>
+      ROSALIND｜Binary Search (BINS)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/rosalind-2sum/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-01</time>
+        <br>
+      ROSALIND｜2SUM (2SUM)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/merge-sort/" rel="bookmark">
+        <time class="popular-posts-time">2025-07-30</time>
+        <br>
+      ROSALIND｜Merge Sort (MS)
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/insertion-sort/" rel="bookmark">
+        <time class="popular-posts-time">2025-08-02</time>
+        <br>
+      ROSALIND｜Insertion Sort (INS)
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/3-way-partition/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ROSALIND｜3-Way Partition (PAR3) | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ROSALIND｜3-Way Partition (PAR3)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2025-08-25 21:37:41" itemprop="dateCreated datePublished" datetime="2025-08-25T21:37:41+08:00">2025-08-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-09-06 18:30:53" itemprop="dateModified" datetime="2025-09-06T18:30:53+08:00">2025-09-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>重新排列一個長度為 n 的數列為三個部分，使得各部分的數字分別小於、等於、大於原數列的首位數字。</p>
+<blockquote>
+<p>Given: A positive integer $n \leq 10^5$ and an array $A[1..n]$ of integers from $-10^5$ to $10^5$.</p>
+<p>Return: An array $B[1..n]$ such that it is a permutation of $A$ and there are indices $1 \leq q \leq r \leq n$ such that $B[i] &lt; A[1]$ for all $1 \leq i \leq q-1$, $B[i] &#x3D; A[1]$ for all $q \leq i \leq r$, and $B[i] &gt; A[1]$ for all $r+1 \leq i \leq n$.</p>
+</blockquote>
+<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/par3/">https://rosalind.info/problems/par3/</a>)</p>
+<span id="more"></span>
+
+<p>這題是 2-way partition 的延伸，我覺得最直觀的做法還是由左至右檢查輸入數列，再準備三個空數列分別儲存小於、等於、大於基準值的數字。檢查完所有數字後，依序合併這三個數列即完成排列。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">par3_build</span>(<span class="params">l: <span class="built_in">list</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">list</span>[<span class="built_in">int</span>]:</span><br><span class="line">    left, mid, right = [], [], []  <span class="comment"># 新增了 mid 來儲存與基準值相等的數字</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(l)):</span><br><span class="line">        <span class="keyword">if</span> l[i] &gt; l[<span class="number">0</span>]:</span><br><span class="line">            right.append(l[i])</span><br><span class="line">        <span class="keyword">elif</span> l[i] &lt; l[<span class="number">0</span>]:</span><br><span class="line">            left.append(l[i])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            mid.append(l[i])</span><br><span class="line">    <span class="keyword">return</span> left + mid + right</span><br></pre></td></tr></table></figure>
+
+<p>若不在意原數列的順序，可採用指標法重新排列數字。此方法延伸 2-way partition 的概念，使用兩組指標紀錄與基準值相當的數字範圍。實際執行時會進行兩次劃分，第一次劃分會移動<code>right</code>指標，區分大於、小於等於基準值的數字；第二次則會移動 <code>left</code> 指標，進一步區分小於、等於基準值的數字。</p>
+<p>以 python 實作時只是添加一個步驟，我覺得非常容易聯想跟記憶。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">par3_nested</span>(<span class="params">l: <span class="built_in">list</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">list</span>[<span class="built_in">int</span>]:</span><br><span class="line">    <span class="comment"># 等於基準值的數字範圍</span></span><br><span class="line">    left, right = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(l)):</span><br><span class="line">        <span class="comment"># 第一輪比較，區分 &lt;= 和 &gt; 基準值的數字</span></span><br><span class="line">        <span class="comment"># 把小於等於基準值的數字放到 right 的左邊</span></span><br><span class="line">        <span class="keyword">if</span> l[i] &lt;= l[<span class="number">0</span>]: </span><br><span class="line">            l[i], l[right] = l[right], l[i]</span><br><span class="line">            <span class="comment"># 第二輪比較，區分 &lt; 和 = 基準值的數字</span></span><br><span class="line">            <span class="comment"># 把小於基準值的數字放到 left 的左邊</span></span><br><span class="line">            <span class="keyword">if</span> l[right] &lt; l[<span class="number">0</span>]:</span><br><span class="line">                l[left], l[right] = l[right], l[left]</span><br><span class="line">                left = left + <span class="number">1</span></span><br><span class="line">            right = right + <span class="number">1</span></span><br><span class="line">    l[<span class="number">0</span>], l[left-<span class="number">1</span>] = l[left-<span class="number">1</span>], l[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> l</span><br></pre></td></tr></table></figure>
+
+<p>最後一種則是稱為 dutch national flag (DNF) algorithm 的作法，名稱源自於由三等份色塊組成的荷蘭國旗。同樣使用 <code>left</code> 和 <code>right</code> 兩個指標，遇到小於基準值的數字時，<code>left</code> 向右移動，表示數字進入小於區；遇到大於基準值的數字時，<code>right</code> 向右移動，表示數字進入大於區，最終自然區分出三個區段。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">par3_dnf</span>(<span class="params">l</span>):</span><br><span class="line">    left, right = <span class="number">1</span>, <span class="built_in">len</span>(l) - <span class="number">1</span></span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt;= right:</span><br><span class="line">        <span class="keyword">if</span> l[i] &lt; l[<span class="number">0</span>]:</span><br><span class="line">            l[i], l[left] = l[left], l[i]</span><br><span class="line">            left = left + <span class="number">1</span></span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> l[i] &gt; l[<span class="number">0</span>]:</span><br><span class="line">            l[i], l[right] = l[right], l[i]</span><br><span class="line">            right = right - <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            i = i + <span class="number">1</span></span><br><span class="line">    l[<span class="number">0</span>], l[left - <span class="number">1</span>] = l[left - <span class="number">1</span>], l[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p>後兩種算法會打亂數字原本的順序，不太容易憑空想像測試資料，所以測試時可以從定義著手。假設數列已分成小於、等於和大於基準值的三個區塊，那麼每個區塊內的數字與基準值的關係都是相同的。換句話說，不會出現這個數字小於基準值，但下個數字大於基準值的狀況。</p>
+<p>基於這項觀察，可以記錄數值與基準值關係的狀態。假設數值為 <code>x</code>，基準值為 <code>p</code>，則數值位於哪個區塊可以表示為 <code>(x &gt; p) - (x &lt; p)</code>，</p>
+<ul>
+<li><code>-1</code>：該數值理應要位於左側</li>
+<li><code>0</code>：該數值理應要位於中央</li>
+<li><code>1</code>：該數值理應要位於右側</li>
+</ul>
+<p>在劃分好的數列裡， 左側數字的狀態值永遠小於右側數字的狀態值，所以出現倒序的時候就表示劃分出錯了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">check_partition</span>(<span class="params">arr: <span class="built_in">list</span>[<span class="built_in">int</span>], p: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">    prev = -<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> arr:</span><br><span class="line">        diff = (x &gt; p) - (x &lt; p) <span class="comment"># left, mid, right = -1, 0, 1</span></span><br><span class="line">        <span class="keyword">if</span> diff &lt; prev:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        prev = diff</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/rosalind/" rel="tag"># rosalind</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/partial-sort/" rel="prev" title="ROSALIND｜Partial Sort (PS)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Partial Sort (PS)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/quick-sort/" rel="next" title="ROSALIND｜Quick Sort (QS)">
+                  ROSALIND｜Quick Sort (QS) <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

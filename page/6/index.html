@@ -120,7 +120,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">35</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">215</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">35</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">222</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -214,6 +214,557 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-duplicate-uuid-within-input-channels-of-a-process/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/nextflow-duplicate-uuid-within-input-channels-of-a-process/" class="post-title-link" itemprop="url">Nextflow｜input channels 含有重複辨識碼會引發資料串擾</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-04-08 22:32:42 / 修改時間：23:06:04" itemprop="dateCreated datePublished" datetime="2025-04-08T22:32:42+08:00">2025-04-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a href="https://5uperb0y.com/nextflow-combine-data-into-a-tuple-with-key/">先前</a>曾介紹如何透過辨識碼來避免不同樣本的分析資料在平行運算時彼此串擾。</p>
+<p>當 workflow 涉及 output 合流的狀況時，要把所有資料整合在同一個 input channel 並且共享唯一的辨識碼。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val(id), val(data_1), val(data_2)</span><br></pre></td></tr></table></figure>
+
+<p>分開寫的話很可能會發生串擾。首先 process 釋出資料的順序取決於完成時間，沒辦法保證來自不同 channels 的 data_1 和 data_2 同屬一個樣本。其次，前面的辨識碼會被後面的辨識碼覆蓋，導致辨識碼與資料不相符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val(id), val(data_1)</span><br><span class="line">val(id), val(data_2)</span><br></pre></td></tr></table></figure>
+
+<p>整合 output channels 的設計其實很常見，例如合併多組分析的統計表，我剛寫 Nextflow 時也常踩這個坑，所以覺得值得寫一篇短文說明問題的起因。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/nextflow-duplicate-uuid-within-input-channels-of-a-process/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/the-hitchhikers-guide-to-benchmarking-structural-variant-calling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/the-hitchhikers-guide-to-benchmarking-structural-variant-calling/" class="post-title-link" itemprop="url">如何評估基因體結構變異的分析效度？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-03-09 16:21:41 / 修改時間：17:43:13" itemprop="dateCreated datePublished" datetime="2025-03-09T16:21:41+08:00">2025-03-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>結構變異（Structural variants, SVs）泛指基因體中長度超過 50 bp 的變異，包含插入 (insertion)、刪除 (deletion)、易位 (translocation) 與倒置 (inversion) 等類型。雖然人類的結構變異總數低於小片段變異，單一變異可能涵蓋影響多個基因片段，影響生理功能甚或引發疾病，使之成為臨床檢測的潛在標的。</p>
+<p>隨著定序技術成熟，偵測結構變異的演算法推陳出新。為了能客觀評估這些方法的效度，Genome in a Bottle (GIAB) 以 HG002 樣本，採用多項定序與分析技術，並且透過親屬資料交叉驗證，建立了結構變異的標準資料。</p>
+<p>本文將介紹如何使用 Truvari 基於 GIAB 標準資料來評估結構變異的分析效度。除了提供具體的操作方式外，也探討實際分析時可能遇到的技術挑戰。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/the-hitchhikers-guide-to-benchmarking-structural-variant-calling/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/all-works-i-have-encountered-are-limited-time-experiences/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/all-works-i-have-encountered-are-limited-time-experiences/" class="post-title-link" itemprop="url">此生接觸過的作品都是期間限定</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-02-24 22:34:13 / 修改時間：22:34:00" itemprop="dateCreated datePublished" datetime="2025-02-24T22:34:13+08:00">2025-02-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>可能我的童年很乏味吧？最近每次接觸過好作品之後都很羨慕現在的小孩，因為在他們成長期間就已經有《少女樂團 吶喊吧》、《孤獨搖滾》、《MyGo》、《Cyberpunk Edgerunners》、《學姊是男孩》、《模擬後宮體驗》、《勇氣爆發》、《我內心糟糕的念頭》、《星靈感應》、《江戶前精靈》、《暴食的怪獸公主：惑星美食之旅》、《祈願詩篇》、《天國大魔境》、《佐賀偶像是傳奇》、《動物朋友》、《敗北女角太多了》、《妹相隨》、．．．．．．</p>
+<p>還有好多、好多、好多想要更早接觸的作品，因為它們既然能帶給現在的我勇氣，也肯定能鼓舞小時候沒那麼堅強的我。更重要的是，這樣我才有充分的時間把它們忘掉，然後重新體會一次。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/all-works-i-have-encountered-are-limited-time-experiences/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/jack-2019-reading-a-very-short-introduction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/jack-2019-reading-a-very-short-introduction/" class="post-title-link" itemprop="url">《閱讀：人與世界跨越時空的連結》</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-02-15 00:35:47 / 修改時間：00:35:58" itemprop="dateCreated datePublished" datetime="2025-02-15T00:35:47+08:00">2025-02-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>貝琳達．傑克的《閱讀》聚焦閱讀的媒介、形式與影響。作者以口述與書面之爭為引，鋪陳閱讀行為潛在的反抗特質。接著，介紹印刷術發展前後，閱讀內容與行為的變化。另外，也分別探討了閱讀在文學、政治和形式層次的議題。各章節皆有新鮮與豐富的歷史案例，提供讀者當代閱讀的想像。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/jack-2019-reading-a-very-short-introduction/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/customize-renpy-gui-random-thoughts-and-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/customize-renpy-gui-random-thoughts-and-notes/" class="post-title-link" itemprop="url">視覺小說、電玩展、Ren'Py GUI 客製化雜談</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-02-12 20:52:01 / 修改時間：20:52:15" itemprop="dateCreated datePublished" datetime="2025-02-12T20:52:01+08:00">2025-02-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>去年玩完《拔作島 1 &amp; 2》之後，深深體會視覺小說的魅力，陸續又玩了《心跳文學部》、《沙耶之歌》、《你和她和她的戀愛。》、《享受這間餐廳吧》、《Highway Blossoms》和《為主人獻上聖羅的甜蜜侍奉》，跟著主人翁們走過驚悚的、純情的、甜蜜的、熱血的、惆悵的故事。</p>
+<p>沒錯，我把玩過而且大力推薦的作品都列出來了。以前一直覺得只是頻頻按 Enter 到底有什麼好玩的？實際體驗才明白，視覺小說帶來的情感衝擊其實不輸其他媒體。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/customize-renpy-gui-random-thoughts-and-notes/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/automating-board-games-must-consider-feedback/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/automating-board-games-must-consider-feedback/" class="post-title-link" itemprop="url">桌遊自動化操作仍要考慮玩家的回饋感</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2025-01-01 20:39:14 / 修改時間：15:46:36" itemprop="dateCreated datePublished" datetime="2025-01-01T20:39:14+08:00">2025-01-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>先前製作 Tabletop simulator 的 MOD 時，累積了一些電子桌遊自動化的想法。Tabletop simulator （以下簡稱 TTS）提供了近似真實桌面的環境，允許玩家建立紙牌、公仔、token等桌遊配件。TTS 也設計了抽牌、堆疊、擲骰、彈射等與配件互動的行為，因此從經典的撲克牌、疊疊樂、到銀河彈彈樂等利用不同互動機制的桌遊都能在TTS 內重現。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/automating-board-games-must-consider-feedback/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/valid-ranges-of-hidden-state-prediction-in-phylogenetic-analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/valid-ranges-of-hidden-state-prediction-in-phylogenetic-analysis/" class="post-title-link" itemprop="url">如何界定細菌性狀預測演算法的有效範圍？</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2024-12-15 16:06:48 / 修改時間：17:20:33" itemprop="dateCreated datePublished" datetime="2024-12-15T16:06:48+08:00">2024-12-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>hidden state prediction (HSP) 是一種基於分子演化關係來預測未知基因功能的演算法 (Zaneveld &amp; Thurber, 2014)，它能用於重度仰賴定序技術的微生物生態研究，提供性狀或功能面的資訊 (Guittar et al., 2019)。</p>
+<p>儘管存在這樣有力的生態學研究工具，卻還沒有統一的方式來驗證其有效範圍。在應用 HSP 的研究中，Guittar et al. (2019) 沒有考量預測誤差，Langille et al. (2013) 沒有界定適用範圍。因此，我想以他們的研究為基礎，設計能評估預測工具有效範圍的方法。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/valid-ranges-of-hidden-state-prediction-in-phylogenetic-analysis/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -456,568 +1007,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/edit-distance-alignment/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/edit-distance-alignment/" class="post-title-link" itemprop="url">ROSALIND｜Edit Distance Alignment (EDTA)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-11-19 22:09:11 / 修改時間：22:13:35" itemprop="dateCreated datePublished" datetime="2024-11-19T22:09:11+08:00">2024-11-19</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>比對兩蛋白質字串，計算其最小編輯距離，並以橫槓表示間隔呈現比對結果。</p>
-<blockquote>
-<p>Given: Two protein strings s and t in FASTA format (with each string having length at most 1000 aa).</p>
-<p>Return: The edit distance dE(s,t) followed by two augmented strings s′ and t′ representing an optimal alignment of s and t.</p>
-</blockquote>
-<p>(<a target="_blank" rel="noopener" href="https://rosalind.info/problems/edta/">https://rosalind.info/problems/edta/</a>)</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/edit-distance-alignment/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/the-hitchhikers-guide-to-benchmarking-small-variant-calling-with-happy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/the-hitchhikers-guide-to-benchmarking-small-variant-calling-with-happy/" class="post-title-link" itemprop="url">如何使用 hap.py 評估小片段變異分析的效度？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2024-11-05 21:30:51" itemprop="dateCreated datePublished" datetime="2024-11-05T21:30:51+08:00">2024-11-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-12-05 20:18:39" itemprop="dateModified" datetime="2024-12-05T20:18:39+08:00">2024-12-05</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>hap.py</strong> 是比較 VCF 的工具，常配合標準資料集來評估變異分析的效度，它整合了資料處理、集合運算與指標統計等功能，方便用戶解決效度評估常見的問題。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/the-hitchhikers-guide-to-benchmarking-small-variant-calling-with-happy/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/wu-2021-the-vertical-society-of-good-girls/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/wu-2021-the-vertical-society-of-good-girls/" class="post-title-link" itemprop="url">《美好少女的垂直社會》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-
-      <time title="創建時間：2024-11-04 22:17:26" itemprop="dateCreated datePublished" datetime="2024-11-04T22:17:26+08:00">2024-11-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-11-05 21:29:38" itemprop="dateModified" datetime="2024-11-05T21:29:38+08:00">2024-11-05</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>最近生活苦悶，想看點富含貼貼的療癒著作，正好這本《美好少女的垂直社會》現身在網路書城的推薦清單。這本書的插畫很美，而且人物也畫得很可愛，目錄除了數字命名的章節以外，只有兩個女孩的名字：江鯉庭和林鳶。</p>
-<p>兩個人！？我想這一定是描寫女孩間純粹美好的友情吧？是那種以各自視角重述彼此接近與曖昧關係，在即將日落的末日世界互相扶持的溫馨故事吧？</p>
-<p>讀完前兩章發現自己大錯特錯，所以決定把此書的筆記分類為 sf。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/wu-2021-the-vertical-society-of-good-girls/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/" class="post-title-link" itemprop="url">《明日的世界將會星光燦爛 3 》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-10-31 16:01:09 / 修改時間：16:01:20" itemprop="dateCreated datePublished" datetime="2024-10-31T16:01:09+08:00">2024-10-31</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>羽衣、帆乃夏和由貴離開京都回到家之後，便著手研究夜未提供的文獻和紀錄。她們從中推論，若能取得保存在東京魔術師總部的最高權杖，由貴將能發揮百分之百的魔力，擁有對抗巨型屍人的力量。驅車前往東京的路上，她們討論起災變的元兇，羽衣認為眾多證據皆指向帆乃夏的姊姊春香策畫了召喚屍人的儀式。由於帆乃夏不相信姊姊有引發災變的動機，所以反感羽衣的指控。不過更讓帆乃夏焦躁不安的是，如果最敬愛的姊姊是讓世人陷入不幸的元凶，那麼帆乃夏該如何走下一步？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-3/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/nextflow-manage-input-with-json/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/nextflow-manage-input-with-json/" class="post-title-link" itemprop="url">Nextflow｜讀取儲存於 JSON 的輸入資料</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-10-28 22:26:31 / 修改時間：22:27:25" itemprop="dateCreated datePublished" datetime="2024-10-28T22:26:31+08:00">2024-10-28</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>目前，nf-core 認證的分析流程皆<a target="_blank" rel="noopener" href="https://nextflow-io.github.io/patterns/process-per-csv-record/">使用 CSV 管理輸入的樣本資料</a>，這方法會逐列分析 CSV 檔每一列的資料。不過，其它任務排程或系統監控軟體可能更傾向使用 JSON 作為資料傳遞媒介。為了讓 Nextflow 能直接與那些軟體互動，需要能解析 JSON 格式並且逐條執行分析的功能。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/nextflow-manage-input-with-json/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-2/" class="post-title-link" itemprop="url">《明日的世界將會星光燦爛 2 》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-10-27 16:45:49 / 修改時間：16:46:03" itemprop="dateCreated datePublished" datetime="2024-10-27T16:45:49+08:00">2024-10-27</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>由收到的簡訊推論，帆乃夏的姊姊曾和由貴的父親往來。帆乃夏提議在宅邸內尋找相關線索，發現了由貴先前沒留意到的密室。密室內有面鏡子連通其他都市，不過目前僅有通往京都的通道正常運作。</p>
-<p>儘管由貴期待能延續與帆乃夏度過的平凡日常，還是跟著帆乃夏穿過鏡子來到京都。她們在那發現一棟屋主遇害的和式住宅，想進一步調查周遭環境時，被一名持槍的女子喝止。那位女子名喚九条夜未，她得知來者身分後隨即封鎖返程的通道。夜未以開啟通道並且說明由貴父親的消息為條件，要求由貴與帆乃夏接受她的指導完成一項秘密任務。</p>
-<p>於是，由貴與帆乃夏便搭上夜未的車，回到她與相依為命的外甥女羽衣在京都的庇護所，展開為期一周的特訓。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-2/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="5uperb0y (超級boy)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="5uperb0y's blog">
-      <meta itemprop="description" content="對世界豎起中指吧">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | 5uperb0y's blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-1/" class="post-title-link" itemprop="url">《明日的世界將會星光燦爛 1 》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">發表於</span>
-      
-
-      <time title="創建時間：2024-10-26 16:44:44 / 修改時間：16:44:57" itemprop="dateCreated datePublished" datetime="2024-10-26T16:44:44+08:00">2024-10-26</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>高中開學日隔天，由貴的學校遭到屍人襲擊。屍人是類似殭屍的怪物，牠們嗜食人肉，而且能感染咬傷的獵物，將其轉變為新的屍人。失控的汽車衝破校門後，屍人如潮水般湧入校園，殺害了上前關心狀況的教師以及隨後逃竄而出的學生。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/tsukasa-2019-asu-no-sekai-de-hoshi-wa-kirameku-1/#more" rel="contents">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" title="上一頁" aria-label="上一頁" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" title="下一頁" aria-label="下一頁" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 </div>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.css" integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"5uperb0y.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false,"trigger":"auto"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="許多非 Steam 遊戲以執行檔或資料夾形式發布，需要玩家自行管理遊戲檔案、遊玩數據以及產出的多媒體。開源社群提供了多元的軟體解決方案，協助玩家創造近於商業化平台的使用體驗。本文分享我所使用的軟體及相關設置，期待能幫助有相似困擾的其他玩家。以下是正文會提到的軟體及其功能，我首先會簡述它們的用途與個人使用經驗，再提供其他網友的詳盡介紹供參考。  Playnite：開源的本機遊戲管理工具，支援匯入各大">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="管理和遊玩自己的單機遊戲">
+<meta property="og:url" content="https://5uperb0y.com/manage-and-play-your-own-drm-free-games/index.html">
+<meta property="og:site_name" content="5uperb0y&#39;s blog">
+<meta property="og:description" content="許多非 Steam 遊戲以執行檔或資料夾形式發布，需要玩家自行管理遊戲檔案、遊玩數據以及產出的多媒體。開源社群提供了多元的軟體解決方案，協助玩家創造近於商業化平台的使用體驗。本文分享我所使用的軟體及相關設置，期待能幫助有相似困擾的其他玩家。以下是正文會提到的軟體及其功能，我首先會簡述它們的用途與個人使用經驗，再提供其他網友的詳盡介紹供參考。  Playnite：開源的本機遊戲管理工具，支援匯入各大">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://playnite.link/screen1.jpg">
+<meta property="og:image" content="https://playnite.link/screen2.jpg">
+<meta property="og:image" content="https://playnite.link/screen5.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/demo-gui.gif">
+<meta property="og:image" content="https://help.sworld.club/assets/images/manage-032ee3cd64696da2d604fd5cf96ab21b.jpg">
+<meta property="og:image" content="https://image.lunatranslator.org/zh/basicuse/ocr.png">
+<meta property="article:published_time" content="2025-09-06T08:26:59.000Z">
+<meta property="article:modified_time" content="2025-09-07T08:45:35.940Z">
+<meta property="article:author" content="5uperb0y (超級boy)">
+<meta property="article:tag" content="hgame">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://playnite.link/screen1.jpg">
+
+
+<link rel="canonical" href="https://5uperb0y.com/manage-and-play-your-own-drm-free-games/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://5uperb0y.com/manage-and-play-your-own-drm-free-games/","path":"manage-and-play-your-own-drm-free-games/","title":"管理和遊玩自己的單機遊戲"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>管理和遊玩自己的單機遊戲 | 5uperb0y's blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X8W93VY06Z"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-X8W93VY06Z","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.36/fancybox/fancybox.umd.js" integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script><script src="/js/pjax.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://5uperb0y.com/manage-and-play-your-own-drm-free-games/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2443737670547895"
+     crossorigin="anonymous"></script>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">5uperb0y's blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">35</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">222</span></a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E4%B8%8D%E4%BA%A4%E7%B5%A6-Steam-%E5%B0%B1%E5%A5%BD%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">為什麼不交給 Steam 就好？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Playnite%EF%BC%9A%E7%AE%A1%E7%90%86%E9%81%8A%E6%88%B2"><span class="nav-number">2.</span> <span class="nav-text">Playnite：管理遊戲</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ludusavi%EF%BC%9A%E7%AE%A1%E7%90%86%E5%AD%98%E6%AA%94"><span class="nav-number">3.</span> <span class="nav-text">Ludusavi：管理存檔</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Magpie%EF%BC%9A%E8%A6%96%E7%AA%97%E7%B8%AE%E6%94%BE"><span class="nav-number">4.</span> <span class="nav-text">Magpie：視窗縮放</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Locale-Emulator%EF%BC%9A%E8%B7%A8%E5%8D%80%E7%AE%A1%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">Locale Emulator：跨區管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LunaTranslator%EF%BC%9A%E7%BF%BB%E8%AD%AF%E5%99%A8"><span class="nav-number">6.</span> <span class="nav-text">LunaTranslator：翻譯器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">7.</span> <span class="nav-text">結論</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">5uperb0y (超級boy)</p>
+  <div class="site-description" itemprop="description">對世界豎起中指吧</div>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/5uperb0y" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/contact.5uperb0y.blog@gmail.com" title="E-Mail → contact.5uperb0y.blog@gmail.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://steamcommunity.com/id/5uperb0y" title="Steam → https:&#x2F;&#x2F;steamcommunity.com&#x2F;id&#x2F;5uperb0y" rel="noopener me" target="_blank"><i class="fab fa-steam fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.youtube.com/channel/UC0D5wTTzJD_fTp2_gVAzSTA" title="YouTube → https:&#x2F;&#x2F;www.youtube.com&#x2F;channel&#x2F;UC0D5wTTzJD_fTp2_gVAzSTA" rel="noopener me" target="_blank"><i class="fab fa-youtube fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.instagram.com/superb0y_potato/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;superb0y_potato&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/5uperb0y/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;5uperb0y&#x2F;?" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a>
+      </span>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+        <div class="pjax">
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://5uperb0y.com/manage-and-play-your-own-drm-free-games/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="5uperb0y (超級boy)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="5uperb0y's blog">
+      <meta itemprop="description" content="對世界豎起中指吧">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="管理和遊玩自己的單機遊戲 | 5uperb0y's blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          管理和遊玩自己的單機遊戲
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+
+      <time title="創建時間：2025-09-06 16:26:59" itemprop="dateCreated datePublished" datetime="2025-09-06T16:26:59+08:00">2025-09-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2025-09-07 16:45:35" itemprop="dateModified" datetime="2025-09-07T16:45:35+08:00">2025-09-07</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>許多非 Steam 遊戲以執行檔或資料夾形式發布，需要玩家自行管理遊戲檔案、遊玩數據以及產出的多媒體。開源社群提供了多元的軟體解決方案，協助玩家創造近於商業化平台的使用體驗。本文分享我所使用的軟體及相關設置，期待能幫助有相似困擾的其他玩家。以下是正文會提到的軟體及其功能，我首先會簡述它們的用途與個人使用經驗，再提供其他網友的詳盡介紹供參考。</p>
+<ul>
+<li><strong>Playnite</strong>：開源的本機遊戲管理工具，支援匯入各大平台遊戲和自訂介面風格（<a target="_blank" rel="noopener" href="https://playnite.link/">官網</a>|<a target="_blank" rel="noopener" href="https://github.com/JosefNemec/Playnite">Github</a>）。</li>
+<li><strong>ludusavi</strong>：遊戲存檔管理工具，能配合 Playnite 於遊戲結束後自動備份存檔資料夾，並於需要時恢復指定存檔（<a target="_blank" rel="noopener" href="https://github.com/mtkennerly/ludusavi">Github</a>）。</li>
+<li><strong>LunaTranslator</strong>：視覺小說翻譯器，採用 HOOK 或 OCR 文本擷取，支援常見的翻譯引擎（<a target="_blank" rel="noopener" href="https://docs.lunatranslator.org/">官網</a>|<a target="_blank" rel="noopener" href="https://github.com/HIllya51/LunaTranslator">Github</a>）。</li>
+<li><strong>Magpie</strong>：視窗縮放與畫面補強工具，用以解決遊戲畫面解析度與螢幕設定不符的問題（<a target="_blank" rel="noopener" href="https://github.com/Blinue/Magpie">Github</a>）。</li>
+<li><strong>Locale Emulator</strong>：區域設置模擬工具，用以執行不支持多國語言的軟體，避免程式出現亂碼或路徑問題無法啟動（<a target="_blank" rel="noopener" href="https://xupefei.github.io/Locale-Emulator/">官網</a>|<a target="_blank" rel="noopener" href="https://github.com/xupefei/Locale-Emulator">Github</a>）。</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="為什麼不交給-Steam-就好？"><a href="#為什麼不交給-Steam-就好？" class="headerlink" title="為什麼不交給 Steam 就好？"></a>為什麼不交給 Steam 就好？</h1><p>去年，Steam 因應美國政府規範在商店頁面提醒玩家，他們購買的是遊戲的使用權，而非遊戲本身的所有權。其實，關於遊戲授權的細節已列在使用者協議當中，即使遊戲未設置數位版權管理 (DRM)，玩家也不得複製、變造、翻譯、拆解或散布遊戲主程式。去年的異動只是平台應政府要求，明確在購物按鈕前揭示這項資訊。</p>
+<p>相較於讀者對電子書所有權的重視，玩家似乎較能接受自己僅有遊戲使用權的狀況。Steam 仍是許多玩家重度依賴的平台，畢竟它上架的遊戲全面、價格實惠、社群多元，還支援遊戲進度與多媒體的雲端儲存，方便玩家取得並集中管理遊戲及其相關的人事物。</p>
+<p>除了便利性，我覺得電玩較短的生命週期也影響了消費者對其所有權的態度。書可以保存百年，但電玩的壽命可能不到十年。硬體更新、團隊解散、流行消退、載體老化都可能讓遊戲不再流通，導致玩家即使保有光碟和磁片也未必能重溫遊戲。</p>
+<p>然而，還是有像 <a target="_blank" rel="noopener" href="https://www.gog.com/">GOG</a> 這類主張玩家具有遊戲掌控權的平台，它們提供的遊戲不需要平台驗證即可安裝和啟動。當然啦，遊戲本身的所有者還是廠商，玩家也不能任意散佈所取得的主程式。除此之外，玩家可以在個人用途的前提下，自由備份所持有的遊戲檔案、將其安裝在多個裝置上。</p>
+<p>這項政策確保遊戲能獨立於平台執行，讓玩家在平台倒閉或遊戲下架之後，仍能合法持有並遊玩遊戲。與之相對，雖然 Steam 上很多遊戲沒有設置 DRM，玩家在技術上還是能離線遊玩甚至備份這些遊戲，但這會違反購買時同意的使用者規約。關於 DRM-Free 遊戲的玩家權益，可以參考 Reddit <a target="_blank" rel="noopener" href="https://www.reddit.com/r/gog/comments/f998q2/what_does_it_mean_to_be_drmfree_and_what_can_you/">這篇</a>討論或是 GOG <a target="_blank" rel="noopener" href="https://support.gog.com/hc/en-us/articles/360001942753-FAQ-Downloads-and-streaming?product=gog">常見問答</a>。</p>
+<p>只不過，Steam 主打方便。如果玩家想要保有自由備份的權益，就得放棄平台提供的加值服務。我原先只在 Steam 上買遊戲，像是 AOEII、Terraria 和 Cyberpunk 2077 等作品加起來玩了千餘小時也沒有感受到什麼不便。直到開始碰 H-game 與 Galgame 之後才發現很多經典作品沒有上架 Steam，這可歸因於團隊的商業策略以及 Steam 詭異的審查機制，其中尤以後者常為人詬病。</p>
+<p>舉例來說，可以上架《帶我去地下城》限制級版本卻不能上架全年齡版本，可以上架《Mad Island》，但不能上架《與精靈的同居生活》。近期，許多通過審查的成人遊戲也受信用卡公司與支付工具施壓而無預警下架。這意味著遊戲發行不只受制於平台審查，還面臨金融公司與利益團體的壓力。是以，無法上架 Steam 的遊戲轉而出現在暫時不受影響的遊戲平台，例如 GOG、DLsite、JAST、072、bokiboki 等。</p>
+<p>由於遊戲以檔案與資料夾形式發佈，若沒有統一的資訊儲存方式，玩家在管理遊戲時就只能面對命名和結構因發行商而異的資料夾。Steam 提供匯入平台外遊戲的功能，但要求玩家手動匯入每一筆遊戲，也不能修改遊戲詳細資料。另外，Steam 只是代為啟動匯入的遊戲，不會追蹤遊戲時數和應用雲端存檔。</p>
+<p>換句話說，我們的需求是一個開放式遊戲庫，它能整合電腦上散落的遊戲檔案，紀錄遊戲數據（多媒體、遊玩統計、標籤分類），客製化管理介面。就我所知，這樣的遊戲管理器有 GOG 平台的 <a target="_blank" rel="noopener" href="https://www.gog.com/galaxy">Galaxy</a>、視覺小說的 <a target="_blank" rel="noopener" href="https://vnite.ximu.dev/">Vnite</a> 以及接下來會提到的 <a target="_blank" rel="noopener" href="https://playnite.link/">Playnite</a>。</p>
+<h1 id="Playnite：管理遊戲"><a href="#Playnite：管理遊戲" class="headerlink" title="Playnite：管理遊戲"></a>Playnite：管理遊戲</h1><p>Playnite 是一款開源的本機遊戲管理軟體，它讓玩家能在同一個介面瀏覽並啟動不同平台的遊戲。具體效果如下圖所示（圖&#x2F;Playnite官網），按鈕標籤、背景圖示、詳細介紹等詮釋數據 (metadata) 一應俱全。Playnite 的便利奠基於豐富且彈性的附加元件，用戶可以安裝爬蟲元件從特定平台自動導入這些數據而不必手動騰打。</p>
+<p>安裝爬蟲元件與導入詮釋數據的方式可參考<a target="_blank" rel="noopener" href="https://api.playnite.link/docs/manual/library/games/metadata.html">官方文件</a>或是<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lihepei/p/18964338">Playnite使用指北 —— 一个优秀的本地化游戏管理工具</a>。</p>
+<table>
+<thead>
+<tr>
+<th>列表模式</th>
+<th>網格模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img data-src="https://playnite.link/screen1.jpg"></td>
+<td><img data-src="https://playnite.link/screen2.jpg"></td>
+</tr>
+</tbody></table>
+<p>Playnite 也支援標籤與分類功能，方便玩家整理自己的遊戲。</p>
+<p><img data-src="https://playnite.link/screen5.jpg"><br>（詳細資訊模式，Playnite 可以記錄玩家的遊玩時數與頻率。圖&#x2F;Playnite官網）</p>
+<p>在視覺效果方面，Playnite 也提供了調整使用者介面的彈性。用戶可以先安裝主題元件建立整體的風格，接著細調不同顯示模式下窗格、文字與圖片的尺寸，最後為每款遊戲選擇適合的配圖和簡介文字。</p>
+<p>「咦，你不是說 Playnite 會自動抓嗎？」沒錯，Playnite 會自動抓，可是當軟體賦予用戶調整的權限以後，妝點自己的遊戲收藏變成額外的樂趣。我習慣將遊戲跟 Playnite 主程式放在同一個資料夾，以便備份和遷移遊戲資料。為了讓網格介面（即遊戲的「海報牆」）變得美觀，我在導入遊戲時會花點時間挑選配圖並添加分類標籤。不過許多同人遊戲的畫面設計重實用而不重美觀，所以怎麼調還是不像其他人一樣漂亮，更多關於 Playnite 或其他遊戲管理工具的心得與設置範例可參考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.himiku.com/archives/vnite.html">GalGame 管理器，有 Vnite 就够了</a></li>
+<li><a target="_blank" rel="noopener" href="https://freshp0325.xyz/2024122401?locale=zh">如何管理自己的数字与生活资源？(Galgame篇)</a></li>
+<li><a target="_blank" rel="noopener" href="https://xlog.timero.xyz/50?p=437&locale=zh">我的Galgame解决方案</a></li>
+</ul>
+<h1 id="Ludusavi：管理存檔"><a href="#Ludusavi：管理存檔" class="headerlink" title="Ludusavi：管理存檔"></a>Ludusavi：管理存檔</h1><p>Playnite 沒有內建的遊戲存檔管理功能，這有賴附加元件 Ludusavi 來達成。Ludusavi 是開源的遊戲存檔備份工具，可以自動偵測 PCGamingWiki 收錄遊戲的存檔位置，可參考這篇文章的介紹：<a target="_blank" rel="noopener" href="https://forum.gamer.com.tw/C.php?bsn=60599&snA=46675">透過Ludusavi開源程式自動備份不支援雲端的遊戲存檔</a>。</p>
+<p><img data-src="https://raw.githubusercontent.com/mtkennerly/ludusavi/master/docs/demo-gui.gif"></p>
+<p>我覺得 Ludusavi 的使用介面沒有 mcthesw 開發的 game-save-manager 清晰（<a target="_blank" rel="noopener" href="https://help.sworld.club/">官網</a>｜<a target="_blank" rel="noopener" href="https://github.com/mcthesw/game-save-manager">Github</a>），但 Ludusavi 能與 Playnite 整合，在遊戲結束後自動備份存檔，也允許玩家在 Playnite 裡面調整備份策略或恢復存檔。</p>
+<p>首先要到 Ludusavi <a target="_blank" rel="noopener" href="https://github.com/mtkennerly/ludusavi/releases/">釋出頁面</a>下載軟體，接著在 Playnite 安裝 Ludusavi 附加元件（<code>F9</code> &gt; 瀏覽 &gt; 通用 &gt; 查詢 “ludusavi” &gt; 選擇安裝並儲存）。</p>
+<p>日系 H-game 和 Galgame 多半沒有收錄在 PCGamingWiki，所以要手動打開 Ludusavi 主程式註記存檔路徑。依序點選 “自訂遊戲”、”新增遊戲”、”路徑” 指定存檔資料夾，然後在遊戲名稱的地方填入 Playnite 顯示的名稱，讓程式可以正確識別要備份的遊戲。</p>
+<p>雖然 Ludusavi 可以設定雲端存檔，但是我是直接將備份資料夾與其他雲端硬碟同步，免除軟體設置的問題。以下是我的遊戲資料夾結構，選用可攜版本的 Playnite 方便數據遷移，雲端同步 Saves 以免資料漏失。Software 資料夾存放翻譯、轉區和備份的輔助軟體，Games 則是從不同平台下載來的遊戲資料夾。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Games</span><br><span class="line">|- Playnite/</span><br><span class="line">|- Saves/</span><br><span class="line">|- Softwares/</span><br><span class="line">|- Games</span><br><span class="line">    |- Game 1/</span><br><span class="line">    |- Game 2/</span><br></pre></td></tr></table></figure>
+
+<p>我覺得存檔管理算是常見的需求，對於存在大量劇情分歧或許多精彩橋段的遊戲，內建的儲存空間往往不夠用，像是 RPG maker 製作的遊戲通常就只有二十格。雖然沒辦法跟 Playnite 整合，但前面提到 mcthesw 的遊戲管理工具蠻易用的（<a target="_blank" rel="noopener" href="https://help.sworld.club/">官網</a>｜<a target="_blank" rel="noopener" href="https://github.com/mcthesw/game-save-manager">Github</a>）。</p>
+<p><img data-src="https://help.sworld.club/assets/images/manage-032ee3cd64696da2d604fd5cf96ab21b.jpg"></p>
+<p>它可以進行手動備份和定時備份，還可以設定快捷鍵在遊戲內進行存檔操作。這就不只是單純備份了，而是在玩家 S&#x2F;L 操作時保留對應的存檔。我對此做過一些調查，目前還沒有工具能像柚子社的分支存檔工具一樣方便。嚴格說來，如果要達成那種程度，就會變成遊戲存檔的 Git 或 SourceTree 了吧？</p>
+<h1 id="Magpie：視窗縮放"><a href="#Magpie：視窗縮放" class="headerlink" title="Magpie：視窗縮放"></a>Magpie：視窗縮放</h1><p>有些老遊戲在高解析度的螢幕下只會顯示小小的視窗，選取全螢幕模式也僅能顯示局部畫面（近期 Otaku Plan 代理的名作《Black Soul》即是如此）。Magpie 是視窗縮放和畫面補強工具，能讓玩家調整遊戲視窗而不用更動電腦的解析度設置。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 假設這是你的螢幕</span><br><span class="line">┌─────────────┐</span><br><span class="line">│             │</span><br><span class="line">│             │</span><br><span class="line">│             │</span><br><span class="line">└─────────────┘</span><br><span class="line"></span><br><span class="line"># 遊戲視窗大概只有這樣</span><br><span class="line">┌─────────────┐</span><br><span class="line">│             │</span><br><span class="line">│  AA███      │</span><br><span class="line">│  █████      │</span><br><span class="line">└─────────────┘</span><br><span class="line"></span><br><span class="line"># 全螢幕模式會導致異常縮放，顯示局部畫面</span><br><span class="line">┌─────────────┐</span><br><span class="line">│AAAAAAAAAAA██│</span><br><span class="line">│AAAAAAAAAAA██│</span><br><span class="line">│█████████████│</span><br><span class="line">└─────────────┘</span><br></pre></td></tr></table></figure>
+
+<h1 id="Locale-Emulator：跨區管理"><a href="#Locale-Emulator：跨區管理" class="headerlink" title="Locale Emulator：跨區管理"></a>Locale Emulator：跨區管理</h1><p>有些遊戲在非對應語系的環境執行時會出現亂碼甚至報錯，Locale Emulator 可以讓你不用為了一款遊戲更改整台電腦的系統語言與區域設定。詳細方法可參考<a target="_blank" rel="noopener" href="https://pinogamer.com/15640">日文遊戲玩不了！解壓縮出錯、出現亂碼？簡單5方法排除問題！</a>。</p>
+<p>讓 Playnite 透過 Locale Emulator 啟動遊戲的最簡方式是將執行路徑指向 LE 創建的捷徑，做法如下：</p>
+<ol>
+<li>右鍵點擊遊戲執行檔，選取 “Locate Emulator”，打開 “修改此程式的設定”。</li>
+<li>調整執行遊戲時選用的地理位置與時區。</li>
+<li>點選 “在桌面放置捷徑”，再把捷徑移回遊戲目錄</li>
+<li>這個捷徑其實等同用這個指令執行遊戲：<code>\path\to\LEProc.exe -run &quot;\path\to\Game.exe&quot;</code></li>
+<li>啟動 Playnite，編輯遊戲的詳細資訊：點選遊戲、按下 <code>F3</code> 開啟編輯介面、點選 “動作”</li>
+<li>修改 “路徑” 為 <code>&#123;InstallDir&#125;/Game.lnk</code>，也就是告訴 Playnite 不要直接執行遊戲，而是執行那個捷徑的意思。</li>
+</ol>
+<p>若不太了解這邊的敘述，可參考 <a target="_blank" rel="noopener" href="https://freshp0325.xyz/2024122401?locale=zh#user-content-%E8%BD%AC%E5%8C%BA">如何管理自己的数字与生活资源？(Galgame篇)</a> 的「轉區」說明。</p>
+<h1 id="LunaTranslator：翻譯器"><a href="#LunaTranslator：翻譯器" class="headerlink" title="LunaTranslator：翻譯器"></a>LunaTranslator：翻譯器</h1><p>如果不熟悉外國語言，遊玩未代理的遊戲時便得仰賴翻譯工具。網路上已有許多遊戲翻譯器的簡介，例如：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://forum.gamer.com.tw/C.php?bsn=60599&snA=41884">LunaTranslator 用中文翻譯遊玩Steam上歐美遊戲及Galgame 更新:Rpgmaker跟Unity的引擎也適用Luna翻譯</a></li>
+<li><a target="_blank" rel="noopener" href="https://forum.gamer.com.tw/Co.php?bsn=60599&sn=144224">遊戲&amp;漫畫翻譯器使用心得及評測</a></li>
+<li><a target="_blank" rel="noopener" href="https://yuriever.com/posts/e6d8772c/">突破語言的障礙，遊戲翻譯軟體大全</a></li>
+</ul>
+<p>我自己用過 <a target="_blank" rel="noopener" href="https://mtool.app/">Mtool</a> 和 <a target="_blank" rel="noopener" href="https://docs.lunatranslator.org/">LunaTranslator</a>。Mtool 常用於 RPG 遊戲的內嵌翻譯，同時也可作為參數修改器使用。不過因為它支援的翻譯引擎較少，而且許多遊戲不能內嵌翻譯，所以我後來比較常用 LunaTranslator。</p>
+<p>LunaTranslator 能夠以 OCR 方式擷取文字，所以只要能於螢幕上呈現的文字都可以翻譯。聽說自建翻譯模型的效果最好，但我只有使用傳統的線上翻譯。以日文遊戲來說，我覺得彩雲的日文翻譯讀起來最流暢，雖然反應時間較其他軟體慢了一些。</p>
+<p><img data-src="https://image.lunatranslator.org/zh/basicuse/ocr.png"></p>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><p>大guyJo4john啦，有一陣子我都覺得自己本末倒置了，花在調整遊戲庫設置的時間還比玩遊戲本身的時間多。愛書人欠書債，模型迷有山積，莫怪許多玩家自嘲：「我都花錢買遊戲了，幹麻花時間？」這跟很多 Steam 玩家花錢布置個人檔案的心態類似，妝點自己的收藏成為新的樂趣來源。不過，本來就是來玩的，在探索的過程中找到其他樂子不是很好嗎？</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hgame/" rel="tag"># hgame</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/median/" rel="prev" title="ROSALIND｜Median (MED)">
+                  <i class="fa fa-angle-left"></i> ROSALIND｜Median (MED)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">5uperb0y (超級boy)</span>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
